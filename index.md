@@ -1,12 +1,3 @@
----
-title: modal logic
-author: Gabriel Uzquiano
-description: |
-  Overview and practice exercises
----
-
-
-
 # table of contents
 
 ### 0. preliminaries
