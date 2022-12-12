@@ -7,9 +7,7 @@ description: |
 
 
 
-# modal logic
-
-## table of contents
+# table of contents
 
 ### 0. preliminaries
 
