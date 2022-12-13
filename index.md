@@ -2,7 +2,7 @@
 
 ### 0. preliminaries
 
-1. [overview](https://gabriel-uzquiano.github.io/modal.logic/0.1%20overview.html) 01/10
+1. overview 01/10
 2. sets and relations 01/12
 
 ### 1. metatheory of propositional logic
