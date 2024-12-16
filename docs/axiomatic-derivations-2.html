@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="18 Axiomatic Derivations | Modal Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 452: Modal Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+<meta name="date" content="2024-12-13" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 452: Modal Logic.">
+
+<title>18 Axiomatic Derivations | Modal Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Background</b></span></li>
+<li><a href="introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li class="has-sub"><a href="sets-and-relations.html#sets-and-relations" id="toc-sets-and-relations"><span class="toc-section-number">2</span> Sets and Relations</a>
+<ul>
+<li><a href="sets-and-relations.html#sets" id="toc-sets">Sets</a></li>
+<li><a href="sets-and-relations.html#relations" id="toc-relations">Relations</a></li>
+<li><a href="sets-and-relations.html#properties-of-relations" id="toc-properties-of-relations">Properties of Relations</a></li>
+</ul></li>
+<li><a href="mathematical-induction.html#mathematical-induction" id="toc-mathematical-induction"><span class="toc-section-number">3</span> Mathematical Induction</a></li>
+<li class="part"><span><b>II Metatheory of Propositional Logic</b></span></li>
+<li><a href="syntax.html#syntax" id="toc-syntax"><span class="toc-section-number">4</span> Syntax</a></li>
+<li><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">5</span> Semantics</a></li>
+<li class="has-sub"><a href="axiomatic-derivations.html#axiomatic-derivations" id="toc-axiomatic-derivations"><span class="toc-section-number">6</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations.html#the-deduction-theorem" id="toc-the-deduction-theorem">The Deduction Theorem</a></li>
+<li><a href="axiomatic-derivations.html#maximal-consistency" id="toc-maximal-consistency">Maximal Consistency</a></li>
+</ul></li>
+<li><a href="completeness.html#completeness" id="toc-completeness"><span class="toc-section-number">7</span> Completeness</a></li>
+<li class="part"><span><b>III Propositional Modal Logic</b></span></li>
+<li><a href="syntax-1.html#syntax-1" id="toc-syntax-1"><span class="toc-section-number">8</span> Syntax</a></li>
+<li class="has-sub"><a href="possible-worlds-semantics.html#possible-worlds-semantics" id="toc-possible-worlds-semantics"><span class="toc-section-number">9</span> Possible Worlds Semantics</a>
+<ul>
+<li><a href="possible-worlds-semantics.html#models" id="toc-models">Models</a></li>
+<li class="has-sub"><a href="possible-worlds-semantics.html#frames" id="toc-frames">Frames</a>
+<ul>
+<li><a href="possible-worlds-semantics.html#frame-correspondence" id="toc-frame-correspondence">Frame Correspondence</a></li>
+<li><a href="possible-worlds-semantics.html#frame-definability" id="toc-frame-definability">Frame Definability</a></li>
+<li><a href="possible-worlds-semantics.html#bisimulations" id="toc-bisimulations">Bisimulations</a></li>
+<li><a href="possible-worlds-semantics.html#universal-frames" id="toc-universal-frames">Universal Frames</a></li>
+</ul></li>
+<li><a href="possible-worlds-semantics.html#interlude-tolerant-essence" id="toc-interlude-tolerant-essence">Interlude: Tolerant Essence</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#axiomatic-derivations-1" id="toc-axiomatic-derivations-1"><span class="toc-section-number">10</span> Axiomatic Derivations</a>
+<ul>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#the-minimal-modal-logic-k" id="toc-the-minimal-modal-logic-k">The Minimal Modal Logic K</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#normal-modal-systems" id="toc-normal-modal-systems">Normal Modal Systems</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#modal-duality" id="toc-modal-duality">Modal Duality</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#how-to-compare-normal-modal-systems" id="toc-how-to-compare-normal-modal-systems">How to Compare Normal Modal Systems</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#the-reduction-of-pure-modalities" id="toc-the-reduction-of-pure-modalities">The Reduction of Pure Modalities</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="metatheory.html#metatheory" id="toc-metatheory"><span class="toc-section-number">11</span> Metatheory</a>
+<ul>
+<li><a href="metatheory.html#canonical-models" id="toc-canonical-models">Canonical Models</a></li>
+<li><a href="metatheory.html#the-completeness-theorem-for-k" id="toc-the-completeness-theorem-for-k">The Completeness Theorem for K</a></li>
+<li><a href="metatheory.html#more-completeness-theorems" id="toc-more-completeness-theorems">More Completeness Theorems</a></li>
+</ul></li>
+<li class="part"><span><b>IV Selected Applications</b></span></li>
+<li class="has-sub"><a href="epistemic-logic.html#epistemic-logic" id="toc-epistemic-logic"><span class="toc-section-number">12</span> Epistemic Logic</a>
+<ul>
+<li class="has-sub"><a href="epistemic-logic.html#knowledge" id="toc-knowledge">Knowledge</a>
+<ul>
+<li><a href="epistemic-logic.html#information-flow" id="toc-information-flow">Information Flow</a></li>
+<li><a href="epistemic-logic.html#common-knowledge" id="toc-common-knowledge">Common Knowledge</a></li>
+</ul></li>
+<li class="has-sub"><a href="epistemic-logic.html#belief" id="toc-belief">Belief</a>
+<ul>
+<li><a href="epistemic-logic.html#axioms-for-knowledge-and-belief" id="toc-axioms-for-knowledge-and-belief">Axioms for Knowledge and Belief</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="provability-logic.html#provability-logic" id="toc-provability-logic"><span class="toc-section-number">13</span> Provability Logic</a>
+<ul>
+<li><a href="provability-logic.html#arithmetic" id="toc-arithmetic">Arithmetic</a></li>
+<li><a href="provability-logic.html#provability" id="toc-provability">Provability</a></li>
+</ul></li>
+<li class="has-sub"><a href="deontic-logic.html#deontic-logic" id="toc-deontic-logic"><span class="toc-section-number">14</span> Deontic Logic</a>
+<ul>
+<li><a href="deontic-logic.html#obligation" id="toc-obligation">Obligation</a></li>
+<li class="has-sub"><a href="deontic-logic.html#classic-problems" id="toc-classic-problems">Classic Problems</a>
+<ul>
+<li><a href="deontic-logic.html#the-good-samaritan-paradox" id="toc-the-good-samaritan-paradox">The Good Samaritan Paradox</a></li>
+<li><a href="deontic-logic.html#ross-paradox" id="toc-ross-paradox">Ross’ Paradox</a></li>
+<li><a href="deontic-logic.html#chisholms-paradox" id="toc-chisholms-paradox">Chisholm’s Paradox</a></li>
+</ul></li>
+<li><a href="deontic-logic.html#conditional-obligation" id="toc-conditional-obligation">Conditional Obligation</a></li>
+</ul></li>
+<li class="has-sub"><a href="conditionals.html#conditionals" id="toc-conditionals"><span class="toc-section-number">15</span> Conditionals</a>
+<ul>
+<li><a href="conditionals.html#the-problem-of-conditionals" id="toc-the-problem-of-conditionals">The Problem of Conditionals</a></li>
+<li><a href="conditionals.html#the-strict-conditional" id="toc-the-strict-conditional">The Strict Conditional</a></li>
+<li class="has-sub"><a href="conditionals.html#conditional-logic" id="toc-conditional-logic">Conditional Logic</a>
+<ul>
+<li><a href="conditionals.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="conditionals.html#minimal-change-semantics-for-conditional-logic" id="toc-minimal-change-semantics-for-conditional-logic">Minimal Change Semantics for Conditional Logic</a></li>
+<li><a href="conditionals.html#sphere-models-for-counterfactuals" id="toc-sphere-models-for-counterfactuals">Sphere Models for Counterfactuals</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Quantified Modal Logic</b></span></li>
+<li><a href="motivation.html#motivation" id="toc-motivation"><span class="toc-section-number">16</span> Motivation</a></li>
+<li><a href="syntax-3.html#syntax-3" id="toc-syntax-3"><span class="toc-section-number">17</span> Syntax</a></li>
+<li class="has-sub"><a href="axiomatic-derivations-2.html#axiomatic-derivations-2" id="toc-axiomatic-derivations-2"><span class="toc-section-number">18</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations-2.html#quantificational-logic-with-identity" id="toc-quantificational-logic-with-identity">Quantificational Logic with Identity</a></li>
+<li class="has-sub"><a href="axiomatic-derivations-2.html#modal-quantificational-logic-with-identity" id="toc-modal-quantificational-logic-with-identity">Modal Quantificational Logic with Identity</a>
+<ul>
+<li><a href="axiomatic-derivations-2.html#the-barcan-formula" id="toc-the-barcan-formula">The Barcan Formula</a></li>
+<li><a href="axiomatic-derivations-2.html#the-necessity-of-existence" id="toc-the-necessity-of-existence">The Necessity of Existence</a></li>
+</ul></li>
+<li><a href="axiomatic-derivations-2.html#the-necessity-of-identity" id="toc-the-necessity-of-identity">The Necessity of Identity</a></li>
+</ul></li>
+<li class="has-sub"><a href="constant-domain-models.html#constant-domain-models" id="toc-constant-domain-models"><span class="toc-section-number">19</span> Constant Domain Models</a>
+<ul>
+<li class="has-sub"><a href="constant-domain-models.html#free-quantified-modal-logic" id="toc-free-quantified-modal-logic">Free Quantified Modal Logic</a>
+<ul>
+<li><a href="constant-domain-models.html#free-quantificational-logic" id="toc-free-quantificational-logic">Free Quantificational Logic</a></li>
+</ul></li>
+<li><a href="constant-domain-models.html#varieties-of-free-quantified-modal-logic" id="toc-varieties-of-free-quantified-modal-logic">Varieties of Free Quantified Modal Logic</a></li>
+<li><a href="constant-domain-models.html#existence-in-free-quantificational-logic" id="toc-existence-in-free-quantificational-logic">Existence in Free Quantificational Logic</a></li>
+</ul></li>
+<li class="has-sub"><a href="variable-domain-models.html#variable-domain-models" id="toc-variable-domain-models"><span class="toc-section-number">20</span> Variable Domain Models</a>
+<ul>
+<li><a href="variable-domain-models.html#the-inclusion-and-converse-inclusion-requirement" id="toc-the-inclusion-and-converse-inclusion-requirement">The Inclusion and Converse Inclusion Requirement</a></li>
+<li><a href="variable-domain-models.html#the-being-constraint" id="toc-the-being-constraint">The Being Constraint</a></li>
+<li><a href="variable-domain-models.html#positive-semantics-for-quantified-modal-logic" id="toc-positive-semantics-for-quantified-modal-logic">Positive Semantics for Quantified Modal Logic</a></li>
+<li><a href="variable-domain-models.html#negative-semantics-for-quantified-modal-logic" id="toc-negative-semantics-for-quantified-modal-logic">Negative Semantics for Quantified Modal Logic</a></li>
+<li><a href="variable-domain-models.html#neutral-semantics-for-quantified-modal-logic" id="toc-neutral-semantics-for-quantified-modal-logic">Neutral Semantics for Quantified Modal Logic</a></li>
+<li><a href="variable-domain-models.html#a-problem-for-the-being-constraint" id="toc-a-problem-for-the-being-constraint">A Problem for the Being Constraint</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="axiomatic-derivations-2" class="section level1" number="18">
+<h1><span class="header-section-number">18</span> Axiomatic Derivations</h1>
+<p>The simplest quantified modal logic combines the axioms of quantificational logic with identity with the axioms of the minimal normal modal logic K. That will motivate a simple possible worlds model theory for the language, one that has, however, been controversial. In order to be in a position to discuss the framework, we should review the axioms of quantificational logic with identity.</p>
+<div id="quantificational-logic-with-identity" class="section level2 unnumbered">
+<h2>Quantificational Logic with Identity</h2>
+<p>The axioms for quantificational logic with identity include:</p>
+<ul>
+<li><p>Substitution instances of axioms of propositional logic for the expanded language.</p></li>
+<li><p>Substitution instances of the axiom of universal instantiation:</p>
+<p><span class="math display">\[
+\tag{Universal Instantiation}
+\forall x \ \varphi \to \varphi[y/x]
+\]</span>
+where <span class="math inline">\(\varphi[y/x]\)</span> is the formula that results from <span class="math inline">\(\varphi\)</span> from the uniform substitution of occurrences of the variable <span class="math inline">\(y\)</span> for every free occurrence of the variable <span class="math inline">\(x\)</span> in the formula relettering if necessary to make sure that the resulting occurrences of <span class="math inline">\(y\)</span> remain free after the substitution.</p></li>
+<li><p>Substitution instances of axioms for identity for the expanded language:
+<span class="math display">\[ \tag{Reflexivity}
+x=x
+\]</span></p>
+<p><span class="math display">\[\tag{Indiscernibility of Identicals}
+x = y \to (\varphi \to \varphi[y/x])
+\]</span></p></li>
+<li><p>Two rules of inference:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\varphi, \varphi \to \psi / \psi &amp; &amp; \text{(Modus Ponens)}\\
+\varphi \to \psi / \varphi \to \forall x \ \psi, &amp;  \text{provided $x$ is not free in $\psi$}  &amp; \text{(Universal Generalization)}\\
+\\
+\end{array}
+  \]</span></p></li>
+</ul>
+<p>We are in a position prove some derived rules of inference from them:
+<span class="math display">\[
+\begin{array}{lll}
+\varphi / \forall x \ \varphi &amp; \text{provided $x$ is not free in $\varphi$}\\
+\varphi \to \psi / \forall x \ \varphi \to \forall x \ \psi &amp; &amp; \\
+\forall x (\varphi \to \psi)  \to (\forall x \varphi \to \forall x \psi) &amp; &amp; \\
+\end{array}
+\]</span></p>
+</div>
+<div id="modal-quantificational-logic-with-identity" class="section level2 unnumbered">
+<h2>Modal Quantificational Logic with Identity</h2>
+<p>We adopt all substitution instances of the axioms of quanficational logic with identity for the expanded language, which we supplement with the axioms and rules of inference for the minimal normal modal logic:
+<span class="math display">\[
+\begin{array}{lll}
+\Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi) &amp; &amp; (\text{K}) \\
+\varphi / \Box \varphi &amp; &amp; (\text{RN}) \\
+\end{array}
+\]</span></p>
+<p>We now derive three remarkable consequences of the axioms of quantified modal logic with identity.</p>
+<div id="the-converse-barcan-formula" class="section level4 unnumbered">
+<h4>The Converse Barcan Formula</h4>
+<p>One consequence of the axioms is the Converse Barcan Formula (CBF):</p>
+<p><span class="math display">\[\tag{CBF}
+\Box \ \forall x \ \varphi \to \forall x \ \Box \ \varphi
+\]</span>
+Here is a simple derivation schema:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \forall x \ \varphi \to \varphi &amp; &amp;  \text{UI} \\
+2 &amp; &amp; \Box \ \forall x \ \varphi  \to \Box \ \varphi &amp; &amp; \text{RK} \ 1\\
+3 &amp; &amp; ( \Box \ \forall x \ \varphi  \to \Box \ \varphi) \to (\Box \ \forall x \ \varphi \to \forall x \ \Box \ \varphi) &amp; &amp; \text{UG} \ 2 \\
+4 &amp; &amp; \Box \ \forall x \ \varphi  \to \forall x \ \Box \ \varphi &amp; &amp; \text{MP} \ 2, 4\\
+\end{array}
+\]</span>
+The derivability of CBF is philosophically problematic: necessarily, everything is identical to something, but one may question the step to the thesis that everything is necessarily identical to something.</p>
+</div>
+<div id="the-barcan-formula" class="section level3 unnumbered">
+<h3>The Barcan Formula</h3>
+<p>The Barcan Formula (BF) is not a theorem of the simplest quantified modal logic, as we have described it, but its instances become derivable in the presence of axiom schema B.
+<span class="math display">\[\tag{BF}
+\forall x \  \Box \ \varphi \to \Box \ \forall x \ \varphi
+\]</span>
+Given axiom B, we have as a derived rule of inference:
+<span class="math display">\[\tag{DR}
+\Diamond \ \varphi \to \psi/\varphi \to \Box \ \psi
+\]</span>
+Here is a justification for the derived rule in KB:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \Diamond \ \varphi \to \psi &amp; &amp;   \\
+2 &amp; &amp; \Box \ \Diamond \ \varphi \to \Box \ \psi &amp; &amp; \text{RK} \ 1\\
+3 &amp; &amp; \varphi \to \Box \ \Diamond \ \varphi &amp; &amp; \text{B} \\
+4 &amp; &amp; \varphi \to \Box \ \psi &amp; &amp; \text{PL} \ 2, 3\\
+\end{array}
+\]</span>
+We use the derived rule of inference for a derivation of BF in the presence of axiom B:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \forall x \ \Box \varphi \to \Box \varphi &amp; &amp;  \text{UI} \\
+2 &amp; &amp; \Diamond \ \forall x \ \Box \varphi \to \Diamond \ \Box \ \varphi &amp; &amp; \text{RK} \ 1\\
+3 &amp; &amp; \Diamond \ \Box \ \varphi \to \varphi &amp; &amp; \text{B}_\Diamond  \\
+4 &amp; &amp; \Diamond \ \forall x \ \Box \varphi \to \varphi &amp; &amp; \text{PL} \ 2, 3\\
+5 &amp; &amp; (\Diamond \ \forall x \ \Box \varphi \to  \varphi) \to (\Diamond \ \forall x \ \Box \varphi \to \forall x \ \varphi) &amp; &amp; \text{UG} \\
+6 &amp; &amp; \Diamond \ \forall x \ \Box \varphi \to \forall x \ \varphi &amp; &amp; \text{MP} \ 4, 5 \\
+7 &amp; &amp; \forall x \ \Box \varphi \to \Box \ \forall x \ \varphi &amp; &amp; \text{DR} \ 6 \\
+\end{array}
+\]</span>
+The derivability of BF is philosophically problematic: a physicalist may well accept that everything is necessarily a physical object but nevertheless make room for the possibility that non-physical objects exist. More dramatically, consider the converse of BF:</p>
+<p><span class="math display">\[
+\Diamond \ \exists x \ \varphi \to \exists x \ \Diamond \ \varphi.
+\]</span>
+So, for example, if it is possible for there to be unicorns, then something is possibly a unicorn.</p>
+</div>
+<div id="the-necessity-of-existence" class="section level3 unnumbered">
+<h3>The Necessity of Existence</h3>
+<p>Existence is generally understood in terms of quantification and identity: to exist is to be identical with something. But the simplest quantified modal logic has the resources to prove that everything is necessarily identical to something, which would appear to mean that necessarily, everything — including you and me — necessarily exists.</p>
+<p>Here is a simple derivation:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; x= x &amp; &amp; \text{RI} \\
+2 &amp; &amp; x = x \to \exists y \ x = y &amp; &amp; \text{EG} \\
+3 &amp; &amp; \Box \ x = x &amp; &amp; \text{RN} \ 1\\
+4 &amp; &amp; \Box \ x = x \to \Box \ \exists y \ x = y &amp;  &amp; \text{RK} \ 2\\
+5 &amp; &amp; \Box \ \exists y \ x = y &amp; &amp; \text{MP} \ 3, 4\\
+6 &amp; &amp; \forall x \ \Box \ \exists y \ x = y &amp; &amp;  \text{UG} \ 5\\  
+\end{array}
+\]</span>
+Since we can necessitate the conclusion, we find that the simplest quantified modal logic proves that it is necessary that everything necessarily exists. This is another problematic consequence of the system.</p>
+</div>
+</div>
+<div id="the-necessity-of-identity" class="section level2 unnumbered">
+<h2>The Necessity of Identity</h2>
+<p>We are in a position to establish the necessity of identity.</p>
+<p><span class="math display">\[
+\tag{NI}
+x= y \to \Box \ x = y
+\]</span></p>
+<p>Here is a derivation:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  x = y \to (\Box  \ x=x \to \Box \ x =y) &amp; &amp;  \text{II} \\
+2 &amp; &amp; x = x &amp; &amp; \text{RI} \\
+3 &amp; &amp; \Box \ x=x  &amp; &amp;  \text{RN} \ 2 \\
+4 &amp; &amp; x=y \to \Box \ x =y &amp; &amp; \text{PL} \ 1, 3 \\
+\end{array}
+\]</span>
+In the presence of axiom B, we can derive the necessity of distinctness:
+<span class="math display">\[
+\begin{array}{lll}
+x \neq y \to \Box \ x \neq y &amp; &amp;  \text{ND} \\
+\end{array}
+\]</span>
+Here is a simple argument:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \Diamond \  x \neq y \to x \neq y &amp; &amp;  \text{NI} \\
+2 &amp; &amp; \Box \ \Diamond \  x \neq y \to \Box \ x \neq y &amp; &amp; \text{RK} \ 1\\
+3 &amp; &amp; x \neq y \to \Box \ \Diamond x \neq y &amp; &amp; \text{B} \\
+4 &amp; &amp; x \neq y \to \Box \ x \neq y &amp; &amp; \text{PL} \ 2, 3\\
+\end{array}
+\]</span>
+The role of axiom B is crucial for the proof. Otherwise, we can provide a model of contingent distinctness by construing identity as indiscernibility and providing a model in which to discernable objects <em>can</em> become indiscernible at a world to which no other world in which the objects exemplify distinct properties is accessible.</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="syntax-3.html"><button class="btn btn-default">Previous</button></a>
+<a href="constant-domain-models.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

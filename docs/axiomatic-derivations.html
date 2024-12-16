@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="6 Axiomatic Derivations | Modal Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 452: Modal Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+<meta name="date" content="2024-12-16" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 452: Modal Logic.">
+
+<title>6 Axiomatic Derivations | Modal Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Background</b></span></li>
+<li><a href="introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li class="has-sub"><a href="sets-and-relations.html#sets-and-relations" id="toc-sets-and-relations"><span class="toc-section-number">2</span> Sets and Relations</a>
+<ul>
+<li><a href="sets-and-relations.html#sets" id="toc-sets">Sets</a></li>
+<li><a href="sets-and-relations.html#relations" id="toc-relations">Relations</a></li>
+<li><a href="sets-and-relations.html#properties-of-relations" id="toc-properties-of-relations">Properties of Relations</a></li>
+</ul></li>
+<li><a href="mathematical-induction.html#mathematical-induction" id="toc-mathematical-induction"><span class="toc-section-number">3</span> Mathematical Induction</a></li>
+<li class="part"><span><b>II Propositional Language</b></span></li>
+<li><a href="syntax.html#syntax" id="toc-syntax"><span class="toc-section-number">4</span> Syntax</a></li>
+<li><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">5</span> Semantics</a></li>
+<li class="has-sub"><a href="axiomatic-derivations.html#axiomatic-derivations" id="toc-axiomatic-derivations"><span class="toc-section-number">6</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations.html#the-deduction-theorem" id="toc-the-deduction-theorem">The Deduction Theorem</a></li>
+<li><a href="axiomatic-derivations.html#maximal-consistency" id="toc-maximal-consistency">Maximal Consistency</a></li>
+</ul></li>
+<li><a href="completeness.html#completeness" id="toc-completeness"><span class="toc-section-number">7</span> Completeness</a></li>
+<li class="part"><span><b>III Modal Propositional Logic</b></span></li>
+<li><a href="syntax-1.html#syntax-1" id="toc-syntax-1"><span class="toc-section-number">8</span> Syntax</a></li>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">9</span> Semantics</a>
+<ul>
+<li><a href="semantics-1.html#frames" id="toc-frames">Frames</a></li>
+<li><a href="semantics-1.html#frame-definability" id="toc-frame-definability">Frame Definability</a></li>
+<li><a href="semantics-1.html#bisimulations" id="toc-bisimulations">Bisimulations</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#axiomatic-derivations-1" id="toc-axiomatic-derivations-1"><span class="toc-section-number">10</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#the-minimal-modal-logic-k" id="toc-the-minimal-modal-logic-k">The Minimal Modal Logic K</a></li>
+<li><a href="axiomatic-derivations-1.html#normal-modal-systems" id="toc-normal-modal-systems">Normal Modal Systems</a></li>
+</ul></li>
+<li class="has-sub"><a href="metatheory.html#metatheory" id="toc-metatheory"><span class="toc-section-number">11</span> Metatheory</a>
+<ul>
+<li><a href="metatheory.html#canonical-models" id="toc-canonical-models">Canonical Models</a></li>
+<li><a href="metatheory.html#completeness-1" id="toc-completeness-1">Completeness</a></li>
+</ul></li>
+<li class="part"><span><b>IV Selected Applications</b></span></li>
+<li class="has-sub"><a href="epistemic-logic.html#epistemic-logic" id="toc-epistemic-logic"><span class="toc-section-number">12</span> Epistemic Logic</a>
+<ul>
+<li><a href="epistemic-logic.html#knowledge" id="toc-knowledge">Knowledge</a></li>
+<li><a href="epistemic-logic.html#belief" id="toc-belief">Belief</a></li>
+</ul></li>
+<li class="has-sub"><a href="provability-logic.html#provability-logic" id="toc-provability-logic"><span class="toc-section-number">13</span> Provability Logic</a>
+<ul>
+<li><a href="provability-logic.html#arithmetic" id="toc-arithmetic">Arithmetic</a></li>
+<li><a href="provability-logic.html#provability" id="toc-provability">Provability</a></li>
+</ul></li>
+<li class="has-sub"><a href="deontic-logic.html#deontic-logic" id="toc-deontic-logic"><span class="toc-section-number">14</span> Deontic Logic</a>
+<ul>
+<li><a href="deontic-logic.html#obligation" id="toc-obligation">Obligation</a></li>
+<li><a href="deontic-logic.html#classic-problems" id="toc-classic-problems">Classic Problems</a></li>
+<li><a href="deontic-logic.html#conditional-obligation" id="toc-conditional-obligation">Conditional Obligation</a></li>
+</ul></li>
+<li class="has-sub"><a href="conditionals.html#conditionals" id="toc-conditionals"><span class="toc-section-number">15</span> Conditionals</a>
+<ul>
+<li><a href="conditionals.html#the-problem-of-conditionals" id="toc-the-problem-of-conditionals">The Problem of Conditionals</a></li>
+<li><a href="conditionals.html#the-strict-conditional" id="toc-the-strict-conditional">The Strict Conditional</a></li>
+<li><a href="conditionals.html#conditional-logic" id="toc-conditional-logic">Conditional Logic</a></li>
+</ul></li>
+<li class="part"><span><b>V Quantified Modal Logic</b></span></li>
+<li class="has-sub"><a href="syntax-3.html#syntax-3" id="toc-syntax-3"><span class="toc-section-number">16</span> Syntax</a>
+<ul>
+<li><a href="syntax-3.html#the-simplest-quantificational-modal-logic" id="toc-the-simplest-quantificational-modal-logic">The Simplest Quantificational Modal Logic</a></li>
+<li><a href="syntax-3.html#free-quantified-modal-logic" id="toc-free-quantified-modal-logic">Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#varieties-of-free-quantified-modal-logic" id="toc-varieties-of-free-quantified-modal-logic">Varieties of Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#existence-in-free-quantificational-logic" id="toc-existence-in-free-quantificational-logic">Existence in Free Quantificational Logic</a></li>
+</ul></li>
+<li class="has-sub"><a href="semantics-2.html#semantics-2" id="toc-semantics-2"><span class="toc-section-number">17</span> Semantics</a>
+<ul>
+<li><a href="semantics-2.html#constant-domain-models" id="toc-constant-domain-models">Constant Domain Models</a></li>
+<li><a href="semantics-2.html#variable-domain-models" id="toc-variable-domain-models">Variable Domain Models</a></li>
+</ul></li>
+<li class="has-sub"><a href="the-being-constraint.html#the-being-constraint" id="toc-the-being-constraint"><span class="toc-section-number">18</span> The Being Constraint</a>
+<ul>
+<li><a href="the-being-constraint.html#positive-semantics-for-quantified-modal-logic" id="toc-positive-semantics-for-quantified-modal-logic">Positive Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#negative-semantics-for-quantified-modal-logic" id="toc-negative-semantics-for-quantified-modal-logic">Negative Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#neutral-semantics-for-quantified-modal-logic" id="toc-neutral-semantics-for-quantified-modal-logic">Neutral Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#a-problem-for-the-being-constraint" id="toc-a-problem-for-the-being-constraint">A Problem for the Being Constraint</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="axiomatic-derivations" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Axiomatic Derivations</h1>
+<p>We now present an axiom system for propositional logic, which will consist of an infinite set of axioms and a single rule of inference. A derivation of a well-formed formula from a set of formulas will consist of a finite sequence of formulas each of whose members will either be an axiom or a premise or the output of an application of the rule of inference to prior members of the sequence.</p>
+<p>There is one ingredient we will use for the specification of the infinite set of axioms. If <span class="math inline">\(\varphi\)</span> is a propositional formula whose propositional variables are <span class="math inline">\(p_1, ..., p_n\)</span> and <span class="math inline">\(\psi_1\)</span>, …, <span class="math inline">\(\psi_n\)</span> are propositional formulas, we write
+<span class="math display">\[
+\varphi[\psi_1/p_1, ..., \psi_n/p_n]
+\]</span>
+for the well-formed formula that results from <span class="math inline">\(\varphi\)</span> when each propositional variable <span class="math inline">\(p_i\)</span> is substituted for the well-formed formula <span class="math inline">\(\psi_i\)</span>. We will call <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> a substitution instance of <span class="math inline">\(\varphi\)</span>.</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-47" class="definition"><strong>Definition 6.1  (Uniform Substitution) </strong></span>Given a well-formed formula <span class="math inline">\(\varphi\)</span> whose propositional variables are among <span class="math inline">\(p_1, \dots, p_n\)</span> and well-formed formulas <span class="math inline">\(\psi_1, \dots, \psi_n\)</span>, define <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> inductively:</p>
+<ul>
+<li><p>If <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(p_i\)</span>, <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> is <span class="math inline">\(\psi_i\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\neg \chi\)</span>, <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_m]\)</span> is <span class="math inline">\(\neg \chi[\psi_1/p_1, ..., \psi_n/p_m]\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> is <span class="math inline">\((\chi \to \rho)\)</span>, then <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> is <span class="math inline">\((\chi[\psi_1/p_1, ..., \psi_n/p_n]\to \rho[\psi_1/p_1, ..., \psi_n/p_n])\)</span>.</p></li>
+</ul>
+</div>
+<p>We are now in a position to define the set of axioms of the system:</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 6.2  (Axiom) </strong></span>A well-formed formula <span class="math inline">\(\varphi\)</span> is an <em>axiom</em> if, and only if, it is a substitution instance of one of the well-formed formulas below:
+<span class="math display">\[
+\begin{array}{lll}
+A1 &amp; &amp; p \to (q \to p)\\
+A2 &amp; &amp; (p \to (q \to r)) \to ((p \to q) \to (p \to r))\\
+A3 &amp; &amp; (\neg p \to \neg q) \to ((\neg p \to q) \to p)
+\end{array}
+\]</span></p>
+</div>
+<p>We will use a single rule of inference, which we call <em>Modus Ponens</em> (MP). The rule in question will enable us to move from two formulas of the form <span class="math inline">\(\varphi\)</span> and <span class="math inline">\((\varphi \to \psi)\)</span> to the formula <span class="math inline">\(\psi\)</span>.</p>
+<p><span class="math display">\[\tag{MP}
+\varphi, \ (\varphi \to \psi)/\psi
+\]</span></p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-49" class="definition"><strong>Definition 6.3  (Derivability) </strong></span>A well-formed formula <span class="math inline">\(\varphi\)</span> is <em>derivable</em> from a set of well-formed formulas <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \vdash \varphi\)</span>, if, and only if, there is a finite sequence of well-formed formulas <span class="math inline">\((\chi_1, \dots , \chi_n)\)</span> such that</p>
+<ul>
+<li><p><span class="math inline">\(\chi_n = \varphi\)</span></p></li>
+<li><p>for each <span class="math inline">\(m \leq n\)</span>, either</p>
+<ul>
+<li><span class="math inline">\(\chi_m\)</span> is an axiom, or</li>
+<li><span class="math inline">\(\chi_m \in \Gamma\)</span>, or</li>
+<li><span class="math inline">\(\chi_k = (\chi_l \to \chi_m)\)</span>, for some <span class="math inline">\(k, l &lt;m\)</span>.</li>
+</ul></li>
+</ul>
+<p>Such a finite sequence <span class="math inline">\(( \chi_1, ..., \chi_n )\)</span> is called a <em>derivation</em> (or a <em>proof</em>) of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>.</p>
+</div>
+<p>So, a formula appears in a derivation if, and only if, it is either an axiom or a premise or the output of an application of modus ponens to two earlier members of the sequence.</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-50" class="definition"><strong>Definition 6.4  (Theorem) </strong></span>A well-formed formula <span class="math inline">\(\varphi\)</span> is a <em>theorem</em>, written <span class="math inline">\(\vdash \varphi\)</span>, if, and only if, <span class="math inline">\(\emptyset \vdash \varphi\)</span>.</p>
+</div>
+<p>We will write <span class="math inline">\(\nvdash \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is <em>not</em> a theorem.</p>
+<p>Here is a simple example of a derivation:</p>
+<div class="example" style="color:green;">
+<p><span id="exm:unlabeled-div-51" class="example"><strong>Example 6.1  </strong></span><span class="math inline">\(\vdash p \to p\)</span>
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; p \to ((p \to p) \to p) &amp; A1[p/p, (p \to p)/q]\\
+2 &amp; &amp; (p \to ((p \to p) \to p))\to ((p \to (p \to p)) \to (p \to p)) &amp; A2[p/p, (p \to p)/q, p/r]\\
+3 &amp; &amp; (p \to (p \to p)) \to (p \to p) &amp; \text{MP} \ 1, 2\\
+4 &amp; &amp; p \to (p \to p) &amp; A1[p/p, p/q]\\
+5 &amp; &amp; p \to p &amp; \text{MP} \ 3, 4\\
+\end{array}
+\]</span></p>
+</div>
+<p>It is not difficult to generalize this argument into a schematic derivation of <span class="math inline">\(\varphi \to \varphi\)</span> from no premises:
+<span class="math display">\[
+\vdash \varphi \to \varphi
+\]</span>
+We will soon develop a library of subroutines, which will facilitate the discussion of the question of whether a given formula is derivable from a set of formulas.</p>
+<div id="the-deduction-theorem" class="section level2 unnumbered">
+<h2>The Deduction Theorem</h2>
+<p>We will rely on a very general result. First, some notational conventions. We write <span class="math inline">\(\Gamma, \varphi\)</span> to abbreviate: <span class="math inline">\(\Gamma \cup \{\varphi\}\)</span>. And we will similarly write <span class="math inline">\(\varphi \vdash \psi\)</span> to abbreviate: <span class="math inline">\(\{\varphi\} \vdash \psi\)</span>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-52" class="theorem"><strong>Theorem 6.1  </strong></span>Given a set of well-formed formulas <span class="math inline">\(\Gamma\)</span> and two well-formed formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span> if, and only if, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+</div>
+<p>One direction is simple:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-53" class="theorem"><strong>Theorem 6.2  </strong></span>Given a set of well-formed formulas <span class="math inline">\(\Gamma\)</span> and two well-formed formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>, then <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-54" class="proof"><em>Proof</em>. </span>To obtain a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, we may extend a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span> with two additional steps: <span class="math inline">\(\varphi\)</span>, which being a member of <span class="math inline">\(\Gamma, \varphi\)</span>, is available as a premise, and <span class="math inline">\(\psi\)</span> which is the output of Modus Ponens when applied to <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>.</p>
+</div>
+<p>The other direction is the deduction theorem, which requires a more involved justification:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-55" class="theorem"><strong>Theorem 6.3  (The Deduction Theorem) </strong></span>Given a set of well-formed formulas <span class="math inline">\(\Gamma\)</span> and two well-formed formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-56" class="proof"><em>Proof</em>. </span>Choose a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>. We will use a <em>complete induction</em> on <span class="math inline">\(n\)</span> to prove that for every non-zero <span class="math inline">\(n\)</span>:</p>
+<ul>
+<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+</ul>
+<p>That is, we argue that</p>
+<ul>
+<li>if <em>that</em> is true for every <span class="math inline">\(m &lt; n\)</span>, then <em>it</em> is true for <span class="math inline">\(n\)</span> as well,</li>
+</ul>
+<p>So, we begin with the assumption:</p>
+<ul>
+<li>for <em>every</em> <span class="math inline">\(m &lt; n\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
+</ul>
+<p>We want to prove that</p>
+<ul>
+<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+</ul>
+<p>Consider a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of the form:
+<span class="math display">\[
+( \chi_1, ..., \chi_{n})
+\]</span>
+That means that <span class="math inline">\(\chi_{n}= \psi\)</span>.</p>
+<p>There are four cases to consider:</p>
+<p><strong>Case 1</strong>. <span class="math inline">\(\psi\)</span> is a logical axiom.</p>
+<p>Here is a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>:
+<span class="math display">\[
+\begin{array}{lll}
+1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; A1[\psi/p, \varphi/q]\\
+2 &amp; &amp; \psi &amp; \\
+3 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ 1, 2\\
+\end{array}
+\]</span></p>
+<p><strong>Case 2</strong>. <span class="math inline">\(\psi \in \Gamma\)</span></p>
+<p>Here is a similar derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>:
+<span class="math display">\[
+\begin{array}{lll}
+1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; A1[\psi/p, \varphi/q]\\
+2 &amp; &amp; \psi &amp;  \\
+3 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ 1, 2\\
+\end{array}
+\]</span>
+<strong>Case 3</strong>. <span class="math inline">\(\psi = \varphi\)</span></p>
+<p>Since <span class="math inline">\(\vdash \varphi \to \varphi\)</span>, a derivation of <span class="math inline">\(\varphi \to \varphi\)</span> is a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>. Therefore <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+<p><strong>Case 4</strong>. <span class="math inline">\(\chi_k = (\chi_l \to \psi)\)</span> for some <span class="math inline">\(k, l &lt; n\)</span></p>
+<p>That means that <span class="math inline">\((\chi_l \to \psi)\)</span> and <span class="math inline">\(\chi_l\)</span> are each in the sequence, which means that there are derivations <span class="math inline">\((\chi_1 \dots, \chi_l \to \psi)\)</span> and <span class="math inline">\((\chi_1, \dots, \chi_l)\)</span> of each formula <span class="math inline">\(\chi_l \to \psi\)</span> and <span class="math inline">\(\chi_l\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(&lt; n\)</span>.</p>
+<p>Since both derivations have length strictly less than <span class="math inline">\(n\)</span>, by inductive hypothesis, <span class="math inline">\(\Gamma \vdash \varphi \to (\chi_l \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \varphi \to \chi_l\)</span>.</p>
+<p>To build a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>, we may concatenate derivations of <span class="math inline">\(\varphi \to (\chi_1 \to \psi)\)</span> and <span class="math inline">\(\varphi \to \chi_l\)</span>, respectively, from <span class="math inline">\(\Gamma\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+&amp; &amp; ... &amp; \\
+&amp; &amp; \vdots &amp; \\
+k &amp; &amp; \varphi \to  (\chi_l \to \psi) &amp; \Gamma \vdash  \varphi \to  (\chi_l \to \psi) \\
+&amp; &amp; \vdots &amp; \\
+m &amp; &amp; \varphi \to  \chi_l &amp; \Gamma \vdash  \varphi \to  \chi_l\\
+&amp; &amp; \vdots &amp; \\
+n&amp; &amp; ((\varphi \to (\chi_1 \to \psi)) \to ((\varphi \to \chi_l)\to (\varphi \to \psi)) &amp; A2[\varphi/p,\chi_l/q,\psi/r]\\
+n+1&amp; &amp; (\varphi \to \chi_l)\to (\varphi \to \psi) &amp; \text{MP} \ k, n\\
+n+2 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ m, n+1\\
+\end{array}
+\]</span>
+We conclude that given <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(( \chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+</div>
+<p>The deduction theorem encodes a common method of proof in mathematics. When you want to establish a conditional <span class="math inline">\(\varphi \to \psi\)</span> in a mathematical context, you may adjoin <span class="math inline">\(\varphi\)</span> to the body of mathematical assumptions in place <span class="math inline">\(\Gamma\)</span> and once <span class="math inline">\(\psi\)</span> is justified on that basis, you may conclude that <span class="math inline">\(\varphi \to \psi\)</span> is a deductive consequence of the original assumptions.</p>
+<p>We will now make use of the Deduction Theorem in order to prove a variety of helpful facts, which will facilitate the use of the axiom system.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-57" class="lemma"><strong>Lemma 6.1  </strong></span><span class="math inline">\(\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-58" class="proof"><em>Proof</em>. </span>Given the Deduction Theorem, it suffices to note:
+<span class="math display">\[
+\{\varphi \to \psi \} \vdash (\psi \to \chi) \to (\varphi \to \chi).
+\]</span>
+But given the Deduction Theorem, this reduces to:
+<span class="math display">\[
+\{ \varphi \to \psi, \psi \to \chi\} \vdash \varphi \to \chi,
+\]</span>
+and
+<span class="math display">\[
+\{\varphi \to \psi, \psi \to \chi, \varphi\} \vdash \chi.
+\]</span>
+But it is simple to provide a derivation of <span class="math inline">\(\chi\)</span> from <span class="math inline">\(\{\varphi \to \psi, \psi \to \chi, \varphi\}\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \varphi \to \psi &amp; \text{Premise} \\
+2 &amp; &amp; \varphi &amp;  \text{Premise} \\
+3 &amp; &amp; \psi &amp; \text{MP} \ 1, 2 \\
+4 &amp; &amp; \psi \to \chi &amp; \text{Premise} \\
+5 &amp; &amp; \chi &amp; MP \ 3, 4\\
+\end{array}
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-59" class="lemma"><strong>Lemma 6.2  </strong></span><span class="math inline">\(\vdash (\neg \psi \to \neg \varphi) \to (\varphi \to \psi)\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-60" class="proof"><em>Proof</em>. </span>Given the Deduction Theorem, it suffices to note:
+<span class="math display">\[
+\{\neg \psi \to \neg \varphi\}\vdash \varphi \to \psi,
+\]</span>
+which would in turn follow from the observation:
+<span class="math display">\[
+\{\neg \psi \to \neg \varphi, \varphi\} \vdash \psi.
+\]</span>
+We provide a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\{\neg \psi \to \neg \varphi, \varphi\}\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \psi \to \neg \varphi &amp;  \text{Premise}\\
+2 &amp; &amp; \varphi \to (\neg \psi \to \varphi) &amp; A1[\varphi/p,\neg \psi/q]\\
+3 &amp; &amp; \varphi &amp;  \text{Premise}\\
+4 &amp; &amp; \neg \psi \to \varphi &amp; \text{MP} \ 2, 3\\
+5 &amp; &amp; (\neg \psi \to \neg \varphi) \to ((\neg \psi \to \varphi) \to \psi) &amp; A3[\psi/p, \varphi/q]\\
+6 &amp; &amp; (\neg \psi \to \varphi) \to \psi &amp; \text{MP} \ 1, 5\\
+7 &amp; &amp; \psi &amp; \text{MP} \ 4, 6
+\end{array}
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-61" class="lemma"><strong>Lemma 6.3  </strong></span><span class="math inline">\(\vdash \neg \neg \varphi \to \varphi\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-62" class="proof"><em>Proof</em>. </span>Given the Deduction Theorem, it suffices to note:
+<span class="math display">\[
+\neg \neg \varphi \vdash \varphi
+\]</span>
+Here is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\neg \neg \varphi\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \neg \varphi \to (\neg \varphi \to \neg \neg \varphi) &amp; A1[\neg\neg\varphi/p, \neg \varphi/q]\\
+2 &amp; &amp; \neg \neg \varphi &amp; \text{Premise} \\
+3 &amp; &amp; \neg \varphi \to \neg \neg \varphi &amp; \text{MP} \ 1, 2 \\
+4 &amp; &amp; (\neg \varphi \to \neg \neg \varphi) \to ((\neg \varphi \to \neg \varphi) \to \varphi) &amp; A3[\varphi/p, \neg \varphi/q]\\
+5 &amp; &amp; (\neg \varphi \to \neg \varphi) \to \varphi &amp; \text{MP} \ 3, 4\\
+6 &amp; &amp; \neg \varphi \to \neg \varphi &amp; \vdash \neg \varphi \to \neg \varphi\\
+7 &amp; &amp; \varphi &amp; \text{MP} \ 5, 6
+\end{array}
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-63" class="lemma"><strong>Lemma 6.4  </strong></span><span class="math inline">\(\vdash \varphi \to \neg \neg \varphi\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-64" class="proof"><em>Proof</em>. </span>We exploit the last two observations to produce a simple derivation of <span class="math inline">\(\varphi \to \neg \neg \varphi\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \neg \neg \varphi \to \neg \varphi &amp; \text{Lemma} \ 3.3\\
+2 &amp; &amp; (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \text{Lemma} \ 3.2\\
+3 &amp; &amp; \varphi \to \neg \neg \varphi &amp; \text{MP} \ 1, 2
+\end{array}
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-65" class="lemma"><strong>Lemma 6.5  </strong></span><span class="math inline">\(\vdash (\varphi \to \psi) \to (\neg \psi \to \neg \varphi)\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-66" class="proof"><em>Proof</em>. </span>Given the Deduction Theorem, it suffices to establish:
+<span class="math display">\[
+\{\varphi \to \psi \} \vdash \neg \psi \to \neg \varphi,
+\]</span>
+and
+<span class="math display">\[
+\{\varphi \to \psi, \neg \psi\} \vdash \neg \varphi.
+\]</span>
+Here is a derivation of <span class="math inline">\(\neg \varphi\)</span> from <span class="math inline">\(\{\varphi \to \psi, \neg \psi\}\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \varphi \to \psi &amp;  \\
+2 &amp; &amp; \psi \to \neg \neg \psi &amp; \text{Lemma} \ 3.4\\
+3 &amp; &amp; \neg \neg \varphi \to \varphi &amp; \text{Lemma} \ 3.3\\
+4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \text{Lemma} \ 1 \\
+5 &amp; &amp; (\varphi \to \psi) \to (\neg \neg \varphi \to \psi) &amp; \text{MP} \ 3, 4 \\
+6 &amp; &amp; \neg \neg \varphi \to \psi &amp; \text{MP} \ 1, 4 \\
+7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \text{Lemma} \ 4.1 \\
+8 &amp; &amp; (\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi) &amp; \text{MP} \ 6, 7\\
+9 &amp; &amp; \neg \neg \varphi \to \neg \neg \psi &amp; \text{MP} \ 2, 8\\
+10 &amp; &amp; (\neg \neg \varphi \to \neg \neg \psi) \to (\neg \psi \to \neg \varphi) &amp; \text{Lemma} \ 3.2\\
+11 &amp; &amp; \neg \psi \to \neg \varphi &amp; \text{MP} \ 9, 10
+\end{array}
+\]</span></p>
+</div>
+<div class="exercise" style="color:brown;">
+<p><span id="exr:unlabeled-div-67" class="exercise"><strong>Exercise 6.1  </strong></span>Use these lemmas in order to justify:
+<span class="math display">\[
+\vdash (\varphi \to \neg \varphi) \to \neg \varphi
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-68" class="lemma"><strong>Lemma 6.6  </strong></span><span class="math inline">\(\vdash \neg  \varphi \to (\varphi \to \psi)\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-69" class="proof"><em>Proof</em>. </span>Given the Deduction Theorem, it suffices to show:
+<span class="math display">\[
+\{\neg \varphi, \varphi \}\vdash \psi
+\]</span>
+Here is an outline of a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\{\neg \varphi, \varphi\}\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \varphi \to (\neg \psi \to \neg \varphi) &amp;  A1[\neg \varphi/p, \neg \psi/q] \\
+2 &amp; &amp;  \neg \varphi &amp; \text{Premise}\\
+3 &amp; &amp;  (\neg \psi \to \neg \varphi) &amp; \text{MP 1, 2}\\
+4 &amp; &amp;  \varphi \to \psi &amp; 3, \ \text{Lemma 3.2}\\
+5 &amp; &amp; \varphi  &amp; \text{Premise}\\
+6 &amp; &amp; \psi  &amp; \text{MP 4, 5}\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div id="maximal-consistency" class="section level2 unnumbered">
+<h2>Maximal Consistency</h2>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-70" class="definition"><strong>Definition 6.5  (Consistency) </strong></span>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\bot\)</span> is not derivable from <span class="math inline">\(\Gamma\)</span>. That is, <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\Gamma \nvdash \bot\)</span>.</p>
+</div>
+<p>We write that a set <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma\)</span> is <em>not</em> consistent. That is, <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma \vdash \bot\)</span>. Recall the definition of <span class="math inline">\(\bot\)</span> in terms of <span class="math inline">\(\top\)</span>:
+<span class="math display">\[
+\bot := \neg \top.
+\]</span>
+Since <span class="math inline">\(\top\)</span> is an abbreviation for the formula <span class="math inline">\(p \to p\)</span>, <span class="math inline">\(\bot\)</span> is an abbreviation for <span class="math inline">\(\neg (p \to p)\)</span>.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-71" class="proposition"><strong>Proposition 6.1  </strong></span>Given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>,
+<span class="math display">\[
+\begin{array}{lll}
+\Gamma \vdash \varphi &amp;  \text{iff} &amp; \Gamma, \neg \varphi \ \ \text{is inconsistent}.\\
+\end{array}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-72" class="proof"><em>Proof</em>. </span>We discuss one direction at a time.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>.</p>
+<p>To that purpose we use the fact that a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span> is automatically a derivation of <span class="math inline">\(\varphi\)</span> from the larger set <span class="math inline">\(\Gamma, \neg \varphi\)</span>. We use this fact to produce a derivation of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Gamma, \neg \varphi\)</span>.
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \varphi \to (\neg \bot \to \neg  \varphi) &amp; A1[\neg \varphi/p, \bot/q]  \\
+2 &amp; &amp; \neg \varphi &amp; \text{Premise}\\
+3 &amp; &amp; \neg \bot \to \neg \varphi &amp; \text{MP 1, 2}\\
+4 &amp; &amp; \varphi \to \bot &amp; \text{3, Lemma 3.2}\\
+5 &amp; &amp; \varphi  &amp; \Gamma, \neg \varphi \vdash \varphi\\
+6 &amp; &amp; \bot &amp; \text{MP 4, 5}\\
+\end{array}
+\]</span></p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) We want to prove that if <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
+<p>We use the Deduction Theorem to move from <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span> to <span class="math inline">\(\Gamma \vdash \neg \varphi \to \bot\)</span>. Since <span class="math inline">\(\Gamma, \neg \varphi \vdash \top\)</span>, by lemma 3.4, <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \neg \top\)</span>, which means <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \bot\)</span>. So, by the Deduction Theorem, <span class="math inline">\(\Gamma \vdash \neg \varphi \to \neg \bot\)</span>.</p>
+<p>We now outline a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>:
+<span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \varphi \to  \neg \bot &amp; \Gamma \vdash \neg \varphi \to \neg \bot  \\
+2 &amp; &amp; (\neg \varphi \to  \neg \bot)  \to ((\neg \varphi \to  \bot) \to \varphi) &amp; A3[\varphi/p, \bot/q]\\
+3 &amp; &amp; (\neg \varphi \to  \bot) \to \varphi &amp; \text{MP 1, 2}\\
+4 &amp; &amp; \neg \varphi \to \bot &amp;  \Gamma \vdash \neg \varphi \to \bot \\
+5 &amp; &amp; \varphi &amp; \text{MP 3, 4}\\
+\end{array}
+\]</span></p>
+</div>
+<p>We now define what is for a set of formulas to be maximal consistent.</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-73" class="definition"><strong>Definition 6.6  (Maximal Consistency) </strong></span>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>maximal consistent</em> if, and only if,</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\Gamma\)</span> is consistent, and</p></li>
+<li><p>for every <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
+</ol>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-74" class="proposition"><strong>Proposition 6.2  </strong></span>Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>,</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\Gamma \vdash \varphi\)</span> if, and only if, <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
+<li><p><span class="math inline">\(\neg \varphi \in \Gamma\)</span> if, and only if, <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p></li>
+<li><p><span class="math inline">\(\varphi \to \psi \in \Gamma\)</span> if, and only if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</p></li>
+</ol>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-75" class="proof"><em>Proof</em>. </span>Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, consider each claim at a time.</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\Gamma \vdash \varphi\)</span> if, and only if, <span class="math inline">\(\varphi \in \Gamma\)</span>.</li>
+</ol>
+<blockquote>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Suppose <span class="math inline">\(\Gamma \vdash \varphi\)</span>. We proceed by reductio. Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. By definition of maximal consistency, if <span class="math inline">\(\Gamma\)</span> is maximal consistent and <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. But since <span class="math inline">\(\Gamma \vdash \varphi\)</span>, by proposition 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is inconsistent as well. It follows that <span class="math inline">\(\Gamma\)</span> is inconsistent, which contradicts its maximal consistency.<label for="tufte-sn-4" class="margin-toggle sidenote-number">4</label><input type="checkbox" id="tufte-sn-4" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">4</span> This is problem 3 in assignment 2.</span> We conclude that <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) We argue that if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>If <span class="math inline">\(\varphi \in \Gamma\)</span>, then there is a one-line derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>.</p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><span class="math inline">\(\neg \varphi \in \Gamma\)</span> if, and only if, <span class="math inline">\(\varphi \notin \Gamma\)</span>.</li>
+</ol>
+<blockquote>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\neg \varphi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Suppose <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Then, by 1 above, <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. Since <span class="math inline">\(\Gamma\)</span> is consistent, <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, which, by 1 above, means <span class="math inline">\(\varphi \notin \Gamma\)</span>.<label for="tufte-sn-5" class="margin-toggle sidenote-number">5</label><input type="checkbox" id="tufte-sn-5" class="margin-toggle"><span class="sidenote"><span class="sidenote-number">5</span> If <span class="math inline">\(\Gamma \vdash \varphi\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \bot\)</span>. This is because by lemma 3.6, <span class="math inline">\(\Gamma \vdash \neg \varphi \to (\varphi \to \bot)\)</span>.</span></p>
+</blockquote>
+<blockquote>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) We show that if <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Gamma\)</span> is maximal consistent, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Given lemmas 3.3 and 3.4, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent if, and only if, <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent. So, since <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent, we conclude, by proposition 3.6, that <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. So, by 1 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><span class="math inline">\(\varphi \to \psi \in \Gamma\)</span> if, and only if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</li>
+</ol>
+<blockquote>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>, then if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Suppose <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>. Then, given 1 above, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. Now: if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span> and <span class="math inline">\(\Gamma \vdash \psi\)</span>, whence <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) We show that if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then given 2 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Since lemma 3.6 gives us that <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, we infer <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
+</blockquote>
+<blockquote>
+<p>If <span class="math inline">\(\psi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash \psi \to (\varphi \to \psi)\)</span>, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="semantics.html"><button class="btn btn-default">Previous</button></a>
+<a href="completeness.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

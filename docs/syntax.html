@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="4 Syntax | Modal Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 452: Modal Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+<meta name="date" content="2024-12-16" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 452: Modal Logic.">
+
+<title>4 Syntax | Modal Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Background</b></span></li>
+<li><a href="introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li class="has-sub"><a href="sets-and-relations.html#sets-and-relations" id="toc-sets-and-relations"><span class="toc-section-number">2</span> Sets and Relations</a>
+<ul>
+<li><a href="sets-and-relations.html#sets" id="toc-sets">Sets</a></li>
+<li><a href="sets-and-relations.html#relations" id="toc-relations">Relations</a></li>
+<li><a href="sets-and-relations.html#properties-of-relations" id="toc-properties-of-relations">Properties of Relations</a></li>
+</ul></li>
+<li><a href="mathematical-induction.html#mathematical-induction" id="toc-mathematical-induction"><span class="toc-section-number">3</span> Mathematical Induction</a></li>
+<li class="part"><span><b>II Propositional Language</b></span></li>
+<li><a href="syntax.html#syntax" id="toc-syntax"><span class="toc-section-number">4</span> Syntax</a></li>
+<li><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">5</span> Semantics</a></li>
+<li class="has-sub"><a href="axiomatic-derivations.html#axiomatic-derivations" id="toc-axiomatic-derivations"><span class="toc-section-number">6</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations.html#the-deduction-theorem" id="toc-the-deduction-theorem">The Deduction Theorem</a></li>
+<li><a href="axiomatic-derivations.html#maximal-consistency" id="toc-maximal-consistency">Maximal Consistency</a></li>
+</ul></li>
+<li><a href="completeness.html#completeness" id="toc-completeness"><span class="toc-section-number">7</span> Completeness</a></li>
+<li class="part"><span><b>III Modal Propositional Logic</b></span></li>
+<li><a href="syntax-1.html#syntax-1" id="toc-syntax-1"><span class="toc-section-number">8</span> Syntax</a></li>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">9</span> Semantics</a>
+<ul>
+<li><a href="semantics-1.html#frames" id="toc-frames">Frames</a></li>
+<li><a href="semantics-1.html#frame-definability" id="toc-frame-definability">Frame Definability</a></li>
+<li><a href="semantics-1.html#bisimulations" id="toc-bisimulations">Bisimulations</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#axiomatic-derivations-1" id="toc-axiomatic-derivations-1"><span class="toc-section-number">10</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#the-minimal-modal-logic-k" id="toc-the-minimal-modal-logic-k">The Minimal Modal Logic K</a></li>
+<li><a href="axiomatic-derivations-1.html#normal-modal-systems" id="toc-normal-modal-systems">Normal Modal Systems</a></li>
+</ul></li>
+<li class="has-sub"><a href="metatheory.html#metatheory" id="toc-metatheory"><span class="toc-section-number">11</span> Metatheory</a>
+<ul>
+<li><a href="metatheory.html#canonical-models" id="toc-canonical-models">Canonical Models</a></li>
+<li><a href="metatheory.html#completeness-1" id="toc-completeness-1">Completeness</a></li>
+</ul></li>
+<li class="part"><span><b>IV Selected Applications</b></span></li>
+<li class="has-sub"><a href="epistemic-logic.html#epistemic-logic" id="toc-epistemic-logic"><span class="toc-section-number">12</span> Epistemic Logic</a>
+<ul>
+<li><a href="epistemic-logic.html#knowledge" id="toc-knowledge">Knowledge</a></li>
+<li><a href="epistemic-logic.html#belief" id="toc-belief">Belief</a></li>
+</ul></li>
+<li class="has-sub"><a href="provability-logic.html#provability-logic" id="toc-provability-logic"><span class="toc-section-number">13</span> Provability Logic</a>
+<ul>
+<li><a href="provability-logic.html#arithmetic" id="toc-arithmetic">Arithmetic</a></li>
+<li><a href="provability-logic.html#provability" id="toc-provability">Provability</a></li>
+</ul></li>
+<li class="has-sub"><a href="deontic-logic.html#deontic-logic" id="toc-deontic-logic"><span class="toc-section-number">14</span> Deontic Logic</a>
+<ul>
+<li><a href="deontic-logic.html#obligation" id="toc-obligation">Obligation</a></li>
+<li><a href="deontic-logic.html#classic-problems" id="toc-classic-problems">Classic Problems</a></li>
+<li><a href="deontic-logic.html#conditional-obligation" id="toc-conditional-obligation">Conditional Obligation</a></li>
+</ul></li>
+<li class="has-sub"><a href="conditionals.html#conditionals" id="toc-conditionals"><span class="toc-section-number">15</span> Conditionals</a>
+<ul>
+<li><a href="conditionals.html#the-problem-of-conditionals" id="toc-the-problem-of-conditionals">The Problem of Conditionals</a></li>
+<li><a href="conditionals.html#the-strict-conditional" id="toc-the-strict-conditional">The Strict Conditional</a></li>
+<li><a href="conditionals.html#conditional-logic" id="toc-conditional-logic">Conditional Logic</a></li>
+</ul></li>
+<li class="part"><span><b>V Quantified Modal Logic</b></span></li>
+<li class="has-sub"><a href="syntax-3.html#syntax-3" id="toc-syntax-3"><span class="toc-section-number">16</span> Syntax</a>
+<ul>
+<li><a href="syntax-3.html#the-simplest-quantificational-modal-logic" id="toc-the-simplest-quantificational-modal-logic">The Simplest Quantificational Modal Logic</a></li>
+<li><a href="syntax-3.html#free-quantified-modal-logic" id="toc-free-quantified-modal-logic">Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#varieties-of-free-quantified-modal-logic" id="toc-varieties-of-free-quantified-modal-logic">Varieties of Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#existence-in-free-quantificational-logic" id="toc-existence-in-free-quantificational-logic">Existence in Free Quantificational Logic</a></li>
+</ul></li>
+<li class="has-sub"><a href="semantics-2.html#semantics-2" id="toc-semantics-2"><span class="toc-section-number">17</span> Semantics</a>
+<ul>
+<li><a href="semantics-2.html#constant-domain-models" id="toc-constant-domain-models">Constant Domain Models</a></li>
+<li><a href="semantics-2.html#variable-domain-models" id="toc-variable-domain-models">Variable Domain Models</a></li>
+</ul></li>
+<li class="has-sub"><a href="the-being-constraint.html#the-being-constraint" id="toc-the-being-constraint"><span class="toc-section-number">18</span> The Being Constraint</a>
+<ul>
+<li><a href="the-being-constraint.html#positive-semantics-for-quantified-modal-logic" id="toc-positive-semantics-for-quantified-modal-logic">Positive Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#negative-semantics-for-quantified-modal-logic" id="toc-negative-semantics-for-quantified-modal-logic">Negative Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#neutral-semantics-for-quantified-modal-logic" id="toc-neutral-semantics-for-quantified-modal-logic">Neutral Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#a-problem-for-the-being-constraint" id="toc-a-problem-for-the-being-constraint">A Problem for the Being Constraint</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="syntax" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Syntax</h1>
+<p>The primitive vocabulary of the language <span class="math inline">\(\mathcal{L}\)</span> of propositional logic includes:</p>
+<ul>
+<li>a <em>countable</em> set of <em>propositional variables</em> <span class="math inline">\(p\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(r\)</span>, … with or without numerical subscripts.</li>
+<li>a monadic sentential operator: <span class="math inline">\(\neg\)</span></li>
+<li>a binary sentential operator: <span class="math inline">\(\to\)</span></li>
+<li>two parentheses: <span class="math inline">\((\)</span>, <span class="math inline">\()\)</span></li>
+</ul>
+<p>The use of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\to\)</span> as basic connectives is a departure from common presentations of the language, which generally include <span class="math inline">\(\wedge\)</span>, <span class="math inline">\(\vee\)</span>, and <span class="math inline">\(\bot\)</span>. These connectives will be defined in terms of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\to\)</span>.</p>
+<p>Certain strings of symbols in the vocabulary of propositional logic qualify as <em>well-formed formulas</em> (wff) of the language. Those are the strings constructed in accordance to the following rules:</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-36" class="definition"><strong>Definition 4.1  (Well-Formed Formula) </strong></span>We define what is for a string of symbols of the language to be a well-formed formula of <span class="math inline">\(\mathcal{L}\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>All propositional variables are <em>well-formed formulas</em> of <span class="math inline">\(\mathcal{L}\)</span>.</li>
+<li>If <span class="math inline">\(\varphi\)</span> is a <em>well-formed formula</em> of <span class="math inline">\(\mathcal{L}\)</span>, then <span class="math inline">\(\neg \varphi\)</span> is a <em>well-formed formula</em> of <span class="math inline">\(\mathcal{L}\)</span>.</li>
+<li>If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are <em>well-formed formulas</em> of <span class="math inline">\(\mathcal{L}\)</span>, then <span class="math inline">\((\varphi  \to \psi)\)</span> is a <em>well-formed formula</em> of <span class="math inline">\(\mathcal{L}\)</span>.</li>
+<li>Nothing else is a <em>well-formed formula</em> of <span class="math inline">\(\mathcal{L}\)</span>.</li>
+</ol>
+</div>
+<p>The set of well-formed formulas is constructed inductively from an initial set of atomic formulas. The set <span class="math inline">\(Form(\mathcal{L})\)</span> of well-formed formulas of propositional logic is the <span class="math inline">\(\subseteq\)</span>-least set containing every propositional variable and closed under applications of negation and conditional.</p>
+<p>We now define familiar connectives in terms of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\to\)</span>, where <span class="math inline">\(:=\)</span> is read as: `abbreviates’.</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-37" class="definition"><strong>Definition 4.2  (Connectives) </strong></span><span class="math display">\[
+\begin{array}{lll}
+\top &amp; := &amp; (p \to p)\\
+\bot &amp; := &amp; \neg \top \\
+(\varphi \vee \psi) &amp; := &amp; (\neg \varphi \to \psi)\\
+(\varphi \wedge \psi) &amp; := &amp; \neg (\varphi \to \neg \psi)\\
+(\varphi \leftrightarrow \psi) &amp; := &amp; (\varphi \to \psi) \wedge (\psi \to \varphi)
+\end{array}
+\]</span></p>
+</div>
+<p>The inductive definition of well-formed formula vindicates a principle of induction for well-formed formulas, which will help us prove different generalizations over them.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-38" class="proposition"><strong>Proposition 4.1  (Induction on the Complexity of Well-Formed Formulas) </strong></span>Given a condition <span class="math inline">\(\Phi\)</span> on formulas of <span class="math inline">\(\mathcal{L}\)</span>, if</p>
+<ul>
+<li>every atomic formula satisfies <span class="math inline">\(\Phi\)</span>,</li>
+<li>if a formula <span class="math inline">\(\varphi\)</span> satisfies <span class="math inline">\(\Phi\)</span>, <span class="math inline">\(\neg \varphi\)</span> satisfies <span class="math inline">\(\Phi\)</span>, and</li>
+<li>if two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> satisfy <span class="math inline">\(\Phi\)</span>, <span class="math inline">\((\varphi \to \psi)\)</span> satisfies <span class="math inline">\(\Phi\)</span>,</li>
+</ul>
+<p>then <em>every</em> formula satisfies <span class="math inline">\(\Phi\)</span>.</p>
+</div>
+<div style="color:blue;">
+<p>We will use the method of induction on the complexity of a formula to prove that every formula satisfies a certain condition __________.</p>
+<p>We proceed in three steps. The base case is a proof that every propositional variable satisfies the condition.</p>
+<ul>
+<li><strong>Base Case</strong> Every propositional variable is __________</li>
+</ul>
+<p>The next two steps establish each a generalization of a conditional statement:</p>
+<ul>
+<li><p><strong>Inductive Step for <span class="math inline">\(\neg\)</span></strong> If a formula <span class="math inline">\(\varphi\)</span> is __________, then its negation <span class="math inline">\(\neg \varphi\)</span> is __________</p></li>
+<li><p><strong>Inductive Step for <span class="math inline">\(\to\)</span></strong> If a formula <span class="math inline">\(\varphi\)</span> is __________ and a formula <span class="math inline">\(\psi\)</span> is __________, then the conditional <span class="math inline">\((\varphi \to \psi)\)</span> is __________</p></li>
+</ul>
+<p>Once the three steps are completed, we are entitled to conclude:</p>
+<ul>
+<li>Every formula is __________</li>
+</ul>
+</div>
+<p>Here is an example of a simple induction on the complexity of formulas:</p>
+<div class="example" style="color:green;">
+<p><span id="exm:unlabeled-div-39" class="example"><strong>Example 4.1  </strong></span>Call a well-formed formula <span class="math inline">\(\varphi\)</span> <em>balanced</em> if, and only if, it contains the same number of left and right parentheses. We will use an induction to establish the proposition:</p>
+<ul>
+<li>Every well-formed formula is balanced.</li>
+</ul>
+<p>We use an induction on the complexity of formulas.</p>
+<ul>
+<li><p><strong>Base Case</strong>. A propositional variable contains an equal number of left and right parentheses, namely, zero.</p></li>
+<li><p><strong>Inductive Step for <span class="math inline">\(\neg\)</span></strong>. If a formula <span class="math inline">\(\varphi\)</span> is balanced, then the negation <span class="math inline">\(\neg \varphi\)</span> will be balanced.</p>
+<p>Let <span class="math inline">\(\varphi\)</span> be a balanced well-formed formula. Since <span class="math inline">\(\neg \varphi\)</span> contains exactly as many left and right parentheses as <span class="math inline">\(\varphi\)</span>, we have that it contains an equal number of left and right parentheses. So, <span class="math inline">\(\neg \varphi\)</span> is balanced.</p></li>
+<li><p><strong>Inductive Step for <span class="math inline">\(\to\)</span></strong>. If a formula <span class="math inline">\(\varphi\)</span> and a formula <span class="math inline">\(\psi\)</span> are each balanced, then the conditional <span class="math inline">\((\varphi \to \psi)\)</span> is balanced as well.</p>
+<p>Let <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> be two balanced well-formed formulas and let <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> be the number of left and right parentheses each formula has. <span class="math inline">\((\varphi \to \psi)\)</span> will contain <span class="math inline">\(n+m +1\)</span> left parentheses, that is the number of left parentheses in <span class="math inline">\(\varphi\)</span> plus that of left parentheses in <span class="math inline">\(\psi\)</span> plus the initial left parenthesis of the formula. <span class="math inline">\((\varphi \to \psi)\)</span> will similarly contain <span class="math inline">\(n+m +1\)</span> right parentheses, that is the number of right parentheses in <span class="math inline">\(\varphi\)</span> plus that of right parentheses in <span class="math inline">\(\psi\)</span> plus the final right parenthesis of the formula. So, <span class="math inline">\((\varphi \to \psi)\)</span> will contain exactly the same number of left and right parentheses, which means that it will be a balanced well-formed formula.</p></li>
+</ul>
+<p>We conclude that a well-formed formula is balanced.</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="mathematical-induction.html"><button class="btn btn-default">Previous</button></a>
+<a href="semantics.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

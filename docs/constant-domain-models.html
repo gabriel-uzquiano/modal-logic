@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="19 Constant Domain Models | Modal Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 452: Modal Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+<meta name="date" content="2024-12-13" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 452: Modal Logic.">
+
+<title>19 Constant Domain Models | Modal Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Background</b></span></li>
+<li><a href="introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li class="has-sub"><a href="sets-and-relations.html#sets-and-relations" id="toc-sets-and-relations"><span class="toc-section-number">2</span> Sets and Relations</a>
+<ul>
+<li><a href="sets-and-relations.html#sets" id="toc-sets">Sets</a></li>
+<li><a href="sets-and-relations.html#relations" id="toc-relations">Relations</a></li>
+<li><a href="sets-and-relations.html#properties-of-relations" id="toc-properties-of-relations">Properties of Relations</a></li>
+</ul></li>
+<li><a href="mathematical-induction.html#mathematical-induction" id="toc-mathematical-induction"><span class="toc-section-number">3</span> Mathematical Induction</a></li>
+<li class="part"><span><b>II Metatheory of Propositional Logic</b></span></li>
+<li><a href="syntax.html#syntax" id="toc-syntax"><span class="toc-section-number">4</span> Syntax</a></li>
+<li><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">5</span> Semantics</a></li>
+<li class="has-sub"><a href="axiomatic-derivations.html#axiomatic-derivations" id="toc-axiomatic-derivations"><span class="toc-section-number">6</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations.html#the-deduction-theorem" id="toc-the-deduction-theorem">The Deduction Theorem</a></li>
+<li><a href="axiomatic-derivations.html#maximal-consistency" id="toc-maximal-consistency">Maximal Consistency</a></li>
+</ul></li>
+<li><a href="completeness.html#completeness" id="toc-completeness"><span class="toc-section-number">7</span> Completeness</a></li>
+<li class="part"><span><b>III Propositional Modal Logic</b></span></li>
+<li><a href="syntax-1.html#syntax-1" id="toc-syntax-1"><span class="toc-section-number">8</span> Syntax</a></li>
+<li class="has-sub"><a href="possible-worlds-semantics.html#possible-worlds-semantics" id="toc-possible-worlds-semantics"><span class="toc-section-number">9</span> Possible Worlds Semantics</a>
+<ul>
+<li><a href="possible-worlds-semantics.html#models" id="toc-models">Models</a></li>
+<li class="has-sub"><a href="possible-worlds-semantics.html#frames" id="toc-frames">Frames</a>
+<ul>
+<li><a href="possible-worlds-semantics.html#frame-correspondence" id="toc-frame-correspondence">Frame Correspondence</a></li>
+<li><a href="possible-worlds-semantics.html#frame-definability" id="toc-frame-definability">Frame Definability</a></li>
+<li><a href="possible-worlds-semantics.html#bisimulations" id="toc-bisimulations">Bisimulations</a></li>
+<li><a href="possible-worlds-semantics.html#universal-frames" id="toc-universal-frames">Universal Frames</a></li>
+</ul></li>
+<li><a href="possible-worlds-semantics.html#interlude-tolerant-essence" id="toc-interlude-tolerant-essence">Interlude: Tolerant Essence</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#axiomatic-derivations-1" id="toc-axiomatic-derivations-1"><span class="toc-section-number">10</span> Axiomatic Derivations</a>
+<ul>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#the-minimal-modal-logic-k" id="toc-the-minimal-modal-logic-k">The Minimal Modal Logic K</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#how-to-construct-proofs" id="toc-how-to-construct-proofs">How to Construct Proofs</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#normal-modal-systems" id="toc-normal-modal-systems">Normal Modal Systems</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#modal-duality" id="toc-modal-duality">Modal Duality</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#how-to-compare-normal-modal-systems" id="toc-how-to-compare-normal-modal-systems">How to Compare Normal Modal Systems</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#the-reduction-of-pure-modalities" id="toc-the-reduction-of-pure-modalities">The Reduction of Pure Modalities</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="metatheory.html#metatheory" id="toc-metatheory"><span class="toc-section-number">11</span> Metatheory</a>
+<ul>
+<li><a href="metatheory.html#canonical-models" id="toc-canonical-models">Canonical Models</a></li>
+<li><a href="metatheory.html#the-completeness-theorem-for-k" id="toc-the-completeness-theorem-for-k">The Completeness Theorem for K</a></li>
+<li><a href="metatheory.html#more-completeness-theorems" id="toc-more-completeness-theorems">More Completeness Theorems</a></li>
+</ul></li>
+<li class="part"><span><b>IV Selected Applications</b></span></li>
+<li class="has-sub"><a href="epistemic-logic.html#epistemic-logic" id="toc-epistemic-logic"><span class="toc-section-number">12</span> Epistemic Logic</a>
+<ul>
+<li class="has-sub"><a href="epistemic-logic.html#knowledge" id="toc-knowledge">Knowledge</a>
+<ul>
+<li><a href="epistemic-logic.html#information-flow" id="toc-information-flow">Information Flow</a></li>
+<li><a href="epistemic-logic.html#common-knowledge" id="toc-common-knowledge">Common Knowledge</a></li>
+</ul></li>
+<li class="has-sub"><a href="epistemic-logic.html#belief" id="toc-belief">Belief</a>
+<ul>
+<li><a href="epistemic-logic.html#axioms-for-knowledge-and-belief" id="toc-axioms-for-knowledge-and-belief">Axioms for Knowledge and Belief</a></li>
+</ul></li>
+</ul></li>
+<li class="has-sub"><a href="provability-logic.html#provability-logic" id="toc-provability-logic"><span class="toc-section-number">13</span> Provability Logic</a>
+<ul>
+<li><a href="provability-logic.html#arithmetic" id="toc-arithmetic">Arithmetic</a></li>
+<li><a href="provability-logic.html#provability" id="toc-provability">Provability</a></li>
+</ul></li>
+<li class="has-sub"><a href="deontic-logic.html#deontic-logic" id="toc-deontic-logic"><span class="toc-section-number">14</span> Deontic Logic</a>
+<ul>
+<li><a href="deontic-logic.html#obligation" id="toc-obligation">Obligation</a></li>
+<li class="has-sub"><a href="deontic-logic.html#classic-problems" id="toc-classic-problems">Classic Problems</a>
+<ul>
+<li><a href="deontic-logic.html#the-good-samaritan-paradox" id="toc-the-good-samaritan-paradox">The Good Samaritan Paradox</a></li>
+<li><a href="deontic-logic.html#ross-paradox" id="toc-ross-paradox">Ross’ Paradox</a></li>
+<li><a href="deontic-logic.html#chisholms-paradox" id="toc-chisholms-paradox">Chisholm’s Paradox</a></li>
+</ul></li>
+<li><a href="deontic-logic.html#conditional-obligation" id="toc-conditional-obligation">Conditional Obligation</a></li>
+</ul></li>
+<li class="has-sub"><a href="conditionals.html#conditionals" id="toc-conditionals"><span class="toc-section-number">15</span> Conditionals</a>
+<ul>
+<li><a href="conditionals.html#the-problem-of-conditionals" id="toc-the-problem-of-conditionals">The Problem of Conditionals</a></li>
+<li><a href="conditionals.html#the-strict-conditional" id="toc-the-strict-conditional">The Strict Conditional</a></li>
+<li class="has-sub"><a href="conditionals.html#conditional-logic" id="toc-conditional-logic">Conditional Logic</a>
+<ul>
+<li><a href="conditionals.html#syntax-2" id="toc-syntax-2">Syntax</a></li>
+<li><a href="conditionals.html#minimal-change-semantics-for-conditional-logic" id="toc-minimal-change-semantics-for-conditional-logic">Minimal Change Semantics for Conditional Logic</a></li>
+<li><a href="conditionals.html#sphere-models-for-counterfactuals" id="toc-sphere-models-for-counterfactuals">Sphere Models for Counterfactuals</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>V Quantified Modal Logic</b></span></li>
+<li><a href="motivation.html#motivation" id="toc-motivation"><span class="toc-section-number">16</span> Motivation</a></li>
+<li><a href="syntax-3.html#syntax-3" id="toc-syntax-3"><span class="toc-section-number">17</span> Syntax</a></li>
+<li class="has-sub"><a href="axiomatic-derivations-2.html#axiomatic-derivations-2" id="toc-axiomatic-derivations-2"><span class="toc-section-number">18</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations-2.html#quantificational-logic-with-identity" id="toc-quantificational-logic-with-identity">Quantificational Logic with Identity</a></li>
+<li class="has-sub"><a href="axiomatic-derivations-2.html#modal-quantificational-logic-with-identity" id="toc-modal-quantificational-logic-with-identity">Modal Quantificational Logic with Identity</a>
+<ul>
+<li><a href="axiomatic-derivations-2.html#the-barcan-formula" id="toc-the-barcan-formula">The Barcan Formula</a></li>
+<li><a href="axiomatic-derivations-2.html#the-necessity-of-existence" id="toc-the-necessity-of-existence">The Necessity of Existence</a></li>
+</ul></li>
+<li><a href="axiomatic-derivations-2.html#the-necessity-of-identity" id="toc-the-necessity-of-identity">The Necessity of Identity</a></li>
+</ul></li>
+<li class="has-sub"><a href="constant-domain-models.html#constant-domain-models" id="toc-constant-domain-models"><span class="toc-section-number">19</span> Constant Domain Models</a>
+<ul>
+<li class="has-sub"><a href="constant-domain-models.html#free-quantified-modal-logic" id="toc-free-quantified-modal-logic">Free Quantified Modal Logic</a>
+<ul>
+<li><a href="constant-domain-models.html#free-quantificational-logic" id="toc-free-quantificational-logic">Free Quantificational Logic</a></li>
+</ul></li>
+<li><a href="constant-domain-models.html#varieties-of-free-quantified-modal-logic" id="toc-varieties-of-free-quantified-modal-logic">Varieties of Free Quantified Modal Logic</a></li>
+<li><a href="constant-domain-models.html#existence-in-free-quantificational-logic" id="toc-existence-in-free-quantificational-logic">Existence in Free Quantificational Logic</a></li>
+</ul></li>
+<li class="has-sub"><a href="variable-domain-models.html#variable-domain-models" id="toc-variable-domain-models"><span class="toc-section-number">20</span> Variable Domain Models</a>
+<ul>
+<li><a href="variable-domain-models.html#the-inclusion-and-converse-inclusion-requirement" id="toc-the-inclusion-and-converse-inclusion-requirement">The Inclusion and Converse Inclusion Requirement</a></li>
+<li><a href="variable-domain-models.html#the-being-constraint" id="toc-the-being-constraint">The Being Constraint</a></li>
+<li><a href="variable-domain-models.html#positive-semantics-for-quantified-modal-logic" id="toc-positive-semantics-for-quantified-modal-logic">Positive Semantics for Quantified Modal Logic</a></li>
+<li><a href="variable-domain-models.html#negative-semantics-for-quantified-modal-logic" id="toc-negative-semantics-for-quantified-modal-logic">Negative Semantics for Quantified Modal Logic</a></li>
+<li><a href="variable-domain-models.html#neutral-semantics-for-quantified-modal-logic" id="toc-neutral-semantics-for-quantified-modal-logic">Neutral Semantics for Quantified Modal Logic</a></li>
+<li><a href="variable-domain-models.html#a-problem-for-the-being-constraint" id="toc-a-problem-for-the-being-constraint">A Problem for the Being Constraint</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="constant-domain-models" class="section level1" number="19">
+<h1><span class="header-section-number">19</span> Constant Domain Models</h1>
+<p>We have provided a syntactic characterization of the simplest quantified modal logic, but we should now explain how to interpret the language in order to validate its axioms.</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-281" class="definition"><strong>Definition 19.1  (Constant Domain Model) </strong></span>We define a <em>constant domain model</em> to be structure <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, R, D, I)\)</span>, where:</p>
+<ul>
+<li><span class="math inline">\(W\)</span> is a non-empty set of worlds.</li>
+<li><span class="math inline">\(R\)</span> is a binary accessibility relation on <span class="math inline">\(W\)</span></li>
+<li><span class="math inline">\(D\)</span> is a non-empty set of individuals, and</li>
+<li><span class="math inline">\(I\)</span> is a function from worlds <span class="math inline">\(w\)</span> into interpretations <span class="math inline">\(I_w\)</span>, which map each <span class="math inline">\(n\)</span>-place predicate <span class="math inline">\(P^n\)</span> into an <span class="math inline">\(n\)</span>-place relation over <span class="math inline">\(D\)</span>.</li>
+</ul>
+</div>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-282" class="definition"><strong>Definition 19.2  (Variable Assignment for a Model) </strong></span>A variable assignment <span class="math inline">\(\alpha\)</span> for a model <span class="math inline">\(M\)</span> is a function from individual variables into members of <span class="math inline">\(D\)</span>.</p>
+</div>
+<p>We now define what is for a formula <span class="math inline">\(\varphi\)</span> to be true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span>. In what follows, <span class="math inline">\(\alpha[x/d]\)</span> is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for assigning <span class="math inline">\(d\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-283" class="definition"><strong>Definition 19.3  (Truth at a World Relative to an Assignment) </strong></span>We use a recursive definition:
+<span class="math display">\[
+\begin{array}{lll}
+M, w, \alpha \Vdash P^n v_1 \dots v_n &amp; &amp; \text{if, and only if,} &amp; &amp; \langle \alpha(v_1), \dots, \alpha(v_n)\rangle \in I_w (P^n)\\
+M, w,  \alpha  \Vdash v_1 = v_2   &amp; &amp; \text{if, and only if,} &amp; &amp;  \alpha(v_1) = \alpha(v_2)\\
+M, w,  \alpha  \Vdash \neg \varphi &amp; &amp; \text{if, and only if,} &amp; &amp; M, w, \alpha \nVdash \varphi \\
+M, w,  \alpha  \Vdash  (\varphi \to \psi) &amp; &amp; \text{if, and only if,} &amp; &amp; M, w, \alpha \nVdash \varphi \ \text{or} \ M, w, \alpha \Vdash \psi\\
+M, w,  \alpha  \Vdash  \forall x \ \varphi &amp; &amp; \text{if, and only if,} &amp; &amp; M, w, \alpha[x/d] \Vdash \varphi \ \text{for  every} \ d\in D\\
+M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{if, and only if,} &amp; &amp; M, u, \alpha \Vdash \varphi \ \text{for every} \ u \in W \ \text{such that} \ Rwu\\
+\end{array}
+\]</span></p>
+</div>
+<p>We now define truth at a world in a model and truth in. a model respectively:</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-284" class="definition"><strong>Definition 19.4  (Truth at a World) </strong></span>A formula <span class="math inline">\(\varphi\)</span> is true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span>, in symbols <span class="math inline">\(M, w \Vdash \varphi\)</span>, if, and only if, for all assignments <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, <span class="math inline">\(M, w, \alpha \Vdash \varphi\)</span></p>
+</div>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-285" class="definition"><strong>Definition 19.5  (Truth in a Model) </strong></span>A formula <span class="math inline">\(\varphi\)</span> is true in a model <span class="math inline">\(M\)</span>, in symbols, <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only. if, for all <span class="math inline">\(w \in  W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+</div>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-286" class="definition"><strong>Definition 19.6  (Validity in a Class of Models) </strong></span>A formula <span class="math inline">\(\varphi\)</span> is valid with respect to a class <span class="math inline">\(\mathcal{C}\)</span>. of constant domain models, in symbols <span class="math inline">\(\models_{\mathcal{C}}\varphi\)</span>, if, and only if, for every constant domain model <span class="math inline">\(M \in \mathcal{C}\)</span>, <span class="math inline">\(M \Vdash  \varphi\)</span>.</p>
+</div>
+<p>It will be helpful to provide some illustration. We explain first how to justify the fact that a certain formula is not valid with respect to the class of reflexive and euclidean models.</p>
+<div class="example" style="color:blue;">
+<p><span id="exm:unlabeled-div-287" class="example"><strong>Example 19.1  </strong></span><span class="math inline">\(\not \models_{\text{refl and eucl}} \exists x \neg \Box Fx \to \Diamond \forall x \neg Fx\)</span></p>
+<p>Consider a constant domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, I)\)</span>, where:</p>
+<ul>
+<li><p><span class="math inline">\(W = \{w_1, w_2\}\)</span></p></li>
+<li><p><span class="math inline">\(R = \{(w_1, w_1), ( w_1, w_2), (w_2, w_1), (w_2, w_2)\}\)</span></p></li>
+<li><p><span class="math inline">\(D = \{a, b\}\)</span></p></li>
+<li><p><span class="math inline">\(I_{w_1}(F) = \{a\}\)</span></p>
+<p><span class="math inline">\(I_{w_2}(F) = \{b\}\)</span></p></li>
+</ul>
+<p>Here is a diagram for the model:</p>
+<p><img src="images/cdmodel1.png" style="display:block; margin: 0 auto;"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash \exists x \neg \Box Fx\)</span> because <span class="math inline">\(M, w_1, \alpha[b/x] \Vdash \neg \Box Fx\)</span></p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash \Diamond \forall x \neg Fx\)</span> because <span class="math inline">\(M, w_1 \Vdash \forall x \neg Fx\)</span> and <span class="math inline">\(Rw_1w_1\)</span>.<br />
+</p></li>
+</ul>
+</div>
+<div class="example" style="color:blue;">
+<p><span id="exm:unlabeled-div-288" class="example"><strong>Example 19.2  </strong></span><span class="math inline">\(\not \models_{\text{refl and eucl}} (\Box \exists x Fx \vee \forall x \Diamond Gx)\to \Diamond \exists x (Fx \wedge Gx)\)</span></p>
+<p>Consider a constant domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, I)\)</span>, where:</p>
+<ul>
+<li><p><span class="math inline">\(W = \{w_1, w_2\}\)</span></p></li>
+<li><p><span class="math inline">\(R = \{( w_1, w_1), ( w_1, w_2), (w_2, w_1), ( w_2, w_2) \}\)</span></p></li>
+<li><p><span class="math inline">\(D = \{a, b\}\)</span></p></li>
+<li><p><span class="math inline">\(I_{w_1}(F) = \{a\}\)</span>, <span class="math inline">\(I_{w_1}(G) = \{b\}\)</span></p>
+<p><span class="math inline">\(I_{w_2}(F) = \{b\}\)</span>, <span class="math inline">\(I_{w_2}(G) = \{a\}\)</span></p></li>
+</ul>
+<p>Here is a diagram for the model:</p>
+<p><img src="images/cdexample1.png" style="display:block; margin: 0 auto;"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash \Box \exists x Fx\)</span> since <span class="math inline">\(M, w_1 \Vdash \exists x Fx\)</span> and <span class="math inline">\(M, w_2 \Vdash \exists x Fx\)</span></p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash \Diamond \exists x (Fx \wedge Gx)\)</span> since <span class="math inline">\(M, w_1 \nVdash \exists x (Fx \wedge Gx)\)</span> and <span class="math inline">\(M, w_2 \nVdash \exists s (Fx \wedge Gx)\)</span></p></li>
+</ul>
+</div>
+<div class="example" style="color:blue;">
+<p><span id="exm:unlabeled-div-289" class="example"><strong>Example 19.3  </strong></span><span class="math inline">\(\not \models_{\text{refl and eucl}} \forall x (\Box Fx \vee \Box \neg Fx) \vee \forall x (\Diamond Fx \wedge \Diamond \neg Fx)\)</span></p>
+<p>Consider a constant domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, I)\)</span>, where:</p>
+<ul>
+<li><p><span class="math inline">\(W = \{w_1, w_2\}\)</span></p></li>
+<li><p><span class="math inline">\(R= \{(w_1, w_1), ( w_1, w_2), (w_2, w_1), ( w_2, w_2)\}\)</span></p></li>
+<li><p><span class="math inline">\(D = \{a, b\}\)</span></p></li>
+<li><p><span class="math inline">\(I_{w_1}(F) =\{a\}\)</span></p>
+<p><span class="math inline">\(I_{w_2}(F) = \emptyset\)</span></p></li>
+</ul>
+<p>Here is a diagram for the model:</p>
+<p><img src="images/cdmodel3.png" style="display:block; margin: 0 auto;"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \nVdash \forall x (\Box Fx \vee \Box \neg Fx)\)</span> because <span class="math inline">\(M, w_1, \alpha[a/x] \nVdash \Box Fx \vee \Box \neg Fx\)</span>. Yet:</p></li>
+<li><p><span class="math inline">\(M, w_1  \nVdash \forall x (\Diamond Fx \wedge \Diamond \neg Fx)\)</span> because <span class="math inline">\(M, w_1, \alpha[b/x]\nVdash \Diamond Fx \wedge \Diamond \neg Fx\)</span>.</p></li>
+</ul>
+</div>
+<p>On the other hand, we may verify that constant domain models validate both the Barcan Formula and the Converse Barcan Formula.</p>
+<div class="example" style="color:blue;">
+<p><span id="exm:unlabeled-div-290" class="example"><strong>Example 19.4  </strong></span><span class="math inline">\(\models  \Diamond \ \exists x \ Fx \to \exists x \ \Diamond \ Fx\)</span></p>
+<p>Given a constant domain model <span class="math inline">\(M\)</span> and a world <span class="math inline">\(w\in W\)</span> such that <span class="math inline">\(M, w \Vdash \Diamond \ \exists x \ Fx\)</span>, let <span class="math inline">\(u \in W\)</span> be such that <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(M, u \Vdash \exists x \ Fx\)</span>. That means that there is a member <span class="math inline">\(d \in D\)</span> such that for each assignment <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(M, u, \alpha[d/x] \Vdash Fx\)</span>. But then <span class="math inline">\(M, w, \alpha[d/x]\Vdash \Diamond \ Fx\)</span> and, moreover, <span class="math inline">\(M, w, \alpha \Vdash \exists x \ \Diamond \ Fx\)</span>. Since <span class="math inline">\(\alpha\)</span> is arbitrary, <span class="math inline">\(M, w \Vdash \Diamond \ \exists x \ Fx\)</span> as required.</p>
+</div>
+<div class="example" style="color:blue;">
+<p><span id="exm:unlabeled-div-291" class="example"><strong>Example 19.5  </strong></span><span class="math inline">\(\models  \Box \ \forall x \ Fx \to \forall x \ \Box \ Fx\)</span></p>
+<p>Given a constant domain model <span class="math inline">\(M\)</span> and a world <span class="math inline">\(w\in W\)</span> such that <span class="math inline">\(M, w \Vdash \Box \ \forall x \ Fx\)</span>, we argue that <span class="math inline">\(M, w \Vdash \forall x \ \Box \ Fx\)</span>. For given an assignment <span class="math inline">\(\alpha\)</span> and a member <span class="math inline">\(d \in D\)</span>, <span class="math inline">\(M, w,  \alpha[d/x] \Vdash \Box Fx\)</span>. This is because given a world <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>, we have <span class="math inline">\(M, u \Vdash \forall x Fx\)</span> and <span class="math inline">\(M, u, \alpha[d/x]\Vdash Fx\)</span>. Since <span class="math inline">\(u\)</span> and <span class="math inline">\(d\)</span> Are arbitrary, <span class="math inline">\(M, w \Vdash \forall x \ \Box \ Fx\)</span> as required.</p>
+</div>
+<div id="free-quantified-modal-logic" class="section level2 unnumbered">
+<h2>Free Quantified Modal Logic</h2>
+<p>One reaction to the derivability of the Barcan Formula and its converse in the simplest quantified modal logic is to regard it as a reason to weaken the axioms for the quantifier. Free quantified modal logic makes do with a restricted form of universal instantiation. Before we look at the details, we should however mention that there are independent reasons to consider such a restriction.</p>
+<div id="free-quantificational-logic" class="section level3 unnumbered">
+<h3>Free Quantificational Logic</h3>
+<p>Some philosophers have questioned quantificational logic on the grounds that it delivers objectionable theorems such as existential generalization:
+<span class="math display">\[\tag{EG}
+\varphi(y)  \to \exists x \ \varphi(x)
+\]</span>
+Here is a proof schema:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \forall x \ \neg \varphi(x) \to \neg \varphi(y) &amp; &amp;  \text{UI} \\
+2 &amp; &amp; \neg \neg \varphi(y) \to \neg \forall x \neg \varphi(x) &amp; &amp; \text{PL} \ 1\\
+3 &amp; &amp; \varphi(y) \to \neg \forall x \neg \varphi(x) &amp; &amp; \text{PL} \ 2\\
+4 &amp; &amp; \varphi(y) \to \exists x  \varphi(x) &amp; &amp; \text{Def} \ \exists \ 3\\
+\end{array}
+\]</span>
+How might existential generalization be objectionable?</p>
+<ul>
+<li><p>Existential generalization delivers problematic consequences in the presence of terms without denotation. For suppose we expand the language of quantificational logic with constants some of which are meant to translate singular terms without a denotation, e.g., ‘Pegasus’. One problem is that existential generalization delivers:
+<span class="math display">\[
+\vdash \exists x \ x = c
+\]</span>
+Here is a simple proof:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; c = c &amp; \text{RI} \\
+2 &amp; &amp; c = c \to \exists x \ x = c &amp; \text{EG}  \\
+3 &amp; &amp; \exists x \ x = c &amp; \text{PL} \ 1, 2\\
+\end{array}
+\]</span>
+But if <span class="math inline">\(c\)</span> lacks a denotation, we should not be able to move from <span class="math inline">\(c = c\)</span> to <span class="math inline">\(\exists x \ x =c\)</span>.</p></li>
+<li><p>Existential generalization allows us to move from a universal generalization to an existential one:
+<span class="math display">\[
+\vdash \forall x \ \varphi(x) \to \exists x \ \varphi(x)
+\]</span>
+This conflicts with the thought that a universal generalization could be true even if there turned out to be no instances, e.g., if nothing existed. From <span class="math inline">\(\forall x (Fx \vee \neg Fx)\)</span> we should not be able to conclude <span class="math inline">\(\exists x (Fx \vee \neg Fx)\)</span>. One way to put is is that it is now a logical truth that something is either <span class="math inline">\(F\)</span> or not <span class="math inline">\(F\)</span>:
+<span class="math display">\[
+\vdash \exists x (Fx \vee \neg Fx)
+\]</span></p></li>
+</ul>
+<p>One response to these observations is to restrict the axiom of unversal instantiation to avoid the full strength of existential generalization. This in turn may be done in more than one way resulting in different approaches to quantified modal logic.</p>
+</div>
+</div>
+<div id="varieties-of-free-quantified-modal-logic" class="section level2 unnumbered">
+<h2>Varieties of Free Quantified Modal Logic</h2>
+<p>We will look at two main restrictions of the axiom of universal instantiation. One of them is directly motivated by the derivability of the Converse Barcan formula in the simplest quantified modal logic, whereas the other is motivated by the ambition to accommodate free expansions of quantificational logic in which singular terms are allowed to lack a denotation.</p>
+<div id="kripke-on-universal-instantiation" class="section level4 unnumbered">
+<h4>Kripke on Universal Instantiation</h4>
+<p>We begin with a proposal due to Saul Kripke who weakens universal instantiation as follows:
+<span class="math display">\[\tag{KFUI}
+\forall y (\forall x \ \varphi(x) \to \varphi[y/x])
+\]</span>
+where <span class="math inline">\(\varphi[y/x]\)</span> is, as usual, the result of replacing every free occurrence of the variable <span class="math inline">\(x\)</span> in <span class="math inline">\(\varphi\)</span> with an occurrence of the variable <span class="math inline">\(y\)</span> relettering if necessary to make sure occurrences of <span class="math inline">\(y\)</span> remain free after the replacement. Before we look at the proposal in some detail, we may consider Kripke’s own motivation for it. He has in mind the following derivation of an instance of the Converse Barcan Formula in the simplest quantified modal logic:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \forall x \ Fx \to Fy &amp; \text{UI} \\
+2 &amp; &amp; \Box (\forall x \ Fx  \to Fy) &amp; \text{RN} \ 1 \\
+3 &amp; &amp; \Box (\forall x \ Fx  \to Fy) \to (\Box \forall x \ Fx  \to \Box \ Fy) &amp; \text{K} \\
+4 &amp; &amp; \Box \forall x \ Fx  \to \Box \ Fy  &amp; \text{PL} \ 2, 3 \\
+5 &amp; &amp; \Box \forall x \ Fx  \to \forall x \ \Box \ Fx  &amp; \text{UG} \ 4 \\
+\end{array}
+\]</span>
+This is what he writes:</p>
+<blockquote>
+<p>Actually, the flaw lies in the application of necessitation to [1]. In a formula like [1], we give the free variables the generality interpretation: when [1] is asserted as a theorem, it abbreviates an assertion of its ordinary universal closure:
+<span class="math display">\[
+\begin{array}{lllll}
+[1&#39;] &amp; \forall y (\forall x Fx \to Fy)
+\end{array}
+\]</span>
+Now, if we applied necessitation to [1’], we would get
+<span class="math display">\[
+\begin{array}{lllll}
+[2&#39;] &amp; \Box \ \forall y \ (\forall x Fx \to Fy)
+\end{array}
+\]</span>
+On the other hand, [2] itself is interpreted as asserting:
+<span class="math display">\[
+\begin{array}{lllll}
+[2&#39;&#39;] &amp; \forall y \ \Box  \  (\forall x Fx \to Fy)
+\end{array}
+\]</span>
+To infer [2’’] from [2’], we would need a law of the form <span class="math inline">\(\Box \ \forall y \ Cy \to \forall y \ \Box Cy\)</span>, which is just the converse Barcan formula we are trying to prove […]. We can avoid this sort of difficulty if, following Quine, we formulate quantification theory so that only closed formulae are asserted. Assertion of formulae containing free variables is at best a convenience; assertion of <span class="math inline">\(\varphi(x)\)</span> with free <span class="math inline">\(x\)</span> can always be replaced by assertion of <span class="math inline">\(\forall x \ \varphi(x)\)</span>.</p>
+</blockquote>
+<p>So, Kripke’s suggestion is to block the application of necessitation to open formulas by adopting a formulation of quantificational logic without open formulas as axioms. Hence the proposal to weaken UI to KFUI, which is its universal closure. As it turns out, Kripke’s proposal requires the adoption of a further quantificational axiom:
+<span class="math display">\[
+\forall x \ \forall y \ Rxy \to   \forall y \ \forall x \ Rxy
+\]</span>
+Notice that we are still in a position to define existence in terms of quantification and identity. What we no longer have is a derivation of existential generalization. At most, we are in a position to derive:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \forall y \ (\forall x \ \neg \varphi(x) \to \neg \varphi(y)) &amp; &amp;  \text{KFUI} \\
+2 &amp; &amp; \forall y (\neg \neg \varphi(y) \to \neg \forall x \neg \varphi(x)) &amp; &amp; \text{PL} \ 1\\
+3 &amp; &amp; \forall y (\varphi(y) \to \neg \forall x \neg \varphi(x)) &amp; &amp; \text{PL} \ 2\\
+4 &amp; &amp; \forall y (\varphi(y) \to \exists x  \varphi(x)) &amp; &amp; \text{Def} \ \exists \ 3\\
+\end{array}
+\]</span>
+We similarly have:
+<span class="math display">\[
+\vdash \forall x \ (x = x \to \exists  y \ x =y)
+\]</span>
+and
+<span class="math display">\[
+\vdash \forall x \ x = x \to \forall x \ \exists y \ x =y
+\]</span>
+but either theorem is harmless when it comes to being able to derive the necessity of existence.</p>
+</div>
+</div>
+<div id="existence-in-free-quantificational-logic" class="section level2 unnumbered">
+<h2>Existence in Free Quantificational Logic</h2>
+<p>The other approach to free quantificational logic is designed to accommodate singular terms without a denotation. That is, the approach is supposed to accommodate the introduction of new constants, which fail to denote a member of the domain. The thought in this case is to augment the language of quantificational logic with a primitive existence predicate <span class="math inline">\(E\)</span>, which would apply to a constant <span class="math inline">\(c\)</span> only if the constant designates something in the domain. Otherwise, <span class="math inline">\(\neg Ec\)</span> would be true and express the fact that nothing is <span class="math inline">\(c\)</span>.</p>
+<p>​ Given such a predicate, we are in a position to reformulate free universal instantiation as follows:
+<span class="math display">\[\tag{EFUI}
+\forall x \ (\varphi(x) \to (Ey \to \varphi[y/x])
+\]</span>
+where <span class="math inline">\(\varphi[y/x]\)</span> is, as usual, the result of replacing every free occurrence of the variable <span class="math inline">\(x\)</span> in <span class="math inline">\(\varphi\)</span> with an occurrence of the variable <span class="math inline">\(y\)</span> relettering if necessary to make sure occurrences of <span class="math inline">\(y\)</span> remain free after the replacement. This is what free existential generalization looks like on this approach:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \forall x \ \neg \varphi(x) \to (Ey \to \neg \varphi(y)) &amp; &amp;  \text{EFUI} \\
+2 &amp; &amp; (Ey \wedge  \neg  \neg \varphi(y)) \to \neg \forall x \neg \varphi(x) &amp; &amp; \text{PL} \ 1\\
+3 &amp; &amp; (Ey \wedge \varphi(y)) \to \neg \forall x \neg \varphi(x) &amp; &amp; \text{PL} \ 2\\
+4 &amp; &amp; (Ey \wedge \varphi(y) \to \exists x  \varphi(x) &amp; &amp; \text{Def} \ \exists \ 3\\
+\end{array}
+\]</span></p>
+<p>One difference between this move and Kripke’s move is that it allows for the use of open formulas as axioms of quantificational logic and provides a different response to the argument for the necessity of existence. All we are able to do now is the following:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; x = x &amp; &amp;  \text{RI} \\
+2 &amp; &amp; (Ex \wedge x = x) \to \exists y \ x = y&amp; &amp; \text{EG} \\
+3 &amp; &amp; Ex \to \exists y \ x = y &amp; &amp; \text{PL} \ 1, 2\\
+4 &amp; &amp; \Box (Ex  \to \exists y \ x = y) &amp; &amp; \text{RN} \ 3\\
+5 &amp; &amp; \forall x \ \Box (Ex  \to \exists y \ x = y)&amp; &amp; \text{UG} \ 4\\
+\end{array}
+\]</span>
+But this is again harmless from the standpoint of a proponent of the contingency of existence.</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="axiomatic-derivations-2.html"><button class="btn btn-default">Previous</button></a>
+<a href="variable-domain-models.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

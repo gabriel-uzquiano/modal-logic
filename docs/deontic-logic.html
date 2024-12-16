@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="14 Deontic Logic | Modal Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 452: Modal Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+<meta name="date" content="2024-12-16" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 452: Modal Logic.">
+
+<title>14 Deontic Logic | Modal Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Background</b></span></li>
+<li><a href="introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li class="has-sub"><a href="sets-and-relations.html#sets-and-relations" id="toc-sets-and-relations"><span class="toc-section-number">2</span> Sets and Relations</a>
+<ul>
+<li><a href="sets-and-relations.html#sets" id="toc-sets">Sets</a></li>
+<li><a href="sets-and-relations.html#relations" id="toc-relations">Relations</a></li>
+<li><a href="sets-and-relations.html#properties-of-relations" id="toc-properties-of-relations">Properties of Relations</a></li>
+</ul></li>
+<li><a href="mathematical-induction.html#mathematical-induction" id="toc-mathematical-induction"><span class="toc-section-number">3</span> Mathematical Induction</a></li>
+<li class="part"><span><b>II Propositional Language</b></span></li>
+<li><a href="syntax.html#syntax" id="toc-syntax"><span class="toc-section-number">4</span> Syntax</a></li>
+<li><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">5</span> Semantics</a></li>
+<li class="has-sub"><a href="axiomatic-derivations.html#axiomatic-derivations" id="toc-axiomatic-derivations"><span class="toc-section-number">6</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations.html#the-deduction-theorem" id="toc-the-deduction-theorem">The Deduction Theorem</a></li>
+<li><a href="axiomatic-derivations.html#maximal-consistency" id="toc-maximal-consistency">Maximal Consistency</a></li>
+</ul></li>
+<li><a href="completeness.html#completeness" id="toc-completeness"><span class="toc-section-number">7</span> Completeness</a></li>
+<li class="part"><span><b>III Modal Propositional Logic</b></span></li>
+<li><a href="syntax-1.html#syntax-1" id="toc-syntax-1"><span class="toc-section-number">8</span> Syntax</a></li>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">9</span> Semantics</a>
+<ul>
+<li><a href="semantics-1.html#frames" id="toc-frames">Frames</a></li>
+<li><a href="semantics-1.html#frame-definability" id="toc-frame-definability">Frame Definability</a></li>
+<li><a href="semantics-1.html#bisimulations" id="toc-bisimulations">Bisimulations</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#axiomatic-derivations-1" id="toc-axiomatic-derivations-1"><span class="toc-section-number">10</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#the-minimal-modal-logic-k" id="toc-the-minimal-modal-logic-k">The Minimal Modal Logic K</a></li>
+<li><a href="axiomatic-derivations-1.html#normal-modal-systems" id="toc-normal-modal-systems">Normal Modal Systems</a></li>
+</ul></li>
+<li class="has-sub"><a href="metatheory.html#metatheory" id="toc-metatheory"><span class="toc-section-number">11</span> Metatheory</a>
+<ul>
+<li><a href="metatheory.html#canonical-models" id="toc-canonical-models">Canonical Models</a></li>
+<li><a href="metatheory.html#completeness-1" id="toc-completeness-1">Completeness</a></li>
+</ul></li>
+<li class="part"><span><b>IV Selected Applications</b></span></li>
+<li class="has-sub"><a href="epistemic-logic.html#epistemic-logic" id="toc-epistemic-logic"><span class="toc-section-number">12</span> Epistemic Logic</a>
+<ul>
+<li><a href="epistemic-logic.html#knowledge" id="toc-knowledge">Knowledge</a></li>
+<li><a href="epistemic-logic.html#belief" id="toc-belief">Belief</a></li>
+</ul></li>
+<li class="has-sub"><a href="provability-logic.html#provability-logic" id="toc-provability-logic"><span class="toc-section-number">13</span> Provability Logic</a>
+<ul>
+<li><a href="provability-logic.html#arithmetic" id="toc-arithmetic">Arithmetic</a></li>
+<li><a href="provability-logic.html#provability" id="toc-provability">Provability</a></li>
+</ul></li>
+<li class="has-sub"><a href="deontic-logic.html#deontic-logic" id="toc-deontic-logic"><span class="toc-section-number">14</span> Deontic Logic</a>
+<ul>
+<li><a href="deontic-logic.html#obligation" id="toc-obligation">Obligation</a></li>
+<li><a href="deontic-logic.html#classic-problems" id="toc-classic-problems">Classic Problems</a></li>
+<li><a href="deontic-logic.html#conditional-obligation" id="toc-conditional-obligation">Conditional Obligation</a></li>
+</ul></li>
+<li class="has-sub"><a href="conditionals.html#conditionals" id="toc-conditionals"><span class="toc-section-number">15</span> Conditionals</a>
+<ul>
+<li><a href="conditionals.html#the-problem-of-conditionals" id="toc-the-problem-of-conditionals">The Problem of Conditionals</a></li>
+<li><a href="conditionals.html#the-strict-conditional" id="toc-the-strict-conditional">The Strict Conditional</a></li>
+<li><a href="conditionals.html#conditional-logic" id="toc-conditional-logic">Conditional Logic</a></li>
+</ul></li>
+<li class="part"><span><b>V Quantified Modal Logic</b></span></li>
+<li class="has-sub"><a href="syntax-3.html#syntax-3" id="toc-syntax-3"><span class="toc-section-number">16</span> Syntax</a>
+<ul>
+<li><a href="syntax-3.html#the-simplest-quantificational-modal-logic" id="toc-the-simplest-quantificational-modal-logic">The Simplest Quantificational Modal Logic</a></li>
+<li><a href="syntax-3.html#free-quantified-modal-logic" id="toc-free-quantified-modal-logic">Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#varieties-of-free-quantified-modal-logic" id="toc-varieties-of-free-quantified-modal-logic">Varieties of Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#existence-in-free-quantificational-logic" id="toc-existence-in-free-quantificational-logic">Existence in Free Quantificational Logic</a></li>
+</ul></li>
+<li class="has-sub"><a href="semantics-2.html#semantics-2" id="toc-semantics-2"><span class="toc-section-number">17</span> Semantics</a>
+<ul>
+<li><a href="semantics-2.html#constant-domain-models" id="toc-constant-domain-models">Constant Domain Models</a></li>
+<li><a href="semantics-2.html#variable-domain-models" id="toc-variable-domain-models">Variable Domain Models</a></li>
+</ul></li>
+<li class="has-sub"><a href="the-being-constraint.html#the-being-constraint" id="toc-the-being-constraint"><span class="toc-section-number">18</span> The Being Constraint</a>
+<ul>
+<li><a href="the-being-constraint.html#positive-semantics-for-quantified-modal-logic" id="toc-positive-semantics-for-quantified-modal-logic">Positive Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#negative-semantics-for-quantified-modal-logic" id="toc-negative-semantics-for-quantified-modal-logic">Negative Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#neutral-semantics-for-quantified-modal-logic" id="toc-neutral-semantics-for-quantified-modal-logic">Neutral Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#a-problem-for-the-being-constraint" id="toc-a-problem-for-the-being-constraint">A Problem for the Being Constraint</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="deontic-logic" class="section level1" number="14">
+<h1><span class="header-section-number">14</span> Deontic Logic</h1>
+<p>The language of deontic logic <span class="math inline">\(\mathcal{L}^{O}\)</span> supplements the language of propositional modla logic with a propositional operator, <span class="math inline">\(O\)</span>, read: “it is obligatory that”. Its dual, <span class="math inline">\(\neg O \neg\)</span> is symbolized: <span class="math inline">\(P\)</span> and read: “it is permissible that.” There are multiple interpretations available for the propositional operator <span class="math inline">\(O\)</span> depending on the specific type of obligation it is supposed to govern, e.g., legal obligation, moral obligation, etc.</p>
+<p>A <em>relational</em> model <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{O}\)</span> is a structure <span class="math inline">\((W, R, V)\)</span>, where:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(W\)</span> is a non-empty set of information states or states of the world,</li>
+<li><span class="math inline">\(R\)</span> is a binary accessibility relation on <span class="math inline">\(W\)</span>, and</li>
+<li><span class="math inline">\(V\)</span> is a function, which assigns to each propositional variable <span class="math inline">\(p\)</span> a set of states <span class="math inline">\(V(p)\)</span>.</li>
+</ol>
+<p>We gloss the relation of deontic accessibility in terms of standards of obligation in force at each world. Given a world <span class="math inline">\(w \in W\)</span>, we will say that <span class="math inline">\(u\)</span> is <em>deontically accessible</em> from <span class="math inline">\(w\)</span>, <span class="math inline">\(Rwu\)</span>, if, and only if, <span class="math inline">\(w\)</span> is <em>admissible relative to the norms or standards of obligation in force at</em> <span class="math inline">\(w\)</span>. In other words, <span class="math inline">\(u\)</span> is a world at which everything that ought to be case <em>according to <span class="math inline">\(w\)</span></em> is the case. That is not to say that everything that ought to be the case <em>according to <span class="math inline">\(u\)</span></em> is the case at <span class="math inline">\(u\)</span>. For the norms that are in force at <span class="math inline">\(u\)</span> may be more restrictive than those in place at <span class="math inline">\(w\)</span>. Nor does it follow that everything that ought to be the case according to the norms in force at <span class="math inline">\(w\)</span> is true at <span class="math inline">\(w\)</span>. Of course the relevant norms will depend on the type of obligation we use to interpret the modal operator <span class="math inline">\(O\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-243" class="definition"><strong>Definition 14.1  (Truth at a World) </strong></span><span class="math display">\[
+\begin{array}{lll}
+M, w \Vdash p &amp; \text{iff} &amp; w \in V(p)\\
+M, w \Vdash \neg \varphi &amp; \text{iff} &amp; M, w \nVdash \varphi\\
+M, w \Vdash (\varphi \to \psi) &amp; \text{iff} &amp; M, w \nVdash \varphi \ \text{or} \ M, w \Vdash \psi\\
+M, w \Vdash O \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span>
+We define <span class="math inline">\(P\)</span> as the dual of <span class="math inline">\(O\)</span>, that is, <span class="math inline">\(\neg O  \neg\)</span>, which means:
+<span class="math display">\[
+\begin{array}{lll}
+M, w \Vdash P \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ \text{such that} \ Rwu, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+</div>
+<p>We are now in a position to define truth in a model of deontic logic.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-244" class="definition"><strong>Definition 14.2  (Truth in a Model) </strong></span>A formula <span class="math inline">\(\varphi\)</span> is <em>true in</em> a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, R, V)\)</span>, written <span class="math inline">\(M\Vdash \varphi\)</span>, if, and only if, for every <span class="math inline">\(w\in W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+</div>
+<div id="obligation" class="section level2 unnumbered">
+<h2>Obligation</h2>
+<p>These decisions are not inconsequential. For it follows that all logical truths are obligatory and that whatever follows from something obligatory is indeed obligatory. That is the framework vindicates a rule of necessitation and all substitution instances of axiom K:
+<span class="math display">\[\tag{N}
+\varphi / O \varphi
+\]</span></p>
+<p><span class="math display">\[\tag{K}
+O(p \to q) \to (Op \to Oq)
+\]</span></p>
+<p>Neither requirement seems plausible when it comes to obligation. For it is hard to find a sense in which a logical truth should be obligatory or, if you like, the content of a requirement or obligation. You may appeal to a modicum of idealization as we did in the case of knowledge and belief. That is, you may be tempted to read <span class="math inline">\(O\varphi\)</span> in terms of entailment from what is required by a system of norms or standards of obligation. Since everything entails a logical truth, it is to be expected that they follow from whatever is required by whatever norms may be in force.</p>
+<p>The minimal deontic logic supplements <span class="math inline">\(K\)</span> with a counterpart of axiom <span class="math inline">\(D\)</span> for obligation:
+<span class="math display">\[\tag{D}
+O p \to P p
+\]</span></p>
+<p>This axiom encodes the assumption that whatever is obligatory is permissible, and it corresponds to the seriality of deontic accessibility: no matter what the world is like, there is another world at which the actual standards of obligation are met.</p>
+<p>More controversial are each of the deontic counterparts of axioms 4 and 5, respectively. Consider the deontic counterpart of axiom <span class="math inline">\(4\)</span> first:
+<span class="math display">\[\tag{4}
+Op \to OOp
+\]</span>
+This tells us that whatever is obligatory <em>ought to</em> be obligatory. So, if <span class="math inline">\(\varphi\)</span> is in line with the norms in place <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> is admissible relative to the norms in place at <span class="math inline">\(u\)</span>, then <span class="math inline">\(O\varphi\)</span> is in line with the norms in place at <span class="math inline">\(v\)</span>. One way to enforce this constraint is by making sure that the system of norms never decreases from world to (admissible) world: if <span class="math inline">\(u\)</span> sees <span class="math inline">\(v\)</span>, then <span class="math inline">\(v\)</span> should incorporate all of the norms that are in force at <span class="math inline">\(u\)</span>.</p>
+<p>Let us look at <span class="math inline">\(5\)</span> now:
+<span class="math display">\[\tag{5}
+Pp \to OPp
+\]</span>
+This now says that whatever is permissible ought to remain permissible. So, if <span class="math inline">\(\varphi\)</span> is permissible at a world <span class="math inline">\(u\)</span>, then <span class="math inline">\(\varphi\)</span> holds at some world <span class="math inline">\(v\)</span> that is admissible relative to the norms in force at <span class="math inline">\(u\)</span>. One way to implement this constraint is to make sure that the system of norms in force at a world never increase from world to (admissible) world. So, no admissible world relative to the norms at <span class="math inline">\(u\)</span> should incorporate further norms. One way to summarize the last two observations is that the combination of 4 and 5 requires the system of norms to remain constant across worlds, which is, on the face of it, not all that plausible when it comes to familiar types of obligation.</p>
+<p>One more plausible extension of <span class="math inline">\(KD\)</span> supplements its axioms with axiom <span class="math inline">\(U\)</span> below:
+<span class="math display">\[\tag{U}
+O(Op \to p)
+\]</span>
+This principle, which is sometimes known as <em>Utopia</em>, tells us that it ought to be the case than whatever is obligatory is the case. So, this requires admissible worlds to be ones where the standard of obligation are in fact fulfilled.</p>
+<p>The deontic logic that results, <span class="math inline">\(KDU\)</span>, is sound and complete with respect to the class of serial and weakly reflexive frames.</p>
+</div>
+<div id="classic-problems" class="section level2 unnumbered">
+<h2>Classic Problems</h2>
+<p>The framework of deontic logic invites the formulation of a variety of puzzles. Some of these puzzles arise from the validity of the following derived rule of inference:</p>
+<p><span class="math display">\[\tag{RK}
+\varphi \to \psi / O \varphi \to O\psi
+\]</span></p>
+<div id="the-good-samaritan-paradox" class="section level3 unnumbered">
+<h3>The Good Samaritan Paradox</h3>
+<p>The first difficulty arises by reflection on the following fact:
+<span class="math display">\[
+  \vdash_{KD} O(p \wedge q) \to Oq
+  \]</span>
+The derivation is simple:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; p \wedge q \to q &amp; &amp;   \text{PL} \\
+2 &amp; &amp; O(p \wedge q) \to Oq &amp; &amp; \text{RK}
+\end{array}
+\]</span>
+The problem is that this observation appears to license the following inference:</p>
+<ol style="list-style-type: decimal">
+<li>Jones ought to help Smith, who has been robbed.</li>
+<li>Smith ought to be robbed.</li>
+</ol>
+<p>Here we let <span class="math inline">\(p\)</span> be ‘Jones helps Smith’ and we let <span class="math inline">\(q\)</span> be ‘Smith is robbed’. But while the premise seems fine, the conclusion seems absurd.</p>
+<p>One way out of course is to reject the formalization of the first premise by means of the conjunction <span class="math inline">\(p \wedge q\)</span>. Maybe we should think of the premise in terms of a conditional obligation: Jones ought to help Smith <em>given that</em> Smith has been robbed. It is one thing to say that the conjunction ought to be the case, which is false, and quite another to say that there is a conditional obligation for Jones to help Smith given that he has been robbed. Compare the distinction we just made with the distinction between a conditional probability and the probability of a conjunction. There is an important distinction to be drawn between ‘Probably, Smith will be robbed and Jones will help Smith’ and ’Probably, Jones will help Smith given that Smith has been robbed. The conjunction may remain improbable even if the conditional probability is very high. Conditional probability, we learn, is not the same as the probability of a conjunction.</p>
+</div>
+<div id="ross-paradox" class="section level3 unnumbered">
+<h3>Ross’ Paradox</h3>
+<p>The next issue involves another application of RK and begins with the following observation:</p>
+<p><span class="math display">\[
+  \vdash_{K} Op \to O(p \vee q)
+  \]</span>
+The derivation is simple:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; p \to p \vee q &amp; &amp;   \text{PL} \\
+2 &amp; &amp; Op  \to O(p \vee q) &amp; &amp; \text{RK}
+\end{array}
+\]</span></p>
+<p>The problem is that this observation appears to license the following inference:</p>
+<ol style="list-style-type: decimal">
+<li>The letter ought to be mailed.</li>
+<li>The letter ought to be mailed or burned.</li>
+</ol>
+<p>Here we let <span class="math inline">\(p\)</span> be ‘the letter is mailed’ and we let <span class="math inline">\(q\)</span> be ‘the letter is burned’. But while the premise seems fine, the conclusion seems strange since one way to discharge the latter obligation is to burn the letter. That in turn is inconsistent with the first way to discharge the disjunctive obligation.</p>
+</div>
+<div id="chisholms-paradox" class="section level3 unnumbered">
+<h3>Chisholm’s Paradox</h3>
+<p>Four statements would appear to be perfectly consistent with each other:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>You ought to help your neighbors.</p></li>
+<li><p>You ought to tell your neighbors that you will help them if you plan to help them.</p></li>
+<li><p>If you will <em>not</em> help your neighbors, you ought to <em>not</em> tell them that you will.</p></li>
+<li><p>You will not help your neighbors.</p></li>
+</ol>
+<p>Unfortunately, the scenario appears to be inconsistent when formalized against the background of the minimal deontic logic. For let <span class="math inline">\(p\)</span> stand for the proposition that you will help your neighbors and let <span class="math inline">\(q\)</span> stand for the proposition that you will tell them that you will help them. Then, we appear to have:</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(Op\)</span></li>
+<li><span class="math inline">\(O(p \to q)\)</span></li>
+<li><span class="math inline">\(\neg p \to O\neg q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>We now seem to be in a position to argue for a contradiction:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; O(p \to q) \to (Op \to Oq)&amp; &amp;  \text{K}  \\
+2 &amp; &amp; O(p \to q) &amp; &amp;   \text{ii}  \\
+3 &amp; &amp; Op \to Oq &amp; &amp;   1, \text{PL}  \\
+4 &amp; &amp; Oq &amp; &amp; \text{i} \\
+5 &amp; &amp; O q \to \neg O \neg q &amp; &amp; \text{D} \\
+6 &amp; &amp; \neg O \neg q &amp;  &amp; 4, 5, \text{PL}\\
+7 &amp; &amp; \neg p &amp; &amp; \text{iv} \\
+8 &amp; &amp; \neg p \to O \neg q &amp; &amp; \text{iii} \\
+9 &amp; &amp; O \neg q &amp; &amp; 7, 8, \text{PK} \\
+10 &amp; &amp; O \neg q \wedge \neg O \neg q &amp; &amp; 6, 9, \text{PL}\\
+\end{array}
+\]</span>
+This is unacceptable, unless, that is, we are prepared to concede that Chisholm’s scenario is incoherent, which means that we have to find a way to either live with the inconsistency of the first four claims or else find a way to resist the derivation of the contradiction.</p>
+<p>One immediate suggestion is to question the formalization we proposed on the grounds perhaps that ii and iii ought to be treated on a par. That would result in two candidate alternatives to the original formulation:</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(Op\)</span></li>
+<li><span class="math inline">\(O(p \to q)\)</span></li>
+<li><span class="math inline">\(O(\neg p \to O\neg q)\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>In this case, iii would become a consequence of i, which would make the original set of statements redundant.</p>
+<ol style="list-style-type: lower-roman">
+<li><span class="math inline">\(Op\)</span></li>
+<li><span class="math inline">\(p \to Oq\)</span></li>
+<li><span class="math inline">\(\neg p \to O\neg q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>In this case, ii would become a simple consequence of iv making the original set of statements redundant again.</p>
+</div>
+</div>
+<div id="conditional-obligation" class="section level2 unnumbered">
+<h2>Conditional Obligation</h2>
+<p>One common reaction to these problems is to invoke a distinction between obligation and conditional obligation akin to that between probability and conditional probability. The thought is that a conditional obligation is not the same as the obligation to make sure a conditional is true.</p>
+<p>Let us tentatively enrich the language of deontic logic with a new binary operator into the language <span class="math inline">\(O(p/q)\)</span>, read: “it ought to be the case that <span class="math inline">\(p\)</span> given that <span class="math inline">\(q\)</span>”. That would be the operator one would use to formalize the conditional obligation to tell your neighbors you will help them provided that you will. The question now becomes whether we are in a position to define conditional obligation in terms of unconditional obligation, and it seems clear that the salient alternatives will <em>not</em> do:</p>
+<ul>
+<li><p><span class="math inline">\(O(p/q):= q \to Op\)</span></p>
+<p>This is much too weak to capture conditional obligation, since it makes them true whenever the antecedent is false. It would be trivially true, for example, that I ought to give you a million dollars given that I’m an engineer.</p></li>
+<li><p><span class="math inline">\(O(p/q):= O(q \to p)\)</span></p>
+<p>The problem with this is that in the presence of <span class="math inline">\(KD\)</span>, we can derive:
+<span class="math display">\[
+\begin{array}{llll}
+\vdash_{KD} Op \to O(q \to p) &amp;  &amp; \vdash_{KD} O \ \neg q \to O(q \to p)\\
+\end{array}
+\]</span>
+But in connection to the second observation, the fact that you ought not disturb your neighbors should not entail the conditional obligation to argue with them given that you disturb them.</p>
+<p>There are further problems. Since <span class="math inline">\(\vdash (q \to p) \to (q \wedge r \to p)\)</span>, we learn:
+<span class="math display">\[
+\begin{array}{lllll}
+\vdash_{KD} O(q \to p) \to O(q \wedge r \to p) &amp; &amp; &amp; &amp; \\
+\end{array}
+\]</span>
+So, if you ought to help your new neighbors move in given that they do, then you ought to help them move in given that they do and that they ask you to please not help them.</p></li>
+</ul>
+<p>The alternative is to treat conditional obligation as a new binary operator governed by its own distinctive rules of inference:
+<span class="math display">\[
+\begin{array}{lllll}
+q \wedge O(p/q) \to Op &amp; &amp; &amp; &amp; \text{Factual Detachment}\\
+Oq \wedge O(p/q) \to Op &amp; &amp; &amp; &amp; \text{Deontic Detachment}\\
+\end{array}
+\]</span>
+Given factual detachment, if your new neighbors will move in tomorrow, and you ought to help them provided that they do, then you ought to help them. On the other hand, the point of deontic detachment is to allow the move from the fact that it ought to be the case that they will move in tomorrow and the conditional obligation to the obligation to help them tomorrow.</p>
+<p>Notice that once we do this, it becomes an option define the original obligation operator in terms of conditional obligation:</p>
+<p><span class="math display">\[
+Op := O(p/\top)
+\]</span>
+The question, however, is how to specify truth conditions for such claims against the background of the possible worlds model theory.</p>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="provability-logic.html"><button class="btn btn-default">Previous</button></a>
+<a href="conditionals.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

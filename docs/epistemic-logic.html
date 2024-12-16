@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="12 Epistemic Logic | Modal Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 452: Modal Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+<meta name="date" content="2024-12-16" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 452: Modal Logic.">
+
+<title>12 Epistemic Logic | Modal Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Background</b></span></li>
+<li><a href="introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li class="has-sub"><a href="sets-and-relations.html#sets-and-relations" id="toc-sets-and-relations"><span class="toc-section-number">2</span> Sets and Relations</a>
+<ul>
+<li><a href="sets-and-relations.html#sets" id="toc-sets">Sets</a></li>
+<li><a href="sets-and-relations.html#relations" id="toc-relations">Relations</a></li>
+<li><a href="sets-and-relations.html#properties-of-relations" id="toc-properties-of-relations">Properties of Relations</a></li>
+</ul></li>
+<li><a href="mathematical-induction.html#mathematical-induction" id="toc-mathematical-induction"><span class="toc-section-number">3</span> Mathematical Induction</a></li>
+<li class="part"><span><b>II Propositional Language</b></span></li>
+<li><a href="syntax.html#syntax" id="toc-syntax"><span class="toc-section-number">4</span> Syntax</a></li>
+<li><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">5</span> Semantics</a></li>
+<li class="has-sub"><a href="axiomatic-derivations.html#axiomatic-derivations" id="toc-axiomatic-derivations"><span class="toc-section-number">6</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations.html#the-deduction-theorem" id="toc-the-deduction-theorem">The Deduction Theorem</a></li>
+<li><a href="axiomatic-derivations.html#maximal-consistency" id="toc-maximal-consistency">Maximal Consistency</a></li>
+</ul></li>
+<li><a href="completeness.html#completeness" id="toc-completeness"><span class="toc-section-number">7</span> Completeness</a></li>
+<li class="part"><span><b>III Modal Propositional Logic</b></span></li>
+<li><a href="syntax-1.html#syntax-1" id="toc-syntax-1"><span class="toc-section-number">8</span> Syntax</a></li>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">9</span> Semantics</a>
+<ul>
+<li><a href="semantics-1.html#frames" id="toc-frames">Frames</a></li>
+<li><a href="semantics-1.html#frame-definability" id="toc-frame-definability">Frame Definability</a></li>
+<li><a href="semantics-1.html#bisimulations" id="toc-bisimulations">Bisimulations</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#axiomatic-derivations-1" id="toc-axiomatic-derivations-1"><span class="toc-section-number">10</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#the-minimal-modal-logic-k" id="toc-the-minimal-modal-logic-k">The Minimal Modal Logic K</a></li>
+<li><a href="axiomatic-derivations-1.html#normal-modal-systems" id="toc-normal-modal-systems">Normal Modal Systems</a></li>
+</ul></li>
+<li class="has-sub"><a href="metatheory.html#metatheory" id="toc-metatheory"><span class="toc-section-number">11</span> Metatheory</a>
+<ul>
+<li><a href="metatheory.html#canonical-models" id="toc-canonical-models">Canonical Models</a></li>
+<li><a href="metatheory.html#completeness-1" id="toc-completeness-1">Completeness</a></li>
+</ul></li>
+<li class="part"><span><b>IV Selected Applications</b></span></li>
+<li class="has-sub"><a href="epistemic-logic.html#epistemic-logic" id="toc-epistemic-logic"><span class="toc-section-number">12</span> Epistemic Logic</a>
+<ul>
+<li><a href="epistemic-logic.html#knowledge" id="toc-knowledge">Knowledge</a></li>
+<li><a href="epistemic-logic.html#belief" id="toc-belief">Belief</a></li>
+</ul></li>
+<li class="has-sub"><a href="provability-logic.html#provability-logic" id="toc-provability-logic"><span class="toc-section-number">13</span> Provability Logic</a>
+<ul>
+<li><a href="provability-logic.html#arithmetic" id="toc-arithmetic">Arithmetic</a></li>
+<li><a href="provability-logic.html#provability" id="toc-provability">Provability</a></li>
+</ul></li>
+<li class="has-sub"><a href="deontic-logic.html#deontic-logic" id="toc-deontic-logic"><span class="toc-section-number">14</span> Deontic Logic</a>
+<ul>
+<li><a href="deontic-logic.html#obligation" id="toc-obligation">Obligation</a></li>
+<li><a href="deontic-logic.html#classic-problems" id="toc-classic-problems">Classic Problems</a></li>
+<li><a href="deontic-logic.html#conditional-obligation" id="toc-conditional-obligation">Conditional Obligation</a></li>
+</ul></li>
+<li class="has-sub"><a href="conditionals.html#conditionals" id="toc-conditionals"><span class="toc-section-number">15</span> Conditionals</a>
+<ul>
+<li><a href="conditionals.html#the-problem-of-conditionals" id="toc-the-problem-of-conditionals">The Problem of Conditionals</a></li>
+<li><a href="conditionals.html#the-strict-conditional" id="toc-the-strict-conditional">The Strict Conditional</a></li>
+<li><a href="conditionals.html#conditional-logic" id="toc-conditional-logic">Conditional Logic</a></li>
+</ul></li>
+<li class="part"><span><b>V Quantified Modal Logic</b></span></li>
+<li class="has-sub"><a href="syntax-3.html#syntax-3" id="toc-syntax-3"><span class="toc-section-number">16</span> Syntax</a>
+<ul>
+<li><a href="syntax-3.html#the-simplest-quantificational-modal-logic" id="toc-the-simplest-quantificational-modal-logic">The Simplest Quantificational Modal Logic</a></li>
+<li><a href="syntax-3.html#free-quantified-modal-logic" id="toc-free-quantified-modal-logic">Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#varieties-of-free-quantified-modal-logic" id="toc-varieties-of-free-quantified-modal-logic">Varieties of Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#existence-in-free-quantificational-logic" id="toc-existence-in-free-quantificational-logic">Existence in Free Quantificational Logic</a></li>
+</ul></li>
+<li class="has-sub"><a href="semantics-2.html#semantics-2" id="toc-semantics-2"><span class="toc-section-number">17</span> Semantics</a>
+<ul>
+<li><a href="semantics-2.html#constant-domain-models" id="toc-constant-domain-models">Constant Domain Models</a></li>
+<li><a href="semantics-2.html#variable-domain-models" id="toc-variable-domain-models">Variable Domain Models</a></li>
+</ul></li>
+<li class="has-sub"><a href="the-being-constraint.html#the-being-constraint" id="toc-the-being-constraint"><span class="toc-section-number">18</span> The Being Constraint</a>
+<ul>
+<li><a href="the-being-constraint.html#positive-semantics-for-quantified-modal-logic" id="toc-positive-semantics-for-quantified-modal-logic">Positive Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#negative-semantics-for-quantified-modal-logic" id="toc-negative-semantics-for-quantified-modal-logic">Negative Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#neutral-semantics-for-quantified-modal-logic" id="toc-neutral-semantics-for-quantified-modal-logic">Neutral Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#a-problem-for-the-being-constraint" id="toc-a-problem-for-the-being-constraint">A Problem for the Being Constraint</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="epistemic-logic" class="section level1" number="12">
+<h1><span class="header-section-number">12</span> Epistemic Logic</h1>
+<p>One of the uses to which propositional modal logic has been put is to model certain propositional attitudes such as knowledge and belief.</p>
+<div id="knowledge" class="section level2 unnumbered">
+<h2>Knowledge</h2>
+<p>To model knowledge, <span class="citation">(<label for="tufte-mn-5" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-5" class="margin-toggle">Hintikka 1962<span class="marginnote">Hintikka, Kaarlo Jaakko Juhani. 1962. <span>“Knowledge and Belief: An Introduction to the Logic of the Two Notions.”</span></span>)</span> supplements the language of propositional logic with a family of propositional operators <span class="math inline">\(K_i\)</span> for a family of epistemic agents <span class="math inline">\(i\in I\)</span>. A formula of the form <span class="math inline">\(K_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that <span class="math inline">\(\varphi\)</span>.” Its dual, <span class="math inline">\(\neg K_i \neg\)</span> is symbolized: <span class="math inline">\(\langle K_i \rangle\)</span>, is read: “for all agent <span class="math inline">\(i\)</span> knows, <span class="math inline">\(\varphi\)</span> remains open.”</p>
+<p>A <em>relational</em> model <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{K_i}\)</span> is a structure <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, where:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(W\)</span> is a non-empty set of information states or states of the world,</li>
+<li>For each <span class="math inline">\(i\in I\)</span>, <span class="math inline">\(R_i\)</span> is a binary accessibility relation on <span class="math inline">\(W\)</span>, and</li>
+<li><span class="math inline">\(V\)</span> is a function, which assigns to each propositional variable <span class="math inline">\(p\)</span> a set of states <span class="math inline">\(V(p)\)</span>.</li>
+</ol>
+<p>We now define what it is for a formula <span class="math inline">\(\varphi\)</span> <em>true at</em> a state <span class="math inline">\(s\)</span> in a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M, s \Vdash \varphi\)</span>, inductively:</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-214" class="definition"><strong>Definition 12.1  (Truth at a State) </strong></span><span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash p &amp; \text{iff} &amp; s \in V(p)\\
+M, s \Vdash \neg \varphi &amp; \text{iff} &amp; M, s \nVdash \varphi\\
+M, s \Vdash (\varphi \to \psi) &amp; \text{iff} &amp; M, s \nVdash \varphi \ \text{or} \ M, s \Vdash \psi\\
+M, s \Vdash K_i \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{s.t.} \ R_i su, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span>
+We define <span class="math inline">\(\langle K_i \rangle\)</span> as the dual of <span class="math inline">\(K_i\)</span>, that is, <span class="math inline">\(\neg K_i  \neg\)</span>, which means:
+<span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash \langle K_i \rangle \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ \text{s.t.} \ R_i su, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+</div>
+<p>We are now in a position to define truth in a model of epistemic logic.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-215" class="definition"><strong>Definition 12.2  (Truth in a Model) </strong></span>A formula <span class="math inline">\(\varphi\)</span> is <em>true in</em> a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M\Vdash \varphi\)</span>, if, and only if, for every <span class="math inline">\(s\in W\)</span>, <span class="math inline">\(M, s \Vdash \varphi\)</span>.</p>
+</div>
+<p>Knowledge provides the ability to locate the actual world in the space of epistemic live options, and, in particular, to exclude certain states of the world as candidates for actuality. One information state <span class="math inline">\(v\)</span> is <em>i-accessible</em> from <span class="math inline">\(u\)</span> iff <span class="math inline">\(v\)</span> remains an <em>epistemic live option</em> for the agent <span class="math inline">\(i\)</span> in state <span class="math inline">\(u\)</span>, one the agent <span class="math inline">\(i\)</span> is not able to exclude as a candidate for actuality. That is, nothing the agent <span class="math inline">\(i\)</span> knows enables <span class="math inline">\(i\)</span> to distinguish <span class="math inline">\(v\)</span> from the actual world.</p>
+<p>These decisions are not inconsequential. For it follows that agents know all logical truths and that they know what follows from what they know. That is the framework vindicates a rule of necessitation and all substitution instances of axiom K:
+<span class="math display">\[\tag{N}
+\varphi / K_i \varphi
+\]</span></p>
+<p><span class="math display">\[\tag{K}
+K_i(p \to q) \to (K_ip \to K_iq)
+\]</span>
+This involves a modicum of idealization: ordinary knowledge is not closed under logical consequence, and it is not all that plausible to think agents ordinarily know all logical truths.</p>
+<p>One way to cope with this observation is to let <span class="math inline">\(K_i\)</span> model not ordinary knowledge but rather knowledge by an idealized agent equipped with unlimited logical capabilities. Alternatively, one may instead take <span class="math inline">\(K_i\)</span> to model <em>implicit</em> knowledge, which is what follows from knowledge we may reasonably attribute to ordinary agents even if it is not explicitly known by them.</p>
+<p>The next step is to consider the epistemic interpretation of different modal axioms and to ask whether or not they are candidates for the logic of knowledge.</p>
+<p><span class="math display">\[\tag{T}
+K_i p \to p
+\]</span></p>
+<p><em>What is known is the case.</em></p>
+<p>The principle that knowledge implies truth is virtually universally accepted, and a firm candidate for the logic of knowledge.</p>
+<p>From a semantic point of view, <span class="math inline">\(T\)</span> requires <span class="math inline">\(i\)</span>-accessibility relations to be reflexive: a state itself is a live epistemic option for an agent.</p>
+<p><span class="math display">\[\tag{4}
+K_i p \to K_i K_i p
+\]</span>
+<em>What is known is known to be known.</em></p>
+<p>This is the principle commonly known as the <span class="math inline">\(KK\)</span>-principle. It encodes the view that knowledge is transparent to the agent: if you know something, then you know that you know. Presumably, the thought is that agents with unlimited introspection capabilities ought to be able to recognize their own knowledge: agents should be able to introspectively attend to their reasons for belief, which should be conclusive in cases of knowledge and not defeasible by new information.</p>
+<p>From a semantic point of view, <span class="math inline">\(4\)</span> requires the <span class="math inline">\(i\)</span>-accessibility relations to be transitive: if a state <span class="math inline">\(t\)</span> is an epistemic live option for <span class="math inline">\(i\)</span> at <span class="math inline">\(v\)</span>, and <span class="math inline">\(v\)</span> is a live option for <span class="math inline">\(i\)</span> at <span class="math inline">\(u\)</span>, then <span class="math inline">\(t\)</span> is a live option for <span class="math inline">\(i\)</span> at <span class="math inline">\(u\)</span>.</p>
+<p><span class="citation">(<label for="tufte-mn-6" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-6" class="margin-toggle">Hintikka 1962<span class="marginnote">Hintikka, Kaarlo Jaakko Juhani. 1962. <span>“Knowledge and Belief: An Introduction to the Logic of the Two Notions.”</span></span>)</span> adopted axioms <span class="math inline">\(T\)</span> and <span class="math inline">\(4\)</span> and identified <span class="math inline">\(S4\)</span> as a candidate logic for knowledge. His reasons for that is that he regarded axioms <span class="math inline">\(B\)</span> and <span class="math inline">\(5\)</span> as implausible epistemic principles.</p>
+<p><span class="math display">\[\tag{B}
+p  \to K_i \langle K_i \rangle p
+\]</span>
+<em>What is the case is known to be open.</em></p>
+<p>This means that we could come to know that something that is the case is open merely by reflection on that fact, which seems implausible. This is clearer when we look at the contrapositive of the principle:
+<span class="math display">\[\tag{B$_\Diamond$}
+\langle K_i \rangle K_i p  \to p
+\]</span>
+It is not implausible to think an agent may take themselves to know something that is in fact <em>not</em> the case. That would be a case in which knowledge that they know something would not be ruled out despite the fact that what is taken to be known is <em>not</em> the case. But that again is supposed to be ruled out by <span class="math inline">\(B_\Diamond\)</span>.</p>
+<p>The semantic counterpart of these observations is that we should not automatically rule out failures of symmetry for <span class="math inline">\(i\)</span>-accessibility relations: from the fact that <span class="math inline">\(v\)</span> is an epistemic live option for the agent at <span class="math inline">\(u\)</span>, we cannot conclude that <span class="math inline">\(u\)</span> is an epistemic live option for the agent at <span class="math inline">\(v\)</span>.</p>
+<p>To the extent to which <span class="math inline">\(KTB4\)</span> is equivalent to <span class="math inline">\(KT5\)</span> or <span class="math inline">\(S5\)</span>, the above considerations extend to axiom <span class="math inline">\(5\)</span>, which in the presence of <span class="math inline">\(T\)</span> would give us <span class="math inline">\(B\)</span>.</p>
+<p><span class="math display">\[\tag{5}
+\langle K_i\rangle p \to K_i \langle K_i \rangle p
+\]</span>
+<em>What is open is known to be open.</em></p>
+<p>There are cases in which agents take themselves to know something that is not in fact the case. Because knowledge entails truth, it would be false in that case that the agents <em>know</em>. But the agents might not have access to that information: it may be open to them that they know despite the fact that they do <em>not</em> know that it is open to them to know. One way to put it is that <span class="math inline">\(5\)</span> would require agents to be immune to error of the sort described, which is again quite implausible.</p>
+<p>We now illustrate further uses of epistemic logic by means of a well-known example.</p>
+<div id="information-flow" class="section level3 unnumbered">
+<h3>Information Flow</h3>
+<p>The insight behind the possible worlds semantics for epistemic logic is that agents locate themselves in the space of epistemic live options by excluding states of the world as live options in light of new information. The Muddy Children puzzle illustrates the dynamic aspect of this update mechanism:</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-216" class="example"><strong>Example 12.1  (Muddy Children) </strong></span>Three children <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> have been playing outside when they are called back inside by their guardian. Two of them, say <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>, have mud on their forehead, but none of them is able to see their own forehead. Each child, however, can see which of the other children are muddy. Once inside, the guardian asserts:</p>
+<ol style="list-style-type: upper-alpha">
+<li>At least one of you is muddy.</li>
+</ol>
+<p>followed by an initial request:</p>
+<ol start="2" style="list-style-type: upper-alpha">
+<li>If you know you are muddy, please step forward.</li>
+</ol>
+<p>None of the children will presumably step forward after the first request. Each child will see other children with mud in their foreheads, but none of them will know whether they themselves are muddy.</p>
+<p>Matters change when she repeats the same request for a second time:</p>
+<ol start="3" style="list-style-type: upper-alpha">
+<li>If you know you are muddy, please step forward.</li>
+</ol>
+<p>After the second request, the two muddy children <em>will</em> step forward while the third stays behind. For they <em>now</em> know that they are muddy.</p>
+</div>
+<p>The example raises a number of questions:</p>
+<ul>
+<li><p>Did the children learn anything new after the announcement that one of them was muddy?</p></li>
+<li><p>What changed between the initial request when no one stepped forward and the later one when two muddy children did?</p></li>
+<li><p>How did the two muddy children come to know that they had mud in their foreheads?</p></li>
+</ul>
+<p>Here is a diagrammatic representation of the situation before the initial announcement.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren1.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">Before Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>We represent the relevant states of information with respect to the question at hand by ordered triples of digits, which encode the state of each children in that order. Thus for example:</p>
+<ul>
+<li><span class="math inline">\(101\)</span> encodes the <em>actual</em> state of the world on which <span class="math inline">\(a\)</span> is muddy, <span class="math inline">\(b\)</span> is not muddy, and <span class="math inline">\(c\)</span> is muddy.</li>
+<li><span class="math inline">\(111\)</span> encodes an <em>epistemic live option</em> for <span class="math inline">\(b\)</span> (though not for <span class="math inline">\(a\)</span> or <span class="math inline">\(c\)</span>) on which all three children are muddy.</li>
+<li><span class="math inline">\(001\)</span> encodes an <em>epistemic live option</em> for <span class="math inline">\(a\)</span> (though not for <span class="math inline">\(b\)</span> or <span class="math inline">\(c\)</span>) on which only <span class="math inline">\(c\)</span> is muddy.</li>
+</ul>
+<p>The eight nodes correspond to eight states, which consist of different distributions of mud across the children. The nodes are connected by different accessibility relations, which correspond to each child as an epistemic agent. We assume that each relation is <em>reflexive</em> and <em>symmetric</em>: when an edge labeled <span class="math inline">\(a\)</span>, for example, connects two nodes, the two states are indistinguishable as far as <span class="math inline">\(a\)</span> is concerned.</p>
+<p>The effect of the announcement <span class="math inline">\(A\)</span> is to let the children exclude <span class="math inline">\(000\)</span> as a live epistemic option.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren2.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">After Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>While announcement <span class="math inline">\(A\)</span> excludes <span class="math inline">\(000\)</span> as actuality, none of the children regarded <span class="math inline">\(000\)</span> as an epistemic live option. That is because each children is able to see mud in the forehead of at least one child.</p>
+<p>The children learn valuable information from the fact that no one steps forward after request <span class="math inline">\(B\)</span> is made. This is because the children now learn that none of the other two children know that they are muddy. This suffices to rule out states at which there is exactly one muddy child.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren3a.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">After Request B</td>
+</tr>
+</tbody>
+</table>
+<p>After request B, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is not is muddy.</p>
+<p>That allows the children to eliminate all epistemic alternatives to <span class="math inline">\(101\)</span>. So, the epistemic situation after the second request is that the children know exactly who is muddy and who is not muddy.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren4.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">After Request C</td>
+</tr>
+</tbody>
+</table>
+<p>Nothing changes when we complicate the situation. If, for example, seven out of ten children happened to be muddy, then no one would step forward until after the guardian makes the seventh request at which point exactly those seven children would simultaneously step forward. More generally, given <span class="math inline">\(n\)</span> muddy children, <span class="math inline">\(n\)</span> rounds of</p>
+</div>
+<div id="common-knowledge" class="section level3 unnumbered">
+<h3>Common Knowledge</h3>
+<p>What do the children learn after the first announcement? Notice that they <em>all</em> know that at least one child is muddy even prior to the announcement. We may use <span class="math inline">\(E\varphi\)</span> as an abbreviation for the conjunction:
+<span class="math display">\[
+\bigwedge_{i\in I} K_i \varphi,
+\]</span>
+which is read: “it is generally known that <span class="math inline">\(\varphi\)</span>’’. General knowledge is not sufficient for common knowledge. A group has common knowledge that <span class="math inline">\(\varphi\)</span> if they <em>all</em> know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that they all know that <span class="math inline">\(\varphi\)</span>, etc.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-217" class="example"><strong>Example 12.2  </strong></span>Let us revisit the initial model for the Muddy Children Puzzle and let <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span>, and <span class="math inline">\(p_3\)</span> be true at exactly states at which each of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>, respectively, are muddy, then we may express the fact that at least one child is muddy by means of the disjunction <span class="math inline">\(p_1 \vee  p_2 \vee p_3\)</span>. Notice that that formula is true when evaluated at state <span class="math inline">\(101\)</span>:
+<span class="math display">\[
+M, 101 \Vdash E (p_1 \vee p_2 \vee p_3).
+\]</span></p>
+<p>That is because:
+<span class="math display">\[
+M, 101 \Vdash K_a (p_1 \vee p_2 \vee p_3) \wedge K_b (p_1 \vee p_2 \vee p_3) \wedge K_c (p_1 \vee p_2 \vee p_3).
+\]</span>
+But although it is generally known that at least one child is muddy, it is <em>not</em> common knowledge that at least one child is muddy.</p>
+</div>
+<p>Common knowledge plays a crucial role in social interaction. When we drive, for example, we rely on the fact that it is common knowledge that a red light requires drivers to stop. It is not sufficient for a pedestrian to know that, but it is important to know that drivers <em>know</em> that and for them to know that everyone knows that, etc.</p>
+<p>How should we incorporate common knowledge in the language of epistemic logic? There is no hope for an explicit definition of common knowledge in terms of knowledge, for that would presumably require an <em>infinite</em> conjunction, which is not available in the language. We will instead expand the language of epistemic logic with a common knowledge operator, <span class="math inline">\(C\varphi\)</span>, reqd: “it is common knowledge that <span class="math inline">\(\varphi\)</span>.</p>
+<p>Once we do this, we must explain how to evaluate a formula of the form <span class="math inline">\(C\varphi\)</span> at a state <span class="math inline">\(s\)</span> of a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>. To that purpose, we will expand the definition of truth at a state with a clause for the newly added common knowledge operator.</p>
+<ul>
+<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in one step</em>, in symbols, <span class="math inline">\(sR^1t\)</span>, iff <span class="math inline">\(sR_it\)</span> for some <span class="math inline">\(i\in I\)</span>. In the case at hand, one state is reachable from another in one step if it is <span class="math inline">\(a\)</span>-accessible from the other or it is <span class="math inline">\(b\)</span>-accessible from the other or, finally, it is <span class="math inline">\(c\)</span>-accessible from the other.</p></li>
+<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in <span class="math inline">\(n+1\)</span> steps</em>, in symbols, <span class="math inline">\(sR^{n+1}t\)</span>, iff for some step <span class="math inline">\(u\)</span>, <span class="math inline">\(sR^{n}u\)</span> and <span class="math inline">\(uR_it\)</span> for some <span class="math inline">\(i\in I\)</span>.</p></li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-218" class="example"><strong>Example 12.3  </strong></span>For purposes of illustration, notice that in the initial model for the Muddy Children Puzzle <span class="math inline">\(000\)</span> is <em>reachable from</em> <span class="math inline">\(101\)</span> <em>in two steps</em>:
+<span class="math display">\[
+101 R_c 100 \ \ \text{and} \ \ 100 R_a 000
+\]</span>
+<span class="math display">\[
+101 R_a 001 \ \ \text{and} \ \ 001 R_c 000
+\]</span></p>
+<p>That is, there are two-step paths one may take from <span class="math inline">\(101\)</span> to <span class="math inline">\(000\)</span>.</p>
+</div>
+<p>Finally,</p>
+<ul>
+<li>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in a finite number of steps</em>, in symbols <span class="math inline">\(R^\star\)</span>, iff there is some <span class="math inline">\(n\)</span> such that <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in <span class="math inline">\(n\)</span> steps.</li>
+</ul>
+<p>Here is the clause for <span class="math inline">\(C\varphi\)</span> in the definition of truth at a state:
+<span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash C \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{s.t.} \ R^\star su, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+<p>In other words, <span class="math inline">\(C\varphi\)</span> is true at a state <span class="math inline">\(s\)</span> iff <span class="math inline">\(\varphi\)</span> is true at every state <span class="math inline">\(t\)</span> <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in a finite number of steps</em>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-219" class="example"><strong>Example 12.4  (Common Knowledge and Muddy Children) </strong></span>Let us revisit the model for the Muddy Children Puzzle <em>prior to the first announcement</em>:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren1.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">Before Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>When we apply the definition of truth at a state to the case at hand, we find:
+<span class="math display">\[
+M, 101 \nVdash C (p_1 \vee p_2 \vee p_3).
+\]</span>
+The reason is that the state <span class="math inline">\(000\)</span>, which falsifies the disjunction, is reachable from <span class="math inline">\(101\)</span> in two steps.</p>
+<p>The situation changes once the children eliminate that option after the announcement. One of the effects of the announcement in the Muddy Children Puzzle is to make it common knowledge that at least one child is muddy: it is not just that all children know that at least one child is muddy, all children now know that all children know, and all children know that all children know that they know that, etc.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren2.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">After Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>If we use <span class="math inline">\(M&#39;\)</span> to refer to the model that results, we find
+<span class="math display">\[
+M&#39;, 101 \Vdash C (p_1 \vee p_2 \vee p_3).
+\]</span></p>
+<p>This is because the disjunction is true at <em>every</em> state reachable from <span class="math inline">\(101\)</span> in the new model.</p>
+<p>After the first request is made without any children stepping forward, the children are able to rule out as epistemic alternatives states in which only one child is muddy.</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren3a.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">After Request B</td>
+</tr>
+</tbody>
+</table>
+<p>At this point, the fact that two children are muddy now becomes common knowledge, since only states where two children are muddy are reachable from the state of evaluation in a finite number of steps.</p>
+<p>The actual distribution of mud becomes common knowledge after the two children step forward after the thrid request. That is because they are all left with a single epistemic live option:</p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td align="center"><img src="images/muddychildren4.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td align="center">After Request C</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The accessibility relation for common knowledge, <span class="math inline">\(R^\star\)</span>, will of course be <em>reflexive</em> and <em>transitive</em>. It will be transitive by definition, but it will inherit reflexivity from the reflexivity of each of the <span class="math inline">\(i\)</span>-accessibility relations. Whether the relation will in addition be symmetric or euclidean will crucially depend on the structure of the individual <span class="math inline">\(i\)</span>-accessibility relations.</p>
+<p>One axiomatization of the logic of common knowledge employs an an axiom and a rule of inference:
+<span class="math display">\[\tag{Fixed Point}
+Cp \to E(p \wedge Cp)
+\]</span>
+<span class="math display">\[\tag{Induction}
+\varphi \to E(\psi \wedge \varphi) / \varphi \to C \psi
+\]</span></p>
+<p>The <em>fixed point</em> axiom regards common knowledge as a <em>fixed point</em> of the
+function that maps a formula <span class="math inline">\(\varphi\)</span> to <span class="math inline">\(K_i(\varphi \wedge C\varphi)\)</span>.</p>
+<p>The rule of inference is called an induction rule because the antecedent provides the crucial ingredient for an inductive argument for all instances of the schema:
+<span class="math display">\[
+\varphi \to E^n(\psi \wedge \varphi),
+\]</span>
+which guarantees the conditional
+<span class="math display">\[
+\varphi \to C\psi.
+\]</span>
+For suppose the conditional <span class="math inline">\(\varphi \to E(\psi \wedge \varphi)\)</span> is valid. Then if <span class="math inline">\(varphi\)</span> is true at <span class="math inline">\(s\)</span>, <span class="math inline">\(E(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(s\)</span>, which means that if <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in one step, then <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t\)</span>. So, <span class="math inline">\(E(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(t\)</span>. If <span class="math inline">\(u\)</span> is now reachable from <span class="math inline">\(t\)</span> in one step, then <span class="math inline">\(E(\psi \wedge \varphi)\)</span> will be true at <span class="math inline">\(t\)</span>, etc.</p>
+<p>We are in a position to prove some theorems of the logic of common knowledge.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-220" class="proposition"><strong>Proposition 12.1  </strong></span><span class="math inline">\(\vdash Cp \to E Cp\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-221" class="proof"><em>Proof</em>. </span>This is a simple consequence of the Fixed Point axiom:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; Cp \to E(p \wedge Cp) &amp; \text{Fixed Point}\\
+2 &amp; &amp; E(p \wedge Cp) \to (E p \wedge E Cp) &amp; \text{K} \ 1\\
+3 &amp; &amp; Cp \to E Cp &amp; \text{PL} \ 1, 2\\
+\end{array}
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-222" class="proposition"><strong>Proposition 12.2  </strong></span><span class="math inline">\(\vdash Cp\to C Cp\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-223" class="proof"><em>Proof</em>. </span>This is a simple consequence of the rule of inference for common knowledge.
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; Cp \to E Cp &amp; \text{Prop.} \ 9.1\\
+2 &amp; &amp; C p \to (Cp \wedge C p) &amp; \text{PL} \\
+3  &amp; &amp; E C p \to E (Cp\wedge C p) &amp; \text{PL}\\
+4 &amp; &amp; C p \to E (Cp \wedge C p) &amp; \text{PL} \ 1, 3\\
+5 &amp; &amp; C p \to CCp &amp; \text{RC}[Cp/\varphi, Cp/\psi] \ 4
+\end{array}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="belief" class="section level2 unnumbered">
+<h2>Belief</h2>
+<p>Modal logic provides a formal framework for a study of the interplay between knowledge and belief. <span class="citation">(<label for="tufte-mn-7" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-7" class="margin-toggle">R. Stalnaker 2006<span class="marginnote">Stalnaker, Robert. 2006. <span>“On Logics of Knowledge and Belief.”</span> <em>Philosophical Studies: An International Journal for Philosophy in the Analytic Tradition</em> 128 (1): 169–99.</span>)</span> proposes to supplement the language of epistemic logic with a family of further propositional operators <span class="math inline">\(B_i\)</span> for a family of epistemic agents <span class="math inline">\(i\in I\)</span>. A formula of the form <span class="math inline">\(B_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> believes that <span class="math inline">\(\varphi\)</span>.” Its dual, <span class="math inline">\(\neg B_i \neg\)</span> is symbolized: <span class="math inline">\(\langle B_i \rangle\)</span>, is read: “for all agent <span class="math inline">\(i\)</span> believes, <span class="math inline">\(\varphi\)</span> remains open.”</p>
+<p>We supplement the relational models of epistemic logic with a family of accessibility relations <span class="math inline">\(\{S_i: i\in I\}\)</span> for belief, and we extend the inductive definition of truth at a state in a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, \{S_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M, s \Vdash \varphi\)</span>, with a further clause for formulas of the form <span class="math inline">\(B_i \varphi\)</span>:</p>
+<div class="definition" style="color:blue;">
+<p><span id="def:unlabeled-div-224" class="definition"><strong>Definition 12.3  (Truth at a State) </strong></span><span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash B_i \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{s.t.} \ S_i su, M, u \Vdash \varphi\\
+\end{array}
+\]</span>
+There is a derived rule for <span class="math inline">\(\langle B_i \rangle \varphi\)</span>:
+<span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash \langle K_i \rangle \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ \text{s.t.} \ S_i su, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+</div>
+<p>Belief, like knowledge, aims to locate the actual world in the space of doxastic live options, and, in particular, to exclude certain states of the world as candidates for actuality. One belief state <span class="math inline">\(v\)</span> is <em>i-accessible</em> from <span class="math inline">\(u\)</span> iff <span class="math inline">\(v\)</span> remains an <em>doxastic live option</em> for the agent <span class="math inline">\(i\)</span> in state <span class="math inline">\(u\)</span>, one the agent <span class="math inline">\(i\)</span> is not able to exclude as a candidate for actuality. That is, nothing the agent <span class="math inline">\(i\)</span> knows enables <span class="math inline">\(i\)</span> to distinguish <span class="math inline">\(v\)</span> from the actual world.</p>
+<div id="axioms-for-knowledge-and-belief" class="section level3 unnumbered">
+<h3>Axioms for Knowledge and Belief</h3>
+<p>The logic of knowledge and belief includes axioms for the interaction between the two propositional attitudes. <span class="citation">(<label for="tufte-mn-8" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-8" class="margin-toggle">R. Stalnaker 2006<span class="marginnote">Stalnaker, Robert. 2006. <span>“On Logics of Knowledge and Belief.”</span> <em>Philosophical Studies: An International Journal for Philosophy in the Analytic Tradition</em> 128 (1): 169–99.</span>)</span> offers a concrete proposal, which begins with the factivity of knowlegde:
+<span class="math display">\[ \tag{T}
+K_i p \to p
+\]</span>
+<em>What is known is the case</em></p>
+<p>We observed that this amounts to the requirement that the <span class="math inline">\(i\)</span>-accessibility relations for knowledge must be <em>reflexive</em>.</p>
+<p>Factivity is not at all plausible when it comes to belief; we often believe what is not the case. There is, however, a weaker constraint on belief we should consider, namely, that an agent never believes a proposition and its negation. Since <span class="math inline">\(\langle B_i \rangle\)</span> abbreviates: <span class="math inline">\(\neg B_i \neg\)</span>, the consistency requirement on belief amounts to the adoption of axiom <span class="math inline">\(D\)</span> for belief:
+<span class="math display">\[\tag{D}
+B_i p \to \langle B_i \rangle p
+\]</span>
+<em>If one believes something, one does not believe its negation</em>.</p>
+<p>That in turn requires the <span class="math inline">\(i\)</span>-accessibility relations for belief to be <em>serial</em>: for each doxastic state, there is a doxastic alternative for each <span class="math inline">\(i\)</span>-agent.</p>
+<p>None of these axioms constrains the interaction between knowledge and belief, but it seems that a minimal constraint on knowledge is that belief is necessary for knowledge. We know that belief is not sufficient for knowledge and the point of the classic analysis of knowledge in terms of justified true belief is to find further necessary and sufficient conditions for knowledge. The next axiom encodes the principle that belief is a necessary condition for knowledge.</p>
+<p><span class="math display">\[\tag{KB}
+K_i p \to B_i p
+\]</span>
+<em>One believes what one knows</em>.</p>
+<p>This principle requires every doxastic alternative to count as an epistemic alternative to the state of evaluation <span class="math inline">\(s\)</span>: if a state <span class="math inline">\(t\)</span> is doxastically <span class="math inline">\(i\)</span>-accessible from <span class="math inline">\(s\)</span>, then <span class="math inline">\(t\)</span> is epistemically <span class="math inline">\(i\)</span>-accessible from <span class="math inline">\(s\)</span>. In other words, if <span class="math inline">\(S_i st\)</span>, then <span class="math inline">\(R_i st\)</span>. This is because a proposition is true in all epistemic live options only if it is true in all doxastic live options.</p>
+<p>Two more axioms encode the assumption that agents have epistemic introspective access to their <em>doxastic</em> states:</p>
+<p><span class="math display">\[\tag{Positive  Introspection}
+B_i p \to K_i B_i p
+\]</span></p>
+<p><em>One knows that one believes what one believes</em></p>
+<p><em>Positive Introspection</em> says that an agent believes something only if they know that they believe it. On the other hand, <em>Negative Introspection</em> tells us that something is doxastically open for an agent only if they know that it is doxastically open.</p>
+<p><span class="math display">\[\tag{Negative Introspection}
+\langle B_i\rangle p \to K_i \langle B_i \rangle p
+\]</span>
+<em>One knows that what is doxastically open is doxastically open</em></p>
+<p>Since knowledge entails belief, we derive weaker forms of introspection for belief as immediate consequences:
+<span class="math display">\[
+B_i p \to B_i B_i p\\
+\langle B_i\rangle p \to B_i \langle B_i \rangle p
+\]</span>
+<span class="citation">(<label for="tufte-mn-9" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-9" class="margin-toggle">R. Stalnaker 2006<span class="marginnote">Stalnaker, Robert. 2006. <span>“On Logics of Knowledge and Belief.”</span> <em>Philosophical Studies: An International Journal for Philosophy in the Analytic Tradition</em> 128 (1): 169–99.</span>)</span> observes that these axioms suffice to ensure that the <em>pure</em> logic of belief is <span class="math inline">\(KD45\)</span>, which is complete with respect to the class of serial, transitive, and euclidean frames.</p>
+<p>The choice of axioms is not inconsequential for the <em>pure</em> logic of knowledge, which turns out to extend <span class="math inline">\(S4\)</span> to include all substitution instances of the axiom:</p>
+<p><span class="math display">\[\tag{G}
+\langle K_i\rangle K_i p \to K_i \langle K_i \rangle p
+\]</span>
+<em>If it is epistemically open that one knows that <span class="math inline">\(p\)</span>, then one knows that <span class="math inline">\(p\)</span> is epistemically open.</em></p>
+<p>That will, in turn, require the relations of epistemic <span class="math inline">\(i\)</span>-accessibility to be <em>convergent</em>, where a binary relation <span class="math inline">\(R_i\)</span> on <span class="math inline">\(W\)</span> is convergent iff</p>
+<ul>
+<li>for all <span class="math inline">\(x,  y, z\in W\)</span>, if <span class="math inline">\(R_ixy\)</span> and <span class="math inline">\(R_ixz\)</span>, then there is some <span class="math inline">\(t\in W\)</span> such that <span class="math inline">\(Ryt\)</span> <span class="math inline">\(Rzt\)</span>.</li>
+</ul>
+<p>The modal logic <span class="math inline">\(S4.2\)</span> is <span class="math inline">\(KT4G\)</span>, which is sound and complete with respect to the class of reflexive, transitive, and convergent frames.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-225" class="proposition"><strong>Proposition 12.3  </strong></span><span class="math inline">\(\vdash \langle K_i\rangle K_i p \to K_i \langle K_i \rangle p\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-226" class="proof"><em>Proof</em>. </span>Here is a derivation of <span class="math inline">\(G\)</span> from <span class="math inline">\(NI\)</span>, <span class="math inline">\(KB\)</span>, and <span class="math inline">\(CB\)</span>:
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \langle B_i \rangle p \to K_i \langle B_i \rangle p &amp; &amp;   \text{Negative Introspection} \\
+2 &amp; &amp; \langle B_i \rangle p \to \langle K_i \rangle p &amp; &amp; \text{Knowledge requires Belief}_\Diamond \\
+3 &amp; &amp; K_i \langle B_i \rangle p \to  K_i  \langle K_i\rangle p &amp; &amp; \text{RK} \ 2 \\
+4 &amp; &amp; \langle B_i \rangle p \to K_i \langle K_i \rangle p &amp; &amp; \text{PL} \ 1, 3\\
+5 &amp; &amp; \langle K_i \rangle  K_i  p \to  B_i p &amp; &amp; \text{Dual of line 4} \\
+6 &amp; &amp; B_i p \to \langle B_i \rangle p &amp; &amp;  \text{Consistency} \\
+7 &amp; &amp; \langle K_i \rangle K_i p \to K_i \langle K_i \rangle p &amp; &amp; \text{PL} \ 5, 6, 4 \\
+\end{array}
+\]</span></p>
+</div>
+<p>There is one final constraint to consider, which concerns the very nature of belief. <span class="citation">(<label for="tufte-mn-10" class="margin-toggle">&#8853;</label><input type="checkbox" id="tufte-mn-10" class="margin-toggle">R. Stalnaker 2006<span class="marginnote">Stalnaker, Robert. 2006. <span>“On Logics of Knowledge and Belief.”</span> <em>Philosophical Studies: An International Journal for Philosophy in the Analytic Tradition</em> 128 (1): 169–99.</span>)</span> proposes to conceive of belief as a propositionally attitude which is <em>internally</em> indistinguishable from knowledge. To believe something is to believe you know it. That is if you hesitate when you consider whether you know something, then you do not genuinely believe it. This is the axiom Stalnaker calls <em>Subjective Certainty</em>:</p>
+<p><span class="math display">\[\tag{SC}
+B_i p \to B_i K_i p
+\]</span>
+You only believe you have hands if you believe you know you have hands; if consideration of a skeptical scenario somehow drives you to not believe that you know that you have hands, then you no longer genuinely believe that you have hands.</p>
+<p>This axiom turns out to have an important ramification for the logic of belief and knowledge. For given <span class="math inline">\(G\)</span> above, we may reverse the conditional in line 5 of the proof of <span class="math inline">\(G\)</span> above. That is, we may prove that belief is sufficient for knowledge to be epistemically open.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-227" class="proposition"><strong>Proposition 12.4  </strong></span><span class="math inline">\(\vdash B_i p \to \langle K_i \rangle K_i p\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-228" class="proof"><em>Proof</em>. </span>Here is a derivation
+<span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; B_i  p \to B_i  K_i  p &amp; &amp;   \text{Subjective  Certainty} \\
+2 &amp; &amp; B_i K_i p \to \langle B_i \rangle K_i p &amp; &amp; \text{Consistency} \\
+3 &amp; &amp; \langle B_i \rangle K_i p \to \langle K_i \rangle K_i p &amp; &amp; \text{Knowledge  entails Belief}_\Diamond \\
+4 &amp; &amp;   B_i p \to \langle K_i \rangle K_i p  &amp; &amp; \text{PL} \ 1, 2, 3\\
+\end{array}
+\]</span></p>
+</div>
+<p>When combined, we find that the axioms of knowledge and belief enforce an equivalence between belief and a species of ignorance: you believe if, and only if, you do not not know that you know.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-229" class="proposition"><strong>Proposition 12.5  </strong></span><span class="math inline">\(\vdash B_i  p \leftrightarrow \langle K_i \rangle K_i p\)</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-230" class="proof"><em>Proof</em>. </span>One direction is line 5 in the derivation of <span class="math inline">\(G\)</span>, whereas the other is the conditional we proved above.</p>
+</div>
+<p>We have derived the biconditional in the logic of knowledge and belief, but a different course of action would have been to remain in the language of epistemic logic and introduce a belief operator as a defined operator:
+<span class="math display">\[
+B_i \varphi : = \langle K_i \rangle K_i \varphi
+\]</span>
+Against the background of <span class="math inline">\(S4.2\)</span> as a logic of knowledge, we would be in a position to prove as theorems the axioms that correspond to <span class="math inline">\(KD45\)</span> as a pure logic of belief.</p>
+</div>
+</div>
+</div>
+<p style="text-align: center;">
+<a href="metatheory.html"><button class="btn btn-default">Previous</button></a>
+<a href="provability-logic.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>

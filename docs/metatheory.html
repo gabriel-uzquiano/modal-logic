@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="11 Metatheory | Modal Logic" />
+<meta property="og:type" content="book" />
+
+<meta property="og:description" content="This is a textbook for PHIL 452: Modal Logic." />
+<meta name="github-repo" content="rstudio/bookdown-demo" />
+
+<meta name="author" content="Gabriel Uzquiano" />
+
+<meta name="date" content="2024-12-16" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<meta name="description" content="This is a textbook for PHIL 452: Modal Logic.">
+
+<title>11 Metatheory | Modal Logic</title>
+
+<link href="libs/tufte-css-2015.12.29/tufte-fonts.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-background.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte-italics.css" rel="stylesheet" />
+<link href="libs/tufte-css-2015.12.29/tufte.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="toc.css" type="text/css" />
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#preface" id="toc-preface">Preface</a></li>
+<li class="part"><span><b>I Background</b></span></li>
+<li><a href="introduction.html#introduction" id="toc-introduction"><span class="toc-section-number">1</span> Introduction</a></li>
+<li class="has-sub"><a href="sets-and-relations.html#sets-and-relations" id="toc-sets-and-relations"><span class="toc-section-number">2</span> Sets and Relations</a>
+<ul>
+<li><a href="sets-and-relations.html#sets" id="toc-sets">Sets</a></li>
+<li><a href="sets-and-relations.html#relations" id="toc-relations">Relations</a></li>
+<li><a href="sets-and-relations.html#properties-of-relations" id="toc-properties-of-relations">Properties of Relations</a></li>
+</ul></li>
+<li><a href="mathematical-induction.html#mathematical-induction" id="toc-mathematical-induction"><span class="toc-section-number">3</span> Mathematical Induction</a></li>
+<li class="part"><span><b>II Propositional Language</b></span></li>
+<li><a href="syntax.html#syntax" id="toc-syntax"><span class="toc-section-number">4</span> Syntax</a></li>
+<li><a href="semantics.html#semantics" id="toc-semantics"><span class="toc-section-number">5</span> Semantics</a></li>
+<li class="has-sub"><a href="axiomatic-derivations.html#axiomatic-derivations" id="toc-axiomatic-derivations"><span class="toc-section-number">6</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations.html#the-deduction-theorem" id="toc-the-deduction-theorem">The Deduction Theorem</a></li>
+<li><a href="axiomatic-derivations.html#maximal-consistency" id="toc-maximal-consistency">Maximal Consistency</a></li>
+</ul></li>
+<li><a href="completeness.html#completeness" id="toc-completeness"><span class="toc-section-number">7</span> Completeness</a></li>
+<li class="part"><span><b>III Modal Propositional Logic</b></span></li>
+<li><a href="syntax-1.html#syntax-1" id="toc-syntax-1"><span class="toc-section-number">8</span> Syntax</a></li>
+<li class="has-sub"><a href="semantics-1.html#semantics-1" id="toc-semantics-1"><span class="toc-section-number">9</span> Semantics</a>
+<ul>
+<li><a href="semantics-1.html#frames" id="toc-frames">Frames</a></li>
+<li><a href="semantics-1.html#frame-definability" id="toc-frame-definability">Frame Definability</a></li>
+<li><a href="semantics-1.html#bisimulations" id="toc-bisimulations">Bisimulations</a></li>
+</ul></li>
+<li class="has-sub"><a href="axiomatic-derivations-1.html#axiomatic-derivations-1" id="toc-axiomatic-derivations-1"><span class="toc-section-number">10</span> Axiomatic Derivations</a>
+<ul>
+<li><a href="axiomatic-derivations-1.html#the-minimal-modal-logic-k" id="toc-the-minimal-modal-logic-k">The Minimal Modal Logic K</a></li>
+<li><a href="axiomatic-derivations-1.html#normal-modal-systems" id="toc-normal-modal-systems">Normal Modal Systems</a></li>
+</ul></li>
+<li class="has-sub"><a href="metatheory.html#metatheory" id="toc-metatheory"><span class="toc-section-number">11</span> Metatheory</a>
+<ul>
+<li><a href="metatheory.html#canonical-models" id="toc-canonical-models">Canonical Models</a></li>
+<li><a href="metatheory.html#completeness-1" id="toc-completeness-1">Completeness</a></li>
+</ul></li>
+<li class="part"><span><b>IV Selected Applications</b></span></li>
+<li class="has-sub"><a href="epistemic-logic.html#epistemic-logic" id="toc-epistemic-logic"><span class="toc-section-number">12</span> Epistemic Logic</a>
+<ul>
+<li><a href="epistemic-logic.html#knowledge" id="toc-knowledge">Knowledge</a></li>
+<li><a href="epistemic-logic.html#belief" id="toc-belief">Belief</a></li>
+</ul></li>
+<li class="has-sub"><a href="provability-logic.html#provability-logic" id="toc-provability-logic"><span class="toc-section-number">13</span> Provability Logic</a>
+<ul>
+<li><a href="provability-logic.html#arithmetic" id="toc-arithmetic">Arithmetic</a></li>
+<li><a href="provability-logic.html#provability" id="toc-provability">Provability</a></li>
+</ul></li>
+<li class="has-sub"><a href="deontic-logic.html#deontic-logic" id="toc-deontic-logic"><span class="toc-section-number">14</span> Deontic Logic</a>
+<ul>
+<li><a href="deontic-logic.html#obligation" id="toc-obligation">Obligation</a></li>
+<li><a href="deontic-logic.html#classic-problems" id="toc-classic-problems">Classic Problems</a></li>
+<li><a href="deontic-logic.html#conditional-obligation" id="toc-conditional-obligation">Conditional Obligation</a></li>
+</ul></li>
+<li class="has-sub"><a href="conditionals.html#conditionals" id="toc-conditionals"><span class="toc-section-number">15</span> Conditionals</a>
+<ul>
+<li><a href="conditionals.html#the-problem-of-conditionals" id="toc-the-problem-of-conditionals">The Problem of Conditionals</a></li>
+<li><a href="conditionals.html#the-strict-conditional" id="toc-the-strict-conditional">The Strict Conditional</a></li>
+<li><a href="conditionals.html#conditional-logic" id="toc-conditional-logic">Conditional Logic</a></li>
+</ul></li>
+<li class="part"><span><b>V Quantified Modal Logic</b></span></li>
+<li class="has-sub"><a href="syntax-3.html#syntax-3" id="toc-syntax-3"><span class="toc-section-number">16</span> Syntax</a>
+<ul>
+<li><a href="syntax-3.html#the-simplest-quantificational-modal-logic" id="toc-the-simplest-quantificational-modal-logic">The Simplest Quantificational Modal Logic</a></li>
+<li><a href="syntax-3.html#free-quantified-modal-logic" id="toc-free-quantified-modal-logic">Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#varieties-of-free-quantified-modal-logic" id="toc-varieties-of-free-quantified-modal-logic">Varieties of Free Quantified Modal Logic</a></li>
+<li><a href="syntax-3.html#existence-in-free-quantificational-logic" id="toc-existence-in-free-quantificational-logic">Existence in Free Quantificational Logic</a></li>
+</ul></li>
+<li class="has-sub"><a href="semantics-2.html#semantics-2" id="toc-semantics-2"><span class="toc-section-number">17</span> Semantics</a>
+<ul>
+<li><a href="semantics-2.html#constant-domain-models" id="toc-constant-domain-models">Constant Domain Models</a></li>
+<li><a href="semantics-2.html#variable-domain-models" id="toc-variable-domain-models">Variable Domain Models</a></li>
+</ul></li>
+<li class="has-sub"><a href="the-being-constraint.html#the-being-constraint" id="toc-the-being-constraint"><span class="toc-section-number">18</span> The Being Constraint</a>
+<ul>
+<li><a href="the-being-constraint.html#positive-semantics-for-quantified-modal-logic" id="toc-positive-semantics-for-quantified-modal-logic">Positive Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#negative-semantics-for-quantified-modal-logic" id="toc-negative-semantics-for-quantified-modal-logic">Negative Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#neutral-semantics-for-quantified-modal-logic" id="toc-neutral-semantics-for-quantified-modal-logic">Neutral Semantics for Quantified Modal Logic</a></li>
+<li><a href="the-being-constraint.html#a-problem-for-the-being-constraint" id="toc-a-problem-for-the-being-constraint">A Problem for the Being Constraint</a></li>
+</ul></li>
+<li><a href="references.html#references" id="toc-references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="metatheory" class="section level1" number="11">
+<h1><span class="header-section-number">11</span> Metatheory</h1>
+<p>We have explored a landscape of normal modal systems characterizing different classes of frames. We now outline a method for the justification of the fact that a normal modal system <span class="math inline">\(\Sigma\)</span> characterizes a class of frames <span class="math inline">\(\mathcal{C}\)</span> by which, we mean, as usual that for all modal formulas,
+<span class="math display">\[
+\begin{array}{lll}
+\vdash_\Sigma  \varphi &amp; \text{if, and  only if,} &amp; \models_{\mathcal{C}} \varphi
+\end{array}
+\]</span>
+That is, <span class="math inline">\(\Sigma\)</span> proves <em>all</em> (Completeness) and <em>only</em> (Soundness) formulas, which are valid in all frames in <span class="math inline">\(\mathcal{C}\)</span>. One direction (Soundness) requires one to verify that the axioms of <span class="math inline">\(\Sigma\)</span> are valid in all frames in <span class="math inline">\(\mathcal{C}\)</span>, and that the rules of inference of <span class="math inline">\(\Sigma\)</span> preserve validity in all frames in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<p>We will now focus on the other direction (Completeness), which we approach by contraposition: if <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\Sigma\)</span>, then <span class="math inline">\(\varphi\)</span> is not valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>. That is, we will build a special model based on a frame <span class="math inline">\((W, R)\)</span> in <span class="math inline">\(\mathcal{C}\)</span> in which the formula <span class="math inline">\(\varphi\)</span> fails. The model in question will be what is known as the <em>canonical model</em> for the system <span class="math inline">\(\Sigma\)</span>, and the main task will often be to verify that the canonical model for <span class="math inline">\(\Sigma\)</span> is based on a frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<div id="canonical-models" class="section level2 unnumbered">
+<h2>Canonical Models</h2>
+<p>First, some preliminary definitions.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-194" class="definition"><strong>Definition 11.1  (Derivability) </strong></span>A modal formula <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-derivable from <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, if, and only if, there is a finite conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of formulas <span class="math inline">\(\alpha_1, \dots , \alpha_n \in  \Gamma\)</span> for which:
+<span class="math display">\[
+\vdash_{\Sigma} \boldsymbol{\alpha} \to \varphi
+\]</span></p>
+</div>
+<p>Notice that this is not quite how we defined derivability in propositional logic since we make no allowance for <em>premises</em> in a derivation. To allow for premises would lead to undesirable results in the presence of the rule of necessitation.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-195" class="definition"><strong>Definition 11.2  (Consistency) </strong></span>A set of modal formulas <span class="math inline">\(\Gamma\)</span> is <em><span class="math inline">\(\Sigma\)</span>-consistent</em> if, and only if, <span class="math inline">\(\Gamma \nvdash_\Sigma \bot\)</span>. That is, there is <em>no</em> finite conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of formulas <span class="math inline">\(\alpha_1, \dots , \alpha_n \in  \Gamma\)</span> for which:
+<span class="math display">\[
+\vdash_{\Sigma} \boldsymbol{\alpha} \to \bot
+\]</span>
+Otherwise, we call <span class="math inline">\(\Gamma\)</span>, <em><span class="math inline">\(\Sigma\)</span>-inconsistent</em>. We will write that a modal formula <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent if its singleton set <span class="math inline">\(\{\varphi\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, that is, if <span class="math inline">\(\nvdash_{\Sigma} \varphi \to \bot\)</span>.</p>
+</div>
+<p>We will exploit the fact that <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas have a number of helpful features we record now.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-196" class="proposition"><strong>Proposition 11.1  </strong></span>For all modal formulas <span class="math inline">\(\varphi\)</span> in <span class="math inline">\(\mathcal{L}^\Box\)</span>,
+<span class="math display">\[
+\begin{array}{lll}
+\Gamma \vdash_\Sigma  \varphi &amp; \text{if, and  only if,} &amp;  \Gamma,  \neg \varphi \  \text{is} \ \Sigma\text{-inconsistent}.
+\end{array}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-197" class="proof"><em>Proof</em>. </span>We look at each direction in turn.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash_\Sigma \varphi\)</span>. Since <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \neg \varphi\)</span>, we have <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. So, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \{ \neg \varphi\}\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \wedge \neg \varphi \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-198" class="definition"><strong>Definition 11.3  (Maximal Consistency) </strong></span>A set of modal formulas <span class="math inline">\(\Gamma\)</span> is <em>maximal <span class="math inline">\(\Sigma\)</span>-consistent</em> if, and only if,</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, and</li>
+<li>for each modal formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</li>
+</ol>
+</div>
+<p>Maximal <span class="math inline">\(\Sigma\)</span>-consistent sets satisfy a variety of helpful decomposition principles.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-199" class="lemma"><strong>Lemma 11.1  </strong></span>If <span class="math inline">\(\Sigma\)</span> is a normal modal system and <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas, then:
+<span class="math display">\[
+\begin{array}{llll}
+1. \Gamma \vdash_\Sigma \varphi &amp; \text{iff} &amp;  \varphi \in \Gamma \\
+2.  \neg \varphi \in \Gamma &amp; \text{iff} &amp; \varphi \notin \Gamma\\
+3.  \varphi \to \psi \in \Gamma  &amp; \text{iff} &amp; \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma \\
+\end{array}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-200" class="proof"><em>Proof</em>. </span>We look at each claim in turn.</p>
+<ol style="list-style-type: decimal">
+<li><p>There are two directions.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. On the other hand, if <span class="math inline">\(\varphi \notin \Gamma\)</span>, then, by definition of maximal <span class="math inline">\(\Sigma\)</span>-consistency, <span class="math inline">\(\Gamma, \varphi\)</span> would be <span class="math inline">\(\Sigma\)</span>-inconsistent making <span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent. So, <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_{\Sigma} \varphi\)</span> since <span class="math inline">\(\vdash_{\Sigma} \varphi \to \varphi\)</span>.</p></li>
+<li><p>We look at each direction in turn.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\neg  \varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span>. So, if <span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, then <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p>
+<p>(<span class="math inline">\(\Leftrightarrow\)</span>) If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. So, <span class="math inline">\(\Gamma, \neg \neg  \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, and by Proposition 5.1 <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span>.</p></li>
+<li><p>The proof of part 3 is analogous.</p></li>
+</ol>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-201" class="definition"><strong>Definition 11.4  </strong></span>Given two maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\Delta\)</span>, we write <span class="math inline">\(\Gamma R \Delta\)</span> iff for each modal formula <span class="math inline">\(\varphi\)</span> in <span class="math inline">\(\Delta\)</span>, <span class="math inline">\(\Diamond \varphi\)</span> is in <span class="math inline">\(\Gamma\)</span>. Or, in other words, <span class="math inline">\(\Gamma R \Delta\)</span> iff <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma\)</span>.</p>
+</div>
+<p>We will often make use of an alternative characterization of the relation just now introduced for a canonical model.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-202" class="lemma"><strong>Lemma 11.2  </strong></span>For all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma, \Delta\)</span>,
+<span class="math display">\[
+\begin{array}{lll}
+\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma  &amp; \text{iff} &amp; \{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta \\
+\end{array}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-203" class="proof"><em>Proof</em>. </span>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma\)</span>. Suppose now that <span class="math inline">\(\Box \varphi \in \Gamma\)</span>. For a reductio, suppose <span class="math inline">\(\varphi \notin \Delta\)</span>. In that case, <span class="math inline">\(\neg \varphi \in \Delta\)</span>, which means, by assumption, that <span class="math inline">\(\Diamond \neg \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, we have that <span class="math inline">\(\neg \Box \neg \neg \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi\)</span>, we have <span class="math inline">\(\neg \Box \varphi \in \Gamma\)</span> and <span class="math inline">\(\Box \varphi \notin \Gamma\)</span>, which completes the reductio.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>. We argue for the contrapositive: if <span class="math inline">\(\Diamond \varphi \notin \Gamma\)</span>, then <span class="math inline">\(\varphi \notin \Delta\)</span>. Suppose that <span class="math inline">\(\Diamond \varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, we have that <span class="math inline">\(\neg \Box \neg \varphi \notin \Gamma\)</span>. By maximal <span class="math inline">\(\Sigma\)</span>-consistency of <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Box \neg \varphi \in \Gamma\)</span>, which, by assumption, requires <span class="math inline">\(\neg \varphi \in \Delta\)</span>. It follows that <span class="math inline">\(\varphi \notin \Delta\)</span>.</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-204" class="lemma"><strong>Lemma 11.3  </strong></span>If <span class="math inline">\(\Sigma\)</span> is a normal modal system and <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas, then:
+<span class="math display">\[
+\begin{array}{llll}
+3. &amp; \Diamond \varphi \in \Gamma &amp; \text{iff} &amp; \text{for some} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\
+\end{array}
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-205" class="proof"><em>Proof</em>. </span>We distinguish two directions:</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Consider the set of modal formulas
+<span class="math display">\[
+\{\varphi\} \cup \{\psi: \Box \psi \in \Gamma\}
+\]</span>
+Notice that if <span class="math inline">\(\Delta\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent, which includes <em>that</em> union as a subset, then <span class="math inline">\(\Gamma R \Delta\)</span>, and we would be done.</p>
+<p>We now argue that the set given above is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
+<p>Suppose <em>not</em>. Then there is a conjunction <span class="math inline">\(\psi_1 \wedge \dots \wedge \psi_n\)</span> of modal formulas with <span class="math inline">\(\Box \psi_1, \dots, \Box \psi_n \in \Gamma\)</span> such that
+<span class="math display">\[
+\vdash_{\Sigma} \varphi \wedge (\psi_1  \wedge \dots \wedge \psi_n) \to  \bot
+\]</span>
+Thus:
+<span class="math display">\[
+\vdash_{\Sigma} (\psi_1  \wedge \dots \wedge \psi_n) \to  \neg \varphi
+\]</span>
+Since <span class="math inline">\(\Sigma\)</span> is a normal modal system, we have:
+<span class="math display">\[
+\vdash_{\Sigma} \Box \psi_1  \wedge \dots \wedge \Box \psi_n \to  \Box \neg \varphi
+\]</span>
+Since <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent, it contains every theorem of <span class="math inline">\(\Sigma\)</span>. Therefore:
+<span class="math display">\[
+(\Box \psi_1  \wedge \dots \wedge \Box \psi_n) \to  \Box \neg \varphi \in \Gamma
+\]</span>
+Because <span class="math inline">\(\Box \psi_1 \dots \Box \psi_n \in \Gamma\)</span>, by lemma 5.1, we infer:
+<span class="math display">\[
+(\Box \psi_1 \wedge \dots \wedge \Box \psi_n) \in \Gamma
+\]</span>
+<span class="math display">\[
+\Box \neg \varphi \in \Gamma
+\]</span>
+But since <span class="math inline">\(\Diamond\)</span> abbreviates <span class="math inline">\(\neg \Box \neg\)</span>, <span class="math inline">\(\Box \neg \varphi\)</span> is equivalent to <span class="math inline">\(\neg \Diamond \varphi\)</span>, and given the <span class="math inline">\(\Sigma\)</span>-consistency of <span class="math inline">\(\Gamma\)</span>, we have thereby contradicted the assumption that
+<span class="math display">\[
+\Diamond \varphi \in \Gamma.
+\]</span>
+We conclude that the set
+<span class="math display">\[
+\{\varphi\} \cup \{\psi: \Box \psi \in \Gamma\}
+\]</span>
+is <span class="math inline">\(\Sigma\)</span>-consistent and <em>can</em> be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>. It follows that <span class="math inline">\(\Gamma R \Delta\)</span> and <span class="math inline">\(\varphi \in \Delta\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) This direction is trivial once we unpack the definition of <span class="math inline">\(\Gamma R \Delta\)</span>.</p>
+</div>
+<p>We will now exploit the features of maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas to define the <em>canonical model</em> for a modal system <span class="math inline">\(\Sigma\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-206" class="definition"><strong>Definition 11.5  (Canonical Model) </strong></span>The <em>canonical model</em> <span class="math inline">\(M_\Sigma\)</span> for a modal system <span class="math inline">\(\Sigma\)</span> is a model of the form <span class="math inline">\(( W_\Sigma, R_\Sigma, V_\Sigma)\)</span>, where:</p>
+<ul>
+<li><p><span class="math inline">\(W_\Sigma\)</span> consists of all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas,</p></li>
+<li><p>for all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma, \Delta\)</span>,</p>
+<p><span class="math inline">\(\Gamma R_\Sigma \Delta\)</span> if, and only if, <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Delta \} \subseteq \Gamma\)</span>. That is, <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span> whenever <span class="math inline">\(\varphi \in \Delta\)</span>.</p></li>
+<li><p>for each propositional variable <span class="math inline">\(p\)</span>,</p>
+<p><span class="math inline">\(V_{\Sigma}(p) = \{\Gamma \in W_\Sigma : p \in \Gamma \}\)</span>.</p></li>
+</ul>
+</div>
+<p>The interest of canonical models is that they are governed by the truth lemma according to which a <em>world</em> in the canonical model for <span class="math inline">\(\Sigma\)</span> verifies a modal formula <span class="math inline">\(\varphi\)</span> if, and only if, that very formula is a member of the world conceived as a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas.</p>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-207" class="lemma"><strong>Lemma 11.4  (Truth Lemma) </strong></span>For each maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas <span class="math inline">\(\Gamma\)</span>,
+<span class="math display">\[
+\begin{array}{lll}
+(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash \varphi &amp;  \text{iff} &amp;  \varphi \in \Gamma\\
+\end{array}
+\]</span></p>
+</div>
+<p>The justification for the truth lemma is an induction of the complexity of modal formulas.</p>
+<div class="{proof}">
+<p>We use an induction on the complexity of <span class="math inline">\(\varphi\)</span> to establish:<br />
+<span class="math display">\[
+\begin{array}{lll}
+(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash \varphi &amp; \text{iff} &amp; \varphi \in \Gamma.
+\end{array}
+\]</span><br />
+- <strong>Base Case</strong>:</p>
+<p><span class="math display">\[
+\begin{array}{llll}
+(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash p &amp; \text{iff} &amp; \Gamma \in V_\Sigma(p) &amp; \\
+   &amp; \text{iff} &amp; p \in \Sigma. &amp; \text{definition of} \ V_\Sigma
+\end{array}
+\]</span><br />
+- <strong>Inductive Step for <span class="math inline">\(\neg\)</span></strong>:</p>
+<p><span class="math display">\[
+\begin{array}{llll}
+(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash \neg \varphi &amp; \text{iff} &amp;(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \nVdash \varphi &amp; \\
+    &amp; \text{iff} &amp; \varphi \notin \Gamma&amp; \text{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \neg \varphi \in \Gamma &amp; \text{Lemma 5.1, 2} \\
+\end{array}
+\]</span><br />
+- <strong>Inductive Step for <span class="math inline">\(\to\)</span></strong>:</p>
+<p><span class="math display">\[
+\begin{array}{llll}
+(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash \varphi \to \psi&amp; \text{iff} &amp; (W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \nVdash \varphi \ \text{or} \ (W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash \psi &amp; \\
+    &amp; \text{iff} &amp; \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma&amp; \text{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \varphi \to \psi \in \Gamma &amp; \text{Lemma 5.1, 3} \\
+\end{array}
+\]</span></p>
+<ul>
+<li><strong>Inductive Step for <span class="math inline">\(\Box\)</span></strong>:</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{llll}
+(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash \Box \varphi &amp; \text{iff} &amp; (W_\Sigma, R_\Sigma, V_\Sigma), \Delta \Vdash \varphi \ \text{whenever} \ \Gamma R_\Sigma \Delta &amp; \\
+    &amp; \text{iff} &amp; \varphi \in \Delta \ \text{whenever} \ \Gamma R_\Sigma \Delta &amp; \text{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \Box \varphi \in \Gamma &amp; \text{Lemmas 5.2 and 5.4} \\
+\end{array}
+\]</span><br />
+We conclude that <span class="math inline">\(V\)</span> verifies exactly those formulas in <span class="math inline">\(\Sigma\)</span>. So, it follows that <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
+</div>
+</div>
+<div id="completeness-1" class="section level2 unnumbered">
+<h2>Completeness</h2>
+<p>We are finally in a position to prove the completeness theorem for K.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-208" class="theorem"><strong>Theorem 11.1  (Completeness Theorem for K) </strong></span>For each modal formulas <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\models \varphi\)</span>, then <span class="math inline">\(\vdash_K \varphi\)</span>. That is, if <span class="math inline">\(\varphi\)</span> is valid in <em>every</em> frame, then <span class="math inline">\(\varphi\)</span> is a theorem of K.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-209" class="proof"><em>Proof</em>. </span>We argue by contraposition. Suppose a modal formula <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(K\)</span>. Then its negation <span class="math inline">\(\neg  \varphi\)</span> will be <span class="math inline">\(K\)</span>-consistent. That means that we may use Lindenbaum’s lemma to extend <span class="math inline">\(\{\neg \varphi\}\)</span> to a maximal <span class="math inline">\(K\)</span>-consistent set <span class="math inline">\(\Gamma\)</span>. Now, note that <span class="math inline">\(\Gamma\)</span> is one of the worlds of the canonical model for <span class="math inline">\(K\)</span>, <span class="math inline">\((W_K, R_K, V_K)\)</span>, and, by the Truth Lemma, we know that <span class="math inline">\(\neg \varphi\)</span> will be true at <span class="math inline">\(\Gamma\)</span> in the canonical model for <span class="math inline">\(K\)</span>. Therefore, <span class="math inline">\(\varphi\)</span> fails at a world in the canonical model for <span class="math inline">\(K\)</span>. We conclude that <span class="math inline">\(\varphi\)</span> is not valid in every frame.</p>
+</div>
+<p>There are further completeness theorems for the normal modal systems in the landscape we have considered. One example is the observation, for example, that a modal formula <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(KT\)</span> <em>if</em> <span class="math inline">\(\models_{\text{ref}} \varphi\)</span>. That is, if a formula <span class="math inline">\(\varphi\)</span> is valid in every reflexive frame, then <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(KT\)</span>.</p>
+<p>We argue for the contrapositive. Suppose a modal formula <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(KT\)</span>. Then its negation <span class="math inline">\(\neg \varphi\)</span> will be <span class="math inline">\(KT\)</span>-consistent. We will argue that <span class="math inline">\(\neg \varphi\)</span> is true at a world of the canonical model for <span class="math inline">\(KT\)</span>. That will mean that <span class="math inline">\(\varphi\)</span> is false at a world of the canonical model for <span class="math inline">\(KT\)</span>. Recall that we want to establish the completeness of <span class="math inline">\(KT\)</span> with respect to the class of <em>reflexive</em> frames, which means that we should verify that <span class="math inline">\(\varphi\)</span> fails at some world of some <em>reflexive</em> model. Our observation that <span class="math inline">\(\varphi\)</span> fails at the canonical model for <span class="math inline">\(KT\)</span> will suffice to that purpose <em>only if</em> the canonical model for <span class="math inline">\(KT\)</span> is reflexive.</p>
+<p>To complete the proof, we must verify that the canonical frame for <span class="math inline">\(KT\)</span> is <em>reflexive</em>: for all maximal <span class="math inline">\(KT\)</span>-consistent sets of modal formulas <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Gamma R_{KT} \Gamma\)</span>. That will establish that <span class="math inline">\(\varphi\)</span> is not valid in every <em>reflexive</em> frame, e.g., <span class="math inline">\(\varphi\)</span> is not valid in the canonical frame for <span class="math inline">\(KT\)</span>, which is reflexive.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-210" class="theorem"><strong>Theorem 11.2  (Completeness Theorem for KT) </strong></span>For each modal formulas <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\models_{\text{ref}} \varphi\)</span>, then <span class="math inline">\(\vdash_K \varphi\)</span>. That is, if <span class="math inline">\(\varphi\)</span> is valid in <em>every reflexive</em> frame, then <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(KT\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-211" class="proof"><em>Proof</em>. </span>We know that if <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(KT\)</span>, then <span class="math inline">\(\varphi\)</span> is not valid in the canonical frame for <span class="math inline">\(KT\)</span>.</p>
+<p>We proceed to verify that the canonical frame for <span class="math inline">\(KT\)</span> is reflexive:</p>
+<ul>
+<li>for all <span class="math inline">\(\Gamma \in W_{KT}\)</span>, <span class="math inline">\(\Gamma R_{KT} \Gamma\)</span>.</li>
+</ul>
+<p>Given how we defined <span class="math inline">\(R_{KT}\)</span>, this is tantamount to the claim:</p>
+<ul>
+<li>if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>.</li>
+</ul>
+<p>But since <span class="math inline">\(\vdash_{KT} \varphi \to \Diamond \varphi\)</span>, it follows that <span class="math inline">\(\varphi \to \Diamond \varphi \in \Gamma\)</span> and since <span class="math inline">\(\Gamma\)</span> is closed under <span class="math inline">\(KT\)</span>-derivability, if <span class="math inline">\(\Gamma \vdash \Diamond \varphi\)</span>, then <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>. So, if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash \Diamond \varphi\)</span> and <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>.</p>
+</div>
+<p>In order to facilitate the proof of completeness theorems for further normal modal systems, we will argue that there is a correlation between the derivability of all substitution instances of certain axioms and certain features of the accessibility relation for the canonical model for a modal system.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-212" class="proposition"><strong>Proposition 11.2  </strong></span>The canonical model for a normal modal system <span class="math inline">\(\Sigma\)</span> satisfies each condition listed below if it includes as axioms all substitution instances of the corresponding axiom.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Axiom</th>
+<th align="center">Condition on <span class="math inline">\(R_\Sigma\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(D\)</span></td>
+<td align="center"><span class="math inline">\(\Box p \to \Diamond p\)</span></td>
+<td align="center"><em>serial on <span class="math inline">\(W_\Sigma\)</span></em></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(T\)</span></td>
+<td align="center"><span class="math inline">\(\Box p \to p\)</span></td>
+<td align="center"><em>reflexive on <span class="math inline">\(W_\Sigma\)</span></em></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(B\)</span></td>
+<td align="center"><span class="math inline">\(p \to \Box \Diamond p\)</span></td>
+<td align="center"><em>symmetric on <span class="math inline">\(W_\Sigma\)</span></em></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(4\)</span></td>
+<td align="center"><span class="math inline">\(\Box p \to \Box \Box p\)</span></td>
+<td align="center"><em>transitive on <span class="math inline">\(W_\Sigma\)</span></em></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(5\)</span></td>
+<td align="center"><span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span></td>
+<td align="center"><em>euclidean on <span class="math inline">\(W_\Sigma\)</span></em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-213" class="proof"><em>Proof</em>. </span>We unpack the argument for each axiom.</p>
+<ul>
+<li><p><span class="math inline">\(D\)</span> / <span class="math inline">\(R_\Sigma\)</span> is serial on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(\Box p \to \Diamond p\)</span>.
+We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is serial:</p>
+<ul>
+<li>for all <span class="math inline">\(\Gamma \in W_{\Sigma}\)</span> there is some <span class="math inline">\(\Delta \in W_{\Sigma}\)</span> such that <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span>.</li>
+</ul>
+<p>This is tantamount to the claim:</p>
+<ul>
+<li><span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> for some <span class="math inline">\(\Delta \in W_{\Sigma}\)</span>.</li>
+</ul>
+<p>It will suffice to prove that <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
+<p>Suppose <em>not</em>. Then there is a conjunction <span class="math inline">\(\varphi_1 \wedge \dots \wedge \varphi_n\)</span> of modal formulas with <span class="math inline">\(\Box \varphi_1, \dots, \Box \varphi_n \in \Gamma\)</span> such that
+<span class="math display">\[
+\vdash_{\Sigma} (\varphi_1 \wedge \dots  \wedge \dots \wedge \varphi_n) \to  \bot
+\]</span>
+Since <span class="math inline">\(\Sigma\)</span> is a normal modal system, we have:
+<span class="math display">\[
+\vdash_{\Sigma} \Box (\varphi_1  \wedge \dots \wedge \Box \varphi_n) \to  \Box \bot
+\]</span>
+Since <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent, it contains every theorem of <span class="math inline">\(\Sigma\)</span>. Therefore:
+<span class="math display">\[
+(\Box \varphi_1  \wedge \dots \wedge \Box \varphi_n) \to  \Box \bot \in \Gamma
+\]</span>
+Because <span class="math inline">\(\Box \varphi_1 \dots \Box \varphi_n \in \Gamma\)</span>, by lemma 5.1, we infer:
+<span class="math display">\[
+(\Box \varphi_1 \wedge \dots \wedge \Box \varphi_n) \in \Gamma
+\]</span>
+<span class="math display">\[
+\Box \bot  \in \Gamma
+\]</span>
+But since <span class="math inline">\(\vdash_{\Sigma}  \Box \bot \to \diamond \bot\)</span>,
+<span class="math display">\[
+\Diamond \bot \in \Gamma.
+\]</span>
+Unfortunately, since <span class="math inline">\(\vdash_{\Sigma}  \Box \neg \bot\)</span>,
+<span class="math display">\[
+\neg \Diamond \bot \in \Gamma,
+\]</span>
+which would make <span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent.
+We conclude that the original set is <span class="math inline">\(\Sigma\)</span>-consistent and can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set.</p></li>
+<li><p><span class="math inline">\(B\)</span> / <span class="math inline">\(R_\Sigma\)</span> is symmetric on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(p \to \Box \Diamond p\)</span>.
+We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is symmetric:</p>
+<ul>
+<li>for all <span class="math inline">\(\Gamma, \Delta \in W_{\Sigma}\)</span>, if <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span>, then <span class="math inline">\(\Delta R_{\Sigma} \Gamma\)</span>.</li>
+</ul>
+<p>This is tantamount to the claim:</p>
+<ul>
+<li>if <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>, then <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Gamma\} \subseteq \Delta\)</span>.</li>
+</ul>
+<p>To prove that conditional, assume the antecedent for arbitrary <span class="math inline">\(\Gamma, \Delta\)</span>: <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>. We want to establish the consequent: if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Diamond \varphi \in \Delta\)</span>.
+Let <span class="math inline">\(\varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma \vdash_\Sigma \varphi \to \Box \Diamond \varphi\)</span>, we find that <span class="math inline">\(\Box \Diamond \varphi \in \Gamma\)</span>. So, since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, it follows that <span class="math inline">\(\Diamond \varphi \in \Delta\)</span> as desired.</p></li>
+<li><p><span class="math inline">\(4\)</span> / <span class="math inline">\(R_\Sigma\)</span> is transitive on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(\Box p \to \Box \Box p\)</span>.
+We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is euclidean:</p>
+<ul>
+<li>for all <span class="math inline">\(\Gamma, \Delta, \Theta \in W_{\Sigma}\)</span>, <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span> and <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Gamma R_{\Sigma} \Theta\)</span>.</li>
+</ul>
+<p>This is tantamount to the claim:</p>
+<ul>
+<li>if <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi: \Box \varphi \in \Delta\} \subseteq \Theta\)</span>, then <span class="math inline">\(\{ \varphi: \Box \varphi \in \Gamma\}\subseteq \Delta\)</span>.</li>
+</ul>
+<p>To prove that conditional, assume the antecedent for arbitrary <span class="math inline">\(\Gamma, \Delta, \Theta\)</span>: <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi: \Box \varphi \in \Delta\} \subseteq \Theta\)</span>. We want to establish the consequent: if <span class="math inline">\(\Box \varphi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \in \Theta\)</span>.</p>
+<p>If <span class="math inline">\(\Box \varphi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash_{\Sigma} \Box \varphi \to \Box \Box \varphi\)</span> and <span class="math inline">\(\Box \varphi \to \Box \Box \varphi \in \Gamma\)</span>, it follows that <span class="math inline">\(\Box \Box \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, it follows that <span class="math inline">\(\Box \varphi \in \Delta\)</span>, and since <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>, we conclude that <span class="math inline">\(\varphi \in \Theta\)</span> as desired.</p></li>
+<li><p><span class="math inline">\(5\)</span> / <span class="math inline">\(R_\Sigma\)</span> is euclidean on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span>.
+We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is euclidean:</p>
+<ul>
+<li>for all <span class="math inline">\(\Gamma, \Delta, \Theta \in W_{\Sigma}\)</span>, <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span> and <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Delta R_{\Sigma} \Theta\)</span>.</li>
+</ul>
+<p>This is tantamount to the claim:</p>
+<ul>
+<li>if <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Theta\} \subseteq \Gamma\)</span>, then <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Theta\}\subseteq \Delta\)</span>.</li>
+</ul>
+<p>To prove that conditional, assume the antecedent for arbitrary <span class="math inline">\(\Gamma, \Delta, \Theta\)</span>: <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Theta\} \subseteq \Gamma\)</span>. We want to establish the consequent: if <span class="math inline">\(\varphi \in \Theta\)</span>, then <span class="math inline">\(\Diamond \varphi \in \Delta\)</span>.
+Let <span class="math inline">\(\varphi \in \Theta\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma \vdash_\Sigma \Diamond \varphi \to \Box \Diamond \varphi\)</span>, we find that <span class="math inline">\(\Box \Diamond \varphi \in \Gamma\)</span>. So, since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, it follows that <span class="math inline">\(\Diamond \varphi \in \Delta\)</span> as desired.</p></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+
+
+<p style="text-align: center;">
+<a href="axiomatic-derivations-1.html"><button class="btn btn-default">Previous</button></a>
+<a href="epistemic-logic.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+
+</body>
+</html>
