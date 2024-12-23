@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
+<link href="./modalpropositional.html" rel="next">
 <link href="./propositional.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -156,7 +156,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./propositional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Propositional Language</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Propositional Language</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,14 +167,8 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+  <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Modal Propositional Language</span></span></a>
   </div>
 </li>
     </ul>
@@ -349,7 +343,7 @@ Completeness
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Completeness Reformulated
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -360,7 +354,17 @@ Note
 </div>
 </div>
 <p>That will suffice for our purposes. For given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, then by proposition 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is consistent. Given the link between consistency and satisfiability, we would infer that <span class="math inline">\(\Gamma, \neg \varphi\)</span> is satisfiable, whence <span class="math inline">\(\Gamma \not \models \varphi\)</span>.</p>
-<p>We proceed in two steps:</p>
+<p>We reach our target, we will proceed to justify two double-arrows from the diagram below.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Plan
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{array}{clllc}
 \Gamma  \ \text{consistent} &amp; &amp; &amp; &amp; \Gamma \ \text{satisfiable}\\
@@ -368,7 +372,9 @@ Note
   \exists \Sigma \ (\Gamma  \subseteq \Sigma \wedge  \Sigma \ \text{maxcon}) &amp; &amp; \Rightarrow &amp; &amp;   \exists \Sigma  \ (\Gamma  \subseteq \Sigma \wedge  \Sigma \ \text{satisfiable})\\
 \end{array}
 \]</span></p>
-<p>One step enables us to move from the consistency of a set <span class="math inline">\(\Gamma\)</span> to the existence of a maximal consistent extension <span class="math inline">\(\Sigma\)</span> of that set.</p>
+</div>
+</div>
+<p>The first step is to extend a consistent set of formulas <span class="math inline">\(\Gamma\)</span> to a maximal consistent set <span class="math inline">\(\Sigma\)</span> (Lindenbaum Lemma.) Next, we will argue that every maximal consistent set is satisfiable (Henkin Lemma).</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -380,8 +386,6 @@ Lindenbaum Lemma
 </div>
 <div class="callout-body-container callout-body">
 <p>If a set of formulas <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is a subset of a maximal consistent set of formulas <span class="math inline">\(\Sigma\)</span>.</p>
-</div>
-</div>
 <p>We begin with an enumeration of the formulas of propositional logic: <span class="math display">\[
 \varphi_0, \varphi_1, \cdots, \varphi_n, \cdots
 \]</span> Given <span class="math inline">\(\Gamma\)</span> be a consistent set of formulas, we build a maximal consistent superset <span class="math inline">\(\Sigma\)</span> by the recursion: <span class="math display">\[
@@ -424,8 +428,11 @@ Lindenbaum Lemma
 <div id="prp-l6" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.8</strong></span> Given a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Sigma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Sigma\)</span>.</p>
 </div>
-<p>A formula <span class="math inline">\(\varphi\)</span> will be assigned an index by the enumeration, which means <span class="math inline">\(\varphi = \varphi_n\)</span>. Now, if <span class="math inline">\(\Sigma, \varphi_n\)</span> is consistent, then <span class="math inline">\(\Sigma_n, \varphi_n\)</span> will be consistent as well. But that means that by construction of <span class="math inline">\(\Sigma\)</span>, <span class="math inline">\(\varphi_n \in \Sigma_{n+1} \subseteq \Sigma\)</span>. :::</p>
+<p>A formula <span class="math inline">\(\varphi\)</span> will be assigned an index by the enumeration, which means <span class="math inline">\(\varphi = \varphi_n\)</span>. Now, if <span class="math inline">\(\Sigma, \varphi_n\)</span> is consistent, then <span class="math inline">\(\Sigma_n, \varphi_n\)</span> will be consistent as well. But that means that by construction of <span class="math inline">\(\Sigma\)</span>, <span class="math inline">\(\varphi_n \in \Sigma_{n+1} \subseteq \Sigma\)</span>.</p>
 <p>We conclude that <span class="math inline">\(\Sigma\)</span> is a maximal consistent superset of <span class="math inline">\(\Gamma\)</span>.</p>
+</div>
+</div>
+<p>We conclude that <span class="math inline">\(\Sigma\)</span> is a maximal consistent superset of <span class="math inline">\(\Gamma\)</span>. It remains to show that a maximal consistent set of formulas is satisfiable.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -437,8 +444,6 @@ Henkin Lemma
 </div>
 <div class="callout-body-container callout-body">
 <p>Every maximal consistent set <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
-</div>
-</div>
 <p>Given a maximal consistent set <span class="math inline">\(\Sigma\)</span>, consider a valuation <span class="math inline">\(V\)</span> based on an assignment <span class="math inline">\(v\)</span> such that: <span class="math display">\[
 \begin{array}{lll}
 v(p_n) = 1 &amp; \text{iff} &amp; p_n \in \Sigma.
@@ -473,6 +478,8 @@ V(\varphi \to \psi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 \ \text{or} \ V(\p
 \end{array}
 \]</span><br>
 We conclude that <span class="math inline">\(V\)</span> verifies exactly those formulas in <span class="math inline">\(\Sigma\)</span>. So, it follows that <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
+</div>
+</div>
 
 
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
@@ -903,13 +910,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./propositional.html" class="pagination-link" aria-label="Basic Propositional Language">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Propositional Language</span></span>
+      <a href="./propositional.html" class="pagination-link" aria-label="The Propositional Language">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Propositional Language</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./modalpropositional.html" class="pagination-link" aria-label="The Modal Propositional Language">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Modal Propositional Language</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
