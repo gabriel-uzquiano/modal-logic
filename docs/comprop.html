@@ -156,7 +156,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./propositional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Propositional Language</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Propositional Logic</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -168,7 +168,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Modal Propositional Language</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span></a>
   </div>
 </li>
     </ul>
@@ -244,7 +244,7 @@ Consistency
 \]</span></p>
 </div>
 <div id="proof">
-<p>We discuss one direction at a time.</p>
+<p><strong>Proof</strong>. We discuss one direction at a time.</p>
 <p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>.</p>
 <p>To that purpose we use the fact that a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span> is automatically a derivation of <span class="math inline">\(\varphi\)</span> from the larger set <span class="math inline">\(\Gamma, \neg \varphi\)</span>. We use this fact to produce a derivation of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Gamma, \neg \varphi\)</span>. <span class="math display">\[
 \begin{array}{llll}
@@ -267,6 +267,7 @@ Consistency
 5 &amp; &amp; \varphi &amp; \text{MP 3, 4}\\
 \end{array}
 \]</span></p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -294,7 +295,7 @@ Maximal Consistency
 </ol>
 </div>
 <div>
-<p>Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, consider each claim at a time.</p>
+<p><strong>Proof</strong>. Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, consider each claim at a time.</p>
 <ol type="1">
 <li><span class="math inline">\(\Gamma \vdash \varphi\)</span> if, and only if, <span class="math inline">\(\varphi \in \Gamma\)</span>.</li>
 </ol>
@@ -318,6 +319,7 @@ Maximal Consistency
 <p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
 <p>If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then given 2 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Since lemma 3.6 gives us that <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, we infer <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p>If <span class="math inline">\(\psi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash \psi \to (\varphi \to \psi)\)</span>, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>We have the toolkit we need in order to prove the completeness of the axiom system.</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -375,18 +377,10 @@ Plan
 </div>
 </div>
 <p>The first step is to extend a consistent set of formulas <span class="math inline">\(\Gamma\)</span> to a maximal consistent set <span class="math inline">\(\Sigma\)</span> (Lindenbaum Lemma.) Next, we will argue that every maximal consistent set is satisfiable (Henkin Lemma).</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="lem-lin" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 4.1 (Lindenbaum Lemma)</strong></span> If a set of formulas <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is a subset of a maximal consistent set of formulas <span class="math inline">\(\Sigma\)</span>.</p>
 </div>
-<div class="callout-title-container flex-fill">
-Lindenbaum Lemma
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If a set of formulas <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is a subset of a maximal consistent set of formulas <span class="math inline">\(\Sigma\)</span>.</p>
-<p>We begin with an enumeration of the formulas of propositional logic: <span class="math display">\[
+<p><strong>Proof</strong>. We begin with an enumeration of the formulas of propositional logic: <span class="math display">\[
 \varphi_0, \varphi_1, \cdots, \varphi_n, \cdots
 \]</span> Given <span class="math inline">\(\Gamma\)</span> be a consistent set of formulas, we build a maximal consistent superset <span class="math inline">\(\Sigma\)</span> by the recursion: <span class="math display">\[
 \begin{array}{lll}
@@ -395,7 +389,8 @@ Lindenbaum Lemma
 \end{array}
 \]</span> We let <span class="math display">\[
 \Sigma = \bigcup_{n\in \mathbb{N}} \Sigma_n.
-\]</span> We now argue that <span class="math inline">\(\Sigma\)</span> is a maximal consistent superset of <span class="math inline">\(\Gamma\)</span>. We proceed in several steps.</p>
+\]</span>We now argue that <span class="math inline">\(\Sigma\)</span> is a maximal consistent superset of <span class="math inline">\(\Gamma\)</span>.</p>
+<p>We proceed in several steps.</p>
 <div id="prp-l1" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.3</strong></span> <span class="math inline">\(\Gamma \subseteq \Sigma\)</span></p>
 </div>
@@ -403,48 +398,55 @@ Lindenbaum Lemma
 <div id="prp-l2" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.4</strong></span> For each natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Gamma_n\)</span> is consistent.</p>
 </div>
-<p>A simple induction on <span class="math inline">\(n\)</span> suffices:</p>
+<div id=".proof">
+<p><strong>Proof</strong>. A simple induction on <span class="math inline">\(n\)</span> suffices:</p>
 <ul>
 <li><p><span class="math inline">\(\Sigma_0\)</span> is consistent on the assumption <span class="math inline">\(\Gamma\)</span> is consistent.</p></li>
 <li><p>If <span class="math inline">\(\Sigma_n\)</span> is consistent, then <span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if consistent, or else <span class="math inline">\(\Sigma_n\)</span>. Either way, <span class="math inline">\(\Sigma_{n+1}\)</span> is consistent.</p></li>
 </ul>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
 <div id="prp-l3" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.5</strong></span> For each natural number <span class="math inline">\(n\)</span>, for every <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_n\)</span>.</p>
 </div>
-<p>We argue by induction on <span class="math inline">\(n\)</span>:</p>
+<div>
+<p><strong>Proof</strong>. We argue by induction on <span class="math inline">\(n\)</span>:</p>
 <ul>
 <li><p><span class="math inline">\(\Sigma_0\)</span> is vacuously a superset of <em>any</em> predecessors in the sequence.</p></li>
 <li><p><span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if consistent, or else <span class="math inline">\(\Sigma_n\)</span>. Either way, since by inductive hypothesis, for every <span class="math inline">\(m &lt; n\)</span> <span class="math inline">\(\Sigma_{m} \subseteq \Sigma_{n}\)</span> and <span class="math inline">\(\Sigma_n \subseteq \Sigma_{n+1}\)</span>, we conclude that for every <span class="math inline">\(m &lt; n\)</span> <span class="math inline">\(\Sigma_{m} \subseteq \Sigma_{n+1}\)</span>.</p></li>
 </ul>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
 <div id="prp-l4" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.6</strong></span> For every finite subset <span class="math inline">\(\Delta \subseteq \Sigma\)</span>, there is some natural number <span class="math inline">\(n\)</span> such that <span class="math inline">\(\Delta \subseteq \Sigma_n\)</span>.</p>
 </div>
-<p>If <span class="math inline">\(\Delta\)</span> is a finite subset of <span class="math inline">\(\Sigma\)</span>, then let <span class="math inline">\(\varphi_n\)</span> be the member of <span class="math inline">\(\Delta\)</span> of <em>highest</em> index. That is for all <span class="math inline">\(m\)</span>, if <span class="math inline">\(\varphi_m \in \Delta\)</span>, then <span class="math inline">\(m \leq n\)</span>. Notice that for each natural number <span class="math inline">\(m\)</span>, if <span class="math inline">\(\varphi_m \in \Sigma\)</span>, then <span class="math inline">\(\varphi_m \in \Sigma_{m+1}\)</span>. That is, a formula <span class="math inline">\(\varphi_m\)</span> is accepted into <span class="math inline">\(\Sigma\)</span> via <span class="math inline">\(\Sigma_{m+1}\)</span> if at all. So, it follows that <span class="math inline">\(\Delta \subseteq \Sigma_{n+1}\)</span> if <span class="math inline">\(n\)</span> is the highest index of a formula in <span class="math inline">\(\Delta\)</span>.</p>
+<div>
+<p><strong>Proof</strong>. If <span class="math inline">\(\Delta\)</span> is a finite subset of <span class="math inline">\(\Sigma\)</span>, then let <span class="math inline">\(\varphi_n\)</span> be the member of <span class="math inline">\(\Delta\)</span> of <em>highest</em> index. That is for all <span class="math inline">\(m\)</span>, if <span class="math inline">\(\varphi_m \in \Delta\)</span>, then <span class="math inline">\(m \leq n\)</span>. Notice that for each natural number <span class="math inline">\(m\)</span>, if <span class="math inline">\(\varphi_m \in \Sigma\)</span>, then <span class="math inline">\(\varphi_m \in \Sigma_{m+1}\)</span>. That is, a formula <span class="math inline">\(\varphi_m\)</span> is accepted into <span class="math inline">\(\Sigma\)</span> via <span class="math inline">\(\Sigma_{m+1}\)</span> if at all. So, it follows that <span class="math inline">\(\Delta \subseteq \Sigma_{n+1}\)</span> if <span class="math inline">\(n\)</span> is the highest index of a formula in <span class="math inline">\(\Delta\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>It follows from the above that every <em>finite</em> subset of <span class="math inline">\(\Sigma\)</span> is consistent. We now argue that <span class="math inline">\(\Sigma\)</span> is consistent as well.</p>
 <div id="prp-l5" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.7</strong></span> <span class="math inline">\(\Sigma\)</span> is consistent.</p>
 </div>
-<p>It follows from the above that every <em>finite</em> subset of <span class="math inline">\(\Sigma\)</span> is consistent. We now argue that <span class="math inline">\(\Sigma\)</span> is consistent as well.</p>
-<p>For a reductio, suppose <span class="math inline">\(\Sigma \vdash \bot\)</span>. That means that there is a <em>finite</em> derivation <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Sigma\)</span>. That is therefore a derivation of <span class="math inline">\(\bot\)</span> from a <em>finite</em> subset of <span class="math inline">\(\Sigma\)</span>, which would require a finite subset of <span class="math inline">\(\Sigma\)</span> to be inconsistent. That contradicts the observation that every finite subset of <span class="math inline">\(\Sigma\)</span> is consistent.</p>
+<div>
+<p><strong>Proof</strong>. For a reductio, suppose <span class="math inline">\(\Sigma \vdash \bot\)</span>. That means that there is a <em>finite</em> derivation <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Sigma\)</span>. That is therefore a derivation of <span class="math inline">\(\bot\)</span> from a <em>finite</em> subset of <span class="math inline">\(\Sigma\)</span>, which would require a finite subset of <span class="math inline">\(\Sigma\)</span> to be inconsistent. That contradicts the observation that every finite subset of <span class="math inline">\(\Sigma\)</span> is consistent.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
 <div id="prp-l6" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.8</strong></span> Given a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Sigma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Sigma\)</span>.</p>
 </div>
-<p>A formula <span class="math inline">\(\varphi\)</span> will be assigned an index by the enumeration, which means <span class="math inline">\(\varphi = \varphi_n\)</span>. Now, if <span class="math inline">\(\Sigma, \varphi_n\)</span> is consistent, then <span class="math inline">\(\Sigma_n, \varphi_n\)</span> will be consistent as well. But that means that by construction of <span class="math inline">\(\Sigma\)</span>, <span class="math inline">\(\varphi_n \in \Sigma_{n+1} \subseteq \Sigma\)</span>.</p>
+<div>
+<p><strong>Proof</strong>. A formula <span class="math inline">\(\varphi\)</span> will be assigned an index by the enumeration, which means <span class="math inline">\(\varphi = \varphi_n\)</span>. Now, if <span class="math inline">\(\Sigma, \varphi_n\)</span> is consistent, then <span class="math inline">\(\Sigma_n, \varphi_n\)</span> will be consistent as well. But that means that by construction of <span class="math inline">\(\Sigma\)</span>, <span class="math inline">\(\varphi_n \in \Sigma_{n+1} \subseteq \Sigma\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
 <p>We conclude that <span class="math inline">\(\Sigma\)</span> is a maximal consistent superset of <span class="math inline">\(\Gamma\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+<p>It remains to show that a maximal consistent set of formulas is satisfiable.</p>
+<div id="lem-hen" class="theorem lemma">
+<p><span class="theorem-title"><strong>Lemma 4.2 (Henkin Lemma)</strong></span> Every maximal consistent set <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
 </div>
-</div>
-<p>We conclude that <span class="math inline">\(\Sigma\)</span> is a maximal consistent superset of <span class="math inline">\(\Gamma\)</span>. It remains to show that a maximal consistent set of formulas is satisfiable.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Henkin Lemma
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Every maximal consistent set <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
-<p>Given a maximal consistent set <span class="math inline">\(\Sigma\)</span>, consider a valuation <span class="math inline">\(V\)</span> based on an assignment <span class="math inline">\(v\)</span> such that: <span class="math display">\[
+<div>
+<p><strong>Proof</strong>. Given a maximal consistent set <span class="math inline">\(\Sigma\)</span>, consider a valuation <span class="math inline">\(V\)</span> based on an assignment <span class="math inline">\(v\)</span> such that: <span class="math display">\[
 \begin{array}{lll}
 v(p_n) = 1 &amp; \text{iff} &amp; p_n \in \Sigma.
 \end{array}
@@ -478,7 +480,7 @@ V(\varphi \to \psi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 \ \text{or} \ V(\p
 \end{array}
 \]</span><br>
 We conclude that <span class="math inline">\(V\)</span> verifies exactly those formulas in <span class="math inline">\(\Sigma\)</span>. So, it follows that <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
-</div>
+<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 
 
@@ -910,13 +912,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./propositional.html" class="pagination-link" aria-label="The Propositional Language">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Propositional Language</span></span>
+      <a href="./propositional.html" class="pagination-link" aria-label="Propositional Logic">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Propositional Logic</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./modalpropositional.html" class="pagination-link" aria-label="The Modal Propositional Language">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Modal Propositional Language</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./modalpropositional.html" class="pagination-link" aria-label="Modal Propositional Logic">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

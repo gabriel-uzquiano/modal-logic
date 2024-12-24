@@ -156,7 +156,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./propositional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Propositional Language</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Propositional Logic</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -168,7 +168,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Modal Propositional Language</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span></a>
   </div>
 </li>
     </ul>
@@ -176,8 +176,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-question-of-interpretation" id="toc-the-question-of-interpretation" class="nav-link active" data-scroll-target="#the-question-of-interpretation"><span class="header-section-number">1.1</span> The Question of Interpretation</a></li>
+  <li><a href="#possible-worlds" id="toc-possible-worlds" class="nav-link" data-scroll-target="#possible-worlds"><span class="header-section-number">1.2</span> Possible Worlds</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -293,6 +300,8 @@ Aristotle’s Sea Battle
 </div>
 </div>
 </div>
+<section id="the-question-of-interpretation" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="the-question-of-interpretation"><span class="header-section-number">1.1</span> The Question of Interpretation</h2>
 <p>How should we interpret the formalism? We use truth tables to interpret the language of propositional logic because propositional connectives are <em>truth-functional</em>, e.g., the truth value of a conjunction is a function of the truth values of its conjuncts. The strategy does not seem to be available in the case of modal logic, since the modal operator <span class="math inline">\(\Box\)</span> is not truth-functional:</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|}
@@ -339,6 +348,9 @@ f  &amp;  T &amp; t &amp; t &amp; ? \\
 \end{array}
 \]</span></p>
 <p>When <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are contingently true, <span class="math inline">\(\varphi \to \psi\)</span> may be necessarily true, e.g., <span class="math inline">\(p \to p\)</span> if <span class="math inline">\(p\)</span> is contingently true, or merely contingently true, e.g., <span class="math inline">\(p\to q\)</span> for suitable choices of contingent propositions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>. Likewise, when <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are contingently false, the conditional may be necessarily or contingently true.</p>
+</section>
+<section id="possible-worlds" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="possible-worlds"><span class="header-section-number">1.2</span> Possible Worlds</h2>
 <p>We must look elsewhere for an interpretation of the formalism of propositional modal logic. One key observation at this point is that propositions differ not just with respect to <em>whether</em> they are true or false, they may differ with respect to <em>the circumstances under which</em> they are true or false. The propositions expressed by the statements ‘Los Angeles has over three million inhabitants’ and ‘Kilimanjaro rises to 5,895 meters’ are both true but there are possible circumstances under which one is true and the other is false.</p>
 <p>We may think of <em>possible worlds</em> as complete specifications of a <em>way the world might be</em>, and we may ask whether a sentence is <em>true at</em> a possible world. That is, we may ask whether the possible world in question specifies circumstances under which the sentence is in fact true.</p>
 <p>Once we take on board the thought that a sentence may be true when evaluated with respect to one possible world but not when evaluated with respect to another, we may ask what is for a possible world to be <em>possible relative to</em> another. The proposition that I’m a philosopher is true given how the world is, but there are possible circumstances under which I’m an engineer. We codify that as the thought that a world at which I’m an engineer is <em>possible with respect to</em> the world of evaluation. We will call a possible world is <em>accessible from</em> another world if the former is possible with respect to the latter.</p>
@@ -383,6 +395,7 @@ A Possible Worlds Model
 </div>
 
 
+</section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>

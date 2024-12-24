@@ -156,7 +156,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./propositional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Propositional Language</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Propositional Logic</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -168,7 +168,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Modal Propositional Language</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span></a>
   </div>
 </li>
     </ul>
@@ -186,7 +186,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#structural-features-of-relations" id="toc-structural-features-of-relations" class="nav-link" data-scroll-target="#structural-features-of-relations"><span class="header-section-number">2.2.1</span> Structural Features of Relations</a></li>
   </ul></li>
-  <li><a href="#mathematical-induction" id="toc-mathematical-induction" class="nav-link" data-scroll-target="#mathematical-induction"><span class="header-section-number">2.3</span> Mathematical Induction</a></li>
+  <li><a href="#induction-and-definitions-by-recursion" id="toc-induction-and-definitions-by-recursion" class="nav-link" data-scroll-target="#induction-and-definitions-by-recursion"><span class="header-section-number">2.3</span> Induction and Definitions by Recursion</a></li>
   </ul>
 </nav>
     </div>
@@ -278,7 +278,7 @@ Russell’s paradox
 <div id="prp-empty" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.3 (Empty Set)</strong></span> There is a set without members which we label <span class="math inline">\(\emptyset\)</span>. That is, <span class="math inline">\(\emptyset\)</span> is the set <span class="math inline">\(\{x: x \neq x\}\)</span>.</p>
 </div>
-<p>Other axioms help us justify the existence of further sets:</p>
+<p>Further axioms justify the existence of sets constructed in terms of other given sets. The Pair Set Axiom, for example, justifies the existence of a pair set of two given sets:</p>
 <div id="prp-pair" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.4 (Pair Set)</strong></span> Given two objects <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, there is a set whose elements are exactly <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>. We write <span class="math inline">\(\{a, b\}\)</span> for the pair set of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
 </div>
@@ -326,8 +326,8 @@ Notation
 <section id="structural-features-of-relations" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="structural-features-of-relations"><span class="header-section-number">2.2.1</span> Structural Features of Relations</h3>
 <p>We now specify a variety of structural features a relation may exemplify.</p>
-<div id="def-prop" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2.5</strong></span> If <span class="math inline">\(R\)</span> is a binary relation on a set <span class="math inline">\(A\)</span>,</p>
+<div id="def-ref" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2.5 (Reflexivity)</strong></span> If <span class="math inline">\(R\)</span> is a binary relation on a set <span class="math inline">\(A\)</span>,</p>
 <ul>
 <li><p><span class="math inline">\(R\)</span> is <em>reflexive</em> on <span class="math inline">\(A\)</span> iff for every element <span class="math inline">\(x \in  A\)</span>, <span class="math inline">\(Rxx\)</span></p></li>
 <li><p><span class="math inline">\(R\)</span> is <em>irreflexive</em> on <span class="math inline">\(A\)</span> iff for every element <span class="math inline">\(x \in  A\)</span>, <span class="math inline">\(\neg Rxx\)</span> for every element <span class="math inline">\(x\)</span> in <span class="math inline">\(A\)</span>.</p></li>
@@ -346,9 +346,9 @@ Example
 <div class="callout-body-container callout-body">
 <p>Consider the set of English words <span class="math inline">\(W\)</span>. Then:</p>
 <ul>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> shares at least one letter with <span class="math inline">\(v\)</span>} is a reflexive relation on <span class="math inline">\(W\)</span>.</p></li>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is an antonym of <span class="math inline">\(v\)</span>} is an irreflexive relation on <span class="math inline">\(W\)</span>.</p></li>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is <span class="math inline">\(v\)</span> backwards} is a non-reflexive relation on <span class="math inline">\(W\)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> shares at least one letter with <span class="math inline">\(v\)</span>} is a reflexive relation on <span class="math inline">\(W\)</span>}.</p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is an antonym of <span class="math inline">\(v\)</span>} is an irreflexive relation on <span class="math inline">\(W\)</span>}.</p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is <span class="math inline">\(v\)</span> backwards} is a non-reflexive relation on <span class="math inline">\(W\)</span>}.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
 </ul>
 </div>
 </div>
@@ -492,8 +492,8 @@ Further Structural Features of Relations
 </div>
 </section>
 </section>
-<section id="mathematical-induction" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="mathematical-induction"><span class="header-section-number">2.3</span> Mathematical Induction</h2>
+<section id="induction-and-definitions-by-recursion" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="induction-and-definitions-by-recursion"><span class="header-section-number">2.3</span> Induction and Definitions by Recursion</h2>
 <p>Induction is a powerful method of proof. We will be able to establish a variety of generalizations over items ordered by the natural numbers, e.g., formulas and proofs by induction of length. Because natural numbers are defined inductively from <span class="math inline">\(0\)</span> and the successor operation, they are similarly governed by a principle of induction:</p>
 <div id="prp-mi" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.5 (Induction on the Natural Numbers)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on natural numbers, if</p>
@@ -513,15 +513,16 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>consider the pattern below: <span class="math display">\[
+<p>Consider the pattern below: <span class="math display">\[
 \begin{array}{llll}
 1 &amp; = &amp; 1 &amp; = &amp; \frac{1 .(1+1)}{2}\\
 1+2 &amp; = &amp; 3 &amp; = &amp; \frac{2 . (2+1)}{2}\\
 1 + 2+ 3 &amp; = &amp; 6 &amp; = &amp; \frac{3 . (3+1)}{2}\\
 \cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
 \end{array}
-\]</span>Carl Gauss exploited when he noticed that the sum of the first <span class="math inline">\(100\)</span> positive integers is <span class="math inline">\(5050\)</span>, which is <span class="math inline">\(\frac{100.(100 +1)}{2}\)</span> when asked by his teacher. It turns out the pattern is completely general.</p>
-<p>We use an induction on the positive integers to prove the generalization:</p>
+\]</span></p>
+<p>For example, we may now calculate the sum of the first <span class="math inline">\(100\)</span> positive integers to be <span class="math inline">\(5050\)</span>, which is <span class="math inline">\(\frac{100.(100 +1)}{2}\)</span>.</p>
+<p>It turns out the pattern is completely general. We use an induction on the positive integers to prove the generalization:</p>
 <ul>
 <li>For every positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[
 \sum_{k = 1}^{n} = \frac{n.(n+1)}{2}.
@@ -551,7 +552,7 @@ Example
 \]</span>So, we conclude that every positive integer <span class="math inline">\(n\)</span> satisfies the condition.</p>
 </div>
 </div>
-<p>A word of caution. Mathematical induction becomes all too powerful when it is <em>misused.</em> Here is an example of how a misapplication of mathematical induction can lead us astray. In the case at hand, we <em>misuse</em> induction to argue for the <em>absurd</em> claim that all finite sets have the same cardinality.</p>
+<p>A word of caution. The principle of induction becomes all too powerful when it is <em>misused.</em> Here is an example of how a misapplication of mathematical induction can lead us astray. In the case at hand, we <em>misuse</em> induction to argue for the <em>absurd</em> claim that all finite sets have the same cardinality.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -594,6 +595,26 @@ How Not to Use Induction
 <p>then <em>all</em> natural numbers satisfy <span class="math inline">\(\Phi(x)\)</span>.</p>
 </div>
 <p>Notice that <span class="math inline">\(\Phi(0)\)</span> will be true if the conditional above holds, for it will be vacuously true that <em>all natural numbers</em> less than <span class="math inline">\(0\)</span> satisfy the condition <span class="math inline">\(\Phi\)</span>.</p>
+<p>We will often define infinite sets by <em>recursion</em>, which is closely connected to induction.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We define <em>even number</em> by recursion:</p>
+<p><em>even number</em> := <span class="math inline">\(0\)</span> | <span class="math inline">\(n +2\)</span> |</p>
+<p>Here is how to read that notation. A number is even if it is either <span class="math inline">\(0\)</span> or it is of the form <span class="math inline">\(n +2\)</span> for some <span class="math inline">\(n\)</span> we have already established to be an even number. That means that the set of even numbers include:</p>
+<p><span class="math display">\[
+0 \ 2 \ 4 \ 6 \ 8 \ \cdots
+\]</span></p>
+<p>In other words, a number is even if and only if we may eventually reach that number by a finite number of application of the rules included in the definition.</p>
+</div>
+</div>
 
 
 </section>
@@ -1030,8 +1051,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./propositional.html" class="pagination-link" aria-label="The Propositional Language">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Propositional Language</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./propositional.html" class="pagination-link" aria-label="Propositional Logic">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Propositional Logic</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
