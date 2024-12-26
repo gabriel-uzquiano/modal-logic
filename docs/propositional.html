@@ -162,13 +162,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comprop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commodprop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
     </ul>
@@ -315,7 +321,7 @@ Assignment
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An <em>assignment</em> for a propositional language <span class="math inline">\(\mathcal{L}\)</span> is a function <span class="math inline">\(v\)</span> from <span class="math inline">\(AT\)</span> into <span class="math inline">\(\{0, 1\}\)</span>, which maps a propositional variable to a truth value.</p>
+<p>An assignment for a propositional language <span class="math inline">\(\mathcal{L}\)</span> is a function <span class="math inline">\(v\)</span> from <span class="math inline">\(AT\)</span> into <span class="math inline">\(\{0, 1\}\)</span>, which maps a propositional variable to a truth value.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -440,14 +446,14 @@ Axioms
 <div class="callout-body-container callout-body">
 <p>A well-formed formula <span class="math inline">\(\varphi\)</span> is an <em>axiom</em> if, and only if, it is a substitution instance of one of the well-formed formulas below: <span class="math display">\[
 \begin{array}{lll}
-A1 &amp; &amp; p \to (q \to p)\\
-A2 &amp; &amp; (p \to (q \to r)) \to ((p \to q) \to (p \to r))\\
-A3 &amp; &amp; (\neg p \to \neg q) \to ((\neg p \to q) \to p)
+\textsf{A1} &amp; &amp; p \to (q \to p)\\
+\textsf{A2} &amp; &amp; (p \to (q \to r)) \to ((p \to q) \to (p \to r))\\
+\textsf{A3} &amp; &amp; (\neg p \to \neg q) \to ((\neg p \to q) \to p)
 \end{array}
 \]</span></p>
 </div>
 </div>
-<p>We will use a single rule of inference, which we call <em>Modus Ponens</em> (MP). The rule in question will enable us to move from two formulas of the form <span class="math inline">\(\varphi\)</span> and <span class="math inline">\((\varphi \to \psi)\)</span> to the formula <span class="math inline">\(\psi\)</span>.</p>
+<p>We will use a single rule of inference, which we call <em>Modus Ponens</em> (<span class="math inline">\(\textsf{MP}\)</span>). The rule in question will enable us to move from two formulas of the form <span class="math inline">\(\varphi\)</span> and <span class="math inline">\((\varphi \to \psi)\)</span> to the formula <span class="math inline">\(\psi\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -460,7 +466,7 @@ Rule of Inference
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{array}{lll}
-MP &amp; &amp; \varphi, \ (\varphi \to \psi)/\psi\\
+\textsf{MP} &amp; &amp; \varphi, \ (\varphi \to \psi)/\psi\\
 \end{array}
 \]</span></p>
 </div>
@@ -517,13 +523,13 @@ Example
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\vdash p \to p\)</span> <span class="math display">\[
 \begin{array}{llll}
-1 &amp; &amp; p \to ((p \to p) \to p) &amp; A1[p/p, (p \to p)/q]\\
+1 &amp; &amp; p \to ((p \to p) \to p) &amp; \textsf{A1}[p/p, (p \to p)/q]\\
 2 &amp; &amp; (p \to ((p \to p) \to p))\to &amp; \\
   &amp; &amp;
-((p \to (p \to p)) \to (p \to p)) &amp; A2[p/p, (p \to p)/q, p/r]\\
-3 &amp; &amp; (p \to (p \to p)) \to (p \to p) &amp; \text{MP} \ 1, 2\\
-4 &amp; &amp; p \to (p \to p) &amp; A1[p/p, p/q]\\
-5 &amp; &amp; p \to p &amp; \text{MP} \ 3, 4\\
+((p \to (p \to p)) \to (p \to p)) &amp; \textsf{A2}[p/p, (p \to p)/q, p/r]\\
+3 &amp; &amp; (p \to (p \to p)) \to (p \to p) &amp; \textsf{MP} \ 1, 2\\
+4 &amp; &amp; p \to (p \to p) &amp; \textsf{A1}[p/p, p/q]\\
+5 &amp; &amp; p \to p &amp; \textsf{MP} \ 3, 4\\
 \end{array}
 \]</span></p>
 </div>
@@ -566,7 +572,7 @@ The Deduction Theorem
 <p><span class="theorem-title"><strong>Theorem 3.1</strong></span> Given a set of formulas <span class="math inline">\(\Gamma\)</span> and formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>, then <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span></p>
 </div>
 <div id="proof">
-<p>To obtain a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, we may extend a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span> with two additional steps: <span class="math inline">\(\varphi\)</span>, which being a member of <span class="math inline">\(\Gamma, \varphi\)</span>, is available as a premise, and <span class="math inline">\(\psi\)</span> which is the output of Modus Ponens when applied to <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>.</p>
+<p>To obtain a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, we may extend a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span> with two additional steps: <span class="math inline">\(\varphi\)</span>, which being a member of <span class="math inline">\(\Gamma, \varphi\)</span>, is available as a premise, and <span class="math inline">\(\psi\)</span> which is the output of <span class="math inline">\(\textsf{MP}\)</span> when applied to <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>.</p>
 </div>
 <p>The other direction is the deduction theorem, which requires a more involved justification:</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -606,17 +612,17 @@ Theorem
 <p><strong>Case 1</strong>. <span class="math inline">\(\psi\)</span> is a logical axiom.</p>
 <p>Here is a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
 \begin{array}{lll}
-1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; A1[\psi/p, \varphi/q]\\
+1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; \textsf{A1}[\psi/p, \varphi/q]\\
 2 &amp; &amp; \psi &amp; \\
-3 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ 1, 2\\
+3 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ 1, 2\\
 \end{array}
 \]</span></p>
 <p><strong>Case 2</strong>. <span class="math inline">\(\psi \in \Gamma\)</span></p>
 <p>Here is a similar derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
 \begin{array}{lll}
-1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; A1[\psi/p, \varphi/q]\\
+1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; \textsf{A1}[\psi/p, \varphi/q]\\
 2 &amp; &amp; \psi &amp;  \\
-3 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ 1, 2\\
+3 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ 1, 2\\
 \end{array}
 \]</span> <strong>Case 3</strong>. <span class="math inline">\(\psi = \varphi\)</span></p>
 <p>Since <span class="math inline">\(\vdash \varphi \to \varphi\)</span>, a derivation of <span class="math inline">\(\varphi \to \varphi\)</span> is a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>. Therefore <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
@@ -631,17 +637,17 @@ k &amp; &amp; \varphi \to  (\chi_l \to \psi) &amp; \Gamma \vdash  \varphi \to  (
 &amp; &amp; \vdots &amp; \\
 m &amp; &amp; \varphi \to  \chi_l &amp; \Gamma \vdash  \varphi \to  \chi_l\\
 &amp; &amp; \vdots &amp; \\
-n&amp; &amp; ((\varphi \to (\chi_1 \to \psi)) \to  &amp; A2[\varphi/p,\chi_l/q,\psi/r]\\
+n&amp; &amp; ((\varphi \to (\chi_1 \to \psi)) \to  &amp; \textsf{A2}[\varphi/p,\chi_l/q,\psi/r]\\
 &amp; &amp; ((\varphi \to \chi_l)\to (\varphi \to \psi)) &amp; \\
-n+1&amp; &amp; (\varphi \to \chi_l)\to (\varphi \to \psi) &amp; \text{MP} \ k, n\\
-n+2 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ m, n+1\\
+n+1&amp; &amp; (\varphi \to \chi_l)\to (\varphi \to \psi) &amp; \textsf{MP} \ k, n\\
+n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 \end{array}
 \]</span> We conclude that given <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(( \chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
 </div>
 <p>The deduction theorem encodes a common method of proof in mathematics. To establish a conditional <span class="math inline">\(\varphi \to \psi\)</span> in a mathematical context, you may simply adjoin <span class="math inline">\(\varphi\)</span> to your assumptions <span class="math inline">\(\Gamma\)</span> and set out to derive <span class="math inline">\(\psi\)</span> from them. That entitles you to conclude that <span class="math inline">\(\varphi \to \psi\)</span> is a deductive consequence of the original assumptions.</p>
 <p>We will now use of the Deduction Theorem to prove some facts, which will facilitate the use of the axiom system.</p>
-<div id="prp">
-<p><span class="math inline">\(\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))\)</span></p>
+<div id="prp-dp1" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.1</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))\)</span></p>
 </div>
 <div name="Proof">
 <p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
@@ -652,24 +658,62 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ m, n+1\\
 \{\varphi \to \psi, \psi \to \chi, \varphi\} \vdash \chi.
 \]</span> But it is simple to provide a derivation of <span class="math inline">\(\chi\)</span> from <span class="math inline">\(\{\varphi \to \psi, \psi \to \chi, \varphi\}\)</span>: <span class="math display">\[
 \begin{array}{llll}
-1 &amp; &amp; \varphi \to \psi &amp; \text{Premise} \\
-2 &amp; &amp; \varphi &amp;  \text{Premise} \\
-3 &amp; &amp; \psi &amp; \text{MP} \ 1, 2 \\
-4 &amp; &amp; \psi \to \chi &amp; \text{Premise} \\
-5 &amp; &amp; \chi &amp; MP \ 3, 4\\
+1 &amp; &amp; \varphi \to \psi &amp;  \\
+2 &amp; &amp; \varphi &amp;   \\
+3 &amp; &amp; \psi &amp; \textsf{MP} \ 1, 2 \\
+4 &amp; &amp; \psi \to \chi &amp;  \\
+5 &amp; &amp; \chi &amp; \textsf{MP} \ 3, 4\\
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-dp2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.2</strong></span> <span class="math inline">\(\vdash (\neg \psi \to \neg \varphi) \to (\varphi \to \psi)\)</span></p>
+</div>
+<div>
+<p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
+\{\neg \psi \to \neg \varphi\}\vdash \varphi \to \psi,
+\]</span> which would in turn follow from the observation: <span class="math display">\[
+\{\neg \psi \to \neg \varphi, \varphi\} \vdash \psi.
+\]</span> We now derive <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\{\neg \psi \to \neg \varphi, \varphi\}\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \psi \to \neg \varphi &amp;  \\
+2 &amp; &amp; \varphi \to (\neg \psi \to \varphi) &amp; \textsf{A1}[\varphi/p,\neg \psi/q]\\
+3 &amp; &amp; \varphi &amp;  \\
+4 &amp; &amp; \neg \psi \to \varphi &amp; \textsf{MP} \ 2, 3\\
+5 &amp; &amp; (\neg \psi \to \neg \varphi) \to ((\neg \psi \to \varphi) \to \psi) &amp; \textsf{A3}[\psi/p, \varphi/q]\\
+6 &amp; &amp; (\neg \psi \to \varphi) \to \psi &amp; \textsf{MP} \ 1, 5\\
+7 &amp; &amp; \psi &amp; \textsf{MP} \ 4, 6
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-dp3" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.3</strong></span> <span class="math inline">\(\vdash \neg \neg \varphi \to \varphi\)</span></p>
+</div>
+<div>
+<p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
+\neg \neg \varphi \vdash \varphi
+\]</span> Here is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\neg \neg \varphi\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \neg \varphi \to (\neg \varphi \to \neg \neg \varphi) &amp; \textsf{A1}[\neg\neg\varphi/p, \neg \varphi/q]\\
+2 &amp; &amp; \neg \neg \varphi &amp;  \\
+3 &amp; &amp; \neg \varphi \to \neg \neg \varphi &amp; \textsf{MP} \ 1, 2 \\
+4 &amp; &amp; (\neg \varphi \to \neg \neg \varphi) \to ((\neg \varphi \to \neg \varphi) \to \varphi) &amp; \textsf{A3}[\varphi/p, \neg \varphi/q]\\
+5 &amp; &amp; (\neg \varphi \to \neg \varphi) \to \varphi &amp; \textsf{MP} \ 3, 4\\
+6 &amp; &amp; \neg \varphi \to \neg \varphi &amp; \vdash \neg \varphi \to \neg \varphi\\
+7 &amp; &amp; \varphi &amp; \textsf{MP} \ 5, 6
 \end{array}
 \]</span></p>
 </div>
 <p>Here is another helfpul observation:</p>
-<div>
-<p><span class="math inline">\(\vdash \varphi \to \neg \neg \varphi\)</span></p>
+<div id="prp-dp4" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.4</strong></span> <span class="math inline">\(\vdash \varphi \to \neg \neg \varphi\)</span></p>
 </div>
 <div name="Proof">
 <p>We exploit the last two observations to produce a simple derivation of <span class="math inline">\(\varphi \to \neg \neg \varphi\)</span>: <span class="math display">\[
 \begin{array}{llll}
-1 &amp; &amp; \neg \neg \neg \varphi \to \neg \varphi &amp; \text{Lemma} \ 3.3\\
-2 &amp; &amp; (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \text{Lemma} \ 3.2\\
-3 &amp; &amp; \varphi \to \neg \neg \varphi &amp; \text{MP} \ 1, 2
+1 &amp; &amp; \neg \neg \neg \varphi \to \neg \varphi &amp; \textsf{Prop} \ 3.3\\
+2 &amp; &amp; (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \textsf{Prop} \ 3.2\\
+3 &amp; &amp; \varphi \to \neg \neg \varphi &amp; \textsf{MP} \ 1, 2
 \end{array}
 \]</span></p>
 </div>
@@ -684,16 +728,16 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \text{MP} \ m, n+1\\
 \]</span> Here is a derivation of <span class="math inline">\(\neg \varphi\)</span> from <span class="math inline">\(\{\varphi \to \psi, \neg \psi\}\)</span>: <span class="math display">\[
 \begin{array}{llll}
 1 &amp; &amp; \varphi \to \psi &amp;  \\
-2 &amp; &amp; \psi \to \neg \neg \psi &amp; \text{Lemma} \ 3.4\\
-3 &amp; &amp; \neg \neg \varphi \to \varphi &amp; \text{Lemma} \ 3.3\\
-4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \text{Lemma} \ 1 \\
-5 &amp; &amp; (\varphi \to \psi) \to (\neg \neg \varphi \to \psi) &amp; \text{MP} \ 3, 4 \\
-6 &amp; &amp; \neg \neg \varphi \to \psi &amp; \text{MP} \ 1, 4 \\
-7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \text{Lemma} \ 4.1 \\
-8 &amp; &amp; (\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi) &amp; \text{MP} \ 6, 7\\
-9 &amp; &amp; \neg \neg \varphi \to \neg \neg \psi &amp; \text{MP} \ 2, 8\\
-10 &amp; &amp; (\neg \neg \varphi \to \neg \neg \psi) \to (\neg \psi \to \neg \varphi) &amp; \text{Lemma} \ 3.2\\
-11 &amp; &amp; \neg \psi \to \neg \varphi &amp; \text{MP} \ 9, 10
+2 &amp; &amp; \psi \to \neg \neg \psi &amp; \textsf{Prop} \ 3.4\\
+3 &amp; &amp; \neg \neg \varphi \to \varphi &amp; \textsf{Prop} \ 3.3\\
+4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \textsf{Prop} \ 1 \\
+5 &amp; &amp; (\varphi \to \psi) \to (\neg \neg \varphi \to \psi) &amp; \textsf{MP} \ 3, 4 \\
+6 &amp; &amp; \neg \neg \varphi \to \psi &amp; \textsf{MP} \ 1, 4 \\
+7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \textsf{Prop} \ 4.1 \\
+8 &amp; &amp; (\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi) &amp; \textsf{MP} \ 6, 7\\
+9 &amp; &amp; \neg \neg \varphi \to \neg \neg \psi &amp; \textsf{MP} \ 2, 8\\
+10 &amp; &amp; (\neg \neg \varphi \to \neg \neg \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{Prop} \ 3.2\\
+11 &amp; &amp; \neg \psi \to \neg \varphi &amp; \textsf{MP} \ 9, 10
 \end{array}
 \]</span></p>
 </div>
@@ -721,12 +765,12 @@ Exercise
 \]</span></p>
 <p>Here is an outline of a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\{\neg \varphi, \varphi\}\)</span>: <span class="math display">\[
 \begin{array}{llll}
-1 &amp; &amp; \neg \varphi \to (\neg \psi \to \neg \varphi) &amp;  A1[\neg \varphi/p, \neg \psi/q] \\
-2 &amp; &amp;  \neg \varphi &amp; \text{Premise}\\
-3 &amp; &amp;  (\neg \psi \to \neg \varphi) &amp; \text{MP 1, 2}\\
-4 &amp; &amp;  \varphi \to \psi &amp; 3, \ \text{Lemma 3.2}\\
-5 &amp; &amp; \varphi  &amp; \text{Premise}\\
-6 &amp; &amp; \psi  &amp; \text{MP 4, 5}\\
+1 &amp; &amp; \neg \varphi \to (\neg \psi \to \neg \varphi) &amp;  \textsf{A1}[\neg \varphi/p, \neg \psi/q] \\
+2 &amp; &amp;  \neg \varphi &amp; \\
+3 &amp; &amp;  (\neg \psi \to \neg \varphi) &amp; \textsf{MP} \ 1, 2\\
+4 &amp; &amp;  \varphi \to \psi &amp; 3, \ \textsf{Prop} 3.2\\
+5 &amp; &amp; \varphi  &amp; \\
+6 &amp; &amp; \psi  &amp; \textsf{MP} \ 4, 5\\
 \end{array}
 \]</span></p>
 </div>
@@ -1160,8 +1204,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./comprop.html" class="pagination-link" aria-label="Metatheory">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./comprop.html" class="pagination-link" aria-label="Completeness">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

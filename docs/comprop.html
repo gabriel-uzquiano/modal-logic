@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Metatheory – Modal Logic</title>
+<title>4&nbsp; Completeness – Modal Logic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./comprop.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./comprop.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -162,13 +162,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comprop.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commodprop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
     </ul>
@@ -184,7 +190,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></h1>
 </div>
 
 
@@ -248,23 +254,23 @@ Consistency
 <p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>.</p>
 <p>To that purpose we use the fact that a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span> is automatically a derivation of <span class="math inline">\(\varphi\)</span> from the larger set <span class="math inline">\(\Gamma, \neg \varphi\)</span>. We use this fact to produce a derivation of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Gamma, \neg \varphi\)</span>. <span class="math display">\[
 \begin{array}{llll}
-1 &amp; &amp; \neg \varphi \to (\neg \bot \to \neg  \varphi) &amp; A1[\neg \varphi/p, \bot/q]  \\
-2 &amp; &amp; \neg \varphi &amp; \text{Premise}\\
-3 &amp; &amp; \neg \bot \to \neg \varphi &amp; \text{MP 1, 2}\\
-4 &amp; &amp; \varphi \to \bot &amp; \text{3, Lemma 3.2}\\
+1 &amp; &amp; \neg \varphi \to (\neg \bot \to \neg  \varphi) &amp; \textsf{A1}[\neg \varphi/p, \bot/q]  \\
+2 &amp; &amp; \neg \varphi &amp; \\
+3 &amp; &amp; \neg \bot \to \neg \varphi &amp; \textsf{MP} \ 1, 2\\
+4 &amp; &amp; \varphi \to \bot &amp; 3, \textsf{Prop} \ 3.2\\
 5 &amp; &amp; \varphi  &amp; \Gamma, \neg \varphi \vdash \varphi\\
-6 &amp; &amp; \bot &amp; \text{MP 4, 5}\\
+6 &amp; &amp; \bot &amp; \textsf{MP} \ 4, 5\\
 \end{array}
 \]</span></p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We want to prove that if <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
-<p>We use the Deduction Theorem to move from <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span> to <span class="math inline">\(\Gamma \vdash \neg \varphi \to \bot\)</span>. Since <span class="math inline">\(\Gamma, \neg \varphi \vdash \top\)</span>, by lemma 3.4, <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \neg \top\)</span>, which means <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \bot\)</span>. So, by the Deduction Theorem, <span class="math inline">\(\Gamma \vdash \neg \varphi \to \neg \bot\)</span>.</p>
+<p>We use the Deduction Theorem to move from <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span> to <span class="math inline">\(\Gamma \vdash \neg \varphi \to \bot\)</span>. Since <span class="math inline">\(\Gamma, \neg \varphi \vdash \top\)</span>, by Prop 3.4, <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \neg \top\)</span>, which means <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \bot\)</span>. So, by the Deduction Theorem, <span class="math inline">\(\Gamma \vdash \neg \varphi \to \neg \bot\)</span>.</p>
 <p>We now outline a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
 \begin{array}{llll}
 1 &amp; &amp; \neg \varphi \to  \neg \bot &amp; \Gamma \vdash \neg \varphi \to \neg \bot  \\
-2 &amp; &amp; (\neg \varphi \to  \neg \bot)  \to ((\neg \varphi \to  \bot) \to \varphi) &amp; A3[\varphi/p, \bot/q]\\
-3 &amp; &amp; (\neg \varphi \to  \bot) \to \varphi &amp; \text{MP 1, 2}\\
+2 &amp; &amp; (\neg \varphi \to  \neg \bot)  \to ((\neg \varphi \to  \bot) \to \varphi) &amp; \textsf{A3}[\varphi/p, \bot/q]\\
+3 &amp; &amp; (\neg \varphi \to  \bot) \to \varphi &amp; \textsf{MP} \ 1, 2\\
 4 &amp; &amp; \neg \varphi \to \bot &amp;  \Gamma \vdash \neg \varphi \to \bot \\
-5 &amp; &amp; \varphi &amp; \text{MP 3, 4}\\
+5 &amp; &amp; \varphi &amp; \textsf{MP} \ 3, 4\\
 \end{array}
 \]</span></p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
@@ -309,7 +315,7 @@ Maximal Consistency
 <p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\neg \varphi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p>
 <p>Suppose <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Then, by 1 above, <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. Since <span class="math inline">\(\Gamma\)</span> is consistent, <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, which, by 1 above, means <span class="math inline">\(\varphi \notin \Gamma\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We show that if <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
-<p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Gamma\)</span> is maximal consistent, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Given lemmas 3.3 and 3.4, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent if, and only if, <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent. So, since <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent, we conclude, by proposition 3.6, that <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. So, by 1 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
+<p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Gamma\)</span> is maximal consistent, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Given prop 3.3 and 3.4, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent if, and only if, <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent. So, since <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent, we conclude, by prop 3.6, that <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. So, by 1 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
 <ol start="3" type="1">
 <li><span class="math inline">\(\varphi \to \psi \in \Gamma\)</span> if, and only if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</li>
 </ol>
@@ -317,7 +323,7 @@ Maximal Consistency
 <p>Suppose <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>. Then, given 1 above, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. Now: if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span> and <span class="math inline">\(\Gamma \vdash \psi\)</span>, whence <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We show that if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
-<p>If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then given 2 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Since lemma 3.6 gives us that <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, we infer <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
+<p>If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then given 2 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Since prop 3.6 gives us that <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, we infer <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p>If <span class="math inline">\(\psi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash \psi \to (\varphi \to \psi)\)</span>, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
@@ -355,7 +361,7 @@ Completeness Reformulated
 </ul>
 </div>
 </div>
-<p>That will suffice for our purposes. For given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, then by proposition 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is consistent. Given the link between consistency and satisfiability, we would infer that <span class="math inline">\(\Gamma, \neg \varphi\)</span> is satisfiable, whence <span class="math inline">\(\Gamma \not \models \varphi\)</span>.</p>
+<p>That will suffice for our purposes. For given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, then by prop 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is consistent. Given the link between consistency and satisfiability, we would infer that <span class="math inline">\(\Gamma, \neg \varphi\)</span> is satisfiable, whence <span class="math inline">\(\Gamma \not \models \varphi\)</span>.</p>
 <p>We reach our target, we will proceed to justify two double-arrows from the diagram below.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -460,23 +466,23 @@ V(\varphi) = 1 &amp; \text{iff} &amp; \varphi \in \Sigma.
 <p><span class="math display">\[
 \begin{array}{llll}
 V(p_n) = 1 &amp; \text{iff} &amp; v(p_n) = 1 &amp; \\
-   &amp; \text{iff} &amp; p_n \in \Sigma. &amp; \text{definition of} \ v
+   &amp; \text{iff} &amp; p_n \in \Sigma. &amp; \textsf{Def} \ v
 \end{array}
 \]</span><br>
 - <strong>Inductive Step for</strong> <span class="math inline">\(\neg\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{llll}
 V(\neg \varphi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 &amp; \\
-    &amp; \text{iff} &amp; \varphi \notin \Sigma &amp; \text{Inductive Hypothesis} \\
-     &amp; \text{iff} &amp; \neg \varphi \in \Sigma &amp; \text{Proposition 3.7, 2} \\
+    &amp; \text{iff} &amp; \varphi \notin \Sigma &amp; \textsf{IH} \\
+     &amp; \text{iff} &amp; \neg \varphi \in \Sigma &amp; \textsf{Prop} \ 3.7, 2 \\
 \end{array}
 \]</span><br>
 - <strong>Inductive Step for</strong> <span class="math inline">\(\to\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{llll}
 V(\varphi \to \psi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 \ \text{or} \ V(\psi) =1 &amp; \\
-    &amp; \text{iff} &amp; \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma&amp; \text{Inductive Hypothesis} \\
-     &amp; \text{iff} &amp; \varphi \to \psi \in \Sigma &amp; \text{Proposition 3.7, 3} \\
+    &amp; \text{iff} &amp; \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma&amp; \textsf{IH} \\
+     &amp; \text{iff} &amp; \varphi \to \psi \in \Sigma &amp; \textsf{Prop} \ 3.7, 3 \\
 \end{array}
 \]</span><br>
 We conclude that <span class="math inline">\(V\)</span> verifies exactly those formulas in <span class="math inline">\(\Sigma\)</span>. So, it follows that <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>

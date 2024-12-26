@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./commodprop.html" rel="next">
 <link href="./comprop.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -161,13 +162,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comprop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commodprop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
     </ul>
@@ -768,9 +775,9 @@ Modal Definability
 <p>First-order languages are able to make similar distinctions. Given a first-order language with a binary relational predicate <span class="math inline">\(R\)</span> as a non-logical predicate, we are in a position to specify <em>first-order</em> formulas that characterize different classes of frames:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 29%">
-<col style="width: 48%">
+<col style="width: 24%">
+<col style="width: 28%">
+<col style="width: 46%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -806,9 +813,9 @@ Modal Definability
 <p>The answer to both questions is ‘no’. Some formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> are able to modally define classes of frames that are not first-order definable, and some classes of frames that are first-order definable are not modally definable by a formula of <span class="math inline">\(\mathcal{L}^\Box\)</span>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 28%">
+<col style="width: 29%">
 <col style="width: 30%">
-<col style="width: 41%">
+<col style="width: 40%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1293,42 +1300,29 @@ Theorem
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Two Derived Rules of Inference
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[\tag{$\textsf{RK}$}
 \text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \varphi \to \Box \psi
 \]</span></p>
-</div>
-</div>
-<p>We are now able to justify a related rule of inference:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <p><span class="math display">\[\tag{$\textsf{RK}\Diamond$}
 \text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Diamond \varphi \to \Diamond \psi
 \]</span></p>
 </div>
 </div>
 <div id="prp-d3" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 5.9</strong></span> If <span class="math inline">\(\vdash_K \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_K \Diamond \varphi \to \Diamond \psi\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 5.9</strong></span> If <span class="math inline">\(\vdash_\textsf{K} \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_\textsf{K} \Diamond \varphi \to \Diamond \psi\)</span>.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. We may transform a proof of <span class="math inline">\(\varphi \to \psi\)</span> into a proof of <span class="math inline">\(\Diamond \varphi \to \Diamond \psi\)</span> <span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; \varphi \to \psi &amp; \text{Given}\\
-2 &amp; &amp; \neg \psi \to \neg \varphi &amp; \text{PL} \ 1 \\
-3 &amp; &amp; \Box \neg \psi \to \Box \neg \varphi &amp;  \text{RK} \ 2 \\
-4 &amp; &amp; \neg \Box \neg \varphi \to \neg \Box \neg \psi &amp; \text{PL} \ 3\\
-7 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \text{Def}  \ \Diamond \ 4\\
+1 &amp; &amp; \varphi \to \psi &amp; \\
+2 &amp; &amp; \neg \psi \to \neg \varphi &amp; \textsf{PL} \ 1 \\
+3 &amp; &amp; \Box \neg \psi \to \Box \neg \varphi &amp;  \textsf{RK} \ 2 \\
+4 &amp; &amp; \neg \Box \neg \varphi \to \neg \Box \neg \psi &amp; \textsf{PL} \ 3\\
+7 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \textsf{Def}  \ \Diamond \ 4\\
 \end{array}
 \]</span></p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
@@ -1340,12 +1334,12 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+More Derived Rules of Inference
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math display">\[\tag{$\textsf{RK}Q$}
-\text{If} \  \vdash_K \varphi \to \psi \ \text{then} \ \vdash_K Q \varphi \to Q \psi
+\text{If} \  \vdash_K \varphi \to \psi \ \text{then} \ \vdash Q \varphi \to Q \psi
 \]</span></p>
 </div>
 </div>
@@ -1361,7 +1355,7 @@ Example
 <div class="callout-body-container callout-body">
 <p>Consider the derived rule of inference:</p>
 <p><span class="math display">\[\tag{$\textsf{RK}\Box \Diamond$}
-\text{If} \  \vdash_\textsf{K} \varphi \to \psi \ \text{then} \ \vdash_\textsf{K} \Box \Diamond \varphi \to \Box \Diamond \psi
+\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \Diamond \varphi \to \Box \Diamond \psi
 \]</span> Here is how to transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\Box \Diamond \varphi \to \Box \Diamond \psi\)</span>:</p>
 <p>$$ \begin{array}{lllll} 1 &amp; &amp; \varphi \to \psi &amp; \text{Given}\\ 2 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \text{RK}\Diamond \ 1\\ 3 &amp; &amp; \Box \Diamond \varphi \to \Box \Diamond \psi &amp; \text{RK} \ 2\\ \end{array} $$</p>
 </div>
@@ -1376,12 +1370,12 @@ Example
 <div>
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; (\varphi \to \psi) \to (\neg \psi \to \neg \varphi) &amp; \text{PL} \\
-2 &amp; &amp; \Box (\varphi \to \psi) \to \Box(\neg \psi \to \neg \varphi) &amp; \text{RK} \ 1 \\
-3 &amp; &amp; \Box (\neg \psi \to \neg \varphi) \to (\Box \neg \psi \to \Box \neg \varphi) &amp; \text{K}[\neg \psi/p, \neg \varphi/q] \\
-4 &amp; &amp; (\Box \neg \psi \to \Box \neg \varphi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \text{PL}\\
-5 &amp; &amp; \Box (\varphi \to \psi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \text{PL} \ 2, 3, 4\\
-6 &amp; &amp; \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi) &amp; \text{Def} \ \Diamond \  6\\
+1 &amp; &amp; (\varphi \to \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{PL} \\
+2 &amp; &amp; \Box (\varphi \to \psi) \to \Box(\neg \psi \to \neg \varphi) &amp; \textsf{RK} \ 1 \\
+3 &amp; &amp; \Box (\neg \psi \to \neg \varphi) \to (\Box \neg \psi \to \Box \neg \varphi) &amp; \textsf{K}[\neg \psi/p, \neg \varphi/q] \\
+4 &amp; &amp; (\Box \neg \psi \to \Box \neg \varphi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \textsf{PL}\\
+5 &amp; &amp; \Box (\varphi \to \psi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \textsf{PL} \ 2, 3, 4\\
+6 &amp; &amp; \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi) &amp; \textsf{Def} \ \Diamond \  6\\
 \end{array}
 \]</span></p>
 </div>
@@ -1547,10 +1541,10 @@ S5
 <p>The axioms below are interderivable from their modal duals:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 20%">
-<col style="width: 27%">
-<col style="width: 30%">
-<col style="width: 20%">
+<col style="width: 22%">
+<col style="width: 25%">
+<col style="width: 28%">
+<col style="width: 22%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -2233,11 +2227,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./comprop.html" class="pagination-link" aria-label="Metatheory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></span>
+      <a href="./comprop.html" class="pagination-link" aria-label="Completeness">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./commodprop.html" class="pagination-link" aria-label="Completeness">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Completeness</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

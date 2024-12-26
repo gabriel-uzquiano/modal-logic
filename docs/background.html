@@ -162,13 +162,19 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./comprop.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Metatheory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Modal Propositional Logic</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./commodprop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
   </div>
 </li>
     </ul>
@@ -225,8 +231,8 @@ Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We will generally use uppercase letters as labels for sets and lowercase letters as labels for their elements. We write <span class="math inline">\(a \in A\)</span> to indicate that <span class="math inline">\(a\)</span> is an element of <span class="math inline">\(A\)</span>.</p>
-<p>We may specify a set by enumeration, e.g., <span class="math inline">\(\{0, 2, 4\}\)</span> is a set of three natural numbers. Alternatively, we may specify the same set by the specification of a condition satisfied by all, and only its elements, e.g., {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is an even natural number less than 5}</p>
+<p>We reserve uppercase letters as labels for sets and lowercase letters as labels for their elements. We write <span class="math inline">\(a \in A\)</span> to indicate that <span class="math inline">\(a\)</span> is an element of <span class="math inline">\(A\)</span>.</p>
+<p>We may specify a set by <em>enumeration</em>, e.g., <span class="math inline">\(\{0, 2, 4\}\)</span> is a set of three natural numbers. Alternatively, we may <em>specify a condition</em> satisfied by all, and only its elements, e.g., {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is an even natural number less than 5}.</p>
 </div>
 </div>
 <div id="def-subset" class="theorem definition">
@@ -245,7 +251,8 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The singleton {6} is the same set as {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}. A <em>perfect</em> number is the sum of its proper divisors, e.g, 6 is perfect because it is a sum of 1, 2, and 3.</p>
+<p>{6} = {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}.</p>
+<p>A <em>perfect</em> number is the sum of its proper divisors, e.g, 6 is perfect because it is a sum of 1, 2, and 3.</p>
 <p>On the one hand, {6) <span class="math inline">\(\subseteq\)</span> {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}, since 6 is a perfect number less than 10.</p>
 <p>On the other hand, {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10} <span class="math inline">\(\subseteq\)</span> {6}, since nothing else is a perfect number less than 10.</p>
 <p>By Extensionality, {6} = {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}.</p>
@@ -263,10 +270,8 @@ Russell’s paradox
 </div>
 <div class="callout-body-container callout-body">
 <p>Consider the condition <span class="math inline">\(x \notin x\)</span>. There is no set of the form <span class="math inline">\(\{x : x \notin x\}\)</span>. For suppose such a set exists, which we may call <span class="math inline">\(R\)</span>.</p>
-<ul>
-<li><p>if <span class="math inline">\(R \in R\)</span>, then <span class="math inline">\(R\)</span> fails to satisfy the condition <span class="math inline">\(x \notin x\)</span>, which means that <span class="math inline">\(R\notin R\)</span>.</p></li>
-<li><p>if <span class="math inline">\(R\notin R\)</span>, then <span class="math inline">\(R\)</span> satisfies the condition <span class="math inline">\(x \notin x\)</span>, which means that <span class="math inline">\(R \in R\)</span>.</p></li>
-</ul>
+<p>if <span class="math inline">\(R \in R\)</span>, then <span class="math inline">\(R\)</span> does <em>not</em> satisfy the condition <span class="math inline">\(x \notin x\)</span> and <span class="math inline">\(R\notin R\)</span>.</p>
+<p>if <span class="math inline">\(R\notin R\)</span>, then <span class="math inline">\(R\)</span> satisfies the condition <span class="math inline">\(x \notin x\)</span> and <span class="math inline">\(R \in R\)</span>.</p>
 <p>We conclude that <span class="math inline">\(R \in R\)</span> if, and only if, <span class="math inline">\(R \notin R\)</span>, which leads to contradiction.</p>
 </div>
 </div>
@@ -274,7 +279,7 @@ Russell’s paradox
 <div id="prp-separation" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.2 (Separation)</strong></span> If <span class="math inline">\(A\)</span> is a set and <span class="math inline">\(\dots x \dots\)</span> is a condition on elements of <span class="math inline">\(A\)</span>, then there is a set <span class="math inline">\(B\)</span> of exactly those elements of <span class="math inline">\(A\)</span> which satisfy the condition <span class="math inline">\(\dots x \dots\)</span>. That is, <span class="math inline">\(B = \{x \in A: \dots x \dots\}\)</span></p>
 </div>
-<p>The axiom of separation yields the existence of sets <em>conditional</em> on the existence of supersets. To secure the inconditional existence of a set, we require another axiom.</p>
+<p>The axiom of separation yields the existence of sets <em>conditional</em> on the existence of <em>supersets</em>. To secure the inconditional existence of a set, we require another axiom.</p>
 <div id="prp-empty" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.3 (Empty Set)</strong></span> There is a set without members which we label <span class="math inline">\(\emptyset\)</span>. That is, <span class="math inline">\(\emptyset\)</span> is the set <span class="math inline">\(\{x: x \neq x\}\)</span>.</p>
 </div>
@@ -296,10 +301,8 @@ Russell’s paradox
 <div id="proof" name="Proof">
 <p>We first unfold the definition of <span class="math inline">\((a, b)\)</span> as <span class="math inline">\(\{\{a\}, \{a, b\}\}\)</span> and <span class="math inline">\((c, d)\)</span> as <span class="math inline">\(\{\{c\},\{c, d\}\}\)</span>. We now argue that if <span class="math inline">\(\{\{a\},\{a, b\}\}\)</span> is the same set as <span class="math inline">\(\{\{c\},\{c, d\}\}\)</span>, then <span class="math inline">\(a=c\)</span> and <span class="math inline">\(b = d\)</span>.</p>
 <p>We distinguish two cases:</p>
-<ul>
-<li><p>If <span class="math inline">\(a=b\)</span>, then <span class="math inline">\(\{\{a\},\{a, b\}\}\)</span> is <span class="math inline">\(\{\{a\},\{a,a\}\}\)</span>, which is just <span class="math inline">\(\{a\}\}\)</span>. So, if <span class="math inline">\(\{\{a\},\{a, b\}\}\)</span> is the same set as <span class="math inline">\(\{\{c\},\{c, d\}\}\)</span>, then <span class="math inline">\(\{\{a\}\}\)</span> is the same set as <span class="math inline">\(\{\{c\},\{c, d\}\}\)</span>, which means that <span class="math inline">\(c = d\)</span> and <span class="math inline">\(a= c\)</span> and <span class="math inline">\(b = d\)</span>.</p></li>
-<li><p>If <span class="math inline">\(a\neq b\)</span>, then the singleton <span class="math inline">\(\{a\}\)</span> and the doubleton <span class="math inline">\(\{a, b\}\)</span> must correspond to <span class="math inline">\(\{c\}\)</span> and <span class="math inline">\(\{c, d\}\)</span>, respectively, which requires that <span class="math inline">\(a=c\)</span> and <span class="math inline">\(b=d\)</span>.</p></li>
-</ul>
+<p>If <span class="math inline">\(a=b\)</span>, then <span class="math inline">\(\{\{a\},\{a, b\}\}\)</span> is <span class="math inline">\(\{\{a\},\{a,a\}\}\)</span>, which is just <span class="math inline">\(\{a\}\}\)</span>. So, if <span class="math inline">\(\{\{a\},\{a, b\}\}\)</span> is the same set as <span class="math inline">\(\{\{c\},\{c, d\}\}\)</span>, then <span class="math inline">\(\{\{a\}\}\)</span> is the same set as <span class="math inline">\(\{\{c\},\{c, d\}\}\)</span>, which means that <span class="math inline">\(c = d\)</span> and <span class="math inline">\(a= c\)</span> and <span class="math inline">\(b = d\)</span>.</p>
+<p>If <span class="math inline">\(a\neq b\)</span>, then the singleton <span class="math inline">\(\{a\}\)</span> and the doubleton <span class="math inline">\(\{a, b\}\)</span> must correspond to <span class="math inline">\(\{c\}\)</span> and <span class="math inline">\(\{c, d\}\)</span>, respectively, which requires that <span class="math inline">\(a=c\)</span> and <span class="math inline">\(b=d\)</span>.</p>
 </div>
 <p>We can now identify a relation with a set of ordered pairs.</p>
 <div id="def-cp" class="theorem definition">
@@ -325,7 +328,7 @@ Notation
 </div>
 <section id="structural-features-of-relations" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="structural-features-of-relations"><span class="header-section-number">2.2.1</span> Structural Features of Relations</h3>
-<p>We now specify a variety of structural features a relation may exemplify.</p>
+<p>We now specify some structural features a relation may exemplify.</p>
 <div id="def-ref" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.5 (Reflexivity)</strong></span> If <span class="math inline">\(R\)</span> is a binary relation on a set <span class="math inline">\(A\)</span>,</p>
 <ul>
@@ -425,12 +428,9 @@ Example
 <div class="callout-body-container callout-body">
 <p>Synonymy is an equivalence relation on the set of English words <span class="math inline">\(W\)</span>.</p>
 <ul>
-<li><p>Synonymy is <em>reflexive</em> on <span class="math inline">\(W\)</span>.</p>
-<p>Every word is a synonym of itself.</p></li>
-<li><p>Synonymy is <em>symmetric</em> on <span class="math inline">\(W\)</span>.</p>
-<p>If a word is a synonym of another word, then the latter word is a synonym of the former.</p></li>
-<li><p>Synonymy is <em>transitive</em> on <span class="math inline">\(W\)</span>.</p>
-<p>If a word is a synonym of a second word and the second word is a synonym of a third, then the first word is a synonym of the third word.</p></li>
+<li><p>Synonymy is <em>reflexive</em> on <span class="math inline">\(W\)</span>. Every word is a synonym of itself.</p></li>
+<li><p>Synonymy is <em>symmetric</em> on <span class="math inline">\(W\)</span>. If a word is a synonym of another word, then the latter word is a synonym of the former.</p></li>
+<li><p>Synonymy is <em>transitive</em> on <span class="math inline">\(W\)</span>. If a word is a synonym of a second word and the second word is a synonym of a third, then the first word is a synonym of the third word.</p></li>
 </ul>
 </div>
 </div>
