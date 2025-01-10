@@ -312,6 +312,7 @@ A \times B = \{(x, y): x\in A \wedge y\in B\}.
 </div>
 <div id="def-relation" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.4 (Relation)</strong></span> If <span class="math inline">\(A\)</span> is a set, <span class="math inline">\(R\)</span> is a binary <em>relation</em> on <span class="math inline">\(A\)</span> if, and only if, <span class="math inline">\(R\)</span> is a subset of <span class="math inline">\(A \times A\)</span>.</p>
+<p><span class="math inline">\(R\)</span> is a binary relation if, and only if, <span class="math inline">\(R\)</span> is a binary relation on some set <span class="math inline">\(A\)</span>.</p>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -323,12 +324,12 @@ Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">\(R\)</span> is a relation on <span class="math inline">\(A\)</span>, we sometimes write <span class="math inline">\(Rxy\)</span> or <span class="math inline">\(xRy\)</span> for <span class="math inline">\((x, y) \in R\)</span>.</p>
+<p>If <span class="math inline">\(R\)</span> is a binary relation on <span class="math inline">\(A\)</span>, we sometimes write <span class="math inline">\(Rxy\)</span> or <span class="math inline">\(xRy\)</span> for <span class="math inline">\((x, y) \in R\)</span>.</p>
 </div>
 </div>
 <section id="structural-features-of-relations" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="structural-features-of-relations"><span class="header-section-number">2.2.1</span> Structural Features of Relations</h3>
-<p>We now specify some structural features a relation may exemplify.</p>
+<p>We now specify some structural features a binary relation may exemplify.</p>
 <div id="def-ref" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.5 (Reflexivity)</strong></span> If <span class="math inline">\(R\)</span> is a binary relation on a set <span class="math inline">\(A\)</span>,</p>
 <ul>
@@ -494,14 +495,79 @@ Further Structural Features of Relations
 </section>
 <section id="induction-and-definitions-by-recursion" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="induction-and-definitions-by-recursion"><span class="header-section-number">2.3</span> Induction and Definitions by Recursion</h2>
-<p>Induction is a powerful method of proof. We will be able to establish a variety of generalizations over items ordered by the natural numbers, e.g., formulas and proofs by induction of length. Because natural numbers are defined inductively from <span class="math inline">\(0\)</span> and the successor operation, they are similarly governed by a principle of induction:</p>
+<p>Induction is a powerful method for proving universal generalizations over some items ordered by the natural numbers, e.g., formulas and proofs by induction of length. Because natural numbers are defined inductively from <span class="math inline">\(0\)</span> and the successor operation, they are similarly governed by a principle of induction:</p>
 <div id="prp-mi" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.5 (Induction on the Natural Numbers)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on natural numbers, if</p>
+<p><span class="theorem-title"><strong>Proposition 2.5 (Induction on the Natural Numbers)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on natural numbers, <strong>if</strong></p>
 <ul>
 <li><span class="math inline">\(0\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span>, and</li>
 <li>a natural number <span class="math inline">\(n\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span> only if its successor, <span class="math inline">\(n+1\)</span>, satisfies <span class="math inline">\(\Phi(x)\)</span>,</li>
 </ul>
-<p>then <em>every</em> natural number satisfies <span class="math inline">\(\Phi(x)\)</span>.</p>
+<p><strong>then</strong> <em>every</em> natural number satisfies <span class="math inline">\(\Phi(x)\)</span>.</p>
+</div>
+<div id="prp-mii" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 2.6 (Induction on the Positive Integers)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on positive integers, <strong>if</strong></p>
+<ul>
+<li><span class="math inline">\(1\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span>, and</li>
+<li>a positive integer <span class="math inline">\(n\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span> only if its successor, <span class="math inline">\(n+1\)</span>, satisfies <span class="math inline">\(\Phi(x)\)</span>,</li>
+</ul>
+<p><strong>then</strong> <em>every</em> positive integer satisfies <span class="math inline">\(\Phi(x)\)</span>.</p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the pattern below:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 + 3&amp; = &amp; 4 &amp; = &amp; 2^2\\
+1 + 3 + 5 &amp; = &amp; 9 &amp; = &amp; 3^2\\
+1 + 3+ 5 +7 &amp; = &amp; 16 &amp; = &amp; 4^2\\
+\cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
+\end{array}
+\]</span></p>
+<p>You may now conjecture that the sum of <span class="math inline">\(n\)</span> odd numbers beginning with <span class="math inline">\(1\)</span> is <span class="math inline">\(n^2\)</span>.</p>
+<p>One way to make the conjecture more vivid is through a geometrical argument, which involves reflection on the following succession of squares.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/squares.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>We now turn these considerations into a mathematical induction argument. Here is what we want to establish:</p>
+<ul>
+<li>For each positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[
+\sum_{k = 1}^{n}{2k - 1} = n^2.
+\]</span></li>
+</ul>
+<p>That is, the <strong>sum</strong> of the first <span class="math inline">\(n\)</span> odd numbers equals <span class="math inline">\(n^2\)</span>.</p>
+<p>Here the condition <span class="math inline">\(\Phi(n)\)</span> is: <span class="math display">\[
+\sum_{k = 1}^{n} 2k - 1 = n^2
+\]</span></p>
+<p>By induction on the positive integers, it suffices to show:</p>
+<ul>
+<li><p><span class="math inline">\(\Phi(1)\)</span> <span class="math display">\[
+\sum_{k = 1}^{1} 2k - 1 = 1^2
+\]</span></p></li>
+<li><p><span class="math inline">\(\Phi(n)\)</span> only if <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<p>That is, suppose:</p></li>
+</ul>
+<p><span class="math display">\[
+\sum_{k=1}^{n} 2k-1 = n^2.
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\sum_{k=1}^{n+1} 2k-1 &amp; = &amp; (\sum_{k=1}^{n} 2k-1) + 2 (n+1) - 1\\  
+&amp; =  &amp; n^2 + 2n +1\\
+&amp; = &amp; (n+1)^2 \\
+\end{array}
+\]</span></p>
+<p>So, by induction on the positive integers, we conclude that every positive integer <span class="math inline">\(n\)</span> satisfies the condition.</p>
+</div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -514,8 +580,8 @@ Example
 </div>
 <div class="callout-body-container callout-body">
 <p>Consider the pattern below: <span class="math display">\[
-\begin{array}{llll}
-1 &amp; = &amp; 1 &amp; = &amp; \frac{1 .(1+1)}{2}\\
+\begin{array}{lllll}
+1 &amp; = &amp; 1 &amp; = &amp; \frac{1.(1+1)}{2}\\
 1+2 &amp; = &amp; 3 &amp; = &amp; \frac{2 . (2+1)}{2}\\
 1 + 2+ 3 &amp; = &amp; 6 &amp; = &amp; \frac{3 . (3+1)}{2}\\
 \cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
@@ -565,32 +631,33 @@ How Not to Use Induction
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">\(\Phi(x)\)</span> be the following condition on natural numbers:</p>
 <ul>
-<li><em>no two sets with fewer than</em> <span class="math inline">\(n\)</span> elements differ in cardinality.</li>
+<li><em>no two sets with</em> <span class="math inline">\(n\)</span> or f<em>ewer</em> elements differ in cardinality.</li>
 </ul>
 <p>We (mis)use induction to argue that the condition holds for every natural number. We proceed in two steps:</p>
 <ul>
 <li><p><span class="math inline">\(\Phi(0)\)</span>.</p>
-<p>Suppose two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(0\)</span> elements. Then. <span class="math inline">\(A =\emptyset =B\)</span>.</p></li>
-<li><p>whenever <span class="math inline">\(\Phi(n)\)</span>, we have <span class="math inline">\(\Phi(n+1)\)</span>.</p></li>
+<p>Suppose two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have <span class="math inline">\(0\)</span> or fewer elements. Then. <span class="math inline">\(A =\emptyset =B\)</span>.</p></li>
+<li><p>whenever <span class="math inline">\(\Phi(n)\)</span>, we have <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<p>Suppose <span class="math inline">\(\Phi(n)\)</span> and let now <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with <span class="math inline">\(n+1\)</span> or fewer members. Now, consider the sets <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span>, which result from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, respectively, when we substract one element <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from each. By inductive hypothesis, since <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> have <span class="math inline">\(n\)</span> or fewer elements, they have the same cardinality. But if they do, so will <span class="math inline">\(A^- \cup \{a\}\)</span> and <span class="math inline">\(B^- \cup \{b\}\)</span>, which are none other than <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p></li>
 </ul>
-<p>Suppose <span class="math inline">\(\Phi(n)\)</span> and let now <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with at most <span class="math inline">\(n+1\)</span> elements. Now, consider the sets <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span>, which result from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, respectively, when we substract one element <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from each. By inductive hypothesis, since <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> have at most <span class="math inline">\(n\)</span> elements, they have the same cardinality. But if they do, so will <span class="math inline">\(A^- \cup \{a\}\)</span> and <span class="math inline">\(B^- \cup \{b\}\)</span>, which are none other than <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p>
-<p>The conclusion of the argument is that no two finite sets differ in cardinality, which is patently false. Where exactly is the flaw in the argument?</p>
+<p>It would seem to follow that no two sets with <span class="math inline">\(n\)</span> of fewer elements differ in cardinality, which would mean that no two finite sets differ in cardinality. That gives us the absurd conclusion that <em>all finite sets have the same cardinality</em>.</p>
+<p>Where exactly is the flaw in the argument? The problem lies in the assumption that no matter what set we are given, we may, if we like, <em>take away</em> one element, which is not the case with the empty set.</p>
 </div>
 </div>
 <p>We will sometimes rely on alternative but equivalent forms of induction:</p>
 <div id="prp-compind" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.6 (Complete Induction)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on natural numbers, if</p>
+<p><span class="theorem-title"><strong>Proposition 2.7 (Complete Induction)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on natural numbers, if</p>
 <ul>
 <li><span class="math inline">\(0\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span>, and</li>
-<li>whenever <em>all natural numbers</em> <span class="math inline">\(m\)</span> less or equal to <span class="math inline">\(n\)</span> satisfy <span class="math inline">\(\Phi(x)\)</span>, the successor <span class="math inline">\(n+1\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span>,</li>
+<li>whenever <em>all natural numbers</em> <span class="math inline">\(m \leq n\)</span> satisfy <span class="math inline">\(\Phi(x)\)</span>, the successor <span class="math inline">\(n+1\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span>,</li>
 </ul>
 <p>then <em>all</em> natural numbers satisfy <span class="math inline">\(\Phi(x)\)</span>.</p>
 </div>
 <p>Equivalently:</p>
 <div id="prp-compindbas" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 2.7 (Complete Induction without a Base Case)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on natural numbers, if</p>
+<p><span class="theorem-title"><strong>Proposition 2.8 (Complete Induction without a Base Case)</strong></span> Given a condition <span class="math inline">\(\Phi(x)\)</span> on natural numbers, if</p>
 <ul>
-<li>whenever <em>all natural numbers</em> <span class="math inline">\(m\)</span> less than <span class="math inline">\(n\)</span> satisfy <span class="math inline">\(\Phi(x)\)</span>, <span class="math inline">\(n\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span>,</li>
+<li>whenever <em>all natural numbers</em> <span class="math inline">\(m &lt; n\)</span> satisfy <span class="math inline">\(\Phi(x)\)</span>, <span class="math inline">\(n\)</span> satisfies <span class="math inline">\(\Phi(x)\)</span>,</li>
 </ul>
 <p>then <em>all</em> natural numbers satisfy <span class="math inline">\(\Phi(x)\)</span>.</p>
 </div>
