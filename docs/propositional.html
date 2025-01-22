@@ -303,7 +303,7 @@ Example
 <li><p><strong>Inductive Step for</strong> <span class="math inline">\(\neg\)</span>. Whenever a formula <span class="math inline">\(\varphi\)</span> is balanced, its negation <span class="math inline">\(\neg \varphi\)</span> is similarly balanced.</p>
 <p>Let <span class="math inline">\(\varphi\)</span> be a balanced formula. Since <span class="math inline">\(\neg \varphi\)</span> contains exactly as many left and right parentheses as <span class="math inline">\(\varphi\)</span>, it still contains an equal number of left and right parentheses. So, <span class="math inline">\(\neg \varphi\)</span> is balanced.</p></li>
 <li><p><strong>Inductive Step for</strong> <span class="math inline">\(\to\)</span>. Whenever formula <span class="math inline">\(\varphi\)</span> and a formula <span class="math inline">\(\psi\)</span> are balanced, the conditional <span class="math inline">\((\varphi \to \psi)\)</span> is balanced as well.</p>
-<p>Let <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> be two balanced formulas and let <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> be the number of left and right parentheses each formula has. <span class="math inline">\((\varphi \to \psi)\)</span> contains <span class="math inline">\(n+m +1\)</span> left parentheses, that is the number of left parentheses in <span class="math inline">\(\varphi\)</span> plus that of left parentheses in <span class="math inline">\(\psi\)</span> plus the initial left parenthesis of the formula. <span class="math inline">\((\varphi \to \psi)\)</span> similarly contains <span class="math inline">\(n+m +1\)</span> right parentheses, that is the number of right parentheses in <span class="math inline">\(\varphi\)</span> plus that of right parentheses in <span class="math inline">\(\psi\)</span> plus the final right parenthesis of the formula. So, <span class="math inline">\((\varphi \to \psi)\)</span> contains exactly the same number of left and right parentheses, which means that it will be a balanced formula.</p></li>
+<p>Let <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> be two balanced formulas and let <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> respectively be the number of left and right parentheses each formula has. <span class="math inline">\((\varphi \to \psi)\)</span> contains <span class="math inline">\(n+m +1\)</span> left parentheses, that is the number of left parentheses in <span class="math inline">\(\varphi\)</span> plus that of left parentheses in <span class="math inline">\(\psi\)</span> plus the initial left parenthesis of the formula. <span class="math inline">\((\varphi \to \psi)\)</span> similarly contains <span class="math inline">\(n+m +1\)</span> right parentheses, that is the number of right parentheses in <span class="math inline">\(\varphi\)</span> plus that of right parentheses in <span class="math inline">\(\psi\)</span> plus the final right parenthesis of the formula. So, <span class="math inline">\((\varphi \to \psi)\)</span> contains exactly the same number of left and right parentheses, which means that it will be a balanced formula.</p></li>
 </ul>
 <p>We conclude that every formula is balanced.</p>
 </div>
@@ -335,7 +335,7 @@ Valuation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <em>valuation</em> <span class="math inline">\(V\)</span> <em>based on an assignment</em> <span class="math inline">\(v\)</span> is a function of the form:</p>
+<p>A <em>valuation</em> <span class="math inline">\(V\)</span> <em>based on an assignment</em> <span class="math inline">\(v\)</span> is a function from the set of formulas into <span class="math inline">\(\{0, 1\}\)</span> such that:</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 V(p) &amp; = &amp; v(p)\\
@@ -385,8 +385,8 @@ Validity
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A formula <span class="math inline">\(\varphi\)</span> is <em>propositionally valid</em>, <span class="math inline">\(\models \varphi\)</span>, if, and only if, every valuation satisfies <span class="math inline">\(\varphi\)</span>.</p>
-<p>If <span class="math inline">\(\Gamma\)</span> is a set of formulas, a formula <span class="math inline">\(\varphi\)</span> is a <em>logical consequence</em> of <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Gamma \models \varphi\)</span>, if, and only if, every valuation satisfying every element of <span class="math inline">\(\Gamma\)</span> satisfies <span class="math inline">\(\varphi\)</span>.</p>
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>propositionally valid</em>, written <span class="math inline">\(\models \varphi\)</span>, if, and only if, every valuation satisfies <span class="math inline">\(\varphi\)</span>.</p>
+<p>If <span class="math inline">\(\Gamma\)</span> is a set of formulas, a formula <span class="math inline">\(\varphi\)</span> is a <em>logical consequence</em> of <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \models \varphi\)</span>, if, and only if, every valuation satisfying every element of <span class="math inline">\(\Gamma\)</span> satisfies <span class="math inline">\(\varphi\)</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
