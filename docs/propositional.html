@@ -447,6 +447,42 @@ Uniform Substitution
 </ul>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Thus</p>
+<ul>
+<li><p><span class="math inline">\(p[\neg q/p] = \neg q\)</span></p></li>
+<li><p><span class="math inline">\(\neg (p \to \neg q)[\neg p/p, p \to p/q] = \neg(\neg p \to \neg (p \to p))\)</span></p></li>
+<li><p><span class="math inline">\((p \to q)[\neg q/p, \neg p/q] = \neg q \to \neg p\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Unpack each of the following:</p>
+<ul>
+<li><p><span class="math inline">\(p[(p \to (q \to p)/p]\)</span></p></li>
+<li><p><span class="math inline">\((p \to (q \to p))[\neg p/p, \neg p/q]\)</span></p></li>
+<li><p><span class="math inline">\(\neg \neg (p \to \neg q)[(p \to q)/p, (q \to p)/q]\)</span></p></li>
+</ul>
+</div>
+</div>
 <p>We are now in a position to define the set of axioms of the system:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -458,7 +494,7 @@ Axioms
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A well-formed formula <span class="math inline">\(\varphi\)</span> is an <em>axiom</em> if, and only if, it is a substitution instance of one of the well-formed formulas below: <span class="math display">\[
+<p>A well-formed formula <span class="math inline">\(\varphi\)</span> is an <em>axiom</em> if, and only if, it is a <em>substitution instance</em> of one of the well-formed formulas below: <span class="math display">\[
 \begin{array}{lll}
 \textsf{A1} &amp; &amp; p \to (q \to p)\\
 \textsf{A2} &amp; &amp; (p \to (q \to r)) \to ((p \to q) \to (p \to r))\\
@@ -509,7 +545,7 @@ Derivability
 <p>Such a finite sequence <span class="math inline">\(( \chi_1, ..., \chi_n )\)</span> is called a <em>derivation</em> (or a <em>proof</em>) of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>.</p>
 </div>
 </div>
-<p>So, a formula appears in a derivation if, and only if, it is either an axiom or a premise or the output of an application of modus ponens to two earlier members of the sequence.</p>
+<p>So, a formula appears in a derivation if, and only if, it is either an axiom or a premise or the output of an application of modus ponens to earlier members of the sequence.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -524,7 +560,7 @@ Theorem
 <p>We write <span class="math inline">\(\nvdash \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is <em>not</em> a theorem.</p>
 </div>
 </div>
-<p>Here is a simple example of a derivation:</p>
+<p>Here is our first example of a derivation:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -548,10 +584,11 @@ Example
 \]</span></p>
 </div>
 </div>
-<p>It is simple to generalize this argument into a schematic derivation of <span class="math inline">\(\varphi \to \varphi\)</span> from no premises: <span class="math display">\[
+<p>Notice that the derivation is far from intuitive and the system requires one to proceed through trial and error until we find appropriate substitution instances in order to derive <span class="math inline">\(p \to p\)</span> from available axioms. On the other hand, it is simple to generalize the argument above into a schematic derivation of <span class="math inline">\(\varphi \to \varphi\)</span> from no premises: <span class="math display">\[
 \vdash \varphi \to \varphi
 \]</span></p>
-<p>We will soon develop a library of subroutines, which will facilitate the discussion of the question of whether a given formula is derivable from a set of formulas.</p>
+<p>The axiomatic system is not particularly user-centered and certainly not preferable to natural deduction systems in which there are much simpler proofs of <span class="math inline">\(p \to p\)</span>. Curiously, the axiom system is able to prove <em>every</em> logical truth, and, moreover, it allows one to prove a formula from a set of formulas if, and only if, the former is a logical consequence of the latter.</p>
+<p>But before we establish these results, we set out to develop a library of subroutines, which will facilitate the discussion of the question of whether a given formula is derivable from a set of formulas.</p>
 <section id="the-deduction-theorem" class="level3" data-number="3.3.1">
 <h3 data-number="3.3.1" class="anchored" data-anchor-id="the-deduction-theorem"><span class="header-section-number">3.3.1</span> The Deduction Theorem</h3>
 <p>We will rely on a very general result. First, some notational conventions.</p>
@@ -586,7 +623,7 @@ The Deduction Theorem
 <p><span class="theorem-title"><strong>Theorem 3.1</strong></span> Given a set of formulas <span class="math inline">\(\Gamma\)</span> and formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>, then <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span></p>
 </div>
 <div id="proof">
-<p>To obtain a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, we may extend a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span> with two additional steps: <span class="math inline">\(\varphi\)</span>, which being a member of <span class="math inline">\(\Gamma, \varphi\)</span>, is available as a premise, and <span class="math inline">\(\psi\)</span> which is the output of <span class="math inline">\(\textsf{MP}\)</span> when applied to <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>.</p>
+<p>Suppose <span class="math inline">\(\varphi \to \psi\)</span> is derivable from <span class="math inline">\(\Gamma\)</span>. To obtain a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, we may extend a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span> with two additional steps: <span class="math inline">\(\varphi\)</span>, which being a member of <span class="math inline">\(\Gamma, \varphi\)</span>, is available as a premise, and <span class="math inline">\(\psi\)</span> which is the output of <span class="math inline">\(\textsf{MP}\)</span> when applied to <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>.</p>
 </div>
 <p>The other direction is the deduction theorem, which requires a more involved justification:</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -603,21 +640,21 @@ Theorem
 </div>
 </div>
 <div>
-<p>Choose a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>. We will use a <em>complete induction</em> on <span class="math inline">\(n\)</span> to prove that for every non-zero <span class="math inline">\(n\)</span>:</p>
+<p>Choose a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>. We will use a <em>complete induction</em> (without a base case) on positive integers to prove that for every positive integer <span class="math inline">\(n\)</span>:</p>
 <ul>
-<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
 </ul>
 <p>That is, we argue that</p>
 <ul>
-<li>if <em>that</em> is true for every <span class="math inline">\(m &lt; n\)</span>, then <em>it</em> is true for <span class="math inline">\(n\)</span> as well,</li>
+<li>if <em>that</em> is true for every positive integer <span class="math inline">\(m &lt; n\)</span>, then <em>it</em> is true for <span class="math inline">\(n\)</span> as well,</li>
 </ul>
 <p>So, we begin with the assumption:</p>
 <ul>
-<li>for every <span class="math inline">\(m &lt; n\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
+<li>for every positive integer <span class="math inline">\(m &lt; n\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
 </ul>
 <p>We want to prove that</p>
 <ul>
-<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
 </ul>
 <p>Consider a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of the form: <span class="math display">\[
 ( \chi_1, ..., \chi_{n})
@@ -640,9 +677,9 @@ Theorem
 \end{array}
 \]</span> <strong>Case 3</strong>. <span class="math inline">\(\psi = \varphi\)</span></p>
 <p>Since <span class="math inline">\(\vdash \varphi \to \varphi\)</span>, a derivation of <span class="math inline">\(\varphi \to \varphi\)</span> is a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>. Therefore <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
-<p><strong>Case 4</strong>. <span class="math inline">\(\chi_k = (\chi_l \to \psi)\)</span> for some <span class="math inline">\(k, l &lt; n\)</span></p>
+<p><strong>Case 4</strong>. <span class="math inline">\(\chi_k = (\chi_l \to \psi)\)</span> for some <span class="math inline">\(k, l &lt; n\)</span>. That is, <span class="math inline">\(\chi_n = \psi\)</span> is the output of an application of <span class="math inline">\(\textsf{MP}\)</span> to earlier lines <span class="math inline">\(\chi_i\)</span> and <span class="math inline">\(\chi_k\)</span>.</p>
 <p>That means that <span class="math inline">\((\chi_l \to \psi)\)</span> and <span class="math inline">\(\chi_l\)</span> are each in the sequence, which means that there are derivations <span class="math inline">\((\chi_1 \dots, \chi_l \to \psi)\)</span> and <span class="math inline">\((\chi_1, \dots, \chi_l)\)</span> of each formula <span class="math inline">\(\chi_l \to \psi\)</span> and <span class="math inline">\(\chi_l\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(&lt; n\)</span>.</p>
-<p>Since both derivations have length strictly less than <span class="math inline">\(n\)</span>, by inductive hypothesis, <span class="math inline">\(\Gamma \vdash \varphi \to (\chi_l \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \varphi \to \chi_l\)</span>.</p>
+<p>Since both derivations have length strictly less than <span class="math inline">\(n\)</span>, <em>by inductive hypothesis</em>, <span class="math inline">\(\Gamma \vdash \varphi \to (\chi_l \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \varphi \to \chi_l\)</span>.</p>
 <p>To build a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>, we may concatenate derivations of <span class="math inline">\(\varphi \to (\chi_1 \to \psi)\)</span> and <span class="math inline">\(\varphi \to \chi_l\)</span>, respectively, from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
 \begin{array}{llll}
 &amp; &amp; ... &amp; \\
@@ -659,16 +696,16 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 \]</span> We conclude that given <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(( \chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
 </div>
 <p>The deduction theorem encodes a common method of proof in mathematics. To establish a conditional <span class="math inline">\(\varphi \to \psi\)</span> in a mathematical context, you may simply adjoin <span class="math inline">\(\varphi\)</span> to your assumptions <span class="math inline">\(\Gamma\)</span> and set out to derive <span class="math inline">\(\psi\)</span> from them. That entitles you to conclude that <span class="math inline">\(\varphi \to \psi\)</span> is a deductive consequence of the original assumptions.</p>
-<p>We will now use of the Deduction Theorem to prove some facts, which will facilitate the use of the axiom system.</p>
+<p>We will now use of the Deduction Theorem to prove a variety of basic facts, which will facilitate the use of the axiom system.</p>
 <div id="prp-dp1" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.1</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))\)</span></p>
 </div>
 <div name="Proof">
 <p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
 \{\varphi \to \psi \} \vdash (\psi \to \chi) \to (\varphi \to \chi).
-\]</span> But given the Deduction Theorem, this reduces to: <span class="math display">\[
+\]</span> But given the Deduction Theorem again, it is enough to show: <span class="math display">\[
 \{ \varphi \to \psi, \psi \to \chi\} \vdash \varphi \to \chi,
-\]</span> and <span class="math display">\[
+\]</span> and, in particular, <span class="math display">\[
 \{\varphi \to \psi, \psi \to \chi, \varphi\} \vdash \chi.
 \]</span> But it is simple to provide a derivation of <span class="math inline">\(\chi\)</span> from <span class="math inline">\(\{\varphi \to \psi, \psi \to \chi, \varphi\}\)</span>: <span class="math display">\[
 \begin{array}{llll}
@@ -718,7 +755,7 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 \end{array}
 \]</span></p>
 </div>
-<p>Here is another helfpul observation:</p>
+<p>Here is another helpfpul observation:</p>
 <div id="prp-dp4" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.4</strong></span> <span class="math inline">\(\vdash \varphi \to \neg \neg \varphi\)</span></p>
 </div>
@@ -765,9 +802,10 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Use the observations above in order to justify: <span class="math display">\[
+<p>Use the Deduction Theorem in order to justify: <span class="math display">\[
 \vdash (\varphi \to \neg \varphi) \to \neg \varphi
 \]</span></p>
+<p><em>Hint</em>. <em>By the Deduction Theorem, it suffices to note</em> <span class="math inline">\(\{\varphi \to \neg \varphi\}\vdash \neg \varphi\)</span>. <em>One way to do that is by means of a suitable substitution instance of</em> <span class="math inline">\(\textsf{A3}\)</span>.</p>
 </div>
 </div>
 <div>
@@ -782,7 +820,7 @@ Exercise
 1 &amp; &amp; \neg \varphi \to (\neg \psi \to \neg \varphi) &amp;  \textsf{A1}[\neg \varphi/p, \neg \psi/q] \\
 2 &amp; &amp;  \neg \varphi &amp; \\
 3 &amp; &amp;  (\neg \psi \to \neg \varphi) &amp; \textsf{MP} \ 1, 2\\
-4 &amp; &amp;  \varphi \to \psi &amp; 3, \ \textsf{Prop} 3.2\\
+4 &amp; &amp;  \varphi \to \psi &amp; 3, \ \textsf{Prop} \ 3.2\\
 5 &amp; &amp; \varphi  &amp; \\
 6 &amp; &amp; \psi  &amp; \textsf{MP} \ 4, 5\\
 \end{array}
