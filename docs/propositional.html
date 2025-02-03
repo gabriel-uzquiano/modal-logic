@@ -781,10 +781,10 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 1 &amp; &amp; \varphi \to \psi &amp;  \\
 2 &amp; &amp; \psi \to \neg \neg \psi &amp; \textsf{Prop} \ 3.4\\
 3 &amp; &amp; \neg \neg \varphi \to \varphi &amp; \textsf{Prop} \ 3.3\\
-4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \textsf{Prop} \ 1 \\
+4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \textsf{Prop} \ 3.1 \\
 5 &amp; &amp; (\varphi \to \psi) \to (\neg \neg \varphi \to \psi) &amp; \textsf{MP} \ 3, 4 \\
 6 &amp; &amp; \neg \neg \varphi \to \psi &amp; \textsf{MP} \ 1, 4 \\
-7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \textsf{Prop} \ 4.1 \\
+7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \textsf{Prop} \ 3.1 \\
 8 &amp; &amp; (\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi) &amp; \textsf{MP} \ 6, 7\\
 9 &amp; &amp; \neg \neg \varphi \to \neg \neg \psi &amp; \textsf{MP} \ 2, 8\\
 10 &amp; &amp; (\neg \neg \varphi \to \neg \neg \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{Prop} \ 3.2\\
@@ -805,7 +805,7 @@ Exercise
 <p>Use the Deduction Theorem in order to justify: <span class="math display">\[
 \vdash (\varphi \to \neg \varphi) \to \neg \varphi
 \]</span></p>
-<p><em>Hint</em>. <em>By the Deduction Theorem, it suffices to note</em> <span class="math inline">\(\{\varphi \to \neg \varphi\}\vdash \neg \varphi\)</span>. <em>One way to do that is by means of a suitable substitution instance of</em> <span class="math inline">\(\textsf{A3}\)</span>.</p>
+<p><em>Hint</em>. <em>By the Deduction Theorem, we need only show</em> <span class="math inline">\(\{\varphi \to \neg \varphi\}\vdash \neg \varphi\)</span>. <em>One way to do that crucially involves a substitution instance of</em> <span class="math inline">\(\textsf{A3}\)</span>.</p>
 </div>
 </div>
 <div>
@@ -820,9 +820,10 @@ Exercise
 1 &amp; &amp; \neg \varphi \to (\neg \psi \to \neg \varphi) &amp;  \textsf{A1}[\neg \varphi/p, \neg \psi/q] \\
 2 &amp; &amp;  \neg \varphi &amp; \\
 3 &amp; &amp;  (\neg \psi \to \neg \varphi) &amp; \textsf{MP} \ 1, 2\\
-4 &amp; &amp;  \varphi \to \psi &amp; 3, \ \textsf{Prop} \ 3.2\\
-5 &amp; &amp; \varphi  &amp; \\
-6 &amp; &amp; \psi  &amp; \textsf{MP} \ 4, 5\\
+4 &amp; &amp;  (\neg \psi \to \neg \varphi) \to (\varphi \to \psi) &amp; \textsf{Prop} \ 3.2\\
+5 &amp; &amp;  \varphi \to \psi &amp; \textsf{MP} \ 3, 4\\
+6 &amp; &amp; \varphi  &amp; \\
+7 &amp; &amp; \psi  &amp; \textsf{MP} \ 5, 6\\
 \end{array}
 \]</span></p>
 </div>
