@@ -642,7 +642,7 @@ Theorem
 <div>
 <p>Choose a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>. We will use a <em>complete induction</em> (without a base case) on positive integers to prove that for every positive integer <span class="math inline">\(n\)</span>:</p>
 <ul>
-<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+<li>for all set of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_n\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
 </ul>
 <p>That is, we argue that</p>
 <ul>
@@ -650,11 +650,11 @@ Theorem
 </ul>
 <p>So, we begin with the assumption:</p>
 <ul>
-<li>for every positive integer <span class="math inline">\(m &lt; n\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
+<li>for every positive integer <span class="math inline">\(m &lt; n\)</span>, for all set of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
 </ul>
 <p>We want to prove that</p>
 <ul>
-<li>if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+<li>for all set of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
 </ul>
 <p>Consider a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of the form: <span class="math display">\[
 ( \chi_1, ..., \chi_{n})
