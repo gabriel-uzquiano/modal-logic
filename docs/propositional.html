@@ -183,9 +183,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#completeness" id="toc-completeness" class="nav-link" data-scroll-target="#completeness"><span class="header-section-number">3.4</span> Completeness</a>
   <ul class="collapse">
-  <li><a href="#consistency" id="toc-consistency" class="nav-link" data-scroll-target="#consistency"><span class="header-section-number">3.4.1</span> Consistency</a></li>
-  <li><a href="#maximal-consistency" id="toc-maximal-consistency" class="nav-link" data-scroll-target="#maximal-consistency"><span class="header-section-number">3.4.2</span> Maximal Consistency</a></li>
-  <li><a href="#completeness-reformulated" id="toc-completeness-reformulated" class="nav-link" data-scroll-target="#completeness-reformulated"><span class="header-section-number">3.4.3</span> Completeness Reformulated</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">3.4.1</span> </a></li>
   </ul></li>
   </ul>
 </nav>
@@ -618,6 +616,7 @@ The Deduction Theorem
 </div>
 <div id="proof">
 <p>Suppose <span class="math inline">\(\varphi \to \psi\)</span> is derivable from <span class="math inline">\(\Gamma\)</span>. To obtain a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, we may extend a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span> with two additional steps: <span class="math inline">\(\varphi\)</span>, which being a member of <span class="math inline">\(\Gamma, \varphi\)</span>, is available as a premise, and <span class="math inline">\(\psi\)</span> which is the output of <span class="math inline">\(\textsf{MP}\)</span> when applied to <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>The other direction is the deduction theorem, which requires a more involved justification:</p>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -687,7 +686,8 @@ n&amp; &amp; ((\varphi \to (\chi_1 \to \psi)) \to  &amp; \textsf{A2}[\varphi/p,\
 n+1&amp; &amp; (\varphi \to \chi_l)\to (\varphi \to \psi) &amp; \textsf{MP} \ k, n\\
 n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 \end{array}
-\]</span> We conclude that given <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(( \chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+\]</span> So, given <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(( \chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>The deduction theorem encodes a common method of proof in mathematics. To establish a conditional <span class="math inline">\(\varphi \to \psi\)</span> in a mathematical context, you may simply adjoin <span class="math inline">\(\varphi\)</span> to your assumptions <span class="math inline">\(\Gamma\)</span> and set out to derive <span class="math inline">\(\psi\)</span> from them. That entitles you to conclude that <span class="math inline">\(\varphi \to \psi\)</span> is a deductive consequence of the original assumptions.</p>
 <p>We will now use of the Deduction Theorem to prove a variety of basic facts, which will facilitate the use of the axiom system.</p>
@@ -836,19 +836,27 @@ Soundness
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No matter what set of formulas <span class="math inline">\(\Gamma\)</span> and what formula <span class="math inline">\(\varphi\)</span> may be:</p>
-<ul>
-<li>if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span></li>
-</ul>
+<p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>.</p>
 </div>
 </div>
-<section id="consistency" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="consistency"><span class="header-section-number">3.4.1</span> Consistency</h3>
+<p>One way to proceed is to use a complete induction (without a base case) on the length of proofs to argue that for every positive integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(\langle \chi_1, ..., \chi_n\rangle\)</span> is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>, then $\Gamma $. The proof is left as an exercise.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consistency
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\bot\)</span> is not derivable from <span class="math inline">\(\Gamma\)</span>. That is, <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\Gamma \nvdash \bot\)</span>.</p>
 <p>We write that a set <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma\)</span> is <em>not</em> consistent. That is, <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma \vdash \bot\)</span>. Recall the definition of <span class="math inline">\(\bot\)</span> in terms of <span class="math inline">\(\top\)</span>: <span class="math display">\[
 \bot := \neg \top.
 \]</span></p>
 <p>Since <span class="math inline">\(\top\)</span> is an abbreviation for the formula <span class="math inline">\(p \to p\)</span>, <span class="math inline">\(\bot\)</span> is an abbreviation for <span class="math inline">\(\neg (p \to p)\)</span>.</p>
+</div>
+</div>
 <p>Here is an important observation:</p>
 <div id="prp-con" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.6</strong></span> Given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, <span class="math display">\[
@@ -865,9 +873,10 @@ Soundness
 1 &amp; &amp; \neg \varphi \to (\neg \bot \to \neg  \varphi) &amp; \textsf{A1}[\neg \varphi/p, \bot/q]  \\
 2 &amp; &amp; \neg \varphi &amp; \\
 3 &amp; &amp; \neg \bot \to \neg \varphi &amp; \textsf{MP} \ 1, 2\\
-4 &amp; &amp; \varphi \to \bot &amp; 3, \textsf{Prop} \ 3.2\\
-5 &amp; &amp; \varphi  &amp; \Gamma, \neg \varphi \vdash \varphi\\
-6 &amp; &amp; \bot &amp; \textsf{MP} \ 4, 5\\
+4 &amp; &amp; (\neg \bot \to \neg \varphi) \to (\varphi \to \bot) &amp; \textsf{Prop} \ 3.2\\
+5 &amp; &amp; \varphi \to \bot &amp; \textsf{MP} \ 3, 4\\
+6 &amp; &amp; \varphi  &amp; \Gamma \vdash \varphi\\
+7 &amp; &amp; \bot &amp; \textsf{MP} \ 4, 5\\
 \end{array}
 \]</span></p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We want to prove that if <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
@@ -883,14 +892,25 @@ Soundness
 \]</span></p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
-</section>
-<section id="maximal-consistency" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="maximal-consistency"><span class="header-section-number">3.4.2</span> Maximal Consistency</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Maximal Consistency
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>maximal consistent</em> if, and only if,</p>
 <ol type="1">
 <li><p><span class="math inline">\(\Gamma\)</span> is consistent, and</p></li>
 <li><p>for every <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
 </ol>
+</div>
+</div>
+<section id="section" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="section"><span class="header-section-number">3.4.1</span> </h3>
 <div id="prp-maxcon" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.7</strong></span> Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>,</p>
 <ol type="1">
@@ -937,20 +957,24 @@ Completeness
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No matter what set of formulas <span class="math inline">\(\Gamma\)</span> and what formula <span class="math inline">\(\varphi\)</span> may be:</p>
-<ul>
-<li>if <span class="math inline">\(\Gamma \models \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</li>
-</ul>
+<p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \models \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
 </div>
 </div>
+<p>So, if <span class="math inline">\(\varphi\)</span> is a logical consequence of <span class="math inline">\(\Gamma\)</span>, then <em>there is</em> a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>. Notice that the proof will only guarantee the existence of such a derivation, but it will not help us find such a derivation.</p>
 <p>We follow an indirect route toward that conclusion.</p>
-</section>
-<section id="completeness-reformulated" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="completeness-reformulated"><span class="header-section-number">3.4.3</span> Completeness Reformulated</h3>
-<p>Given a set of formulas <span class="math inline">\(\Gamma\)</span>,</p>
-<ul>
-<li>if <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is satisfiable.</li>
-</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Completeness Reformulated
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all set of formulas <span class="math inline">\(\Gamma\)</span>, if <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is satisfiable.</p>
+</div>
+</div>
 <p>That will suffice for our purposes. For given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, then by prop 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is consistent. Given the link between consistency and satisfiability, we would infer that <span class="math inline">\(\Gamma, \neg \varphi\)</span> is satisfiable, whence <span class="math inline">\(\Gamma \not \models \varphi\)</span>.</p>
 <p>We reach our target, we will proceed to justify two double-arrows from the diagram below.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
