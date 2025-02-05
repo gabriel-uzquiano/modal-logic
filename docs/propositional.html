@@ -181,10 +181,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#the-deduction-theorem" id="toc-the-deduction-theorem" class="nav-link" data-scroll-target="#the-deduction-theorem"><span class="header-section-number">3.3.1</span> The Deduction Theorem</a></li>
   </ul></li>
-  <li><a href="#completeness" id="toc-completeness" class="nav-link" data-scroll-target="#completeness"><span class="header-section-number">3.4</span> Completeness</a>
-  <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">3.4.1</span> </a></li>
-  </ul></li>
+  <li><a href="#completeness" id="toc-completeness" class="nav-link" data-scroll-target="#completeness"><span class="header-section-number">3.4</span> Completeness</a></li>
   </ul>
 </nav>
     </div>
@@ -839,7 +836,7 @@ Soundness
 <p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>.</p>
 </div>
 </div>
-<p>One way to proceed is to use a complete induction (without a base case) on the length of proofs to argue that for every positive integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(\langle \chi_1, ..., \chi_n\rangle\)</span> is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>, then $\Gamma $. The proof is left as an exercise.</p>
+<p>One way to proceed is to use a complete induction (without a base case) on the length of proofs to argue that for every positive integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(\langle \chi_1, ..., \chi_n\rangle\)</span> is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>. The proof is left as an exercise.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -909,8 +906,6 @@ Maximal Consistency
 </ol>
 </div>
 </div>
-<section id="section" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="section"><span class="header-section-number">3.4.1</span> </h3>
 <div id="prp-maxcon" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 3.7</strong></span> Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>,</p>
 <ol type="1">
@@ -943,7 +938,7 @@ Maximal Consistency
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We show that if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
 <p>If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then given 2 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Since prop 3.6 gives us that <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, we infer <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
-<p>If <span class="math inline">\(\psi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash \psi \to (\varphi \to \psi)\)</span>, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
+<p>If <span class="math inline">\(\psi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash \psi \to (\varphi \to \psi)\)</span>, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1 above, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>We have the toolkit we need in order to prove the completeness of the axiom system.</p>
@@ -1104,7 +1099,6 @@ We conclude that <span class="math inline">\(V\)</span> verifies exactly those f
 </div>
 
 
-</section>
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
