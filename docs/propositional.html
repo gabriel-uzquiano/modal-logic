@@ -798,8 +798,8 @@ Exercise
 <p><em>Hint</em>. <em>By the Deduction Theorem, we need only show</em> <span class="math inline">\(\{\varphi \to \neg \varphi\}\vdash \neg \varphi\)</span>. <em>One way to do that exploits a substitution instance of</em> <span class="math inline">\(\textsf{A3}\)</span> and <span class="math inline">\(\textsf{Prop}\)</span> 3.3 and 3.5.</p>
 </div>
 </div>
-<div>
-<p><span class="math inline">\(\vdash \neg  \varphi \to (\varphi \to \psi)\)</span></p>
+<div id="prp-dp6" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 3.6</strong></span> <span class="math inline">\(\vdash \neg  \varphi \to (\varphi \to \psi)\)</span></p>
 </div>
 <div>
 <p>Given the Deduction Theorem, it suffices to show: <span class="math display">\[
@@ -821,7 +821,7 @@ Exercise
 </section>
 <section id="completeness" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="completeness"><span class="header-section-number">3.4</span> Completeness</h2>
-<p>We want an axiom system to derive a formula <span class="math inline">\(\varphi\)</span> from a set of formulas <span class="math inline">\(\Gamma\)</span> <em>only</em> when <span class="math inline">\(\varphi\)</span> is a logical consequence of <span class="math inline">\(\Gamma\)</span>. That is what would make the axiom system <em>sound</em>. On the other hand, we want to be able to derive a formula <span class="math inline">\(\varphi\)</span> from a set of formulas <span class="math inline">\(\Gamma\)</span> whenever <span class="math inline">\(\varphi\)</span> is a logical consequence of <span class="math inline">\(\Gamma\)</span>. That is what would make the axiom system <em>complete</em>. We now set out to justify that the axiom system we have described is both <em>sound</em> and <em>complete</em>.</p>
+<p>We want the axiom system to derive a formula <span class="math inline">\(\varphi\)</span> from a set of formulas <span class="math inline">\(\Gamma\)</span> <em>only</em> when <span class="math inline">\(\varphi\)</span> is a logical consequence of <span class="math inline">\(\Gamma\)</span>. That is what would make the axiom system <em>sound</em>. On the other hand, we want to be able to derive a formula <span class="math inline">\(\varphi\)</span> from a set of formulas <span class="math inline">\(\Gamma\)</span> whenever <span class="math inline">\(\varphi\)</span> is a logical consequence of <span class="math inline">\(\Gamma\)</span>. That is what would make the axiom system <em>complete</em>. We now set out to justify that the axiom system we have described is both <em>sound</em> and <em>complete</em>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -835,7 +835,7 @@ Soundness
 <p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>.</p>
 </div>
 </div>
-<p>One way to proceed is to use a complete induction (without a base case) on the length of proofs to argue that for every positive integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(\langle \chi_1, ..., \chi_n\rangle\)</span> is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>. The proof is left as an exercise.</p>
+<p>One way to proceed is to use a complete induction (without a base case) on the length of proofs to argue that for every positive integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(\langle \chi_1, ..., \chi_n\rangle\)</span> is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>. The proof is left as an exercise to the reader.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -847,7 +847,8 @@ Consistency
 </div>
 <div class="callout-body-container callout-body">
 <p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\bot\)</span> is not derivable from <span class="math inline">\(\Gamma\)</span>. That is, <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\Gamma \nvdash \bot\)</span>.</p>
-<p>We write that a set <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma\)</span> is <em>not</em> consistent. That is, <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma \vdash \bot\)</span>. Recall the definition of <span class="math inline">\(\bot\)</span> in terms of <span class="math inline">\(\top\)</span>: <span class="math display">\[
+<p>We write that a set <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma\)</span> is <em>not</em> consistent. That is, <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma \vdash \bot\)</span>.</p>
+<p>Recall the definition of <span class="math inline">\(\bot\)</span> in terms of <span class="math inline">\(\top\)</span>: <span class="math display">\[
 \bot := \neg \top.
 \]</span></p>
 <p>Since <span class="math inline">\(\top\)</span> is an abbreviation for the formula <span class="math inline">\(p \to p\)</span>, <span class="math inline">\(\bot\)</span> is an abbreviation for <span class="math inline">\(\neg (p \to p)\)</span>.</p>
@@ -855,7 +856,7 @@ Consistency
 </div>
 <p>Here is an important observation:</p>
 <div id="prp-con" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.6</strong></span> Given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 3.7</strong></span> Given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, <span class="math display">\[
 \begin{array}{lll}
 \Gamma \vdash \varphi &amp;  \text{iff} &amp; \Gamma, \neg \varphi \ \ \text{is inconsistent}.\\
 \end{array}
@@ -863,8 +864,8 @@ Consistency
 </div>
 <div>
 <p><strong>Proof</strong>. We discuss one direction at a time.</p>
-<p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>.</p>
-<p>To that purpose we use the fact that a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span> is automatically a derivation of <span class="math inline">\(\varphi\)</span> from the larger set <span class="math inline">\(\Gamma, \neg \varphi\)</span>. We use this fact to produce a derivation of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Gamma, \neg \varphi\)</span>. <span class="math display">\[
+<p>(<span class="math inline">\(\Rightarrow\)</span>) We first argue that if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>.</p>
+<p>To that purpose we note that a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span> is automatically a derivation of <span class="math inline">\(\varphi\)</span> from the larger set <span class="math inline">\(\Gamma, \neg \varphi\)</span>. We use this fact to produce a derivation of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Gamma, \neg \varphi\)</span>. <span class="math display">\[
 \begin{array}{llll}
 1 &amp; &amp; \neg \varphi \to (\neg \bot \to \neg  \varphi) &amp; \textsf{A1}[\neg \varphi/p, \bot/q]  \\
 2 &amp; &amp; \neg \varphi &amp; \\
@@ -875,8 +876,9 @@ Consistency
 7 &amp; &amp; \bot &amp; \textsf{MP} \ 4, 5\\
 \end{array}
 \]</span></p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) We want to prove that if <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
-<p>We use the Deduction Theorem to move from <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span> to <span class="math inline">\(\Gamma \vdash \neg \varphi \to \bot\)</span>. Since <span class="math inline">\(\Gamma, \neg \varphi \vdash \top\)</span>, by Prop 3.4, <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \neg \top\)</span>, which means <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \bot\)</span>. So, by the Deduction Theorem, <span class="math inline">\(\Gamma \vdash \neg \varphi \to \neg \bot\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) We now argue that if <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
+<p>We use the Deduction Theorem to move from <span class="math inline">\(\Gamma, \neg \varphi \vdash \bot\)</span> to <span class="math inline">\(\Gamma \vdash \neg \varphi \to \bot\)</span>.</p>
+<p>On the other hand, since <span class="math inline">\(\Gamma, \neg \varphi \vdash \top\)</span>, and, by Prop 3.4, <span class="math inline">\(\Gamma, \neg \varphi \vdash \top \to \neg \neg \top\)</span>, <span class="math inline">\(\Gamma \neg \varphi \vdash \neg \neg \top\)</span>. But <span class="math inline">\(\neg \neg \top\)</span> is just an abbreviation for <span class="math inline">\(\neg \bot\)</span>, which means <span class="math inline">\(\Gamma, \neg \varphi \vdash \neg \bot\)</span>. So, by the Deduction Theorem again, <span class="math inline">\(\Gamma \vdash \neg \varphi \to \neg \bot\)</span>.</p>
 <p>We now outline a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
 \begin{array}{llll}
 1 &amp; &amp; \neg \varphi \to  \neg \bot &amp; \Gamma \vdash \neg \varphi \to \neg \bot  \\
@@ -901,12 +903,12 @@ Maximal Consistency
 <p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>maximal consistent</em> if, and only if,</p>
 <ol type="1">
 <li><p><span class="math inline">\(\Gamma\)</span> is consistent, and</p></li>
-<li><p>for every <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
+<li><p>for all formulas <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
 </ol>
 </div>
 </div>
 <div id="prp-maxcon" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.7</strong></span> Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>,</p>
+<p><span class="theorem-title"><strong>Proposition 3.8</strong></span> Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>,</p>
 <ol type="1">
 <li><p><span class="math inline">\(\Gamma \vdash \varphi\)</span> if, and only if, <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
 <li><p><span class="math inline">\(\neg \varphi \in \Gamma\)</span> if, and only if, <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p></li>
@@ -914,21 +916,21 @@ Maximal Consistency
 </ol>
 </div>
 <div>
-<p><strong>Proof</strong>. Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, consider each claim at a time.</p>
+<p><strong>Proof</strong>. Given a <em>maximal consistent</em> set of formulas <span class="math inline">\(\Gamma\)</span> and two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, we look at each claim in turn.</p>
 <ol type="1">
 <li><span class="math inline">\(\Gamma \vdash \varphi\)</span> if, and only if, <span class="math inline">\(\varphi \in \Gamma\)</span>.</li>
 </ol>
 <p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
-<p>Suppose <span class="math inline">\(\Gamma \vdash \varphi\)</span>. We proceed by reductio. Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. By definition of maximal consistency, if <span class="math inline">\(\Gamma\)</span> is maximal consistent and <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. But since <span class="math inline">\(\Gamma \vdash \varphi\)</span>, by proposition 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is inconsistent as well. It follows that <span class="math inline">\(\Gamma\)</span> is inconsistent, which contradicts its maximal consistency.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We conclude that <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
+<p>Suppose <span class="math inline">\(\Gamma \vdash \varphi\)</span>. We proceed by a <em>reductio</em>. Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. By definition of maximal consistency, if <span class="math inline">\(\Gamma\)</span> is maximal consistent and <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. But now, since <span class="math inline">\(\Gamma \vdash \varphi\)</span>, by proposition 3.7, <span class="math inline">\(\Gamma, \neg \varphi\)</span> must be inconsistent as well. It follows that <span class="math inline">\(\Gamma\)</span> must itself be inconsistent, which contradicts its maximal consistency.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We conclude that <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We argue that if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
 <p>If <span class="math inline">\(\varphi \in \Gamma\)</span>, then there is a one-line derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>.</p>
 <ol start="2" type="1">
 <li><span class="math inline">\(\neg \varphi \in \Gamma\)</span> if, and only if, <span class="math inline">\(\varphi \notin \Gamma\)</span>.</li>
 </ol>
 <p>(<span class="math inline">\(\Rightarrow\)</span>) We argue that if <span class="math inline">\(\neg \varphi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p>
-<p>Suppose <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Then, by 1 above, <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. Since <span class="math inline">\(\Gamma\)</span> is consistent, <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, which, by 1 above, means <span class="math inline">\(\varphi \notin \Gamma\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>Suppose <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Then, by 1 above, <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. Since <span class="math inline">\(\Gamma\)</span> is consistent, <span class="math inline">\(\Gamma \nvdash \varphi\)</span>. This is because by proposition 3.6, <span class="math inline">\(\Gamma \vdash \neg \varphi \to (\varphi \to \bot)\)</span>. But by 1 above, from <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, we infer that <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We show that if <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
-<p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Gamma\)</span> is maximal consistent, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Given prop 3.3 and 3.4, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent if, and only if, <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent. So, since <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent, we conclude, by prop 3.6, that <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. So, by 1 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
+<p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Gamma\)</span> is maximal consistent, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent. Given propositions 3.3 and 3.4, <span class="math inline">\(\Gamma, \varphi\)</span> is inconsistent if, and only if, <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent. So, since <span class="math inline">\(\Gamma, \neg \neg \varphi\)</span> is inconsistent, we conclude, by proposition 3.7, that <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>. So, by 1 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>.</p>
 <ol start="3" type="1">
 <li><span class="math inline">\(\varphi \to \psi \in \Gamma\)</span> if, and only if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</li>
 </ol>
@@ -936,11 +938,11 @@ Maximal Consistency
 <p>Suppose <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>. Then, given 1 above, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. Now: if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span> and <span class="math inline">\(\Gamma \vdash \psi\)</span>, whence <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) We show that if <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p>Suppose <span class="math inline">\(\varphi \notin \Gamma\)</span> or <span class="math inline">\(\psi \in \Gamma\)</span>.</p>
-<p>If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then given 2 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Since prop 3.6 gives us that <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, we infer <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
+<p>If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then given 2 above, <span class="math inline">\(\neg \varphi \in \Gamma\)</span>. Since, by proposition 3.6, <span class="math inline">\(\vdash \neg \varphi \to (\varphi \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, we infer <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p>If <span class="math inline">\(\psi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash \psi \to (\varphi \to \psi)\)</span>, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>. So, given 1 above, <span class="math inline">\(\varphi \to \psi \in \Gamma\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
-<p>We have the toolkit we need in order to prove the completeness of the axiom system.</p>
+<p>We now have the toolkit we need in order to prove the completeness of the system.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -966,10 +968,12 @@ Completeness Reformulated
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For all set of formulas <span class="math inline">\(\Gamma\)</span>, if <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is satisfiable.</p>
+<p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, then <span class="math inline">\(\Gamma \not \models \varphi\)</span>.</p>
+<p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \neg \varphi\)</span> is consistent, then <span class="math inline">\(\Gamma, \neg \varphi\)</span> is satisfiable.</p>
+<p>For all <span class="math inline">\(\Gamma\)</span>, if <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is satisfiable.</p>
 </div>
 </div>
-<p>That will suffice for our purposes. For given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, then by prop 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is consistent. Given the link between consistency and satisfiability, we would infer that <span class="math inline">\(\Gamma, \neg \varphi\)</span> is satisfiable, whence <span class="math inline">\(\Gamma \not \models \varphi\)</span>.</p>
+<p>We set out to prove the last claim, which will suffice for our purposes. For given a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \nvdash \varphi\)</span>, then by proposition 3.6, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is consistent. Given the link between consistency and satisfiability given by the last claim, we are able to infer that <span class="math inline">\(\Gamma, \neg \varphi\)</span> is satisfiable, whence <span class="math inline">\(\Gamma \not \models \varphi\)</span>.</p>
 <p>We reach our target, we will proceed to justify two double-arrows from the diagram below.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -990,49 +994,49 @@ Plan
 \]</span></p>
 </div>
 </div>
-<p>The first step is to extend a consistent set of formulas <span class="math inline">\(\Gamma\)</span> to a maximal consistent set <span class="math inline">\(\Sigma\)</span> (Lindenbaum Lemma.) Next, we will argue that every maximal consistent set is satisfiable (Henkin Lemma).</p>
+<p>One step, which corresponds to the top-down double-arrow, is to extend a consistent set of formulas <span class="math inline">\(\Gamma\)</span> to a maximal consistent set <span class="math inline">\(\Sigma\)</span> (Lindenbaum Lemma.) The other step, which corresponds to the left-to-right double arrow, is argue that every maximal consistent set is satisfiable (Henkin Lemma).</p>
 <div id="lem-lin" class="theorem lemma">
-<p><span class="theorem-title"><strong>Lemma 3.1 (Lindenbaum Lemma)</strong></span> If a set of formulas <span class="math inline">\(\Gamma\)</span> is consistent, then <span class="math inline">\(\Gamma\)</span> is a subset of a maximal consistent set of formulas <span class="math inline">\(\Sigma\)</span>.</p>
+<p><span class="theorem-title"><strong>Lemma 3.1 (Lindenbaum Lemma)</strong></span> If <span class="math inline">\(\Gamma\)</span> is a consistent set of formulas, then <span class="math inline">\(\Gamma\)</span> is a subset of a maximal consistent set of formulas <span class="math inline">\(\Sigma\)</span>.</p>
 </div>
 <p><strong>Proof</strong>. We begin with an enumeration of the formulas of propositional logic: <span class="math display">\[
 \varphi_0, \varphi_1, \cdots, \varphi_n, \cdots
-\]</span> Given <span class="math inline">\(\Gamma\)</span> be a consistent set of formulas, we build a maximal consistent superset <span class="math inline">\(\Sigma\)</span> by the recursion: <span class="math display">\[
+\]</span> Given <span class="math inline">\(\Gamma\)</span> be a consistent set of formulas, we build a maximal consistent superset <span class="math inline">\(\Sigma\)</span> by the following recursion: <span class="math display">\[
 \begin{array}{lll}
 \Sigma_0 &amp;  = &amp;  \Gamma \\
-\Sigma_{n+1} &amp; = &amp; \begin{cases} \Sigma_n, \varphi_n &amp; \text{if that set is consistent}\\ \Sigma_n &amp;  \text{otherwise} \end{cases}
+\Sigma_{n+1} &amp; = &amp; \begin{cases} \Sigma_n, \varphi_n &amp; \text{if consistent}\\ \Sigma_n &amp;  \text{otherwise} \end{cases}
 \end{array}
 \]</span> We let <span class="math display">\[
 \Sigma = \bigcup_{n\in \mathbb{N}} \Sigma_n.
 \]</span>We now argue that <span class="math inline">\(\Sigma\)</span> is a maximal consistent superset of <span class="math inline">\(\Gamma\)</span>.</p>
 <p>We proceed in several steps.</p>
 <div id="prp-l1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.8</strong></span> <span class="math inline">\(\Gamma \subseteq \Sigma\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 3.9</strong></span> <span class="math inline">\(\Gamma \subseteq \Sigma\)</span></p>
 </div>
 <p>This is because <span class="math inline">\(\Gamma = \Sigma_0\)</span> and <span class="math inline">\(\Sigma_0 \subseteq \Sigma\)</span>.</p>
 <div id="prp-l2" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.9</strong></span> For each natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Gamma_n\)</span> is consistent.</p>
+<p><span class="theorem-title"><strong>Proposition 3.10</strong></span> For each natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Gamma_n\)</span> is consistent.</p>
 </div>
 <div id=".proof">
 <p><strong>Proof</strong>. A simple induction on <span class="math inline">\(n\)</span> suffices:</p>
 <ul>
 <li><p><span class="math inline">\(\Sigma_0\)</span> is consistent on the assumption <span class="math inline">\(\Gamma\)</span> is consistent.</p></li>
-<li><p>If <span class="math inline">\(\Sigma_n\)</span> is consistent, then <span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if consistent, or else <span class="math inline">\(\Sigma_n\)</span>. Either way, <span class="math inline">\(\Sigma_{n+1}\)</span> is consistent.</p></li>
+<li><p>If <span class="math inline">\(\Sigma_n\)</span> is consistent, then <span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> <em>if consistent</em>, or else <span class="math inline">\(\Sigma_n\)</span>. Either way, <span class="math inline">\(\Sigma_{n+1}\)</span> is consistent.</p></li>
 </ul>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="prp-l3" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.10</strong></span> For each natural number <span class="math inline">\(n\)</span>, for every <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_n\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3.11</strong></span> For each natural number <span class="math inline">\(n\)</span>, for every <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_n\)</span>.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. We argue by induction on <span class="math inline">\(n\)</span>:</p>
 <ul>
-<li><p><span class="math inline">\(\Sigma_0\)</span> is vacuously a superset of <em>any</em> predecessors in the sequence.</p></li>
+<li><p><span class="math inline">\(\Sigma_0\)</span> is vacuously a superset of <em>any</em> set that may precede it in the sequence. This is because <em>nothing</em> precedes <span class="math inline">\(\Sigma_0\)</span> in the sequence.</p></li>
 <li><p><span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if consistent, or else <span class="math inline">\(\Sigma_n\)</span>. Either way, since by inductive hypothesis, for every <span class="math inline">\(m &lt; n\)</span> <span class="math inline">\(\Sigma_{m} \subseteq \Sigma_{n}\)</span> and <span class="math inline">\(\Sigma_n \subseteq \Sigma_{n+1}\)</span>, we conclude that for every <span class="math inline">\(m &lt; n\)</span> <span class="math inline">\(\Sigma_{m} \subseteq \Sigma_{n+1}\)</span>.</p></li>
 </ul>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="prp-l4" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.11</strong></span> For every finite subset <span class="math inline">\(\Delta \subseteq \Sigma\)</span>, there is some natural number <span class="math inline">\(n\)</span> such that <span class="math inline">\(\Delta \subseteq \Sigma_n\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3.12</strong></span> For every finite subset <span class="math inline">\(\Delta \subseteq \Sigma\)</span>, there is some natural number <span class="math inline">\(n\)</span> such that <span class="math inline">\(\Delta \subseteq \Sigma_n\)</span>.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. If <span class="math inline">\(\Delta\)</span> is a finite subset of <span class="math inline">\(\Sigma\)</span>, then let <span class="math inline">\(\varphi_n\)</span> be the member of <span class="math inline">\(\Delta\)</span> of <em>highest</em> index. That is for all <span class="math inline">\(m\)</span>, if <span class="math inline">\(\varphi_m \in \Delta\)</span>, then <span class="math inline">\(m \leq n\)</span>. Notice that for each natural number <span class="math inline">\(m\)</span>, if <span class="math inline">\(\varphi_m \in \Sigma\)</span>, then <span class="math inline">\(\varphi_m \in \Sigma_{m+1}\)</span>. That is, a formula <span class="math inline">\(\varphi_m\)</span> is accepted into <span class="math inline">\(\Sigma\)</span> via <span class="math inline">\(\Sigma_{m+1}\)</span> if at all. So, it follows that <span class="math inline">\(\Delta \subseteq \Sigma_{n+1}\)</span> if <span class="math inline">\(n\)</span> is the highest index of a formula in <span class="math inline">\(\Delta\)</span>.</p>
@@ -1040,14 +1044,14 @@ Plan
 </div>
 <p>It follows from the above that every <em>finite</em> subset of <span class="math inline">\(\Sigma\)</span> is consistent. We now argue that <span class="math inline">\(\Sigma\)</span> is consistent as well.</p>
 <div id="prp-l5" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.12</strong></span> <span class="math inline">\(\Sigma\)</span> is consistent.</p>
+<p><span class="theorem-title"><strong>Proposition 3.13</strong></span> <span class="math inline">\(\Sigma\)</span> is consistent.</p>
 </div>
 <div>
-<p><strong>Proof</strong>. For a reductio, suppose <span class="math inline">\(\Sigma \vdash \bot\)</span>. That means that there is a <em>finite</em> derivation <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Sigma\)</span>. That is therefore a derivation of <span class="math inline">\(\bot\)</span> from a <em>finite</em> subset of <span class="math inline">\(\Sigma\)</span>, which would require a finite subset of <span class="math inline">\(\Sigma\)</span> to be inconsistent. That contradicts the observation that every finite subset of <span class="math inline">\(\Sigma\)</span> is consistent.</p>
+<p><strong>Proof</strong>. For purposes of a <em>reductio</em>, suppose <span class="math inline">\(\Sigma \vdash \bot\)</span>. That means that there is a <em>finite</em> derivation <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\bot\)</span> from <span class="math inline">\(\Sigma\)</span>. It follows that there is a derivation of <span class="math inline">\(\bot\)</span> from a <em>finite</em> subset of <span class="math inline">\(\Sigma\)</span>, which would require that finite subset of <span class="math inline">\(\Sigma\)</span> to be inconsistent. That contradicts the observation that every finite subset of <span class="math inline">\(\Sigma\)</span> is consistent.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="prp-l6" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 3.13</strong></span> Given a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Sigma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Sigma\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 3.14</strong></span> Given a formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Sigma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Sigma\)</span>.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. A formula <span class="math inline">\(\varphi\)</span> will be assigned an index by the enumeration, which means <span class="math inline">\(\varphi = \varphi_n\)</span>. Now, if <span class="math inline">\(\Sigma, \varphi_n\)</span> is consistent, then <span class="math inline">\(\Sigma_n, \varphi_n\)</span> will be consistent as well. But that means that by construction of <span class="math inline">\(\Sigma\)</span>, <span class="math inline">\(\varphi_n \in \Sigma_{n+1} \subseteq \Sigma\)</span>.</p>
@@ -1060,11 +1064,12 @@ Plan
 <p><span class="theorem-title"><strong>Lemma 3.2 (Henkin Lemma)</strong></span> Every maximal consistent set <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
 </div>
 <div>
-<p><strong>Proof</strong>. Given a maximal consistent set <span class="math inline">\(\Sigma\)</span>, consider a valuation <span class="math inline">\(V\)</span> based on an assignment <span class="math inline">\(v\)</span> such that: <span class="math display">\[
+<p><strong>Proof</strong>. Given a maximal consistent set <span class="math inline">\(\Sigma\)</span>, let <span class="math inline">\(V\)</span> based on an assignment <span class="math inline">\(v\)</span> defined: <span class="math display">\[
 \begin{array}{lll}
 v(p_n) = 1 &amp; \text{iff} &amp; p_n \in \Sigma.
 \end{array}
-\]</span> We use an induction on the complexity of <span class="math inline">\(\varphi\)</span> to establish:<br>
+\]</span></p>
+<p>We use an induction on the complexity of <span class="math inline">\(\varphi\)</span> to establish:<br>
 <span class="math display">\[
 \begin{array}{lll}
 V(\varphi) = 1 &amp; \text{iff} &amp; \varphi \in \Sigma.
@@ -1082,7 +1087,7 @@ V(p_n) = 1 &amp; \text{iff} &amp; v(p_n) = 1 &amp; \\
 \begin{array}{llll}
 V(\neg \varphi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 &amp; \\
     &amp; \text{iff} &amp; \varphi \notin \Sigma &amp; \textsf{IH} \\
-     &amp; \text{iff} &amp; \neg \varphi \in \Sigma &amp; \textsf{Prop} \ 3.7, 2 \\
+     &amp; \text{iff} &amp; \neg \varphi \in \Sigma &amp; \textsf{Prop} \ 3.8, 2 \\
 \end{array}
 \]</span><br>
 - <strong>Inductive Step for</strong> <span class="math inline">\(\to\)</span>:</p>
@@ -1090,12 +1095,13 @@ V(\neg \varphi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 &amp; \\
 \begin{array}{llll}
 V(\varphi \to \psi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 \ \text{or} \ V(\psi) =1 &amp; \\
     &amp; \text{iff} &amp; \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma&amp; \textsf{IH} \\
-     &amp; \text{iff} &amp; \varphi \to \psi \in \Sigma &amp; \textsf{Prop} \ 3.7, 3 \\
+     &amp; \text{iff} &amp; \varphi \to \psi \in \Sigma &amp; \textsf{Prop} \ 3.8, 3 \\
 \end{array}
 \]</span><br>
 We conclude that <span class="math inline">\(V\)</span> verifies exactly those formulas in <span class="math inline">\(\Sigma\)</span>. So, it follows that <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
+<p>This concludes the proof of completeness. From now on, we are entitled to assume that the axiom system proves every tautology and that if proves <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span> whenever <span class="math inline">\(\varphi\)</span> is a logical consequence of <span class="math inline">\(\Gamma\)</span>. These are facts we will use when we introduce suitable axiom systems for different modal logics.</p>
 
 
 </section>
@@ -1103,7 +1109,6 @@ We conclude that <span class="math inline">\(V\)</span> verifies exactly those f
 <hr>
 <ol>
 <li id="fn1"><p>This is problem 3 in assignment 2.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>If <span class="math inline">\(\Gamma \vdash \varphi\)</span> and <span class="math inline">\(\Gamma \vdash \neg \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \bot\)</span>. This is because by lemma 3.6, <span class="math inline">\(\Gamma \vdash \neg \varphi \to (\varphi \to \bot)\)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
