@@ -832,7 +832,7 @@ Soundness
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>.</p>
+<p>For every set of formulas <span class="math inline">\(\Gamma\)</span> and every formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>.</p>
 </div>
 </div>
 <p>One way to proceed is to use a complete induction (without a base case) on the length of proofs to argue that for every positive integer <span class="math inline">\(n\)</span>, if <span class="math inline">\(\langle \chi_1, ..., \chi_n\rangle\)</span> is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>, then <span class="math inline">\(\Gamma \models \varphi\)</span>. The proof is left as an exercise to the reader.</p>
@@ -847,7 +847,7 @@ Consistency
 </div>
 <div class="callout-body-container callout-body">
 <p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\bot\)</span> is not derivable from <span class="math inline">\(\Gamma\)</span>. That is, <span class="math inline">\(\Gamma\)</span> is <em>consistent</em> if, and only if, <span class="math inline">\(\Gamma \nvdash \bot\)</span>.</p>
-<p>We write that a set <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma\)</span> is <em>not</em> consistent. That is, <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma \vdash \bot\)</span>.</p>
+<p>We say that <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma\)</span> is <em>not</em> consistent. That is, <span class="math inline">\(\Gamma\)</span> is <em>inconsistent</em> if, and only if, <span class="math inline">\(\Gamma \vdash \bot\)</span>.</p>
 <p>Recall the definition of <span class="math inline">\(\bot\)</span> in terms of <span class="math inline">\(\top\)</span>: <span class="math display">\[
 \bot := \neg \top.
 \]</span></p>
@@ -903,7 +903,7 @@ Maximal Consistency
 <p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>maximal consistent</em> if, and only if,</p>
 <ol type="1">
 <li><p><span class="math inline">\(\Gamma\)</span> is consistent, and</p></li>
-<li><p>for all formulas <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
+<li><p>for every formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</p></li>
 </ol>
 </div>
 </div>
@@ -953,10 +953,10 @@ Completeness
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For all <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \models \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
+<p>For every set of formulas <span class="math inline">\(\Gamma\)</span> and every formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma \models \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi\)</span>.</p>
 </div>
 </div>
-<p>So, if <span class="math inline">\(\varphi\)</span> is a logical consequence of <span class="math inline">\(\Gamma\)</span>, then <em>there is</em> a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>. Notice that the proof will only guarantee the existence of such a derivation, but it will not help us find such a derivation.</p>
+<p>So, if a formula <span class="math inline">\(\varphi\)</span> is a logical consequence of a set of formulas <span class="math inline">\(\Gamma\)</span>, then <em>there is</em> a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span> in our axiom system. Notice that the proof will only guarantee the existence of such a derivation, but it will not help us find such a derivation in the system.</p>
 <p>We follow an indirect route toward that conclusion.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
