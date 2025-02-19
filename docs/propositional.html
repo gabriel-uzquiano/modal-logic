@@ -632,7 +632,7 @@ Theorem
 <div>
 <p>Choose a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>. We will use a <em>complete induction</em> (without a base case) on positive integers to prove that for every positive integer <span class="math inline">\(n\)</span>:</p>
 <ul>
-<li>for all set of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_n\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+<li>for all sets of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_n\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
 </ul>
 <p>That is, we argue that</p>
 <ul>
@@ -640,11 +640,11 @@ Theorem
 </ul>
 <p>So, we begin with the assumption:</p>
 <ul>
-<li>for every positive integer <span class="math inline">\(m &lt; n\)</span>, for all set of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
+<li>for every positive integer <span class="math inline">\(m &lt; n\)</span>, for all sets of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
 </ul>
 <p>We want to prove that</p>
 <ul>
-<li>for all set of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+<li>for all sets of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
 </ul>
 <p>Consider a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of the form: <span class="math display">\[
 ( \chi_1, ..., \chi_{n})
@@ -802,7 +802,12 @@ Exercise
 <p><span class="theorem-title"><strong>Proposition 3.6</strong></span> <span class="math inline">\(\vdash \neg  \varphi \to (\varphi \to \psi)\)</span></p>
 </div>
 <div>
-<p>Given the Deduction Theorem, it suffices to show: <span class="math display">\[
+<p>Given the Deduction Theorem, we need only verify:</p>
+<p><span class="math display">\[
+\{\neg \varphi \} \vdash \varphi \to \psi
+\]</span></p>
+<p>By another application of the Deduction Theorem, it is sufficient to check:<br>
+<span class="math display">\[
 \{\neg \varphi, \varphi \}\vdash \psi
 \]</span></p>
 <p>Here is an outline of a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\{\neg \varphi, \varphi\}\)</span>: <span class="math display">\[
@@ -816,6 +821,22 @@ Exercise
 7 &amp; &amp; \psi  &amp; \textsf{MP} \ 5, 6\\
 \end{array}
 \]</span></p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain how to adapt some of the considerations given above in order to justify:</p>
+<p><span class="math display">\[
+\vdash \varphi \to (\neg \varphi \to \psi)
+\]</span></p>
+</div>
 </div>
 </section>
 </section>

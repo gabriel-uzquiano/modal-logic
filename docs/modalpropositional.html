@@ -334,18 +334,19 @@ Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>When <span class="math inline">\(Ruv\)</span>, we will write that <span class="math inline">\(v\)</span> is <em>accessible</em> from <span class="math inline">\(u\)</span> or that <span class="math inline">\(u\)</span> <em>sees</em> <span class="math inline">\(v\)</span>. The accessibility relation represents a relation of relative possibility: <span class="math inline">\(v\)</span> is accessible from <span class="math inline">\(u\)</span> corresponds to the claim that <span class="math inline">\(v\)</span> is <em>possible relative</em> to <span class="math inline">\(u\)</span>.</p>
+<p>When <span class="math inline">\(Ruv\)</span>, sometimes written <span class="math inline">\(uRv\)</span>, we will write that <span class="math inline">\(v\)</span> is <em>accessible</em> from <span class="math inline">\(u\)</span> or that <span class="math inline">\(u\)</span> <em>sees</em> <span class="math inline">\(v\)</span>. The accessibility relation represents a relation of relative possibility: <span class="math inline">\(v\)</span> is accessible from <span class="math inline">\(u\)</span> corresponds to the claim that <span class="math inline">\(v\)</span> is <em>possible relative</em> to <span class="math inline">\(u\)</span>.</p>
 <p><span class="math inline">\(V\)</span> maps a propositional variable <span class="math inline">\(p\)</span> to a set of worlds <span class="math inline">\(w\)</span> at which <span class="math inline">\(p\)</span> is true. So, when <span class="math inline">\(w \in V(p)\)</span>, we will write that <span class="math inline">\(p\)</span> is <em>true at</em> <span class="math inline">\(w\)</span>.</p>
 </div>
 </div>
+<p>One way to think of the assignment <span class="math inline">\(V\)</span> is as a specification of the set of worlds at which each propositional variable is true.</p>
 <p>We will use directed graphs to represent possible worlds models.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+How to Use a Graph to Represent a Possible Worlds Model
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -362,7 +363,7 @@ Example
 </div>
 <p>Each node corresponds to a possible world in the model.</p>
 <p>The accessibility relation relates one world to another when there is an arrow that points from the first to the second.</p>
-<p>The graph records the propositional variables that are true at each world according to <span class="math inline">\(V\)</span>.</p>
+<p>The graph records the propositional variables that are true at each world according to the assignment <span class="math inline">\(V\)</span>. If a propositional variable is not written at a node of the diagram, then the variable is not true at that world on the valuation depicted by the graph.</p>
 </div>
 </div>
 <p>We do not have the means yet to ask whether a complex formula <span class="math inline">\(\varphi\)</span> is true at a world in a model. To that purpose, we provide a recursive definition of a semantic relation between a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> and a formula <span class="math inline">\(\varphi\)</span>.</p>
@@ -398,49 +399,56 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example Continued
+Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Here is how to evaluate complex modal formulas at a world in the model:</p>
+<p>Evaluate each of the complex modal formulas given below at each possible world in the model:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/4d1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <ol type="1">
-<li><span class="math inline">\(p \to (p \to q)\)</span></li>
-</ol>
+<li><p><span class="math inline">\(p \to (p \to q)\)</span></p>
 <p>This formula is true at worlds <span class="math inline">\(w_1\)</span>, <span class="math inline">\(w_2\)</span> <span class="math inline">\(w_3\)</span> but <em>not</em> at <span class="math inline">\(w_4\)</span>.</p>
 <ul>
 <li><span class="math inline">\(M, w_4 \nVdash p \to (p \to q)\)</span> <em>because</em> <span class="math inline">\(M, w_4 \Vdash p\)</span>, yet <span class="math inline">\(M, w_4 \nVdash p \to q\)</span>. That is, <span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_4\)</span> but <span class="math inline">\(p\to q\)</span> is not true at <span class="math inline">\(w_4\)</span>.</li>
-</ul>
-<ol start="2" type="1">
-<li><span class="math inline">\(\Box p\)</span></li>
+</ul></li>
 </ol>
+<!-- -->
+<ol start="2" type="1">
+<li><p><span class="math inline">\(\Box p\)</span></p>
 <p>This formula is true exactly at worlds <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span>.</p>
 <ul>
-<li><p><span class="math inline">\(M, w_1 \nVdash \Box p\)</span> because <span class="math inline">\(Rw_1w_2\)</span> and <span class="math inline">\(M, w_2 \Vdash p\)</span>. That is, <span class="math inline">\(\Box p\)</span> is not true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(p\)</span> is not true at <span class="math inline">\(w_2\)</span>, which is world accessible from <span class="math inline">\(w_1\)</span>.</p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash \Box p\)</span> because <span class="math inline">\(Rw_1w_2\)</span> and <span class="math inline">\(M, w_2 \nVdash p\)</span>. That is, <span class="math inline">\(\Box p\)</span> is not true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(p\)</span> is not true at <span class="math inline">\(w_2\)</span>, which is world accessible from <span class="math inline">\(w_1\)</span>.</p></li>
+<li><p><span class="math inline">\(M, w_2 \nVdash \Box p\)</span> because <span class="math inline">\(Rw_2w_2\)</span> and <span class="math inline">\(M, w_2 \nVdash p\)</span>.</p></li>
 <li><p><span class="math inline">\(M, w_3 \Vdash \Box p\)</span> because for every <span class="math inline">\(u \in W\)</span>, if <span class="math inline">\(Rw_3 u\)</span>, then <span class="math inline">\(M, u \Vdash p\)</span>. That is <span class="math inline">\(p\)</span> is true at <em>all</em> worlds that are accessible from <span class="math inline">\(w_3\)</span>, namely, <span class="math inline">\(w_4\)</span>.</p></li>
 <li><p><span class="math inline">\(M, w_4 \Vdash \Box p\)</span> because for every <span class="math inline">\(u \in W\)</span>, if <span class="math inline">\(Rw_4 u\)</span>, then <span class="math inline">\(M, u \Vdash p\)</span>. That is <span class="math inline">\(p\)</span> is true at <em>all</em> worlds that are accessible from <span class="math inline">\(w_4\)</span> which in this case are none.</p></li>
-</ul>
-<ol start="3" type="1">
-<li><span class="math inline">\(\Diamond \Box p\)</span></li>
+</ul></li>
 </ol>
+<!-- -->
+<ol start="3" type="1">
+<li><p><span class="math inline">\(\Diamond \Box p\)</span></p>
 <p>This formula is true exactly at worlds <span class="math inline">\(w_1\)</span>, <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_3\)</span> but <em>not</em> at <span class="math inline">\(w_4\)</span>.</p>
 <ul>
 <li><p><span class="math inline">\(M, w_1 \Vdash \Diamond \Box p\)</span> because <span class="math inline">\(Rw_1w_3\)</span> and <span class="math inline">\(M, w_3 \Vdash \Box p\)</span>. That is, <span class="math inline">\(\Box p\)</span> is true at some world that is accessible from <span class="math inline">\(w_1\)</span>, namely, <span class="math inline">\(w_3\)</span>.</p></li>
-<li><p><span class="math inline">\(M, w_4 \Vdash \Diamond \Box p\)</span> because there is <em>no</em> <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rw_4u\)</span> and <span class="math inline">\(M, u \Vdash \Box p\)</span>. That is, since no world is accessible from <span class="math inline">\(w_4\)</span>, <span class="math inline">\(\Box p\)</span> is not true at a world that is accessible from <span class="math inline">\(w_4\)</span>.</p></li>
-</ul>
-<ol start="4" type="1">
-<li><span class="math inline">\(\Box (q \to p)\)</span></li>
+<li><p><span class="math inline">\(M, w_2 \Vdash \Diamond \Box p\)</span> because <span class="math inline">\(Rw_2w_3\)</span> and <span class="math inline">\(M, w_3 \Vdash \Box p\)</span>.</p></li>
+<li><p><span class="math inline">\(M, w_3 \nVdash \Diamond \Box p\)</span> because because there is <em>no</em> <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rw_3u\)</span> and <span class="math inline">\(M, u \Vdash \Box p\)</span>. Since no world is accessible from <span class="math inline">\(w_3\)</span>, <span class="math inline">\(\Box p\)</span> is not true at a world that is accessible from <span class="math inline">\(w_3\)</span>.</p></li>
+<li><p><span class="math inline">\(M, w_4 \nVdash \Diamond \Box p\)</span> because there is <em>no</em> <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rw_4u\)</span> and <span class="math inline">\(M, u \Vdash \Box p\)</span>.</p></li>
+</ul></li>
 </ol>
+<!-- -->
+<ol start="4" type="1">
+<li><p><span class="math inline">\(\Box (q \to p)\)</span></p>
 <p>This formula is true exactly at worlds <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span>.</p>
 <ul>
 <li><p><span class="math inline">\(M, w_1 \nVdash  \Box (q \to p)\)</span> because <span class="math inline">\(Rw_1w_2\)</span> and <span class="math inline">\(M, w_2 \nVdash q \to p\)</span>. That is, <span class="math inline">\(q \to p\)</span> is not true at every world that is accessible from <span class="math inline">\(w_1\)</span>, e.g., it is not true at <span class="math inline">\(w_3\)</span>.</p></li>
+<li><p><span class="math inline">\(M, w_2 \nVdash  \Box (q \to p)\)</span> because <span class="math inline">\(Rw_2w_2\)</span> and <span class="math inline">\(M, w_2 \nVdash q \to p\)</span>.</p></li>
 <li><p><span class="math inline">\(M, w_3 \Vdash  \Box (q \to p)\)</span> because for every <span class="math inline">\(u \in W\)</span>, if <span class="math inline">\(Rw_3 u\)</span>, then <span class="math inline">\(M, u \Vdash q \to p\)</span>. That is <span class="math inline">\(q \to p\)</span> is true at <em>all</em> worlds that are accessible from <span class="math inline">\(w_3\)</span>, namely, <span class="math inline">\(w_4\)</span>.</p></li>
 <li><p><span class="math inline">\(M, w_4 \Vdash \Box (q \to p)\)</span> because for every <span class="math inline">\(u \in W\)</span>, if <span class="math inline">\(Rw_4 u\)</span>, then <span class="math inline">\(M, u \Vdash q \to  p\)</span>. That is <span class="math inline">\(q \to p\)</span> is true at <em>all</em> worlds that are accessible from <span class="math inline">\(w_4\)</span> which in this case are none.</p></li>
-</ul>
+</ul></li>
+</ol>
 </div>
 </div>
 <p>We finally define what is for a formula to be true at a model.</p>
@@ -464,7 +472,7 @@ Truth at a Model
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example Continued
+Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -475,21 +483,22 @@ Example Continued
 </figure>
 </div>
 <ol type="1">
-<li><span class="math inline">\(\neg p \to \Diamond p\)</span></li>
-</ol>
+<li><p><span class="math inline">\(\neg p \to \Diamond p\)</span></p>
 <p>This formula is true <em>in the model</em> because it is true at all possible worlds.</p>
 <ul>
 <li><p><span class="math inline">\(\neg p \to \Diamond p\)</span> is true at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span> because <span class="math inline">\(\neg p\)</span> is not true at either world.</p></li>
 <li><p><span class="math inline">\(\neg p \to \Diamond p\)</span> is true at <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span> because <span class="math inline">\(\Diamond p\)</span> is true at both worlds: <span class="math inline">\(\Diamond p\)</span> is true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(Rw_1w_3\)</span> and <span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_3\)</span>, and <span class="math inline">\(\Diamond p\)</span> is true at <span class="math inline">\(w_2\)</span> because <span class="math inline">\(Rw_2w_3\)</span> and <span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_3\)</span>.</p></li>
-</ul>
-<ol start="2" type="1">
-<li><span class="math inline">\(p \to \Box q\)</span></li>
+</ul></li>
 </ol>
+<!-- -->
+<ol start="2" type="1">
+<li><p><span class="math inline">\(p \to \Box q\)</span></p>
 <p>This formula is true <em>in the model</em> because it is true at all possible worlds.</p>
 <ul>
 <li><p><span class="math inline">\(p \to \Box q\)</span> is true at <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span> because <span class="math inline">\(p\)</span> is not true at either world.</p></li>
 <li><p><span class="math inline">\(p \to \Box q\)</span> is true at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span> because <span class="math inline">\(\Box q\)</span> is true at both worlds: <span class="math inline">\(\Box q\)</span> is true at <span class="math inline">\(w_3\)</span> because <span class="math inline">\(q\)</span> is true at all worlds accessible from <span class="math inline">\(w_3\)</span>, namely, <span class="math inline">\(w_4\)</span>; <span class="math inline">\(\Box q\)</span> is true at <span class="math inline">\(w_4\)</span> because <span class="math inline">\(q\)</span> is true at all worlds accessible from <span class="math inline">\(w_4\)</span>, namely, none.</p></li>
-</ul>
+</ul></li>
+</ol>
 </div>
 </div>
 <section id="frames" class="level3" data-number="4.2.1">
@@ -525,6 +534,7 @@ Validity
 </div>
 <div class="callout-body-container callout-body">
 <p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a frame <span class="math inline">\((W, R)\)</span>, written <span class="math inline">\((W, R) \models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is true in every model <span class="math inline">\((W, R, V)\)</span> based on the frame <span class="math inline">\((W, R)\)</span>.</p>
+<p>That is, the formula remains true across assignments no matter what sets of worlds we assign to what propositional variables.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -543,7 +553,7 @@ Example
 <li><p><span class="math inline">\(\Box (p \wedge q) \leftrightarrow (\Box p \wedge \Box q)\)</span></p></li>
 </ol>
 <p>More generally, <span class="math inline">\(\Diamond\)</span> distributes over disjunction and <span class="math inline">\(\Box\)</span> distributes over conjunction. Both biconditionals are true at every world of every possible worlds model, which means that they are true in every model based on every frame.</p>
-<p>Here are two formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are <em>not</em> valid in every frame:</p>
+<p>Here are, on the other hand, two formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are <em>not</em> valid in every frame:</p>
 <ol start="3" type="1">
 <li><p><span class="math inline">\(\Diamond (p \wedge q) \leftrightarrow (\Diamond p \wedge \Diamond q)\)</span></p></li>
 <li><p><span class="math inline">\(\Box (p \vee q) \leftrightarrow (\Box p \vee \Box q)\)</span></p></li>
@@ -2075,9 +2085,9 @@ We conclude that <span class="math inline">\(V\)</span> verifies exactly those f
 <p><span class="theorem-title"><strong>Proposition 4.21</strong></span> The canonical model for a normal modal system <span class="math inline">\(\Sigma\)</span> satisfies each condition listed below if it includes as axioms all substitution instances of the corresponding axiom.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 44%">
-<col style="width: 36%">
+<col style="width: 23%">
+<col style="width: 41%">
+<col style="width: 34%">
 </colgroup>
 <thead>
 <tr class="header">
