@@ -219,7 +219,7 @@ window.Quarto = {
 <p>We introduce the syntax and semantics of the modal propositional language.</p>
 <section id="syntax" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">4.1</span> Syntax</h2>
-<p>We first specify the syntax of a modal propositional language:</p>
+<p>We first specify the syntax of a modal propositional language <span class="math inline">\(\mathcal{L}^\Box\)</span>:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -234,7 +234,7 @@ Modal Propositional Language
 <p><span class="math display">\[
 AT := p, q, r, \cdots
 \]</span></p>
-<p>We define the formulas of a propositional language <span class="math inline">\(\mathcal{L}\)</span> recursively:</p>
+<p>We define the formulas of a propositional language <span class="math inline">\(\mathcal{L}^\Box\)</span> recursively:</p>
 <p><span class="math display">\[
 \varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi) \ | \ \Box \varphi
 \]</span></p>
@@ -272,7 +272,7 @@ Induction on the Complexity of Formulas
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Given a condition <span class="math inline">\(\Phi(\alpha)\)</span> on formulas of <span class="math inline">\(\mathcal{L}\)</span>, if</p>
+<p>Given a condition <span class="math inline">\(\Phi(\alpha)\)</span> on formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span>, if</p>
 <ul>
 <li>all <em>atoms</em> satisfy <span class="math inline">\(\Phi(\alpha)\)</span>,</li>
 <li>whenever a formula <span class="math inline">\(\varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>, <span class="math inline">\(\neg \varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>,</li>
@@ -537,6 +537,7 @@ Validity
 <div class="callout-body-container callout-body">
 <p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a frame <span class="math inline">\((W, R)\)</span>, written <span class="math inline">\((W, R) \models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is true in every model <span class="math inline">\((W, R, V)\)</span> based on the frame <span class="math inline">\((W, R)\)</span>.</p>
 <p>That is, the formula remains true across assignments no matter what sets of worlds we assign to what propositional variables.</p>
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em>, written $\models $, if, and only if, <span class="math inline">\(\varphi\)</span> is valid in every frame <span class="math inline">\((W, R)\)</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -554,13 +555,13 @@ Example
 <li><p><span class="math inline">\(\Diamond (p \vee q) \leftrightarrow (\Diamond p \vee \Diamond q)\)</span></p></li>
 <li><p><span class="math inline">\(\Box (p \wedge q) \leftrightarrow (\Box p \wedge \Box q)\)</span></p></li>
 </ol>
-<p>More generally, <span class="math inline">\(\Diamond\)</span> distributes over disjunction and <span class="math inline">\(\Box\)</span> distributes over conjunction. Both biconditionals are true at every world of every possible worlds model, which means that they are true in every model based on every frame.</p>
+<p>The modal operators <span class="math inline">\(\Diamond\)</span> and <span class="math inline">\(\Box\)</span> distribute over disjunction and conjunction, respectively. These formulas are true at every world of every possible worlds model, which means that they are true in every model based on every frame.</p>
 <p>Here are, on the other hand, two formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are <em>not</em> valid in every frame:</p>
 <ol start="3" type="1">
 <li><p><span class="math inline">\(\Diamond (p \wedge q) \leftrightarrow (\Diamond p \wedge \Diamond q)\)</span></p></li>
 <li><p><span class="math inline">\(\Box (p \vee q) \leftrightarrow (\Box p \vee \Box q)\)</span></p></li>
 </ol>
-<p>For a counterexample to the validity distributivity of <span class="math inline">\(\Diamond\)</span> over conjunction in every frame, consider the model below:</p>
+<p>For a counterexample to the validity of the first formula, consider the model below:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/4d2-01.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -571,9 +572,9 @@ Example
 <li><p><span class="math inline">\(\Diamond p\)</span> is true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_2\)</span>, which is accessible from <span class="math inline">\(w_1\)</span></p></li>
 <li><p><span class="math inline">\(\Diamond q\)</span> is true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(q\)</span> is true at <span class="math inline">\(w_3\)</span>, which is accessible from <span class="math inline">\(w_1\)</span></p></li>
 </ul>
-<p>Yet, <span class="math inline">\(\Diamond (p \wedge q)\)</span> is false at <span class="math inline">\(w1\)</span> because <span class="math inline">\(p \wedge q\)</span> is not true at <em>any</em> world accessible from <span class="math inline">\(w_1\)</span>.</p>
-<p>Notice that the model doubles as a counterexample to distributivity of <span class="math inline">\(\Box\)</span> over <span class="math inline">\(\vee\)</span> in every frame:</p>
-<p>The formula <span class="math inline">\(\Box (p \vee q)\)</span> is true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(p \vee q\)</span> is true at <em>every</em> world accessible from <span class="math inline">\(w_1\)</span>:</p>
+<p>Yet, <span class="math inline">\(\Diamond (p \wedge q)\)</span> is false at <span class="math inline">\(w_1\)</span> since <span class="math inline">\(p \wedge q\)</span> is not true at <em>any</em> world accessible from <span class="math inline">\(w_1\)</span>.</p>
+<p>The model doubles as a counterexample to the validity of the second formula:</p>
+<p>Notice that <span class="math inline">\(\Box (p \vee q)\)</span> is true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(p \vee q\)</span> is true at <em>every</em> world accessible from <span class="math inline">\(w_1\)</span>:</p>
 <ul>
 <li><p><span class="math inline">\(p \vee q\)</span> is true at <span class="math inline">\(w_2\)</span> because <span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_2\)</span>.</p></li>
 <li><p><span class="math inline">\(p \vee q\)</span> is true at <span class="math inline">\(w_3\)</span> because <span class="math inline">\(q\)</span> is true at <span class="math inline">\(w_3\)</span>.</p></li>
@@ -584,6 +585,13 @@ Example
 <li><p><span class="math inline">\(\Box q\)</span> is not true at <span class="math inline">\(w_1\)</span> because <span class="math inline">\(q\)</span> is not true at <span class="math inline">\(w_2\)</span>, which is accessible from <span class="math inline">\(w_1\)</span>.</p></li>
 </ul>
 </div>
+</div>
+<div id="prp-val0" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.1</strong></span> The formula <span class="math inline">\(\Box (p \to q) \to (\Box p \to \Box q)\)</span> is valid in every frame.</p>
+</div>
+<div id="proof">
+<p>Let <span class="math inline">\((W, R)\)</span> be a frame, and let <span class="math inline">\((W, R, V)\)</span> be a model based on that frame. Let <span class="math inline">\(w\in W\)</span> be a world such that <span class="math inline">\((W, R, V), w \Vdash \Box(p \to q)\)</span>. Suppose further that <span class="math inline">\((W, R, V), w \Vdash \Box p\)</span>. We set out to argue that <span class="math inline">\((W, V, R), w \Vdash \Box q\)</span>. For let <span class="math inline">\(u \in W\)</span> be such that <span class="math inline">\(Rwu\)</span>. By assumption, <span class="math inline">\((W, R, V), u \Vdash p \to q\)</span> and <span class="math inline">\((W, R, V), u \Vdash p\)</span>. It follows that <span class="math inline">\((W, R, V), u \Vdash q\)</span>. Generalizing, for every <span class="math inline">\(u \in W\)</span> such that <span class="math inline">\(Rwu\)</span>, <span class="math inline">\(W, R, V), u \Vdash q\)</span>, whence <span class="math inline">\((W, R, V), w \Vdash \Box q\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>We will often restrict attention to a class of frames and ask which formulas are valid in all and only those frames in the class.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -600,7 +608,7 @@ Validity in a Class of Frames
 </div>
 </div>
 <div id="prp-val" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.1</strong></span> Each formula listed below is valid in a frame <em>if</em> the accessibility relation satisfies the relevant condition.</p>
+<p><span class="theorem-title"><strong>Proposition 4.2</strong></span> Each formula listed below is valid in a frame <em>if</em> the accessibility relation satisfies the relevant condition.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -638,13 +646,13 @@ Validity in a Class of Frames
 </tbody>
 </table>
 </div>
-<div id="proof">
+<div>
 <p><strong>Proof</strong>. We look at each case in turn:</p>
 <ol type="1">
 <li><span class="math inline">\(\textsf{T}\)</span> is valid in all reflexive frames.</li>
 </ol>
 <ul>
-<li>Let <span class="math inline">\((W, R, V)\)</span> be a model based on a reflexive frame <span class="math inline">\((W, R)\)</span>. Given <span class="math inline">\(w \in W\)</span>, suppose <span class="math inline">\((W, R, V), w \Vdash \Box p\)</span>, which means that for all <span class="math inline">\(u\in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then <span class="math inline">\(u \in V(p)\)</span>. Since <span class="math inline">\(R\)</span> is reflexive, <span class="math inline">\(Rww\)</span> and <span class="math inline">\(w \in V(p)\)</span>. So, <span class="math inline">\((W, R, V), w \Vdash \Box p\)</span> and <span class="math inline">\((W, R, V), w \Vdash \Box p \to p\)</span>. Generalizing, we conclude <span class="math inline">\((W, R, V) \Vdash \Box p\)</span>.</li>
+<li>Let <span class="math inline">\((W, R, V)\)</span> be a model based on a reflexive frame <span class="math inline">\((W, R)\)</span>. Given <span class="math inline">\(w \in W\)</span>, suppose <span class="math inline">\((W, R, V), w \Vdash \Box p\)</span>, which means that for all <span class="math inline">\(u\in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then <span class="math inline">\(u \in V(p)\)</span>. Since <span class="math inline">\(R\)</span> is reflexive, <span class="math inline">\(Rww\)</span> and <span class="math inline">\(w \in V(p)\)</span>. So, <span class="math inline">\((W, R, V), w \Vdash \Box p\)</span> and <span class="math inline">\((W, R, V), w \Vdash \Box p \to p\)</span>. Generalizing, we conclude <span class="math inline">\((W, R, V) \Vdash \Box p \to p\)</span>.</li>
 </ul>
 <ol start="2" type="1">
 <li><span class="math inline">\(\textsf{B}\)</span> is valid in all symmetric frames.</li>
@@ -671,7 +679,7 @@ Validity in a Class of Frames
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="frame-definability"><span class="header-section-number">4.2.2</span> Frame Definability</h3>
 <p>The success of the possible worlds semantics is connected to the fact that it sheds new light on modal principles via systematic correspondences between the validity of those principles and certain structural features of the modal accesssibility relation <span class="math inline">\(R\)</span> on a set of worlds <span class="math inline">\(W\)</span> in a frame <span class="math inline">\((W, R)\)</span>.</p>
 <div id="prp-val1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.2</strong></span> Each formula listed below is valid in a frame <em>only if</em> the accessibility relation satisfies the relevant condition.</p>
+<p><span class="theorem-title"><strong>Proposition 4.3</strong></span> Each formula listed below is valid in a frame <em>only if</em> the accessibility relation satisfies the relevant condition.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -875,7 +883,7 @@ Converse Well-Founded
 </div>
 </div>
 <div id="prp-cwf" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.3</strong></span> The class of transitive converse well-founded frames is <em>not</em> first-order definable.</p>
+<p><span class="theorem-title"><strong>Proposition 4.4</strong></span> The class of transitive converse well-founded frames is <em>not</em> first-order definable.</p>
 </div>
 <p>This is a consequence of the Compactness Theorem for first-order logic: if a set of first-order formulas <span class="math inline">\(\Gamma\)</span> is finitely satisfiable, then <span class="math inline">\(\Gamma\)</span> is finitely satisfiable.</p>
 <div>
@@ -888,7 +896,7 @@ Converse Well-Founded
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="prp-tcwf1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.4</strong></span> <span class="math inline">\(\Box (\Box p \to p) \to \Box p\)</span> modally defines the class of converse well-founded frames.</p>
+<p><span class="theorem-title"><strong>Proposition 4.5</strong></span> <span class="math inline">\(\Box (\Box p \to p) \to \Box p\)</span> modally defines the class of converse well-founded frames.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. We want to prove that for all frames <span class="math inline">\((W, R)\)</span>,</p>
@@ -956,7 +964,7 @@ Example
 </div>
 </div>
 <div id="prp-inv" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.5 (Invariance Lemma)</strong></span> If there is a bisimulation <span class="math inline">\(E\)</span> between two models <span class="math inline">\((W, R, V)\)</span> and <span class="math inline">\((W', R', V')\)</span>, then for all <span class="math inline">\(w\in W\)</span>, for all <span class="math inline">\(w'\in W'\)</span>, if <span class="math inline">\(wEw'\)</span>, the for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>: <span class="math display">\[
+<p><span class="theorem-title"><strong>Proposition 4.6 (Invariance Lemma)</strong></span> If there is a bisimulation <span class="math inline">\(E\)</span> between two models <span class="math inline">\((W, R, V)\)</span> and <span class="math inline">\((W', R', V')\)</span>, then for all <span class="math inline">\(w\in W\)</span>, for all <span class="math inline">\(w'\in W'\)</span>, if <span class="math inline">\(wEw'\)</span>, the for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>: <span class="math display">\[
 \begin{array}{lll}
 (W, R), w \Vdash \varphi &amp; \text{iff} &amp;  (W', R'), w' \Vdash \varphi.
 \end{array}
@@ -1028,7 +1036,7 @@ Example
 </div>
 </div>
 <div id="prp-irref" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.6 (Modal Undefinability for Irreflexive Frames)</strong></span> No formula of <span class="math inline">\(\mathcal{L}^\Box\)</span> modally defines the class of <em>irreflexive</em> frames.</p>
+<p><span class="theorem-title"><strong>Proposition 4.7 (Modal Undefinability for Irreflexive Frames)</strong></span> No formula of <span class="math inline">\(\mathcal{L}^\Box\)</span> modally defines the class of <em>irreflexive</em> frames.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. No formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> is valid in all and only irreflexive frames. For suppose <span class="math inline">\(\varphi\)</span> is valid <em>only in</em> irreflexive frames. That means that if <span class="math inline">\(R\)</span> is not irreflexive on <span class="math inline">\(W\)</span>, then there is some model <span class="math inline">\((W, R, V)\)</span> based on <span class="math inline">\((W, R)\)</span> such that <span class="math inline">\((W, R, V) \nVdash \varphi\)</span>. Then, given our previous observation, there is a bisimilar <em>irreflexive</em> model <span class="math inline">\((W', R', V')\)</span> where <span class="math inline">\((W', R', V') \nVdash \varphi\)</span>. But notice that since <span class="math inline">\((W', R', V')\)</span> is based on an irreflexive frame <span class="math inline">\((W', R')\)</span>, we conclude that <span class="math inline">\(\varphi\)</span> is not valid in <em>all</em> irreflexive frames.</p>
@@ -1259,7 +1267,7 @@ Theorem
 </div>
 <p>The axioms of the minimal modal logic <span class="math inline">\(K\)</span> are valid in all frames, and the rules of inference preserve validity in all frames. So, every theorem of <span class="math inline">\(K\)</span> is valid in every frame.</p>
 <div id="prp-K" class="theorem proposition" data-k="">
-<p><span class="theorem-title"><strong>Proposition 4.7</strong></span> All substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span> is valid in all frames. <span class="math display">\[\tag{$\textsf{K}$}
+<p><span class="theorem-title"><strong>Proposition 4.8</strong></span> All substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span> is valid in all frames. <span class="math display">\[\tag{$\textsf{K}$}
 \Box(p \to  q) \to (\Box p \to \Box q)\\
 \]</span></p>
 </div>
@@ -1276,7 +1284,7 @@ Theorem
 <h4 data-number="4.3.1.1" class="anchored" data-anchor-id="derived-rules-of-inference"><span class="header-section-number">4.3.1.1</span> Derived Rules of Inference</h4>
 <p>One important observation at this poins is that we are entitled to propositional inferences within the system. If two formulas are propositionally equivalent, then you should feel free to move from one to the other. Here is a formal justification of that fact.</p>
 <div id="prp-d1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.8</strong></span> If <span class="math inline">\(\vdash_{\textsf{K}} \varphi_1, \dots, \vdash_{\textsf{K}} \varphi_n\)</span> and <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\vdash_{\textsf{K}} \psi\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 4.9</strong></span> If <span class="math inline">\(\vdash_{\textsf{K}} \varphi_1, \dots, \vdash_{\textsf{K}} \varphi_n\)</span> and <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\vdash_{\textsf{K}} \psi\)</span>.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. Given the Deduction Theorem for <em>Propositional Logic</em>, if <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\varphi_1 \to (\varphi_2 \to (\dots (\varphi_n \to \psi)\dots))\)</span> is a theorem of propositional logic and thus a theorem of <span class="math inline">\(K\)</span>. By repeated applications of Modus Ponens, we infer <span class="math inline">\(\vdash_\textsf{K} \psi\)</span>.</p>
@@ -1317,7 +1325,7 @@ Two Derived Rules of Inference
 </div>
 </div>
 <div id="prp-d3" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.9</strong></span> If <span class="math inline">\(\vdash_\textsf{K} \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_\textsf{K} \Diamond \varphi \to \Diamond \psi\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 4.10</strong></span> If <span class="math inline">\(\vdash_\textsf{K} \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_\textsf{K} \Diamond \varphi \to \Diamond \psi\)</span>.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. We may transform a proof of <span class="math inline">\(\varphi \to \psi\)</span> into a proof of <span class="math inline">\(\Diamond \varphi \to \Diamond \psi\)</span> <span class="math display">\[
@@ -1369,7 +1377,7 @@ Example
 <h4 data-number="4.3.1.2" class="anchored" data-anchor-id="theorems-of-textsfk"><span class="header-section-number">4.3.1.2</span> Theorems of <span class="math inline">\(\textsf{K}\)</span></h4>
 <p>We now exploit some of these derived rules of inference to prove some theorems of the minimal normal modal logic <span class="math inline">\(\textsf{K}\)</span>.</p>
 <div id="prp-d4" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.10</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.11</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi)\)</span></p>
 </div>
 <div>
 <p><span class="math display">\[
@@ -1388,7 +1396,7 @@ Example
 <p>For <span class="math inline">\(\Diamond p \wedge \Box (p \to q) \to \Diamond q\)</span> is propositionally equivalent to <span class="math inline">\(\Box (p \to q) \to (\Diamond p \to \Diamond q)\)</span>.</p>
 <p>Other well-known theorems of the minimal logic K are principles such as the distribution of <span class="math inline">\(\Box\)</span> over <span class="math inline">\(\wedge\)</span> and the distribution of <span class="math inline">\(\Diamond\)</span> over <span class="math inline">\(\vee\)</span>.</p>
 <div id="prp-d5" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.11</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box(\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.12</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box(\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi)\)</span></p>
 </div>
 <div>
 <p><span class="math display">\[
@@ -1402,7 +1410,7 @@ Example
 \]</span></p>
 </div>
 <div id="prp-d6" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.12</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.13</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi)\)</span></p>
 </div>
 <div>
 <p>This proof combines the use of a distribution rule with an instance of K. <span class="math display">\[
@@ -1416,7 +1424,7 @@ Example
 \]</span></p>
 </div>
 <div id="prp-d7" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.13</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.14</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi)\)</span></p>
 </div>
 <div>
 <p>The strategy behind the proof is to exploit the fact that <span class="math inline">\(\Diamond\)</span> is a dual of <span class="math inline">\(\Box\)</span>, that is, <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, and the fact that the negation of a disjunction is propositionally equivalent to a conjunction of negations. When we combine them with the fact that <span class="math inline">\(\Box\)</span> distributes over <span class="math inline">\(\wedge\)</span>, we have a proof ot the principle.</p>
@@ -1436,7 +1444,7 @@ Example
 \]</span></p>
 </div>
 <div id="prp-d8" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.14</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.15</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi)\)</span></p>
 </div>
 <div>
 <p>This time we exploit the fact that a conjunction of necessitations entails the necessitation of a conjunction. <span class="math display">\[
@@ -1457,7 +1465,7 @@ Example
 </div>
 <p>We conclude with another helpful theorem of <span class="math inline">\(\textsf{K}\)</span>.</p>
 <div id="prp-d9" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.15</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.16</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi)\)</span></p>
 </div>
 <div>
 <p><span class="math display">\[
@@ -1641,7 +1649,7 @@ Extension
 </table>
 <p>There are two main techniques we use in order to justify the diagram. To argue that a modal system <span class="math inline">\(\Sigma\)</span> extends a system <span class="math inline">\(\Delta\)</span>, we argue that every axiom of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
 <div id="prp-e1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.16</strong></span> <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> if <span class="math inline">\(\Sigma\)</span> proves every axiom of <span class="math inline">\(\Delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 4.17</strong></span> <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> if <span class="math inline">\(\Sigma\)</span> proves every axiom of <span class="math inline">\(\Delta\)</span>.</p>
 </div>
 <div>
 <p><strong>Proof</strong>. Since <span class="math inline">\(\Delta\)</span> and <span class="math inline">\(\Sigma\)</span> share the same rules of inference, if every axiom of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>, then every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
@@ -1680,12 +1688,12 @@ Example
 </table>
 <p>We will see that the normal modal systems <span class="math inline">\(\textsf{KT}\)</span> and <span class="math inline">\(\textsf{KD}\)</span> are sound and complete with respect to the class of reflexive and serial frames, respectively. That means that the theorems of <span class="math inline">\(\textsf{KT}\)</span>are exactly those formulas that are valid in all reflexive frames. And the theorems of $\textsf{KD}$ are the formulas that are valid in all serial frames. Now:</p>
 <div id="prp-e2" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.17</strong></span> Every reflexive frame is serial.</p>
+<p><span class="theorem-title"><strong>Proposition 4.18</strong></span> Every reflexive frame is serial.</p>
 </div>
 <p>That means that if a formula is valid in all serial frames, then it will be valid in all reflexive frames. The soundness and completeness theorems for <span class="math inline">\(KD\)</span> and <span class="math inline">\(KT\)</span> will deliver a semantic route to the conclusion that every theorem of <span class="math inline">\(KD\)</span> is a theorem of <span class="math inline">\(KT\)</span>.</p>
 <p>On the other hand, the fact that <span class="math inline">\(T\)</span> defines the class of reflexive frames suggests a semantic argument for the conclusion that <span class="math inline">\(KD\)</span> does <em>not</em> extend <span class="math inline">\(KT\)</span>.</p>
 <div id="prp-e3" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.18</strong></span> If every theorem of <span class="math inline">\(\Sigma\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\Delta\not \sqsubseteq \Sigma\)</span> if not every axiom of <span class="math inline">\(\Delta\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 4.19</strong></span> If every theorem of <span class="math inline">\(\Sigma\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\Delta\not \sqsubseteq \Sigma\)</span> if not every axiom of <span class="math inline">\(\Delta\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
 </div>
 <div>
 
@@ -1934,7 +1942,7 @@ Accessibility
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="prp-e4" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.19</strong></span> If <span class="math inline">\(\Sigma\)</span> is a normal modal system and <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas, then:</p>
+<p><span class="theorem-title"><strong>Proposition 4.20</strong></span> If <span class="math inline">\(\Sigma\)</span> is a normal modal system and <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas, then:</p>
 <p><span class="math display">\[
 \begin{array}{llll}4. &amp; \Diamond \varphi \in \Gamma &amp; \text{iff} &amp; \text{for some} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\\end{array}
 \]</span></p>
@@ -2005,7 +2013,7 @@ Canonical Model
 </div>
 <p>The interest of canonical models is that they are governed by the truth lemma according to which a world in the canonical model for <span class="math inline">\(\Sigma\)</span> verifies a modal formula <span class="math inline">\(\varphi\)</span> if, and only if, that very formula is a member of the world conceived as a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas.</p>
 <div id="prp-e5" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.20 (Truth Lemma)</strong></span> For each maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas <span class="math inline">\(\Gamma\)</span>,</p>
+<p><span class="theorem-title"><strong>Proposition 4.21 (Truth Lemma)</strong></span> For each maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas <span class="math inline">\(\Gamma\)</span>,</p>
 <p><span class="math display">\[
 \begin{array}{lll}(W_\Sigma, R_\Sigma, V_\Sigma), \Gamma \Vdash \varphi &amp;  \text{iff} &amp;  \varphi \in \Gamma\\\end{array}
 \]</span></p>
@@ -2084,11 +2092,11 @@ We conclude that <span class="math inline">\(V\)</span> verifies exactly those f
 </div>
 <p>In order to facilitate the proof of completeness theorems for further normal modal systems, we will argue that there is a correlation between the derivability of all substitution instances of certain axioms and certain features of the accessibility relation for the canonical model for a modal system.</p>
 <div id="prp-cm" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.21</strong></span> The canonical model for a normal modal system <span class="math inline">\(\Sigma\)</span> satisfies each condition listed below if it includes as axioms all substitution instances of the corresponding axiom.</p>
+<p><span class="theorem-title"><strong>Proposition 4.22</strong></span> The canonical model for a normal modal system <span class="math inline">\(\Sigma\)</span> satisfies each condition listed below if it includes as axioms all substitution instances of the corresponding axiom.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 41%">
+<col style="width: 25%">
+<col style="width: 40%">
 <col style="width: 34%">
 </colgroup>
 <thead>
