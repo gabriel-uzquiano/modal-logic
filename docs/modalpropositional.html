@@ -1247,8 +1247,8 @@ Derivation
 <p>A <em>derivation</em> in <span class="math inline">\(\textsf{K}\)</span> is, as usual, a finite sequence of formulas <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, each of them</p>
 <ul>
 <li>a substitution instance of <span class="math inline">\(\textsf{K}\)</span></li>
-<li>the outcome of an application of <span class="math inline">\(\textsf{MP}\)</span> to two prior formulas</li>
-<li>the outcome of an application of <span class="math inline">\(\textsf{N}\)</span> to a prior formula</li>
+<li>an outcome of an application of <span class="math inline">\(\textsf{MP}\)</span> to two prior formulas</li>
+<li>an outcome of an application of <span class="math inline">\(\textsf{N}\)</span> to a prior formula</li>
 </ul>
 </div>
 </div>
@@ -1282,7 +1282,7 @@ Theorem
 <p>While it is a purely mechanical procedure to check whether a finite sequence of formulas is a proof in a given system, it may take some skill and experience to find one. There is no perfectly general recipe for this, but as a general piece of advice, it helps to spend some time considering the question of why the formula should be valid. Since proofs and theorems of <span class="math inline">\(\textsf{K}\)</span> track validity in all frames, the question of validity may on occasion guide us to a proof.</p>
 <section id="derived-rules-of-inference" class="level4" data-number="4.3.1.1">
 <h4 data-number="4.3.1.1" class="anchored" data-anchor-id="derived-rules-of-inference"><span class="header-section-number">4.3.1.1</span> Derived Rules of Inference</h4>
-<p>One important observation at this poins is that we are entitled to propositional inferences within the system. If two formulas are propositionally equivalent, then you should feel free to move from one to the other. Here is a formal justification of that fact.</p>
+<p>One important observation at this point is that we are entitled to propositional inferences within the system. If two formulas are propositionally equivalent, then you should feel free to move from one to the other. Here is a formal justification of that fact.</p>
 <div id="prp-d1" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.9</strong></span> If <span class="math inline">\(\vdash_{\textsf{K}} \varphi_1, \dots, \vdash_{\textsf{K}} \varphi_n\)</span> and <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\vdash_{\textsf{K}} \psi\)</span>.</p>
 </div>
@@ -1297,10 +1297,10 @@ Theorem
 <div>
 <p><strong>Proof</strong>. We may transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\varphi \to \Box \psi\)</span>. <span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; \varphi \to \psi &amp; \text{Given}\\
-2 &amp; &amp; \Box (\varphi \to \psi) &amp; \text{RN} \ 1\\
-3  &amp; &amp; \Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi) &amp; K[\varphi/p, \psi/q]\\
-4 &amp; &amp; \Box \varphi \to \Box \psi &amp; \text{MP} \ 2, 3\\
+1 &amp; &amp; \varphi \to \psi &amp; \\
+2 &amp; &amp; \Box (\varphi \to \psi) &amp; \textsf{RN} \ 1\\
+3  &amp; &amp; \Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi) &amp; \textsf{K}[\varphi/p, \psi/q]\\
+4 &amp; &amp; \Box \varphi \to \Box \psi &amp; \textsf{MP} \ 2, 3\\
 \end{array}
 \]</span></p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
@@ -1369,7 +1369,7 @@ Example
 <p><span class="math display">\[\tag{$\textsf{RK}\Box \Diamond$}
 \text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \Diamond \varphi \to \Box \Diamond \psi
 \]</span> Here is how to transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\Box \Diamond \varphi \to \Box \Diamond \psi\)</span>:</p>
-<p>$$ \begin{array}{lllll} 1 &amp; &amp; \varphi \to \psi &amp; \text{Given}\\ 2 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \text{RK}\Diamond \ 1\\ 3 &amp; &amp; \Box \Diamond \varphi \to \Box \Diamond \psi &amp; \text{RK} \ 2\\ \end{array} $$</p>
+<p>$$ \begin{array}{lllll} 1 &amp; &amp; \varphi \to \psi &amp; \\ 2 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \textsf{RK}\Diamond \ 1\\ 3 &amp; &amp; \Box \Diamond \varphi \to \Box \Diamond \psi &amp; \textsf{RK} \ 2\\ \end{array} $$</p>
 </div>
 </div>
 </section>
@@ -1401,11 +1401,11 @@ Example
 <div>
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; (\varphi \wedge \psi) \to \varphi &amp; \text{PL} \\
-2 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \varphi &amp; \text{RK} \ 1 \\
-3 &amp; &amp; (\varphi \wedge \psi) \to \psi &amp; \text{PL} \\
-4 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \psi &amp; \text{RK} \ 3 \\
-5 &amp; &amp; \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi) &amp; \text{PL} \ 2, 4\\
+1 &amp; &amp; (\varphi \wedge \psi) \to \varphi &amp; \textsf{PL} \\
+2 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \varphi &amp; \textsf{RK} \ 1 \\
+3 &amp; &amp; (\varphi \wedge \psi) \to \psi &amp; \textsf{PL} \\
+4 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \psi &amp; \textsf{RK} \ 3 \\
+5 &amp; &amp; \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi) &amp; \textsf{PL} \ 2, 4\\
 \end{array}
 \]</span></p>
 </div>
@@ -1415,11 +1415,11 @@ Example
 <div>
 <p>This proof combines the use of a distribution rule with an instance of K. <span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; \varphi \to (\psi \to (\varphi \wedge \psi)) &amp; \text{PL} \\
-2 &amp; &amp; \Box \varphi \to \Box (\psi \to (\varphi \wedge \psi)) &amp; \text{RK} \ 1\\
-3 &amp; &amp; \Box (\psi \to (\varphi \wedge \psi)) \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \text{K}[\psi/p, (\varphi \wedge \psi)/q]\\
-4 &amp; &amp; \Box \varphi \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \text{PL} \ 2, 3\\
-5 &amp; &amp; (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi) &amp; \text{PL} \ 4\\
+1 &amp; &amp; \varphi \to (\psi \to (\varphi \wedge \psi)) &amp; \textsf{PL} \\
+2 &amp; &amp; \Box \varphi \to \Box (\psi \to (\varphi \wedge \psi)) &amp; \textsf{RK} \ 1\\
+3 &amp; &amp; \Box (\psi \to (\varphi \wedge \psi)) \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \textsf{K}[\psi/p, (\varphi \wedge \psi)/q]\\
+4 &amp; &amp; \Box \varphi \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \textsf{PL} \ 2, 3\\
+5 &amp; &amp; (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi) &amp; \textsf{PL} \ 4\\
 \end{array}
 \]</span></p>
 </div>
@@ -1430,16 +1430,16 @@ Example
 <p>The strategy behind the proof is to exploit the fact that <span class="math inline">\(\Diamond\)</span> is a dual of <span class="math inline">\(\Box\)</span>, that is, <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, and the fact that the negation of a disjunction is propositionally equivalent to a conjunction of negations. When we combine them with the fact that <span class="math inline">\(\Box\)</span> distributes over <span class="math inline">\(\wedge\)</span>, we have a proof ot the principle.</p>
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \text{Def} \ \Diamond\\
-2 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \Box \neg (\varphi \vee \psi) &amp; \text{PL} \ 1\\
-3 &amp; &amp; \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) &amp; \text{PL}\\
-4 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \text{RK} \ 3\\
-5 &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \text{Prop} \ 7.5\\
-6 &amp; &amp; (\Box \neg \varphi \wedge \Box \neg \psi)  \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \text{PL} \\
-7 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi)  \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \text{Def} \ \Diamond\\
-8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \text{PL} \ 5, 6, 7\\
-9 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \text{PL} \ 2, 8\\
-10 &amp; &amp; (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) &amp; \text{PL} \ 9\\
+1 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \textsf{Def} \ \Diamond\\
+2 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \ 1\\
+3 &amp; &amp; \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) &amp; \textsf{PL}\\
+4 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{RK} \ 3\\
+5 &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{Prop} \ 7.5\\
+6 &amp; &amp; (\Box \neg \varphi \wedge \Box \neg \psi)  \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \textsf{PL} \\
+7 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi)  \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{Def} \ \Diamond\\
+8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 5, 6, 7\\
+9 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 2, 8\\
+10 &amp; &amp; (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) &amp; \textsf{PL} \ 9\\
 \end{array}
 \]</span></p>
 </div>
@@ -1449,17 +1449,17 @@ Example
 <div>
 <p>This time we exploit the fact that a conjunction of necessitations entails the necessitation of a conjunction. <span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \text{Def} \ \Diamond \\
-2 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \text{PL} \\
-3 &amp; &amp; (\Box \neg \varphi \wedge \Box \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \text{Prop} \ 7.6\\
-4 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \text{PL} \ 1, 2, 3\\
-5 &amp; &amp; (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) &amp; \text{PL} \\
-6  &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) &amp; \text{RK} \ 5 \\
-7 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box \neg (\varphi \vee \psi) &amp; \text{PL} \ 4, 6\\
-8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \text{PL} \\
-9 &amp; &amp; \neg \neg \Box \neg (\varphi \vee \psi) \to \neg \Diamond (\varphi \vee \psi) &amp; \text{Def} \ \Diamond\\
-10 &amp;  &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) &amp;  \text{PL} \ 7, 8, 9\\
-11 &amp; &amp; \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) &amp; \text{PL} \ 10
+1 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \textsf{Def} \ \Diamond \\
+2 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{PL} \\
+3 &amp; &amp; (\Box \neg \varphi \wedge \Box \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{Prop} \ 7.6\\
+4 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{PL} \ 1, 2, 3\\
+5 &amp; &amp; (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) &amp; \textsf{PL} \\
+6  &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{RK} \ 5 \\
+7 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \ 4, 6\\
+8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \\
+9 &amp; &amp; \neg \neg \Box \neg (\varphi \vee \psi) \to \neg \Diamond (\varphi \vee \psi) &amp; \textsf{Def} \ \Diamond\\
+10 &amp;  &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) &amp;  \textsf{PL} \ 7, 8, 9\\
+11 &amp; &amp; \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 10
 \end{array}
 \]</span></p>
 </div>
@@ -1470,17 +1470,17 @@ Example
 <div>
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; \neg (\varphi \wedge \psi) \to (\psi \to \neg \varphi) &amp; \text{PL} \\
-2 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to \Box (\psi \to \neg \varphi) &amp; \text{RK} \ 1 \\
-3 &amp; &amp; \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) &amp;  \text{K}[\psi/p, \neg \varphi/q] \\
-4 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi)  &amp; \text{PL} \ 2, 3\\
-5 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \neg \Box \neg (\varphi \wedge \psi) &amp; \text{PL} \ 4 \\
-6 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \text{Def} \ \Diamond \\
-7 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \neg (\Box \psi \to \Box \neg \varphi) &amp; \text{PL} \\
-8 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \text{PL} \ 6, 7\\
-9 &amp; &amp; (\Box \psi \wedge \Diamond \varphi) \to (\Box \psi \wedge \neg \Box \neg \varphi) &amp; \text{Def} \ \Diamond\\
-10 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to (\Box \psi \wedge \Diamond \varphi) &amp; \text{PL} \\
-11 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) &amp; \text{PL} \ 8, 9, 10\\
+1 &amp; &amp; \neg (\varphi \wedge \psi) \to (\psi \to \neg \varphi) &amp; \textsf{PL} \\
+2 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to \Box (\psi \to \neg \varphi) &amp; \textsf{RK} \ 1 \\
+3 &amp; &amp; \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) &amp;  \textsf{K}[\psi/p, \neg \varphi/q] \\
+4 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi)  &amp; \textsf{PL} \ 2, 3\\
+5 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \neg \Box \neg (\varphi \wedge \psi) &amp; \textsf{PL} \ 4 \\
+6 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{Def} \ \Diamond \\
+7 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \neg (\Box \psi \to \Box \neg \varphi) &amp; \textsf{PL} \\
+8 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{PL} \ 6, 7\\
+9 &amp; &amp; (\Box \psi \wedge \Diamond \varphi) \to (\Box \psi \wedge \neg \Box \neg \varphi) &amp; \textsf{Def} \ \Diamond\\
+10 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to (\Box \psi \wedge \Diamond \varphi) &amp; \textsf{PL} \\
+11 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{PL} \ 8, 9, 10\\
 \end{array}
 \]</span></p>
 </div>
