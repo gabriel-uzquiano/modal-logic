@@ -1265,7 +1265,7 @@ Theorem
 <p>A formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> is a <em>theorem</em> of <span class="math inline">\(\textsf{K}\)</span>, written <span class="math inline">\(\vdash_{\textsf{K}} \varphi\)</span>, if, and only if, some proof in K ends with the formula <span class="math inline">\(\varphi\)</span>.</p>
 </div>
 </div>
-<p>The axioms of the minimal modal logic <span class="math inline">\(K\)</span> are valid in all frames, and the rules of inference preserve validity in all frames. So, every theorem of <span class="math inline">\(K\)</span> is valid in every frame.</p>
+<p>The axioms of the minimal modal logic <span class="math inline">\(\textsf{K}\)</span> are valid in all frames, and the rules of inference preserve validity in all frames. So, every theorem of <span class="math inline">\(\textsf{K}\)</span> is valid in every frame.</p>
 <div id="prp-K" class="theorem proposition" data-k="">
 <p><span class="theorem-title"><strong>Proposition 4.8</strong></span> All substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span> is valid in all frames. <span class="math display">\[\tag{$\textsf{K}$}
 \Box(p \to  q) \to (\Box p \to \Box q)\\
@@ -1686,23 +1686,33 @@ Example
 </tr>
 </tbody>
 </table>
-<p>We will see that the normal modal systems <span class="math inline">\(\textsf{KT}\)</span> and <span class="math inline">\(\textsf{KD}\)</span> are sound and complete with respect to the class of reflexive and serial frames, respectively. That means that the theorems of <span class="math inline">\(\textsf{KT}\)</span>are exactly those formulas that are valid in all reflexive frames. And the theorems of $\textsf{KD}$ are the formulas that are valid in all serial frames. Now:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Soundness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A modal system <span class="math inline">\(\Sigma\)</span> is <em>sound</em> with respect to a class of frames <span class="math inline">\(\mathcal{C}\)</span> if, and only if, for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, <span class="math inline">\(\vdash_{\Sigma} \varphi\)</span> only if <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span>.</p>
+</div>
+</div>
+<p>We will see that the normal modal systems <span class="math inline">\(\textsf{KT}\)</span> and <span class="math inline">\(\textsf{KD}\)</span> are sound and complete with respect to the class of reflexive and serial frames, respectively. That means that the theorems of <span class="math inline">\(\textsf{KT}\)</span> are exactly those formulas that are valid in all reflexive frames. And the theorems of <span class="math inline">\(\textsf{KD}\)</span> are the formulas that are valid in all serial frames. Now:</p>
 <div id="prp-e2" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.18</strong></span> Every reflexive frame is serial.</p>
 </div>
-<p>That means that if a formula is valid in all serial frames, then it will be valid in all reflexive frames. The soundness and completeness theorems for <span class="math inline">\(KD\)</span> and <span class="math inline">\(KT\)</span> will deliver a semantic route to the conclusion that every theorem of <span class="math inline">\(KD\)</span> is a theorem of <span class="math inline">\(KT\)</span>.</p>
-<p>On the other hand, the fact that <span class="math inline">\(T\)</span> defines the class of reflexive frames suggests a semantic argument for the conclusion that <span class="math inline">\(KD\)</span> does <em>not</em> extend <span class="math inline">\(KT\)</span>.</p>
+<p>That means that if a formula is valid in all serial frames, then it will be valid in all reflexive frames. The soundness and completeness theorems for <span class="math inline">\(\textsf{KD}\)</span> and <span class="math inline">\(\textsf{KT}\)</span> will deliver a semantic route to the conclusion that every theorem of <span class="math inline">\(\textsf{KD}\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span> .</p>
+<p>On the other hand, the fact that <span class="math inline">\(\textsf{T}\)</span> defines the class of reflexive frames suggests a semantic argument for the conclusion that <span class="math inline">\(\textsf{KD}\)</span> does <em>not</em> extend <span class="math inline">\(\textsf{KT}\)</span> .</p>
 <div id="prp-e3" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 4.19</strong></span> If every theorem of <span class="math inline">\(\Sigma\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\Delta\not \sqsubseteq \Sigma\)</span> if not every axiom of <span class="math inline">\(\Delta\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
-</div>
-<div>
-
 </div>
 <div>
 <p><strong>Proof</strong>. If an axiom <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\Delta\)</span> is <em>not</em> valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\Sigma\)</span>. That means that not every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
-<p>Since the theorems of <span class="math inline">\(KD\)</span> are valid in all <em>serial</em> frames, the observation that <span class="math inline">\(\Box p \to p\)</span>, which is an axiom of <span class="math inline">\(KT\)</span>, is not valid in some serial frames tells us that <span class="math inline">\(KT\)</span> is a <em>proper</em> extension of <span class="math inline">\(KD\)</span>.</p>
+<p>Since the theorems of <span class="math inline">\(\textsf{KD}\)</span> are valid in all <em>serial</em> frames, the observation that <span class="math inline">\(\Box p \to p\)</span>, which is an axiom of <span class="math inline">\(\textsf{KT}\)</span> , is not valid in some serial frames tells us that <span class="math inline">\(\textsf{KT}\)</span> is a <em>proper</em> extension of <span class="math inline">\(\textsf{KD}\)</span> .</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1713,7 +1723,7 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(KT \not \sqsubseteq KD\)</span></p>
+<p><span class="math inline">\(\textsf{KT} \not \sqsubseteq \textsf{KD}\)</span></p>
 <p>This is because <span class="math inline">\(\Box p \to p\)</span> is <em>not</em> valid in every <em>serial</em> frame. To that purpose, consider the model based on a serial frame depicted below.</p>
 <table class="caption-top table">
 <tbody>
@@ -1727,7 +1737,7 @@ Example
 </table>
 </div>
 </div>
-<p>We may similarly use the fact that axiom 4 is not valid in every reflexive and symmetric frame to establish that some theorems of <span class="math inline">\(KB5\)</span> are not theorems of <span class="math inline">\(KTB\)</span>.</p>
+<p>We may similarly use the fact that axiom 4 is not valid in every reflexive and symmetric frame to establish that some theorems of <span class="math inline">\(\textsf{KB5}\)</span> are not theorems of <span class="math inline">\(\textsf{KTB}\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1738,7 +1748,7 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(KB5 \not \sqsubseteq KTB\)</span></p>
+<p><span class="math inline">\(\textsf{KB5} \not \sqsubseteq \textsf{KTB}\)</span></p>
 <p>This is because <span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span> is <em>not</em> valid in every <em>reflexive</em> and <em>symmetric</em> frame. To that purpose, consider the model based on a reflexive and symmetric frame depicted below.</p>
 <table class="caption-top table">
 <tbody>
@@ -1752,7 +1762,7 @@ Example
 </table>
 </div>
 </div>
-<p>Where should we locate <span class="math inline">\(KB5\)</span> in the diagram? We now argue that <span class="math inline">\(KB4\)</span> and <span class="math inline">\(KB5\)</span> are mutual extensions of each other, which is the reason we do not have a further node for <span class="math inline">\(KB5\)</span> in the diagram:</p>
+<p>Where should we locate <span class="math inline">\(\textsf{KB5}\)</span> in the diagram? We now argue that <span class="math inline">\(\textsf{KB4}\)</span> and <span class="math inline">\(\textsf{KB5}\)</span> are mutual extensions of each other, which is the reason we do not have a further node for <span class="math inline">\(\textsf{KB5}\)</span> in the diagram:</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1763,14 +1773,14 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(KB4 \sqsubseteq KB5\)</span></p>
-<p>This is because <span class="math inline">\(\vdash_{KB5} \Box \varphi \to \Box \Box \varphi\)</span>.</p>
+<p><span class="math inline">\(\textsf{KB4} \sqsubseteq \textsf{KB5}\)</span></p>
+<p>This is because <span class="math inline">\(\vdash_{\textsf{KB5}} \Box \varphi \to \Box \Box \varphi\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp;  \Box \varphi \to \Box \Diamond \Box \varphi &amp; B[\Box \varphi/p]\\
-2 &amp; &amp; \Diamond \Box \varphi \to \Box \varphi &amp; 5_\Diamond [\varphi/p]\\
-3 &amp; &amp; \Box \Diamond \Box \varphi \to \Box \Box \varphi &amp; RK \ 2 \\
-4 &amp; &amp; \Box \varphi \to \Box \Box \varphi &amp; PL 1, 3\\
+1 &amp; &amp;  \Box \varphi \to \Box \Diamond \Box \varphi &amp; \textsf{B}[\Box \varphi/p]\\
+2 &amp; &amp; \Diamond \Box \varphi \to \Box \varphi &amp; \textsf{5}_\Diamond [\varphi/p]\\
+3 &amp; &amp; \Box \Diamond \Box \varphi \to \Box \Box \varphi &amp; \textsf{RK} \ 2 \\
+4 &amp; &amp; \Box \varphi \to \Box \Box \varphi &amp; \textsf{PL} 1, 3\\
 \end{array}
 \]</span></p>
 </div>
@@ -1785,14 +1795,14 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(KB5 \sqsubseteq KB4\)</span></p>
-<p>This is because <span class="math inline">\(\vdash_{KB4} \Diamond \varphi \to \Box \Diamond \varphi\)</span>.</p>
+<p><span class="math inline">\(\textsf{KB5} \sqsubseteq \textsf{KB4}\)</span></p>
+<p>This is because <span class="math inline">\(\vdash_{\textsf{KB4}} \Diamond \varphi \to \Box \Diamond \varphi\)</span>.</p>
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; \Diamond \varphi \to \Box \Diamond \Diamond \varphi &amp; B[\diamond \varphi/p]\\
-2 &amp; &amp; \Diamond \Diamond \varphi \to \Diamond \varphi &amp; 4_\Diamond[\varphi/p] \\
-3 &amp; &amp; \Box \Diamond \Diamond \varphi \to \Box \Diamond \varphi &amp; RK \ 2\\
-4 &amp; &amp; \Diamond \varphi \to \Box \Diamond \varphi &amp; PL \ 1, 3\\
+1 &amp; &amp; \Diamond \varphi \to \Box \Diamond \Diamond \varphi &amp; \textsf{B}[\diamond \varphi/p]\\
+2 &amp; &amp; \Diamond \Diamond \varphi \to \Diamond \varphi &amp; \textsf{4}_\Diamond[\varphi/p] \\
+3 &amp; &amp; \Box \Diamond \Diamond \varphi \to \Box \Diamond \varphi &amp; \textsf{RK} \ 2\\
+4 &amp; &amp; \Diamond \varphi \to \Box \Diamond \varphi &amp; \textsf{PL} \ 1, 3\\
 \end{array}
 \]</span></p>
 </div>
@@ -1807,7 +1817,7 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(KB4 = KB5\)</span></p>
+<p><span class="math inline">\(\textsf{KB4} = \textsf{KB5}\)</span></p>
 <p>This is an immediate consequence of the last two examples.</p>
 </div>
 </div>
