@@ -1850,7 +1850,7 @@ Derivability
 <p><span class="math display">\[
 \vdash_{\Sigma} \boldsymbol{\alpha} \to \varphi
 \]</span></p>
-<p>Notice that this is not quite how we defined derivability in propositional logic since we make no allowance for premises in a derivation. To allow for premises would lead to undesirable results in the presence of the rule of necessitation.</p>
+<p>Notice that this is not quite how we defined derivability in propositional logic since we make no allowance for premises in a derivation. To allow for premises would lead to undesirable results in the presence of necessitation.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1883,7 +1883,7 @@ Consistency
 <div>
 <p><strong>Proof</strong>. We look at each direction in turn.</p>
 <p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash_\Sigma \varphi\)</span>. Since <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \neg \varphi\)</span>, we have <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. So, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \{ \neg \varphi\}\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \wedge \neg \varphi \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \{ \neg \varphi\}\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \neg (\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 </div>
@@ -1918,7 +1918,7 @@ Worlds
 <p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_{\Sigma} \varphi\)</span> since <span class="math inline">\(\vdash_{\Sigma} \varphi \to \varphi\)</span>.</p>
 <p>For 2, we look at each direction in turn.</p>
 <p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\neg  \varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span>. So, if <span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, then <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p>
-<p>(<span class="math inline">\(\Leftrightarrow\)</span>) If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. So, <span class="math inline">\(\Gamma, \neg \neg  \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, and by Proposition 5.1 <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. So, <span class="math inline">\(\Gamma, \neg \neg  \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, and by Proposition 5.1 <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span>.</p>
 <p>The proof of 3 is perfectly analogous.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
