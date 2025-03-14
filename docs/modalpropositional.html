@@ -1882,8 +1882,8 @@ Consistency
 <div>
 <div>
 <p><strong>Proof</strong>. We look at each direction in turn.</p>
-<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash_\Sigma \varphi\)</span>. Since <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \neg \varphi\)</span>, we have <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. So, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \{ \neg \varphi\}\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \neg (\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash_\Sigma \varphi\)</span>. Since <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi\)</span>, we have <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. So, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \neg \varphi\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \neg (\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 </div>
@@ -2105,8 +2105,8 @@ We conclude that <span class="math inline">\(V\)</span> verifies exactly those f
 <p><span class="theorem-title"><strong>Proposition 4.22</strong></span> The canonical model for a normal modal system <span class="math inline">\(\Sigma\)</span> satisfies each condition listed below if it includes as axioms all substitution instances of the corresponding axiom.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 40%">
+<col style="width: 23%">
+<col style="width: 41%">
 <col style="width: 34%">
 </colgroup>
 <thead>
