@@ -1883,7 +1883,7 @@ Consistency
 <div>
 <p><strong>Proof</strong>. We look at each direction in turn.</p>
 <p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash_\Sigma \varphi\)</span>. Since <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi\)</span>, we have <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. So, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \neg \varphi\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \neg (\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \neg (\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 </div>
@@ -1958,14 +1958,13 @@ Accessibility
 \]</span></p>
 </div>
 <div>
-<p><strong>Proof</strong>. We distinguish two directions:</p>
+<p><strong>Proof</strong>. We distinguish two directions.</p>
 <p>(<span class="math inline">\(\Rightarrow\)</span>) Consider the set of modal formulas</p>
 <p><span class="math display">\[
 \{\varphi\} \cup \{\psi: \Box \psi \in \Gamma\}
 \]</span></p>
-<p>Notice that if <span class="math inline">\(\Delta\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent, which includes that union as a subset, then <span class="math inline">\(\Gamma R \Delta\)</span>, and we would be done.</p>
-<p>We now argue that the set given above is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
-<p>Suppose not. Then there is a conjunction <span class="math inline">\(\psi_1 \wedge \dots \wedge \psi_n\)</span> of modal formulas with <span class="math inline">\(\Box \psi_1, \dots, \Box \psi_n \in \Gamma\)</span> such that</p>
+<p>If that set is <span class="math inline">\(\Sigma\)</span>-consistent, then it can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>, and, by definition of <span class="math inline">\(R\)</span>, <span class="math inline">\(\Gamma R \Delta\)</span>. Since <span class="math inline">\(\varphi\)</span> would be a member of <span class="math inline">\(\Delta\)</span> as defined, we would be done.</p>
+<p>We now argue that the set given above is <span class="math inline">\(\Sigma\)</span>-consistent. Suppose not. Then there is a conjunction <span class="math inline">\(\psi_1 \wedge \dots \wedge \psi_n\)</span> of modal formulas with <span class="math inline">\(\Box \psi_1, \dots, \Box \psi_n \in \Gamma\)</span> such that</p>
 <p><span class="math display">\[
 \vdash_{\Sigma} \varphi \wedge (\psi_1  \wedge \dots \wedge \psi_n) \to  \bot
 \]</span></p>
@@ -1997,7 +1996,6 @@ Accessibility
 \{\varphi\} \cup \{\psi: \Box \psi \in \Gamma\}
 \]</span></p>
 <p>is <span class="math inline">\(\Sigma\)</span>-consistent and can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>. It follows that <span class="math inline">\(\Gamma R \Delta\)</span> and <span class="math inline">\(\varphi \in \Delta\)</span>.</p>
-<p>(<span class="math inline">\(\Leftarrow\)</span>) This direction is trivial once we unpack the definition of <span class="math inline">\(\Gamma R \Delta\)</span>.</p>
 <p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>We will now exploit the features of maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas to define the canonical model for a modal system <span class="math inline">\(\Sigma\)</span>.</p>
