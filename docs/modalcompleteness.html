@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>8&nbsp; Completeness – Modal Logic</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./tense.html" rel="next">
+<link href="./modalderivations.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modalpropositional.html">Modal Propositional Logic</a></li><li class="breadcrumb-item"><a href="./modalcompleteness.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Modal Logic</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./propositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./derivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./completeness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Modal Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalderivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalcompleteness.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tense.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#canonical-models" id="toc-canonical-models" class="nav-link active" data-scroll-target="#canonical-models"><span class="header-section-number">8.1</span> Canonical Models</a></li>
+  <li><a href="#completeness-for-canonical-systems" id="toc-completeness-for-canonical-systems" class="nav-link" data-scroll-target="#completeness-for-canonical-systems"><span class="header-section-number">8.2</span> Completeness for Canonical Systems</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modalpropositional.html">Modal Propositional Logic</a></li><li class="breadcrumb-item"><a href="./modalcompleteness.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We have explored a landscape of normal modal systems characterizing different classes of frames. We now outline a method for the justification of the fact that a normal modal system <span class="math inline">\(\Sigma\)</span> characterizes a class of frames <span class="math inline">\(\mathcal{C}\)</span> by which, we mean, as usual that for every modal formula <span class="math inline">\(\varphi\)</span>,</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\vdash_\Sigma  \varphi &amp; \text{if, and  only if,} &amp; \models_{\mathcal{C}} \varphi
+\end{array}
+\]</span></p>
+<p>That is, <span class="math inline">\(\Sigma\)</span> proves all (Completeness) and only (Soundness) formulas, which are valid in all frames in <span class="math inline">\(\mathcal{C}\)</span>. One direction (Soundness) requires one to verify that the axioms of <span class="math inline">\(\Sigma\)</span> are valid in all frames in <span class="math inline">\(\mathcal{C}\)</span>, and that the rules of inference of <span class="math inline">\(\Sigma\)</span> preserve validity in all frames in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<p>We will now focus on the other direction (Completeness), which we approach by contraposition: if <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\Sigma\)</span>, then <span class="math inline">\(\varphi\)</span> is not valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>. That is, we will build a special model based on a frame <span class="math inline">\((W, R)\)</span> in <span class="math inline">\(\mathcal{C}\)</span> in which the formula <span class="math inline">\(\varphi\)</span> fails. The model in question will be what is known as the canonical model for the system <span class="math inline">\(\Sigma\)</span>, and the main task will often be to verify that the canonical model for <span class="math inline">\(\Sigma\)</span> is based on a frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<section id="canonical-models" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="canonical-models"><span class="header-section-number">8.1</span> Canonical Models</h2>
+<p>First, some preliminary definitions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Derivability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A modal formula <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-derivable from <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, if, and only if, there is a finite conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of formulas <span class="math inline">\(\alpha_1, \dots , \alpha_n \in  \Gamma\)</span> for which:</p>
+<p><span class="math display">\[
+\vdash_{\Sigma} \boldsymbol{\alpha} \to \varphi
+\]</span></p>
+<p>Notice that this is not quite how we defined derivability in propositional logic since we make no allowance for premises in a derivation. To allow for premises would lead to undesirable results in the presence of necessitation.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Consistency
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set of modal formulas <span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent if, and only if, <span class="math inline">\(\Gamma \nvdash_\Sigma \bot\)</span>. That is, there is no finite conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of formulas <span class="math inline">\(\alpha_1, \dots , \alpha_n \in  \Gamma\)</span> for which:</p>
+<p><span class="math display">\[
+\vdash_{\Sigma} \boldsymbol{\alpha} \to \bot
+\]</span></p>
+<p>Otherwise, we call <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Sigma\)</span>-inconsistent. We will write that a modal formula <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent if its singleton set <span class="math inline">\(\{\varphi\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, that is, if <span class="math inline">\(\nvdash_{\Sigma} \varphi \to \bot\)</span>.</p>
+</div>
+</div>
+<p>We will exploit the fact that <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas have a number of helpful features we record now.</p>
+<div id="thm-dc" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.1</strong></span> For all modal formulas <span class="math inline">\(\varphi\)</span> in <span class="math inline">\(\mathcal{L}^\Box\)</span>,</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\Gamma \vdash_\Sigma  \varphi &amp; \text{if, and  only if,} &amp;  \Gamma,  \neg \varphi \  \text{is} \ \Sigma\text{-inconsistent}.
+\end{array}
+\]</span></p>
+</div>
+<div>
+<p><strong>Proof</strong>. We look at each direction in turn.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi \vdash_\Sigma \varphi\)</span>. Since <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \varphi\)</span>, we have <span class="math inline">\(\vdash_\Sigma (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. So, <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, for some conjunction <span class="math inline">\(\boldsymbol{\alpha}\)</span> of members of <span class="math inline">\(\Gamma\)</span>, we have <span class="math inline">\(\vdash_{\Sigma} (\boldsymbol{\alpha} \wedge \neg \varphi) \to \bot\)</span>. Since <span class="math inline">\(\vdash_{\Sigma} \neg \bot\)</span>, we have that <span class="math inline">\(\vdash_{\Sigma} \neg (\boldsymbol{\alpha} \wedge \neg \varphi)\)</span>, whence <span class="math inline">\(\vdash_{\Sigma} \boldsymbol{\alpha} \to  \varphi\)</span> and <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Maximal Consistency
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set of modal formulas <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent if, and only if,</p>
+<ol type="1">
+<li><span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, and</li>
+<li>for each modal formula <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\Gamma, \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, then <span class="math inline">\(\varphi \in \Gamma\)</span>.</li>
+</ol>
+</div>
+</div>
+<p>Maximal <span class="math inline">\(\Sigma\)</span>-consistent sets satisfy helpful decomposition principles.</p>
+<div id="thm-mcp" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.2</strong></span> If <span class="math inline">\(\Sigma\)</span> is a normal modal system and <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas, then:</p>
+<p><span class="math display">\[
+\begin{array}{llll}1. &amp; \Gamma \vdash_\Sigma \varphi &amp; \text{iff} &amp;  \varphi \in \Gamma \\2. &amp; \neg \varphi \in \Gamma &amp; \text{iff} &amp; \varphi \notin \Gamma\\3.  &amp; \varphi \to \psi \in \Gamma  &amp; \text{iff} &amp; \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma \\\end{array}
+\]</span></p>
+</div>
+<div>
+<p><strong>Proof</strong>. We look at each claim in turn.</p>
+<p>For 1, there are two directions.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\Gamma \vdash_\Sigma \varphi\)</span>, then <span class="math inline">\(\Gamma, \neg \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. On the other hand, if <span class="math inline">\(\varphi \notin \Gamma\)</span>, then, by definition of maximal <span class="math inline">\(\Sigma\)</span>-consistency, <span class="math inline">\(\Gamma, \varphi\)</span> would be <span class="math inline">\(\Sigma\)</span>-inconsistent making <span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent. So, <span class="math inline">\(\varphi \in \Gamma\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_{\Sigma} \varphi\)</span> since <span class="math inline">\(\vdash_{\Sigma} \varphi \to \varphi\)</span>.</p>
+<p>For 2, we look at each direction in turn.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) If <span class="math inline">\(\neg  \varphi \in \Gamma\)</span>, then <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span>. So, if <span class="math inline">\(\Gamma\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent, then <span class="math inline">\(\varphi \notin \Gamma\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) If <span class="math inline">\(\varphi \notin \Gamma\)</span>, then <span class="math inline">\(\Gamma, \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent. So, <span class="math inline">\(\Gamma, \neg \neg  \varphi\)</span> is <span class="math inline">\(\Sigma\)</span>-inconsistent, and by Proposition 5.1 <span class="math inline">\(\Gamma \vdash_\Sigma \neg \varphi\)</span>.</p>
+<p>The proof of 3 is perfectly analogous.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Accessibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given two maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\Delta\)</span>, we write <span class="math inline">\(\Gamma R \Delta\)</span> iff for each modal formula <span class="math inline">\(\varphi\)</span> in <span class="math inline">\(\Delta\)</span>, <span class="math inline">\(\Diamond \varphi\)</span> is in <span class="math inline">\(\Gamma\)</span>. Or, in other words,</p>
+<p><span class="math display">\[
+\begin{array}{lll}\Gamma R \Delta  &amp; \text{iff} &amp; \{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta \\\end{array}
+\]</span></p>
+</div>
+</div>
+<p>We will often make use of an alternative characterization of the relation just now introduced for a canonical model.</p>
+<div id="thm-ac" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.3</strong></span> For all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma, \Delta\)</span>,</p>
+<p><span class="math display">\[
+\begin{array}{lll}\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma  &amp; \text{iff} &amp; \{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta \\\end{array}
+\]</span></p>
+</div>
+<div id="proof">
+<p><strong>Proof</strong>. We look at each direction in turn.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(\{\Diamond \varphi : \varphi \in \Delta\} \subseteq \Gamma\)</span>. Suppose now that <span class="math inline">\(\Box \varphi \in \Gamma\)</span>. For a reductio, suppose <span class="math inline">\(\varphi \notin \Delta\)</span>. In that case, <span class="math inline">\(\neg \varphi \in \Delta\)</span>, which means, by assumption, that <span class="math inline">\(\Diamond \neg \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, we have that <span class="math inline">\(\neg \Box \neg \neg \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\vdash_\Sigma \neg \Box \neg \neg \varphi \leftrightarrow \neg \Box \varphi\)</span>, we have <span class="math inline">\(\neg \Box \varphi \in \Gamma\)</span> and <span class="math inline">\(\Box \varphi \notin \Gamma\)</span>, which completes the reductio.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\{\varphi : \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>. We argue for the contrapositive: if <span class="math inline">\(\Diamond \varphi \notin \Gamma\)</span>, then <span class="math inline">\(\varphi \notin \Delta\)</span>. Suppose that <span class="math inline">\(\Diamond \varphi \notin \Gamma\)</span>. Since <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, we have that <span class="math inline">\(\neg \Box \neg \varphi \notin \Gamma\)</span>. By maximal <span class="math inline">\(\Sigma\)</span>-consistency of <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Box \neg \varphi \in \Gamma\)</span>, which, by assumption, requires <span class="math inline">\(\neg \varphi \in \Delta\)</span>. It follows that <span class="math inline">\(\varphi \notin \Delta\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<div id="thm-e4" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.4</strong></span> If <span class="math inline">\(\Sigma\)</span> is a normal modal system and <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas, then:</p>
+<p><span class="math display">\[
+\begin{array}{llll}4. &amp; \Diamond \varphi \in \Gamma &amp; \text{iff} &amp; \text{for some} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\\end{array}
+\]</span></p>
+</div>
+<div>
+<p><strong>Proof</strong>. We distinguish two directions.</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Consider the set of modal formulas</p>
+<p><span class="math display">\[
+\{\varphi\} \cup \{\psi: \Box \psi \in \Gamma\}
+\]</span></p>
+<p>If that set is <span class="math inline">\(\Sigma\)</span>-consistent, then it can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>, and, by definition of <span class="math inline">\(R\)</span>, <span class="math inline">\(\Gamma R \Delta\)</span>. Since <span class="math inline">\(\varphi\)</span> would be a member of <span class="math inline">\(\Delta\)</span> as defined, we would be done.</p>
+<p>We now argue that the set given above is <span class="math inline">\(\Sigma\)</span>-consistent. Suppose not. Then there is a conjunction <span class="math inline">\(\psi_1 \wedge \dots \wedge \psi_n\)</span> of modal formulas with <span class="math inline">\(\Box \psi_1, \dots, \Box \psi_n \in \Gamma\)</span> such that</p>
+<p><span class="math display">\[
+\vdash_{\Sigma} \varphi \wedge (\psi_1  \wedge \dots \wedge \psi_n) \to  \bot
+\]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[
+\vdash_{\Sigma} (\psi_1  \wedge \dots \wedge \psi_n) \to  \neg \varphi
+\]</span></p>
+<p>Since <span class="math inline">\(\Sigma\)</span> is a normal modal system, we have:</p>
+<p><span class="math display">\[
+\vdash_{\Sigma} \Box \psi_1  \wedge \dots \wedge \Box \psi_n \to  \Box \neg \varphi
+\]</span></p>
+<p>Since <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent, it contains every theorem of <span class="math inline">\(\Sigma\)</span>. Therefore:</p>
+<p><span class="math display">\[
+(\Box \psi_1  \wedge \dots \wedge \Box \psi_n) \to  \Box \neg \varphi \in \Gamma
+\]</span></p>
+<p>Because <span class="math inline">\(\Box \psi_1 \dots \Box \psi_n \in \Gamma\)</span>, by Prop 5.1, we infer:</p>
+<p><span class="math display">\[
+(\Box \psi_1 \wedge \dots \wedge \Box \psi_n) \in \Gamma
+\]</span></p>
+<p><span class="math display">\[
+\Box \neg \varphi \in \Gamma
+\]</span></p>
+<p>But since <span class="math inline">\(\Diamond\)</span> abbreviates <span class="math inline">\(\neg \Box \neg\)</span>, <span class="math inline">\(\Box \neg \varphi\)</span> is equivalent to <span class="math inline">\(\neg \Diamond \varphi\)</span>, and given the <span class="math inline">\(\Sigma\)</span>-consistency of <span class="math inline">\(\Gamma\)</span>, we have thereby contradicted the assumption that</p>
+<p><span class="math display">\[
+\Diamond \varphi \in \Gamma.
+\]</span></p>
+<p>We conclude that the set</p>
+<p><span class="math display">\[
+\{\varphi\} \cup \{\psi: \Box \psi \in \Gamma\}
+\]</span></p>
+<p>is <span class="math inline">\(\Sigma\)</span>-consistent and can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>. It follows that <span class="math inline">\(\Gamma R \Delta\)</span> and <span class="math inline">\(\varphi \in \Delta\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>We will now exploit the features of maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas to define the canonical model for a modal system <span class="math inline">\(\Sigma\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Canonical Models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <em>canonical model</em> <span class="math inline">\(\mathcal{M}_\Sigma\)</span> for a modal system <span class="math inline">\(\Sigma\)</span> is a model of the form <span class="math inline">\(( W_\Sigma, R_\Sigma, V_\Sigma)\)</span>, where:</p>
+<ol type="1">
+<li><p><span class="math inline">\(W_\Sigma\)</span> consists of all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets of modal formulas.</p></li>
+<li><p>For all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma, \Delta\)</span>,</p>
+<p><span class="math inline">\(\Gamma R_\Sigma \Delta\)</span> if, and only if, <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Delta \} \subseteq \Gamma\)</span>. That is, <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span> whenever <span class="math inline">\(\varphi \in \Delta\)</span>.</p></li>
+<li><p>For each propositional variable <span class="math inline">\(p\)</span>,</p>
+<p><span class="math inline">\(V_{\Sigma}(p) = \{\Gamma \in W_\Sigma : p \in \Gamma \}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<p>The interest of canonical models is that they are governed by the truth lemma according to which a world in the canonical model for <span class="math inline">\(\Sigma\)</span> verifies a modal formula <span class="math inline">\(\varphi\)</span> if, and only if, that very formula is a member of the world conceived as a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas.</p>
+<div id="prp-e5" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 8.1 (Truth Lemma)</strong></span> For each maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas <span class="math inline">\(\Gamma\)</span>,</p>
+<p><span class="math display">\[
+\begin{array}{lll}\mathcal{M}_\Sigma, \Gamma \Vdash \varphi &amp;  \text{iff} &amp;  \varphi \in \Gamma\\\end{array}
+\]</span></p>
+</div>
+<p>The justification for the truth lemma is an induction of the complexity of modal formulas.</p>
+<div>
+<p>We use an induction on the complexity of <span class="math inline">\(\varphi\)</span> to establish:<br>
+<span class="math display">\[
+\begin{array}{lll}
+\mathcal{M}_\Sigma, \Gamma \Vdash \varphi &amp; \text{iff} &amp; \varphi \in \Gamma.
+\end{array}
+\]</span><br>
+- <strong>Base Case</strong>:</p>
+<p><span class="math display">\[
+\begin{array}{llll}
+\mathcal{M}_\Sigma, \Gamma \Vdash p &amp; \text{iff} &amp; \Gamma \in V_\Sigma(p) &amp; \\
+   &amp; \text{iff} &amp; p \in \Sigma. &amp; \textsf{Def} \ V_\Sigma
+\end{array}
+\]</span><br>
+- <strong>Inductive Step for</strong> <span class="math inline">\(\neg\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{llll}
+\mathcal{M}_\Sigma, \Gamma \Vdash \neg \varphi &amp; \text{iff} &amp;\mathcal{M}_\Sigma, \Gamma \nVdash \varphi &amp; \\
+    &amp; \text{iff} &amp; \varphi \notin \Gamma&amp; \text{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \neg \varphi \in \Gamma &amp; \textsf{Prop} \ 6.2, 2 \\
+\end{array}
+\]</span><br>
+- <strong>Inductive Step for</strong> <span class="math inline">\(\to\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{llll}
+\mathcal{M}_\Sigma, \Gamma \Vdash \varphi \to \psi&amp; \text{iff} &amp; \mathcal{M}_\Sigma, \Gamma \nVdash \varphi \ \text{or} \ \mathcal{M}_\Sigma, \Gamma \Vdash \psi &amp; \\
+    &amp; \text{iff} &amp; \varphi \notin \Gamma \ \text{or} \ \psi \in \Gamma&amp; \text{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \varphi \to \psi \in \Gamma &amp; \textsf{Thm} \ 6.2, 3 \\
+\end{array}
+\]</span></p>
+<ul>
+<li><strong>Inductive Step for</strong> <span class="math inline">\(\Box\)</span>:</li>
+</ul>
+<p><span class="math display">\[
+\begin{array}{llll}
+\mathcal{M}_\Sigma, \Gamma \Vdash \Box \varphi &amp; \text{iff} &amp; \mathcal{M}_\Sigma, \Delta \Vdash \varphi \ \text{if} \ \Gamma R_\Sigma \Delta &amp; \\
+    &amp; \text{iff} &amp; \varphi \in \Delta \ \text{ig} \ \Gamma R_\Sigma \Delta &amp; \text{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \Box \varphi \in \Gamma &amp; \textsf{Thm} \ 6.3, \ 6.4\\
+\end{array}
+\]</span><br>
+We conclude that <span class="math inline">\(V\)</span> verifies exactly those formulas in <span class="math inline">\(\Sigma\)</span>. So, it follows that <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</section>
+<section id="completeness-for-canonical-systems" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="completeness-for-canonical-systems"><span class="header-section-number">8.2</span> Completeness for Canonical Systems</h2>
+<p>We are finally in a position to prove a completeness theorem for <span class="math inline">\(\textsf{K}\)</span>.</p>
+<div id="thm-cK" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.5</strong></span> For each modal formulas <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\models \varphi\)</span>, then <span class="math inline">\(\vdash_\textsf{K} \varphi\)</span>. That is, if <span class="math inline">\(\varphi\)</span> is valid in <em>every</em> frame, then <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{K}\)</span>.</p>
+</div>
+<div>
+<p>We argue by contraposition. Suppose a modal formula <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\textsf{K}\)</span>. Then its negation <span class="math inline">\(\neg  \varphi\)</span> will be <span class="math inline">\(\textsf{K}\)</span>-consistent. That means that we may use Lindenbaum’s lemma to extend <span class="math inline">\(\{\neg \varphi\}\)</span> to a maximal <span class="math inline">\(\textsf{K}\)</span>-consistent set <span class="math inline">\(\Gamma\)</span>. Now, note that <span class="math inline">\(\Gamma\)</span> is one of the worlds of the canonical model for <span class="math inline">\(\textsf{K}\)</span>, <span class="math inline">\((W_\textsf{K}, R_\textsf{K}, V_\textsf{K})\)</span>, and, by the Truth Lemma, we know that <span class="math inline">\(\neg \varphi\)</span> will be true at <span class="math inline">\(\Gamma\)</span> in the canonical model for <span class="math inline">\(\textsf{K}\)</span>. Therefore, <span class="math inline">\(\varphi\)</span> fails at a world in the canonical model for <span class="math inline">\(\textsf{K}\)</span>. We conclude that <span class="math inline">\(\varphi\)</span> is not valid in every frame.</p>
+</div>
+<p>There are further completeness theorems for the normal modal systems in the landscape we have considered. One example is the observation, for example, that a modal formula <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span> <em>if</em> <span class="math inline">\(\models_{\text{ref}} \varphi\)</span>. That is, if a formula <span class="math inline">\(\varphi\)</span> is valid in every reflexive frame, then <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span>.</p>
+<p>We argue for the contrapositive. Suppose a modal formula <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\textsf{KT}\)</span>. Then its negation <span class="math inline">\(\neg \varphi\)</span> will be <span class="math inline">\(\textsf{KT}\)</span>-consistent. We will argue that <span class="math inline">\(\neg \varphi\)</span> is true at a world of the canonical model for <span class="math inline">\(\textsf{KT}\)</span>. That will mean that <span class="math inline">\(\varphi\)</span> is false at a world of the canonical model for <span class="math inline">\(\textsf{KT}\)</span>. Recall that we want to establish the completeness of <span class="math inline">\(\textsf{KT}\)</span> with respect to the class of <em>reflexive</em> frames, which means that we should verify that <span class="math inline">\(\varphi\)</span> fails at some world of some <em>reflexive</em> model. Our observation that <span class="math inline">\(\varphi\)</span> fails at the canonical model for <span class="math inline">\(\textsf{KT}\)</span> will suffice to that purpose <em>only if</em> the canonical model for <span class="math inline">\(\textsf{KT}\)</span> is reflexive.</p>
+<p>To complete the proof, we must verify that the canonical frame for <span class="math inline">\(\textsf{KT}\)</span> is <em>reflexive</em>: for all maximal <span class="math inline">\(\textsf{KT}\)</span>-consistent sets of modal formulas <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Gamma R_{\textsf{KT}} \Gamma\)</span>. That will establish that <span class="math inline">\(\varphi\)</span> is not valid in every <em>reflexive</em> frame, e.g., <span class="math inline">\(\varphi\)</span> is not valid in the canonical frame for <span class="math inline">\(\textsf{KT}\)</span>, which is reflexive.</p>
+<div id="thm-ckt" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 8.6</strong></span> For each modal formulas <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(\models_{\text{ref}} \varphi\)</span>, then <span class="math inline">\(\vdash_\textsf{KT} \varphi\)</span>. That is, if <span class="math inline">\(\varphi\)</span> is valid in <em>every reflexive</em> frame, then <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span>.</p>
+</div>
+<div>
+<p><strong>Proof</strong>. We know that if <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\textsf{KT}\)</span>, then <span class="math inline">\(\varphi\)</span> is not valid in the canonical frame for <span class="math inline">\(\textsf{KT}\)</span>.</p>
+<p>We proceed to verify that the canonical frame for <span class="math inline">\(\textsf{KT}\)</span> is reflexive:</p>
+<ul>
+<li><p>For every <span class="math inline">\(\Gamma \in W_{\textsf{KT}}\)</span>, <span class="math inline">\(\Gamma R_{\textsf{KT}} \Gamma\)</span>.</p>
+<p>Given how we defined <span class="math inline">\(W_{\textsf{KT}}\)</span> and the accessibility relation <span class="math inline">\(R_{KT}\)</span> on <span class="math inline">\(W_{\textsf{KT}}\)</span>, this is tantamount to the claim:</p></li>
+<li><p>For every maximal <span class="math inline">\(\textsf{KT}\)</span>-consistent set <span class="math inline">\(\Gamma\)</span>, if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>.</p>
+<p>Let <span class="math inline">\(\Gamma\)</span> be a maximal <span class="math inline">\(\textsf{KT}\)</span>-consistent set and suppose <span class="math inline">\(\varphi \in \Gamma\)</span>. Since <span class="math inline">\(\vdash_{\textsf{KT}} \varphi \to \Diamond \varphi\)</span>, it follows that <span class="math inline">\(\varphi \to \Diamond \varphi \in \Gamma\)</span>. But by maximal <span class="math inline">\(\textsf{KT}\)</span>-consistency, we infer that <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>.</p></li>
+</ul>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>We now argue that there is a correlation between the derivability of all substitution instances of certain axioms and certain features of the accessibility relation for the canonical model for a modal system.</p>
+<div id="prp-cm" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 8.2</strong></span> The canonical model for a normal modal system <span class="math inline">\(\Sigma\)</span> satisfies each condition listed below if it includes as axioms all substitution instances of the corresponding axiom.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 40%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Axiom</th>
+<th style="text-align: center;">Condition on <span class="math inline">\(R_\Sigma\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\textsf{D}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Box p \to \Diamond p\)</span></td>
+<td style="text-align: center;"><em>serial on</em> <span class="math inline">\(W_\Sigma\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\textsf{T}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Box p \to p\)</span></td>
+<td style="text-align: center;"><em>reflexive on</em> <span class="math inline">\(W_\Sigma\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\textsf{B}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(p \to \Box \Diamond p\)</span></td>
+<td style="text-align: center;"><em>symmetric on</em> <span class="math inline">\(W_\Sigma\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\textsf{4}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Box p \to \Box \Box p\)</span></td>
+<td style="text-align: center;"><em>transitive on</em> <span class="math inline">\(W_\Sigma\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\textsf{5}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span></td>
+<td style="text-align: center;"><em>euclidean on</em> <span class="math inline">\(W_\Sigma\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div>
+<p><strong>Proof</strong>. We unpack the argument for each axiom.</p>
+<ul>
+<li><p><span class="math inline">\(\textsf{D}\)</span> / <span class="math inline">\(R_\Sigma\)</span> is serial on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(\Box p \to \Diamond p\)</span>. We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is serial:</p>
+<ul>
+<li>for all <span class="math inline">\(\Gamma \in W_{\Sigma}\)</span> there is some <span class="math inline">\(\Delta \in W_{\Sigma}\)</span> such that <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span>.</li>
+</ul>
+<p>This is tantamount to the claim:</p>
+<ul>
+<li><span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> for some <span class="math inline">\(\Delta \in W_{\Sigma}\)</span>.</li>
+</ul>
+<p>It will suffice to prove that <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\}\)</span> is <span class="math inline">\(\Sigma\)</span>-consistent.</p>
+<p>Suppose <em>not</em>. Then there is a conjunction <span class="math inline">\(\varphi_1 \wedge \dots \wedge \varphi_n\)</span> of modal formulas with <span class="math inline">\(\Box \varphi_1, \dots, \Box \varphi_n \in \Gamma\)</span> such that <span class="math inline">\(\vdash_{\Sigma} (\varphi_1 \wedge \dots  \wedge \dots \wedge \varphi_n) \to  \bot\)</span> Since <span class="math inline">\(\Sigma\)</span> is a normal modal system, we have: <span class="math inline">\(\vdash{\Sigma} \Box (\varphi_1 \wedge \dots \wedge \Box \varphi_n) \to  \Box \bot\)</span> Since <span class="math inline">\(\Gamma\)</span> is maximal <span class="math inline">\(\Sigma\)</span>-consistent, it contains every theorem of <span class="math inline">\(\Sigma\)</span>. Therefore: <span class="math inline">\((\Box \varphi_1 \wedge \dots \wedge \Box \varphi_n) \to  \Box \bot \in \Gamma\)</span>. Because <span class="math inline">\(\Box \varphi_1 \dots \Box \varphi_n \in \Gamma\)</span>, by lemma 5.1, we infer: <span class="math inline">\((\Box \varphi_1 \wedge \dots \wedge \Box \varphi_n) \in \Gamma\)</span>. <span class="math inline">\(\Box \bot  \in \Gamma\)</span> But since <span class="math inline">\(\vdash_{\Sigma}  \Box \bot \to \diamond \bot\)</span>, <span class="math inline">\(\Diamond \bot \in \Gamma\)</span>. Unfortunately, since <span class="math inline">\(\vdash_{\Sigma}  \Box \neg \bot\)</span>, <span class="math inline">\(\neg \Diamond \bot \in \Gamma\)</span>, which would make <span class="math inline">\(\Gamma\)</span> <span class="math inline">\(\Sigma\)</span>-inconsistent. We conclude that the original set is <span class="math inline">\(\Sigma\)</span>-consistent and can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set.</p></li>
+<li><p><span class="math inline">\(\textsf{B}\)</span> / <span class="math inline">\(R_\Sigma\)</span> is symmetric on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(p \to \Box \Diamond p\)</span>. We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is symmetric:</p>
+<ul>
+<li><p>For all <span class="math inline">\(\Gamma, \Delta \in W_{\Sigma}\)</span>, if <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span>, then <span class="math inline">\(\Delta R_{\Sigma} \Gamma\)</span>.</p>
+<p>This is tantamount to the claim:</p></li>
+<li><p>For all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Delta\)</span>, if <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>, then <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Gamma\} \subseteq \Delta\)</span>.</p>
+<p>To prove that conditional, assume the antecedent for arbitrary <span class="math inline">\(\Gamma, \Delta\)</span>: <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span>. We want to establish the consequent: if <span class="math inline">\(\varphi \in \Gamma\)</span>, then <span class="math inline">\(\Diamond \varphi \in \Delta\)</span>. Let <span class="math inline">\(\varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma \vdash_\Sigma \varphi \to \Box \Diamond \varphi\)</span>, we find that <span class="math inline">\(\Box \Diamond \varphi \in \Gamma\)</span>. So, since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, it follows that <span class="math inline">\(\Diamond \varphi \in \Delta\)</span> as desired.</p></li>
+</ul></li>
+<li><p><span class="math inline">\(\textsf{4}\)</span> / <span class="math inline">\(R_\Sigma\)</span> is transitive on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(\Box p \to \Box \Box p\)</span>. We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is euclidean:</p>
+<ul>
+<li><p>For all <span class="math inline">\(\Gamma, \Delta, \Theta \in W_{\Sigma}\)</span>, <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span> and <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Gamma R_{\Sigma} \Theta\)</span>.</p>
+<p>This is tantamount to the claim:</p></li>
+<li><p>For all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Delta\)</span>, if <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi: \Box \varphi \in \Delta\} \subseteq \Theta\)</span>, then <span class="math inline">\(\{ \varphi: \Box \varphi \in \Gamma\}\subseteq \Delta\)</span>.</p>
+<p>To prove that conditional, assume the antecedent for arbitrary <span class="math inline">\(\Gamma, \Delta, \Theta\)</span>: <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\varphi: \Box \varphi \in \Delta\} \subseteq \Theta\)</span>. We want to establish the consequent: if <span class="math inline">\(\Box \varphi \in \Gamma\)</span>, then <span class="math inline">\(\varphi \in \Theta\)</span>.</p>
+<p>If <span class="math inline">\(\Box \varphi \in \Gamma\)</span>, then since <span class="math inline">\(\vdash_{\Sigma} \Box \varphi \to \Box \Box \varphi\)</span> and <span class="math inline">\(\Box \varphi \to \Box \Box \varphi \in \Gamma\)</span>, it follows that <span class="math inline">\(\Box \Box \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, it follows that <span class="math inline">\(\Box \varphi \in \Delta\)</span>, and since <span class="math inline">\(\Delta R_\Sigma \Theta\)</span>, we conclude that <span class="math inline">\(\varphi \in \Theta\)</span> as desired.</p></li>
+</ul></li>
+<li><p><span class="math inline">\(\textsf{5}\)</span> / <span class="math inline">\(R_\Sigma\)</span> is euclidean on <span class="math inline">\(W_\Sigma\)</span></p>
+<p>Suppose <span class="math inline">\(\Sigma\)</span> proves every substitution instance of the formula <span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span>. We proceed to verify that the canonical frame for <span class="math inline">\(\Sigma\)</span> is euclidean:</p>
+<ul>
+<li><p>For all <span class="math inline">\(\Gamma, \Delta, \Theta \in W_{\Sigma}\)</span>, <span class="math inline">\(\Gamma R_{\Sigma} \Delta\)</span> and <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, then <span class="math inline">\(\Delta R_{\Sigma} \Theta\)</span>.</p>
+<p>This is tantamount to the claim:</p></li>
+<li><p>For all maximal <span class="math inline">\(\Sigma\)</span>-consistent sets <span class="math inline">\(\Gamma\)</span>, <span class="math inline">\(\Delta\)</span>, if <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Theta\} \subseteq \Gamma\)</span>, then <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Theta\}\subseteq \Delta\)</span>.</p>
+<p>To prove that conditional, assume the antecedent for arbitrary <span class="math inline">\(\Gamma, \Delta, \Theta\)</span>: <span class="math inline">\(\{\varphi: \Box \varphi \in \Gamma\} \subseteq \Delta\)</span> and <span class="math inline">\(\{\Diamond \varphi: \varphi \in \Theta\} \subseteq \Gamma\)</span>. We want to establish the consequent: if <span class="math inline">\(\varphi \in \Theta\)</span>, then <span class="math inline">\(\Diamond \varphi \in \Delta\)</span>. Let <span class="math inline">\(\varphi \in \Theta\)</span>. Since <span class="math inline">\(\Gamma R_\Sigma \Theta\)</span>, <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>. Since <span class="math inline">\(\Gamma \vdash_\Sigma \Diamond \varphi \to \Box \Diamond \varphi\)</span>, we find that <span class="math inline">\(\Box \Diamond \varphi \in \Gamma\)</span>. So, since <span class="math inline">\(\Gamma R_\Sigma \Delta\)</span>, it follows that <span class="math inline">\(\Diamond \varphi \in \Delta\)</span> as desired.</p></li>
+</ul></li>
+</ul>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./modalderivations.html" class="pagination-link" aria-label="Axiomatic Derivations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tense.html" class="pagination-link" aria-label="Tense Logic">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

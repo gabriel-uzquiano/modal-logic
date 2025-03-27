@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Basic Language – Modal Logic</title>
+<title>4&nbsp; Axiomatic Derivations – Modal Logic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./derivations.html" rel="next">
-<link href="./background.html" rel="prev">
+<link href="./completeness.html" rel="next">
+<link href="./propositional.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./propositional.html">Propositional Logic</a></li><li class="breadcrumb-item"><a href="./propositional.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./propositional.html">Propositional Logic</a></li><li class="breadcrumb-item"><a href="./derivations.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -175,13 +175,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./propositional.html" class="sidebar-item-text sidebar-link active">
+  <a href="./propositional.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./derivations.html" class="sidebar-item-text sidebar-link">
+  <a href="./derivations.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
   </div>
 </li>
@@ -249,17 +249,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#syntax" id="toc-syntax" class="nav-link active" data-scroll-target="#syntax"><span class="header-section-number">3.1</span> Syntax</a></li>
-  <li><a href="#semantics" id="toc-semantics" class="nav-link" data-scroll-target="#semantics"><span class="header-section-number">3.2</span> Semantics</a></li>
+  <li><a href="#the-deduction-theorem" id="toc-the-deduction-theorem" class="nav-link active" data-scroll-target="#the-deduction-theorem"><span class="header-section-number">4.1</span> The Deduction Theorem</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./propositional.html">Propositional Logic</a></li><li class="breadcrumb-item"><a href="./propositional.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./propositional.html">Propositional Logic</a></li><li class="breadcrumb-item"><a href="./derivations.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></h1>
 </div>
 
 
@@ -276,82 +275,25 @@ window.Quarto = {
 </header>
 
 
-<p>We introduce the syntax and semantics of a basic propositional language with an eye to the study of its metatheory. We will for example prove that propositional validity aligns with provability in an axiomatic deductive system for propositional logic.</p>
-<section id="syntax" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">3.1</span> Syntax</h2>
-<p>We first specify the syntax of a propositional language:</p>
+<p>We now present an axiom system for propositional logic, which will consist of an infinite set of axioms and a single rule of inference. A derivation of a well-formed formula from a set of formulas will consist of a finite sequence of formulas each of whose members will either be an axiom or a premise or the output of an application of the rule of inference to prior members of the sequence.</p>
+<p>There is one ingredient we will use for the specification of the infinite set of axioms. If <span class="math inline">\(\varphi\)</span> is a propositional formula whose propositional variables are <span class="math inline">\(p_1, ..., p_n\)</span> and <span class="math inline">\(\psi_1\)</span>, …, <span class="math inline">\(\psi_n\)</span> are propositional formulas, we write <span class="math display">\[
+\varphi[\psi_1/p_1, ..., \psi_n/p_n]
+\]</span></p>
+<p>for the well-formed formula that results from <span class="math inline">\(\varphi\)</span> when each propositional variable <span class="math inline">\(p_i\)</span> is substituted for the well-formed formula <span class="math inline">\(\psi_i\)</span>. We will call <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> a substitution instance of <span class="math inline">\(\varphi\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Basic Propositional Language
+Uniform Substitution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We choose a stock of propositional variables or <em>atoms</em>:</p>
-<p><span class="math display">\[
-AT := p, q, r, \cdots
-\]</span></p>
-<p>We define the formulas of a propositional language <span class="math inline">\(\mathcal{L}\)</span> recursively:</p>
-<p><span class="math display">\[
-\varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi)
-\]</span></p>
-<p>Here is how to read the last line:</p>
-<ul>
-<li><p>All atoms are formulas.</p></li>
-<li><p>If <span class="math inline">\(\varphi\)</span> is a formula, then <span class="math inline">\(\neg \varphi\)</span> is a formula.</p></li>
-<li><p>If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are formulas, then <span class="math inline">\((\varphi \to \psi)\)</span> is a formula.</p></li>
-<li><p>Nothing else is a formula.</p></li>
-</ul>
-</div>
-</div>
-<p>That is, a string of symbols is a formula if, and only if, it arises from atoms from negation or the conditional in a finite number of steps.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Notation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We follow common practice and omit outer parentheses when there is no risk of confusion. That is, we will treat a string of the form <span class="math inline">\(\varphi \to \psi\)</span> as an abbreviation for the formula <span class="math inline">\((\varphi \to \psi)\)</span>.</p>
-</div>
-</div>
-<p>The use of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\to\)</span> as basic connectives is a departure from common presentations of the language, which generally include <span class="math inline">\(\wedge\)</span>, <span class="math inline">\(\vee\)</span>, and <span class="math inline">\(\bot\)</span>. These connectives will be defined in terms of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\to\)</span>.</p>
-<p>We now define familiar connectives in terms of <span class="math inline">\(\neg\)</span> and <span class="math inline">\(\to\)</span>:</p>
-<div id="def-con" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3.1 (Connectives)</strong></span> <span class="math display">\[
-\begin{array}{lll}
-\top &amp; := &amp; (p \to p)\\
-\bot &amp; := &amp; \neg \top \\
-(\varphi \vee \psi) &amp; := &amp; (\neg \varphi \to \psi)\\
-(\varphi \wedge \psi) &amp; := &amp; \neg (\varphi \to \neg \psi)\\
-(\varphi \leftrightarrow \psi) &amp; := &amp; (\varphi \to \psi) \wedge (\psi \to \varphi)
-\end{array}
-\]</span></p>
-</div>
-<p>The inductive definition of well-formed formula vindicates a principle of induction for well-formed formulas, which will help us prove different generalizations over them.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Induction on the Complexity of Formulas
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Given a condition <span class="math inline">\(\Phi(\alpha)\)</span> on formulas of <span class="math inline">\(\mathcal{L}\)</span>, if</p>
-<ul>
-<li>all <em>atoms</em> satisfy <span class="math inline">\(\Phi(\alpha)\)</span>,</li>
-<li>whenever a formula <span class="math inline">\(\varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>, <span class="math inline">\(\neg \varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>, and</li>
-<li>whenever two formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> satisfy <span class="math inline">\(\Phi(\alpha)\)</span>, <span class="math inline">\((\varphi \to \psi)\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>,</li>
-</ul>
-<p>then <em>every</em> formula satisfies <span class="math inline">\(\Phi(\alpha)\)</span></p>
+<p>Given a formula <span class="math inline">\(\varphi\)</span> whose propositional variables are among <span class="math inline">\(p_1, \dots, p_n\)</span> and formulas <span class="math inline">\(\psi_1, \dots, \psi_n\)</span>, define <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> recursively:</p>
+<p>If <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(p_i\)</span>, <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> is <span class="math inline">\(\psi_i\)</span>.</p>
+<p>If <span class="math inline">\(\varphi\)</span> is <span class="math inline">\(\neg \chi\)</span>, <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_m]\)</span> is <span class="math inline">\(\neg \chi[\psi_1/p_1, ..., \psi_n/p_m]\)</span>.</p>
+<p>If <span class="math inline">\(\varphi\)</span> is <span class="math inline">\((\chi \to \rho)\)</span>, then <span class="math inline">\(\varphi[\psi_1/p_1, ..., \psi_n/p_n]\)</span> is <span class="math inline">\((\chi[\psi_1/p_1, ..., \psi_n/p_n]\to \rho[\psi_1/p_1, ..., \psi_n/p_n])\)</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -364,100 +306,9 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Call a formula <span class="math inline">\(\varphi\)</span> <em>balanced</em> iff <span class="math inline">\(\varphi\)</span> contains the same number of left and right parentheses. We will use an induction to establish the proposition:</p>
-<ul>
-<li>Every formula is balanced.</li>
-</ul>
-<p>We use an induction on the complexity of formulas.</p>
-<ul>
-<li><p><strong>Base Case</strong>. An <em>atom</em>, e.g., <span class="math inline">\(p\)</span>, contains an equal number of left and right parentheses, namely, zero.</p></li>
-<li><p><strong>Inductive Step for</strong> <span class="math inline">\(\neg\)</span>. Whenever a formula <span class="math inline">\(\varphi\)</span> is balanced, its negation <span class="math inline">\(\neg \varphi\)</span> is similarly balanced.</p>
-<p>Let <span class="math inline">\(\varphi\)</span> be a balanced formula. Since <span class="math inline">\(\neg \varphi\)</span> contains exactly as many left and right parentheses as <span class="math inline">\(\varphi\)</span>, it still contains an equal number of left and right parentheses. So, <span class="math inline">\(\neg \varphi\)</span> is balanced.</p></li>
-<li><p><strong>Inductive Step for</strong> <span class="math inline">\(\to\)</span>. Whenever formula <span class="math inline">\(\varphi\)</span> and a formula <span class="math inline">\(\psi\)</span> are balanced, the conditional <span class="math inline">\((\varphi \to \psi)\)</span> is balanced as well.</p>
-<p>Let <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> be two balanced formulas and let <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> respectively be the number of left and right parentheses each formula has. <span class="math inline">\((\varphi \to \psi)\)</span> contains <span class="math inline">\(n+m +1\)</span> left parentheses, that is the number of left parentheses in <span class="math inline">\(\varphi\)</span> plus that of left parentheses in <span class="math inline">\(\psi\)</span> plus the initial left parenthesis of the formula. <span class="math inline">\((\varphi \to \psi)\)</span> similarly contains <span class="math inline">\(n+m +1\)</span> right parentheses, that is the number of right parentheses in <span class="math inline">\(\varphi\)</span> plus that of right parentheses in <span class="math inline">\(\psi\)</span> plus the final right parenthesis of the formula. So, <span class="math inline">\((\varphi \to \psi)\)</span> contains exactly the same number of left and right parentheses, which means that it will be a balanced formula.</p></li>
-</ul>
-<p>We conclude that every formula is balanced.</p>
-</div>
-</div>
-</section>
-<section id="semantics" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="semantics"><span class="header-section-number">3.2</span> Semantics</h2>
-<p>The role of a semantics for propositional logic is to explain how to interpret the formal language in order to provide fruitful definitions of validity and logical consequence. We do this by means of assignments of truth values to atomic formulas of the language.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Assignment
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>An assignment for a propositional language <span class="math inline">\(\mathcal{L}\)</span> is a function <span class="math inline">\(v\)</span> from <span class="math inline">\(AT\)</span> into <span class="math inline">\(\{0, 1\}\)</span>, which maps a propositional variable to a truth value.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Valuation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <em>valuation</em> <span class="math inline">\(V\)</span> <em>based on an assignment</em> <span class="math inline">\(v\)</span> is a function from the set of formulas into <span class="math inline">\(\{0, 1\}\)</span> such that:</p>
-<p><span class="math display">\[
-\begin{array}{lll}
-V(p) &amp; = &amp; v(p)\\
-&amp; &amp; \\
-V(\neg \varphi) &amp; = &amp; \begin{cases}1 \ \ \ \text{if} \ V(\varphi) =0\\ 0 \ \ \ \text{if} \ V(\varphi) = 1 \end{cases}\\
-&amp; &amp; \\
-V(\varphi \to \psi) &amp; = &amp; \begin{cases}1 \ \ \ \text{if} \ V(\varphi) =0 \ \text{or} \ V(\psi) = 1\\ 0 \ \ \ \text{if} \ V(\varphi) = 1 \ \text{and} \ V(\psi) = 0\end{cases}\\
-\end{array}
-\]</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Satisfaction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A valuation <span class="math inline">\(V\)</span> <em>satisfies</em> a formula <span class="math inline">\(\varphi\)</span> if, and only if, <span class="math inline">\(V(\varphi) = 1\)</span>.</p>
-<p>A set of formulas <span class="math inline">\(\Gamma\)</span> is <em>satisfiable</em> if, and only if, some valuation <span class="math inline">\(V\)</span> satisfies every element of <span class="math inline">\(\Gamma\)</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Notation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We write that a formula <span class="math inline">\(\varphi\)</span> is <em>satisfiable</em> as shorthand for the claim that <span class="math inline">\(\{\varphi\}\)</span> is satisfiable.</p>
-<p>We write that a set <span class="math inline">\(\Gamma\)</span> is <em>unsatisfiable</em> if <span class="math inline">\(\Gamma\)</span> is not satisfiable.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Validity
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A formula <span class="math inline">\(\varphi\)</span> is <em>propositionally valid</em>, written <span class="math inline">\(\models \varphi\)</span>, if, and only if, every valuation satisfies <span class="math inline">\(\varphi\)</span>.</p>
-<p>If <span class="math inline">\(\Gamma\)</span> is a set of formulas, a formula <span class="math inline">\(\varphi\)</span> is a <em>logical consequence</em> of <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \models \varphi\)</span>, if, and only if, every valuation satisfying every element of <span class="math inline">\(\Gamma\)</span> satisfies <span class="math inline">\(\varphi\)</span>.</p>
+<p><span class="math inline">\(p[\neg q/p] = \neg q\)</span></p>
+<p><span class="math inline">\(\neg (p \to \neg q)[\neg p/p, p \to p/q] = \neg(\neg p \to \neg (p \to p))\)</span></p>
+<p><span class="math inline">\((p \to q)[\neg q/p, \neg p/q] = \neg q \to \neg p\)</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -470,13 +321,385 @@ Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>True or false?</p>
-<ol type="1">
-<li><p>A formula <span class="math inline">\(\varphi\)</span> is unsatisfiable if, and only if, <span class="math inline">\(\neg \varphi\)</span> is valid.</p></li>
-<li><p>A conjunction <span class="math inline">\(\varphi \wedge \psi\)</span> is unsatisfiable if, and only if, <span class="math inline">\(\neg \varphi\)</span> is valid or <span class="math inline">\(\neg \psi\)</span> is valid.</p></li>
-<li><p><span class="math inline">\(\Gamma \models \varphi\)</span> if, and only if, <span class="math inline">\(\Gamma \cup \{\varphi\}\)</span> is satisfiable.</p></li>
-<li><p><span class="math inline">\(\Gamma \models \varphi\)</span> if, and only if, <span class="math inline">\(\Gamma \cup \{\neg \varphi\}\)</span> is unsatisfiable.</p></li>
-</ol>
+<p>Unpack each of the following:</p>
+<p><span class="math inline">\(p[(p \to (q \to p))/p]\)</span></p>
+<p><span class="math inline">\((p \to (q \to p))[\neg p/p, \neg p/q]\)</span></p>
+<p><span class="math inline">\(\neg \neg (p \to \neg q)[(p \to q)/p, (q \to p)/q]\)</span></p>
+</div>
+</div>
+<p>We are now in a position to define the set of axioms of the system:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Axioms
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A well-formed formula <span class="math inline">\(\varphi\)</span> is an axiom if, and only if, it is a substitution instance of one of the well-formed formulas below: <span class="math display">\[
+\begin{array}{lll}
+\textsf{A1} &amp; &amp; p \to (q \to p)\\
+\textsf{A2} &amp; &amp; (p \to (q \to r)) \to ((p \to q) \to (p \to r))\\
+\textsf{A3} &amp; &amp; (\neg p \to \neg q) \to ((\neg p \to q) \to p)
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>We will use a single rule of inference, which we call Modus Ponens (<span class="math inline">\(\textsf{MP}\)</span>). The rule in question will enable us to move from two formulas of the form <span class="math inline">\(\varphi\)</span> and <span class="math inline">\((\varphi \to \psi)\)</span> to the formula <span class="math inline">\(\psi\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Rule of Inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[
+\begin{array}{lll}
+\textsf{MP} &amp; &amp; \varphi, \ (\varphi \to \psi)/\psi\\
+\end{array}
+\]</span></p>
+<p>We now explain what is for a formula to be derivable from a set of formulas:</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Derivability
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A well-formed formula <span class="math inline">\(\varphi\)</span> is derivable from a set of well-formed formulas <span class="math inline">\(\Gamma\)</span>, written <span class="math inline">\(\Gamma \vdash \varphi\)</span>, if, and only if, there is a finite sequence of well-formed formulas <span class="math inline">\((\chi_1, \dots , \chi_n)\)</span> such that</p>
+<p><span class="math inline">\(\chi_n = \varphi\)</span></p>
+<p>for each <span class="math inline">\(m \leq n\)</span>, either</p>
+<p><span class="math inline">\(\chi_m\)</span> is an axiom, or</p>
+<p><span class="math inline">\(\chi_m \in \Gamma\)</span>, or</p>
+<p><span class="math inline">\(\chi_k = (\chi_l \to \chi_m)\)</span>, for some <span class="math inline">\(k, l &lt;m\)</span>.</p>
+<p>Such a finite sequence <span class="math inline">\(( \chi_1, ..., \chi_n )\)</span> is called a derivation (or a proof) of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\Gamma\)</span>.</p>
+</div>
+</div>
+<p>So, a formula appears in a derivation if, and only if, it is either an axiom or a premise or the output of an application of modus ponens to earlier members of the sequence.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A well-formed formula <span class="math inline">\(\varphi\)</span> is a theorem, written <span class="math inline">\(\vdash \varphi\)</span>, if, and only if, <span class="math inline">\(\emptyset \vdash \varphi\)</span>.</p>
+<p>We write <span class="math inline">\(\nvdash \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is not a theorem.</p>
+</div>
+</div>
+<p>Here is our first example of a derivation:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\vdash p \to p\)</span> <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; p \to ((p \to p) \to p) &amp; \textsf{A1}[p/p, (p \to p)/q]\\
+2 &amp; &amp; (p \to ((p \to p) \to p))\to &amp; \\
+  &amp; &amp;
+((p \to (p \to p)) \to (p \to p)) &amp; \textsf{A2}[p/p, (p \to p)/q, p/r]\\
+3 &amp; &amp; (p \to (p \to p)) \to (p \to p) &amp; \textsf{MP} \ 1, 2\\
+4 &amp; &amp; p \to (p \to p) &amp; \textsf{A1}[p/p, p/q]\\
+5 &amp; &amp; p \to p &amp; \textsf{MP} \ 3, 4\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that the derivation is far from intuitive and the system requires one to proceed through trial and error until we find appropriate substitution instances in order to derive <span class="math inline">\(p \to p\)</span> from available axioms. On the other hand, it is simple to generalize the argument above into a schematic derivation of <span class="math inline">\(\varphi \to \varphi\)</span> from no premises: <span class="math display">\[
+\vdash \varphi \to \varphi
+\]</span></p>
+</div>
+</div>
+<p>The axiomatic system is not particularly user-centered and certainly not preferable to natural deduction systems in which there are much simpler proofs of <span class="math inline">\(p \to p\)</span>. Curiously, the axiom system is able to prove every logical truth, and, moreover, it allows one to prove a formula from a set of formulas if, and only if, the former is a logical consequence of the latter.</p>
+<p>But before we establish these results, we set out to develop a library of subroutines, which will facilitate the discussion of the question of whether a given formula is derivable from a set of formulas.</p>
+<section id="the-deduction-theorem" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-deduction-theorem"><span class="header-section-number">4.1</span> The Deduction Theorem</h2>
+<p>We will rely on a very general result. First, some notational conventions.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We write <span class="math inline">\(\Gamma, \varphi\)</span> to abbreviate: <span class="math inline">\(\Gamma \cup \{\varphi\}\)</span>. And we will similarly write <span class="math inline">\(\varphi \vdash \psi\)</span> to abbreviate: <span class="math inline">\(\{\varphi\} \vdash \psi\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Deduction Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a set of formulas <span class="math inline">\(\Gamma\)</span> and formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span> if, and only if, <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+</div>
+</div>
+<p>One direction is simple:</p>
+<div id="thm-ld" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 4.1</strong></span> Given a set of formulas <span class="math inline">\(\Gamma\)</span> and formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>, then <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span></p>
+</div>
+<div id="proof">
+<p><strong>Proof</strong>. Suppose <span class="math inline">\(\varphi \to \psi\)</span> is derivable from <span class="math inline">\(\Gamma\)</span>. To obtain a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, we may extend a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span> with two additional steps: <span class="math inline">\(\varphi\)</span>, which being a member of <span class="math inline">\(\Gamma, \varphi\)</span>, is available as a premise, and <span class="math inline">\(\psi\)</span> which is the output of <span class="math inline">\(\textsf{MP}\)</span> when applied to <span class="math inline">\(\varphi \to \psi\)</span> and <span class="math inline">\(\varphi\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>The other direction is the deduction theorem, which requires a more involved justification:</p>
+<p>The other direction is the deduction theorem, which requires a more involved justification:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a set of formulas <span class="math inline">\(\Gamma\)</span> and formulas <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\(\Gamma, \varphi \vdash \psi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+</div>
+</div>
+<div>
+<p>Choose a set of formulas <span class="math inline">\(\Gamma\)</span> and a formula <span class="math inline">\(\varphi\)</span>. We will use a <em>complete induction</em> (without a base case) on positive integers to prove that for every positive integer <span class="math inline">\(n\)</span>:</p>
+<ul>
+<li>for all sets of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_n\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+</ul>
+<p>That is, we argue that</p>
+<ul>
+<li>if <em>that</em> is true for every positive integer <span class="math inline">\(m &lt; n\)</span>, then <em>it</em> is true for <span class="math inline">\(n\)</span> as well,</li>
+</ul>
+<p>So, we begin with the assumption:</p>
+<ul>
+<li>for every positive integer <span class="math inline">\(m &lt; n\)</span>, for all sets of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_m )\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span></li>
+</ul>
+<p>We want to prove that</p>
+<ul>
+<li>for all sets of formulas <span class="math inline">\(\Gamma\)</span> and for all formulas <span class="math inline">\(\chi_1 \dots \chi_m\)</span> and <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span>, if <span class="math inline">\((\chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(n\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</li>
+</ul>
+<p>Consider a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of the form: <span class="math display">\[
+( \chi_1, ..., \chi_{n})
+\]</span> That means that <span class="math inline">\(\chi_{n}= \psi\)</span>.</p>
+<p>There are four cases to consider:</p>
+<p><strong>Case 1</strong>. <span class="math inline">\(\psi\)</span> is a logical axiom.</p>
+<p>Here is a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; \textsf{A1}[\psi/p, \varphi/q]\\
+2 &amp; &amp; \psi &amp; \\
+3 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ 1, 2\\
+\end{array}
+\]</span></p>
+<p><strong>Case 2</strong>. <span class="math inline">\(\psi \in \Gamma\)</span></p>
+<p>Here is a similar derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \psi \to (\varphi \to \psi) &amp; \textsf{A1}[\psi/p, \varphi/q]\\
+2 &amp; &amp; \psi &amp;  \\
+3 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ 1, 2\\
+\end{array}
+\]</span> <strong>Case 3</strong>. <span class="math inline">\(\psi = \varphi\)</span></p>
+<p>Since <span class="math inline">\(\vdash \varphi \to \varphi\)</span>, a derivation of <span class="math inline">\(\varphi \to \varphi\)</span> is a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>. Therefore <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+<p><strong>Case 4</strong>. <span class="math inline">\(\chi_k = (\chi_l \to \psi)\)</span> for some <span class="math inline">\(k, l &lt; n\)</span>. That is, <span class="math inline">\(\chi_n = \psi\)</span> is the output of an application of <span class="math inline">\(\textsf{MP}\)</span> to earlier lines <span class="math inline">\(\chi_i\)</span> and <span class="math inline">\(\chi_k\)</span>.</p>
+<p>That means that <span class="math inline">\((\chi_l \to \psi)\)</span> and <span class="math inline">\(\chi_l\)</span> are each in the sequence, which means that there are derivations <span class="math inline">\((\chi_1 \dots, \chi_l \to \psi)\)</span> and <span class="math inline">\((\chi_1, \dots, \chi_l)\)</span> of each formula <span class="math inline">\(\chi_l \to \psi\)</span> and <span class="math inline">\(\chi_l\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span> of length <span class="math inline">\(&lt; n\)</span>.</p>
+<p>Since both derivations have length strictly less than <span class="math inline">\(n\)</span>, <em>by inductive hypothesis</em>, <span class="math inline">\(\Gamma \vdash \varphi \to (\chi_l \to \psi)\)</span> and <span class="math inline">\(\Gamma \vdash \varphi \to \chi_l\)</span>.</p>
+<p>To build a derivation of <span class="math inline">\(\varphi \to \psi\)</span> from <span class="math inline">\(\Gamma\)</span>, we may concatenate derivations of <span class="math inline">\(\varphi \to (\chi_1 \to \psi)\)</span> and <span class="math inline">\(\varphi \to \chi_l\)</span>, respectively, from <span class="math inline">\(\Gamma\)</span>: <span class="math display">\[
+\begin{array}{llll}
+&amp; &amp; ... &amp; \\
+&amp; &amp; \vdots &amp; \\
+k &amp; &amp; \varphi \to  (\chi_l \to \psi) &amp; \Gamma \vdash  \varphi \to  (\chi_l \to \psi) \\
+&amp; &amp; \vdots &amp; \\
+m &amp; &amp; \varphi \to  \chi_l &amp; \Gamma \vdash  \varphi \to  \chi_l\\
+&amp; &amp; \vdots &amp; \\
+n&amp; &amp; ((\varphi \to (\chi_1 \to \psi)) \to  &amp; \textsf{A2}[\varphi/p,\chi_l/q,\psi/r]\\
+&amp; &amp; ((\varphi \to \chi_l)\to (\varphi \to \psi)) &amp; \\
+n+1&amp; &amp; (\varphi \to \chi_l)\to (\varphi \to \psi) &amp; \textsf{MP} \ k, n\\
+n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
+\end{array}
+\]</span> So, given <span class="math inline">\(\Gamma\)</span> and <span class="math inline">\(\varphi\)</span>, if <span class="math inline">\(( \chi_1, ..., \chi_n)\)</span> is a derivation of a formula <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\Gamma, \varphi\)</span>, then <span class="math inline">\(\Gamma \vdash \varphi \to \psi\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>The deduction theorem encodes a common method of proof in mathematics. To establish a conditional <span class="math inline">\(\varphi \to \psi\)</span> in a mathematical context, you may simply adjoin <span class="math inline">\(\varphi\)</span> to your assumptions <span class="math inline">\(\Gamma\)</span> and set out to derive <span class="math inline">\(\psi\)</span> from them. That entitles you to conclude that <span class="math inline">\(\varphi \to \psi\)</span> is a deductive consequence of the original assumptions.</p>
+<p>We will now use of the Deduction Theorem to prove a variety of basic facts, which will facilitate the use of the axiom system.</p>
+<div id="prp-dp1" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.1</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))\)</span></p>
+</div>
+<div name="Proof">
+<p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
+\{\varphi \to \psi \} \vdash (\psi \to \chi) \to (\varphi \to \chi).
+\]</span> But given the Deduction Theorem again, it is enough to show: <span class="math display">\[
+\{ \varphi \to \psi, \psi \to \chi\} \vdash \varphi \to \chi,
+\]</span> and, in particular, <span class="math display">\[
+\{\varphi \to \psi, \psi \to \chi, \varphi\} \vdash \chi.
+\]</span> But it is simple to provide a derivation of <span class="math inline">\(\chi\)</span> from <span class="math inline">\(\{\varphi \to \psi, \psi \to \chi, \varphi\}\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \varphi \to \psi &amp;  \\
+2 &amp; &amp; \varphi &amp;   \\
+3 &amp; &amp; \psi &amp; \textsf{MP} \ 1, 2 \\
+4 &amp; &amp; \psi \to \chi &amp;  \\
+5 &amp; &amp; \chi &amp; \textsf{MP} \ 3, 4\\
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-dp2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.2</strong></span> <span class="math inline">\(\vdash (\neg \psi \to \neg \varphi) \to (\varphi \to \psi)\)</span></p>
+</div>
+<div>
+<p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
+\{\neg \psi \to \neg \varphi\}\vdash \varphi \to \psi,
+\]</span> which would in turn follow from the observation: <span class="math display">\[
+\{\neg \psi \to \neg \varphi, \varphi\} \vdash \psi.
+\]</span> We now derive <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\{\neg \psi \to \neg \varphi, \varphi\}\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \psi \to \neg \varphi &amp;  \\
+2 &amp; &amp; \varphi \to (\neg \psi \to \varphi) &amp; \textsf{A1}[\varphi/p,\neg \psi/q]\\
+3 &amp; &amp; \varphi &amp;  \\
+4 &amp; &amp; \neg \psi \to \varphi &amp; \textsf{MP} \ 2, 3\\
+5 &amp; &amp; (\neg \psi \to \neg \varphi) \to ((\neg \psi \to \varphi) \to \psi) &amp; \textsf{A3}[\psi/p, \varphi/q]\\
+6 &amp; &amp; (\neg \psi \to \varphi) \to \psi &amp; \textsf{MP} \ 1, 5\\
+7 &amp; &amp; \psi &amp; \textsf{MP} \ 4, 6
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-dp3" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.3</strong></span> <span class="math inline">\(\vdash \neg \neg \varphi \to \varphi\)</span></p>
+</div>
+<div>
+<p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
+\neg \neg \varphi \vdash \varphi
+\]</span> Here is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\neg \neg \varphi\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \neg \varphi \to (\neg \varphi \to \neg \neg \varphi) &amp; \textsf{A1}[\neg\neg\varphi/p, \neg \varphi/q]\\
+2 &amp; &amp; \neg \neg \varphi &amp;  \\
+3 &amp; &amp; \neg \varphi \to \neg \neg \varphi &amp; \textsf{MP} \ 1, 2 \\
+4 &amp; &amp; (\neg \varphi \to \neg \neg \varphi) \to ((\neg \varphi \to \neg \varphi) \to \varphi) &amp; \textsf{A3}[\varphi/p, \neg \varphi/q]\\
+5 &amp; &amp; (\neg \varphi \to \neg \varphi) \to \varphi &amp; \textsf{MP} \ 3, 4\\
+6 &amp; &amp; \neg \varphi \to \neg \varphi &amp; \vdash \neg \varphi \to \neg \varphi\\
+7 &amp; &amp; \varphi &amp; \textsf{MP} \ 5, 6
+\end{array}
+\]</span></p>
+</div>
+<p>Here is another helpfpul observation:</p>
+<div id="prp-dp4" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.4</strong></span> <span class="math inline">\(\vdash \varphi \to \neg \neg \varphi\)</span></p>
+</div>
+<div name="Proof">
+<p>We exploit the last two observations to produce a simple derivation of <span class="math inline">\(\varphi \to \neg \neg \varphi\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \neg \neg \varphi \to \neg \varphi &amp; \textsf{Prop} \ 3.3\\
+2 &amp; &amp; (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \textsf{Prop} \ 3.2\\
+3 &amp; &amp; \varphi \to \neg \neg \varphi &amp; \textsf{MP} \ 1, 2
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-dp5" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.5</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to (\neg \psi \to \neg \varphi)\)</span></p>
+</div>
+<div>
+<p>Given the Deduction Theorem, it suffices to establish: <span class="math display">\[
+\{\varphi \to \psi \} \vdash \neg \psi \to \neg \varphi,
+\]</span></p>
+<p>Here is a derivation of <span class="math inline">\(\neg \psi \to \neg \varphi\)</span> from <span class="math inline">\(\{\varphi \to \psi\}\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \varphi \to \psi &amp;  \\
+2 &amp; &amp; \psi \to \neg \neg \psi &amp; \textsf{Prop} \ 3.4\\
+3 &amp; &amp; \neg \neg \varphi \to \varphi &amp; \textsf{Prop} \ 3.3\\
+4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \textsf{Prop} \ 3.1 \\
+5 &amp; &amp; (\varphi \to \psi) \to (\neg \neg \varphi \to \psi) &amp; \textsf{MP} \ 3, 4 \\
+6 &amp; &amp; \neg \neg \varphi \to \psi &amp; \textsf{MP} \ 1, 4 \\
+7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \textsf{Prop} \ 3.1 \\
+8 &amp; &amp; (\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi) &amp; \textsf{MP} \ 6, 7\\
+9 &amp; &amp; \neg \neg \varphi \to \neg \neg \psi &amp; \textsf{MP} \ 2, 8\\
+10 &amp; &amp; (\neg \neg \varphi \to \neg \neg \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{Prop} \ 3.2\\
+11 &amp; &amp; \neg \psi \to \neg \varphi &amp; \textsf{MP} \ 9, 10
+\end{array}
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use the Deduction Theorem in order to justify: <span class="math display">\[
+\vdash (\varphi \to \neg \varphi) \to \neg \varphi
+\]</span></p>
+<p><em>Hint</em>. <em>By the Deduction Theorem, we need only show</em> <span class="math inline">\(\{\varphi \to \neg \varphi\}\vdash \neg \varphi\)</span>. <em>One way to do that exploits a substitution instance of</em> <span class="math inline">\(\textsf{A3}\)</span> and <span class="math inline">\(\textsf{Prop}\)</span> 3.3 and 3.5.</p>
+</div>
+</div>
+<div id="prp-dp6" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.6</strong></span> <span class="math inline">\(\vdash \neg  \varphi \to (\varphi \to \psi)\)</span></p>
+</div>
+<div>
+<p>Given the Deduction Theorem, we need only verify:</p>
+<p><span class="math display">\[
+\{\neg \varphi \} \vdash \varphi \to \psi
+\]</span></p>
+<p>By another application of the Deduction Theorem, it is sufficient to check:<br>
+<span class="math display">\[
+\{\neg \varphi, \varphi \}\vdash \psi
+\]</span></p>
+<p>Here is an outline of a derivation of <span class="math inline">\(\psi\)</span> from <span class="math inline">\(\{\neg \varphi, \varphi\}\)</span>: <span class="math display">\[
+\begin{array}{llll}
+1 &amp; &amp; \neg \varphi \to (\neg \psi \to \neg \varphi) &amp;  \textsf{A1}[\neg \varphi/p, \neg \psi/q] \\
+2 &amp; &amp;  \neg \varphi &amp; \\
+3 &amp; &amp;  (\neg \psi \to \neg \varphi) &amp; \textsf{MP} \ 1, 2\\
+4 &amp; &amp;  (\neg \psi \to \neg \varphi) \to (\varphi \to \psi) &amp; \textsf{Prop} \ 3.2\\
+5 &amp; &amp;  \varphi \to \psi &amp; \textsf{MP} \ 3, 4\\
+6 &amp; &amp; \varphi  &amp; \\
+7 &amp; &amp; \psi  &amp; \textsf{MP} \ 5, 6\\
+\end{array}
+\]</span></p>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Explain how to adapt some of the considerations given above in order to justify:</p>
+<p><span class="math display">\[
+\vdash \varphi \to (\neg \varphi \to \psi)
+\]</span></p>
 </div>
 </div>
 
@@ -903,13 +1126,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./background.html" class="pagination-link" aria-label="Background">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span>
+      <a href="./propositional.html" class="pagination-link" aria-label="Basic Language">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./derivations.html" class="pagination-link" aria-label="Axiomatic Derivations">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./completeness.html" class="pagination-link" aria-label="Completeness">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Completeness</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

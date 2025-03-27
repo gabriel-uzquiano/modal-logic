@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Why Modal Logic? – Modal Logic</title>
+<title>9&nbsp; Tense Logic – Modal Logic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./background.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./modalcompleteness.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -110,7 +109,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./tense.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -152,7 +151,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></span></a>
   </div>
 </li>
@@ -233,7 +232,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tense.html" class="sidebar-item-text sidebar-link">
+  <a href="./tense.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
   </div>
 </li>
@@ -249,17 +248,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-question-of-interpretation" id="toc-the-question-of-interpretation" class="nav-link active" data-scroll-target="#the-question-of-interpretation"><span class="header-section-number">1.1</span> The Question of Interpretation</a></li>
-  <li><a href="#possible-worlds" id="toc-possible-worlds" class="nav-link" data-scroll-target="#possible-worlds"><span class="header-section-number">1.2</span> Possible Worlds</a></li>
+  <li><a href="#syntax" id="toc-syntax" class="nav-link active" data-scroll-target="#syntax"><span class="header-section-number">9.1</span> Syntax</a></li>
+  <li><a href="#flow-of-time-models" id="toc-flow-of-time-models" class="nav-link" data-scroll-target="#flow-of-time-models"><span class="header-section-number">9.2</span> Flow of Time Models</a></li>
+  <li><a href="#axiomatic-derivations" id="toc-axiomatic-derivations" class="nav-link" data-scroll-target="#axiomatic-derivations"><span class="header-section-number">9.3</span> Axiomatic Derivations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Introduction</a></li><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./tense.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></h1>
 </div>
 
 
@@ -276,71 +276,300 @@ window.Quarto = {
 </header>
 
 
-<p>Propositional logic classifies propositions into main categories: <em>true</em> and <em>false</em>. Modal logic makes further distinctions between modes in which a proposition may be true or false: <em>necessarily</em> true, <em>possibly</em> true, <em>necessarily</em> false, <em>possibly</em> false. The formal framework of modal logic expands the language of propositional logic with a <em>sentential operator</em>, <span class="math inline">\(\Box\)</span>, for one of those modes, necessity, and a <em>dual</em> operator, <span class="math inline">\(\Diamond\)</span>, for another, possibility.</p>
-<p>There are, however, other interpretations of the formalism.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>modality</th>
-<th><span class="math inline">\(\Box\)</span></th>
-<th><span class="math inline">\(\Diamond\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>alethic</td>
-<td>necessarily</td>
-<td>possibly</td>
-</tr>
-<tr class="even">
-<td>temporal</td>
-<td>always</td>
-<td>sometimes</td>
-</tr>
-<tr class="odd">
-<td>epistemic</td>
-<td>it is known</td>
-<td>for all it is known</td>
-</tr>
-<tr class="even">
-<td>deontic</td>
-<td>obligatory</td>
-<td>permitted</td>
-</tr>
-</tbody>
-</table>
-<p>These distinctions may play a crucial role in philosophical argumentation.</p>
+<p>Arthur Prior introduced tense operators in order to articulate an approach to tense on which it is not to be analyzed in terms of covert quantification over times but rather in terms of propositional operators, which operate on one and the same proposition. Compare, for example, the statements:</p>
+<ol type="1">
+<li><p>There has been an asteroid impact on Earth.</p></li>
+<li><p>There will be an asteroid impact on Earth.</p></li>
+</ol>
+<p>One approach is to take the statements to involve covert quantification over times:</p>
+<ol type="1">
+<li><p>a. There is a time <span class="math inline">\(t\)</span> earlier than the time of utterance at which there is an asteroid impact on Earth.</p></li>
+<li><p>a. There is a time <span class="math inline">\(t\)</span> later than the time of utterance at which there is an asteroid impact on Earth.</p></li>
+</ol>
+<p>On the other hand, Prior suggested, we may take the statements to involve two tense operators, which act on one and the same proposition:</p>
+<ol type="1">
+<li>b. It has been the case that there is an asteroid impact on Earth</li>
+<li>b. It will be the case that there is an asteroid impact on Earth</li>
+</ol>
+<p>These operators act on the proposition expressed by first statement below:</p>
+<ol type="1">
+<li>c. There is an asteroid impact on Earth.</li>
+</ol>
+<p>The proposition may change truth value when evaluated relative to one time or another. That proposition <em>has been</em> true, but it is now false.</p>
+<section id="syntax" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">9.1</span> Syntax</h2>
+<p>The language of tense logic includes two primitive tense operators:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\mathsf{F} \varphi &amp; &amp; \text{It will be the case that} \ \varphi \ \text{at least once in the Future}\\
+\mathsf{P} \varphi &amp; &amp; \text{It has been the case that} \ \varphi \ \text{at least once in the Past}\\
+\end{array}
+\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The Modal Ontological Argument
+The Language of Tense Logic
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider the argument:</p>
+<p>We begin with stock of propositional variables or <em>atoms</em>:</p>
+<p><span class="math display">\[
+AT := p, q, r, \cdots
+\]</span></p>
+<p>We define the formulas of a propositional tense language <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> recursively:</p>
+<p><span class="math display">\[
+\varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi) \ | \ \textsf{F} \varphi \ | \ \textsf{P} \varphi
+\]</span></p>
+</div>
+</div>
+<p>We now define two additional tense operators:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\textsf{G} \varphi &amp; &amp; \text{It is always Going to the case that} \ \varphi \ \text{in the future}\\
+\textsf{H} \varphi &amp; &amp; \text{It Has always been the case that} \ \varphi \ \text{in the past}\\
+\end{array}
+\]</span></p>
+<div id="def-t" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.1 (Derived Tenses)</strong></span> <span class="math display">\[
+\begin{array}{lll}
+\textsf{G} \varphi &amp; := &amp; \neg \textsf{F} \neg \varphi \\
+\textsf{H} \varphi &amp; := &amp; \neg \textsf{P} \neg \varphi \\
+\end{array}
+\]</span></p>
+</div>
+<p>These operators may be combined into more complex tense expressions:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\textsf{GF} \varphi &amp; &amp; \text{It is always Going to the case that} \ \varphi \ \\
+&amp; &amp; \text{will be the case at least once in the future}\\
+\textsf{HP} \varphi &amp; &amp; \text{It has been the case at least once in the past that} \ \varphi \ \\
+&amp; &amp; \text{has always been the case in the past}\\
+\end{array}
+\]</span></p>
+</section>
+<section id="flow-of-time-models" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="flow-of-time-models"><span class="header-section-number">9.2</span> Flow of Time Models</h2>
+<p>We model the language with the help of what we may call <em>flow of time</em> models:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Flow of Time Models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>flow of time model</em> <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> is a structure <span class="math inline">\((T, \prec, V)\)</span> where:</p>
 <ol type="1">
-<li>Necessarily, if God exists, then God exists necessarily.</li>
-<li>It is possible that God exists.</li>
-<li>It is possible that God exists necessarily.</li>
-<li>God exists.</li>
+<li><p><span class="math inline">\(T\)</span> is a non-empty set of <em>times</em> or temporary <em>states</em> of the world.</p></li>
+<li><p><span class="math inline">\(\prec\)</span> is an <em>earlier than</em> relation on <span class="math inline">\(T\)</span>.</p></li>
+<li><p><span class="math inline">\(V\)</span> maps each propositional variable <span class="math inline">\(p\)</span> to a set of times <span class="math inline">\(V(t) \subseteq T\)</span>.</p></li>
 </ol>
-<p>If we let <span class="math inline">\(p\)</span> be the proposition that God exists, we may formalize the argument in the framework of propositional modal logic:</p>
+</div>
+</div>
+<p>We now explain what is for a formula to be true at a time in a flow of time model:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a Time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true at a time</em> <span class="math inline">\(t\)</span> <em>in a flow of time model</em> <span class="math inline">\(M\)</span>, which we write: <span class="math inline">\(M, t \Vdash \varphi\)</span>: <span class="math display">\[
+\begin{array}{lll}
+M, t \Vdash p &amp; \text{iff} &amp; t \in V(p)\\
+M, t \Vdash \neg \varphi &amp; \text{iff} &amp; M, t \nVdash \varphi\\
+M, t \Vdash (\varphi \to \psi) &amp; \text{iff} &amp; M, t \nVdash \varphi \ \text{or} \ M, w \Vdash \psi\\
+M, t \Vdash \textsf{F} \varphi &amp; \text{iff} &amp; \text{for some} \ u \in T \ \text{such that} \ t &lt; u, \ M, u \Vdash \varphi\\
+M, t \Vdash \textsf{P} \varphi &amp; \text{iff} &amp; \text{for some} \ u \in T \ \text{such that} \ u &lt; t, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+<p>Given the defintions of <span class="math inline">\(\textsf{G}\)</span> and <span class="math inline">\(\textsf{H}\)</span> in terms of <span class="math inline">\(\textsf{F}\)</span> and <span class="math inline">\(\textsf{P}\)</span>, we find that <span class="math display">\[
+\begin{array}{lll}
+M, t \Vdash \textsf{G} \varphi &amp; \text{iff} &amp; \text{for all} \ u \in W \ \text{such that} \ t &lt; u, \ M, u \Vdash \varphi\\
+M, t \Vdash \textsf{H} \varphi &amp; \text{iff} &amp; \text{for all} \ u \in W \ \text{such that} \ u &lt; t, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>We finally define what is for a formula to be true at a model.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> to be <em>true in a flow of time model</em> <span class="math inline">\(M\)</span>, which we write <span class="math inline">\(M \Vdash \varphi\)</span> if, and only if, for all <span class="math inline">\(t\in T\)</span>, <span class="math inline">\(M, t \Vdash \varphi\)</span>.</p>
+</div>
+</div>
+<p>Much like in modal propositional logic, flow of time models are based on flow of time frames:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Frame
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>frame</em> <span class="math inline">\(F\)</span> for <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> is an ordered pair <span class="math inline">\((T, \prec)\)</span> where:</p>
+<ol type="1">
+<li><p><span class="math inline">\(T\)</span> is a non-empty set of <em>times</em>, and</p></li>
+<li><p><span class="math inline">\(\prec\)</span> is a binary <em>earlier than relation</em> on <span class="math inline">\(T\)</span></p></li>
+</ol>
+<p>A model <span class="math inline">\(M\)</span> is <em>based on a frame</em> <span class="math inline">\(F = (T, \prec)\)</span> if, and only if, there is an assignment <span class="math inline">\(V\)</span> such that <span class="math inline">\(M = (F, V)\)</span>. That is, <span class="math inline">\(M = (V, \prec, V)\)</span>.</p>
+</div>
+</div>
+<p>For a formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^{\textsf{F},\textsf{P}}\)</span> to be valid in a frame is to be true in every model based on that frame, that is, to be true at every world of every model based on that frame.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Validity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a frame <span class="math inline">\((T, \prec)\)</span>, written <span class="math inline">\((T, \prec) \models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is true in every model <span class="math inline">\((T, \prec, V)\)</span> based on the frame <span class="math inline">\((T, \prec)\)</span>.</p>
+<p>That is, the formula remains true across assignments no matter what sets of worlds we assign to what propositional variables.</p>
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a class of frames <span class="math inline">\(\mathcal{C}\)</span>, written <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span> if, and only if, <span class="math inline">\(\varphi\)</span> is <em>valid</em> in every frame <span class="math inline">\((T, \prec)\)</span> in the class <span class="math inline">\(\mathcal{C}\)</span>.</p>
+</div>
+</div>
+<p>We may, however, want to rule out some frames on the grounds that they fail to satisfy plausible constraints on a physical time order. Some of these constraints are listed below along with formulas of tense logic we may use to characterize flow of time frames in which the relevant condition is satisfied.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Constraints on the Flow of Time
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp;  \Box (p \to \Box p) &amp; &amp;  \\
-2 &amp; &amp; \Diamond p &amp; &amp;  \\
-3 &amp; &amp; \Diamond \Box p &amp; &amp; \\
-4 &amp; &amp; p  &amp; &amp; \\
+\text{Transitivity} &amp; &amp; u \prec t \wedge t \prec v \to u \prec v &amp; &amp;\textsf{FF} p \to \textsf{F}p \\
+&amp; &amp; &amp; &amp; \textsf{G} p \to \textsf{GG}p \\
+&amp; &amp; &amp; &amp; \textsf{PP} p \to \textsf{P}p \\
+&amp; &amp; &amp; &amp; \textsf{H} p \to \textsf{HH}p \\
+&amp; &amp; &amp; &amp; \\
+\text{R-Totality} &amp; &amp; u \prec t \wedge u \prec v \to &amp;  &amp; (\textsf{F}p \wedge \textsf{F} q) \to \\
+&amp; &amp; (t \prec v \vee t = v \vee v \prec t) &amp; &amp; ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \\
+&amp; &amp; &amp; &amp; \textsf{F}(\textsf{F}p \wedge q)) \\
+&amp; &amp; &amp; &amp; \\
+\text{L-Totality} &amp; &amp; t \prec u \wedge v \prec u \to &amp; &amp; (\textsf{P}p \wedge \textsf{P} q) \to \\
+&amp; &amp; (t \prec v \vee t = v \vee v \prec t) &amp; &amp; ( \textsf{P}(p \wedge \textsf{P} q) \vee \textsf{P}(p \wedge q) \vee  \\
+&amp; &amp; &amp; &amp; \textsf{P}(\textsf{P}p \wedge q))\\
+&amp; &amp; &amp; &amp; \\
+\text{R-Extendibility} &amp; &amp;  \exists t \ u \prec t  &amp; &amp; \textsf{G}p \to \textsf{F} p\\
+&amp; &amp; &amp; &amp; \\
+\text{L-Extendibility} &amp; &amp;   \exists t \ t \prec u &amp; &amp; \textsf{H}p \to \textsf{P} p \\
+&amp; &amp; &amp; &amp; \\
+\text{Density} &amp; &amp; u \prec v \to \exists t \ (u \prec t \wedge t \prec v) &amp; &amp; \textsf{F} p \to \textsf{FF}p \\
+&amp; &amp; &amp; &amp; \textsf{GG} p \to \textsf{G}p \\
+&amp; &amp; &amp; &amp; \textsf{P} p \to \textsf{PP}p \\
+&amp; &amp; &amp; &amp; \textsf{HH} p \to \textsf{H}p \\
 \end{array}
 \]</span></p>
-<p>But does the conclusion <em>follow from</em> the premises?</p>
+</div>
+</div>
+<div id="prp-t1" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9.1</strong></span> <span class="math inline">\(R\)</span>-Totality is defined by <span class="math inline">\((\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q))\)</span></p>
+</div>
+<div>
+<p><strong>Proof</strong>. We want to prove that for all flow of time frames <span class="math inline">\((T, \prec)\)</span>,</p>
+<p><span class="math display">\[
+\begin{array}{lcl}
+&amp; (T, \prec) \models (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q)) &amp;  \\
+&amp; \text{iff} &amp;  \\
+&amp; \forall u \in T \ \forall v \in T \ \forall t \in T \ (u \prec t \wedge u \prec v \to (t \prec v \vee t = v \vee v \prec t)) &amp;\\
+\end{array}
+\]</span></p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(\prec\)</span> is not <span class="math inline">\(R\)</span>-total. Then there are times <span class="math inline">\(u, v, t\in T\)</span> such that</p>
+<p><span class="math display">\[
+u \prec t \wedge u \prec v \wedge (t \nprec v \wedge t \neq v \wedge v \nprec t)
+\]</span></p>
+<p>Consider a valuation <span class="math inline">\(V\)</span> for which <span class="math inline">\(V(p) = \{t\}\)</span> and <span class="math inline">\(V(q) = \{v\}\)</span>. Since <span class="math inline">\(u \prec t\)</span> and <span class="math inline">\(u \prec v\)</span>, <span class="math inline">\((T, \prec, V), u \Vdash \textsf{F}p \wedge \textsf{F}q\)</span>. We now argue that <span class="math inline">\(u\)</span> falsifies every disjunct in the consequent of the axiom in the model.</p>
+<p>Since <span class="math inline">\(p\)</span> is only true at <span class="math inline">\(t\)</span> and <span class="math inline">\(q\)</span> is only true at <span class="math inline">\(v\)</span>, and, furthermore, <span class="math inline">\(t \nprec v\)</span>, <span class="math inline">\(p \wedge \textsf{F}q\)</span> is false at all times in the model, much less times later than <span class="math inline">\(u\)</span>. It follows that <span class="math inline">\((T, \prec, V), u \nVdash \textsf{F}(p \wedge \textsf{F}q)\)</span>.</p>
+<p>Since no time in the model verifies <span class="math inline">\(p \wedge q\)</span>, <span class="math inline">\((T, \prec, V), u \nVdash \textsf{F}(p \wedge q)\)</span>.</p>
+<p>Finally, since <span class="math inline">\(p\)</span> is only true at <span class="math inline">\(t\)</span> and <span class="math inline">\(q\)</span> is only true at <span class="math inline">\(v\)</span>, and, furthermore, <span class="math inline">\(v \nprec t\)</span>, <span class="math inline">\(Fp \wedge q\)</span> is false at all times in the model, much less times later than <span class="math inline">\(u\)</span>. It follows that <span class="math inline">\((T, \prec, V), u \nVdash \textsf{F}(\textsf{F}p \wedge q)\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(\prec\)</span> is <span class="math inline">\(R\)</span>-total. Consider a flow of time model <span class="math inline">\((T, \prec, V)\)</span> based on a valuation <span class="math inline">\(V\)</span>, and let <span class="math inline">\(u \in T\)</span> be such that</p>
+<p><span class="math display">\[
+(T, \prec, V), u \Vdash \textsf{F}p \wedge \textsf{F}q
+\]</span></p>
+<p>That means that <span class="math inline">\((T, \prec, V), u \Vdash \textsf{F}p\)</span> and <span class="math inline">\((T, \prec, V), u \Vdash \textsf{F}q\)</span>. That is, there is a time <span class="math inline">\(v\in T\)</span> such that <span class="math inline">\(u \prec v\)</span> and <span class="math inline">\((T, \prec, V), v \Vdash p\)</span> and there is a time <span class="math inline">\(t\in T\)</span> such that <span class="math inline">\(u \prec t\)</span> and <span class="math inline">\((T, \prec, V), t \Vdash q\)</span>. Since <span class="math inline">\(\prec\)</span> is <span class="math inline">\(R\)</span>-total, we have:</p>
+<p><span class="math display">\[
+t \prec v \vee  t = v \vee v \prec t.
+\]</span></p>
+<p>We now reason by cases. If <span class="math inline">\(t \prec v\)</span>, then <span class="math inline">\((T, \prec, V), t \Vdash p \wedge \textsf{F}q\)</span> and <span class="math inline">\((T, \prec, V), u \Vdash \textsf{F}(p \wedge \textsf{F}q)\)</span>. If, on the other hand, <span class="math inline">\(t = v\)</span>, then <span class="math inline">\((T, \prec, V), t \Vdash p \wedge q\)</span> and <span class="math inline">\((T, \prec, V), u \Vdash \textsf{F}(p \wedge q)\)</span>. Finally, if <span class="math inline">\(v \prec t\)</span>, then <span class="math inline">\((T, \prec, V), v \Vdash \textsf{F}p \wedge q\)</span> and <span class="math inline">\((T, \prec, V), u \Vdash \textsf{F}(\textsf{F}p \wedge q)\)</span>. Either way:</p>
+<p><span class="math display">\[
+(T, \prec, V), u \Vdash \textsf{F}(p \wedge \textsf{F}q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q).
+\]</span></p>
+<p>Generalizing,</p>
+<p><span class="math display">\[
+(T, \prec, V) \Vdash (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q)).
+\]</span></p>
+</div>
+<p>Similar arguments are available for other conditions on flow of time frames.</p>
+</section>
+<section id="axiomatic-derivations" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="axiomatic-derivations"><span class="header-section-number">9.3</span> Axiomatic Derivations</h2>
+<p>The minimal tense logic is sound and complete with respect to the class of all frames.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Minimal Tense Logic
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The minimal tense logic <span class="math inline">\(\textsf{L}_0\)</span> consists of an infinite set of axioms and two rules of inference.</p>
+<p>The axioms of <span class="math inline">\(\textsf{L}_0\)</span> include:</p>
 <ul>
-<li><p>What is the justification for the step from 2 to 3?</p></li>
-<li><p>What is the justification for the step from 3 to 4?</p></li>
+<li><p>substitution instances of tautologies of propositional logic</p></li>
+<li><p>substitution instances of the axioms: <span class="math display">\[
+\textsf{G}(p \to  q) \to (\textsf{G} p \to \textsf{G} q)
+\]</span> <span class="math display">\[
+\textsf{H}(p \to  q) \to (\textsf{H} p \to \textsf{H} q)
+\]</span></p></li>
+<li><p>substitution instances of the axioms:</p>
+<p><span class="math display">\[
+p \to \textsf{GP} p
+\]</span> <span class="math display">\[
+p \to \textsf{HF} p
+\]</span></p></li>
 </ul>
+<p>The rules of inference of <span class="math inline">\(\textsf{K}\)</span> include:</p>
+<ul>
+<li>Modus Ponens:</li>
+</ul>
+<p><span class="math display">\[\tag{$\textsf{MP}$}
+\varphi, (\varphi \to \psi)/\psi
+\]</span></p>
+<ul>
+<li>Temporal Generalization:</li>
+</ul>
+<p><span class="math display">\[\tag{$\textsf{TG}$}
+\varphi/\textsf{G} \varphi
+\]</span></p>
+<p><span class="math display">\[\tag{$\textsf{TG}$}
+\varphi/\textsf{H} \varphi
+\]</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -349,129 +578,26 @@ The Modal Ontological Argument
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Aristotle’s Sea Battle
+The tense logic of the rational line
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Consider the argument:</p>
-<ol type="1">
-<li>If there is a sea battle tomorrow, then it was already the case that there would be a sea battle tomorrow.</li>
-<li>If it was already the case that there would be a sea battle tomorrow, then necessarily, it was the case that there would be a sea battle tomorrow.</li>
-<li>If necessarily, it was the case that there would be a sea battle tomorrow, then necessarily, there is a sea battle tomorrow.</li>
-<li>So, if there is a sea battle tomorrow, then necessarily so.</li>
-</ol>
-<p>The argument exploits the interaction between temporal and alethic modalities. In particular, we will use <span class="math inline">\(F\)</span> for ‘it will once be the case that’ and <span class="math inline">\(W\)</span> for ‘it was once the case that’. Finally, we use <span class="math inline">\(\Box\)</span> for ‘it is necessary that’.</p>
+<p>The complete tense logic for the rational number line <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> is <span class="math inline">\(\textsf{L}_0\)</span> supplemented with the axioms:</p>
 <p><span class="math display">\[
-\begin{array}{lllll}
-1 &amp; &amp; F p \to W F p &amp; &amp; \\
-2 &amp; &amp; WF p \to \Box W F p &amp; &amp; \\
-3 &amp; &amp; \Box WFp \to \Box F p &amp; &amp; \\
-4 &amp; &amp; Fp \to \Box F p &amp; &amp; \\
+\begin{array}{lll}
+&amp; (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q)) &amp; R\text{-Totality}\\
+&amp; (\textsf{P}p \wedge \textsf{P} q) \to ( \textsf{P}(p \wedge \textsf{P} q) \vee \textsf{P}(p \wedge q) \vee \textsf{P}(\textsf{P}p \wedge q)) &amp; L\text{-Totality}\\
+&amp; \textsf{G}p \to \textsf{F} p &amp; R\text{-Extendibility}\\
+&amp; \textsf{H}p \to \textsf{P} p &amp; L\text{-Extendibility}\\
+&amp; \textsf{F} p \to \textsf{FF}p &amp; \text{Density} \\
 \end{array}
 \]</span></p>
+<p>The</p>
 </div>
 </div>
-<section id="the-question-of-interpretation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="the-question-of-interpretation"><span class="header-section-number">1.1</span> The Question of Interpretation</h2>
-<p>How should we interpret the formalism? We use truth tables to interpret the language of propositional logic because propositional connectives are <em>truth-functional</em>, e.g., the truth value of a conjunction is a function of the truth values of its conjuncts. The strategy does not seem to be available in the case of modal logic, since the modal operator <span class="math inline">\(\Box\)</span> is not truth-functional:</p>
-<p><span class="math display">\[
-\begin{array}{|c|c|}
-\hline
-\varphi &amp; \Box \varphi \\
-\hline
-T  &amp; ? \\
-\hline
-F  &amp;  F \\
-\hline
-\end{array}
-\]</span></p>
-<p>When <span class="math inline">\(\varphi\)</span> is false, <span class="math inline">\(\Box \varphi\)</span> will of course be false. But the truth of <span class="math inline">\(\varphi\)</span> leaves open whether <span class="math inline">\(\Box \varphi\)</span> is true or false, e.g., <span class="math inline">\(\Box \varphi\)</span> will be true when <span class="math inline">\(\varphi\)</span> is a tautology but false when <span class="math inline">\(\varphi\)</span> is interpreted to make a contingent statement.</p>
-<p>One may attempt to overcome this limitation with the help of a more fine-grained distinction between necessary and contingent truths, on the one hand, and necessary and contingent falsehoods, on the other. We may even reserve the letters <span class="math inline">\(t\)</span> and <span class="math inline">\(T\)</span> for contingent and necessary truths respectively, and we may similarly use <span class="math inline">\(f\)</span> and <span class="math inline">\(F\)</span> for contingent and necessary falsehoods respectively. This appears to suggests a truth table for each negation and <span class="math inline">\(\Box\)</span>:</p>
-<p><span class="math display">\[
-\begin{array}{|c|c|c|}
-\hline
-\varphi &amp; \neg \varphi &amp; \Box \varphi\\
-\hline
-T  &amp; F &amp; T\\
-\hline
-t  &amp;  f &amp; F\\
-\hline
-F  &amp; T &amp; F\\
-\hline
-f  &amp;  t &amp; F\\
-\hline
-\end{array}
-\]</span></p>
-<p>The problem remains that we cannot generalize the scheme to cover binary propositional connectives such as the material connective. Once we opt for the more fine-grained distinction between necessary and contingent truths and falsehoods, the truth value of the conditional ceases to be a function of the truth values of antecedent and consequent.</p>
-<p><span class="math display">\[
-\begin{array}{|c|c|c|c|c|}
-\hline
-\to &amp; T &amp; t &amp; F &amp; f\\
-\hline
-T  &amp; T &amp; t &amp; F  &amp;  f \\
-\hline
-t  &amp;  T &amp; ? &amp; F &amp;  f\\
-\hline
-F  &amp; T &amp; T &amp; T &amp; T \\
-\hline
-f  &amp;  T &amp; t &amp; t &amp; ? \\
-\hline
-\end{array}
-\]</span></p>
-<p>When <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are contingently true, <span class="math inline">\(\varphi \to \psi\)</span> may be necessarily true, e.g., <span class="math inline">\(p \to p\)</span> if <span class="math inline">\(p\)</span> is contingently true, or merely contingently true, e.g., <span class="math inline">\(p\to q\)</span> for suitable choices of contingent propositions <span class="math inline">\(p\)</span> and <span class="math inline">\(q\)</span>. Likewise, when <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are contingently false, the conditional may be necessarily or contingently true.</p>
-</section>
-<section id="possible-worlds" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="possible-worlds"><span class="header-section-number">1.2</span> Possible Worlds</h2>
-<p>We must look elsewhere for an interpretation of the formalism of propositional modal logic. One key observation at this point is that propositions differ not just with respect to <em>whether</em> they are true or false, they may differ with respect to <em>the circumstances under which</em> they are true or false. The propositions expressed by the statements ‘Los Angeles has over three million inhabitants’ and ‘Kilimanjaro rises to 5,895 meters’ are both true but there are possible circumstances under which one is true and the other is false.</p>
-<p>We may think of <em>possible worlds</em> as complete specifications of a <em>way the world might be</em>, and we may ask whether a sentence is <em>true at</em> a possible world. That is, we may ask whether the possible world in question specifies circumstances under which the sentence is in fact true.</p>
-<p>Once we take on board the thought that a sentence may be true when evaluated with respect to one possible world but not when evaluated with respect to another, we may ask what is for a possible world to be <em>possible relative to</em> another. The proposition that I’m a philosopher is true given how the world is, but there are possible circumstances under which I’m an engineer. We codify that as the thought that a world at which I’m an engineer is <em>possible with respect to</em> the world of evaluation. We will call a possible world is <em>accessible from</em> another world if the former is possible with respect to the latter.</p>
-<p>We now have the basic ingredients for a possible world semantics for propositional modal logic. More formally, a model for the framework will consist of a collection of <em>possible worlds</em> <span class="math inline">\(W\)</span>, an <em>accessibility relation</em> <span class="math inline">\(R\)</span> on the collection <span class="math inline">\(W\)</span>, and a <em>valuation function</em>, which specifies which propositions are true at what possible worlds.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A Possible Worlds Model
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Here is a depiction of a possible worlds model, which consists of a set <span class="math inline">\(W\)</span> of four worlds and a binary relation <span class="math inline">\(R\)</span> on <span class="math inline">\(W\)</span>. The model verifies <span class="math inline">\(p\)</span> at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span>, and it verifies <span class="math inline">\(q\)</span> at <span class="math inline">\(w_2\)</span> and <span class="math inline">\(w_4\)</span>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/d1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<ul>
-<li><p>A negation <span class="math inline">\(\neg \varphi\)</span> is true at a world <span class="math inline">\(w\)</span> if, and only if <span class="math inline">\(\varphi\)</span> is false at that world.</p></li>
-<li><p>A material conditional <span class="math inline">\(\varphi \to \psi\)</span> is true at a world <span class="math inline">\(w\)</span> just in case <span class="math inline">\(\varphi\)</span> is false at <span class="math inline">\(w\)</span> or <span class="math inline">\(\psi\)</span> is true at <span class="math inline">\(w\)</span>.</p></li>
-<li><p>A formula <span class="math inline">\(\Box \varphi\)</span> is true at a world <span class="math inline">\(w\)</span> if, and only if, <span class="math inline">\(\varphi\)</span> is true at <em>every</em> world <span class="math inline">\(u\)</span> to which <span class="math inline">\(w\)</span> is related.</p></li>
-<li><p>A formula <span class="math inline">\(\Diamond \varphi\)</span> is true at a world <span class="math inline">\(w\)</span> if, and only if, <span class="math inline">\(\varphi\)</span> is true at <em>some</em> world <span class="math inline">\(u\)</span> to which <span class="math inline">\(w\)</span> is related.</p></li>
-</ul>
-<p>Consider the premises and conclusion of the modal ontological argument:</p>
-<ul>
-<li><span class="math inline">\(p \to \Box p\)</span> is true in <em>every</em> world in the model.</li>
-</ul>
-<p>Therefore,</p>
-<ul>
-<li><p><span class="math inline">\(\Box (p \to \Box p)\)</span> is true at <em>every</em> world in the model.</p></li>
-<li><p><span class="math inline">\(\Diamond p\)</span> is true at <em>every</em> world in the model.</p></li>
-<li><p><span class="math inline">\(\Box p\)</span> is true at <em>every</em> world in the model.</p></li>
-<li><p><span class="math inline">\(\Diamond \Box p\)</span> is true at every world in the model.</p></li>
-<li><p><span class="math inline">\(p\)</span> is true at <span class="math inline">\(w_3\)</span> and <span class="math inline">\(w_4\)</span> but not at either <span class="math inline">\(w_1\)</span> or <span class="math inline">\(w_2\)</span>.</p></li>
-</ul>
-<p>It follows that <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span> are each a world that verifies every premise of the argument but not its conclusion.</p>
-<p>It will turn out that the validity of the argument for the existence of numbers turns on the structure of the accessibility relation. That is, the argument will be valid when we restrict attention to models in which the accessibility relation is either <em>symmetric</em> or models in which the accessibility relation is <em>reflexive</em> and <em>euclidean</em>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-</div>
-</div>
+<p>The complete. tense logic of the rational number line <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> is the</p>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Please do not worry if any of those terms are new to you. Much of what we will do before we formally introduce the language of propositional modal logic is to cover some preliminaries, which will include some discussion of the structure of binary relations.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->
@@ -894,14 +1020,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./modalcompleteness.html" class="pagination-link" aria-label="Completeness">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./background.html" class="pagination-link" aria-label="Background">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

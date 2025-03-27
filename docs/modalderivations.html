@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; Axiomatic Derivations – Modal Logic</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./modalcompleteness.html" rel="next">
+<link href="./modalpropositional.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modalpropositional.html">Modal Propositional Logic</a></li><li class="breadcrumb-item"><a href="./modalderivations.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Modal Logic</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./propositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./derivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./completeness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Modal Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalderivations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalcompleteness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tense.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-minimal-normal-modal-logic" id="toc-the-minimal-normal-modal-logic" class="nav-link active" data-scroll-target="#the-minimal-normal-modal-logic"><span class="header-section-number">7.1</span> The Minimal Normal Modal Logic</a>
+  <ul class="collapse">
+  <li><a href="#derived-rules-of-inference" id="toc-derived-rules-of-inference" class="nav-link" data-scroll-target="#derived-rules-of-inference"><span class="header-section-number">7.1.1</span> Derived Rules of Inference</a></li>
+  <li><a href="#theorems-of-textsfk" id="toc-theorems-of-textsfk" class="nav-link" data-scroll-target="#theorems-of-textsfk"><span class="header-section-number">7.1.2</span> Theorems of <span class="math inline">\(\textsf{K}\)</span></a></li>
+  </ul></li>
+  <li><a href="#normal-modal-logics" id="toc-normal-modal-logics" class="nav-link" data-scroll-target="#normal-modal-logics"><span class="header-section-number">7.2</span> Normal Modal Logics</a>
+  <ul class="collapse">
+  <li><a href="#landscape-of-normal-modal-systems" id="toc-landscape-of-normal-modal-systems" class="nav-link" data-scroll-target="#landscape-of-normal-modal-systems"><span class="header-section-number">7.2.1</span> Landscape of normal modal systems</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./modalpropositional.html">Modal Propositional Logic</a></li><li class="breadcrumb-item"><a href="./modalderivations.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We now aim for an alternative characterization of the set of formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are valid in different classes of frames. We will begin with a system K, whose theorems are all and only formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are valid in every frame. We will later consider extensions of that system, whose theorems are all and only formulas valid in every frame in a certain class, e.g., reflexive, symmetric, transitive, etc.</p>
+<section id="the-minimal-normal-modal-logic" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="the-minimal-normal-modal-logic"><span class="header-section-number">7.1</span> The Minimal Normal Modal Logic</h2>
+<p>The minimal normal modal logic consists of an infinite set of axioms and two rules of inference.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The System <span class="math inline">\(\textsf{K}\)</span>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>axioms</strong> of <span class="math inline">\(\textsf{K}\)</span> include:</p>
+<ul>
+<li><p>substitution instances of tautologies of propositional logic</p></li>
+<li><p>substitution instances of the axiom: <span class="math display">\[\tag{$\textsf{K}$}
+\Box(p \to  q) \to (\Box p \to \Box q)\\
+\]</span></p></li>
+</ul>
+<p>The <strong>rules of inference</strong> of <span class="math inline">\(\textsf{K}\)</span> include:</p>
+<ul>
+<li>Modus Ponens:</li>
+</ul>
+<p><span class="math display">\[\tag{$\textsf{MP}$}
+\varphi, (\varphi \to \psi)/\psi
+%\text{If} \  \vdash \varphi \ \text{and} \  \vdash (\varphi \to \psi), \ \text{then} \ \vdash \psi
+\]</span></p>
+<ul>
+<li>Necessitation:</li>
+</ul>
+<p><span class="math display">\[\tag{$\textsf{N}$}
+\varphi/\Box \varphi
+%\text{If} \  \vdash \varphi \ \text{then} \ \vdash \Box \varphi
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Derivation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A derivation in <span class="math inline">\(\textsf{K}\)</span> is, as usual, a finite sequence of formulas <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, each of them</p>
+<ul>
+<li><p>a substitution instance of <span class="math inline">\(\textsf{K}\)</span></p></li>
+<li><p>an outcome of an application of <span class="math inline">\(\textsf{MP}\)</span> to two prior formulas</p></li>
+<li><p>an outcome of an application of <span class="math inline">\(\textsf{N}\)</span> to a prior formula</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> is a theorem of <span class="math inline">\(\textsf{K}\)</span>, written <span class="math inline">\(\vdash_{\textsf{K}} \varphi\)</span>, if, and only if, some proof in K ends with the formula <span class="math inline">\(\varphi\)</span>.</p>
+</div>
+</div>
+<p>The axioms of the minimal modal logic <span class="math inline">\(\textsf{K}\)</span> are valid in all frames, and the rules of inference preserve validity in all frames. So, every theorem of <span class="math inline">\(\textsf{K}\)</span> is valid in every frame.</p>
+<div id="thm-k" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.1</strong></span> All substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span> is valid in all frames. <span class="math display">\[\tag{$\textsf{K}$}
+\Box(p \to  q) \to (\Box p \to \Box q)\\
+\]</span></p>
+</div>
+<div id="proof">
+<p><strong>Proof</strong>. Consider a substitution instance of axiom <span class="math inline">\(\textsf{K}\)</span>: <span class="math display">\[
+\Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi).
+\]</span></p>
+<p>Let <span class="math inline">\((W, R)\)</span> be a frame and let <span class="math inline">\((W, R, V)\)</span> be a model based on that frame. We argue that <span class="math inline">\((W,R,V) \models \Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi)\)</span>. To that end, let <span class="math inline">\(w \in W\)</span> and suppose that <span class="math inline">\((W,R,V), w \Vdash \Box (\varphi \to \psi)\)</span> and <span class="math inline">\((W,R,V), w \Vdash \Box \varphi\)</span>. If <span class="math inline">\(u\in W\)</span> is such that <span class="math inline">\(Rwu\)</span>, then <span class="math inline">\((W,R,V), u \Vdash \varphi \to \psi\)</span> and <span class="math inline">\((W,R,V) \Vdash \varphi\)</span>. Therefore, <span class="math inline">\((W,R,V), u  \Vdash  \psi\)</span>. Generalizing, we find <span class="math inline">\((W,R,V), w \Vdash \Box \psi\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>While it is a purely mechanical procedure to check whether a finite sequence of formulas is a proof in a given system, it may take some skill and experience to find one. There is no perfectly general recipe for this, but as a general piece of advice, it helps to spend some time considering the question of why the formula should be valid. Since proofs and theorems of <span class="math inline">\(\textsf{K}\)</span> track validity in all frames, the question of validity may on occasion guide us to a proof.</p>
+<section id="derived-rules-of-inference" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="derived-rules-of-inference"><span class="header-section-number">7.1.1</span> Derived Rules of Inference</h3>
+<p>One important observation at this point is that we are entitled to propositional inferences within the system. If two formulas are propositionally equivalent, then you should feel free to move from one to the other. Here is a formal justification of that fact.</p>
+<div id="thm-kp" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.2</strong></span> If <span class="math inline">\(\vdash_{\textsf{K}} \varphi_1, \dots, \vdash_{\textsf{K}} \varphi_n\)</span> and <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\vdash_{\textsf{K}} \psi\)</span>.</p>
+</div>
+<div>
+<p><strong>Proof</strong>. Given the Deduction Theorem for Propositional Logic, if <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\varphi_1 \to (\varphi_2 \to (\dots (\varphi_n \to \psi)\dots))\)</span> is a theorem of propositional logic and thus a theorem of <span class="math inline">\(K\)</span>. By repeated applications of Modus Ponens, we infer <span class="math inline">\(\vdash_\textsf{K} \psi\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>We are similarly able to justify derived rules of inference, which will help us take a more direct route between two steps in a proof.</p>
+<div id="thm-d" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.3</strong></span> If <span class="math inline">\(\vdash_{\textsf{K}} \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_{\textsf{K}} \Box \varphi \to \Box \psi\)</span>.</p>
+</div>
+<div>
+<p><strong>Proof</strong>. We may transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\varphi \to \Box \psi\)</span>. <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \varphi \to \psi &amp; \\
+2 &amp; &amp; \Box (\varphi \to \psi) &amp; \textsf{RN} \ 1\\
+3  &amp; &amp; \Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi) &amp; \textsf{K}[\varphi/p, \psi/q]\\
+4 &amp; &amp; \Box \varphi \to \Box \psi &amp; \textsf{MP} \ 2, 3\\
+\end{array}
+\]</span></p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>This justifies a derived rule of inference:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Two Derived Rules of Inference
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\tag{$\textsf{RK}$}
+\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \varphi \to \Box \psi
+\]</span></p>
+<p><span class="math display">\[\tag{$\textsf{RK}\Diamond$}
+\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Diamond \varphi \to \Diamond \psi
+\]</span></p>
+</div>
+</div>
+<div id="thm-dd" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 7.4</strong></span> If <span class="math inline">\(\vdash_\textsf{K} \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_\textsf{K} \Diamond \varphi \to \Diamond \psi\)</span>.</p>
+</div>
+<div id="Proof">
+<p><strong>Proof</strong>. We may transform a proof of <span class="math inline">\(\varphi \to \psi\)</span> into a proof of <span class="math inline">\(\Diamond \varphi \to \Diamond \psi\)</span> <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \varphi \to \psi &amp; \\
+2 &amp; &amp; \neg \psi \to \neg \varphi &amp; \textsf{PL} \ 1 \\
+3 &amp; &amp; \Box \neg \psi \to \Box \neg \varphi &amp;  \textsf{RK} \ 2 \\
+4 &amp; &amp; \neg \Box \neg \varphi \to \neg \Box \neg \psi &amp; \textsf{PL} \ 3\\
+7 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \textsf{Def}  \ \Diamond \ 4\\
+\end{array}
+\]</span></p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>More generally, if <span class="math inline">\(Q\)</span> is a string of modal operators, we are in a position to justify the derived rule of inference:</p>
+<p><span class="math display">\[\tag{$\textsf{RK}Q$}
+\text{If} \  \vdash_K \varphi \to \psi \ \text{then} \ \vdash Q \varphi \to Q \psi
+\]</span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the derived rule of inference:</p>
+<p><span class="math display">\[\tag{$\textsf{RK}\Box \Diamond$}
+\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \Diamond \varphi \to \Box \Diamond \psi
+\]</span> Here is how to transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\Box \Diamond \varphi \to \Box \Diamond \psi\)</span>:</p>
+<p><span class="math display">\[ \begin{array}{lllll} 1 &amp; &amp; \varphi \to \psi &amp; \\ 2 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \textsf{RK}\Diamond \ 1\\ 3 &amp; &amp; \Box \Diamond \varphi \to \Box \Diamond \psi &amp; \textsf{RK} \ 2\\ \end{array} \]</span></p>
+</div>
+</div>
+</section>
+<section id="theorems-of-textsfk" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="theorems-of-textsfk"><span class="header-section-number">7.1.2</span> Theorems of <span class="math inline">\(\textsf{K}\)</span></h3>
+<p>We now exploit some of these derived rules of inference to prove some theorems of the minimal normal modal logic <span class="math inline">\(\textsf{K}\)</span>.</p>
+<div id="prp-7a" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.1</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi)\)</span></p>
+</div>
+<div>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; (\varphi \to \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{PL} \\
+2 &amp; &amp; \Box (\varphi \to \psi) \to \Box(\neg \psi \to \neg \varphi) &amp; \textsf{RK} \ 1 \\
+3 &amp; &amp; \Box (\neg \psi \to \neg \varphi) \to (\Box \neg \psi \to \Box \neg \varphi) &amp; \textsf{K}[\neg \psi/p, \neg \varphi/q] \\
+4 &amp; &amp; (\Box \neg \psi \to \Box \neg \varphi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \textsf{PL}\\
+5 &amp; &amp; \Box (\varphi \to \psi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \textsf{PL} \ 2, 3, 4\\
+6 &amp; &amp; \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi) &amp; \textsf{Def} \ \Diamond \  6\\
+\end{array}
+\]</span></p>
+</div>
+<p>Given those observations, it is simple to justify:</p>
+<div id="prp-7b" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.2</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond p \wedge \Box (p \to q) \to \Diamond q\)</span></p>
+</div>
+<p>For <span class="math inline">\(\Diamond p \wedge \Box (p \to q) \to \Diamond q\)</span> is propositionally equivalent to <span class="math inline">\(\Box (p \to q) \to (\Diamond p \to \Diamond q)\)</span>.</p>
+<p>Other well-known theorems of the minimal logic K are principles such as the distribution of <span class="math inline">\(\Box\)</span> over <span class="math inline">\(\wedge\)</span> and the distribution of <span class="math inline">\(\Diamond\)</span> over <span class="math inline">\(\vee\)</span>.</p>
+<div id="prp-7c" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.3</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box(\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi)\)</span></p>
+</div>
+<div>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; (\varphi \wedge \psi) \to \varphi &amp; \textsf{PL} \\
+2 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \varphi &amp; \textsf{RK} \ 1 \\
+3 &amp; &amp; (\varphi \wedge \psi) \to \psi &amp; \textsf{PL} \\
+4 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \psi &amp; \textsf{RK} \ 3 \\
+5 &amp; &amp; \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi) &amp; \textsf{PL} \ 2, 4\\
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-7d" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.4</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi)\)</span></p>
+</div>
+<div>
+<p>This proof combines the use of a distribution rule with an instance of K. <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \varphi \to (\psi \to (\varphi \wedge \psi)) &amp; \textsf{PL} \\
+2 &amp; &amp; \Box \varphi \to \Box (\psi \to (\varphi \wedge \psi)) &amp; \textsf{RK} \ 1\\
+3 &amp; &amp; \Box (\psi \to (\varphi \wedge \psi)) \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \textsf{K}[\psi/p, (\varphi \wedge \psi)/q]\\
+4 &amp; &amp; \Box \varphi \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \textsf{PL} \ 2, 3\\
+5 &amp; &amp; (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi) &amp; \textsf{PL} \ 4\\
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-de" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.5</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi)\)</span></p>
+</div>
+<div>
+<p>The strategy behind the proof is to exploit the fact that <span class="math inline">\(\Diamond\)</span> is a dual of <span class="math inline">\(\Box\)</span>, that is, <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, and the fact that the negation of a disjunction is propositionally equivalent to a conjunction of negations. When we combine them with the fact that <span class="math inline">\(\Box\)</span> distributes over <span class="math inline">\(\wedge\)</span>, we have a proof ot the principle.</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \textsf{Def} \ \Diamond\\
+2 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \ 1\\
+3 &amp; &amp; \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) &amp; \textsf{PL}\\
+4 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{RK} \ 3\\
+5 &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{Prop} \ 7.5\\
+6 &amp; &amp; (\Box \neg \varphi \wedge \Box \neg \psi)  \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \textsf{PL} \\
+7 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi)  \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{Def} \ \Diamond\\
+8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 5, 6, 7\\
+9 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 2, 8\\
+10 &amp; &amp; (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) &amp; \textsf{PL} \ 9\\
+\end{array}
+\]</span></p>
+</div>
+<div id="prp-7f" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.6</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi)\)</span></p>
+</div>
+<div>
+<p>This time we exploit the fact that a conjunction of necessitations entails the necessitation of a conjunction. <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \textsf{Def} \ \Diamond \\
+2 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{PL} \\
+3 &amp; &amp; (\Box \neg \varphi \wedge \Box \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{Prop} \ 7.6\\
+4 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{PL} \ 1, 2, 3\\
+5 &amp; &amp; (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) &amp; \textsf{PL} \\
+6  &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{RK} \ 5 \\
+7 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \ 4, 6\\
+8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \\
+9 &amp; &amp; \neg \neg \Box \neg (\varphi \vee \psi) \to \neg \Diamond (\varphi \vee \psi) &amp; \textsf{Def} \ \Diamond\\
+10 &amp;  &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) &amp;  \textsf{PL} \ 7, 8, 9\\
+11 &amp; &amp; \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 10
+\end{array}
+\]</span></p>
+</div>
+<p>We conclude with another helpful theorem of <span class="math inline">\(\textsf{K}\)</span>.</p>
+<div id="prp-7g" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.7</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi)\)</span></p>
+</div>
+<div>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \neg (\varphi \wedge \psi) \to (\psi \to \neg \varphi) &amp; \textsf{PL} \\
+2 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to \Box (\psi \to \neg \varphi) &amp; \textsf{RK} \ 1 \\
+3 &amp; &amp; \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) &amp;  \textsf{K}[\psi/p, \neg \varphi/q] \\
+4 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi)  &amp; \textsf{PL} \ 2, 3\\
+5 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \neg \Box \neg (\varphi \wedge \psi) &amp; \textsf{PL} \ 4 \\
+6 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{Def} \ \Diamond \\
+7 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \neg (\Box \psi \to \Box \neg \varphi) &amp; \textsf{PL} \\
+8 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{PL} \ 6, 7\\
+9 &amp; &amp; (\Box \psi \wedge \Diamond \varphi) \to (\Box \psi \wedge \neg \Box \neg \varphi) &amp; \textsf{Def} \ \Diamond\\
+10 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to (\Box \psi \wedge \Diamond \varphi) &amp; \textsf{PL} \\
+11 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{PL} \ 8, 9, 10\\
+\end{array}
+\]</span></p>
+</div>
+</section>
+</section>
+<section id="normal-modal-logics" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="normal-modal-logics"><span class="header-section-number">7.2</span> Normal Modal Logics</h2>
+<p>We will focus on extensions of the minimal modal logic that result from <span class="math inline">\(\textsf{K}\)</span> when we supplement its axioms with substitution instances of certain modal axioms.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Normal Modal Logic
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A normal modal <span class="math inline">\(\Sigma\)</span> logic is an axiom system, which results from <span class="math inline">\(\textsf{K}\)</span> when we add to its axioms all substitution instances of further modal axioms.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+KT
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The normal modal logic <span class="math inline">\(\textsf{KT}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{K}\)</span> with all substitution instances of the axiom: <span class="math display">\[\tag{\textsf{T}}
+\Box p \to p
+\]</span> We write <span class="math inline">\(\vdash_{\textsf{KT}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span>.</p>
+</div>
+</div>
+<p>Two more notable normal modal systems are <span class="math inline">\(\textsf{S4}\)</span> and <span class="math inline">\(\textsf{S5}\)</span>, respectively.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+S4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The normal modal logic <span class="math inline">\(\textsf{S4}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{KT}\)</span> with all substitution instances of the axiom:</p>
+<p><span class="math display">\[\tag{\textsf{4}}
+\Box p \to \Box \Box p
+\]</span> We write <span class="math inline">\(\vdash_{\textsf{S4}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{S4}\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+S5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The normal modal logic <span class="math inline">\(\textsf{S5}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{S4}\)</span> with all substitution instances of the axiom:</p>
+<p><span class="math display">\[\tag{\textsf{5}}
+\Diamond p \to \Box \Diamond p
+\]</span> We write <span class="math inline">\(\vdash_{\textsf{S5}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{S5}\)</span>.</p>
+</div>
+</div>
+<p>The axioms below are interderivable from their modal duals:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 31%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Axiom</th>
+<th>Dual</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\textsf{T}\)</span></td>
+<td><span class="math inline">\(\Box p \to p\)</span></td>
+<td><span class="math inline">\(p \to \Diamond p\)</span></td>
+<td><span class="math inline">\(\textsf{T}_\Diamond\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\textsf{B}\)</span></td>
+<td><span class="math inline">\(p \to \Box \Diamond  p\)</span></td>
+<td><span class="math inline">\(\Diamond \Box p \to p\)</span></td>
+<td><span class="math inline">\(\textsf{B}_\Diamond\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\textsf{4}\)</span></td>
+<td><span class="math inline">\(\Box p \to \Box \Box p\)</span></td>
+<td><span class="math inline">\(\Diamond \Diamond p \to \Diamond p\)</span></td>
+<td><span class="math inline">\(\textsf{4}_\Diamond\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\textsf{5}\)</span></td>
+<td><span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span></td>
+<td><span class="math inline">\(\Diamond \Box p \to \Box p\)</span></td>
+<td><span class="math inline">\(\textsf{5}_\Diamond\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the interderivability of <span class="math inline">\(\textsf{T}_\Diamond\)</span> from <span class="math inline">\(\textsf{T}\)</span>:</p>
+<p><span class="math inline">\(\textsf{KT} \vdash \textsf{T}_\Diamond\)</span></p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp;  &amp; \Box  \neg   p \to \neg p &amp; T[\neg p/p]\\
+2 &amp; &amp; \neg \neg  p \to \neg \Box \neg p &amp; \text{PL}  \ 1\\
+3 &amp; &amp; \neg \neg p \to \Diamond p &amp; \text{Def} \ \Diamond \ 2  \\
+4 &amp; &amp; p \to \Diamond p &amp; \text{PL} \ 3  \\
+\end{array}
+\]</span></p>
+<p><span class="math inline">\(\textsf{KT}_\Diamond \vdash \textsf{T}\)</span></p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp;  &amp; \neg p \to \Diamond \neg p &amp; T_\Diamond[\neg p/p]\\
+2 &amp; &amp; \neg  p \to \neg \Box \neg \neg p &amp; \text{Def} \ \Diamond \ 1  \\
+3 &amp; &amp; \neg \neg \Box \neg \neg p \to \neg \neg p &amp; \text{PL} \ 2  \\
+4 &amp; &amp; \Box \neg \neg p \to \neg \neg p &amp; \text{PL} \ 3  \\
+5 &amp; &amp; p \to \neg \neg p &amp; \text{PL} \\
+6 &amp; &amp; \Box p \to \Box \neg \neg p &amp; \text{RK} \ 5 \\
+7 &amp; &amp; \Box p \to  p &amp; \text{PL} \ 4, 6  \\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>The equivalence proof is completely parallel in all other cases.</p>
+<section id="landscape-of-normal-modal-systems" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="landscape-of-normal-modal-systems"><span class="header-section-number">7.2.1</span> Landscape of normal modal systems</h3>
+<p>We are in a position to compare the deductive strength of different normal modal systems. In what follows, we aim to develop an overview of the landscape of normal modal systems for propositional modal logic.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Extension
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A modal system <span class="math inline">\(\Sigma\)</span> <em>extends</em> another modal system <span class="math inline">\(\Delta\)</span>, written <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span>, if, and only if, every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>. Or, in other words, for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, <span class="math display">\[
+\text{If} \ \vdash_{\Delta} \varphi \ \text{then} \ \vdash_{\Sigma} \varphi
+\]</span> A modal system <span class="math inline">\(\Sigma\)</span> is a proper extension of <span class="math inline">\(\Delta\)</span>, written <span class="math inline">\(\Delta \sqsubset \Sigma\)</span> if, and only if, <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> but <span class="math inline">\(\Sigma \not \sqsubseteq \Delta\)</span>.</p>
+</div>
+</div>
+<p>Here is a graphical representation of some of the relations in which eleven normal modal systems stand to. each other. Each edge connects a modal system with a proper extension located above in the diagram.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/landscape.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>There are two main techniques we use in order to justify the diagram. To argue that a modal system <span class="math inline">\(\Sigma\)</span> extends a system <span class="math inline">\(\Delta\)</span>, we argue that every axiom of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
+<div id="prp-ea" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.8</strong></span> <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> if <span class="math inline">\(\Sigma\)</span> proves every axiom of <span class="math inline">\(\Delta\)</span>.</p>
+</div>
+<div>
+<p><strong>Proof</strong>. Since <span class="math inline">\(\Delta\)</span> and <span class="math inline">\(\Sigma\)</span> share the same rules of inference, if every axiom of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>, then every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\textsf{KD} \sqsubseteq \textsf{KT}\)</span></p>
+<p>This is because <span class="math inline">\(\vdash_{\textsf{KT}} \Box \varphi \to \Diamond \varphi\)</span>. <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \Box \varphi \to \varphi &amp; T[\varphi/p] \\
+2 &amp; &amp; \varphi \to \Diamond \varphi &amp; T_\Diamond[\varphi/p]\\
+3 &amp; &amp; \Box \varphi \to \Diamond \varphi &amp; PL \ 1, 2\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a semantic counterpart to this observation. We will eventually observe that each normal modal system characterizes the set of validities in a certain class of frames. In fact, each node in the earlier diagram corresponds to a class of formulas valid in a specific class of frames:</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/landscape-rel.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Soundness
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A modal system <span class="math inline">\(\Sigma\)</span> is sound with respect to a class of frames <span class="math inline">\(\mathcal{C}\)</span> if, and only if, for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, <span class="math inline">\(\vdash_{\Sigma} \varphi\)</span> only if <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span>.</p>
+</div>
+</div>
+<p>We will see that the normal modal systems <span class="math inline">\(\textsf{KT}\)</span> and <span class="math inline">\(\textsf{KD}\)</span> are sound and complete with respect to the class of reflexive and serial frames, respectively. That means that the theorems of <span class="math inline">\(\textsf{KT}\)</span> are exactly those formulas that are valid in all reflexive frames. And the theorems of <span class="math inline">\(\textsf{KD}\)</span> are the formulas that are valid in all serial frames. Now:</p>
+<div id="prp-rs" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.9</strong></span> Every reflexive frame is serial.</p>
+</div>
+<p>That means that if a formula is valid in all serial frames, then it will be valid in all reflexive frames. The soundness and completeness theorems for <span class="math inline">\(\textsf{KD}\)</span> and <span class="math inline">\(\textsf{KT}\)</span> will deliver a semantic route to the conclusion that every theorem of <span class="math inline">\(\textsf{KD}\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span> .</p>
+<p>On the other hand, the fact that <span class="math inline">\(\textsf{T}\)</span> defines the class of reflexive frames suggests a semantic argument for the conclusion that <span class="math inline">\(\textsf{KD}\)</span> does not extend <span class="math inline">\(\textsf{KT}\)</span> .</p>
+<div id="prp-s1" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.10</strong></span> If every theorem of <span class="math inline">\(\Sigma\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\Delta\not \sqsubseteq \Sigma\)</span> if not every axiom of <span class="math inline">\(\Delta\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+</div>
+<div>
+<p><strong>Proof</strong>. If an axiom <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\Delta\)</span> is not valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\Sigma\)</span>. That means that not every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
+<p><span class="math inline">\(\blacksquare\)</span></p>
+</div>
+<p>Since the theorems of <span class="math inline">\(\textsf{KD}\)</span> are valid in all serial frames, the observation that <span class="math inline">\(\Box p \to p\)</span>, which is an axiom of <span class="math inline">\(\textsf{KT}\)</span> , is not valid in some serial frames tells us that <span class="math inline">\(\textsf{KT}\)</span> is a proper extension of <span class="math inline">\(\textsf{KD}\)</span> .</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\textsf{KT} \not \sqsubseteq \textsf{KD}\)</span></p>
+<p>This is because <span class="math inline">\(\Box p \to p\)</span> is not valid in every serial frame. To that purpose, consider the model based on a serial frame depicted below.</p>
+<p><span class="math inline">\((W, R, V), w_1 \nVdash \Box p \to p\)</span></p>
+</div>
+</div>
+<p>We may similarly use the fact that axiom 4 is not valid in every reflexive and symmetric frame to establish that some theorems of <span class="math inline">\(\textsf{KB5}\)</span> are not theorems of <span class="math inline">\(\textsf{KTB}\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\textsf{KB5} \not \sqsubseteq \textsf{KTB}\)</span></p>
+<p>This is because <span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span> is not valid in every reflexive and symmetric frame. To that purpose, consider the model based on a reflexive and symmetric frame depicted below.</p>
+<p><span class="math inline">\((W, R, V), w_1 \nVdash \Diamond p \to \Box \Diamond p\)</span></p>
+</div>
+</div>
+<p>Where should we locate <span class="math inline">\(\textsf{KB5}\)</span> in the diagram? We now argue that <span class="math inline">\(\textsf{KB4}\)</span> and <span class="math inline">\(\textsf{KB5}\)</span> are mutual extensions of each other, which is the reason we do not have a further node for <span class="math inline">\(\textsf{KB5}\)</span> in the diagram:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\textsf{KB4} \sqsubseteq \textsf{KB5}\)</span></p>
+<p>This is because <span class="math inline">\(\vdash_{\textsf{KB5}} \Box \varphi \to \Box \Box \varphi\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \Box \varphi \to \Box \Diamond \Box \varphi &amp; \textsf{B}[\Box \varphi/p]\\
+2 &amp; &amp; \Diamond \Box \varphi \to \Box \varphi &amp; \textsf{5}_\Diamond [\varphi/p]\\
+3 &amp; &amp; \Box \Diamond \Box \varphi \to \Box \Box \varphi &amp; \textsf{RK} \ 2 \\
+4 &amp; &amp; \Box \varphi \to \Box \Box \varphi &amp; \textsf{PL} 1, 3\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\textsf{KB5} \sqsubseteq \textsf{KB4}\)</span></p>
+<p>This is because <span class="math inline">\(\vdash_{\textsf{KB4}} \Diamond \varphi \to \Box \Diamond \varphi\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \Diamond \varphi \to \Box \Diamond \Diamond \varphi &amp; \textsf{B}[\diamond \varphi/p]\\
+2 &amp; &amp; \Diamond \Diamond \varphi \to \Diamond \varphi &amp; \textsf{4}_\Diamond[\varphi/p] \\
+3 &amp; &amp; \Box \Diamond \Diamond \varphi \to \Box \Diamond \varphi &amp; \textsf{RK} \ 2\\
+4 &amp; &amp; \Diamond \varphi \to \Box \Diamond \varphi &amp; \textsf{PL} \ 1, 3\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p><span class="math inline">\(\textsf{KB4} = \textsf{KB5}\)</span></p>
+<p>This is an immediate consequence of the last two examples.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./modalpropositional.html" class="pagination-link" aria-label="Basic Language">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basic Language</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./modalcompleteness.html" class="pagination-link" aria-label="Completeness">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
