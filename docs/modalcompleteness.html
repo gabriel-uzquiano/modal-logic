@@ -403,7 +403,9 @@ Accessibility
 <div id="thm-e4" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 8.4</strong></span> If <span class="math inline">\(\Sigma\)</span> is a normal modal system and <span class="math inline">\(\Gamma\)</span> is a maximal <span class="math inline">\(\Sigma\)</span>-consistent set of modal formulas, then:</p>
 <p><span class="math display">\[
-\begin{array}{llll}4. &amp; \Diamond \varphi \in \Gamma &amp; \text{iff} &amp; \text{for some} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\\end{array}
+\begin{array}{llll}4a. &amp; \Diamond \varphi \in \Gamma &amp; \text{iff} &amp; \text{for some} \ \Delta, \ \Gamma R \Delta \ \text{and} \ \varphi \in \Delta\\
+4b. &amp; \Box \varphi \in \Gamma &amp; \text{iff} &amp; \text{for every} \ \Delta, \ \text{if} \ \Gamma R \Delta, \ \text{then} \ \varphi \in \Delta
+\end{array}
 \]</span></p>
 </div>
 <div>
@@ -520,9 +522,9 @@ Canonical Models
 <div>
 <p><span class="math display">\[
 \begin{array}{llll}
-\mathcal{M}_\Sigma, \Gamma \Vdash \Box \varphi &amp; \text{iff} &amp; \mathcal{M}_\Sigma, \Delta \Vdash \varphi \ \text{if} \ \Gamma R_\Sigma \Delta &amp; \\
-    &amp; \text{iff} &amp; \varphi \in \Delta \ \text{ig} \ \Gamma R_\Sigma \Delta &amp; \text{Inductive Hypothesis} \\
-     &amp; \text{iff} &amp; \Box \varphi \in \Gamma &amp; \textsf{Thm} \ 8.3, \ 8.4\\
+\mathcal{M}_\Sigma, \Gamma \Vdash \Box \varphi &amp; \text{iff} &amp; \text{for every} \ \Delta \in W_{\Sigma},  \text{if}  \ R_\Sigma \Gamma \Delta, \text{then} \ \mathcal{M}_\Sigma, \Delta \Vdash \varphi &amp; \\
+   &amp; \text{iff} &amp; \text{for every} \ \Delta \in W_{\Sigma},  \text{if}  \ R_\Sigma \Gamma \Delta, \text{then} \ \varphi \in \Delta  &amp; \text{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \Box \varphi \in \Gamma &amp; \textsf{Thm} \ 8.3, \ 8.4b\\
 \end{array}
 \]</span></p>
 </div></li>
