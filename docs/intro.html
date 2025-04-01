@@ -237,6 +237,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./choice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tense and Choice</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -249,7 +255,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-question-of-interpretation" id="toc-the-question-of-interpretation" class="nav-link active" data-scroll-target="#the-question-of-interpretation"><span class="header-section-number">1.1</span> The Question of Interpretation</a></li>
+  <li><a href="#how-to-interpret-the-formalism" id="toc-how-to-interpret-the-formalism" class="nav-link active" data-scroll-target="#how-to-interpret-the-formalism"><span class="header-section-number">1.1</span> How to Interpret the Formalism</a></li>
   <li><a href="#possible-worlds" id="toc-possible-worlds" class="nav-link" data-scroll-target="#possible-worlds"><span class="header-section-number">1.2</span> Possible Worlds</a></li>
   </ul>
 </nav>
@@ -355,24 +361,26 @@ Aristotle’s Sea Battle
 <div class="callout-body-container callout-body">
 <p>Consider the argument:</p>
 <ol type="1">
-<li>If there is a sea battle tomorrow, then it was already the case that there would be a sea battle tomorrow.</li>
-<li>If it was already the case that there would be a sea battle tomorrow, then necessarily, it was the case that there would be a sea battle tomorrow.</li>
-<li>If necessarily, it was the case that there would be a sea battle tomorrow, then necessarily, there is a sea battle tomorrow.</li>
-<li>So, if there is a sea battle tomorrow, then necessarily so.</li>
+<li>If there will be a sea battle tomorrow, then it has always been the case in the past that there would be a sea battle tomorrow.</li>
+<li>If it has always been the case in the past that there would be a sea battle tomorrow, then necessarily, it has always been the case that there would be a sea battle tomorrow.</li>
+<li>If necessarily, it has always been the case in the past that there would be a sea battle tomorrow, then necessarily, there will be a sea battle tomorrow.</li>
+<li>So, if there will be a sea battle tomorrow, then necessarily so.</li>
 </ol>
-<p>The argument exploits the interaction between temporal and alethic modalities. In particular, we will use <span class="math inline">\(F\)</span> for ‘it will once be the case that’ and <span class="math inline">\(W\)</span> for ‘it was once the case that’. Finally, we use <span class="math inline">\(\Box\)</span> for ‘it is necessary that’.</p>
+<p>If the past is closed, then, the argument suggests, there is no reason to expect the future to be open.</p>
+<p>We may regiment the argument in a multi-modal language in which we help ourselves to both tense and necessity operators. In particular, we will use <span class="math inline">\(\textsf{F}\)</span> for ‘it will once be the case that’ and <span class="math inline">\(\textsf{H}\)</span> for ‘it has always been the case that’. Finally, we use <span class="math inline">\(\Box\)</span> for ‘it is necessary that’.</p>
 <p><span class="math display">\[
 \begin{array}{lllll}
-1 &amp; &amp; F p \to W F p &amp; &amp; \\
-2 &amp; &amp; WF p \to \Box W F p &amp; &amp; \\
-3 &amp; &amp; \Box WFp \to \Box F p &amp; &amp; \\
-4 &amp; &amp; Fp \to \Box F p &amp; &amp; \\
+1 &amp; &amp; \textsf{F} p \to \textsf{H}\textsf{F} p &amp; &amp; \\
+2 &amp; &amp; \textsf{H}\textsf{F} p \to \Box \textsf{H}\textsf{F} p &amp; &amp; \\
+3 &amp; &amp; \Box \textsf{H}\textsf{F}p \to \Box \textsf{F} p &amp; &amp; \\
+4 &amp; &amp; \textsf{F}p \to \Box \textsf{F} p &amp; &amp; \\
 \end{array}
 \]</span></p>
+<p>The challenge now is to outline a framework within which to make sense of the view on which the past is closed but the future is open.</p>
 </div>
 </div>
-<section id="the-question-of-interpretation" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="the-question-of-interpretation"><span class="header-section-number">1.1</span> The Question of Interpretation</h2>
+<section id="how-to-interpret-the-formalism" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="how-to-interpret-the-formalism"><span class="header-section-number">1.1</span> How to Interpret the Formalism</h2>
 <p>How should we interpret the formalism? We use truth tables to interpret the language of propositional logic because propositional connectives are <em>truth-functional</em>, e.g., the truth value of a conjunction is a function of the truth values of its conjuncts. The strategy does not seem to be available in the case of modal logic, since the modal operator <span class="math inline">\(\Box\)</span> is not truth-functional:</p>
 <p><span class="math display">\[
 \begin{array}{|c|c|}

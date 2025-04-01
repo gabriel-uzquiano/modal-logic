@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./choice.html" rel="next">
 <link href="./modalcompleteness.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -236,6 +237,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./choice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tense and Choice</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -250,7 +257,11 @@ window.Quarto = {
   <ul>
   <li><a href="#syntax" id="toc-syntax" class="nav-link active" data-scroll-target="#syntax"><span class="header-section-number">9.1</span> Syntax</a></li>
   <li><a href="#flow-of-time-models" id="toc-flow-of-time-models" class="nav-link" data-scroll-target="#flow-of-time-models"><span class="header-section-number">9.2</span> Flow of Time Models</a></li>
-  <li><a href="#axiomatic-derivations" id="toc-axiomatic-derivations" class="nav-link" data-scroll-target="#axiomatic-derivations"><span class="header-section-number">9.3</span> Axiomatic Derivations</a></li>
+  <li><a href="#axiomatic-derivations" id="toc-axiomatic-derivations" class="nav-link" data-scroll-target="#axiomatic-derivations"><span class="header-section-number">9.3</span> Axiomatic Derivations</a>
+  <ul class="collapse">
+  <li><a href="#the-minimal-tense-logic" id="toc-the-minimal-tense-logic" class="nav-link" data-scroll-target="#the-minimal-tense-logic"><span class="header-section-number">9.3.1</span> The Minimal Tense Logic</a></li>
+  <li><a href="#extensions-of-the-minimal-tense-logic" id="toc-extensions-of-the-minimal-tense-logic" class="nav-link" data-scroll-target="#extensions-of-the-minimal-tense-logic"><span class="header-section-number">9.3.2</span> Extensions of the Minimal Tense Logic</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -298,7 +309,7 @@ window.Quarto = {
 <p>The proposition may change truth value when evaluated relative to one time or another. That proposition <em>has been</em> true, but it is now false.</p>
 <section id="syntax" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="syntax"><span class="header-section-number">9.1</span> Syntax</h2>
-<p>The language of tense logic includes two primitive tense operators:</p>
+<p>The language of tense logic <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> includes two primitive tense operators:</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 \mathsf{F} \varphi &amp; &amp; \text{It will be the case that} \ \varphi \ \text{at least once in the Future}\\
@@ -391,7 +402,7 @@ M, t \Vdash \textsf{F} \varphi &amp; \text{iff} &amp; \text{for some} \ u \in T 
 M, t \Vdash \textsf{P} \varphi &amp; \text{iff} &amp; \text{for some} \ u \in T \ \text{such that} \ u &lt; t, \ M, u \Vdash \varphi\\
 \end{array}
 \]</span></p>
-<p>Given the defintions of <span class="math inline">\(\textsf{G}\)</span> and <span class="math inline">\(\textsf{H}\)</span> in terms of <span class="math inline">\(\textsf{F}\)</span> and <span class="math inline">\(\textsf{P}\)</span>, we find that <span class="math display">\[
+<p>Given the definitions of <span class="math inline">\(\textsf{G}\)</span> and <span class="math inline">\(\textsf{H}\)</span> in terms of <span class="math inline">\(\textsf{F}\)</span> and <span class="math inline">\(\textsf{P}\)</span>, we find that <span class="math display">\[
 \begin{array}{lll}
 M, t \Vdash \textsf{G} \varphi &amp; \text{iff} &amp; \text{for all} \ u \in W \ \text{such that} \ t &lt; u, \ M, u \Vdash \varphi\\
 M, t \Vdash \textsf{H} \varphi &amp; \text{iff} &amp; \text{for all} \ u \in W \ \text{such that} \ u &lt; t, \ M, u \Vdash \varphi\\
@@ -486,11 +497,15 @@ Constraints on the Flow of Time
 \]</span></p>
 </div>
 </div>
+<p>Consider the case of <span class="math inline">\(R\)</span>-Totality, for example:</p>
 <div id="prp-t1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 9.1</strong></span> <span class="math inline">\(R\)</span>-Totality is defined by <span class="math inline">\((\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q))\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 9.1</strong></span> The condition of <span class="math inline">\(R\)</span>-Totality is modally defined by the axiom</p>
+<p><span class="math display">\[
+(\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q))
+\]</span></p>
 </div>
 <div>
-<p><strong>Proof</strong>. We want to prove that for all flow of time frames <span class="math inline">\((T, \prec)\)</span>,</p>
+<p><strong>Proof</strong>. We argue that for every frame <span class="math inline">\((T, \prec)\)</span>,</p>
 <p><span class="math display">\[
 \begin{array}{lcl}
 &amp; (T, \prec) \models (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q)) &amp;  \\
@@ -527,6 +542,9 @@ t \prec v \vee  t = v \vee v \prec t.
 </section>
 <section id="axiomatic-derivations" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="axiomatic-derivations"><span class="header-section-number">9.3</span> Axiomatic Derivations</h2>
+<p>We first introduce the minimal tense logic, which is designed to capture validity in all flow of time frames, and explain how to supplement it with further axioms aimed to place further constraints on temporal order.</p>
+<section id="the-minimal-tense-logic" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="the-minimal-tense-logic"><span class="header-section-number">9.3.1</span> The Minimal Tense Logic</h3>
 <p>The minimal tense logic is sound and complete with respect to the class of all frames.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -538,19 +556,19 @@ Minimal Tense Logic
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The minimal tense logic <span class="math inline">\(\textsf{L}_0\)</span> consists of an infinite set of axioms and two rules of inference.</p>
+<p>The minimal tense logic <span class="math inline">\(\textsf{K}_t\)</span> consists of an infinite set of axioms and two rules of inference.</p>
 <p>The axioms of <span class="math inline">\(\textsf{L}_0\)</span> include:</p>
 <ul>
 <li><p>substitution instances of tautologies of propositional logic</p></li>
-<li><p>substitution instances of the axioms: <span class="math display">\[
+<li><p>substitution instances of the axioms: <span class="math display">\[ \tag{$\textsf{K}_{\textsf{G}}$}
 \textsf{G}(p \to  q) \to (\textsf{G} p \to \textsf{G} q)
-\]</span> <span class="math display">\[
+\]</span> <span class="math display">\[ \tag{$\textsf{K}_{\textsf{H}}$}
 \textsf{H}(p \to  q) \to (\textsf{H} p \to \textsf{H} q)
 \]</span></p></li>
 <li><p>substitution instances of the axioms:</p>
-<p><span class="math display">\[
+<p><span class="math display">\[ \tag{$\textsf{GP}$}
 p \to \textsf{GP} p
-\]</span> <span class="math display">\[
+\]</span> <span class="math display">\[ \tag{$\textsf{HF}$}
 p \to \textsf{HF} p
 \]</span></p></li>
 </ul>
@@ -564,25 +582,43 @@ p \to \textsf{HF} p
 <ul>
 <li>Temporal Generalization:</li>
 </ul>
-<p><span class="math display">\[\tag{$\textsf{TG}$}
+<p><span class="math display">\[\tag{$\textsf{TG}_\textsf{G}$}
 \varphi/\textsf{G} \varphi
 \]</span></p>
-<p><span class="math display">\[\tag{$\textsf{TG}$}
+<p><span class="math display">\[\tag{$\textsf{TG}_{\textsf{H}}$}
 \varphi/\textsf{H} \varphi
 \]</span></p>
 </div>
 </div>
+<p>The <em>mirror image</em> <span class="math inline">\(\varphi^M\)</span> of a formula <span class="math inline">\(\varphi\)</span> is the formula that results from <span class="math inline">\(\varphi\)</span> when we replace every occurrence of <span class="math inline">\(\textsf{F}\)</span> in <span class="math inline">\(\varphi\)</span> with an occurrence of <span class="math inline">\(\textsf{P}\)</span> in <span class="math inline">\(\varphi\)</span> and vice versa. That means that every occurrence of <span class="math inline">\(\textsf{G}\)</span> or <span class="math inline">\(\neg \textsf{F} \neg\)</span> is replaced by an occurrence of <span class="math inline">\(\textsf{H}\)</span> and vice versa.</p>
+<div id="prp-mi" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9.2</strong></span> The minimal tense logic is closed under a derived rule of mirror images:</p>
+<p><span class="math display">\[ \tag{Mirror}
+\varphi/\varphi^M
+\]</span></p>
+</div>
+<div id="proof">
+<p><strong>Proof</strong>. The mirror image of every axiom is itself an axiom, and similarly for the rules of inference. When the mirror image transformation is applied to every line of a proof whose last line is <span class="math inline">\(\varphi\)</span>, the result is still a proof, though now a derivation of <span class="math inline">\(\varphi^M\)</span>,</p>
+</div>
+<div id="prp-c" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9.3</strong></span> The minimal tense logic <span class="math inline">\({\textsf{K}}_t\)</span> is complete with respect to the class of all flow of time frames.</p>
+</div>
+<p>The proof proceeds via the canonical model method. That is, we set out to argue that if <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\textsf{K}_t\)</span>, then <span class="math inline">\(\varphi\)</span> is true at some world <span class="math inline">\(\Gamma\)</span> of the canonical model <span class="math inline">\((T_{\textsf{K}_t}, &lt;_{\textsf{K}_t}, V_{\textsf{K}_t})\)</span>.</p>
+</section>
+<section id="extensions-of-the-minimal-tense-logic" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="extensions-of-the-minimal-tense-logic"><span class="header-section-number">9.3.2</span> Extensions of the Minimal Tense Logic</h3>
+<p>Different extensions of the minimal tense logic aim to capture different structural constraints on temporal order. One may, for example, attempt to capture the view that temporal order exemplifies the structure of the rational line. That, in turn, would require one to supplement <span class="math inline">\(\textsf{L}_0\)</span> with axioms designed to make sure the order is total and extendible in both directions as well as dense.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The tense logic of the rational line
+The Tense Logic of the Rational Line
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The complete tense logic for the rational number line <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> is <span class="math inline">\(\textsf{L}_0\)</span> supplemented with the axioms:</p>
+<p>The complete tense logic for the rational number line <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> is <span class="math inline">\(\textsf{K}_t\)</span> supplemented with the axioms:</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 &amp; (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q)) &amp; R\text{-Totality}\\
@@ -592,12 +628,28 @@ The tense logic of the rational line
 &amp; \textsf{F} p \to \textsf{FF}p &amp; \text{Density} \\
 \end{array}
 \]</span></p>
-<p>The</p>
 </div>
 </div>
-<p>The complete. tense logic of the rational number line <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> is the</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Tense Logic of the Real Line
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The complete tense logic for the real line line <span class="math inline">\((\mathbb{R}, &lt;)\)</span> supplements the axioms above with a principle designed to make sure the frame is Dedekind-complete:</p>
+<p><span class="math display">\[
+(\textsf{P}\textsf{F} p \wedge \textsf{F} \textsf{G} \neg p) \to \textsf{P}\textsf{F}(\textsf{G}\neg p \wedge \textsf{H}\textsf{F} p)
+\]</span></p>
+<p>A flow of time frame <span class="math inline">\((T, &lt;)\)</span> is Dedekind-complete if, and. only if, every set of time points that has an upper <span class="math inline">\(R\)</span>-bound has a least upper <span class="math inline">\(R\)</span>-bound.</p>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1025,6 +1077,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./choice.html" class="pagination-link" aria-label="Tense and Choice">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tense and Choice</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
