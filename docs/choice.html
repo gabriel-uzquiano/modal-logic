@@ -281,8 +281,8 @@ window.Quarto = {
 </header>
 
 
-<p>We will now pause to consider the interaction between time and necessity. It is not uncommon to take past and future to have a different status. The past is fixed, unalterable, and closed. The future, on the other hand, is open.</p>
-<p>One problem with this attitude towards time is that it seems unstable. If you insist that the past is closed, then you will have to grant that the future is similarly closed. This is supposed to be the lesson of a variety of ancient arguments from the Stoics to Aristotle to Ockham.</p>
+<p>We will now pause to consider the interaction between time and necessity. It is not uncommon to take past and future to enjoy a different status. The past is fixed, unalterable, and closed. The future, on the other hand, is open.</p>
+<p>Some have argued that there is no such asymmetry between past and future. If you insist that the past is closed, then you will have to grant that the future is similarly closed. This is supposed to be the lesson of a variety of ancient arguments from the Stoics to Aristotle to Ockham.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -312,7 +312,7 @@ Aristotle’s Sea Battle Argument
 \]</span></p>
 </div>
 </div>
-<p>The challenge is to make sense of the asymmetry between past and future. One way to model a world in which the past is closed but the future is open is through the structure of a tree:</p>
+<p>The challenge is to make sense of the asymmetry between past and future. One way to model a state of affairs in which the past is closed but the future is open is by means of a tree:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/branching.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -363,8 +363,7 @@ Histories
 <p>If <span class="math inline">\((T, &lt;)\)</span> is a tree and <span class="math inline">\(t \in T\)</span>, we will say that <span class="math inline">\(h\)</span> is a history through <span class="math inline">\(t\)</span> if <span class="math inline">\(t \in h\)</span>. We will use <span class="math inline">\(H_t\)</span> to denote the set of histories through <span class="math inline">\(t\)</span> based on <span class="math inline">\((T, &lt;)\)</span>.</p>
 </div>
 </div>
-<p>The question of whether <span class="math inline">\(\textsf{F}p\)</span> is true at a time <span class="math inline">\(t\)</span> now depends on what count as future times relative to <span class="math inline">\(t\)</span>, which is settled differently by each history through <span class="math inline">\(t\)</span>. So, truth will be relative to ordered pairs of moments and histories. That is, a valuation <span class="math inline">\(V\)</span> will map an atom like <span class="math inline">\(p\)</span> to a set of ordered pairs of the form <span class="math inline">\((t, h)\)</span>, where <span class="math inline">\(t\)</span> is a member of <span class="math inline">\(h\)</span> and <span class="math inline">\(h\)</span> is a history through <span class="math inline">\(t\)</span>. We will generally write <span class="math inline">\((t, h)\)</span> as <span class="math inline">\(t/h\)</span> for short.</p>
-<p>We are now in a position to interpret the tense operators as follows: <span class="math inline">\(\textsf{F}\varphi\)</span> is true at a pair <span class="math inline">\(t/h\)</span> just in case <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(u/h\)</span> for some <span class="math inline">\(u \in h\)</span> later than <span class="math inline">\(t\)</span>, and <span class="math inline">\(\textsf{P}\varphi\)</span> is true at a pair <span class="math inline">\(t/h\)</span> just in case <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(u/h\)</span> for some <span class="math inline">\(u \in h\)</span> earlier than <span class="math inline">\(t\)</span>.</p>
+<p>The question of whether <span class="math inline">\(\textsf{F}p\)</span> is true at a time <span class="math inline">\(t\)</span> now depends on how the future turns out to be, which is settled differently by each history through <span class="math inline">\(t\)</span>. So, truth will be relative to ordered pairs of moments and histories. That is, a valuation <span class="math inline">\(V\)</span> will map an atom like <span class="math inline">\(p\)</span> to a set of ordered pairs of the form <span class="math inline">\((t, h)\)</span>, where <span class="math inline">\(t\)</span> is a member of <span class="math inline">\(h\)</span> and <span class="math inline">\(h\)</span> is a history through <span class="math inline">\(t\)</span>. We will generally write <span class="math inline">\((t, h)\)</span> as <span class="math inline">\(t/h\)</span> for short.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -393,18 +392,24 @@ Truth at a Branching Time Model
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>The clauses for atoms and propositional connectives are straightforward:</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 (T, &lt;, V), t/h \Vdash p &amp; \text{iff} &amp; t/h \in V(p)\\
 (T, &lt;, V), t/h \Vdash \neg \varphi &amp; \text{iff} &amp; (T, &lt;, V), t/h \nVdash \varphi\\
 (T, &lt;, V), t/h \Vdash \varphi \to \psi &amp; \text{iff} &amp; (T, &lt;, V), t/h \nVdash \varphi \vee (T, &lt;, V), t/h \Vdash \psi\\
+\end{array}
+\]</span></p>
+<p>Tense operators, on the other hand, require one to look only at times within a given history. For <span class="math inline">\(\textsf{F}\varphi\)</span> to be true at a pair <span class="math inline">\(t/h\)</span>, there must be a <em>future</em> <span class="math inline">\(\varphi\)</span>-time <span class="math inline">\(u\)</span> within the history <span class="math inline">\(h\)</span>. <span class="math inline">\(\textsf{P}\varphi\)</span> is true at a pair <span class="math inline">\(t/h\)</span> just in case there is a <em>past</em> <span class="math inline">\(\varphi\)</span>-time <span class="math inline">\(u\)</span> within the history <span class="math inline">\(h\)</span>.</p>
+<p><span class="math display">\[
+\begin{array}{lll}
 (T, &lt;, V), t/h \Vdash \textsf{F} \varphi &amp; \text{iff} &amp; \exists u \in h \ (t &lt; u \wedge  (T, &lt;, V), u/h \Vdash \varphi)\\
 (T, &lt;, V), t/h \Vdash \textsf{P} \varphi &amp; \text{iff} &amp; \exists u \in h \ (u &lt; t \wedge  (T, &lt;, V), u/h \Vdash \varphi)\\
 \end{array}
 \]</span></p>
 </div>
 </div>
-<p>We are now in a position to interpret the necessity operator <span class="math inline">\(\Box\)</span> as follows: <span class="math inline">\(\Box \varphi\)</span> is true at <span class="math inline">\(t/h\)</span> just in case <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t/k\)</span> for every history <span class="math inline">\(k\)</span> through <span class="math inline">\(t\)</span>. In other words:</p>
+<p>We are now in a position to interpret the necessity operator <span class="math inline">\(\Box\)</span> as follows: <span class="math inline">\(\Box \varphi\)</span> is true at <span class="math inline">\(t/h\)</span> just in case <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t/k\)</span> for every history <span class="math inline">\(k\)</span> through <span class="math inline">\(t\)</span>. In other words, <span class="math inline">\(\varphi\)</span> is true at $t/h$ no matter how the future turns out to be; <span class="math inline">\(\Diamond \varphi\)</span>, on the other hand, is true at <span class="math inline">\(t/h\)</span> if there is a way the future may turn out to be on which <span class="math inline">\(\varphi\)</span> is true.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -438,7 +443,7 @@ Historical Necessity
 \Diamond p \to \Box \Diamond p &amp; &amp; \textsf{5}\\
 \end{array}
 \]</span></p>
-<p><span class="math inline">\(\Box \varphi\)</span> is true at <span class="math inline">\(t/h\)</span> only if <span class="math inline">\(\varphi\)</span> is true at every par of the form <span class="math inline">\(t/k\)</span> for which <span class="math inline">\(t \in h \cap k\)</span>. But the accessibility relation between such pairs is reflexive, symmetric, and transitive.</p>
+<p>One way to think of this is as follows: <span class="math inline">\(\Box \varphi\)</span> is true at <span class="math inline">\(t/h\)</span> only if <span class="math inline">\(\varphi\)</span> is true at every pair of the form <span class="math inline">\(t/k\)</span> for which <span class="math inline">\(t \in h \cap k\)</span>. But the accessibility relation between such pairs is reflexive, symmetric, and transitive.</p>
 </div>
 </div>
 <p>Consider a tree frame <span class="math inline">\((T, &lt;)\)</span>. If <span class="math inline">\((T, &lt;, V), t/h \Vdash \Box \varphi\)</span>, then for all <span class="math inline">\(k \in H_t\)</span>, <span class="math inline">\((T, &lt;, V), t/k \Vdash \varphi\)</span>. But since <span class="math inline">\(h\)</span> itself is a history that contains <span class="math inline">\(t\)</span>, <span class="math inline">\((T, &lt;, V), t/k \Vdash \varphi\)</span>.</p>
@@ -474,13 +479,14 @@ Open Future
 <p><span class="math display">\[
 (T, &lt;, V) \Vdash \textsf{H} \varphi \to \Box \textsf{H}\varphi
 \]</span></p>
-<p>For suppose <span class="math inline">\((T, &lt;, V), t/h \Vdash \textsf{H}\varphi\)</span>. That means that for all <span class="math inline">\(u &lt; t\)</span>, <span class="math inline">\((T, &lt;, V), u/h \Vdash \varphi\)</span>. But now, let <span class="math inline">\(k\in H_t\)</span>. Since <span class="math inline">\(k\)</span> and <span class="math inline">\(h\)</span> agree up to <span class="math inline">\(t\)</span>, we find that for for all <span class="math inline">\(u &lt; t\)</span>, <span class="math inline">\((T, &lt;, V), u/k \Vdash \varphi\)</span>. So, <span class="math inline">\((T, &lt;, V), t/k \Vdash \textsf{P}\varphi\)</span>, which means that <span class="math inline">\((T, &lt;, V), t/h \Vdash \textsf{P}\varphi\)</span>.</p>
+<p>For suppose <span class="math inline">\((T, &lt;, V), t/h \Vdash \textsf{H}\varphi\)</span>. For all <span class="math inline">\(u &lt; t\)</span>, <span class="math inline">\((T, &lt;, V), u/h \Vdash \varphi\)</span>. But now, let <span class="math inline">\(k\in H_t\)</span>. Since <span class="math inline">\(k\)</span> and <span class="math inline">\(h\)</span> agree up to <span class="math inline">\(t\)</span>, we find that for for all <span class="math inline">\(u &lt; t\)</span>, <span class="math inline">\((T, &lt;, V), u/k \Vdash \varphi\)</span>. So, <span class="math inline">\((T, &lt;, V), t/k \Vdash \textsf{P}\varphi\)</span>, which means that <span class="math inline">\((T, &lt;, V), t/h \Vdash \textsf{P}\varphi\)</span>.</p>
 </div>
 <p>On the other hand, it is not difficult to falsify <span class="math inline">\(\textsf{G} \varphi \to \Box \textsf{G} \varphi\)</span> in a tree frame. The reason is simple. Even if <span class="math inline">\(\textsf{G}\varphi\)</span> is true at <span class="math inline">\(t/h\)</span> in virtue of the fact that <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(u/h\)</span> for some later <span class="math inline">\(u \in H\)</span>, there is no guarantee that <span class="math inline">\(\varphi\)</span> will be true at later times <span class="math inline">\(u\)</span> of an alternative history <span class="math inline">\(k\)</span> of which <span class="math inline">\(t\)</span> is a member. So, there is no reason to expect <span class="math inline">\(\textsf{G}\varphi\)</span> to be true at every pair of the form <span class="math inline">\(t/k\)</span> with <span class="math inline">\(t \in k\)</span>.</p>
 </section>
 <section id="choice" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="choice"><span class="header-section-number">10.2</span> Choice</h2>
-<p>We now introduce a family of propositional operator designed to express individual choices. For each agent <span class="math inline">\(i\)</span>, we introduce the operator <span class="math inline">\(\textsf{stit}_i \varphi\)</span>, read: “agent <span class="math inline">\(i\)</span> sees to it that <span class="math inline">\(\varphi\)</span>.” The basic thought is that at a given time an individual agent can make choices which rule out at least some potential futures. That is, when <span class="math inline">\(i\)</span> carries out an action at a pair <span class="math inline">\(t/h\)</span>, <span class="math inline">\(i\)</span> is able to rule out some histories through <span class="math inline">\(t\)</span>.</p>
+<p>We now introduce a family of propositional operator designed to express individual choices. For each agent <span class="math inline">\(i\)</span>, we introduce the operator <span class="math inline">\(\textsf{stit}_i \varphi\)</span>, read: “agent <span class="math inline">\(i\)</span> sees to it that <span class="math inline">\(\varphi\)</span>.” The fact that <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t/h\)</span> is guaranteed by some prior choice made by the agent <span class="math inline">\(i\)</span>.</p>
+<p>The basic thought is that at a given time an individual agent can make choices which rule out at least some potential futures. That is, when <span class="math inline">\(i\)</span> carries out an action at a pair <span class="math inline">\(t/h\)</span>, <span class="math inline">\(i\)</span> is able to rule out some histories through <span class="math inline">\(t\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -496,7 +502,7 @@ Choice Function
 <p>Given a history <span class="math inline">\(h\)</span>, <span class="math inline">\(C^t_i(h)\)</span> is the choice cell to which <span class="math inline">\(h\)</span> belongs. Since <span class="math inline">\(C^t_i\)</span> partitions the domain into a number of mutually exclusive and jointly exhaustive equivalence classes, each history will belong to exactly one such choice cell.</p>
 </div>
 </div>
-<p>The basic thought is that the <em>choice function</em> <span class="math inline">\(C^t_i\)</span> encodes the actions open to the agent <span class="math inline">\(i\)</span> at <span class="math inline">\(t\)</span>, and to think of each <em>choice cell</em> or equivalence class generated by <span class="math inline">\(C^m_i\)</span> as an action open to <span class="math inline">\(i\)</span> at <span class="math inline">\(t\)</span>. That is, <span class="math inline">\(C^m_i(h)\)</span> is the action associated with the choice cell to which <span class="math inline">\(h\)</span> belongs.</p>
+<p>The <em>choice function</em> <span class="math inline">\(C^t_i\)</span> encodes the actions open to the agent <span class="math inline">\(i\)</span> at <span class="math inline">\(t\)</span>, and to think of each <em>choice cell</em> or equivalence class generated by <span class="math inline">\(C^m_i\)</span> as an action open to <span class="math inline">\(i\)</span> at <span class="math inline">\(t\)</span>. That is, <span class="math inline">\(C^m_i(h)\)</span> is the action associated with the choice cell to which <span class="math inline">\(h\)</span> belongs.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
