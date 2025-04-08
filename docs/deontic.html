@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Gabriel Uzquiano">
-<meta name="dcterms.date" content="2025-03-25">
 
-<title>Modal Logic</title>
+<title>11&nbsp; Deontic Logic – Modal Logic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./choice.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,6 +68,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./deontic.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -109,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -217,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./deontic.html" class="sidebar-item-text sidebar-link">
+  <a href="./deontic.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></span></a>
   </div>
 </li>
@@ -233,35 +260,30 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#the-logic-of-obligation" id="toc-the-logic-of-obligation" class="nav-link active" data-scroll-target="#the-logic-of-obligation"><span class="header-section-number">11.1</span> The Logic of Obligation</a></li>
+  <li><a href="#classic-problems-in-deontic-logic" id="toc-classic-problems-in-deontic-logic" class="nav-link" data-scroll-target="#classic-problems-in-deontic-logic"><span class="header-section-number">11.2</span> Classic Problems in Deontic Logic</a>
+  <ul class="collapse">
+  <li><a href="#the-good-samaritan-paradox" id="toc-the-good-samaritan-paradox" class="nav-link" data-scroll-target="#the-good-samaritan-paradox">The Good Samaritan Paradox</a></li>
+  <li><a href="#ross-paradox" id="toc-ross-paradox" class="nav-link" data-scroll-target="#ross-paradox">Ross’ Paradox</a></li>
+  <li><a href="#chisholms-paradox" id="toc-chisholms-paradox" class="nav-link" data-scroll-target="#chisholms-paradox">Chisholm’s Paradox</a></li>
+  </ul></li>
+  <li><a href="#conditional-obligation" id="toc-conditional-obligation" class="nav-link" data-scroll-target="#conditional-obligation">Conditional Obligation</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./deontic.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Modal Logic</h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Gabriel Uzquiano </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">March 25, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -271,9 +293,179 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This is a textbook for <a href="https://gabriel-uzquiano.github.io/courses/452">PHIL 452: Modal Logic</a>.</p>
+<p>The language of deontic logic <span class="math inline">\(\mathcal{L}^{\textsf{O}}\)</span> supplements the language of propositional logic with a propositional operator, <span class="math inline">\(\textsf{O}\varphi\)</span>, read: “it ought to be the case that <span class="math inline">\(\varphi\)</span>”. Its dual, <span class="math inline">\(\neg \textsf{O} \neg \varphi\)</span> is symbolized: <span class="math inline">\(\textsf{P}\)</span> and read: “it is permissible that <span class="math inline">\(\varphi\)</span>.” There are different interpretations of <span class="math inline">\(\textsf{O}\)</span> in line with different types of obligation, which may include prudential, legal, and moral obligation.</p>
+<p>We may still use possible worlds models to interpret the language, but we will use a different heuristic. Given a frame <span class="math inline">\((W, R)\)</span>, we conceive of each member of <span class="math inline">\(W\)</span> as a p<em>ossible world</em>. We now gloss the accessibility relation <span class="math inline">\(R\)</span> in terms of the system of norms in force at each world. Of course the relevant system of norms will depend on the type of obligation we use to interpret the modal operator <span class="math inline">\(\textsf{O}\)</span>. Given a world <span class="math inline">\(w \in W\)</span>, we say that <span class="math inline">\(u\)</span> is <em>accessible</em> from <span class="math inline">\(w\)</span>, <span class="math inline">\(Rwu\)</span>, if, and only if, <span class="math inline">\(w\)</span> is <em>admissible relative to the system norms in force at</em> <span class="math inline">\(w\)</span>. That is, whatever ought to be case according to the system of norms in force at <span class="math inline">\(w\)</span> is indeed the case at <span class="math inline">\(u\)</span>. In that respect, <span class="math inline">\(u\)</span> involves no more, and perhaps less, of a departure from what is required by system of norms in force at <span class="math inline">\(w\)</span> than <span class="math inline">\(u\)</span> does.</p>
+<p>Notice that the fact that <span class="math inline">\(Rwu\)</span> is <em>not</em> to say that whatever ought to be the case according to the system of norms at <span class="math inline">\(u\)</span> is the case at <span class="math inline">\(u\)</span>. For the norms that are in force at <span class="math inline">\(u\)</span> may be more restrictive than those in place at <span class="math inline">\(w\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Obligation and Accessibility
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There is a link between obligation, permissibility, and accessibility understood in terms of admissibility.</p>
+<ul>
+<li><p><span class="math inline">\(\varphi\)</span> ought to be the case at a world if, and only if, <span class="math inline">\(\varphi\)</span> is the case at all admissible worlds relative to the norms in force at the world of evaluation.</p></li>
+<li><p><span class="math inline">\(\varphi\)</span> is permissible at a world if, and only if, <span class="math inline">\(\varphi\)</span> is the case at some admissible world relative to the norms in force at the world of evaluation.</p></li>
+</ul>
+</div>
+</div>
+<p>The use of possible worlds models to interpret the language of deontic logic is not inconsequential. For the model theory vindicates a rule of necessitation, and it validates all substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span>:</p>
+<p><span class="math display">\[\tag{$\textsf{N}$}
+\varphi / \textsf{O} \varphi
+\]</span></p>
+<p><span class="math display">\[\tag{$\textsf{K}$}
+\textsf{O}(p \to q) \to (\textsf{O}p \to \textsf{O}q)
+\]</span></p>
+<p>But one may reasonably question either constraint. For it is difficult to find a sense in which a logical truth should be obligatory or, if you like, the content of a requirement or obligation. You may be tempted to read <span class="math inline">\(\textsf{O} \varphi\)</span> in terms of entailment from what is required by a system of norms. Since anything entails a logical truth, it is to be expected that they follow from whatever is required by whatever norms may be in force.</p>
+<section id="the-logic-of-obligation" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="the-logic-of-obligation"><span class="header-section-number">11.1</span> The Logic of Obligation</h2>
+<p>We know that <span class="math inline">\(\textsf{K}\)</span> is sound and complete with respect to the class of all frames, but the question now is whether we should supplemented it with further axioms for obligation. Standard Deontic Logic supplements the axioms of <span class="math inline">\(\textsf{K}\)</span> with all substitution instances of the axiom:</p>
+<p><span class="math display">\[ \tag{$\textsf{D}$}
+\textsf{O}p \to \neg \textsf{O} \neg p
+\]</span></p>
+<p>Since <span class="math inline">\(\textsf{P}p\)</span> abbreviates: <span class="math inline">\(\neg \textsf{O} \neg p\)</span>, standard deontic logic amounts to the normal modal logic <span class="math inline">\(\textsf{KD}\)</span> in <span class="math inline">\(\mathcal{L}^\textsf{O}\)</span>. Axiom <span class="math inline">\(\textsf{D}\)</span> encodes the presupposition that something is obligatory only if it is permissible and modally defines the seriality condition on accessibility: no matter what world <span class="math inline">\(w\)</span> may be, some world <span class="math inline">\(u\)</span> must be accessible from <span class="math inline">\(w\)</span>.</p>
+<p>More controversial are the deontic counterparts of axioms <span class="math inline">\(\textsf{4}\)</span> and <span class="math inline">\(\textsf{5}\)</span>, respectively. Consider the deontic counterpart of axiom <span class="math inline">\(\textsf{4}\)</span> first:</p>
+<p><span class="math display">\[\tag{$\textsf{4}$}
+\textsf{O}p \to \textsf{O}\textsf{O}p
+\]</span></p>
+<p>Whatever is obligatory <em>ought</em> to remain obligatory. We know that the condition modally defines the requirement that the accessibility relation be transitive. If <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(Rut\)</span>, then <span class="math inline">\(Rwt\)</span>. That is, if whatever ought to be the case according to <span class="math inline">\(w\)</span> is the case at <span class="math inline">\(u\)</span> and whatever ought to be the case at <span class="math inline">\(u\)</span> is the case at <span class="math inline">\(t\)</span>, then whatever ought to be the case according to <span class="math inline">\(w\)</span> is the case at <span class="math inline">\(t\)</span>. One way to put it is that the system of norms in force at <span class="math inline">\(w\)</span> remain in force at <span class="math inline">\(u\)</span>, which means that the system of norms in force at a world remains in force at accessible worlds.</p>
+<p>Let us look at <span class="math inline">\(\textsf{5}\)</span> now: <span class="math display">\[\tag{5}
+\textsf{P}p \to \textsf{O}\textsf{P}p
+\]</span></p>
+<p>Whatever is permissible ought to remain permissible. So, if <span class="math inline">\(p\)</span> is permissible at a world <span class="math inline">\(u\)</span>, then <span class="math inline">\(p\)</span> holds at some world <span class="math inline">\(v\)</span> that is admissible relative to the norms in force at <span class="math inline">\(u\)</span>. One way to implement this constraint is to make sure that the system of norms in force at a world never becomes more restrictive from world to (admissible) world. So, no admissible world relative to the norms at <span class="math inline">\(u\)</span> should incorporate further norms.</p>
+<p>One way to summarize the last two observations is that the combination of <span class="math inline">\(\textsf{4}\)</span> and <span class="math inline">\(\textsf{5}\)</span> requires the system of norms to remain constant across worlds, which is, on the face of it, not all that plausible when it comes to familiar types of obligation. At all events, <span class="math inline">\(\textsf{KD45}\)</span> is a deontic logic that is sound and complete with respect to the class of serial, transitive, and euclidean models.</p>
+<p>There are intermediate systems between <span class="math inline">\(\textsf{KD}\)</span> and <span class="math inline">\(\textsf{KD45}\)</span>. One plausible extension of <span class="math inline">\(\textsf{KD}\)</span> supplements its axioms with axiom <span class="math inline">\(\textsf{U}\)</span> below: <span class="math display">\[\tag{$\textsf{U}$}
+\textsf{O}(\textsf{O}p \to p)
+\]</span></p>
+<p>This is sometimes known as <em>Utopia</em>, and it requires that it ought to be the case than whatever is obligatory is the case. So, this requires admissible worlds to be ones where the standard of obligation are in fact fulfilled.</p>
+<p>The deontic logic that results, <span class="math inline">\(\textsf{KDU}\)</span>, is sound and complete with respect to the class of serial and weakly reflexive frames. A relation <span class="math inline">\(R\)</span> is <em>weakly reflexive</em> on <span class="math inline">\(W\)</span> if, and only if, for all <span class="math inline">\(w\in W\)</span> if <span class="math inline">\(Rwu\)</span>, then <span class="math inline">\(Ruu\)</span>.</p>
+</section>
+<section id="classic-problems-in-deontic-logic" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="classic-problems-in-deontic-logic"><span class="header-section-number">11.2</span> Classic Problems in Deontic Logic</h2>
+<p>The framework of deontic logic invites the formulation of a variety of puzzles. Some of these puzzles arise from the validity of the following derived rule of inference:</p>
+<p><span class="math display">\[\tag{$\textsf{RK}$}
+\varphi \to \psi / \textsf{O} \varphi \to \textsf{O}\psi
+\]</span></p>
+<section id="the-good-samaritan-paradox" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-good-samaritan-paradox">The Good Samaritan Paradox</h3>
+<p>The first difficulty arises by reflection on the following fact: <span class="math display">\[
+  \vdash_{\textsf{K}} \textsf{O}(p \wedge q) \to \textsf{O}q
+  \]</span> The derivation is simple: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; p \wedge q \to q &amp; &amp;   \textsf{PL} \\
+2 &amp; &amp; \textsf{O}(p \wedge q) \to \textsf{O}q &amp; &amp; \textsf{RK}, 1
+\end{array}
+\]</span> The problem is that this observation appears to license the following inference:</p>
+<ol type="1">
+<li>Jones ought to help Smith, who has been robbed.</li>
+<li>Smith ought to be robbed.</li>
+</ol>
+<p>Here we let <span class="math inline">\(p\)</span> be ‘Jones helps Smith’ and we let <span class="math inline">\(q\)</span> be ‘Smith is robbed’. Now, while the premise seems fine, the conclusion seems absurd.</p>
+<p>One way out is to reject the formalization of the first premise by means of the conjunction <span class="math inline">\(p \wedge q\)</span>. Maybe we should think of the premise in terms of a conditional obligation: Jones ought to help Smith <em>given that</em> Smith has been robbed. It is one thing to say that the conjunction ought to be the case, which is false, and quite another to say that there is a conditional obligation for Jones to help Smith given that he has been robbed. Compare the distinction we just made with the distinction between a conditional probability and the probability of a conjunction. There is an important distinction to be drawn between ‘Probably, Smith will be robbed and Jones will help Smith’ and ’Probably, Jones will help Smith given that Smith has been robbed. The conjunction may remain improbable even if the conditional probability is very high. Conditional probability, we learn, is not the same as the probability of a conjunction.</p>
+</section>
+<section id="ross-paradox" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ross-paradox">Ross’ Paradox</h3>
+<p>The next issue involves another application of RK and begins with the following observation:</p>
+<p><span class="math display">\[
+  \vdash_{\textsf{K}} \textsf{O}p \to \textsf{O}(p \vee q)
+  \]</span> The derivation is again quite simple: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; p \to p \vee q &amp; &amp;   \text{PL} \\
+2 &amp; &amp; \textsf{O}p  \to \textsf{O}(p \vee q) &amp; &amp; \textsf{RK}, 1
+\end{array}
+\]</span></p>
+<p>The problem is that this observation appears to license the following inference:</p>
+<ol type="1">
+<li>The letter ought to be mailed.</li>
+<li>The letter ought to be mailed or burned.</li>
+</ol>
+<p>Here we let <span class="math inline">\(p\)</span> be ‘the letter is mailed’ and we let <span class="math inline">\(q\)</span> be ‘the letter is burned’. But while the premise seems fine, the conclusion seems strange since one way to discharge the latter obligation is to burn the letter. That in turn is inconsistent with the first way to discharge the disjunctive obligation.</p>
+</section>
+<section id="chisholms-paradox" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="chisholms-paradox">Chisholm’s Paradox</h3>
+<p>Four statements would appear to be perfectly consistent with each other:</p>
+<ol type="i">
+<li><p>You ought to help your neighbors.</p></li>
+<li><p>You ought to tell your neighbors that you will help them if you will help them.</p></li>
+<li><p>If you will <em>not</em> help your neighbors, you ought to <em>not</em> tell them that you will.</p></li>
+<li><p>You will not help your neighbors.</p></li>
+</ol>
+<p>Unfortunately, the scenario appears to be inconsistent when formalized against the background of the minimal deontic logic. For let <span class="math inline">\(p\)</span> stand for the proposition that you will help your neighbors and let <span class="math inline">\(q\)</span> stand for the proposition that you will tell them that you will help them. Then, we appear to have:</p>
+<ol type="i">
+<li><span class="math inline">\(\textsf{O}p\)</span></li>
+<li><span class="math inline">\(\textsf{O}(p \to q)\)</span></li>
+<li><span class="math inline">\(\neg p \to \textsf{O}\neg q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>We now seem to be in a position to argue for a contradiction:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \textsf{O}(p \to q) \to (\textsf{O}p \to \textsf{O}q)&amp; &amp;  \textsf{K}  \\
+2 &amp; &amp; \textsf{O}(p \to q) &amp; &amp;   \text{ii}  \\
+3 &amp; &amp; \textsf{O}p \to \textsf{O}q &amp; &amp;   \textsf{PL}, 1  \\
+4 &amp; &amp; \textsf{O}q &amp; &amp; \text{i} \\
+5 &amp; &amp; \textsf{O} q \to \neg \textsf{O} \neg q &amp; &amp; \text{D} \\
+6 &amp; &amp; \neg \textsf{O} \neg q &amp;  &amp; \textsf{PL}, 4, 5\\
+7 &amp; &amp; \neg p &amp; &amp; \text{iv} \\
+8 &amp; &amp; \neg p \to \textsf{O} \neg q &amp; &amp; \text{iii} \\
+9 &amp; &amp; \textsf{O} \neg q &amp; &amp;\textsf{PL}, 7, 8 \\
+10 &amp; &amp; \textsf{O} \neg q \wedge \neg \textsf{O} \neg q &amp; &amp; \textsf{PL}, 6, 9\\
+\end{array}
+\]</span></p>
+<p>This is unacceptable, unless, that is, we are prepared to concede that Chisholm’s scenario is incoherent, which means that we have to find a way to either live with the inconsistency of the first four claims or else find a way to resist the derivation of the contradiction.</p>
+<p>One immediate suggestion is to question the formalization we proposed on the grounds perhaps that ii and iii ought to be treated on a par. That would result in two candidate alternatives to the original formulation:</p>
+<ol type="i">
+<li><span class="math inline">\(\textsf{O}p\)</span></li>
+<li><span class="math inline">\(\textsf{O}(p \to q)\)</span></li>
+<li><span class="math inline">\(\textsf{O}(\neg p \to \neg q)\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>In this case, iii would become a consequence of i, which would make the original set of statements redundant.</p>
+<ol type="i">
+<li><span class="math inline">\(\textsf{O}p\)</span></li>
+<li><span class="math inline">\(p \to \textsf{O}q\)</span></li>
+<li><span class="math inline">\(\neg p \to \textsf{O}\neg q\)</span></li>
+<li><span class="math inline">\(\neg p\)</span></li>
+</ol>
+<p>In this case, ii would become a simple consequence of iv making the original set of statements redundant again.</p>
+</section>
+</section>
+<section id="conditional-obligation" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="conditional-obligation">Conditional Obligation</h2>
+<p>One common reaction to these problems is to invoke a distinction between obligation and conditional obligation akin to that between probability and conditional probability. The thought is that a conditional obligation is not the same as the obligation to make sure a conditional is true.</p>
+<p>Let us tentatively enrich the language of deontic logic with a new binary operator into the language <span class="math inline">\(O(p/q)\)</span>, read: ‘it ought to be the case that <span class="math inline">\(p\)</span> given that <span class="math inline">\(q\)</span>’. That would be the operator one would use to formalize the conditional obligation to tell your neighbors you will help them provided that you will. The question now becomes whether we are in a position to define conditional obligation in terms of unconditional obligation, and it seems clear that the salient alternatives will <em>not</em> do:</p>
+<ul>
+<li><p><span class="math inline">\(\textsf{O}(p/q):= q \to \textsf{O}p\)</span></p>
+<p>This is much too weak to capture conditional obligation, since it makes them true whenever the antecedent is false. It would be trivially true, for example, that I ought to give you a million dollars given that I’m an engineer.</p></li>
+<li><p><span class="math inline">\(\textsf{O}(p/q):= \textsf{O}(q \to p)\)</span></p>
+<p>The problem with this is that in the presence of <span class="math inline">\(\textsf{KD}\)</span>, we can derive: <span class="math display">\[
+\begin{array}{llll}
+\vdash_{\textsf{KD}} \textsf{O}p \to \textsf{O}(q \to p) &amp;  &amp; \vdash_{\textsf{KD}} \textsf{O} \ \neg q \to \textsf{O}(q \to p)\\
+\end{array}
+\]</span></p>
+<p>But in connection to the second observation, the fact that you ought not disturb your neighbors should not entail the conditional obligation to argue with them given that you disturb them.</p>
+<p>There are further problems. Since <span class="math inline">\(\vdash (q \to p) \to ((q \wedge r) \to p)\)</span>, we learn: <span class="math display">\[
+\begin{array}{lllll}
+\vdash_{\textsf{KD}} \textsf{O}(q \to p) \to \textsf{O}((q \wedge r) \to p) &amp; &amp; &amp; &amp; \\
+\end{array}
+\]</span></p>
+<p>So, if you ought to help your new neighbors move in given that they do, then you ought to help them move in given that they do and that they ask you to please not help them.</p></li>
+</ul>
+<p>The alternative is to treat conditional obligation as a new binary operator governed by its own distinctive rules of inference: <span class="math display">\[
+\begin{array}{lllll}
+q \wedge \textsf{O}(p/q) \to \textsf{O}p &amp; &amp; &amp; &amp; \text{Factual Detachment}\\
+\textsf{O}q \wedge \textsf{O}(p/q) \to Op &amp; &amp; &amp; &amp; \text{Deontic Detachment}\\
+\end{array}
+\]</span></p>
+<p>Given factual detachment, if your new neighbors will move in tomorrow, and you ought to help them provided that they do, then you ought to help them. On the other hand, the point of deontic detachment is to allow the move from the fact that it ought to be the case that they will move in tomorrow and the conditional obligation to the obligation to help them tomorrow.</p>
+<p>Notice that once we do this, it becomes an option define the original obligation operator in terms of conditional obligation:</p>
+<p><span class="math display">\[
+\textsf{O}p := \textsf{O}(p/\top)
+\]</span> The question, however, is how to specify truth conditions for such claims against the background of the possible worlds model theory.</p>
 
 
 </section>
@@ -698,11 +890,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./choice.html" class="pagination-link" aria-label="Tense and Choice">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tense and Choice</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Why Modal Logic?">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
