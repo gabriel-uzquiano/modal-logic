@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Epistemic Logic – Modal Logic</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./deontic.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./epistemic.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Modal Logic</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./propositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./derivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./completeness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Modal Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalderivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalcompleteness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tense.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./choice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tense and Choice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deontic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epistemic.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#knowledge" id="toc-knowledge" class="nav-link active" data-scroll-target="#knowledge">Knowledge</a></li>
+  <li><a href="#information-flow" id="toc-information-flow" class="nav-link" data-scroll-target="#information-flow"><span class="header-section-number">12.1</span> Information Flow</a></li>
+  <li><a href="#common-knowledge" id="toc-common-knowledge" class="nav-link" data-scroll-target="#common-knowledge"><span class="header-section-number">12.2</span> Common Knowledge</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./epistemic.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>One of the uses to which propositional modal logic has been put is to model certain propositional attitudes such as knowledge and belief.</p>
+<section id="knowledge" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="knowledge">Knowledge</h2>
+<p>To model knowledge, <span class="citation" data-cites="hintikka1962knowledge">(<a href="references.html#ref-hintikka1962knowledge" role="doc-biblioref">Hintikka 1962</a>)</span> supplements the language of propositional logic with a family of propositional operators <span class="math inline">\(\textsf{K}_i\)</span> for a family of epistemic agents <span class="math inline">\(i\in I\)</span>. A formula of the form <span class="math inline">\(\textsf{K}_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that <span class="math inline">\(\varphi\)</span>.” Its dual, <span class="math inline">\(\neg \textsf{K}_i \neg\)</span> is symbolized: <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span>, is read: “for all agent <span class="math inline">\(i\)</span> knows, <span class="math inline">\(\varphi\)</span> remains open.”</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+States of Information
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>relational</em> model <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{K_i}\)</span> is a structure <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, where:</p>
+<ol type="1">
+<li><span class="math inline">\(W\)</span> is a non-empty set of information states or states of the world,</li>
+<li>For each <span class="math inline">\(i\in I\)</span>, <span class="math inline">\(R_i\)</span> is a binary accessibility relation on <span class="math inline">\(W\)</span>, and</li>
+<li><span class="math inline">\(V\)</span> is a function, which assigns to each propositional variable <span class="math inline">\(p\)</span> a set of states <span class="math inline">\(V(p)\)</span>.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a State
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We now define what it is for a formula <span class="math inline">\(\varphi\)</span> <em>true at</em> a state <span class="math inline">\(s\)</span> in a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M, s \Vdash \varphi\)</span>, inductively:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash p &amp; \text{iff} &amp; s \in V(p)\\
+M, s \Vdash \neg \varphi &amp; \text{iff} &amp; M, s \nVdash \varphi\\
+M, s \Vdash (\varphi \to \psi) &amp; \text{iff} &amp; M, s \nVdash \varphi \ \text{or} \ M, s \Vdash \psi\\
+M, s \Vdash \textsf{K}_i \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{s.t.} \ R_i su, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span> Since <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span> as the dual of <span class="math inline">\(\textsf{K}_i\)</span>, that is, <span class="math inline">\(\neg \textsf{K}K_i  \neg\)</span>, we have: <span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash \langle \textsf{K}_i \rangle \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ \text{s.t.} \ R_i su, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>We are now in a position to define truth in a model of epistemic logic.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth in a Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in</em> a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M\Vdash \varphi\)</span>, if, and only if, for every <span class="math inline">\(s\in W\)</span>, <span class="math inline">\(M, s \Vdash \varphi\)</span>.</p>
+</div>
+</div>
+<p>Knowledge provides the ability to locate the actual world in the space of epistemic live options, and, in particular, to exclude certain states of the world as candidates for actuality. One information state <span class="math inline">\(v\)</span> is <em>i-accessible</em> from <span class="math inline">\(u\)</span>, <span class="math inline">\(R_i uv\)</span> iff <span class="math inline">\(v\)</span> remains an <em>epistemic live option</em> for the agent <span class="math inline">\(i\)</span> in state <span class="math inline">\(u\)</span>, one the agent <span class="math inline">\(i\)</span> is not able to exclude as a candidate for actuality. That is, nothing the agent <span class="math inline">\(i\)</span> knows enables <span class="math inline">\(i\)</span> to distinguish <span class="math inline">\(v\)</span> from the actual world.</p>
+<p>These decisions are not inconsequential. For it follows that agents know all logical truths and that they know what follows from what they know. That is the framework vindicates a rule of necessitation and all substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span>: <span class="math display">\[\tag{N}
+\varphi / \textsf{K}_i \varphi
+\]</span></p>
+<p><span class="math display">\[\tag{K}
+\textsf{K}_i(p \to q) \to (\textsf{K}_ip \to \textsf{K}_iq)
+\]</span> This involves a modicum of idealization: ordinary knowledge is not closed under logical consequence, and it is not all that plausible to think agents ordinarily know all logical truths.</p>
+<p>One way to cope with this observation is to let <span class="math inline">\(\textsf{K}_i\)</span> model not ordinary knowledge but rather knowledge by an idealized agent equipped with unlimited logical capabilities. Alternatively, one may instead take <span class="math inline">\(\textsf{K}_i\)</span> to model <em>implicit</em> knowledge, which is what follows from knowledge we may reasonably attribute to ordinary agents even if it is not explicitly known by them.</p>
+<p>The next step is to consider the epistemic interpretation of different modal axioms and to ask whether or not they are candidates for the logic of knowledge.</p>
+<p><span class="math display">\[\tag{T}
+\textsf{K}_i p \to p
+\]</span></p>
+<p><strong><em>What is known is the case.</em></strong></p>
+<p>The principle that knowledge implies truth is virtually universally accepted, and a firm candidate for the logic of knowledge.</p>
+<p>From a semantic point of view, <span class="math inline">\(\textsf{T}\)</span> requires <span class="math inline">\(i\)</span>-accessibility relations to be reflexive: a state itself is a live epistemic option for an agent.</p>
+<p><span class="math display">\[\tag{\textsf{4}}
+\textsf{K}_i p \to \textsf{K}_i \textsf{K}_i p
+\]</span> <strong><em>What is known is known to be known.</em></strong></p>
+<p>This is the principle commonly known as the <span class="math inline">\(\textsf{K}\textsf{K}\)</span>-principle. It encodes the view that knowledge is transparent to the agent: if you know something, then you know that you know. Presumably, the thought is that agents with unlimited introspection capabilities ought to be able to recognize their own knowledge: agents should be able to introspectively attend to their reasons for belief, which should be conclusive in cases of knowledge and not defeasible by new information.</p>
+<p>From a semantic point of view, <span class="math inline">\(\textsf{4}\)</span> requires the <span class="math inline">\(i\)</span>-accessibility relations to be transitive: if a state <span class="math inline">\(t\)</span> is an epistemic live option for <span class="math inline">\(i\)</span> at <span class="math inline">\(v\)</span>, and <span class="math inline">\(v\)</span> is a live option for <span class="math inline">\(i\)</span> at <span class="math inline">\(u\)</span>, then <span class="math inline">\(t\)</span> is a live option for <span class="math inline">\(i\)</span> at <span class="math inline">\(u\)</span>.</p>
+<p><span class="citation" data-cites="hintikka1962knowledge">(<a href="references.html#ref-hintikka1962knowledge" role="doc-biblioref">Hintikka 1962</a>)</span> adopted axioms <span class="math inline">\(\textsf{T}\)</span> and <span class="math inline">\(\textsf{4}\)</span> and identified <span class="math inline">\(\textsf{S4}\)</span> as a candidate logic for knowledge. His reasons for that is that he regarded axioms <span class="math inline">\(\textsf{B}\)</span> and <span class="math inline">\(\textsf{5}\)</span> as implausible epistemic principles.</p>
+<p><span class="math display">\[\tag{$\textsf{B}$}
+p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p
+\]</span> <strong><em>What is the case is known to be open.</em></strong></p>
+<p>This means that we could come to know that something that is the case is open merely by reflection on that fact, which seems implausible. This is clearer when we look at the contrapositive of the principle: <span class="math display">\[\tag{$\textsf{B}_\Diamond$}
+\langle \textsf{K}_i \rangle \textsf{K}_i p  \to p
+\]</span> It is not implausible to think an agent may take themselves to know something that is in fact <em>not</em> the case. That would be a case in which knowledge that they know something would not be ruled out despite the fact that what is taken to be known is <em>not</em> the case. But that again is supposed to be ruled out by <span class="math inline">\(\textsf{B}_\Diamond\)</span>.</p>
+<p>The semantic counterpart of these observations is that we should not automatically rule out failures of symmetry for <span class="math inline">\(i\)</span>-accessibility relations: from the fact that <span class="math inline">\(v\)</span> is an epistemic live option for the agent at <span class="math inline">\(u\)</span>, we cannot conclude that <span class="math inline">\(u\)</span> is an epistemic live option for the agent at <span class="math inline">\(v\)</span>.</p>
+<p>To the extent to which <span class="math inline">\(\textsf{KTB4}\)</span> is equivalent to <span class="math inline">\(\textsf{KT5}\)</span> or <span class="math inline">\(\textsf{S5}\)</span>, the above considerations extend to axiom <span class="math inline">\(\textsf{5}\)</span>, which in the presence of <span class="math inline">\(\textsf{T}\)</span> would give us <span class="math inline">\(\textsf{B}\)</span>.</p>
+<p><span class="math display">\[\tag{$\textsf{5}$}
+\langle \textsf{K}_i\rangle p \to \textsf{K}_i \langle \textsf{K}_i \rangle p
+\]</span> <strong><em>What is open is known to be open.</em></strong></p>
+<p>There are cases in which agents take themselves to know something that is not in fact the case. Because knowledge entails truth, it would be false in that case that the agents <em>know</em>. But the agents might not have access to that information: it may be open to them that they know despite the fact that they do <em>not</em> know that it is open to them to know. One way to put it is that <span class="math inline">\(\textsf{5}\)</span> would require agents to be immune to error of the sort described, which is again quite implausible.</p>
+</section>
+<section id="information-flow" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="information-flow"><span class="header-section-number">12.1</span> Information Flow</h2>
+<p>The insight behind the possible worlds semantics for epistemic logic is that agents locate themselves in the space of epistemic live options by excluding states of the world as live options in light of new information. The Muddy Children puzzle illustrates the dynamic aspect of this update mechanism:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Muddy Children
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Three children <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> have been playing outside when they are called back inside by their guardian. Two of them, say <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>, have mud on their forehead, but none of them is able to see their own forehead. Each child, however, can see which of the other children are muddy. Once inside, the guardian asserts:</p>
+<ol type="A">
+<li>At least one of you is muddy.</li>
+</ol>
+<p>followed by an initial request:</p>
+<ol start="2" type="A">
+<li>If you know you are muddy, please step forward.</li>
+</ol>
+<p>None of the children will presumably step forward after the first request. Each child will see other children with mud in their foreheads, but none of them will know whether they themselves are muddy.</p>
+<p>Matters change when she repeats the same request for a second time:</p>
+<ol start="3" type="A">
+<li>If you know you are muddy, please step forward.</li>
+</ol>
+<p>After the second request, the two muddy children <em>will</em> step forward while the third stays behind. For they <em>now</em> know that they are muddy.</p>
+</div>
+</div>
+<p>The example raises a number of questions:</p>
+<ul>
+<li><p>Did the children learn anything new after the announcement that one of them was muddy?</p></li>
+<li><p>What changed between the initial request when no one stepped forward and the later one when two muddy children did?</p></li>
+<li><p>How did the two muddy children come to know that they had mud in their foreheads?</p></li>
+</ul>
+<p>Here is a diagrammatic representation of the situation before the initial announcement.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren1.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Before Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>We represent the relevant states of information with respect to the question at hand by ordered triples of digits, which encode the state of each children in that order. Thus for example:</p>
+<ul>
+<li><span class="math inline">\(101\)</span> encodes the <em>actual</em> state of the world on which <span class="math inline">\(a\)</span> is muddy, <span class="math inline">\(b\)</span> is not muddy, and <span class="math inline">\(c\)</span> is muddy.</li>
+<li><span class="math inline">\(111\)</span> encodes an <em>epistemic live option</em> for <span class="math inline">\(b\)</span> (though not for <span class="math inline">\(a\)</span> or <span class="math inline">\(c\)</span>) on which all three children are muddy.</li>
+<li><span class="math inline">\(001\)</span> encodes an <em>epistemic live option</em> for <span class="math inline">\(a\)</span> (though not for <span class="math inline">\(b\)</span> or <span class="math inline">\(c\)</span>) on which only <span class="math inline">\(c\)</span> is muddy.</li>
+</ul>
+<p>The eight nodes correspond to eight states, which consist of different distributions of mud across the children. The nodes are connected by different accessibility relations, which correspond to each child as an epistemic agent. We assume that each relation is <em>reflexive</em> and <em>symmetric</em>: when an edge labeled <span class="math inline">\(a\)</span>, for example, connects two nodes, the two states are indistinguishable as far as <span class="math inline">\(a\)</span> is concerned.</p>
+<p>The effect of the announcement <span class="math inline">\(A\)</span> is to let the children exclude <span class="math inline">\(000\)</span> as a live epistemic option.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren2.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">After Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>While announcement <span class="math inline">\(A\)</span> excludes <span class="math inline">\(000\)</span> as actuality, none of the children regarded <span class="math inline">\(000\)</span> as an epistemic live option. That is because each children is able to see mud in the forehead of at least one child.</p>
+<p>The children learn valuable information from the fact that no one steps forward after request <span class="math inline">\(B\)</span> is made. This is because the children now learn that none of the other two children know that they are muddy. This suffices to rule out states at which there is exactly one muddy child.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren3a.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">After Request B</td>
+</tr>
+</tbody>
+</table>
+<p>After request B, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is not is muddy.</p>
+<p>That allows the children to eliminate all epistemic alternatives to <span class="math inline">\(101\)</span>. So, the epistemic situation after the second request is that the children know exactly who is muddy and who is not muddy.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren4.png" class="img-fluid"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">After Request C</td>
+</tr>
+</tbody>
+</table>
+<p>Nothing changes when we complicate the situation. If, for example, seven out of ten children happened to be muddy, then no one would step forward until after the guardian makes the seventh request at which point exactly those seven children would simultaneously step forward.</p>
+</section>
+<section id="common-knowledge" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="common-knowledge"><span class="header-section-number">12.2</span> Common Knowledge</h2>
+<p>What do the children learn after the first announcement? Notice that they <em>all</em> know that at least one child is muddy even prior to the announcement. We may use <span class="math inline">\(E\varphi\)</span> as an abbreviation for the conjunction: <span class="math display">\[
+\bigwedge_{i\in I} \textsf{K}_i \varphi,
+\]</span> which is read: “it is generally known that <span class="math inline">\(\varphi\)</span>’’. General knowledge is not sufficient for common knowledge. A group has common knowledge that <span class="math inline">\(\varphi\)</span> if they <em>all</em> know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that they all know that <span class="math inline">\(\varphi\)</span>, etc.</p>
+<p>Let us revisit the initial model for the Muddy Children Puzzle and let <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span>, and <span class="math inline">\(p_3\)</span> be true at exactly states at which each of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>, respectively, are muddy, then we may express the fact that at least one child is muddy by means of the disjunction <span class="math inline">\(p_1 \vee  p_2 \vee p_3\)</span>. Notice that that formula is true when evaluated at state <span class="math inline">\(101\)</span>: <span class="math display">\[
+M, 101 \Vdash \textsf{E} (p_1 \vee p_2 \vee p_3).
+\]</span></p>
+<p>That is because: <span class="math display">\[
+M, 101 \Vdash \textsf{K}_a (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_b (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_c (p_1 \vee p_2 \vee p_3).
+\]</span> But although it is generally known that at least one child is muddy, it is <em>not</em> common knowledge that at least one child is muddy.</p>
+<p>Common knowledge plays a crucial role in social interaction. When we drive, for example, we rely on the fact that it is common knowledge that a red light requires drivers to stop. It is not sufficient for a pedestrian to know that, but it is important to know that drivers <em>know</em> that and for them to know that everyone knows that, etc.</p>
+<p>How should we incorporate common knowledge in the language of epistemic logic? There is no hope for an explicit definition of common knowledge in terms of knowledge, for that would presumably require an <em>infinite</em> conjunction, which is not available in the language. We will instead expand the language of epistemic logic with a common knowledge operator, <span class="math inline">\(\textsf{C}\varphi\)</span>, reqd: “it is common knowledge that <span class="math inline">\(\varphi\)</span>.</p>
+<p>Once we do this, we must explain how to evaluate a formula of the form <span class="math inline">\(\textsf{C}\varphi\)</span> at a state <span class="math inline">\(s\)</span> of a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>. To that purpose, we will expand the definition of truth at a state with a clause for the newly added common knowledge operator.</p>
+<ul>
+<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in one step</em>, in symbols, <span class="math inline">\(sR^1t\)</span>, iff <span class="math inline">\(sR_it\)</span> for some <span class="math inline">\(i\in I\)</span>. In the case at hand, one state is reachable from another in one step if it is <span class="math inline">\(a\)</span>-accessible from the other or it is <span class="math inline">\(b\)</span>-accessible from the other or, finally, it is <span class="math inline">\(c\)</span>-accessible from the other.</p></li>
+<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in</em> <span class="math inline">\(n+1\)</span> steps, in symbols, <span class="math inline">\(sR^{n+1}t\)</span>, iff for some step <span class="math inline">\(u\)</span>, <span class="math inline">\(sR^{n}u\)</span> and <span class="math inline">\(uR_it\)</span> for some <span class="math inline">\(i\in I\)</span>.</p></li>
+</ul>
+<p>For purposes of illustration, notice that in the initial model for the Muddy Children Puzzle <span class="math inline">\(000\)</span> is <em>reachable from</em> <span class="math inline">\(101\)</span> <em>in two steps</em>: <span class="math display">\[
+101 R_c 100 \ \ \text{and} \ \ 100 R_a 000
+\]</span> <span class="math display">\[
+101 R_a 001 \ \ \text{and} \ \ 001 R_c 000
+\]</span></p>
+<p>That is, there are two-step paths one may take from <span class="math inline">\(101\)</span> to <span class="math inline">\(000\)</span>.</p>
+<p>Finally,</p>
+<ul>
+<li>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in a finite number of steps</em>, in symbols <span class="math inline">\(R^\star\)</span>, iff there is some <span class="math inline">\(n\)</span> such that <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in <span class="math inline">\(n\)</span> steps.</li>
+</ul>
+<p>Here is the clause for <span class="math inline">\(\textsf{C}\varphi\)</span> in the definition of truth at a state: <span class="math display">\[
+\begin{array}{lll}
+M, s \Vdash \textsf{C} \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{s.t.} \ R^\star su, \ M, u \Vdash \varphi\\
+\end{array}
+\]</span></p>
+<p>In other words, <span class="math inline">\(\textsf{C}\varphi\)</span> is true at a state <span class="math inline">\(s\)</span> iff <span class="math inline">\(\varphi\)</span> is true at every state <span class="math inline">\(t\)</span> <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in a finite number of steps</em>.</p>
+<p>Let us revisit the model for the Muddy Children Puzzle <em>prior to the first announcement</em>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren1.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Before Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>When we apply the definition of truth at a state to the case at hand, we find: <span class="math display">\[
+M, 101 \nVdash \textsf{C} (p_1 \vee p_2 \vee p_3).
+\]</span> The reason is that the state <span class="math inline">\(000\)</span>, which falsifies the disjunction, is reachable from <span class="math inline">\(101\)</span> in two steps.</p>
+<p>The situation changes once the children eliminate that option after the announcement. One of the effects of the announcement in the Muddy Children Puzzle is to make it common knowledge that at least one child is muddy: it is not just that all children know that at least one child is muddy, all children now know that all children know, and all children know that all children know that they know that, etc.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren2.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">After Announcement A</td>
+</tr>
+</tbody>
+</table>
+<p>If we use <span class="math inline">\(M'\)</span> to refer to the model that results, we find <span class="math display">\[
+M', 101 \Vdash \textsf{C} (p_1 \vee p_2 \vee p_3).
+\]</span></p>
+<p>This is because the disjunction is true at <em>every</em> state reachable from <span class="math inline">\(101\)</span> in the new model.</p>
+<p>After the first request is made without any children stepping forward, the children are able to rule out as epistemic alternatives states in which only one child is muddy.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren3a.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">After Request B</td>
+</tr>
+</tbody>
+</table>
+<p>At this point, the fact that two children are muddy now becomes common knowledge, since only states where two children are muddy are reachable from the state of evaluation in a finite number of steps.</p>
+<p>The actual distribution of mud becomes common knowledge after the two children step forward after the thrid request. That is because they are all left with a single epistemic live option:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><img src="images/muddychildren4.png" style="display:block; margin: 0 auto;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">After Request C</td>
+</tr>
+</tbody>
+</table>
+<p>The accessibility relation for common knowledge, <span class="math inline">\(R^\star\)</span>, will of course be <em>reflexive</em> and <em>transitive</em>. It will be transitive by definition, but it will inherit reflexivity from the reflexivity of each of the <span class="math inline">\(i\)</span>-accessibility relations. Whether the relation will in addition be symmetric or euclidean will crucially depend on the structure of the individual <span class="math inline">\(i\)</span>-accessibility relations.</p>
+<p>One axiomatization of the logic of common knowledge employs an an axiom and a rule of inference: <span class="math display">\[\tag{Fixed Point}
+\textsf{C}p \to \textsf{E}(p \wedge \textsf{C}p)
+\]</span> <span class="math display">\[\tag{Induction}
+\varphi \to \textsf{E}(\psi \wedge \varphi) / \varphi \to \textsf{C} \psi
+\]</span></p>
+<p>The <em>fixed point</em> axiom regards common knowledge as a <em>fixed point</em> of the function that maps a formula <span class="math inline">\(\varphi\)</span> to <span class="math inline">\(\textsf{K}_i(\varphi \wedge \textsf{C}\varphi)\)</span>.</p>
+<p>The rule of inference is called an induction rule because the antecedent provides the crucial ingredient for an inductive argument for all instances of the schema: <span class="math display">\[
+\varphi \to \textsf{E}^n(\psi \wedge \varphi),
+\]</span> which guarantees the conditional <span class="math display">\[
+\varphi \to \textsf{C}\psi.
+\]</span> For suppose the conditional <span class="math inline">\(\varphi \to \textsf{E}(\psi \wedge \varphi)\)</span> is valid. Then if <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(s\)</span>, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(s\)</span>, which means that if <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in one step, then <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t\)</span>. So, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(t\)</span>. If <span class="math inline">\(u\)</span> is now reachable from <span class="math inline">\(t\)</span> in one step, then <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> will be true at <span class="math inline">\(t\)</span>, etc.</p>
+<p>We are in a position to prove some theorems of the logic of common knowledge.</p>
+<div class="proposition">
+<p><span class="math inline">\(\vdash \textsf{C}p \to \textsf{E} \textsf{C}p\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the Fixed Point axiom: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \textsf{C}p \to \textsf{E}(p \wedge \textsf{C}p) &amp; \text{Fixed Point}\\
+2 &amp; &amp; \textsf{E}(p \wedge \textsf{C}p) \to (\textsf{E} p \wedge \textsf{E} \textsf{C}p) &amp; \textsf{K} \ 1\\
+3 &amp; &amp; \textsf{C}p \to \textsf{E} \textsf{C}p &amp; \textsf{PL} \ 1, 2\\
+\end{array}
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span class="math inline">\(\vdash \textsf{C}p\to \textsf{C C}p\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the rule of inference for common knowledge. <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \textsf{C}p \to \textsf{E} \textsf{C}p &amp; \\
+2 &amp; &amp; \textsf{C} p \to (\textsf{C}p \wedge \textsf{C} p) &amp; \textsf{PL} \\
+3  &amp; &amp; \textsf{EC} p \to \textsf{E} (\textsf{C}p\wedge \textsf{C} p) &amp; \textsf{PL}\\
+4 &amp; &amp; \textsf{C} p \to \textsf{E} (\textsf{C}p \wedge \textsf{C} p) &amp; \textsf{PL} \ 1, 3\\
+5 &amp; &amp; \textsf{C} p \to \textsf{CC}p &amp; \textsf{RC}[\textsf{C}p/\varphi, \textsf{C}p/\psi] \ 4
+\end{array}
+\]</span></p>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-hintikka1962knowledge" class="csl-entry" role="listitem">
+Hintikka, Kaarlo Jaakko Juhani. 1962. <span>“Knowledge and Belief: An Introduction to the Logic of the Two Notions.”</span>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./deontic.html" class="pagination-link" aria-label="Deontic Logic">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
