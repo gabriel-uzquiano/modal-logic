@@ -348,14 +348,14 @@ States of Information
 </ol>
 </div>
 </div>
-<p>We may use state models to model real-life examples. Suppose you have lost sight of your phone, which you think, you may have misplaced. In one state, your phone has been stolen (<span class="math inline">\(p\)</span>), whereas in another state you simply forgot to take it with you and has not been stolen (<span class="math inline">\(\neg p\)</span>). In all epistemically accessible states, however, your phone had been with you just yesterday night (<span class="math inline">\(q\)</span>). That would place you in a state in which you <em>know</em> your phone had been with you yesterday night, <span class="math inline">\(K_i q\)</span>, but you do not know whether your phone has been stolen: <span class="math inline">\(\neg K_i p \wedge K_i \neg p\)</span>.</p>
+<p>We may use state models to model real-life examples. Suppose you have lost sight of your phone, which you think, you may have misplaced. In one state, your phone has been stolen (<span class="math inline">\(p\)</span>), whereas in another state you simply forgot to take it with you and has not been stolen (<span class="math inline">\(\neg p\)</span>). In all epistemically accessible states, however, your phone had been with you just yesterday night (<span class="math inline">\(q\)</span>). That would place you in a state in which you <em>know</em> your phone had been with you yesterday night, <span class="math inline">\(\textsf{K}_i q\)</span>, but you do not know whether your phone has been stolen: <span class="math inline">\(\neg \textsf{K}_i p \wedge \textsf{K}_i \neg p\)</span>.</p>
 <p>One way to model the situation is through a model, which consists of two states <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> corresponding to two epistemic alternatives: one in which your phone has been stolen, and one in which it has not been stolen.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/states.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<p>Notice that <span class="math inline">\(K_i q\)</span> is true at either state because <span class="math inline">\(q\)</span> is true at all epistemically accessible states, yet neither <span class="math inline">\(K_i p\)</span> nor <span class="math inline">\(K_i \neg p\)</span> is true at either state.</p>
+<p>Notice that <span class="math inline">\(\textsf{K}_i q\)</span> is true at either state because <span class="math inline">\(q\)</span> is true at all epistemically accessible states, yet neither <span class="math inline">\(\textsf{K}_i p\)</span> nor <span class="math inline">\(\textsf{K}_i \neg p\)</span> is true at either state.</p>
 <p>Knowledge provides the ability to locate the actual world in the space of epistemic live options. Your lack of knowledge whether your phone has been stolen is represented by an inability to locate the actual world in the space of epistemic live options above. Nothing you knows enables you to distinguish <span class="math inline">\(s_1\)</span> from <span class="math inline">\(s_2\)</span>.</p>
 <p>We now explain what it is for a formula <span class="math inline">\(\varphi\)</span> <em>true at</em> a state <span class="math inline">\(s\)</span> in a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M, s \Vdash \varphi\)</span>, inductively.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -412,7 +412,7 @@ Truth in a Model
 \]</span></p>
 <p>The principle that knowledge implies truth is virtually universally accepted, and a firm candidate for the logic of knowledge.</p>
 <p>From a semantic point of view, <span class="math inline">\(\textsf{T}\)</span> requires <span class="math inline">\(i\)</span>-accessibility relations to be reflexive: a state itself is a live epistemic option for an agent.</p>
-<p>Back to the example with which we started, consider what happens if I tell you ‘you do not know it, but your phone has been stolen’, which we could formalize <span class="math inline">\(p \wedge \neg K_i p\)</span>. That turns out to be something you can never know. For notice, for example, that <span class="math inline">\(K_i(p \wedge \neg K_ip)\)</span> is falsified at all states in the model we considered above. More generally, the formula is false at all states of all state models. For if you knew <span class="math inline">\(p \wedge \neg K_i p\)</span>, then presumably, you would know both <span class="math inline">\(p\)</span> and <span class="math inline">\(\neg K_ip\)</span>, which would mean <span class="math inline">\(K_ip\)</span> and <span class="math inline">\(K_i\neg K_ip\)</span>. But the latter would only be true if <span class="math inline">\(\neg K_ip\)</span>, which would contradict the assumption that you know that <span class="math inline">\(p\)</span>.</p>
+<p>Back to the example with which we started, consider what happens if I tell you ‘you do not know it, but your phone has been stolen’, which we could formalize <span class="math inline">\(p \wedge \neg \textsf{K}_i p\)</span>. That turns out to be something you can never know. For notice, for example, that <span class="math inline">\(\textsf{K}_i(p \wedge \neg \textsf{K}_ip)\)</span> is falsified at all states in the model we considered above. More generally, the formula is false at all states of all state models. For if you knew <span class="math inline">\(p \wedge \neg \textsf{K}_i p\)</span>, then presumably, you would know both <span class="math inline">\(p\)</span> and <span class="math inline">\(\neg \textsf{K}_ip\)</span>, which would mean <span class="math inline">\(\textsf{K}_ip\)</span> and <span class="math inline">\(\textsf{K}_i\neg \textsf{K}_ip\)</span>. But the latter would only be true if <span class="math inline">\(\neg \textsf{K}_ip\)</span>, which would contradict the assumption that you know that <span class="math inline">\(p\)</span>.</p>
 <p><strong><em>What is known is known to be known.</em></strong></p>
 <p><span class="math display">\[\tag{\textsf{4}}
 \textsf{K}_i p \to \textsf{K}_i \textsf{K}_i p
@@ -424,17 +424,22 @@ Truth in a Model
 <p><span class="math display">\[\tag{$\textsf{B}$}
 p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p
 \]</span></p>
-<p>This means that whatever is the case is known to be open as far as one knows. One way to cast doubt upon that principle is by considering the dual: <span class="math display">\[\tag{$\textsf{B}_\Diamond$}
+<p>This means that what is the case is known to be open as far as one knows. One way to cast doubt upon that principle is by considering the dual: <span class="math display">\[\tag{$\textsf{B}_\Diamond$}
 \langle \textsf{K}_i \rangle \textsf{K}_i p  \to p
 \]</span></p>
 <p>You may think that nothing you know rules out that you do know that you left your phone behind back in the classroom. But according to <span class="math inline">\(\textsf{B}_\Diamond\)</span>, that is only the case if you did in fact leave your phone behind in your classroom. If you did <em>not</em>, then what you know already rules out that you know that you left the phone behind in the classroom.</p>
 <p>The semantic counterpart of these observations is that we should not automatically rule out failures of symmetry for <span class="math inline">\(i\)</span>-accessibility relations: from the fact that <span class="math inline">\(v\)</span> is an epistemic live option for the agent at <span class="math inline">\(u\)</span>, we cannot conclude that <span class="math inline">\(u\)</span> is an epistemic live option for the agent at <span class="math inline">\(v\)</span>.</p>
-<p>To the extent to which <span class="math inline">\(\textsf{KTB4}\)</span> is equivalent to <span class="math inline">\(\textsf{KT5}\)</span> or <span class="math inline">\(\textsf{S5}\)</span>, the above considerations extend to axiom <span class="math inline">\(\textsf{5}\)</span>, which in the presence of <span class="math inline">\(\textsf{T}\)</span> would give us <span class="math inline">\(\textsf{B}\)</span>.</p>
+<p>To the extent to which <span class="math inline">\(\textsf{KT5}\)</span> or <span class="math inline">\(\textsf{S5}\)</span> extends <span class="math inline">\(\textsf{KTB}\)</span>, the above considerations extend to axiom <span class="math inline">\(\textsf{5}\)</span>, which in the presence of <span class="math inline">\(\textsf{T}\)</span> would give us <span class="math inline">\(\textsf{B}\)</span>.</p>
 <p><strong><em>What is open is known to be open.</em></strong></p>
 <p><span class="math display">\[\tag{$\textsf{5}$}
 \langle \textsf{K}_i\rangle p \to \textsf{K}_i \langle \textsf{K}_i \rangle p
 \]</span></p>
-<p>There are cases in which agents take themselves to know something that is not in fact the case. Because knowledge entails truth, it would be false in that case that the agents <em>know</em>. But the agents might not have access to that information: it may be open to them that they know despite the fact that they do <em>not</em> know that it is open to them to know. One way to put it is that <span class="math inline">\(\textsf{5}\)</span> would require agents to be immune to error of the sort described, which is again quite implausible.</p>
+<p>There are cases in which agents mistakenly take themselves to know something that is not in fact the case. Because knowledge entails truth, it would be false in that case that the agents <em>know</em>. But the agents might not have access to that information: it may be open to them that they know despite the fact that they do <em>not</em> know that it is open to them to know. One way to put it is that <span class="math inline">\(\textsf{5}\)</span> would require agents to be immune to error of the sort described, which is again quite implausible.</p>
+<p>Consider the dual:</p>
+<p><span class="math display">\[\tag{$\textsf{5}_\Diamond$}
+\langle \textsf{K}_i \rangle \textsf{K}_i p  \to \textsf{K}_i p
+\]</span></p>
+<p>If it is open to you that you know something, then you know it.</p>
 </section>
 <section id="information-flow" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="information-flow"><span class="header-section-number">12.1</span> Information Flow</h2>
@@ -501,7 +506,7 @@ Muddy Children
 </tbody>
 </table>
 <p>While announcement <span class="math inline">\(A\)</span> excludes <span class="math inline">\(000\)</span> as actuality, none of the children regarded <span class="math inline">\(000\)</span> as an epistemic live option. That is because each children is able to see mud in the forehead of at least one child.</p>
-<p>The children learn valuable information from the fact that no one steps forward after request <span class="math inline">\(B\)</span> is made. This is because the children now learn that none of the other two children know that they are muddy. This suffices to rule out states at which there is exactly one muddy child.</p>
+<p>The children learn valuable information from the fact that no one steps forward after the first request, <span class="math inline">\(B\)</span>, is made. This is because the children now learn that none of the other two children know that they are muddy. This suffices to rule out states at which there is exactly one muddy child.</p>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
@@ -512,7 +517,7 @@ Muddy Children
 </tr>
 </tbody>
 </table>
-<p>After request B, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is not is muddy.</p>
+<p>After request <span class="math inline">\(C\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is not is muddy.</p>
 <p>That allows the children to eliminate all epistemic alternatives to <span class="math inline">\(101\)</span>. So, the epistemic situation after the second request is that the children know exactly who is muddy and who is not muddy.</p>
 <table class="caption-top table">
 <tbody>
@@ -530,18 +535,20 @@ Muddy Children
 <h2 data-number="12.2" class="anchored" data-anchor-id="common-knowledge"><span class="header-section-number">12.2</span> Common Knowledge</h2>
 <p>What do the children learn after the first announcement? Notice that they <em>all</em> know that at least one child is muddy even prior to the announcement. We may use <span class="math inline">\(E\varphi\)</span> as an abbreviation for the conjunction: <span class="math display">\[
 \bigwedge_{i\in I} \textsf{K}_i \varphi,
-\]</span> which is read: “it is generally known that <span class="math inline">\(\varphi\)</span>’’. General knowledge is not sufficient for common knowledge. A group has common knowledge that <span class="math inline">\(\varphi\)</span> if they <em>all</em> know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that they all know that <span class="math inline">\(\varphi\)</span>, etc.</p>
+\]</span></p>
+<p>which is read: “it is generally known that <span class="math inline">\(\varphi\)</span>’’. General knowledge is not sufficient for common knowledge. A group has common knowledge that <span class="math inline">\(\varphi\)</span> if they <em>all</em> know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that they all know that <span class="math inline">\(\varphi\)</span>, etc.</p>
 <p>Let us revisit the initial model for the Muddy Children Puzzle and let <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span>, and <span class="math inline">\(p_3\)</span> be true at exactly states at which each of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>, respectively, are muddy, then we may express the fact that at least one child is muddy by means of the disjunction <span class="math inline">\(p_1 \vee  p_2 \vee p_3\)</span>. Notice that that formula is true when evaluated at state <span class="math inline">\(101\)</span>: <span class="math display">\[
 M, 101 \Vdash \textsf{E} (p_1 \vee p_2 \vee p_3).
 \]</span></p>
 <p>That is because: <span class="math display">\[
 M, 101 \Vdash \textsf{K}_a (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_b (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_c (p_1 \vee p_2 \vee p_3).
-\]</span> But although it is generally known that at least one child is muddy, it is <em>not</em> common knowledge that at least one child is muddy.</p>
+\]</span></p>
+<p>But although it is generally known that at least one child is muddy, it is <em>not</em> common knowledge that at least one child is muddy.</p>
 <p>Common knowledge plays a crucial role in social interaction. When we drive, for example, we rely on the fact that it is common knowledge that a red light requires drivers to stop. It is not sufficient for a pedestrian to know that, but it is important to know that drivers <em>know</em> that and for them to know that everyone knows that, etc.</p>
 <p>How should we incorporate common knowledge in the language of epistemic logic? There is no hope for an explicit definition of common knowledge in terms of knowledge, for that would presumably require an <em>infinite</em> conjunction, which is not available in the language. We will instead expand the language of epistemic logic with a common knowledge operator, <span class="math inline">\(\textsf{C}\varphi\)</span>, reqd: “it is common knowledge that <span class="math inline">\(\varphi\)</span>.</p>
 <p>Once we do this, we must explain how to evaluate a formula of the form <span class="math inline">\(\textsf{C}\varphi\)</span> at a state <span class="math inline">\(s\)</span> of a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>. To that purpose, we will expand the definition of truth at a state with a clause for the newly added common knowledge operator.</p>
 <ul>
-<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in one step</em>, in symbols, <span class="math inline">\(sR^1t\)</span>, iff <span class="math inline">\(sR_it\)</span> for some <span class="math inline">\(i\in I\)</span>. In the case at hand, one state is reachable from another in one step if it is <span class="math inline">\(a\)</span>-accessible from the other or it is <span class="math inline">\(b\)</span>-accessible from the other or, finally, it is <span class="math inline">\(c\)</span>-accessible from the other.</p></li>
+<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in one step</em>, in symbols, <span class="math inline">\(sR^1t\)</span>, iff <span class="math inline">\(sR_it\)</span> for <em>some</em> <span class="math inline">\(i\in I\)</span>. In the case at hand, one state is reachable from another in one step if it is <span class="math inline">\(a\)</span>-accessible from the other or it is <span class="math inline">\(b\)</span>-accessible from the other or, finally, it is <span class="math inline">\(c\)</span>-accessible from the other.</p></li>
 <li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in</em> <span class="math inline">\(n+1\)</span> steps, in symbols, <span class="math inline">\(sR^{n+1}t\)</span>, iff for some step <span class="math inline">\(u\)</span>, <span class="math inline">\(sR^{n}u\)</span> and <span class="math inline">\(uR_it\)</span> for some <span class="math inline">\(i\in I\)</span>.</p></li>
 </ul>
 <p>For purposes of illustration, notice that in the initial model for the Muddy Children Puzzle <span class="math inline">\(000\)</span> is <em>reachable from</em> <span class="math inline">\(101\)</span> <em>in two steps</em>: <span class="math display">\[
@@ -576,7 +583,8 @@ M, s \Vdash \textsf{C} \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W
 </table>
 <p>When we apply the definition of truth at a state to the case at hand, we find: <span class="math display">\[
 M, 101 \nVdash \textsf{C} (p_1 \vee p_2 \vee p_3).
-\]</span> The reason is that the state <span class="math inline">\(000\)</span>, which falsifies the disjunction, is reachable from <span class="math inline">\(101\)</span> in two steps.</p>
+\]</span></p>
+<p>The reason is that the state <span class="math inline">\(000\)</span>, which falsifies the disjunction, is reachable from <span class="math inline">\(101\)</span> in two steps.</p>
 <p>The situation changes once the children eliminate that option after the announcement. One of the effects of the announcement in the Muddy Children Puzzle is to make it common knowledge that at least one child is muddy: it is not just that all children know that at least one child is muddy, all children now know that all children know, and all children know that all children know that they know that, etc.</p>
 <table class="caption-top table">
 <colgroup>
@@ -630,12 +638,12 @@ M', 101 \Vdash \textsf{C} (p_1 \vee p_2 \vee p_3).
 \]</span> <span class="math display">\[\tag{Induction}
 \varphi \to \textsf{E}(\psi \wedge \varphi) / \varphi \to \textsf{C} \psi
 \]</span></p>
-<p>The <em>fixed point</em> axiom regards common knowledge as a <em>fixed point</em> of the function that maps a formula <span class="math inline">\(\varphi\)</span> to <span class="math inline">\(\textsf{K}_i(\varphi \wedge \textsf{C}\varphi)\)</span>.</p>
-<p>The rule of inference is called an induction rule because the antecedent provides the crucial ingredient for an inductive argument for all instances of the schema: <span class="math display">\[
+<p>The <em>fixed point</em> axiom regards common knowledge as a <em>fixed point</em> of the function that maps a formula <span class="math inline">\(\varphi\)</span> to <span class="math inline">\(\textsf{K}_i(\varphi \wedge \textsf{C}\varphi)\)</span>. The rule of inference is called an induction rule because the antecedent provides the crucial ingredient for an inductive argument for all instances of the schema: <span class="math display">\[
 \varphi \to \textsf{E}^n(\psi \wedge \varphi),
 \]</span> which guarantees the conditional <span class="math display">\[
 \varphi \to \textsf{C}\psi.
-\]</span> For suppose the conditional <span class="math inline">\(\varphi \to \textsf{E}(\psi \wedge \varphi)\)</span> is valid. Then if <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(s\)</span>, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(s\)</span>, which means that if <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in one step, then <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t\)</span>. So, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(t\)</span>. If <span class="math inline">\(u\)</span> is now reachable from <span class="math inline">\(t\)</span> in one step, then <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> will be true at <span class="math inline">\(t\)</span>, etc.</p>
+\]</span></p>
+<p>For suppose the conditional <span class="math inline">\(\varphi \to \textsf{E}(\psi \wedge \varphi)\)</span> is valid. Then if <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(s\)</span>, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(s\)</span>, which means that if <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in one step, then <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t\)</span>. So, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(t\)</span>. If <span class="math inline">\(u\)</span> is now reachable from <span class="math inline">\(t\)</span> in one step, then <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> will be true at <span class="math inline">\(t\)</span>, etc.</p>
 <p>We are in a position to prove some theorems of the logic of common knowledge.</p>
 <div class="proposition">
 <p><span class="math inline">\(\vdash \textsf{C}p \to \textsf{E} \textsf{C}p\)</span></p>
