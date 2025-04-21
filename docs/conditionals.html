@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; Conditionals – Modal Logic</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./epistemic.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./conditionals.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditionals</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Modal Logic</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Why Modal Logic?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./propositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./derivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./completeness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Modal Propositional Logic</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalpropositional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basic Language</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalderivations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Axiomatic Derivations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modalcompleteness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Completeness</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Applications</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tense.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./choice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tense and Choice</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deontic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epistemic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./conditionals.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditionals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-problem-of-conditionals" id="toc-the-problem-of-conditionals" class="nav-link active" data-scroll-target="#the-problem-of-conditionals">The Problem of Conditionals</a></li>
+  <li><a href="#the-strict-conditional" id="toc-the-strict-conditional" class="nav-link" data-scroll-target="#the-strict-conditional">The Strict Conditional</a></li>
+  <li><a href="#conditional-logic" id="toc-conditional-logic" class="nav-link" data-scroll-target="#conditional-logic">Conditional Logic</a>
+  <ul class="collapse">
+  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
+  <li><a href="#minimal-change-semantics-for-conditional-logic" id="toc-minimal-change-semantics-for-conditional-logic" class="nav-link" data-scroll-target="#minimal-change-semantics-for-conditional-logic">Minimal Change Semantics for Conditional Logic</a></li>
+  <li><a href="#sphere-models-for-counterfactuals" id="toc-sphere-models-for-counterfactuals" class="nav-link" data-scroll-target="#sphere-models-for-counterfactuals">Sphere Models for Counterfactuals</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./conditionals.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditionals</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditionals</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Conditional logic and the minimal change framework are motivated by an attempt to capture the truth conditions of <em>subjunctive</em> or <em>counterfactual conditionals</em> of the form</p>
+<ul>
+<li>if the match had been struck, then it would have lit.</li>
+</ul>
+<p>Robert Stalnaker originally developed the framework in <span class="citation" data-cites="stalnaker1968theory">(<a href="references.html#ref-stalnaker1968theory" role="doc-biblioref">Stalnaker 1968</a>)</span> to cover <em>indicative conditionals</em> as well.</p>
+<ul>
+<li>if the match is struck, then it will lit.</li>
+</ul>
+<p>Both indicative and counterfactual conditionals have been distinguished from <em>material conditionals</em>, which are true if the antecent is false or if the consequent is true. Neither indicative nor counterfactual conditionals appear to be truth-functional. Nor do they appear to share truth conditions.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Indicative and Subjunctive (or Counterfactual) Conditionals
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Compare the truth conditions of the conditionals below:</p>
+<ul>
+<li><p>if Shakespeare had not written Hamlet, then someone else would have.</p></li>
+<li><p>if Shakespeare did not write Hamlet, then someone else did.</p></li>
+</ul>
+</div>
+</div>
+<p><span class="citation" data-cites="stalnaker1968theory">(<a href="references.html#ref-stalnaker1968theory" role="doc-biblioref">Stalnaker 1968</a>)</span> offered a pragmatic explanation of the difference, and he meant the minimal change framework to apply to both indicative and counterfactual conditionals.</p>
+<section id="the-problem-of-conditionals" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-problem-of-conditionals">The Problem of Conditionals</h2>
+<p>It is not uncommon to use the material conditional to regiment conditionals of the form ‘if the match is struck, it will lit’ as: <span class="math inline">\(p \to q\)</span>. A material conditional of the form <span class="math inline">\(p \to q\)</span>, however, is truth functional: the conditional is true if, and only if, the antecedent <span class="math inline">\(p\)</span> is false or the consequent <span class="math inline">\(q\)</span> is true. That means that the material conditional underwrites inferences of the form: <span class="math display">\[
+\begin{array}{lllll}
+&amp; \neg \varphi / \varphi \to \psi &amp; &amp; \psi/\varphi \to \psi &amp; \\
+\end{array}
+\]</span> The paradoxes of material implication arise from that observation, since the patterns in question appear suspect when it comes to the indicative conditional in English. It is not clear that we should be entitled to make inferences such as:</p>
+<ol type="1">
+<li>I will not play the lottery.</li>
+<li>Therefore, if I play the lottery, then I will win the jackpot.</li>
+</ol>
+<p>Similarly for the inference:</p>
+<ol start="3" type="1">
+<li>I will win the jackpot.</li>
+<li>Therefore, if I do not play the lottery, then I will win the jackpot.</li>
+</ol>
+<p>More evidence for the apparent mismatch between the material and indicative conditional is not difficult to find. Here is an example due to Dorothy Edgington:</p>
+<ol start="5" type="1">
+<li>If God doesn’t exist, then it’s not the case that if I pray, then my prayers will be answered.</li>
+<li>I don’t pray.</li>
+<li>Therefore, God exists.</li>
+</ol>
+<p>Unfortunately, the argument turns out to be valid on the material conditional interpretation of the conditionals on which it would be regimented:</p>
+<ol start="5" type="1">
+<li><span class="math inline">\(\neg  p \to \neg (q \to r)\)</span></li>
+<li><span class="math inline">\(\neg q\)</span></li>
+<li><span class="math inline">\(p\)</span></li>
+</ol>
+<p>The material conditional underwrites a variety of patterns of inference that are suspect for the material conditional.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Monotonicity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\tag{Monotonicity}
+\varphi \to \psi/ (\varphi \wedge \chi) \to \psi
+\]</span>This is a perfectly valid rule of inference. Notice, however, that the indicative conditional appears to flaunt the rule. Here is an example originally due to William Harper:</p>
+<ol start="8" type="1">
+<li>If I put sugar in my coffee, it will taste fine.</li>
+<li>Therefore, if I put sugar and motor oil in my coffee, it will taste fine.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Contraposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\tag{Contraposition}
+\varphi \to \psi / \neg \psi \to \neg \varphi
+\]</span></p>
+<p>Consider the inference:</p>
+<ol start="10" type="1">
+<li>If I travel overseas later this month, then it will not be to Europe.</li>
+<li>If I travel to Europe later this month, then I will not travel overseas later this month.</li>
+</ol>
+<p>Notice that the conclusion is logically equivalent to ‘if I fail to not travel to Europe later this month, then I will not travel overseas later this month’.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Transitivity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\tag{Transitivity}
+\varphi \to \psi, \psi \to \theta / \varphi \to \theta
+\]</span></p>
+<p>Consider the inference:</p>
+<ol start="12" type="1">
+<li>If a Democrat wins, then a Republican will come a close second.</li>
+<li>If no Republican runs, then a Democrat will win.</li>
+<li>Therefore, if no Republican runs, then a Democrat will come a close second.</li>
+</ol>
+<p>To appreciate the problem, let <span class="math inline">\(\varphi\)</span> be ‘no Republican runs’, <span class="math inline">\(\psi\)</span> be ‘a Democrat will win’, and <span class="math inline">\(\theta\)</span> be ‘a Democrat will come a close second’.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Modus Ponens
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="citation" data-cites="McGee1985-MCGACT">(<a href="references.html#ref-McGee1985-MCGACT" role="doc-biblioref">McGee 1985</a>)</span> has even questioned whether Modus Ponens is valid for the indicative conditional:</p>
+<p><span class="math display">\[\tag{Modus Ponens}
+\varphi \to \psi, \varphi / \psi
+\]</span> Here is one of his examples:</p>
+<ol start="15" type="1">
+<li>If Uncle Otto doesn’t find gold, then if he strikes it rich, then he’ll strike it rich by finding silver.</li>
+<li>Uncle Otto won’t find gold.</li>
+<li>Therefore, if Uncle Otto strikes it rich, then he’ll strike it rich by finding silver.</li>
+</ol>
+<p>Here <span class="math inline">\(\varphi\)</span> stands for ‘Uncle Otto doesn’t find gold’ and <span class="math inline">\(\psi\)</span> stands for ‘if he strikes it rich, then he’ll strike it rich by finding silver’.</p>
+</div>
+</div>
+</section>
+<section id="the-strict-conditional" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="the-strict-conditional">The Strict Conditional</h2>
+<p>C.I. Lewis responded to the paradoxes of material implication with a new binary connective, which he called <em>the strict conditional</em>. We are now in a position to represent the strict conditional as a necessitation of the material conditional: <span class="math inline">\(\Box (p \to q)\)</span>.</p>
+<p>The strict conditional does not vindicate the two types of inference that played a role in the paradoxes of material implication. We are not allowed to move from <span class="math inline">\(\neg p\)</span> to <span class="math inline">\(\Box (p \to q)\)</span> or move from <span class="math inline">\(q\)</span> to <span class="math inline">\(\Box (p \to q)\)</span>, which suggests progress from the material conditional.</p>
+<p>The strict conditional, however, supports perfectly parallel patterns of inference: <span class="math display">\[
+\begin{array}{lllll}
+&amp; \Box \neg p  / \Box (p \to q) &amp; &amp; \Box q / \Box (p \to q).  &amp; \\
+\end{array}
+\]</span>But more importantly for our purposes, the strict conditional supports a variety of patterns of inference we found problematic for the indicative conditional. All these rules are valid in against the background of the minimal modal logic <span class="math inline">\(\textsf{K}\)</span>:</p>
+<p><span class="math display">\[\tag{Monotonicity}
+\Box (\varphi \to \psi)/ \Box ((\varphi \wedge \chi) \to \psi)
+\]</span> <span class="math display">\[\tag{Contraposition}
+\Box (\varphi \to \psi)/ \Box(\neg \psi \to \neg \varphi)
+\]</span></p>
+<p><span class="math display">\[\tag{Transitivity}
+\Box(\varphi \to \psi), \Box(\psi \to \theta)/ \Box(\varphi \to \theta)
+\]</span></p>
+<p>That suggests that the strict conditional is still not the best candidate to regiment the indicative conditional. Nor does it help that the behavior of the strict conditional is highly sensitive to the modal framework within which it is embedded: <span class="math display">\[
+\begin{array}{lllll}
+&amp; \vdash_{S4} \Box(\varphi \to \psi) / \Box \Box (\varphi \to \psi) &amp; &amp; &amp; \\
+&amp;  \vdash_{S5} \neg \Box (\varphi \to \psi) /  \Box \neg (\varphi \to \psi) &amp; &amp;  &amp; \\
+\end{array}
+\]</span></p>
+</section>
+<section id="conditional-logic" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="conditional-logic">Conditional Logic</h2>
+<p>One application of the possible worlds framework is the development of a theory of indicative and counterfactual conditionals due to Robert Stalnaker in <span class="citation" data-cites="stalnaker1968theory">(<a href="references.html#ref-stalnaker1968theory" role="doc-biblioref">Stalnaker 1968</a>)</span> and a subsequent development due to David Lewis in <span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span>. The key thought is that we can explain the truth conditions of an indicative conditional in terms of the truth conditions of the material conditional as evaluated in a world that incorporates a minimal departure from the world of evaluation required to render the antecedent true.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An indicative conditional of the form</p>
+<ul>
+<li>if <span class="math inline">\(p\)</span>, then <span class="math inline">\(q\)</span></li>
+</ul>
+<p>is true at a world <span class="math inline">\(w\)</span> If, and only if, the material conditional <span class="math inline">\(p \to q\)</span> is true at a <span class="math inline">\(p\)</span>-world which otherwise differs minimally from <span class="math inline">\(w\)</span>.</p>
+</div>
+</div>
+<p>A conditional such as ‘if the match is struck, then it will lit’ is true if, and only if, the corresponding material conditional ‘the match is struck <span class="math inline">\(\to\)</span> the match will lit’ is true at the <em>closest possible world</em> at which the match is struck. While that conditional strikes us as true, the condtional ‘if I play the lottery, then I will win the jackpot’ strikes us as false; on the minimal change approach, the reason is simple: the closest world at which I play the lottery is presumably one at which I do not win.</p>
+<p>To make the proposal more precise, let us introduce the language of conditional logic as an extension of the language propositional logic supplemented with a new binary connective for the new conditional.</p>
+<section id="syntax" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="syntax">Syntax</h3>
+<p>We expand the language of modal propositional logic with a binary sentential operator for the new conditional <span class="math inline">\(&gt;\)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Language of Conditional Logic
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We define the formulas of a propositional language <span class="math inline">\(\mathcal{L}^\Box\)</span> recursively:</p>
+<p><span class="math display">\[
+\varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi) \ | \ (\varphi &gt; \psi) \ | \ \Box \varphi
+\]</span></p>
+<p>Here is how to read the last line:</p>
+<ul>
+<li><p>All atoms are formulas.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> is a formula, then <span class="math inline">\(\neg \varphi\)</span> is a formula.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are formulas, then <span class="math inline">\((\varphi \to \psi)\)</span> is a formula.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are formulas, then <span class="math inline">\((\varphi &gt; \psi)\)</span> is a formula.</p></li>
+<li><p>If <span class="math inline">\(\varphi\)</span> is a formula, then <span class="math inline">\(\Box \varphi\)</span> is a formula.</p></li>
+</ul>
+</div>
+</div>
+<p>We read <span class="math inline">\(\varphi &gt; \psi\)</span> as the indicative conditional ‘if <span class="math inline">\(\varphi\)</span>, then <span class="math inline">\(\psi\)</span>’, and we read <span class="math inline">\(\varphi \to \psi\)</span> as the material conditional ‘not-<span class="math inline">\(\varphi\)</span> or <span class="math inline">\(\psi\)</span>’. That means that unlike the indicative conditional, the material conditional is truth-functional.</p>
+</section>
+<section id="minimal-change-semantics-for-conditional-logic" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="minimal-change-semantics-for-conditional-logic">Minimal Change Semantics for Conditional Logic</h3>
+<p>We will now make precise the minimal change semantics for the new conditional. To simplify discussion, the models will omit the accessibility relation for <span class="math inline">\(\Box\)</span>, which we will implicitely assume to the universal relation on <span class="math inline">\(W\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A Pre-Stalnaker Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>pre-Stalnaker model</em> is an ordered triple <span class="math inline">\((W, \{\leq_w : w\in W\}, V)\)</span>, where:</p>
+<ul>
+<li><p><span class="math inline">\(W\)</span> is a non-empty set of worlds.</p></li>
+<li><p><span class="math inline">\(\{\leq_w: w \in W\}\)</span> is a family of <em>similarity</em> relations for each world in <span class="math inline">\(W\)</span>, where for each <span class="math inline">\(x, y, w\in W\)</span>:</p>
+<p><span class="math inline">\(x \leq_w y\)</span> is read: <span class="math inline">\(x\)</span> <em>is at least as similar to</em> <span class="math inline">\(w\)</span> <em>as</em> <span class="math inline">\(y\)</span>. These similarity relations are <em>reflexive</em>, <em>transitive</em>, <em>strongly connected</em>, and <em>anti-symmetric</em>:</p>
+<ul>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>reflexive</em> on* <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x\in W\)</span>, <span class="math inline">\(x \leq_w x\)</span>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>transitive on</em> <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x, y, z\in W\)</span>, <span class="math inline">\(x \leq_w y\)</span>, and <span class="math inline">\(y  \leq_w z\)</span>, then <span class="math inline">\(x \leq_w z\)</span>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>strongly connected on</em> <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x, y\in W\)</span>, <span class="math inline">\(x \leq_w y\)</span> or <span class="math inline">\(y \leq_w x\)</span>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>anti-symmetric on</em> <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x, y \in W\)</span>, <span class="math inline">\(x \leq_w y\)</span> and <span class="math inline">\(y\leq_w x\)</span>, then <span class="math inline">\(x =y\)</span>.</li>
+</ul></li>
+<li><p><span class="math inline">\(V\)</span> is a valuation function for <span class="math inline">\(\mathcal{L}\)</span>, which maps each atom to a subset of <span class="math inline">\(W\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<p>We provide a recursive definition of truth at a world in a pre-Stalnaker model.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a World
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We define what is for a formula <span class="math inline">\(\varphi\)</span> to be <em>true at a world</em> <span class="math inline">\(w\)</span> <em>in a pre-Stalnaker model</em> <span class="math inline">\(M\)</span>, which we write: <span class="math inline">\(M, w \Vdash \varphi\)</span>: <span class="math display">\[
+\begin{array}{lll}
+M, w \Vdash p &amp; \text{iff} &amp; w \in V(p)\\
+M, w \Vdash \neg \varphi &amp; \text{iff} &amp; M, w \nVdash \varphi\\
+M, w \Vdash (\varphi \to \psi) &amp; \text{iff} &amp; M, w \nVdash \varphi \ \text{or} \ M, w \Vdash \psi\\
+M, w \Vdash \Box \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W,  \ M, u \Vdash \varphi\\
+M, w \Vdash (\varphi &gt; \psi) &amp; \text{iff} &amp; \text{for every} \ u \in W, \text{if} \\
+&amp; &amp;  \ (M, u\Vdash \varphi \  \text{and for all} \ v \in W, \ M, v\Vdash \varphi, \ \text{then} \ u \leq_w v), \ \text{then}  \\
+&amp; &amp; \  M, u \Vdash \psi.\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here is a simpler gloss of the truth conditions for <span class="math inline">\((\varphi &gt; \psi)\)</span>:</p>
+<ul>
+<li>for every <span class="math inline">\(u \in W\)</span>, if <span class="math inline">\(u\)</span> is the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, then <span class="math inline">\(u\)</span> is a <span class="math inline">\(\psi\)</span>-world.</li>
+</ul>
+</div>
+</div>
+<p>Notice that <span class="math inline">\((\varphi &gt; \psi)\)</span> becomes vacuously true at a world <span class="math inline">\(w\)</span> if there is no closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world in the model. That would be the case, for example, if the model contained no <span class="math inline">\(\varphi\)</span>-worlds at all, or if it contained some <span class="math inline">\(\varphi\)</span>-worlds but none of them qualified as the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world. In either case, the conditional would be counted as true.</p>
+<p>While pre-Stalnaker models have some intrinsic interest, they suffer from what Stalnaker deems a defect: as we mentioned just now, they do not by themselves guarantee the existence of a <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world even if we are given the existence of some <span class="math inline">\(\varphi\)</span>-worlds.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A Stalnaker Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We define a <em>Stalnaker model</em> to be a pre-Stalnaker model of the form <span class="math inline">\((W, \{\leq_w : w\in W\}, V)\)</span>, which satsifies:</p>
+<ul>
+<li><p><em>The Base Assumption</em>:</p>
+<p>For all <span class="math inline">\(w \in W\)</span>, for all <span class="math inline">\(x \in W\)</span>, <span class="math inline">\(w \leq_w x\)</span>.</p>
+<p>That is, no world is closer to <span class="math inline">\(w\)</span> than <span class="math inline">\(w\)</span> itself.</p></li>
+<li><p><em>The Limit Assumption</em>:</p>
+<p>For all <span class="math inline">\(w \in W\)</span>, if <span class="math inline">\(M, w \Vdash \Diamond \varphi\)</span>, then for some <span class="math inline">\(u \in W\)</span>,</p>
+<ul>
+<li><span class="math inline">\(M, u \Vdash \varphi\)</span>, and</li>
+<li>For all <span class="math inline">\(v\in W\)</span>, if <span class="math inline">\(M, v \Vdash \varphi\)</span>, then <span class="math inline">\(u \leq_w v\)</span>.</li>
+</ul>
+<p>That is, if <span class="math inline">\(\varphi\)</span> is possible at <span class="math inline">\(w\)</span>, then there is a closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world.</p></li>
+</ul>
+</div>
+</div>
+<p>We are in a position to define truth and validity:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in a Stalnaker model</em> <span class="math inline">\(M\)</span>, written: <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only if for every <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Validity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em>, written: <span class="math inline">\(\models \varphi\)</span>, if, and only if <span class="math inline">\(\varphi\)</span> is true in every Stalnaker model.</p>
+</div>
+</div>
+<p>In order to become more familiar with these definitions, it will be helpful to provide illustrations of the contrast between valid and invalid formulas of the language of conditional logic.</p>
+<p>We begin with some examples of validity.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\models (p \wedge q) \to (p &gt;q)\)</span>.</p>
+<p>That is, <span class="math inline">\((p \wedge q) \to (p &gt;q)\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p &gt;q\)</span> provided that <span class="math inline">\(M, w \Vdash p \wedge q\)</span>. To evaluate <span class="math inline">\(p &gt;q\)</span> at <span class="math inline">\(w\)</span>, we note that given the <em>Base Assumption</em>, since <span class="math inline">\(M, w \Vdash p\)</span>, <span class="math inline">\(w\)</span> is the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world. Since, by assumption, <span class="math inline">\(M, w \Vdash q\)</span>, we conclude that the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world is a <span class="math inline">\(q\)</span>-world, which means that <span class="math inline">\(M, w \Vdash p &gt;q\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\models (p &gt; q) \wedge (p \wedge q &gt; r) \to (p &gt; r)\)</span>.</p>
+<p>That is, <span class="math inline">\((p &gt; q) \wedge (p \wedge q &gt; r) \to (p &gt; r)\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p &gt;r\)</span> provided that <span class="math inline">\(M, w \Vdash p &gt; q\)</span> and <span class="math inline">\(M, w \Vdash p \wedge q &gt; r\)</span>. To evaluate <span class="math inline">\(p &gt;r\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<ul>
+<li><p>There are no <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(p &gt; r\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
+<li><p>There are some <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \Vdash p &gt;q\)</span>, we know that <span class="math inline">\(u\)</span> is a <span class="math inline">\(q\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(q\)</span>-world, <span class="math inline">\(u\)</span> itself must the be the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\wedge q\)</span>-world. From <span class="math inline">\(M, w \Vdash p \wedge q &gt;r\)</span>, we now infer that <span class="math inline">\(u\)</span> is an <span class="math inline">\(r\)</span>-world. Therefore, since the closest-t-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world is an <span class="math inline">\(r\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash p &gt;r\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\models \Box (p &gt; q) \to (p &gt; q)\)</span>.</p>
+<p>That is, <span class="math inline">\(\Box (p &gt; q) \to (p &gt; q)\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p &gt;q\)</span> provided that <span class="math inline">\(M, w \Vdash p &gt; q\)</span> and <span class="math inline">\(M, w \Vdash \Box (p &gt;q)\)</span>. To evaluate <span class="math inline">\(p &gt;q\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<ul>
+<li><p>There are no <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(p &gt; q\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
+<li><p>There are some <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \Vdash \Box (p \to q)\)</span>, we know that <span class="math inline">\(u\)</span> is a <span class="math inline">\(q\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(q\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash p &gt; q\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<p>We now look at some differences between the new conditional and the material conditional.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample to Monotonicity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models (p &gt; q) \to (p \wedge r &gt; q)\)</span>.</p>
+<p>We describe a Stalnaker model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
+<ul>
+<li><p><span class="math inline">\(W = \{w_1, w_2, w_3\}\)</span></p></li>
+<li><p><span class="math inline">\(\leq_{w_1}\)</span> is such that</p>
+<ul>
+<li><p><span class="math inline">\(w_1 \leq_{w_{1}} w_1\)</span>,</p></li>
+<li><p><span class="math inline">\(w_1 \leq_{w_{1}} w_2\)</span>,</p></li>
+<li><p><span class="math inline">\(w_2 \leq_{w_{1}} w_2\)</span>,</p></li>
+<li><p><span class="math inline">\(w_2 \leq_{w_{1}} w_3\)</span>, and</p></li>
+<li><p><span class="math inline">\(w_3 \leq_{w_{1}} w_3\)</span></p></li>
+</ul></li>
+<li><p><span class="math inline">\(V\)</span> is a valuation function such that</p>
+<ul>
+<li><span class="math inline">\(V(p) = \{w_2, w_3\}\)</span>,</li>
+<li><span class="math inline">\(V(q) = \{w_2\}\)</span>, and</li>
+<li><span class="math inline">\(V(r) = \{w_3\}\)</span>.</li>
+</ul></li>
+</ul>
+<p>Here is a diagrammatic representation of the model and the relation of similarity to <span class="math inline">\(w_1\)</span>: <span class="math inline">\(\leq_{w_{1}}\)</span>.</p>
+<p><img src="images/counterexample-to-monotonicity.png" style="display:block; margin: 0 auto;"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash p &gt; q\)</span> because the closest-to-<span class="math inline">\(w_1\)</span> <span class="math inline">\(p\)</span>-world is <span class="math inline">\(w_2\)</span>, which is a <span class="math inline">\(q\)</span>-world.</p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash p \wedge r &gt; q\)</span> because the closest-to-<span class="math inline">\(w_1\)</span> <span class="math inline">\(p\wedge r\)</span>-world is <span class="math inline">\(w_3\)</span>, which is <em>not</em> a <span class="math inline">\(q\)</span>-world.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample to Contraposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models (p &gt; q) \to (\neg q &gt; \neg p)\)</span>.</p>
+<p>We describe a Stalnaker model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
+<ul>
+<li><p><span class="math inline">\(W = \{w_1, w_2, w_3\}\)</span></p></li>
+<li><p><span class="math inline">\(\leq_{w_1}\)</span> is such that</p>
+<ul>
+<li><p><span class="math inline">\(w_1 \leq_{w_{1}} w_1\)</span>,</p></li>
+<li><p><span class="math inline">\(w_1 \leq_{w_{1}} w_2\)</span>,</p></li>
+<li><p><span class="math inline">\(w_2 \leq_{w_{1}} w_2\)</span>,</p></li>
+<li><p><span class="math inline">\(w_2 \leq_{w_{1}} w_3\)</span>, and</p></li>
+<li><p><span class="math inline">\(w_3 \leq_{w_{1}} w_3\)</span>.</p></li>
+</ul></li>
+<li><p><span class="math inline">\(V\)</span> is a valuation function such that</p>
+<ul>
+<li><span class="math inline">\(V(p) = \{w_2, w_3\}\)</span>, and</li>
+<li><span class="math inline">\(V(q) = \{w_2\}\)</span>.</li>
+</ul></li>
+</ul>
+<p>Here is a diagrammatic representation of the model and the relation of similarity to <span class="math inline">\(w_1\)</span>: <span class="math inline">\(\leq_{w_{1}}\)</span>.</p>
+<p><img src="images/counterexample-to-contraposition.png" style="display:block; margin: 0 auto;"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash p &gt; q\)</span> because the closest-to-<span class="math inline">\(w_1\)</span> <span class="math inline">\(p\)</span>-world is <span class="math inline">\(w_2\)</span>, which is a <span class="math inline">\(q\)</span>-world.</p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash \neg q  &gt; \neg p\)</span> because the closest-to-<span class="math inline">\(w_1\)</span> <span class="math inline">\(\neg q\)</span>-world is <span class="math inline">\(w_3\)</span>, which is <em>not</em> a <span class="math inline">\(\neg p\)</span>-world.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample to Transitivity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models (p &gt; q) \wedge (q &gt; r)\to (p &gt; r)\)</span>.</p>
+<p>We describe a Stalnaker model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
+<ul>
+<li><p><span class="math inline">\(W = \{w_1, w_2, w_3\}\)</span></p></li>
+<li><p><span class="math inline">\(\leq_{w_1}\)</span> is such that</p>
+<ul>
+<li><p><span class="math inline">\(w_1 \leq_{w_{1}} w_1\)</span>,</p></li>
+<li><p><span class="math inline">\(w_1 \leq_{w_{1}} w_2\)</span>,</p></li>
+<li><p><span class="math inline">\(w_2 \leq_{w_{1}} w_2\)</span>,</p></li>
+<li><p><span class="math inline">\(w_2 \leq_{w_{1}} w_3\)</span>, and</p></li>
+<li><p><span class="math inline">\(w_3 \leq_{w_{1}} w_3\)</span></p></li>
+</ul></li>
+<li><p><span class="math inline">\(V\)</span> is a valuation function such that</p>
+<ul>
+<li><span class="math inline">\(V(p) = \{w_3\}\)</span>,</li>
+<li><span class="math inline">\(V(q) = \{w_2, w_3\}\)</span>, and</li>
+<li><span class="math inline">\(V(r) = \{w_2\}\)</span>.</li>
+</ul></li>
+</ul>
+<p>Here is a diagrammatic representation of the model and the relation of similarity to <span class="math inline">\(w_1\)</span>: <span class="math inline">\(\leq_{w_{1}}\)</span>.</p>
+<p><img src="images/counterexample-to-transitivity.png" style="display:block; margin: 0 auto;"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash p &gt; q\)</span> because the closest-to-<span class="math inline">\(w_1\)</span> <span class="math inline">\(p\)</span>-world is <span class="math inline">\(w_3\)</span>, which is a <span class="math inline">\(q\)</span>-world.</p></li>
+<li><p><span class="math inline">\(M, w_1 \Vdash q &gt; r\)</span> because the closest-to-<span class="math inline">\(w_1\)</span> <span class="math inline">\(q\)</span>-world is <span class="math inline">\(w_2\)</span>, which is a <span class="math inline">\(r\)</span>-world.</p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash p  &gt; r\)</span> because the closest-to-<span class="math inline">\(w_1\)</span> <span class="math inline">\(p\)</span>-world is <span class="math inline">\(w_3\)</span>, which is <em>not</em> an <span class="math inline">\(r\)</span>-world.</p></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="sphere-models-for-counterfactuals" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sphere-models-for-counterfactuals">Sphere Models for Counterfactuals</h3>
+<p>David Lewis proposed an alternative model theory for the logic counterfactual conditionals in <span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span>. He embraced the minimal change approach to conditional logic but he objected to the use of Stalnaker models for a logic of counterfactual conditionals.</p>
+<ol type="1">
+<li><p>Similarity may not be anti-symmetric: two worlds may sometimes be tied for similarity to the world of evaluation. In those cases, each world is at least as similar to the world of evaluation as the other, yet they remain distinct.</p></li>
+<li><p>We should allow for failures of the Limit Assumption to accommodate infinite descending chains of similarity.</p></li>
+</ol>
+<p>We should look at each objection in turn.</p>
+<section id="against-anti-symmetry" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="against-anti-symmetry">Against Anti-Symmetry</h4>
+<p>If similarity is an anti-symmetric relation, we should be able to validate two principles that appear implausible for the <em>subjunctive</em> or <em>counterfactual</em> conditional:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Conditional Excluded Middle
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\tag{CEM}
+(\varphi &gt; \psi) \vee (\varphi &gt; \neg \psi)
+\]</span></p>
+</div>
+</div>
+<p>But you may doubt the principle is plausible for <em>subjunctive</em> or <em>counterfactual</em> conditionals. Consider, for example, the argument:</p>
+<ul>
+<li>Either if I had tossed a coin, it would have landed heads or if I had tossed a coin, I would have not landed heads.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CEM is true in Stalnaker models
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\models (\varphi &gt; \psi) \vee (\varphi &gt; \neg \psi)\)</span>.</p>
+<p>For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash \varphi &gt; \neg \psi\)</span> if <span class="math inline">\(M, w \nVdash \varphi &gt; \psi)\)</span>. To evaluate <span class="math inline">\(\varphi &gt; \neg \psi\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<ul>
+<li><p>There are no <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(\varphi &gt; \neg \psi\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
+<li><p>There are some <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \nVdash \varphi &gt; \psi\)</span>, we deduce that <span class="math inline">\(u\)</span> is not a <span class="math inline">\(\psi\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(\neg \psi\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash \varphi &gt; \neg \psi\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Distribution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\tag{Distribution}
+(\varphi &gt; (\psi \vee \theta)) \to ((\varphi &gt; \psi) \vee (\varphi &gt; \theta))
+\]</span></p>
+</div>
+</div>
+<p>This principle may again seem implausible</p>
+<ul>
+<li><p>if I had tossed the coin, then it would have landed heads or tails</p></li>
+<li><p>Either if I had tossed the coin, then it would have landed heads or if I had tossed the coin, it would have landed heads.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample to Distribution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\models (\varphi &gt; (\psi \vee \theta)) \to ((\varphi &gt; \psi) \vee (\varphi \ &gt; \theta))\)</span>.</p>
+<p>That is, <span class="math inline">\((\varphi &gt; (\psi \vee \theta)) \to ((\varphi &gt; \psi) \vee (\varphi &gt; \theta))\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash \varphi &gt; \theta\)</span> if <span class="math inline">\(M, w \Vdash \varphi &gt; (\psi \vee \theta)\)</span> and <span class="math inline">\(M, w \nVdash \varphi &gt; \psi)\)</span>. To evaluate <span class="math inline">\(\varphi &gt; \neg \psi\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<ul>
+<li><p>There are no <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(\varphi &gt; \neg \theta\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
+<li><p>There are some <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \Vdash \varphi &gt; (\psi \vee \theta)\)</span>, we deduce that <span class="math inline">\(u\)</span> is a <span class="math inline">\((\psi \vee \theta)\)</span>-world. Yet, from the fact that <span class="math inline">\(M, w \nVdash \varphi &gt; \psi)\)</span>, we have that <span class="math inline">\(u\)</span> is not a <span class="math inline">\(\psi\)</span>-world, which means it it a <span class="math inline">\(\theta\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(\theta\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash \varphi &gt; \theta\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<p><span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span> thought these principles are patently false for counterfactual conditionals. According to Lewis, we should accept the negation of certain instances of Conditional Excluded Middle for counterfactuals:</p>
+<ul>
+<li>It is neither the case that if Bizet and Verdi had been compatriots, then they would have both been French nor that if they had been compatriots, then they would have not both been French.</li>
+</ul>
+<p>Even Conditional Excluded Middle is false, we may be inclined to accept:</p>
+<ul>
+<li>If Bizet and Verdi had been compatriots, then they <em>might</em> have both been French and if Bizet and Verdi had been compatriots, then they <em>might</em> have not both been French.</li>
+</ul>
+<p>According to Lewis, Distribution is subject to a similar problem. On the one hand:</p>
+<ul>
+<li>If Bizet and Verdi had been compatriots, then they would have both been French or they would have both been Italian.</li>
+</ul>
+<p>Yet:</p>
+<ul>
+<li>It is neither the case that if Bizet and Verdi had been compatriots, then they would have both been French nor that if they had been compatriots, then they would have both been Italian.</li>
+</ul>
+<p>Even Distribution is false, we may be inclined to accept:</p>
+<ul>
+<li>If Bizet and Verdi had been compatriots, then they <em>might</em> have both been French and if Bizet and Verdi had been compatriots, then they <em>might</em> have both been Italian.</li>
+</ul>
+</section>
+<section id="against-the-limit-assumption" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="against-the-limit-assumption">Against the Limit Assumption</h4>
+<p>The Limit Assumption rules out pre-Stalnaker models in which a formula <span class="math inline">\(\varphi\)</span> is not true at the world of evaluation <span class="math inline">\(w\)</span>, yet it is true at each world occurring in an infinite descending chain of similarity <span class="math inline">\((u_n: n\in \mathbb{N})\)</span> where for each <span class="math inline">\(n\)</span>, <span class="math inline">\(u_{n+1} \leq_w u_{n}\)</span>. That is, for each <span class="math inline">\(\varphi\)</span> world in the model, there is a strictly closer-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample to the Limit Assumption
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>According to Lewis, the Limit Assumption is not an adequate constraint for the evaluation of counterfactuals such as:</p>
+<ul>
+<li><p>If I had been over 6ft tall, my height would have remained below 7ft.</p></li>
+<li><p>I I had been over 6ft tall, my height would have surpassed 7ft.</p></li>
+</ul>
+<p>One counterfactual strikes us as true whereas the other strikes us a false. There is, on the face of it, no closest world at which I’m over 6ft tall, which means that the Limit Assumption would seem to fail when it comes to similarity to the actual world.</p>
+</div>
+</div>
+<p>Notice that it is no solution to this problem to fall back to pre-Stalnaker models, since they would vacuously verify both counterfactuals.</p>
+</section>
+<section id="sphere-models" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sphere-models">Sphere Models</h4>
+<p>We focus on a formulation of Conditional Logic in which <span class="math inline">\(&gt;\)</span> is replaced by <span class="math inline">\(\Box \! \! \to\)</span>, which is meant to regiment the counterfactuol conditional. <span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span> refines the thought that the truth conditions of the counterfactual <span class="math inline">\(p \ \Box \!\! \to q\)</span> should be explained in terms of the truth conditions of the material conditional <span class="math inline">\(p \to q\)</span> at <span class="math inline">\(p\)</span>-worlds that are otherwise minimally different from the world of evaluation.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>counterfactual</em> conditional of the form</p>
+<ul>
+<li>if <span class="math inline">\(p\)</span> had been the case, then <span class="math inline">\(q\)</span> would have been the case.</li>
+</ul>
+<p>is true at a world <span class="math inline">\(w\)</span> If, and only if, no <span class="math inline">\(p\)</span>-and-<span class="math inline">\(\neg q\)</span>-world is closer to <span class="math inline">\(w\)</span> than a <span class="math inline">\(p\)</span>-and-<span class="math inline">\(q\)</span>-world. That is, not world at which <span class="math inline">\(p \to q\)</span> fails is closer to <span class="math inline">\(w\)</span> than a <span class="math inline">\(p \to q\)</span>-world.</p>
+</div>
+</div>
+<p>A counterfactual conditional such as ‘if the match had been struck, then it would have lit’ is true if, and only if, no world in which the material conditional ‘the match is struck <span class="math inline">\(\to\)</span> the match will lit’ fails is closer to the actual world than a world at which the conditional obtains.</p>
+<p>To make the proposal precise, <span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span> makes use of <em>spheres of similarity</em>: there is, for each world, a nested system of spheres centered on the world of evaluation, which provide a formal representation of the spheres of similarity for that world. Each sphere includes worlds, which are tied to each other with respect to similarity to the world of evaluation, which is placed at the center of the system of spheres. The main constraint is that the closer a world is to the world of evaluation, the closer the sphere of similarity to which it belongs is to the center.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider the sphere model represented by the diagram:</p>
+<p><img src="images/sphere-model-example.png" style="display:block; margin: 0 auto;"></p>
+<p>The diagram represents the fact that <span class="math inline">\(w_1\)</span> is closer to <span class="math inline">\(w\)</span> than <span class="math inline">\(w_2\)</span> by placing <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span> in different spheres of similarity and by making sure <span class="math inline">\(w_1\)</span> lies in the sphere closer to the center. The minimal departures of <span class="math inline">\(w\)</span> in which <span class="math inline">\(p\)</span> is true are worlds that lie in the innermost sphere where <span class="math inline">\(p\)</span> is satisfied, which is the shaded area in the diagram.</p>
+<p>We will declare <span class="math inline">\(p \ \Box \! \! \to q\)</span> to be true at <span class="math inline">\(w\)</span> If, and only if, <span class="math inline">\(q\)</span> is true at <span class="math inline">\(p\)</span>-worlds that are minimally different from <span class="math inline">\(w\)</span>, e.g., <span class="math inline">\(w_2\)</span>.</p>
+</div>
+</div>
+<p>For a more formal treatment of sphere models, consider the definition:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A Sphere Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>sphere model</em> is an ordered triple <span class="math inline">\((W, O, V)\)</span>, where:</p>
+<ul>
+<li><p><span class="math inline">\(W\)</span> is a non-empty set of worlds.</p></li>
+<li><p><span class="math inline">\(O\)</span> is a function from <span class="math inline">\(W\)</span> into a system of spheres <span class="math inline">\(O_w\)</span>, which is a set of sets of possible worlds in <span class="math inline">\(W\)</span> for which:</p>
+<ul>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>centered on</em> <span class="math inline">\(w\)</span>: <span class="math inline">\(\{w\} \in O_w\)</span>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>nested</em>: for all <span class="math inline">\(X, Y\in O_w\)</span>, <span class="math inline">\(X \subseteq Y\)</span> or <span class="math inline">\(Y \subseteq X\)</span>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>closed under union</em>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>closed under non-empty intersection</em>. <br><br></li>
+</ul></li>
+<li><p><span class="math inline">\(V\)</span> is, as usual, a valuation function for <span class="math inline">\(\mathcal{L}\)</span>, which maps each propositional variable to a subset of <span class="math inline">\(W\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<p>The worlds in a system of spheres <span class="math inline">\(O_w\)</span> centered on <span class="math inline">\(w\)</span> are stratified into spheres or layers according to their distance with respect to the world of evaluation. The innermost sphere or layer <span class="math inline">\(\{w\}\)</span> contains <span class="math inline">\(w\)</span>, which is the closest world to <span class="math inline">\(w\)</span>. And if <span class="math inline">\(X \subset Y\)</span>, then the worlds in <span class="math inline">\(X\)</span> are strictly closer to the world of evaluation <span class="math inline">\(w\)</span> than the worlds in <span class="math inline">\(Y \setminus X\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A partial specification of a sphere models will generally include the system of spheres generated by the relation of similarity to the world of evaluation.</p>
+<ul>
+<li><span class="math inline">\(W = \{w, w_1, w_2, w_3, w_4, w_5, w_6\}\)</span></li>
+<li><span class="math inline">\(O_w = \{S_1, S_2, S_3\}\)</span>, where:
+<ul>
+<li><span class="math inline">\(S_1 = \{w\}\)</span></li>
+<li><span class="math inline">\(S_2 = \{w, w_1, w_2, w_3\}\)</span></li>
+<li><span class="math inline">\(S_3  = \{w, w_1, w_2, w_3, w_4, w_5, w_6\}\)</span></li>
+</ul></li>
+<li><span class="math inline">\(V(p) = \{w_5, w_6\}\)</span></li>
+</ul>
+<p>For a diagrammatic specification, consider:</p>
+<p><img src="images/sphere-model-example-2.png" style="display:block; margin: 0 auto;"></p>
+<p>We now define what is for a formula to be true at a world in a sphere model.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a World
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We define what is for a formula <span class="math inline">\(\varphi\)</span> to be <em>true at a world</em> <span class="math inline">\(w\)</span> <em>in a sphere model</em> <span class="math inline">\(M\)</span>, which we write: <span class="math inline">\(M, w \Vdash \varphi\)</span>: <span class="math display">\[
+\begin{array}{lll}
+M, w \Vdash p &amp; \text{iff} &amp; w \in V(p)\\
+M, w \Vdash \neg \varphi &amp; \text{iff} &amp; M, w \nVdash \varphi\\
+M, w \Vdash (\varphi \to \psi) &amp; \text{iff} &amp; M, w \nVdash \varphi \ \text{or} \ M, w \Vdash \psi\\
+M, w \Vdash \Box \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W,  \ M, u \Vdash \varphi\\
+M, w \Vdash (\varphi \ \Box \!\! \to \psi) &amp; \text{iff} &amp; \text{for every} \ u \in W, M, u \nVdash \varphi, \text{or} \\
+&amp; &amp;  \ \text{for some} \ S \in O_w \ , \text{for some} \ u \in S, \ M, u\Vdash \varphi, \ \text{and}\\
+&amp; &amp;  \text{for all} \ v \in S, \ M, v \Vdash \varphi \to \psi.\\
+\end{array}
+\]</span></p>
+<p>For a simpler gloss of the truth conditions of <span class="math inline">\((\varphi \ \Box \!\! \to \psi)\)</span>, call a sphere <span class="math inline">\(S\)</span> a <span class="math inline">\(\varphi\)</span>-sphere if <span class="math inline">\(S\)</span> contains at least one <span class="math inline">\(\varphi\)</span>-world. Then, <span class="math inline">\((\varphi \ \Box \!\! \to \psi)\)</span> is true at <span class="math inline">\(w\)</span> if, and only if either no world is a <span class="math inline">\(\varphi\)</span>-world or else there is a <span class="math inline">\(\varphi\)</span>-sphere whose members are all <span class="math inline">\(\varphi \to \psi\)</span>-worlds.</p>
+</div>
+</div>
+<p>There are no <span class="math inline">\(\varphi\)</span>-spheres centered on <span class="math inline">\(w\)</span> or else some <span class="math inline">\(\varphi\)</span>-sphere consists exclusively of <span class="math inline">\((\varphi \to \psi)\)</span>-worlds.</p>
+<p>Notice that <span class="math inline">\((\varphi \ \Box \!\! \to \psi)\)</span> is vacuously true at a world if <span class="math inline">\(\varphi\)</span> is impossible. So, counterfactuals with impossible antecendents, or counterpossibles for short, come out as vacuously true in every world of every sphere model.</p>
+<p>We are in a position to define truth and validity:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in a sphere model</em> <span class="math inline">\(M\)</span>, written: <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only if for every <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Validity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em>, written: <span class="math inline">\(\models \varphi\)</span>, if, and only if <span class="math inline">\(\varphi\)</span> is true in every sphere model.</p>
+</div>
+</div>
+<p>In order to become more familiar with these definitions, it will be helpful to provide illustrations of the contrast between valid and invalid formulas of the language of conditional logic.</p>
+<p>We begin with some examples of validity.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\models (p \wedge q) \to (p \ \Box \!\! \to q)\)</span>.</p>
+<p>That is, <span class="math inline">\((p \wedge q) \to (p &gt;q)\)</span> is true in every sphere model. For let <span class="math inline">\(M = ( W, O, V )\)</span> be a sphere model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p \ \Box \!\! \to q\)</span> provided that <span class="math inline">\(M, w \Vdash p \wedge q\)</span>. To evaluate <span class="math inline">\(p \ \Box \!\! \to q\)</span> at <span class="math inline">\(w\)</span>, we note that since <span class="math inline">\(M, w \Vdash p\)</span>, <span class="math inline">\(\{w\}\)</span> is a <span class="math inline">\(p\)</span>-sphere centered on <span class="math inline">\(w\)</span>, and since <span class="math inline">\(M, w \Vdash q\)</span>, <span class="math inline">\(\{w\}\)</span> is a <span class="math inline">\(p\)</span>-sphere composed exclusively of <span class="math inline">\(p \to q\)</span>-worlds.</p>
+</div>
+</div>
+<p>We now illustrate a series of important differences between Lewis’ counterfactual conditional and the material conditional.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample to Contraposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models (p \ \Box \!  \! \to q) \to (\neg q \ \Box \! \! \to \neg p)\)</span>.</p>
+<p>We describe a sphere model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, O, V)\)</span> be such that</p>
+<ul>
+<li><span class="math inline">\(W = \{w, w_1, w_2\}\)</span></li>
+<li><span class="math inline">\(O{w} = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}\)</span></li>
+<li><span class="math inline">\(V\)</span> is a valuation function such that
+<ul>
+<li><span class="math inline">\(V(p) = \{w_1, w_2\}\)</span>, and</li>
+<li><span class="math inline">\(V(q) = \{w, w_1\}\)</span>.</li>
+</ul></li>
+</ul>
+<p>Here is a diagrammatic representation of the model and the system of spheres for <span class="math inline">\(w\)</span>.</p>
+<p><img src="images/counterexample-contraposition-spheres.png" style="display:block; margin: 0 auto;"> Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w \Vdash p \ \Box \!\! \to q\)</span> because <span class="math inline">\(\{w, w_1\}\)</span> is a <span class="math inline">\(p\)</span>-sphere all of whose worlds are <span class="math inline">\(p \to q\)</span>-worlds.</p></li>
+<li><p><span class="math inline">\(M, w \nVdash \neg q \ \Box \!\! \to \neg p\)</span> because there is just one <span class="math inline">\(\neg q\)</span>-sphere, <span class="math inline">\(\{w, w_1, w_2\}\)</span>, and some worlds in that sphere are <em>not</em> <span class="math inline">\(\neg q \to \neg p\)</span>-worlds, e.g., <span class="math inline">\(w_2\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Counterexample to Monotonicity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models (p \ \Box \!\! \to q) \to (p \wedge r \ \Box \!\! \to q)\)</span>.</p>
+<p>We describe a sphere model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, O, V)\)</span> be such that</p>
+<ul>
+<li><span class="math inline">\(W = \{w, w_1, w_2\}\)</span></li>
+<li><span class="math inline">\(O{w} = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}\)</span></li>
+<li><span class="math inline">\(V\)</span> is a valuation function such that
+<ul>
+<li><span class="math inline">\(V(p) = \{w_1, w_2\}\)</span>,</li>
+<li><span class="math inline">\(V(q) = \{w_1\}\)</span>, and</li>
+<li><span class="math inline">\(V(r) = \{w_2\}\)</span>.</li>
+</ul></li>
+</ul>
+<p>Here is a diagrammatic representation of the model and the system of spheres for <span class="math inline">\(w\)</span>.</p>
+<p><img src="images/counterexample-monotonicity-spheres.png" style="display:block; margin: 0 auto;"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w \Vdash p \ \Box \!\! \to q\)</span> because <span class="math inline">\(\{w, w_1\}\)</span> is a <span class="math inline">\(p\)</span>-sphere all of whose worlds are <span class="math inline">\(p \to q\)</span>-worlds.</p></li>
+<li><p><span class="math inline">\(M, w \nVdash p \wedge r \ \Box \!\! \to q\)</span> because there is just one <span class="math inline">\(p \wedge r\)</span>-sphere, <span class="math inline">\(\{w, w_1, w_2\}\)</span>, and some worlds in that sphere are <em>not</em> <span class="math inline">\(p \wedge r \to q\)</span>-worlds, e.g., <span class="math inline">\(w_2\)</span>.</p></li>
+</ul>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-lewis2013counterfactuals" class="csl-entry" role="listitem">
+Lewis, David. 1973. <em>Counterfactuals</em>. Cambridge, MA, USA: Blackwell.
+</div>
+<div id="ref-McGee1985-MCGACT" class="csl-entry" role="listitem">
+McGee, Vann. 1985. <span>“A Counterexample to Modus Ponens.”</span> <em>Journal of Philosophy</em> 82 (9): 462–71.
+</div>
+<div id="ref-stalnaker1968theory" class="csl-entry" role="listitem">
+Stalnaker, Robert C. 1968. <span>“A Theory of Conditionals.”</span> In <em>Ifs: Conditionals, Belief, Decision, Chance and Time</em>, 41–55. Springer.
+</div>
+</div>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./epistemic.html" class="pagination-link" aria-label="Epistemic Logic">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
