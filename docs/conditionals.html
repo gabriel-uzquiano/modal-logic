@@ -423,7 +423,7 @@ Contraposition
 <p>Consider the inference:</p>
 <ol start="10" type="1">
 <li>If I travel overseas later this month, then it will not be to Europe.</li>
-<li>If I travel to Europe later this month, then I will not travel overseas later this month.</li>
+<li>If I travel to Europe later this month, then it will not be overseas.</li>
 </ol>
 <p>Notice that the conclusion is logically equivalent to ‘if I fail to not travel to Europe later this month, then I will not travel overseas later this month’.</p>
 </div>
@@ -445,7 +445,7 @@ Transitivity
 <ol start="12" type="1">
 <li>If a Democrat wins, then a Republican will come a close second.</li>
 <li>If no Republican runs, then a Democrat will win.</li>
-<li>Therefore, if no Republican runs, then a Democrat will come a close second.</li>
+<li>Therefore, if no Republican runs, then a Republican will come a close second.</li>
 </ol>
 <p>To appreciate the problem, let <span class="math inline">\(\varphi\)</span> be ‘no Republican runs’, <span class="math inline">\(\psi\)</span> be ‘a Democrat will win’, and <span class="math inline">\(\theta\)</span> be ‘a Democrat will come a close second’.</p>
 </div>
@@ -481,7 +481,18 @@ Modus Ponens
 \begin{array}{lllll}
 &amp; \Box \neg p  / \Box (p \to q) &amp; &amp; \Box q / \Box (p \to q).  &amp; \\
 \end{array}
-\]</span>But more importantly for our purposes, the strict conditional supports a variety of patterns of inference we found problematic for the indicative conditional. All these rules are valid in against the background of the minimal modal logic <span class="math inline">\(\textsf{K}\)</span>:</p>
+\]</span></p>
+<p>But it is again not clear that we should be entitled to make inferences such as:</p>
+<ol type="1">
+<li>There are necessarily infinitely many primes.</li>
+<li>Therefore, if there are finitely many primes, then I will win the jackpot.</li>
+</ol>
+<p>Similarly for the inference:</p>
+<ol start="3" type="1">
+<li>There are necessarily infinitely many primes.</li>
+<li>Therefore, if I play the lottery, then there will be infinitely many primes.</li>
+</ol>
+<p>But more importantly for our purposes, the strict conditional supports a variety of patterns of inference we found problematic for the indicative conditional. All these rules are valid in against the background of the minimal modal logic <span class="math inline">\(\textsf{K}\)</span>:</p>
 <p><span class="math display">\[\tag{Monotonicity}
 \Box (\varphi \to \psi)/ \Box ((\varphi \wedge \chi) \to \psi)
 \]</span> <span class="math display">\[\tag{Contraposition}
