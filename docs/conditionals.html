@@ -561,7 +561,7 @@ The Language of Conditional Logic
 </section>
 <section id="minimal-change-semantics-for-conditional-logic" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="minimal-change-semantics-for-conditional-logic">Minimal Change Semantics for Conditional Logic</h3>
-<p>We will now make precise the minimal change semantics for the new conditional. To simplify discussion, the models will omit the accessibility relation for <span class="math inline">\(\Box\)</span>, which we will implicitely assume to the universal relation on <span class="math inline">\(W\)</span>.</p>
+<p>We will now make precise the minimal change semantics for the new conditional. To simplify discussion, we omit the accessibility relation for <span class="math inline">\(\Box\)</span>, which we will implicitly assume to the universal relation on <span class="math inline">\(W\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -628,7 +628,7 @@ Tip
 </div>
 </div>
 <p>Notice that <span class="math inline">\((\varphi &gt; \psi)\)</span> becomes vacuously true at a world <span class="math inline">\(w\)</span> if there is no closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world in the model. That would be the case, for example, if the model contained no <span class="math inline">\(\varphi\)</span>-worlds at all, or if it contained some <span class="math inline">\(\varphi\)</span>-worlds but none of them qualified as the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world. In either case, the conditional would be counted as true.</p>
-<p>While pre-Stalnaker models have some intrinsic interest, they suffer from what Stalnaker deems a defect: as we mentioned just now, they do not by themselves guarantee the existence of a <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world even if we are given the existence of some <span class="math inline">\(\varphi\)</span>-worlds.</p>
+<p>While pre-Stalnaker models have some intrinsic interest, they suffer from what Stalnaker deems at least two defects. First, they include no guarantee that each world counts as the closest world to itself. Second, as mentioned above, they do not by themselves guarantee the existence of a <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world even if we are given the existence of some <span class="math inline">\(\varphi\)</span>-worlds.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -694,7 +694,10 @@ Example
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\models (p \wedge q) \to (p &gt;q)\)</span>.</p>
-<p>That is, <span class="math inline">\((p \wedge q) \to (p &gt;q)\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p &gt;q\)</span> provided that <span class="math inline">\(M, w \Vdash p \wedge q\)</span>. To evaluate <span class="math inline">\(p &gt;q\)</span> at <span class="math inline">\(w\)</span>, we note that given the <em>Base Assumption</em>, since <span class="math inline">\(M, w \Vdash p\)</span>, <span class="math inline">\(w\)</span> is the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world. Since, by assumption, <span class="math inline">\(M, w \Vdash q\)</span>, we conclude that the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world is a <span class="math inline">\(q\)</span>-world, which means that <span class="math inline">\(M, w \Vdash p &gt;q\)</span>.</p>
+<p>That is, <span class="math inline">\((p \wedge q) \to (p &gt;q)\)</span> is true in every Stalnaker model.</p>
+<p>For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>.</p>
+<p>We now argue that <span class="math inline">\(M, w \Vdash p &gt;q\)</span> <em>if</em> <span class="math inline">\(M, w \Vdash p \wedge q\)</span>.</p>
+<p>Assume <span class="math inline">\(M, w \Vdash p \wedge q\)</span> then. To evaluate <span class="math inline">\(p &gt;q\)</span> at <span class="math inline">\(w\)</span>, we note that given the <em>Base Assumption</em>, since <span class="math inline">\(M, w \Vdash p\)</span>, <span class="math inline">\(w\)</span> is the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world. Since, by assumption, <span class="math inline">\(M, w \Vdash q\)</span>, we conclude that the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world is a <span class="math inline">\(q\)</span>-world, which means that <span class="math inline">\(M, w \Vdash p &gt;q\)</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -708,7 +711,11 @@ Example
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\models (p &gt; q) \wedge (p \wedge q &gt; r) \to (p &gt; r)\)</span>.</p>
-<p>That is, <span class="math inline">\((p &gt; q) \wedge (p \wedge q &gt; r) \to (p &gt; r)\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p &gt;r\)</span> provided that <span class="math inline">\(M, w \Vdash p &gt; q\)</span> and <span class="math inline">\(M, w \Vdash p \wedge q &gt; r\)</span>. To evaluate <span class="math inline">\(p &gt;r\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<p>That is, <span class="math inline">\((p &gt; q) \wedge (p \wedge q &gt; r) \to (p &gt; r)\)</span> is true in every Stalnaker model.</p>
+<p>For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>.</p>
+<p>We now argue that <span class="math inline">\(M, w \Vdash p &gt;r\)</span> provided that <span class="math inline">\(M, w \Vdash p &gt; q\)</span> and <span class="math inline">\(M, w \Vdash p \wedge q &gt; r\)</span>.</p>
+<p>Assume <span class="math inline">\(M, w \Vdash p &gt; q\)</span> and <span class="math inline">\(M, w \Vdash p \wedge q &gt; r\)</span> then.</p>
+<p>To evaluate <span class="math inline">\(p &gt;r\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
 <ul>
 <li><p>There are no <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(p &gt; r\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
 <li><p>There are some <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \Vdash p &gt;q\)</span>, we know that <span class="math inline">\(u\)</span> is a <span class="math inline">\(q\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(q\)</span>-world, <span class="math inline">\(u\)</span> itself must the be the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\wedge q\)</span>-world. From <span class="math inline">\(M, w \Vdash p \wedge q &gt;r\)</span>, we now infer that <span class="math inline">\(u\)</span> is an <span class="math inline">\(r\)</span>-world. Therefore, since the closest-t-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world is an <span class="math inline">\(r\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash p &gt;r\)</span>.</p></li>
@@ -725,8 +732,12 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span class="math inline">\(\models \Box (p &gt; q) \to (p &gt; q)\)</span>.</p>
-<p>That is, <span class="math inline">\(\Box (p &gt; q) \to (p &gt; q)\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p &gt;q\)</span> provided that <span class="math inline">\(M, w \Vdash p &gt; q\)</span> and <span class="math inline">\(M, w \Vdash \Box (p &gt;q)\)</span>. To evaluate <span class="math inline">\(p &gt;q\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<p><span class="math inline">\(\models \Box (p \to q) \to (p &gt; q)\)</span>.</p>
+<p>That is, <span class="math inline">\(\Box (p \to q) \to (p &gt; q)\)</span> is true in every Stalnaker model.</p>
+<p>For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>.</p>
+<p>We now argue that <span class="math inline">\(M, w \Vdash p &gt;q\)</span> provided that <span class="math inline">\(M, w \Vdash \Box (p \to q)\)</span>.</p>
+<p>Assume <span class="math inline">\(M, w \Vdash \Box (p \to q)\)</span> then.</p>
+<p>To evaluate <span class="math inline">\(p &gt;q\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
 <ul>
 <li><p>There are no <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(p &gt; q\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
 <li><p>There are some <span class="math inline">\(p\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \Vdash \Box (p \to q)\)</span>, we know that <span class="math inline">\(u\)</span> is a <span class="math inline">\(q\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(p\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(q\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash p &gt; q\)</span>.</p></li>
@@ -745,7 +756,7 @@ Counterexample to Monotonicity
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\not \models (p &gt; q) \to (p \wedge r &gt; q)\)</span>.</p>
-<p>We describe a Stalnaker model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
+<p>Here is a Stalnaker model in which the material conditional fails. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
 <ul>
 <li><p><span class="math inline">\(W = \{w_1, w_2, w_3\}\)</span></p></li>
 <li><p><span class="math inline">\(\leq_{w_1}\)</span> is such that</p>
@@ -783,7 +794,7 @@ Counterexample to Contraposition
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\not \models (p &gt; q) \to (\neg q &gt; \neg p)\)</span>.</p>
-<p>We describe a Stalnaker model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
+<p>Here is a Stalnaker model in which the material conditional fails. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
 <ul>
 <li><p><span class="math inline">\(W = \{w_1, w_2, w_3\}\)</span></p></li>
 <li><p><span class="math inline">\(\leq_{w_1}\)</span> is such that</p>
@@ -797,7 +808,7 @@ Counterexample to Contraposition
 <li><p><span class="math inline">\(V\)</span> is a valuation function such that</p>
 <ul>
 <li><span class="math inline">\(V(p) = \{w_2, w_3\}\)</span>, and</li>
-<li><span class="math inline">\(V(q) = \{w_2\}\)</span>.</li>
+<li><span class="math inline">\(V(q) = \{w_1, w_2\}\)</span>.</li>
 </ul></li>
 </ul>
 <p>Here is a diagrammatic representation of the model and the relation of similarity to <span class="math inline">\(w_1\)</span>: <span class="math inline">\(\leq_{w_{1}}\)</span>.</p>
@@ -820,7 +831,7 @@ Counterexample to Transitivity
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\not \models (p &gt; q) \wedge (q &gt; r)\to (p &gt; r)\)</span>.</p>
-<p>We describe a Stalnaker model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
+<p>Here is a Stalnaker model in which the material conditional fails. For let <span class="math inline">\(M = (W, \{\leq_w: w\in W\}, V)\)</span> be such that</p>
 <ul>
 <li><p><span class="math inline">\(W = \{w_1, w_2, w_3\}\)</span></p></li>
 <li><p><span class="math inline">\(\leq_{w_1}\)</span> is such that</p>
@@ -890,7 +901,10 @@ CEM is true in Stalnaker models
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\models (\varphi &gt; \psi) \vee (\varphi &gt; \neg \psi)\)</span>.</p>
-<p>For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash \varphi &gt; \neg \psi\)</span> if <span class="math inline">\(M, w \nVdash \varphi &gt; \psi)\)</span>. To evaluate <span class="math inline">\(\varphi &gt; \neg \psi\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<p>For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>.</p>
+<p>We now argue that <span class="math inline">\(M, w \Vdash \varphi &gt; \neg \psi\)</span> if <span class="math inline">\(M, w \nVdash \varphi &gt; \psi\)</span>.</p>
+<p>Assume <span class="math inline">\(M, w \nVdash  \varphi &gt; \psi\)</span> then.</p>
+<p>To evaluate <span class="math inline">\(\varphi &gt; \neg \psi\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
 <ul>
 <li><p>There are no <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(\varphi &gt; \neg \psi\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
 <li><p>There are some <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \nVdash \varphi &gt; \psi\)</span>, we deduce that <span class="math inline">\(u\)</span> is not a <span class="math inline">\(\psi\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(\neg \psi\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash \varphi &gt; \neg \psi\)</span>.</p></li>
@@ -928,7 +942,11 @@ Counterexample to Distribution
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\models (\varphi &gt; (\psi \vee \theta)) \to ((\varphi &gt; \psi) \vee (\varphi \ &gt; \theta))\)</span>.</p>
-<p>That is, <span class="math inline">\((\varphi &gt; (\psi \vee \theta)) \to ((\varphi &gt; \psi) \vee (\varphi &gt; \theta))\)</span> is true in every Stalnaker model. For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash \varphi &gt; \theta\)</span> if <span class="math inline">\(M, w \Vdash \varphi &gt; (\psi \vee \theta)\)</span> and <span class="math inline">\(M, w \nVdash \varphi &gt; \psi)\)</span>. To evaluate <span class="math inline">\(\varphi &gt; \neg \psi\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
+<p>That is, <span class="math inline">\((\varphi &gt; (\psi \vee \theta)) \to ((\varphi &gt; \psi) \vee (\varphi &gt; \theta))\)</span> is true in every Stalnaker model.</p>
+<p>For let <span class="math inline">\(M = ( W, \{\leq_w: w\in W\}, V )\)</span> be a Stalnaker model and let <span class="math inline">\(w \in W\)</span>.</p>
+<p>We now argue that <span class="math inline">\(M, w \Vdash \varphi &gt; \theta\)</span> if <span class="math inline">\(M, w \Vdash \varphi &gt; (\psi \vee \theta)\)</span> and <span class="math inline">\(M, w \nVdash \varphi &gt; \psi\)</span>.</p>
+<p>Assume <span class="math inline">\(M, w \Vdash \varphi &gt; (\psi \vee \theta)\)</span> and <span class="math inline">\(M, w \nVdash \varphi &gt; \psi\)</span> then.</p>
+<p>To evaluate <span class="math inline">\(\varphi &gt; \neg \psi\)</span> at <span class="math inline">\(w\)</span>, we should distinguish two cases:</p>
 <ul>
 <li><p>There are no <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case <span class="math inline">\(\varphi &gt; \neg \theta\)</span> will be vacuously true at <span class="math inline">\(w\)</span> in <span class="math inline">\(M\)</span>.</p></li>
 <li><p>There are some <span class="math inline">\(\varphi\)</span>-worlds in <span class="math inline">\(W\)</span> in which case, by the <em>Limit Assumption</em>, there is such thing as the <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, which we call <span class="math inline">\(u\)</span>. From the fact that <span class="math inline">\(M, w \Vdash \varphi &gt; (\psi \vee \theta)\)</span>, we deduce that <span class="math inline">\(u\)</span> is a <span class="math inline">\((\psi \vee \theta)\)</span>-world. Yet, from the fact that <span class="math inline">\(M, w \nVdash \varphi &gt; \psi)\)</span>, we have that <span class="math inline">\(u\)</span> is not a <span class="math inline">\(\psi\)</span>-world, which means it it a <span class="math inline">\(\theta\)</span>-world. Since the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world, namely, <span class="math inline">\(u\)</span>, is a <span class="math inline">\(\theta\)</span>-world, we conclude <span class="math inline">\(M, w \Vdash \varphi &gt; \theta\)</span>.</p></li>
@@ -971,13 +989,13 @@ Counterexample to the Limit Assumption
 <div class="callout-body-container callout-body">
 <p>According to Lewis, the Limit Assumption is not an adequate constraint for the evaluation of counterfactuals such as:</p>
 <ul>
-<li><p>If I had been over 6ft tall, my height would have remained below 7ft.</p></li>
-<li><p>I I had been over 6ft tall, my height would have surpassed 7ft.</p></li>
+<li><p>If I had been over 6ft tall, I would have still been below 7ft tall.</p></li>
+<li><p>I I had been over 6ft tall, I would have also been over 7ft tall.</p></li>
 </ul>
 <p>One counterfactual strikes us as true whereas the other strikes us a false. There is, on the face of it, no closest world at which I’m over 6ft tall, which means that the Limit Assumption would seem to fail when it comes to similarity to the actual world.</p>
 </div>
 </div>
-<p>Notice that it is no solution to this problem to fall back to pre-Stalnaker models, since they would vacuously verify both counterfactuals.</p>
+<p>Notice that it is no solution to this problem to fall back to pre-Stalnaker models, since they would still vacuously verify both counterfactuals.</p>
 </section>
 <section id="sphere-models" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="sphere-models">Sphere Models</h4>
@@ -996,7 +1014,8 @@ Tip
 <ul>
 <li>if <span class="math inline">\(p\)</span> had been the case, then <span class="math inline">\(q\)</span> would have been the case.</li>
 </ul>
-<p>is true at a world <span class="math inline">\(w\)</span> If, and only if, no <span class="math inline">\(p\)</span>-and-<span class="math inline">\(\neg q\)</span>-world is closer to <span class="math inline">\(w\)</span> than a <span class="math inline">\(p\)</span>-and-<span class="math inline">\(q\)</span>-world. That is, not world at which <span class="math inline">\(p \to q\)</span> fails is closer to <span class="math inline">\(w\)</span> than a <span class="math inline">\(p \to q\)</span>-world.</p>
+<p>is true at a world <span class="math inline">\(w\)</span> If, and only if, no <span class="math inline">\(p\)</span>-and-<span class="math inline">\(\neg q\)</span>-world is closer to <span class="math inline">\(w\)</span> than a <span class="math inline">\(p\)</span>-and-<span class="math inline">\(q\)</span>-world.</p>
+<p>That is, not world at which <span class="math inline">\(p \to q\)</span> fails is closer to <span class="math inline">\(w\)</span> than a <span class="math inline">\(p \to q\)</span>-world.</p>
 </div>
 </div>
 <p>A counterfactual conditional such as ‘if the match had been struck, then it would have lit’ is true if, and only if, no world in which the material conditional ‘the match is struck <span class="math inline">\(\to\)</span> the match will lit’ fails is closer to the actual world than a world at which the conditional obtains.</p>
@@ -1036,7 +1055,7 @@ A Sphere Model
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>centered on</em> <span class="math inline">\(w\)</span>: <span class="math inline">\(\{w\} \in O_w\)</span>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>nested</em>: for all <span class="math inline">\(X, Y\in O_w\)</span>, <span class="math inline">\(X \subseteq Y\)</span> or <span class="math inline">\(Y \subseteq X\)</span>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>closed under union</em>.</li>
-<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>closed under non-empty intersection</em>. <br><br></li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>closed under non-empty intersection</em>.</li>
 </ul></li>
 <li><p><span class="math inline">\(V\)</span> is, as usual, a valuation function for <span class="math inline">\(\mathcal{L}\)</span>, which maps each propositional variable to a subset of <span class="math inline">\(W\)</span>.</p></li>
 </ul>
@@ -1135,7 +1154,11 @@ Example
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\models (p \wedge q) \to (p \ \Box \!\! \to q)\)</span>.</p>
-<p>That is, <span class="math inline">\((p \wedge q) \to (p &gt;q)\)</span> is true in every sphere model. For let <span class="math inline">\(M = ( W, O, V )\)</span> be a sphere model and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\(M, w \Vdash p \ \Box \!\! \to q\)</span> provided that <span class="math inline">\(M, w \Vdash p \wedge q\)</span>. To evaluate <span class="math inline">\(p \ \Box \!\! \to q\)</span> at <span class="math inline">\(w\)</span>, we note that since <span class="math inline">\(M, w \Vdash p\)</span>, <span class="math inline">\(\{w\}\)</span> is a <span class="math inline">\(p\)</span>-sphere centered on <span class="math inline">\(w\)</span>, and since <span class="math inline">\(M, w \Vdash q\)</span>, <span class="math inline">\(\{w\}\)</span> is a <span class="math inline">\(p\)</span>-sphere composed exclusively of <span class="math inline">\(p \to q\)</span>-worlds.</p>
+<p>That is, <span class="math inline">\((p \wedge q) \to (p &gt;q)\)</span> is true in every sphere model.</p>
+<p>For let <span class="math inline">\(M = ( W, O, V )\)</span> be a sphere model and let <span class="math inline">\(w \in W\)</span>.</p>
+<p>We now argue that <span class="math inline">\(M, w \Vdash p \ \Box \!\! \to q\)</span> provided that <span class="math inline">\(M, w \Vdash p \wedge q\)</span>.</p>
+<p>Assume <span class="math inline">\(M, w \Vdash p \wedge q\)</span> then.</p>
+<p>To evaluate <span class="math inline">\(p \ \Box \!\! \to q\)</span> at <span class="math inline">\(w\)</span>, we note that since <span class="math inline">\(M, w \Vdash p\)</span>, <span class="math inline">\(\{w\}\)</span> is a <span class="math inline">\(p\)</span>-sphere centered on <span class="math inline">\(w\)</span>, and since <span class="math inline">\(M, w \Vdash q\)</span>, <span class="math inline">\(\{w\}\)</span> is a <span class="math inline">\(p\)</span>-sphere composed exclusively of <span class="math inline">\(p \to q\)</span>-worlds.</p>
 </div>
 </div>
 <p>We now illustrate a series of important differences between Lewis’ counterfactual conditional and the material conditional.</p>
@@ -1150,7 +1173,7 @@ Counterexample to Contraposition
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\not \models (p \ \Box \!  \! \to q) \to (\neg q \ \Box \! \! \to \neg p)\)</span>.</p>
-<p>We describe a sphere model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, O, V)\)</span> be such that</p>
+<p>Here is a sphere model in which the material conditional fails. We let <span class="math inline">\(M = (W, O, V)\)</span> be such that</p>
 <ul>
 <li><span class="math inline">\(W = \{w, w_1, w_2\}\)</span></li>
 <li><span class="math inline">\(O{w} = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}\)</span></li>
@@ -1179,7 +1202,7 @@ Counterexample to Monotonicity
 </div>
 <div class="callout-body-container callout-body">
 <p><span class="math inline">\(\not \models (p \ \Box \!\! \to q) \to (p \wedge r \ \Box \!\! \to q)\)</span>.</p>
-<p>We describe a sphere model in which the material conditional fails at at least one world. For let <span class="math inline">\(M = (W, O, V)\)</span> be such that</p>
+<p>Here is a sphere model in which the material conditional fails. We let <span class="math inline">\(M = (W, O, V)\)</span> be such that</p>
 <ul>
 <li><span class="math inline">\(W = \{w, w_1, w_2\}\)</span></li>
 <li><span class="math inline">\(O{w} = \{\{w\}, \{w, w_1\}, \{w, w_1, w_2\}\}\)</span></li>
