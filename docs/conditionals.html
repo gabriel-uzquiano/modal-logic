@@ -50,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
+<link href="./quantmodal.html" rel="next">
 <link href="./epistemic.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -283,6 +283,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quantmodal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantification and Modality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
@@ -304,7 +310,7 @@ window.Quarto = {
   <li><a href="#conditional-logic" id="toc-conditional-logic" class="nav-link" data-scroll-target="#conditional-logic">Conditional Logic</a>
   <ul class="collapse">
   <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
-  <li><a href="#minimal-change-semantics-for-conditional-logic" id="toc-minimal-change-semantics-for-conditional-logic" class="nav-link" data-scroll-target="#minimal-change-semantics-for-conditional-logic">Minimal Change Semantics for Conditional Logic</a></li>
+  <li><a href="#minimal-change-models" id="toc-minimal-change-models" class="nav-link" data-scroll-target="#minimal-change-models">Minimal Change Models</a></li>
   <li><a href="#sphere-models-for-counterfactuals" id="toc-sphere-models-for-counterfactuals" class="nav-link" data-scroll-target="#sphere-models-for-counterfactuals">Sphere Models for Counterfactuals</a></li>
   </ul></li>
   </ul>
@@ -510,7 +516,7 @@ Modus Ponens
 </section>
 <section id="conditional-logic" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="conditional-logic">Conditional Logic</h2>
-<p>One application of the possible worlds framework is the development of a theory of indicative and counterfactual conditionals due to Robert Stalnaker in <span class="citation" data-cites="stalnaker1968theory">(<a href="references.html#ref-stalnaker1968theory" role="doc-biblioref">Stalnaker 1968</a>)</span> and a subsequent development due to David Lewis in <span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span>. The key thought is that we can explain the truth conditions of an indicative conditional in terms of the truth conditions of the material conditional as evaluated in a world that incorporates a minimal departure from the world of evaluation required to render the antecedent true.</p>
+<p>One application of the possible worlds framework is the development of a theory of indicative and counterfactual conditionals due to Robert Stalnaker in <span class="citation" data-cites="stalnaker1968theory">(<a href="references.html#ref-stalnaker1968theory" role="doc-biblioref">Stalnaker 1968</a>)</span> and a subsequent development due to David Lewis in <span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span>. The key thought is that we can explain the truth conditions of indicative and subjunctive conditionals in terms of the material conditional as evaluated in a world that incorporates a minimal departure from the world of evaluation required to make the antecedent true.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -528,7 +534,7 @@ Tip
 <p>is true at a world <span class="math inline">\(w\)</span> If, and only if, the material conditional <span class="math inline">\(p \to q\)</span> is true at a <span class="math inline">\(p\)</span>-world which otherwise differs minimally from <span class="math inline">\(w\)</span>.</p>
 </div>
 </div>
-<p>A conditional such as ‘if the match is struck, then it will lit’ is true if, and only if, the corresponding material conditional ‘the match is struck <span class="math inline">\(\to\)</span> the match will lit’ is true at the <em>closest possible world</em> at which the match is struck. While that conditional strikes us as true, the condtional ‘if I play the lottery, then I will win the jackpot’ strikes us as false; on the minimal change approach, the reason is simple: the closest world at which I play the lottery is presumably one at which I do not win.</p>
+<p>A conditional such as ‘if the match is struck, then it will lit’ is true if, and only if, the corresponding material conditional ‘the match is struck <span class="math inline">\(\to\)</span> the match will lit’ is true at the <em>closest possible world</em> at which the match is struck. While that conditional strikes us as true, the condtional ‘if I play the lottery, then I will win the jackpot’ strikes us as false; on the minimal change approach, the reason is simple: the closest play-the-lottery-world is presumably <em>not</em> a win-the-lottery-world.</p>
 <p>To make the proposal more precise, let us introduce the language of conditional logic as an extension of the language propositional logic supplemented with a new binary connective for the new conditional.</p>
 <section id="syntax" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="syntax">Syntax</h3>
@@ -557,10 +563,10 @@ The Language of Conditional Logic
 </ul>
 </div>
 </div>
-<p>We read <span class="math inline">\(\varphi &gt; \psi\)</span> as the indicative conditional ‘if <span class="math inline">\(\varphi\)</span>, then <span class="math inline">\(\psi\)</span>’, and we read <span class="math inline">\(\varphi \to \psi\)</span> as the material conditional ‘not-<span class="math inline">\(\varphi\)</span> or <span class="math inline">\(\psi\)</span>’. That means that unlike the indicative conditional, the material conditional is truth-functional.</p>
+<p>We read <span class="math inline">\(\varphi &gt; \psi\)</span> as the conditional ‘if <span class="math inline">\(\varphi\)</span>, then <span class="math inline">\(\psi\)</span>’, and we read <span class="math inline">\(\varphi \to \psi\)</span> as the material conditional ‘not-<span class="math inline">\(\varphi\)</span> or <span class="math inline">\(\psi\)</span>’. That means that unlike the indicative conditional, the material conditional is truth-functional.</p>
 </section>
-<section id="minimal-change-semantics-for-conditional-logic" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="minimal-change-semantics-for-conditional-logic">Minimal Change Semantics for Conditional Logic</h3>
+<section id="minimal-change-models" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="minimal-change-models">Minimal Change Models</h3>
 <p>We will now make precise the minimal change semantics for the new conditional. To simplify discussion, we omit the accessibility relation for <span class="math inline">\(\Box\)</span>, which we will implicitly assume to the universal relation on <span class="math inline">\(W\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -578,7 +584,7 @@ A Pre-Stalnaker Model
 <li><p><span class="math inline">\(\{\leq_w: w \in W\}\)</span> is a family of <em>similarity</em> relations for each world in <span class="math inline">\(W\)</span>, where for each <span class="math inline">\(x, y, w\in W\)</span>:</p>
 <p><span class="math inline">\(x \leq_w y\)</span> is read: <span class="math inline">\(x\)</span> <em>is at least as similar to</em> <span class="math inline">\(w\)</span> <em>as</em> <span class="math inline">\(y\)</span>. These similarity relations are <em>reflexive</em>, <em>transitive</em>, <em>strongly connected</em>, and <em>anti-symmetric</em>:</p>
 <ul>
-<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>reflexive</em> on* <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x\in W\)</span>, <span class="math inline">\(x \leq_w x\)</span>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>reflexive on</em> <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x\in W\)</span>, <span class="math inline">\(x \leq_w x\)</span>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>transitive on</em> <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x, y, z\in W\)</span>, <span class="math inline">\(x \leq_w y\)</span>, and <span class="math inline">\(y  \leq_w z\)</span>, then <span class="math inline">\(x \leq_w z\)</span>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>strongly connected on</em> <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x, y\in W\)</span>, <span class="math inline">\(x \leq_w y\)</span> or <span class="math inline">\(y \leq_w x\)</span>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(\leq_w\)</span> is <em>anti-symmetric on</em> <span class="math inline">\(W\)</span>: for all <span class="math inline">\(x, y \in W\)</span>, <span class="math inline">\(x \leq_w y\)</span> and <span class="math inline">\(y\leq_w x\)</span>, then <span class="math inline">\(x =y\)</span>.</li>
@@ -627,7 +633,7 @@ Tip
 </ul>
 </div>
 </div>
-<p>Notice that <span class="math inline">\((\varphi &gt; \psi)\)</span> becomes vacuously true at a world <span class="math inline">\(w\)</span> if there is no closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world in the model. That would be the case, for example, if the model contained no <span class="math inline">\(\varphi\)</span>-worlds at all, or if it contained some <span class="math inline">\(\varphi\)</span>-worlds but none of them qualified as the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world. In either case, the conditional would be counted as true.</p>
+<p>Notice that <span class="math inline">\((\varphi &gt; \psi)\)</span> becomes vacuously true at a world <span class="math inline">\(w\)</span> if there is no closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world in the model. That would be the case, for example, if the model contained no <span class="math inline">\(\varphi\)</span>-worlds at all, or if it contained some <span class="math inline">\(\varphi\)</span>-worlds but none of them qualified as the closest-to-<span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world. In either case, the conditional would be counted as true. Thus for example, the conditional ‘if there are only finitely many primes, then I will win the lottery one day’ comes out true on the approach given above.</p>
 <p>While pre-Stalnaker models have some intrinsic interest, they suffer from what Stalnaker deems at least two defects. First, they include no guarantee that each world counts as the closest world to itself. Second, as mentioned above, they do not by themselves guarantee the existence of a <em>closest-to-</em><span class="math inline">\(w\)</span> <span class="math inline">\(\varphi\)</span>-world even if we are given the existence of some <span class="math inline">\(\varphi\)</span>-worlds.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -937,7 +943,7 @@ Distribution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Counterexample to Distribution
+Distribution is true in Stalnaker Models
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1018,7 +1024,7 @@ Tip
 <p>That is, not world at which <span class="math inline">\(p \to q\)</span> fails is closer to <span class="math inline">\(w\)</span> than a <span class="math inline">\(p \to q\)</span>-world.</p>
 </div>
 </div>
-<p>A counterfactual conditional such as ‘if the match had been struck, then it would have lit’ is true if, and only if, no world in which the material conditional ‘the match is struck <span class="math inline">\(\to\)</span> the match will lit’ fails is closer to the actual world than a world at which the conditional obtains.</p>
+<p>The counterfactual ‘if the match had been struck, then it would have lit’ is true if, and only if, no world in which the material conditional ‘the match is struck <span class="math inline">\(\to\)</span> the match will lit’ fails is closer to the actual world than a world at which the conditional obtains.</p>
 <p>To make the proposal precise, <span class="citation" data-cites="lewis2013counterfactuals">(<a href="references.html#ref-lewis2013counterfactuals" role="doc-biblioref">Lewis 1973</a>)</span> makes use of <em>spheres of similarity</em>: there is, for each world, a nested system of spheres centered on the world of evaluation, which provide a formal representation of the spheres of similarity for that world. Each sphere includes worlds, which are tied to each other with respect to similarity to the world of evaluation, which is placed at the center of the system of spheres. The main constraint is that the closer a world is to the world of evaluation, the closer the sphere of similarity to which it belongs is to the center.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1052,7 +1058,7 @@ A Sphere Model
 <li><p><span class="math inline">\(W\)</span> is a non-empty set of worlds.</p></li>
 <li><p><span class="math inline">\(O\)</span> is a function from <span class="math inline">\(W\)</span> into a system of spheres <span class="math inline">\(O_w\)</span>, which is a set of sets of possible worlds in <span class="math inline">\(W\)</span> for which:</p>
 <ul>
-<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>centered on</em> <span class="math inline">\(w\)</span>: <span class="math inline">\(\{w\} \in O_w\)</span>.</li>
+<li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>strongly centered on</em> <span class="math inline">\(w\)</span>: <span class="math inline">\(\{w\} \in O_w\)</span>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>nested</em>: for all <span class="math inline">\(X, Y\in O_w\)</span>, <span class="math inline">\(X \subseteq Y\)</span> or <span class="math inline">\(Y \subseteq X\)</span>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>closed under union</em>.</li>
 <li>for all <span class="math inline">\(w \in W\)</span>, <span class="math inline">\(O_w\)</span> is <em>closed under non-empty intersection</em>.</li>
@@ -1061,7 +1067,7 @@ A Sphere Model
 </ul>
 </div>
 </div>
-<p>The worlds in a system of spheres <span class="math inline">\(O_w\)</span> centered on <span class="math inline">\(w\)</span> are stratified into spheres or layers according to their distance with respect to the world of evaluation. The innermost sphere or layer <span class="math inline">\(\{w\}\)</span> contains <span class="math inline">\(w\)</span>, which is the closest world to <span class="math inline">\(w\)</span>. And if <span class="math inline">\(X \subset Y\)</span>, then the worlds in <span class="math inline">\(X\)</span> are strictly closer to the world of evaluation <span class="math inline">\(w\)</span> than the worlds in <span class="math inline">\(Y \setminus X\)</span>.</p>
+<p>The worlds in a system of spheres <span class="math inline">\(O_w\)</span> strongly centered on <span class="math inline">\(w\)</span> are stratified into spheres or layers according to their distance with respect to the world of evaluation. The innermost sphere or layer <span class="math inline">\(\{w\}\)</span> contains <span class="math inline">\(w\)</span>, which is the closest world to <span class="math inline">\(w\)</span>. And if <span class="math inline">\(X \subset Y\)</span>, then the worlds in <span class="math inline">\(X\)</span> are strictly closer to the world of evaluation <span class="math inline">\(w\)</span> than the worlds in <span class="math inline">\(Y \setminus X\)</span>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1142,7 +1148,7 @@ Validity
 </div>
 </div>
 <p>In order to become more familiar with these definitions, it will be helpful to provide illustrations of the contrast between valid and invalid formulas of the language of conditional logic.</p>
-<p>We begin with some examples of validity.</p>
+<p>We begin with some examples of validity. The first one relies on strong centering.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1664,8 +1670,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./quantmodal.html" class="pagination-link" aria-label="Quantification and Modality">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantification and Modality</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

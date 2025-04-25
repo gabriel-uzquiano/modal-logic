@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>References – Modal Logic</title>
+<title>14&nbsp; Quantification and Modality – Modal Logic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -49,7 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./quantmodal.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./conditionals.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -87,6 +89,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -99,7 +130,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./quantmodal.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantification and Modality</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -252,13 +283,13 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quantmodal.html" class="sidebar-item-text sidebar-link">
+  <a href="./quantmodal.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantification and Modality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -269,15 +300,26 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#basic-language" id="toc-basic-language" class="nav-link active" data-scroll-target="#basic-language"><span class="header-section-number">14.1</span> Basic Language</a></li>
+  <li><a href="#the-simplest-modal-quantificational-logic" id="toc-the-simplest-modal-quantificational-logic" class="nav-link" data-scroll-target="#the-simplest-modal-quantificational-logic"><span class="header-section-number">14.2</span> The Simplest Modal Quantificational Logic</a>
+  <ul class="collapse">
+  <li><a href="#some-theorems" id="toc-some-theorems" class="nav-link" data-scroll-target="#some-theorems"><span class="header-section-number">14.2.1</span> Some Theorems</a></li>
+  <li><a href="#the-necessity-of-identity" id="toc-the-necessity-of-identity" class="nav-link" data-scroll-target="#the-necessity-of-identity">The Necessity of Identity</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./quantmodal.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantification and Modality</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">References</h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantification and Modality</span></h1>
 </div>
 
 
@@ -294,50 +336,275 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-chisholm1967identity" class="csl-entry" role="listitem">
-Chisholm, Roderick M. 1967. <span>“Identity Through Possible Worlds:
-Some Questions.”</span> <em>No<span>û</span>s</em>, 1–8.
+<p>Quantified modal logic supplements the vocabulary of quantificational logic with a modal operator <span class="math inline">\(\Box\)</span>. The simplest quantified modal logic extends the axioms of quantificational logic with substitution instances of <span class="math inline">\(\textsf{K}\)</span> and the rule of necessitation. We will explain how to construct possible worlds models for the language of quantificational modal logic.</p>
+<p>By way of motivation, we briefly look at the expressive resources we gain when we combine quantification and modality.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="ref-chisholm1973parts" class="csl-entry" role="listitem">
-———. 1973. <span>“Parts as Essential to Their Wholes.”</span> <em>The
-Review of Metaphysics</em> 26 (4): 581–603.
+<div class="callout-title-container flex-fill">
+De Re v De Dicto
 </div>
-<div id="ref-hintikka1962knowledge" class="csl-entry" role="listitem">
-Hintikka, Kaarlo Jaakko Juhani. 1962. <span>“Knowledge and Belief: An
-Introduction to the Logic of the Two Notions.”</span>
 </div>
-<div id="ref-leslie2011essence" class="csl-entry" role="listitem">
-Leslie, Sarah-Jane. 2011. <span>“Essence, Plenitude, and
-Paradox.”</span> <em>Philosophical Perspectives</em> 25: 277–96.
+<div class="callout-body-container callout-body">
+<p>There are at least two interpretations of the English sentence:</p>
+<ol type="1">
+<li>Someone rich could have been poor.</li>
+</ol>
+<p>On the one hand, there is a <em>de dicto</em> interpretation on which we qualify the proposition that somone rich is poor:</p>
+<p>1a. Possibly, someone rich is poor.</p>
+<p>On the other hand, there is a <em>de re</em> interpretation, which qualifies the way in which some individual person is rich:</p>
+<p>1b. Someone who is rich is possibly poor.</p>
+<p>Quantificational modal logic allows one to capture that distinction:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+1a &amp; \Diamond \exists x (Rx \wedge Px) &amp; \text{(de dicto)} \\
+1b &amp; \exists x (Cx \wedge \Diamond Px) &amp; \text{(de re)} \\
+\end{array}
+\]</span></p>
 </div>
-<div id="ref-lewis2013counterfactuals" class="csl-entry" role="listitem">
-Lewis, David. 1973. <em>Counterfactuals</em>. Cambridge, MA, USA:
-Blackwell.
 </div>
-<div id="ref-lewisPluralityWorlds1986" class="csl-entry" role="listitem">
-———. 1986. <em>On the <span>Plurality</span> of
-<span>Worlds</span></em>. Wiley Blackwell.
+<p>This distinctions help dispel what might otherwise be thought to be difficult puzzles on the interaction between predication and modality.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div id="ref-McGee1985-MCGACT" class="csl-entry" role="listitem">
-McGee, Vann. 1985. <span>“A Counterexample to Modus Ponens.”</span>
-<em>Journal of Philosophy</em> 82 (9): 462–71.
+<div class="callout-title-container flex-fill">
+Quine’s Mathematical Cyclist
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<p>W. V. Quine raises a concern in <span class="citation" data-cites="quine2013word">(<a href="references.html#ref-quine2013word" role="doc-biblioref">Quine 1964</a>)</span>:</p>
+<blockquote class="blockquote">
+<p>Perhaps I can evoke the appropriate sense of bewilderment as follows. Mathematicians may conceivably be said to be necessarily rational and not necessarily two-legged; and cyclists necessarily two-legged and not necessarily rational. But what of an individual who counts among his eccentricities both mathematics and cycling? Is this concrete individual necessarily rational and contingently two-legged or vice versa? Just insofar as we are talking referentially of the object, with no special bias towards a background grouping of mathematicians as against cyclists or vice versa, there is no semblance of sense in rating some of his attributes as necessary and others as contingent. Some of his attributes count as important and others as unimportant, yes, some as enduring and others as fleeting; but none as necessary or contingent.</p>
+</blockquote>
+<p>There is a crucial distinction between a <em>de dicto</em> and a <em>de re</em> interpretation of Quine’s claims that cyclists are necessarily two-legged and that cyclists are not necessarily rational.</p>
+<ol type="1">
+<li>Cyclists are necessarily two-legged</li>
+</ol>
+<p><span class="math display">\[
+\begin{array}{lll}
+1a &amp; \Box \forall x (Cx \to Tx) &amp; \text{(de dicto)} \\
+1b &amp; \forall x (Cx \to \Box Tx) &amp; \text{(de re)} \\
+\end{array}
+\]</span> 2. Cyclists are not necessarily rational <span class="math display">\[
+\begin{array}{lll}
+2a &amp; \neg \forall x (Cx \to \Box Rx) &amp;  \\
+2b &amp; \forall x (Cx \to \neg \Box Rx) &amp;  \\
+2c &amp; \neg \Box \forall x (Cx \to Rx) &amp;  \\
+\end{array}
+\]</span> There is no special problem once we realize that 1a and 2c are perfectly reasonable interpretations of Quine’s claims.</p>
+</div>
+</div>
+<p>What Quine’s objection brings out is the fact that quantified modal logic is a suitable framework for a common distinction between <em>essential</em> and <em>accidental</em> attributes.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Essence and Accident
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One common distinction between a statue made of clay and the portion of clay of which it is made is that while they exemplify a certain shape, the shape is an <em>essential</em> attribute of the statue and an <em>accidental</em> attribute of the clay of which it is made. One way to articulate the distinction makes use of de re modality:</p>
+<ul>
+<li><p><span class="math inline">\(Sa \wedge \neg \Box Sa\)</span></p></li>
+<li><p><span class="math inline">\(Sb \wedge \Box Sb\)</span></p></li>
+</ul>
+<p>This provisional characterization of a distinction between essential and accidental attributes in modal terms is not well-suited to accommodate the contingent existence of the statue and the clay, but we will eventually consider the question of how to do better.</p>
+</div>
+</div>
+<p>W. V. O. Quine had a more serious objection to the very intelligibility of quantified modal logic. His objection is premised on a certain interpretation of the modality involved in the language of quantified modal logic. Like Carnap and others before him, he took the modality to be linguistic at heart. To claim that necessarily, all bachelors are unmarried is to assert, on their view, that the sentence ‘all bachelors are unmarried’ is analytic or true in virtue of the meaning of the terms involved. What else, they may add, could the necessity involved be?</p>
+<p>That interpretation is ill-suited to make sense of quantified modal logic. For compare the truth conditions of the two sentences below:</p>
+<ul>
+<li><p><span class="math inline">\(\Box \exists x Fx\)</span></p>
+<p>For Quine, this sentence is true if, and only if, the sentence <span class="math inline">\(\exists x Fx\)</span> is analytic.</p></li>
+<li><p><span class="math inline">\(\exists x \Box Fx\)</span></p>
+<p>This sentence is true if, and only if, the <em>open formula</em> <span class="math inline">\(\Box Fx\)</span> is true relative to an assignment of an object to the individual variable <span class="math inline">\(x\)</span>. If <span class="math inline">\(\Box Fx\)</span> is true relative to an assignment if, and only if, <span class="math inline">\(Fx\)</span> is analytic relative to that assignment. But what could that mean? Closed sentences may be true or not in virtue of the meaning of the terms involved, but it is difficult to make sense of the truth of an open formula in virtue of the meaning of the terms involved, much less the truth of an open formula relative to an assignment.</p></li>
+</ul>
+<section id="basic-language" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="basic-language"><span class="header-section-number">14.1</span> Basic Language</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Language of Quantificational Modal Logic
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given an initial list of <span class="math inline">\(n\)</span>-place predicates <span class="math inline">\(R^n\)</span> and an infinite stock of variables $v_1, , v_n, $, we define <em>atomic formula</em> as follows:</p>
+<p><span class="math display">\[
+\varphi ::= R^n v_1, \cdots, v_n \ | \ v_i = v_j \
+\]</span></p>
+<p>Given a set <span class="math inline">\(AT\)</span> of atomic formulas, we define a <em>formula</em> as follows:</p>
+<p><span class="math display">\[
+\varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi) \ | \ \forall v_i \varphi \ | \ \Box \varphi
+\]</span></p>
+<p>We now define familiar connectives in terms of <span class="math inline">\(\neg\)</span>, <span class="math inline">\(\to\)</span>, <span class="math inline">\(\forall\)</span>, and <span class="math inline">\(\Box\)</span>:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\top &amp; := &amp; (p \to p)\\
+\bot &amp; := &amp; \neg \top \\
+(\varphi \vee \psi) &amp; := &amp; (\neg \varphi \to \psi)\\
+(\varphi \wedge \psi) &amp; := &amp; \neg (\varphi \to \neg \psi)\\
+(\varphi \leftrightarrow \psi) &amp; := &amp; (\varphi \to \psi) \wedge (\psi \to \varphi)\\
+\exists v_i \varphi &amp; := &amp; \neg  \forall v_i \neg \varphi \\
+\Diamond \varphi &amp; := &amp; \neg \Box \neg \varphi\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>The simplest quantified modal logic combines the axioms of quantificational logic with identity with the axioms of the minimal normal modal logic K. That will motivate a simple possible worlds model theory for the language, one that has, however, been controversial. In order to be in a position to discuss the framework, we should review the axioms of quantificational logic with identity.</p>
+</section>
+<section id="the-simplest-modal-quantificational-logic" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="the-simplest-modal-quantificational-logic"><span class="header-section-number">14.2</span> The Simplest Modal Quantificational Logic</h2>
+<p>The axioms for quantificational logic with identity include:</p>
+<ul>
+<li><p>Substitution instances of axioms of propositional logic for the expanded language.</p></li>
+<li><p>Substitution instances of the axiom of universal instantiation:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\forall x \ \varphi \to \varphi[y/x] &amp; &amp; (\textsf{UI})\\
+\end{array}
+\]</span></p></li>
+</ul>
+<p>where <span class="math inline">\(\varphi[y/x]\)</span> is the formula that results from <span class="math inline">\(\varphi\)</span> from the uniform substitution of occurrences of the variable <span class="math inline">\(y\)</span> for every free occurrence of the variable <span class="math inline">\(x\)</span> in the formula relettering if necessary to make sure that the resulting occurrences of <span class="math inline">\(y\)</span> remain free after the substitution.</p>
+<ul>
+<li>Substitution instances of Reflexivity and the Indiscernibility of Identicals for the expanded language:</li>
+</ul>
+<p><span class="math display">\[
+  \begin{array}{lll}
+  x = x &amp; &amp; (\textsf{Ref})\\
+  x = y \to (\varphi \to \varphi[y/x]) &amp; &amp; (\textsf{II})\\
+  \end{array}
+  \]</span></p>
+<ul>
+<li><p>Two rules of inference, Modus Ponens and Universal Generalization:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\varphi, \varphi \to \psi / \psi &amp; &amp; (\textsf{MP})\\
+\varphi \to \psi / \varphi \to \forall x \ \psi, &amp;  \text{$x$ is not free in $\psi$}  &amp; (\textsf{UG})\\
+\\
+\end{array}
+  \]</span></p></li>
+</ul>
+<p>We are in a position prove some derived rules of inference from them: <span class="math display">\[
+\begin{array}{lll}
+\varphi / \forall x \ \varphi &amp; \text{provided $x$ is not free in $\varphi$}\\
+\varphi \to \psi / \forall x \ \varphi \to \forall x \ \psi &amp; &amp; \\
+\forall x (\varphi \to \psi)  \to (\forall x \varphi \to \forall x \psi) &amp; &amp; \\
+\end{array}
+\]</span></p>
+<p>We now adopt all substitution instances of the axioms of quanficational logic with identity for the expanded language, which we supplement with the axioms and rules of inference for the minimal normal modal logic:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi) &amp; &amp; (\textsf{K}) \\
+\varphi / \Box \varphi &amp; &amp; (\textsf{RN}) \\
+\end{array}
+\]</span></p>
+<section id="some-theorems" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="some-theorems"><span class="header-section-number">14.2.1</span> Some Theorems</h3>
+<p>We now derive three remarkable consequences of the axioms of quantified modal logic with identity.</p>
+<section id="the-converse-barcan-formula" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="the-converse-barcan-formula">The Converse Barcan Formula</h4>
+<p>One consequence of the axioms is the Converse Barcan Formula (<span class="math inline">\(\textsf{CBF}\)</span>):</p>
+<p><span class="math display">\[\tag{$\textsf{CBF}$}
+\Box \ \forall x \ \varphi \to \forall x \ \Box \ \varphi
+\]</span> Here is a simple derivation schema:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \forall x \ \varphi \to \varphi &amp; &amp;  \text{UI} \\
+2 &amp; &amp; \Box \ \forall x \ \varphi  \to \Box \ \varphi &amp; &amp; \text{RK} \ 1\\
+3 &amp; &amp; ( \Box \ \forall x \ \varphi  \to \Box \ \varphi) \to (\Box \ \forall x \ \varphi \to \forall x \ \Box \ \varphi) &amp; &amp; \text{UG} \ 2 \\
+4 &amp; &amp; \Box \ \forall x \ \varphi  \to \forall x \ \Box \ \varphi &amp; &amp; \text{MP} \ 2, 4\\
+\end{array}
+\]</span></p>
+<p>The derivability of CBF seems philosophically problematic: necessarily, everything is identical to something, but one may question the step to the thesis that everything is necessarily identical to something.</p>
+</section>
+<section id="the-barcan-formula" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="the-barcan-formula">The Barcan Formula</h4>
+<p>The Barcan Formula (<span class="math inline">\(\textsf{BF}\)</span>) is not a theorem of the simplest quantified modal logic, as we have described it, but its instances become derivable in the presence of axiom schema <span class="math inline">\(\textsf{B}\)</span>. <span class="math display">\[\tag{$\textsf{BF}$}
+\forall x \  \Box \ \varphi \to \Box \ \forall x \ \varphi
+\]</span> Given axiom <span class="math inline">\(\textsf{B}\)</span>, we have as a derived rule of inference: <span class="math display">\[\tag{$\textsf{DR}$}
+\Diamond \ \varphi \to \psi/\varphi \to \Box \ \psi
+\]</span> Here is a justification for the derived rule in KB:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \Diamond \ \varphi \to \psi &amp; &amp;   \\
+2 &amp; &amp; \Box \ \Diamond \ \varphi \to \Box \ \psi &amp; &amp; \textsf{RK} \ 1\\
+3 &amp; &amp; \varphi \to \Box \ \Diamond \ \varphi &amp; &amp; \textsf{B} \\
+4 &amp; &amp; \varphi \to \Box \ \psi &amp; &amp; \textsf{PL} \ 2, 3\\
+\end{array}
+\]</span> We use the derived rule of inference for a derivation of BF in the presence of axiom B: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \forall x \ \Box \varphi \to \Box \varphi &amp; &amp;  \textsf{UI} \\
+2 &amp; &amp; \Diamond \ \forall x \ \Box \varphi \to \Diamond \ \Box \ \varphi &amp; &amp; \textsf{RK} \ 1\\
+3 &amp; &amp; \Diamond \ \Box \ \varphi \to \varphi &amp; &amp; \textsf{B}_\Diamond  \\
+4 &amp; &amp; \Diamond \ \forall x \ \Box \varphi \to \varphi &amp; &amp; \textsf{PL} \ 2, 3\\
+5 &amp; &amp; (\Diamond \ \forall x \ \Box \varphi \to  \varphi) \to (\Diamond \ \forall x \ \Box \varphi \to \forall x \ \varphi) &amp; &amp; \textsf{UG} \\
+6 &amp; &amp; \Diamond \ \forall x \ \Box \varphi \to \forall x \ \varphi &amp; &amp; \textsf{MP} \ 4, 5 \\
+7 &amp; &amp; \forall x \ \Box \varphi \to \Box \ \forall x \ \varphi &amp; &amp; \textsf{DR} \ 6 \\
+\end{array}
+\]</span></p>
+<p>The derivability of BF is philosophically problematic: a physicalist may well accept that everything is necessarily a physical object but nevertheless make room for the possibility that non-physical objects exist. More dramatically, consider the converse of <span class="math inline">\(\textsf{BF}\)</span>:</p>
+<p><span class="math display">\[
+\Diamond \ \exists x \ \varphi \to \exists x \ \Diamond \ \varphi.
+\]</span>So, for example, if it is possible for there to be unicorns, then something is possibly a unicorn.</p>
+</section>
+<section id="the-necessity-of-existence" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="the-necessity-of-existence">The Necessity of Existence</h4>
+<p>Existence is generally understood in terms of quantification and identity: to exist is to be identical with something. But the simplest quantified modal logic has the resources to prove that everything is necessarily identical to something, which would appear to mean that necessarily, everything — including you and me — necessarily exists.</p>
+<p>Here is a simple derivation: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; x= x &amp; &amp; \textsf{RI} \\
+2 &amp; &amp; x = x \to \exists y \ x = y &amp; &amp; \textsf{EG} \\
+3 &amp; &amp; \Box \ x = x &amp; &amp; \textsf{RN} \ 1\\
+4 &amp; &amp; \Box \ x = x \to \Box \ \exists y \ x = y &amp;  &amp; \textsf{RK} \ 2\\
+5 &amp; &amp; \Box \ \exists y \ x = y &amp; &amp; \textsf{MP} \ 3, 4\\
+6 &amp; &amp; \forall x \ \Box \ \exists y \ x = y &amp; &amp;  \textsf{UG} \ 5\\  
+\end{array}
+\]</span> Since we can necessitate the conclusion, we find that the simplest quantified modal logic proves that it is necessary that everything necessarily exists. This is another problematic consequence of the system.</p>
+</section>
+</section>
+<section id="the-necessity-of-identity" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-necessity-of-identity">The Necessity of Identity</h3>
+<p>We are in a position to establish the necessity of identity.</p>
+<p><span class="math display">\[
+\tag{NI}
+x= y \to \Box \ x = y
+\]</span></p>
+<p>Here is a derivation: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  x = y \to (\Box  \ x=x \to \Box \ x =y) &amp; &amp;  \textsf{II} \\
+2 &amp; &amp; x = x &amp; &amp; \textsf{RI} \\
+3 &amp; &amp; \Box \ x=x  &amp; &amp;  \textsf{RN} \ 2 \\
+4 &amp; &amp; x=y \to \Box \ x =y &amp; &amp; \textsf{PL} \ 1, 3 \\
+\end{array}
+\]</span> In the presence of axiom B, we can derive the necessity of distinctness: <span class="math display">\[
+x \neq y \to \Box \ x \neq y  \tag{$\textsf{ND}$} \\
+\]</span> Here is a simple argument: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \Diamond \  x \neq y \to x \neq y &amp; &amp;  \textsf{NI} \\
+2 &amp; &amp; \Box \ \Diamond \  x \neq y \to \Box \ x \neq y &amp; &amp; \textsf{RK} \ 1\\
+3 &amp; &amp; x \neq y \to \Box \ \Diamond x \neq y &amp; &amp; \textsf{B} \\
+4 &amp; &amp; x \neq y \to \Box \ x \neq y &amp; &amp; \textsf{PL} \ 2, 3\\
+\end{array}
+\]</span></p>
+<p>The role of axiom B appears to be crucial for the proof. Otherwise, we can provide a model of contingent distinctness by construing identity as indiscernibility and providing a model in which to discernible objects <em>can</em> become indiscernible at a world to which no other world in which the objects exemplify distinct properties is accessible.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-quine2013word" class="csl-entry" role="listitem">
 Quine, Willard Van Orman. 1964. <em>Word and Object</em>. MIT press.
 </div>
-<div id="ref-salmon1989logic" class="csl-entry" role="listitem">
-Salmon, Nathan. 1989. <span>“The Logic of What Might Have Been.”</span>
-<em>The Philosophical Review</em> 98 (1): 3–34.
 </div>
-<div id="ref-stalnaker1968theory" class="csl-entry" role="listitem">
-Stalnaker, Robert C. 1968. <span>“A Theory of Conditionals.”</span> In
-<em>Ifs: Conditionals, Belief, Decision, Chance and Time</em>, 41–55.
-Springer.
-</div>
-</div>
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -759,11 +1026,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./quantmodal.html" class="pagination-link" aria-label="Quantification and Modality">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantification and Modality</span></span>
+      <a href="./conditionals.html" class="pagination-link" aria-label="Conditionals">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditionals</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
