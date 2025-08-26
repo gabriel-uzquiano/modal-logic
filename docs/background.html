@@ -649,7 +649,7 @@ Example
 <li><p><span class="math inline">\(\Phi(1)\)</span> <span class="math display">\[
 \sum_{k = 1}^{1} 2k - 1 = 1^2
 \]</span></p></li>
-<li><p><span class="math inline">\(\Phi(n)\)</span> only if <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
 <p>That is, suppose:</p></li>
 </ul>
 <p><span class="math display">\[
@@ -700,7 +700,7 @@ Example
 <li><p><span class="math inline">\(\Phi(1)\)</span>, <span class="math display">\[
 \sum_{n = 1}^{1} = \frac{1.(1+1)}{2}
 \]</span></p></li>
-<li><p><span class="math inline">\(\Phi(n)\)</span> only if <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
 <p>That is, suppose:</p></li>
 </ul>
 <p><span class="math display">\[
@@ -735,8 +735,8 @@ How Not to Use Induction
 <ul>
 <li><p><span class="math inline">\(\Phi(1)\)</span>.</p>
 <p>But of course, if <span class="math inline">\(A\)</span> is a singleton, then there is just one birthday.</p></li>
-<li><p><span class="math inline">\(\Phi(n)\)</span> only if <span class="math inline">\(\Phi(n+1)\)</span>.</p>
-<p>For the sake of concreteness, let me pass from <span class="math inline">\(3\)</span> to <span class="math inline">\(4\)</span>. Suppose <span class="math inline">\(A\)</span> contains four students <span class="math inline">\(a, b, c, d\)</span>. On the assumption that <span class="math inline">\(\Phi(3)\)</span>, we know both that <span class="math inline">\(a, b, c\)</span> share a birthday and that <span class="math inline">\(b, c, d\)</span> share a birthday. So, <span class="math inline">\(a, b, c, d\)</span> must share a birthday.</p>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<p>Consider the transition from <span class="math inline">\(2\)</span> to <span class="math inline">\(3\)</span>. Suppose <span class="math inline">\(A\)</span> contains three students <span class="math inline">\(a, b, c\)</span>. On the assumption that <span class="math inline">\(\Phi(2)\)</span>, we know both that the members of every two-element subset of <span class="math inline">\(A\)</span> share a birthday. In particular, <span class="math inline">\(a, b\)</span> share a birthday and that <span class="math inline">\(b, c\)</span> share a birthday. So, <span class="math inline">\(a, b, c\)</span> must all share a birthday.</p>
 <p>We may generalize the argument for other cases as well.</p></li>
 </ul>
 <p>It would seem to follow that no matter what <span class="math inline">\(n\)</span> may be, a set of <span class="math inline">\(n\)</span> students must share a birthday. <strong>Therefore, all students must share a birthday.</strong></p>
@@ -757,16 +757,16 @@ How Not to Use Induction
 <ul>
 <li>if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> elements, then <span class="math inline">\(|A|=|B|\)</span>.</li>
 </ul>
-<p>That is, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> elements, then they are equinumerous, i.e., they can be put in one-to-one correspondence.</p>
+<p>That is, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> elements, then they are in one-to-one correspondence.</p>
 <p>We proceed in two steps:</p>
 <ul>
 <li><p><span class="math inline">\(\Phi(0)\)</span>.</p>
 <p>Suppose two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(0\)</span> elements. Then. <span class="math inline">\(A =\emptyset =B\)</span>.</p></li>
-<li><p><span class="math inline">\(\Phi(n)\)</span> only if <span class="math inline">\(\Phi(n+1)\)</span>.</p>
-<p>Suppose <span class="math inline">\(\Phi(n)\)</span> and let now <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with at most <span class="math inline">\(n+1\)</span> elements. Now, consider the sets <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span>, which arise from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by subtracting just one element <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from each set. By inductive hypothesis, since <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> have at most <span class="math inline">\(n\)</span> elements, they are equinumerous. But if they are, so will <span class="math inline">\(A^- \cup \{a\}\)</span> and <span class="math inline">\(B^- \cup \{b\}\)</span>, which are none other than <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p></li>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<p>Suppose <span class="math inline">\(\Phi(n)\)</span> and let now <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with at most <span class="math inline">\(n+1\)</span> elements. Now, consider the sets <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span>, which arise from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by subtracting just one element <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from each set. By inductive hypothesis, since <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> have at most <span class="math inline">\(n\)</span> elements, they are are in one-one correspondence. But if they are, so will be <span class="math inline">\(A^- \cup \{a\}\)</span> and <span class="math inline">\(B^- \cup \{b\}\)</span>, which are none other than <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p></li>
 </ul>
 <p>It would seem to follow that no two sets with <span class="math inline">\(n\)</span> of fewer elements differ in cardinality, which would mean that no two finite sets differ in cardinality.</p>
-<p>That gives us the absurd conclusion that <strong><em>all finite sets are equinumerous</em></strong>.</p>
+<p>That gives us the absurd conclusion that <strong><em>all finite sets are in one-one correspondence</em></strong>.</p>
 <p><em>Where exactly is the flaw in the argument?</em> The problem lies in the assumption that no matter what set we are given, we may, if we like, <em>take away</em> one element, which is not the case with the empty set.</p>
 </div>
 </div>
@@ -775,7 +775,7 @@ How Not to Use Induction
 <p><span class="theorem-title"><strong>Proposition 2.7 (Complete Induction)</strong></span> Given a condition <span class="math inline">\(\Phi(n)\)</span> on natural numbers, if</p>
 <ul>
 <li><span class="math inline">\(\Phi(0)\)</span>, and</li>
-<li>for all <span class="math inline">\(m \leq n\)</span>, <span class="math inline">\(\Phi(m)\)</span> only if <span class="math inline">\(\Phi(n+1)\)</span>.</li>
+<li>for all <span class="math inline">\(m \leq n\)</span>, if <span class="math inline">\(\Phi(m)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</li>
 </ul>
 <p>then <em>for every</em> natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Phi(n)\)</span>.</p>
 </div>
@@ -783,7 +783,7 @@ How Not to Use Induction
 <div id="prp-compindbas" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.8 (Complete Induction without a Base Case)</strong></span> Given a condition <span class="math inline">\(\Phi(n)\)</span> on natural numbers, if</p>
 <ul>
-<li>for all <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n)\)</span>,</li>
+<li>for all <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Phi(m)\)</span>, then <span class="math inline">\(\Phi(n)\)</span>,</li>
 </ul>
 <p>then <em>for every</em> natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Phi(n)\)</span>.</p>
 </div>
