@@ -460,20 +460,10 @@ Example
 \]</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Notice that the derivation is far from intuitive and the system requires one to proceed through trial and error until we find appropriate substitution instances in order to derive <span class="math inline">\(p \to p\)</span> from available axioms. On the other hand, it is simple to generalize the argument above into a schematic derivation of <span class="math inline">\(\varphi \to \varphi\)</span> from no premises: <span class="math display">\[
-\vdash \varphi \to \varphi
-\]</span></p>
-</div>
+<p>Notice that the derivation is far from intuitive and the system requires one to proceed through trial and error until we find appropriate substitution instances in order to derive <span class="math inline">\(p \to p\)</span> from available axioms.</p>
+<p>On the other hand, it is simple to generalize the argument above into a schematic derivation of <span class="math inline">\(\varphi \to \varphi\)</span> from no premises.</p>
+<div id="prp-d1" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 4.1</strong></span> <span class="math inline">\(\vdash \varphi \to \varphi\)</span></p>
 </div>
 <p>The axiomatic system is not particularly user-centered and certainly not preferable to natural deduction systems in which there are much simpler proofs of <span class="math inline">\(p \to p\)</span>. Curiously, the axiom system is able to prove every logical truth, and, moreover, it allows one to prove a formula from a set of formulas if, and only if, the former is a logical consequence of the latter.</p>
 <p>But before we establish these results, we set out to develop a library of subroutines, which will facilitate the discussion of the question of whether a given formula is derivable from a set of formulas.</p>
@@ -588,7 +578,7 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 <p>The deduction theorem encodes a common method of proof in mathematics. To establish a conditional <span class="math inline">\(\varphi \to \psi\)</span> in a mathematical context, you may simply adjoin <span class="math inline">\(\varphi\)</span> to your assumptions <span class="math inline">\(\Gamma\)</span> and set out to derive <span class="math inline">\(\psi\)</span> from them. That entitles you to conclude that <span class="math inline">\(\varphi \to \psi\)</span> is a deductive consequence of the original assumptions.</p>
 <p>We will now use of the Deduction Theorem to prove a variety of basic facts, which will facilitate the use of the axiom system.</p>
 <div id="prp-dp1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.1</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.2</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to ((\psi \to \chi)\to (\varphi \to \chi))\)</span></p>
 </div>
 <div name="Proof">
 <p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
@@ -608,7 +598,7 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 \]</span></p>
 </div>
 <div id="prp-dp2" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.2</strong></span> <span class="math inline">\(\vdash (\neg \psi \to \neg \varphi) \to (\varphi \to \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.3</strong></span> <span class="math inline">\(\vdash (\neg \psi \to \neg \varphi) \to (\varphi \to \psi)\)</span></p>
 </div>
 <div>
 <p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
@@ -628,38 +618,38 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 \]</span></p>
 </div>
 <div id="prp-dp3" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.3</strong></span> <span class="math inline">\(\vdash \neg \neg \varphi \to \varphi\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.4</strong></span> <span class="math inline">\(\vdash \neg \neg \varphi \to \varphi\)</span></p>
 </div>
 <div>
 <p>Given the Deduction Theorem, it suffices to note: <span class="math display">\[
 \neg \neg \varphi \vdash \varphi
 \]</span> Here is a derivation of <span class="math inline">\(\varphi\)</span> from <span class="math inline">\(\neg \neg \varphi\)</span>: <span class="math display">\[
-\begin{array}{llll}
+\textsf{Prop} \ \begin{array}{llll}
 1 &amp; &amp; \neg \neg \varphi \to (\neg \varphi \to \neg \neg \varphi) &amp; \textsf{A1}[\neg\neg\varphi/p, \neg \varphi/q]\\
 2 &amp; &amp; \neg \neg \varphi &amp;  \\
 3 &amp; &amp; \neg \varphi \to \neg \neg \varphi &amp; \textsf{MP} \ 1, 2 \\
 4 &amp; &amp; (\neg \varphi \to \neg \neg \varphi) \to ((\neg \varphi \to \neg \varphi) \to \varphi) &amp; \textsf{A3}[\varphi/p, \neg \varphi/q]\\
 5 &amp; &amp; (\neg \varphi \to \neg \varphi) \to \varphi &amp; \textsf{MP} \ 3, 4\\
-6 &amp; &amp; \neg \varphi \to \neg \varphi &amp; \vdash \neg \varphi \to \neg \varphi\\
+6 &amp; &amp; \neg \varphi \to \neg \varphi &amp; \textsf{Prop} \ 4.1\\
 7 &amp; &amp; \varphi &amp; \textsf{MP} \ 5, 6
 \end{array}
 \]</span></p>
 </div>
 <p>Here is another helpfpul observation:</p>
 <div id="prp-dp4" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.4</strong></span> <span class="math inline">\(\vdash \varphi \to \neg \neg \varphi\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.5</strong></span> <span class="math inline">\(\vdash \varphi \to \neg \neg \varphi\)</span></p>
 </div>
 <div name="Proof">
 <p>We exploit the last two observations to produce a simple derivation of <span class="math inline">\(\varphi \to \neg \neg \varphi\)</span>: <span class="math display">\[
 \begin{array}{llll}
-1 &amp; &amp; \neg \neg \neg \varphi \to \neg \varphi &amp; \textsf{Prop} \ 4.3\\
-2 &amp; &amp; (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \textsf{Prop} \ 4.2\\
+1 &amp; &amp; \neg \neg \neg \varphi \to \neg \varphi &amp; \textsf{Prop} \ 4.4\\
+2 &amp; &amp; (\neg \neg \neg \varphi \to \neg \varphi) \to (\varphi \to \neg \neg \varphi) &amp; \textsf{Prop} \ 4.3\\
 3 &amp; &amp; \varphi \to \neg \neg \varphi &amp; \textsf{MP} \ 1, 2
 \end{array}
 \]</span></p>
 </div>
 <div id="prp-dp5" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.5</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to (\neg \psi \to \neg \varphi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.6</strong></span> <span class="math inline">\(\vdash (\varphi \to \psi) \to (\neg \psi \to \neg \varphi)\)</span></p>
 </div>
 <div>
 <p>Given the Deduction Theorem, it suffices to establish: <span class="math display">\[
@@ -668,15 +658,15 @@ n+2 &amp; &amp; \varphi \to \psi &amp; \textsf{MP} \ m, n+1\\
 <p>Here is a derivation of <span class="math inline">\(\neg \psi \to \neg \varphi\)</span> from <span class="math inline">\(\{\varphi \to \psi\}\)</span>: <span class="math display">\[
 \begin{array}{llll}
 1 &amp; &amp; \varphi \to \psi &amp;  \\
-2 &amp; &amp; \psi \to \neg \neg \psi &amp; \textsf{Prop} \ 4.4\\
-3 &amp; &amp; \neg \neg \varphi \to \varphi &amp; \textsf{Prop} \ 4.3\\
-4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \textsf{Prop} \ 4.1 \\
+2 &amp; &amp; \psi \to \neg \neg \psi &amp; \textsf{Prop} \ 4.5\\
+3 &amp; &amp; \neg \neg \varphi \to \varphi &amp; \textsf{Prop} \ 4.4\\
+4 &amp; &amp; (\neg \neg \varphi \to \varphi) \to ((\varphi \to \psi) \to (\neg \neg \varphi \to \psi)) &amp; \textsf{Prop} \ 4.2 \\
 5 &amp; &amp; (\varphi \to \psi) \to (\neg \neg \varphi \to \psi) &amp; \textsf{MP} \ 3, 4 \\
 6 &amp; &amp; \neg \neg \varphi \to \psi &amp; \textsf{MP} \ 1, 4 \\
-7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \textsf{Prop} \ 4.1 \\
+7 &amp; &amp; (\neg \neg \varphi \to \psi) \to ((\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi)) &amp; \textsf{Prop} \ 4.2 \\
 8 &amp; &amp; (\psi \to \neg \neg \psi) \to (\neg \neg \varphi \to \neg \neg \psi) &amp; \textsf{MP} \ 6, 7\\
 9 &amp; &amp; \neg \neg \varphi \to \neg \neg \psi &amp; \textsf{MP} \ 2, 8\\
-10 &amp; &amp; (\neg \neg \varphi \to \neg \neg \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{Prop} \ 4.2\\
+10 &amp; &amp; (\neg \neg \varphi \to \neg \neg \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{Prop} \ 4.3\\
 11 &amp; &amp; \neg \psi \to \neg \varphi &amp; \textsf{MP} \ 9, 10
 \end{array}
 \]</span></p>
@@ -694,11 +684,11 @@ Exercise
 <p>Use the Deduction Theorem in order to justify: <span class="math display">\[
 \vdash (\varphi \to \neg \varphi) \to \neg \varphi
 \]</span></p>
-<p><em>Hint</em>. <em>By the Deduction Theorem, we need only show</em> <span class="math inline">\(\{\varphi \to \neg \varphi\}\vdash \neg \varphi\)</span>. <em>One way to do that exploits a substitution instance of</em> <span class="math inline">\(\textsf{A3}\)</span> and <span class="math inline">\(\textsf{Prop}\)</span> 3.3 and 3.5.</p>
+<p><em>Hint</em>. <em>By the Deduction Theorem, we need only show</em> <span class="math inline">\(\{\varphi \to \neg \varphi\}\vdash \neg \varphi\)</span>. <em>One way to do that exploits a substitution instance of</em> <span class="math inline">\(\textsf{A3}\)</span> and <span class="math inline">\(\textsf{Prop}\)</span> 4.4 and 4.6.</p>
 </div>
 </div>
 <div id="prp-dp6" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 4.6</strong></span> <span class="math inline">\(\vdash \neg  \varphi \to (\varphi \to \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 4.7</strong></span> <span class="math inline">\(\vdash \neg  \varphi \to (\varphi \to \psi)\)</span></p>
 </div>
 <div>
 <p>Given the Deduction Theorem, we need only verify:</p>
@@ -714,7 +704,7 @@ Exercise
 1 &amp; &amp; \neg \varphi \to (\neg \psi \to \neg \varphi) &amp;  \textsf{A1}[\neg \varphi/p, \neg \psi/q] \\
 2 &amp; &amp;  \neg \varphi &amp; \\
 3 &amp; &amp;  (\neg \psi \to \neg \varphi) &amp; \textsf{MP} \ 1, 2\\
-4 &amp; &amp;  (\neg \psi \to \neg \varphi) \to (\varphi \to \psi) &amp; \textsf{Prop} \ 4.2\\
+4 &amp; &amp;  (\neg \psi \to \neg \varphi) \to (\varphi \to \psi) &amp; \textsf{Prop} \ 4.3\\
 5 &amp; &amp;  \varphi \to \psi &amp; \textsf{MP} \ 3, 4\\
 6 &amp; &amp; \varphi  &amp; \\
 7 &amp; &amp; \psi  &amp; \textsf{MP} \ 5, 6\\
