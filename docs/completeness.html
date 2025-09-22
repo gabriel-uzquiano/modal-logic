@@ -488,7 +488,7 @@ Plan
 <p><span class="theorem-title"><strong>Proposition 5.4</strong></span> For each natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Gamma_n\)</span> is consistent.</p>
 </div>
 <div id=".proof">
-<p><strong>Proof</strong>. A simple induction on <span class="math inline">\(n\)</span> suffices:</p>
+<p><strong>Proof</strong>. A simple induction on <span class="math inline">\(n\)</span>:</p>
 <ul>
 <li><p><span class="math inline">\(\Sigma_0\)</span> is consistent on the assumption <span class="math inline">\(\Gamma\)</span> is consistent.</p></li>
 <li><p>If <span class="math inline">\(\Sigma_n\)</span> is consistent, then <span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> <em>if consistent</em>, or else <span class="math inline">\(\Sigma_n\)</span>. Either way, <span class="math inline">\(\Sigma_{n+1}\)</span> is consistent.</p></li>
@@ -501,7 +501,7 @@ Plan
 <div>
 <p><strong>Proof</strong>. We argue by induction on <span class="math inline">\(n\)</span>:</p>
 <ul>
-<li><p><span class="math inline">\(\Sigma_0\)</span> is vacuously a superset of <em>any</em> set that may precede it in the sequence. This is because <em>nothing</em> precedes <span class="math inline">\(\Sigma_0\)</span> in the sequence.</p></li>
+<li><p>Nothing precedes <span class="math inline">\(\Sigma_0\)</span> in the sequence. So, trivially, for every <span class="math inline">\(m&lt;0\)</span>, <span class="math inline">\(\Sigma_m \subseteq \Sigma_0\)</span>.</p></li>
 <li><p><span class="math inline">\(\Sigma_{n+1}\)</span> is <span class="math inline">\(\Sigma_n, \varphi_n\)</span> if consistent, or else <span class="math inline">\(\Sigma_n\)</span>. Either way, since by inductive hypothesis, for every <span class="math inline">\(m &lt; n\)</span> <span class="math inline">\(\Sigma_{m} \subseteq \Sigma_{n}\)</span> and <span class="math inline">\(\Sigma_n \subseteq \Sigma_{n+1}\)</span>, we conclude that for every <span class="math inline">\(m &lt; n\)</span> <span class="math inline">\(\Sigma_{m} \subseteq \Sigma_{n+1}\)</span>.</p></li>
 </ul>
 <p><span class="math inline">\(\blacksquare\)</span></p>
@@ -557,16 +557,16 @@ V(p_n) = 1 &amp; \text{iff} &amp; v(p_n) = 1 &amp; \\
 <p><span class="math display">\[
 \begin{array}{llll}
 V(\neg \varphi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 &amp; \\
-    &amp; \text{iff} &amp; \varphi \notin \Sigma &amp; \textsf{IH} \\
-     &amp; \text{iff} &amp; \neg \varphi \in \Sigma &amp; \textsf{Prop} \ 3.8, 2 \\
+    &amp; \text{iff} &amp; \varphi \notin \Sigma &amp; \textsf{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \neg \varphi \in \Sigma &amp; \textsf{Prop} \ 5.2, 2 \\
 \end{array}
 \]</span><br>
 - <strong>Inductive Step for</strong> <span class="math inline">\(\to\)</span>:</p>
 <p><span class="math display">\[
 \begin{array}{llll}
 V(\varphi \to \psi) = 1 &amp; \text{iff} &amp; V(\varphi) = 0 \ \text{or} \ V(\psi) =1 &amp; \\
-    &amp; \text{iff} &amp; \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma&amp; \textsf{IH} \\
-     &amp; \text{iff} &amp; \varphi \to \psi \in \Sigma &amp; \textsf{Prop} \ 3.8, 3 \\
+    &amp; \text{iff} &amp; \varphi \notin \Sigma \ \text{or} \ \psi \in \Sigma&amp; \textsf{Inductive Hypothesis} \\
+     &amp; \text{iff} &amp; \varphi \to \psi \in \Sigma &amp; \textsf{Prop} \ 5.2, 3 \\
 \end{array}
 \]</span><br>
 We conclude that <span class="math inline">\(V\)</span> verifies exactly those formulas in <span class="math inline">\(\Sigma\)</span>. So, it follows that <span class="math inline">\(\Sigma\)</span> is satisfiable.</p>
