@@ -445,12 +445,14 @@ Accessibility
 \]</span></p>
 </div>
 <div>
-<p><strong>Proof</strong>. We distinguish two directions.</p>
-<p>(<span class="math inline">\(\Rightarrow\)</span>) Consider the set of modal formulas</p>
+<p><strong>Proof</strong>. We distinguish two directions for <span class="math inline">\(4a\)</span>:</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) Automatic given the definition of the accessibility relation <span class="math inline">\(R\)</span></p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Suppose now that <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>. We want to establish the existence of a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span> accessible from <span class="math inline">\(\Gamma\)</span>.</p>
+<p>Consider the set of modal formulas</p>
 <p><span class="math display">\[
 \{\varphi\} \cup \{\psi: \Box \psi \in \Gamma\}
 \]</span></p>
-<p>If that set is <span class="math inline">\(\Sigma\)</span>-consistent, then it can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>, and, by definition of <span class="math inline">\(R\)</span>, <span class="math inline">\(\Gamma R \Delta\)</span>. Since <span class="math inline">\(\varphi\)</span> would be a member of <span class="math inline">\(\Delta\)</span> as defined, by Theorem 8.3, <span class="math inline">\(\Diamond \varphi \in \Gamma\)</span>.</p>
+<p>If that set is <span class="math inline">\(\Sigma\)</span>-consistent, then it can be extended to a maximal <span class="math inline">\(\Sigma\)</span>-consistent set <span class="math inline">\(\Delta\)</span>, and, by definition of <span class="math inline">\(R\)</span>, <span class="math inline">\(\Gamma R \Delta\)</span>. Then, <span class="math inline">\(\varphi\)</span> would be a member of <span class="math inline">\(\Delta\)</span>.</p>
 <p>We now argue that the set given above is <span class="math inline">\(\Sigma\)</span>-consistent. Suppose not. Then there is a conjunction <span class="math inline">\(\psi_1 \wedge \dots \wedge \psi_n\)</span> of modal formulas with <span class="math inline">\(\Box \psi_1, \dots, \Box \psi_n \in \Gamma\)</span> such that</p>
 <p><span class="math display">\[
 \vdash_{\Sigma} \varphi \wedge (\psi_1  \wedge \dots \wedge \psi_n) \to  \bot
@@ -616,9 +618,9 @@ Canonicity
 <p><span class="theorem-title"><strong>Proposition 8.2</strong></span> If <span class="math inline">\(\Sigma\)</span> is a normal system, which includes every substitution instance of the relevant axiom, then <span class="math inline">\(\mathcal{M}_\Sigma\)</span> validates the formula. In other words, <span class="math inline">\(R_{\Sigma}\)</span> satisfies the condition associated with the axiom.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 44%">
-<col style="width: 36%">
+<col style="width: 23%">
+<col style="width: 41%">
+<col style="width: 34%">
 </colgroup>
 <thead>
 <tr class="header">
