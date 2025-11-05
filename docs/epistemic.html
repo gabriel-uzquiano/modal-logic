@@ -336,7 +336,7 @@ window.Quarto = {
 <p>One of the uses to which propositional modal logic has been put is to model certain propositional attitudes such as knowledge and belief.</p>
 <section id="knowledge" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="knowledge">Knowledge</h2>
-<p>To model knowledge, <span class="citation" data-cites="hintikka1962knowledge">(<a href="references.html#ref-hintikka1962knowledge" role="doc-biblioref">Hintikka 1962</a>)</span> supplements the language of propositional logic with a family of propositional operators <span class="math inline">\(\textsf{K}_i\)</span> for a family of epistemic agents <span class="math inline">\(i\in I\)</span>. A formula of the form <span class="math inline">\(\textsf{K}_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that <span class="math inline">\(\varphi\)</span>.” Its dual, <span class="math inline">\(\neg \textsf{K}_i \neg\)</span> is symbolized: <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span>, is read: “for all agent <span class="math inline">\(i\)</span> knows, <span class="math inline">\(\varphi\)</span> remains open.”</p>
+<p>To model knowledge, <span class="citation" data-cites="hintikka1962knowledge">(<a href="references.html#ref-hintikka1962knowledge" role="doc-biblioref">Hintikka 1962</a>)</span> supplements the language of propositional logic with a family of propositional operators <span class="math inline">\(\textsf{K}_i\)</span> for a family of epistemic agents <span class="math inline">\(i\in I\)</span>. A formula of the form <span class="math inline">\(\textsf{K}_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that <span class="math inline">\(\varphi\)</span>.” Its dual, <span class="math inline">\(\neg \textsf{K}_i \neg\)</span> is symbolized: <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span>, is read: “for all agent <span class="math inline">\(i\)</span> knows, <span class="math inline">\(\varphi\)</span> remains open.” If to know that not-<span class="math inline">\(\varphi\)</span> is to rule <span class="math inline">\(\varphi\)</span> out, then to not know that not-<span class="math inline">\(\varphi\)</span> is to not rule <span class="math inline">\(\varphi\)</span> out, which is to say that <span class="math inline">\(\varphi\)</span> remains an open option.</p>
 <p>Here is the picture as described by <span class="citation" data-cites="lewisPluralityWorlds1986">(<a href="references.html#ref-lewisPluralityWorlds1986" role="doc-biblioref">Lewis 1986</a>)</span>:</p>
 <blockquote class="blockquote">
 <p>The content of someone’s knowledge of the world is given by his class of <em>epistemically accessible</em> worlds. These are the worlds that might, for all he knows, be his world; world <span class="math inline">\(w\)</span> is one of them iff he knows nothing, either explicitly or implicitly, to rule out the hypothesis that <span class="math inline">\(w\)</span> is the world where he lives.</p>
@@ -360,7 +360,7 @@ States of Information
 </ol>
 </div>
 </div>
-<p>We may use state models to model real-life examples. Suppose you have lost sight of your phone, which you think, you may have misplaced. In one state, your phone has been stolen (<span class="math inline">\(p\)</span>), whereas in another state you simply forgot to take it with you and has not been stolen (<span class="math inline">\(\neg p\)</span>). In all epistemically accessible states, however, your phone had been with you just yesterday night (<span class="math inline">\(q\)</span>). That would place you in a state in which you <em>know</em> your phone had been with you yesterday night, <span class="math inline">\(\textsf{K}_i q\)</span>, but you do not know whether your phone has been stolen: <span class="math inline">\(\neg \textsf{K}_i p \wedge \textsf{K}_i \neg p\)</span>.</p>
+<p>We may use state models to model real-life examples. Suppose you have lost sight of your phone, which you think, you may have been stolen or misplaced. In one state, your phone has been stolen (<span class="math inline">\(p\)</span>), whereas in another state you simply misplaced it and has not been stolen (<span class="math inline">\(\neg p\)</span>). In all epistemically accessible states, however, your phone had been with you just yesterday night (<span class="math inline">\(q\)</span>). That would place you in a state in which you <em>know</em> your phone had been with you yesterday night, <span class="math inline">\(\textsf{K}_i q\)</span>, but you do not know whether your phone has been stolen: <span class="math inline">\(\neg \textsf{K}_i p \wedge \textsf{K}_i \neg p\)</span>.</p>
 <p>One way to model the situation is through a model, which consists of two states <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> corresponding to two epistemic alternatives: one in which your phone has been stolen, and one in which it has not been stolen.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -439,7 +439,7 @@ p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p
 <p>This means that what is the case is known to be open as far as one knows. One way to cast doubt upon that principle is by considering the dual: <span class="math display">\[\tag{$\textsf{B}_\Diamond$}
 \langle \textsf{K}_i \rangle \textsf{K}_i p  \to p
 \]</span></p>
-<p>You may think that nothing you know rules out that you do know that you left your phone behind back in the classroom. But according to <span class="math inline">\(\textsf{B}_\Diamond\)</span>, that is only the case if you did in fact leave your phone behind in your classroom. If you did <em>not</em>, then what you know already rules out that you know that you left the phone behind in the classroom.</p>
+<p>If it is open that you know something, then you know it. You may think it is open that you in fact know that you misplaced your phone. But according to <span class="math inline">\(\textsf{B}_\Diamond\)</span>, that is only the case if you did in fact misplace your phone. If you did <em>not</em>, then you can rule out that you know that you did. That seems implausible.</p>
 <p>The semantic counterpart of these observations is that we should not automatically rule out failures of symmetry for <span class="math inline">\(i\)</span>-accessibility relations: from the fact that <span class="math inline">\(v\)</span> is an epistemic live option for the agent at <span class="math inline">\(u\)</span>, we cannot conclude that <span class="math inline">\(u\)</span> is an epistemic live option for the agent at <span class="math inline">\(v\)</span>.</p>
 <p>To the extent to which <span class="math inline">\(\textsf{KT5}\)</span> or <span class="math inline">\(\textsf{S5}\)</span> extends <span class="math inline">\(\textsf{KTB}\)</span>, the above considerations extend to axiom <span class="math inline">\(\textsf{5}\)</span>, which in the presence of <span class="math inline">\(\textsf{T}\)</span> would give us <span class="math inline">\(\textsf{B}\)</span>.</p>
 <p><strong><em>What is open is known to be open.</em></strong></p>
@@ -452,6 +452,29 @@ p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p
 \langle \textsf{K}_i \rangle \textsf{K}_i p  \to \textsf{K}_i p
 \]</span></p>
 <p>If it is open to you that you know something, then you know it.</p>
+<p>Of special interest is the interaction of epistemic and metaphysical modalities.</p>
+<p><strong><em>What is the case can be known</em></strong></p>
+<p><span class="math display">\[
+p \to  \Diamond \ \textsf{K}_i p \tag{Knowability}
+\]</span></p>
+<p>Fitch’s paradox is the observation that we cannot have <em>all</em> instances of that schema unless we are prepared to accept all instances of the schema:</p>
+<p><span class="math display">\[
+p \to K_i p
+\]</span></p>
+<p><span class="math display">\[
+\begin{array}{lll}
+1 &amp; (p \wedge \neg K_i p) \to \Diamond K_i (p \wedge \neg K_ip) &amp; \text{Knowability} \\
+2 &amp; K_i (p \wedge \neg K_ip) \to (K_i p \wedge K_i \neg K_ip) &amp; \textsf{K}\\
+3 &amp; (K_i p \wedge K_i \neg K_ip) \to (K_i p \wedge \neg K_ip) &amp; \textsf{T}, \textsf{PL} 1\\
+4 &amp; \Diamond (K_i p \wedge K_i \neg K_ip) \to \Diamond (K_i p \wedge \neg K_ip) &amp; \textsf{RN}_\Diamond \ 3 \\
+5 &amp; (p \wedge \neg K_i p) \to \Diamond (K_i p \wedge \neg K_ip) &amp; \textsf{PL} \ 1, 4 \\
+6 &amp; \neg (K_i p \wedge \neg K_ip) &amp; \textsf{PL} \\
+7 &amp; \Box \neg (K_i p \wedge \neg K_ip) &amp; \textsf{RN} \ 6 \\
+8 &amp; \neg \Diamond (K_i p \wedge \neg K_ip) &amp; \textsf{Def} \ \Diamond 7 \\
+9 &amp; \neg (p \wedge \neg K_i p) &amp; \textsf{PL} \ 5, 8
+\end{array}
+\]</span></p>
+<p>When taken at face value, the argument appears to suggest that what is the case can be known only if what is the case is already in fact known.</p>
 </section>
 <section id="information-flow" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="information-flow"><span class="header-section-number">12.1</span> Information Flow</h2>
