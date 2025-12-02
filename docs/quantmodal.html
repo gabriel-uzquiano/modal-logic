@@ -285,8 +285,26 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#basic-language" id="toc-basic-language" class="nav-link active" data-scroll-target="#basic-language"><span class="header-section-number">14.1</span> Basic Language</a></li>
-  <li><a href="#the-simplest-modal-quantificational-logic" id="toc-the-simplest-modal-quantificational-logic" class="nav-link" data-scroll-target="#the-simplest-modal-quantificational-logic"><span class="header-section-number">14.2</span> The Simplest Modal Quantificational Logic</a></li>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">14.1</span> Motivation</a></li>
+  <li><a href="#basic-language" id="toc-basic-language" class="nav-link" data-scroll-target="#basic-language"><span class="header-section-number">14.2</span> Basic Language</a></li>
+  <li><a href="#the-simplest-modal-quantificational-logic" id="toc-the-simplest-modal-quantificational-logic" class="nav-link" data-scroll-target="#the-simplest-modal-quantificational-logic"><span class="header-section-number">14.3</span> The Simplest Modal Quantificational Logic</a>
+  <ul class="collapse">
+  <li><a href="#the-converse-barcan-formula" id="toc-the-converse-barcan-formula" class="nav-link" data-scroll-target="#the-converse-barcan-formula">The Converse Barcan Formula</a></li>
+  <li><a href="#the-necessity-of-existence" id="toc-the-necessity-of-existence" class="nav-link" data-scroll-target="#the-necessity-of-existence">The Necessity of Existence</a></li>
+  <li><a href="#the-barcan-formula" id="toc-the-barcan-formula" class="nav-link" data-scroll-target="#the-barcan-formula">The Barcan Formula</a></li>
+  <li><a href="#the-necessity-of-identity" id="toc-the-necessity-of-identity" class="nav-link" data-scroll-target="#the-necessity-of-identity">The Necessity of Identity</a></li>
+  <li><a href="#the-necessity-of-distinctness" id="toc-the-necessity-of-distinctness" class="nav-link" data-scroll-target="#the-necessity-of-distinctness">The Necessity of Distinctness</a></li>
+  </ul></li>
+  <li><a href="#free-quantified-modal-logic" id="toc-free-quantified-modal-logic" class="nav-link" data-scroll-target="#free-quantified-modal-logic"><span class="header-section-number">14.4</span> Free Quantified Modal Logic</a>
+  <ul class="collapse">
+  <li><a href="#free-quantificational-logic" id="toc-free-quantificational-logic" class="nav-link" data-scroll-target="#free-quantificational-logic">Free Quantificational Logic</a></li>
+  <li><a href="#kripke-on-universal-instantiation" id="toc-kripke-on-universal-instantiation" class="nav-link" data-scroll-target="#kripke-on-universal-instantiation">Kripke on Universal Instantiation</a></li>
+  </ul></li>
+  <li><a href="#semantics" id="toc-semantics" class="nav-link" data-scroll-target="#semantics"><span class="header-section-number">14.5</span> Semantics</a>
+  <ul class="collapse">
+  <li><a href="#constant-domain-models" id="toc-constant-domain-models" class="nav-link" data-scroll-target="#constant-domain-models">Constant Domain Models</a></li>
+  <li><a href="#variable-domain-models" id="toc-variable-domain-models" class="nav-link" data-scroll-target="#variable-domain-models">Variable Domain Models</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -313,6 +331,8 @@ window.Quarto = {
 
 
 <p>Quantified modal logic supplements the vocabulary of quantificational logic with a modal operator <span class="math inline">\(\Box\)</span>. The simplest quantified modal logic extends the axioms of quantificational logic with substitution instances of <span class="math inline">\(\textsf{K}\)</span> and the rule of necessitation. We will explain how to construct possible worlds models for the language of quantificational modal logic.</p>
+<section id="motivation" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">14.1</span> Motivation</h2>
 <p>By way of motivation, we briefly look at the expressive resources we gain when we combine quantification and modality.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -368,8 +388,9 @@ Essence and Accident
 <li><p><span class="math inline">\(\exists x \Box Fx\)</span></p>
 <p>This sentence is true if, and only if, the <em>open formula</em> <span class="math inline">\(\Box Fx\)</span> is true relative to an assignment of an object to the individual variable <span class="math inline">\(x\)</span>. If <span class="math inline">\(\Box Fx\)</span> is true relative to an assignment if, and only if, <span class="math inline">\(Fx\)</span> is analytic relative to that assignment. But what could that mean? Closed sentences may be true or not in virtue of the meaning of the terms involved, but it is difficult to make sense of the truth of an open formula in virtue of the meaning of the terms involved, much less the truth of an open formula relative to an assignment.</p></li>
 </ul>
-<section id="basic-language" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="basic-language"><span class="header-section-number">14.1</span> Basic Language</h2>
+</section>
+<section id="basic-language" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="basic-language"><span class="header-section-number">14.2</span> Basic Language</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -404,8 +425,8 @@ The Language of Quantificational Modal Logic
 </div>
 <p>The simplest quantified modal logic combines the axioms of quantificational logic with identity with the axioms of the minimal normal modal logic K. That will motivate a simple possible worlds model theory for the language, one that has, however, been controversial. In order to be in a position to discuss the framework, we should review the axioms of quantificational logic with identity.</p>
 </section>
-<section id="the-simplest-modal-quantificational-logic" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="the-simplest-modal-quantificational-logic"><span class="header-section-number">14.2</span> The Simplest Modal Quantificational Logic</h2>
+<section id="the-simplest-modal-quantificational-logic" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="the-simplest-modal-quantificational-logic"><span class="header-section-number">14.3</span> The Simplest Modal Quantificational Logic</h2>
 <p>The axioms for quantificational logic with identity include:</p>
 <ul>
 <li><p>Substitution instances of axioms of propositional logic for the expanded language.</p></li>
@@ -451,8 +472,8 @@ The Language of Quantificational Modal Logic
 \end{array}
 \]</span></p>
 <p>We now derive three remarkable consequences of the axioms of quantified modal logic with identity.</p>
-<section id="the-converse-barcan-formula" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="the-converse-barcan-formula">The Converse Barcan Formula</h4>
+<section id="the-converse-barcan-formula" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-converse-barcan-formula">The Converse Barcan Formula</h3>
 <p>One consequence of the axioms is the Converse Barcan Formula (<span class="math inline">\(\textsf{CBF}\)</span>):</p>
 <p><span class="math display">\[\tag{$\textsf{CBF}$}
 \Box \ \forall x \ \varphi \to \forall x \ \Box \ \varphi
@@ -467,8 +488,8 @@ The Language of Quantificational Modal Logic
 \]</span></p>
 <p>CBF seems problematic, since it automatically gives us the necessity of existence.</p>
 </section>
-<section id="the-necessity-of-existence" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="the-necessity-of-existence">The Necessity of Existence</h4>
+<section id="the-necessity-of-existence" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-necessity-of-existence">The Necessity of Existence</h3>
 <p>Existence is generally understood in terms of quantification and identity: to exist is to be identical with something. But given <span class="math inline">\(\textsf{CBF}\)</span>, we now are in a position to prove that everything necessarily exists.</p>
 <p><span class="math display">\[
 \begin{array}{lllll}
@@ -490,8 +511,8 @@ The Language of Quantificational Modal Logic
 \]</span></p>
 <p>Since we can necessitate the conclusion, we find that the simplest quantified modal logic proves that it is necessary that everything necessarily exists. This appears to fly in the face of common sense: do we not exist contingently?</p>
 </section>
-<section id="the-barcan-formula" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="the-barcan-formula">The Barcan Formula</h4>
+<section id="the-barcan-formula" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-barcan-formula">The Barcan Formula</h3>
 <p>The Barcan Formula (<span class="math inline">\(\textsf{BF}\)</span>) is not a theorem of the simplest quantified modal logic, as we have described it, but its instances become derivable in the presence of axiom schema <span class="math inline">\(\textsf{B}\)</span>. <span class="math display">\[\tag{$\textsf{BF}$}
 \forall x \  \Box \ \varphi \to \Box \ \forall x \ \varphi
 \]</span> Given axiom <span class="math inline">\(\textsf{B}\)</span>, we have as a derived rule of inference: <span class="math display">\[\tag{$\textsf{DR}$}
@@ -520,8 +541,8 @@ The Language of Quantificational Modal Logic
 \Diamond \ \exists x \ \varphi \to \exists x \ \Diamond \ \varphi.
 \]</span>So, for example, if it is possible for there to be unicorns, then something is possibly a unicorn.</p>
 </section>
-<section id="the-necessity-of-identity" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="the-necessity-of-identity">The Necessity of Identity</h4>
+<section id="the-necessity-of-identity" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-necessity-of-identity">The Necessity of Identity</h3>
 <p>We are in a position to establish the necessity of identity.</p>
 <p><span class="math display">\[
 \tag{NI}
@@ -536,8 +557,8 @@ x= y \to \Box \ x = y
 \end{array}
 \]</span></p>
 </section>
-<section id="the-necessity-of-distinctness" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="the-necessity-of-distinctness">The Necessity of Distinctness</h4>
+<section id="the-necessity-of-distinctness" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="the-necessity-of-distinctness">The Necessity of Distinctness</h3>
 <p>In the presence of axiom B, we can derive the necessity of distinctness: <span class="math display">\[
 x \neq y \to \Box \ x \neq y  \tag{$\textsf{ND}$} \\
 \]</span> Here is a simple argument: <span class="math display">\[
@@ -549,8 +570,420 @@ x \neq y \to \Box \ x \neq y  \tag{$\textsf{ND}$} \\
 \end{array}
 \]</span></p>
 <p>The role of axiom B appears to be crucial for the proof. Otherwise, we can provide a model of contingent distinctness by construing identity as indiscernibility and providing a model in which to discernible objects <em>can</em> become indiscernible at a world to which no other world in which the objects exemplify distinct properties is accessible.</p>
+</section>
+</section>
+<section id="free-quantified-modal-logic" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="free-quantified-modal-logic"><span class="header-section-number">14.4</span> Free Quantified Modal Logic</h2>
+<p>It is not uncommon to regard the provability of the Necessity of Existence in the simplest quantified modal logic as a powerful reason to weaken the axioms of the quanficational fragment of the system. This impression is sometimes reinforced by appeal to independent considerations.</p>
+<section id="free-quantificational-logic" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="free-quantificational-logic">Free Quantificational Logic</h3>
+<p>The axioms of quantificational logic have been independently questioned on the grounds that they deliver what some regard as objectionable consequences. There is, for example, the schema of Existential Generalization:</p>
+<p><span class="math display">\[
+\begin{array}{lll}
+\varphi[y/x] \to \exists x \ \varphi(x) &amp; &amp; (\textsf{EG})\\
+\end{array}
+\]</span></p>
+<p>The proof is simple:</p>
+<p><span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp;  \forall x \ \neg \varphi(x) \to \neg \varphi(y) &amp; &amp;  \textsf{UI} \\
+2 &amp; &amp; \neg \neg \varphi(y) \to \neg \forall x \neg \varphi(x) &amp; &amp; \textsf{PL}, 1 \\
+3 &amp; &amp; \varphi(y) \to \neg \forall x \neg \varphi(x)  &amp; &amp;  \textsf{PL} \ 2 \\
+4 &amp; &amp; \varphi(y) \to \exists x  \varphi(x) &amp; &amp; \textsf{Def} \ \exists, 3 \\
+\end{array}
+\]</span></p>
+<p>There are at least two reasons philosophers have used to object to the schema:</p>
+<ol type="1">
+<li><p>In the presence of terms without denotation, the schema delivers unreasonable existential claims. If we include a term <span class="math inline">\(c\)</span> for Pegasus, say, into the language, then we learn that <span class="math inline">\(\exists x \ x = c\)</span>, which is absurd.</p></li>
+<li><p>Existential generalization allows one to move from a universal generalization to an existential one, which conflicts with the thought that the former could have been true even in the absence of true instances.</p>
+<p><span class="math display">\[
+\vdash \forall x \ \varphi(x) \to \exists x \ \varphi(x)
+\]</span></p></li>
+</ol>
+</section>
+<section id="kripke-on-universal-instantiation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="kripke-on-universal-instantiation">Kripke on Universal Instantiation</h3>
+<p>Saul Kripke weakens the axiom of Universal Instantiation as follows: <span class="math display">\[
+\forall y (\forall x \ \varphi(x) \to \varphi[y/x]) \tag{$\textsf{KFUI}$}
+\]</span>where <span class="math inline">\(\varphi[y/x]\)</span> is, as usual, the formula that results when we replace every free occurrence of the variable <span class="math inline">\(x\)</span> in <span class="math inline">\(\varphi\)</span> with an occurrence of the variable <span class="math inline">\(y\)</span> making sure to reletter if necessary. Before we look at the proposal in some detail, we may consider Kripke’s own motivation for it. He has in mind the following derivation of an instance of the Converse Barcan Formula in the simplest quantified modal logic: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \forall x \ Fx \to Fy &amp; \textsf{UI} \\
+2 &amp; &amp; \Box (\forall x \ Fx  \to Fy) &amp; \textsf{RN} \ 1 \\
+3 &amp; &amp; \Box (\forall x \ Fx  \to Fy) \to (\Box \forall x \ Fx  \to \Box \ Fy) &amp; \textsf{K} \\
+4 &amp; &amp; \Box \forall x \ Fx  \to \Box \ Fy  &amp; \textsf{PL} \ 2, 3 \\
+5 &amp; &amp; \Box \forall x \ Fx  \to \forall x \ \Box \ Fx  &amp; \textsf{UG} \ 4 \\
+\end{array}
+\]</span> This is what he writes:</p>
+<blockquote class="blockquote">
+<p>Actually, the flaw lies in the application of necessitation to [1]. In a formula like [1], we give the free variables the generality interpretation: when [1] is asserted as a theorem, it abbreviates an assertion of its ordinary universal closure: <span class="math display">\[
+\begin{array}{lllll}
+[1'] &amp; \forall y (\forall x Fx \to Fy)
+\end{array}
+\]</span> Now, if we applied necessitation to [1’], we would get <span class="math display">\[
+\begin{array}{lllll}
+[2'] &amp; \Box \ \forall y \ (\forall x Fx \to Fy)
+\end{array}
+\]</span> On the other hand, [2] itself is interpreted as asserting: <span class="math display">\[
+\begin{array}{lllll}
+[2''] &amp; \forall y \ \Box  \  (\forall x Fx \to Fy)
+\end{array}
+\]</span> To infer [2’’] from [2’], we would need a law of the form <span class="math inline">\(\Box \ \forall y \ Cy \to \forall y \ \Box Cy\)</span>, which is just the converse Barcan formula we are trying to prove […]. We can avoid this sort of difficulty if, following Quine, we formulate quantification theory so that only closed formulae are asserted. Assertion of formulae containing free variables is at best a convenience; assertion of <span class="math inline">\(\varphi(x)\)</span> with free <span class="math inline">\(x\)</span> can always be replaced by assertion of <span class="math inline">\(\forall x \ \varphi(x)\)</span>.</p>
+</blockquote>
+<p>So, Kripke’s suggestion is to block the application of necessitation to open formulas by adopting a formulation of quantificational logic without open formulas as axioms. Hence the proposal to weaken UI to KFUI, which is its universal closure. As it turns out, Kripke’s proposal requires the adoption of a further quantificational axiom::<span class="math display">\[
+\forall x \ \forall y \ Rxy \to   \forall y \ \forall x \ Rxy
+\]</span> Notice that we are still in a position to define existence in terms of quantification and identity. What we no longer have is a derivation of existential generalization. At most, we are in a position to derive: <span class="math display">\[
+\begin{array}{lllll}
+1 &amp; &amp; \forall y \ (\forall x \ \neg \varphi(x) \to \neg \varphi(y)) &amp; &amp;  \textsf{KFUI} \\
+2 &amp; &amp; \forall y (\neg \neg \varphi(y) \to \neg \forall x \neg \varphi(x)) &amp; &amp; \textsf{PL} \ 1\\
+3 &amp; &amp; \forall y (\varphi(y) \to \neg \forall x \neg \varphi(x)) &amp; &amp; \textsf{PL} \ 2\\
+4 &amp; &amp; \forall y (\varphi(y) \to \exists x  \varphi(x)) &amp; &amp; \textsf{Def} \ \exists \ 3\\
+\end{array}
+\]</span> We similarly have: <span class="math display">\[
+\vdash \forall x \ (x = x \to \exists  y \ x =y)
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+\vdash \forall x \ x = x \to \forall x \ \exists y \ x =y
+\]</span>but either theorem is harmless when it comes to being able to derive the necessity of existence.</p>
+</section>
+</section>
+<section id="semantics" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="semantics"><span class="header-section-number">14.5</span> Semantics</h2>
+<p>We have distinguished at least two axiomatizations of quantified modal logic. We now proceed to explain how to interpret the language in order to validate the relevant axioms.</p>
+<section id="constant-domain-models" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="constant-domain-models">Constant Domain Models</h3>
+<p>We use constant domain models to interpret the simplest quantified modal logic.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Constant Domain Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>constant domain model</em> <span class="math inline">\(M\)</span> is a structure <span class="math inline">\((W, R, D, I)\)</span> where:</p>
+<ol type="1">
+<li><p><span class="math inline">\(W\)</span> is a non-empty set of <em>worlds</em></p></li>
+<li><p><span class="math inline">\(R\)</span> is a binary <em>accessibility relation</em> on <span class="math inline">\(W\)</span></p></li>
+<li><p><span class="math inline">\(D\)</span> is non-empty domain of <em>individuals</em></p></li>
+<li><p><span class="math inline">\(I\)</span> is a function from worlds <span class="math inline">\(w\)</span> into interpretations <span class="math inline">\(I_w\)</span>, which map each <span class="math inline">\(n\)</span>-place predicate <span class="math inline">\(P^n\)</span> into an <span class="math inline">\(n\)</span>-place relation over <span class="math inline">\(D\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variable Assignment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A variable assignment <span class="math inline">\(\alpha\)</span> for a model <span class="math inline">\(M\)</span> is a function from individual variables into members of <span class="math inline">\(D\)</span>.</p>
+</div>
+</div>
+<p>We now define what is for a formula <span class="math inline">\(\varphi\)</span> to be true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span>. In what follows, <span class="math inline">\(\alpha[x/d]\)</span> is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for assigning <span class="math inline">\(d\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a World under an Assignment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We use a recursive definition: <span class="math display">\[
+\begin{array}{lll}
+M, w, \alpha \Vdash P^n v_1 \dots v_n &amp; &amp; \text{iff} &amp; &amp; \langle \alpha(v_1), \dots, \alpha(v_n)\rangle \in I_w (P^n)\\
+M, w,  \alpha  \Vdash v_1 = v_2   &amp; &amp; \text{iff} &amp; &amp;  \alpha(v_1) = \alpha(v_2)\\
+M, w,  \alpha  \Vdash \neg \varphi &amp; &amp; \text{iff} &amp; &amp; M, w, \alpha \nVdash \varphi \\
+M, w,  \alpha  \Vdash  (\varphi \to \psi) &amp; &amp; \text{iff} &amp; &amp; M, w, \alpha \nVdash \varphi \ \text{or} \ M, w, \alpha \Vdash \psi\\
+M, w,  \alpha  \Vdash  \forall x \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, w, \alpha[x/d] \Vdash \varphi \ \text{for  every} \ d\in D\\
+M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, \alpha \Vdash \varphi \ \text{for every} \ u \in W \ \text{such that} \ Rwu\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>We now define truth at a world and truth in a model as usual:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a World
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span>, in symbols <span class="math inline">\(M, w \Vdash \varphi\)</span>, if, and only if, for all assignments <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, <span class="math inline">\(M, w, \alpha \Vdash \varphi\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth in a Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is true in a model <span class="math inline">\(M\)</span>, in symbols, <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only. if, for all <span class="math inline">\(w \in  W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+</div>
+</div>
+<p>By way of example, consider the fact that <span class="math inline">\(\exists x \neg \Box Fx \to \Diamond \forall x \neg Fx\)</span> is not true in every reflexive and euclidean constant domain model.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models_{\text{refl and eucl}} \exists x \neg \Box Fx \to \Diamond \forall x \neg Fx\)</span></p>
+<p>Consider a constant domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, I)\)</span>, where:</p>
+<ul>
+<li><p><span class="math inline">\(W = \{w_1, w_2\}\)</span></p></li>
+<li><p><span class="math inline">\(R = \{(w_1, w_1), ( w_1, w_2), (w_2, w_1), (w_2, w_2)\}\)</span></p></li>
+<li><p><span class="math inline">\(D = \{a, b\}\)</span></p></li>
+<li><p><span class="math inline">\(I_{w_1}(F) = \{a\}\)</span></p>
+<p><span class="math inline">\(I_{w_2}(F) = \{b\}\)</span></p></li>
+</ul>
+<p>For a diagram, consider:</p>
+<p><img src="images/clipboard-1176484358.png" class="img-fluid"></p>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash \exists x \neg \Box Fx\)</span> because <span class="math inline">\(M, w_1, \alpha[b/x] \Vdash \neg \Box Fx\)</span></p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash \Diamond \forall x \neg Fx\)</span> because <span class="math inline">\(M, w_1 \Vdash \forall x \neg Fx\)</span> and <span class="math inline">\(Rw_1w_1\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<p>On the other hand, we may verify that constant domain models validate both the Barcan Formula and the Converse Barcan Formula:</p>
+<div class="proposition">
+<p><span class="math inline">\(\models  \Diamond \ \exists x \ Fx \to \exists x \ \Diamond \ Fx\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Given a constant domain model <span class="math inline">\(M\)</span> and a world <span class="math inline">\(w\in W\)</span> such that <span class="math inline">\(M, w \Vdash \Diamond \ \exists x \ Fx\)</span>, let <span class="math inline">\(u \in W\)</span> be such that <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(M, u \Vdash \exists x \ Fx\)</span>. That means that there is a member <span class="math inline">\(d \in D\)</span> such that for each assignment <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(M, u, \alpha[d/x] \Vdash Fx\)</span>. But then <span class="math inline">\(M, w, \alpha[d/x]\Vdash \Diamond \ Fx\)</span> and, moreover, <span class="math inline">\(M, w, \alpha \Vdash \exists x \ \Diamond \ Fx\)</span>. Since <span class="math inline">\(\alpha\)</span> is arbitrary, <span class="math inline">\(M, w \Vdash \Diamond \ \exists x \ Fx\)</span> as required.</p>
+</div>
+<div class="proposition">
+<p><span class="math inline">\(\models  \Box \ \forall x \ Fx \to \forall x \ \Box \ Fx\)</span></p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Given a constant domain model <span class="math inline">\(M\)</span> and a world <span class="math inline">\(w\in W\)</span> such that <span class="math inline">\(M, w \Vdash \Box \ \forall x \ Fx\)</span>, we argue that <span class="math inline">\(M, w \Vdash \forall x \ \Box \ Fx\)</span>. For given an assignment <span class="math inline">\(\alpha\)</span> and a member <span class="math inline">\(d \in D\)</span>, <span class="math inline">\(M, w,  \alpha[d/x] \Vdash \Box Fx\)</span>. This is because given a world <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>, we have <span class="math inline">\(M, u \Vdash \forall x Fx\)</span> and <span class="math inline">\(M, u, \alpha[d/x]\Vdash Fx\)</span>. Since <span class="math inline">\(u\)</span> and <span class="math inline">\(d\)</span> Are arbitrary, <span class="math inline">\(M, w \Vdash \forall x \ \Box \ Fx\)</span> as required.</p>
+</div>
+</section>
+<section id="variable-domain-models" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="variable-domain-models">Variable Domain Models</h3>
+<p>We now turn attention to variable domain models, which we use to validate weaker fragments of quantified modal logic.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variable Domain Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>variable domain model</em> <span class="math inline">\(M\)</span> is a structure <span class="math inline">\((W, R, D, Q, I)\)</span> where:</p>
+<ol type="1">
+<li><p><span class="math inline">\(W\)</span> is a non-empty set of <em>worlds</em></p></li>
+<li><p><span class="math inline">\(R\)</span> is a binary <em>accessibility relation</em> on <span class="math inline">\(W\)</span></p></li>
+<li><p><span class="math inline">\(D\)</span> is non-empty domain of <em>individuals,</em> which we call the <em>outer domain</em>.</p></li>
+<li><p><span class="math inline">\(Q\)</span> is function from <span class="math inline">\(W\)</span> into subsets of <span class="math inline">\(D\)</span>, and we will call <span class="math inline">\(Q(w)\)</span> the <em>inner domain</em> of <span class="math inline">\(w\)</span> for each <span class="math inline">\(w \in W\)</span></p></li>
+<li><p><span class="math inline">\(I\)</span> is a function from worlds <span class="math inline">\(w\)</span> into interpretations <span class="math inline">\(I_w\)</span>, which map each <span class="math inline">\(n\)</span>-place predicate <span class="math inline">\(P^n\)</span> into an <span class="math inline">\(n\)</span>-place relation over <span class="math inline">\(D\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variable Assignment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A variable assignment <span class="math inline">\(\alpha\)</span> for a model <span class="math inline">\(M\)</span> is a function from individual variables into members of <span class="math inline">\(D\)</span>.</p>
+</div>
+</div>
+<p>The evaluation of an open formula such as <span class="math inline">\(Fx\)</span> at a world <span class="math inline">\(w\)</span> in <span class="math inline">\(W\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span> raises an important question. What should we make of a case in which <span class="math inline">\(\alpha(x)\)</span> is <em>not</em> in the inner domain of <span class="math inline">\(w\)</span>. Three broad strategies come to mind:</p>
+<ol type="1">
+<li><p><em>Avoidance</em></p>
+<p>Find a way to exclude such assignments in principle.</p></li>
+<li><p><em>Unsettled Truth Value</em></p>
+<p>Declare an open formula such as <span class="math inline">\(Fx\)</span> to be neither true nor false in that circumstance.</p></li>
+<li><p><em>Deference</em></p>
+<p>Defer to the interpretation function <span class="math inline">\(I\)</span> in order to settle the truth value of open formulas such as <span class="math inline">\(Fx\)</span>.</p></li>
+</ol>
+<p>In what follows, we will adopt the third approach and let the interpretation function settle the truth value of the open formula at a world relative to that assignment. That means that a formula <span class="math inline">\(Fx\)</span> can in principle be true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span> on which <span class="math inline">\(\alpha(x)\)</span> is not even a member of <span class="math inline">\(Q(w)\)</span>.</p>
+<p>We now define what is for a formula <span class="math inline">\(\varphi\)</span> to be true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span>. In what follows, <span class="math inline">\(\alpha[x/d]\)</span> is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for assigning <span class="math inline">\(d\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a Word under an Assignment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We use a recursive definition: <span class="math display">\[
+\begin{array}{lll}
+M, w, \alpha \Vdash P^n v_1 \dots v_n &amp; &amp; \text{iff} &amp; &amp; \langle \alpha(v_1), \dots, \alpha(v_n)\rangle \in I_w (P^n)\\
+M, w,  \alpha  \Vdash v_1 = v_2   &amp; &amp; \text{iff} &amp; &amp;  \alpha(v_1) = \alpha(v_2)\\
+M, w,  \alpha  \Vdash \neg \varphi &amp; &amp; \text{iff} &amp; &amp; M, w, \alpha \nVdash \varphi \\
+M, w,  \alpha  \Vdash  (\varphi \to \psi) &amp; &amp; \text{iff} &amp; &amp; M, w, \alpha \nVdash \varphi \ \text{or} \ M, w, \alpha \Vdash \psi\\
+M, w,  \alpha  \Vdash  \forall x \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, w, \alpha[x/d] \Vdash \varphi \ \text{for  every} \ d\in Q(w)\\
+M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, \alpha \Vdash \varphi \ \text{for every} \ u \in W \ \text{such that} \ Rwu\\
+\end{array}
+\]</span></p>
+</div>
+</div>
+<p>We now define truth at a world and truth in a model as usual:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth at a World
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span>, in symbols <span class="math inline">\(M, w \Vdash \varphi\)</span>, if, and only if, for all assignments <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, <span class="math inline">\(M, w, \alpha \Vdash \varphi\)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Truth in a Model
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A formula <span class="math inline">\(\varphi\)</span> is true in a model <span class="math inline">\(M\)</span>, in symbols, <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only. if, for all <span class="math inline">\(w \in  W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+</div>
+</div>
+<p>One important consequence of the choices we made above is that universal instantiation fails in variable domain models. Consider, for example, the evaluation of an instance of Universal Instantiation at a world <span class="math inline">\(w\)</span> of a variable domain model:</p>
+<p><span class="math display">\[
+\forall x Fx \to Fy
+\]</span></p>
+<p>relative to an assignment <span class="math inline">\(\alpha\)</span>, which maps <span class="math inline">\(y\)</span> to an individual that is neither in the inner domain of <span class="math inline">\(w\)</span> nor in the extension of <span class="math inline">\(F\)</span> in <span class="math inline">\(w\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models \Box \forall x Fx \to \forall x \Box Fx\)</span>.</p>
+<p>Consider a variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span>, where:</p>
+<ul>
+<li><span class="math inline">\(W = \{w_1, w_2\}\)</span></li>
+<li><span class="math inline">\(R= \{(w_1, w_1), (w_1, w_2), (w_2, w_1), (w_2, w_2)\}\)</span></li>
+<li><span class="math inline">\(D = \{a, b\}\)</span></li>
+<li><span class="math inline">\(Q(w_1) = \{a\}\)</span></li>
+<li><span class="math inline">\(Q(w_2) = \{b\}\)</span></li>
+<li><span class="math inline">\(I_{w_1}(F) = \{a\}\)</span></li>
+<li><span class="math inline">\(I_{w_2}(F) = \{b\}\)</span></li>
+</ul>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash \Box \forall x Fx\)</span>.</p>
+<p>This is because for every assignment <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, we have both <span class="math inline">\(M, w_1, \alpha \Vdash \forall x Fx\)</span> and <span class="math inline">\(M, w_2, \alpha \Vdash \forall x Fx\)</span>.</p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash \forall x \Box Fx\)</span></p>
+<p>Given an assignment <span class="math inline">\(\alpha\)</span> for which <span class="math inline">\(\alpha(x)= a\)</span>, <span class="math inline">\(M, w_1, \alpha \nVdash \Box Fx\)</span>, since <span class="math inline">\(M, w_2, \alpha \nVdash Fx\)</span> and <span class="math inline">\(Rw_1w_2\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(\not \models \forall x \Box Fx \to \Box \forall x Fx\)</span>.</p>
+<p>Consider a variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span>, where:</p>
+<ul>
+<li><span class="math inline">\(W = \{w_1, w_2\}\)</span></li>
+<li><span class="math inline">\(R= \{(w_1, w_1), (w_1, w_2), (w_2, w_1), (w_2, w_2)\}\)</span></li>
+<li><span class="math inline">\(D = \{a, b\}\)</span></li>
+<li><span class="math inline">\(Q(w_1) = \{a\}\)</span></li>
+<li><span class="math inline">\(Q(w_2) = \{a, b\}\)</span></li>
+<li><span class="math inline">\(I_{w_1}(F) = \{a\}\)</span></li>
+<li><span class="math inline">\(I_{w_2}(F) = \{a\}\)</span></li>
+</ul>
+<p>Now:</p>
+<ul>
+<li><p><span class="math inline">\(M, w_1 \Vdash \forall x \Box Fx\)</span>.</p>
+<p>This is because for every assignment <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, for every <span class="math inline">\(d \in Q(w_1)\)</span>, we have both <span class="math inline">\(M, w_1, \alpha[d/x] \Vdash Fx\)</span> and <span class="math inline">\(M, w_2, \alpha[d/x] \Vdash Fx\)</span>. In this case, <span class="math inline">\(a\)</span> is the sole member of the inner domain of <span class="math inline">\(w_1\)</span>.</p></li>
+<li><p><span class="math inline">\(M, w_1 \nVdash \Box \forall x  Fx\)</span></p>
+<p>Given an assignment <span class="math inline">\(\alpha\)</span> , <span class="math inline">\(M, w_1, \alpha \nVdash \Box \forall Fx\)</span>, since <span class="math inline">\(M, w_2, \alpha \nVdash \forall x Fx\)</span> and <span class="math inline">\(Rw_1w_2\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<section id="the-inclusion-and-converse-inclusion-requirement" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="the-inclusion-and-converse-inclusion-requirement">The Inclusion and Converse Inclusion Requirement</h4>
+<p>Two broad constraints on variable domain models allow us to isolate the class of such models in which the Converse Barcan and the Barcan Formula are valid, respectively, in variable domain models.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Inclusion Requirement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span> satisfies the <em>inclusion requirement</em> if, and only if, for every <span class="math inline">\(w, u \in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then. <span class="math inline">\(Q(w) \subseteq Q(u)\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Converse Inclusion Requirement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span> satisfies the <em>converse inclusion requirement</em> if, and only if, for every <span class="math inline">\(w, u \in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then. <span class="math inline">\(Q(u) \subseteq Q(w)\)</span>.</p>
+</div>
+</div>
+<p>That is, a variable domain model satisfies the inclusion requirement if the inner domains never decrease alongside the accessibility relation; and it satisfies the converse inclusion requirement if the inner domains never increase alongside the accessibility relation.</p>
+<div id="prp-cbf" class="proposition theorem">
+<p><span class="theorem-title"><strong>Proposition 14.1</strong></span> The Converse Barcan Formula is valid in variable domain model satisfying the inclusion requirement.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(M\)</span> be a variable domain model of the form <span class="math inline">\(( W, R, D, I)\)</span> satisfying the inclusion requirement. Choose a world <span class="math inline">\(w \in W\)</span> and an assignment <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>. We argue that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x) \to \forall x \Box \varphi(x)\)</span>. Since the formula is a conditional, assume that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x)\)</span>. That means that <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span> for all <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>. We now argue that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x)\)</span>. That is that for every <span class="math inline">\(d\in Q(w)\)</span>, <span class="math inline">\(M, w, \alpha[d/x]\Vdash \Box \varphi(x)\)</span>. Pick a member <span class="math inline">\(d\in Q(w)\)</span> and let <span class="math inline">\(u\in W\)</span> be such that <span class="math inline">\(Rwu\)</span>. <em>Because</em> <span class="math inline">\(M\)</span> satisfies the inclusion requirement, <span class="math inline">\(d\in Q(u)\)</span>. Since <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span> and <span class="math inline">\(d\in Q(u)\)</span>, <span class="math inline">\(M, u, \alpha[d/x]\Vdash \varphi(x)\)</span>. We conclude that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x) \to \forall x \Box \varphi(x)\)</span> And, more generally, <span class="math inline">\(M, w \Vdash \Box \forall x \varphi(x) \to \forall x \Box \varphi(x)\)</span></p>
+</div>
+<div id="prp-bf" class="proposition theorem">
+<p><span class="theorem-title"><strong>Proposition 14.2</strong></span> The Barcan Formula is valid in variable domain models satisfying the converse inclusion requirement.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(M\)</span> be a variable domain model of the form <span class="math inline">\(( W, R, D, I)\)</span> satisfying the converse inclusion requirement. Choose a world <span class="math inline">\(w \in W\)</span> and an assignment <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>. We argue that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x) \to \Box \forall x \varphi(x)\)</span>. Since the formula is a conditional, assume that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x)\)</span>. That means that <span class="math inline">\(M, u, \alpha[d/x] \Vdash \Box \varphi(x)\)</span> for all <span class="math inline">\(d\in Q(w)\)</span>. We now argue that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x)\)</span>. That is that for every <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>, <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span>. Pick a word <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span> and let <span class="math inline">\(d \in Q(u)\)</span>. <em>Because</em> <span class="math inline">\(M\)</span> satisfies the converse inclusion requirement, <span class="math inline">\(d\in Q(w)\)</span>. Since <span class="math inline">\(M, w, \alpha[d/x] \Vdash \Box \varphi(x)\)</span> and <span class="math inline">\(M, u, \alpha[d/x] \Vdash \varphi(x)\)</span>. So, generalizing, <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span> and <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x)\)</span>. We conclude that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x) \to \Box \forall x \varphi(x)\)</span> And <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x) \to \Box \forall x \varphi(x)\)</span>.</p>
+</div>
 
 
+</section>
 </section>
 </section>
 
