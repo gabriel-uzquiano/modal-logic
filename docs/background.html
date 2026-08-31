@@ -547,10 +547,10 @@ window.Quarto = {
 <p><strong>then</strong> <em>for every</em> natural number <span class="math inline">\(n\)</span> <span class="math inline">\(\Phi(n)\)</span>.</p>
 </div>
 <div id="exm-indnn" class="featured theorem example">
-<p><span class="theorem-title"><strong>Example 2.7</strong></span> Consider the pattern: <span class="math display">\[\begin{array}{llll}
-0 &amp; &lt; &amp; 1 &amp; = &amp; 2^0  \\
-1 &amp; &lt; &amp; 2 &amp; = &amp; 2^1\\
-2 &amp; &lt; &amp; 4 &amp; = &amp; 2^2 \\
+<p><span class="theorem-title"><strong>Example 2.7</strong></span> Consider the pattern: <span class="math display">\[\begin{array}{ll}
+0 &amp; &lt; &amp;  2^0  \\
+1 &amp; &lt; &amp; 2^1\\
+2 &amp; &lt; &amp; 2^2 \\
 \cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
 \end{array}\]</span></p>
 <p>If we generalize, we may conjecture that for each natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(n &lt; 2^n\)</span>.</p>
@@ -653,16 +653,15 @@ window.Quarto = {
 <div id="exm-not-2" class="featured theorem example">
 <p><span class="theorem-title"><strong>Example 2.11 (How Not to Use Induction)</strong></span> Let <span class="math inline">\(\Phi(n)\)</span> be the condition on natural numbers:</p>
 <ul>
-<li>if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> elements, then <span class="math inline">\(|A|=|B|\)</span>.</li>
+<li>if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have each at most <span class="math inline">\(n\)</span> elements, then <span class="math inline">\(|A|=|B|\)</span>.</li>
 </ul>
-<p>That is, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> elements, then they are in one-to-one correspondence.</p>
+<p>That is, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have each at most <span class="math inline">\(n\)</span> elements, then they are in one-to-one correspondence.</p>
 <p>We proceed in two steps:</p>
 <ul>
 <li><p><span class="math inline">\(\Phi(0)\)</span>.</p>
 <p>Suppose two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(0\)</span> elements. Then. <span class="math inline">\(A =\emptyset =B\)</span>.</p></li>
 <li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
 <p>Suppose <span class="math inline">\(\Phi(n)\)</span> and let now <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with at most <span class="math inline">\(n+1\)</span> elements. Now, consider the sets <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span>, which arise from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by subtracting just one element <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from each set. By inductive hypothesis, since <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> have at most <span class="math inline">\(n\)</span> elements, they are are in one-one correspondence. But if they are, so will be <span class="math inline">\(A^- \cup \{a\}\)</span> and <span class="math inline">\(B^- \cup \{b\}\)</span>, which are none other than <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p></li>
-<li></li>
 </ul>
 <p>It would seem to follow that no two sets with <span class="math inline">\(n\)</span> of fewer elements differ in cardinality, which would mean that no two finite sets differ in cardinality.</p>
 <p>That gives us the absurd conclusion that <strong><em>all finite sets are in one-one correspondence</em></strong>.</p>
