@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>2&nbsp; Background – Modal Logic</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -32,15 +35,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <link href="./propositional.html" rel="next">
 <link href="./intro.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-626149efe8f5d16e1d391ba177679bf0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-e268cf832660442648a38652dbf3363d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -83,7 +87,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -101,7 +105,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -290,7 +294,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#structural-features-of-relations" id="toc-structural-features-of-relations" class="nav-link" data-scroll-target="#structural-features-of-relations"><span class="header-section-number">2.2.1</span> Structural Features of Relations</a></li>
   </ul></li>
-  <li><a href="#induction-and-definitions-by-recursion" id="toc-induction-and-definitions-by-recursion" class="nav-link" data-scroll-target="#induction-and-definitions-by-recursion"><span class="header-section-number">2.3</span> Induction and Definitions by Recursion</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">2.3</span> </a></li>
+  <li><a href="#induction-and-definitions-by-recursion" id="toc-induction-and-definitions-by-recursion" class="nav-link" data-scroll-target="#induction-and-definitions-by-recursion"><span class="header-section-number">2.4</span> Induction and Definitions by Recursion</a></li>
   </ul>
 </nav>
     </div>
@@ -325,7 +330,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Notation
+<span class="screen-reader-only">Tip</span>Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -339,22 +344,12 @@ Notation
 <div id="prp-ext" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.1 (Extensionality)</strong></span> If <span class="math inline">\(A\)</span> is a subset of <span class="math inline">\(B\)</span> and <span class="math inline">\(B\)</span> is a subset of <span class="math inline">\(A\)</span>, then <span class="math inline">\(A\)</span> is the same set as <span class="math inline">\(B\)</span>. That is, <span class="math inline">\(A = B\)</span>.</p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>{6} = {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}.</p>
+<div id="exm-sets" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.1</strong></span> {6} = {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}.</p>
 <p>A <em>perfect</em> number is the sum of its proper divisors, e.g, 6 is perfect because it is a sum of 1, 2, and 3.</p>
 <p>On the one hand, {6) <span class="math inline">\(\subseteq\)</span> {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}, since 6 is a perfect number less than 10.</p>
 <p>On the other hand, {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10} <span class="math inline">\(\subseteq\)</span> {6}, since nothing else is a perfect number less than 10.</p>
 <p>By Extensionality, {6} = {<span class="math inline">\(x\)</span>: <span class="math inline">\(x\)</span> is a perfect number less than 10}.</p>
-</div>
 </div>
 <p>One may think that no mater what objects may be, there is a collection of them. Or, otherwise put, for each condition <span class="math inline">\(\dots x \dots\)</span>, there is a collection of all and only those objects satisfying the condition <span class="math inline">\(\dots x \dots\)</span>. That is, there is a set of the form <span class="math inline">\(\{x: \dots x \dots\}\)</span>. But that would be a mistake.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -363,7 +358,7 @@ Example
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Russell’s paradox
+<span class="screen-reader-only">Warning</span>Russell’s paradox
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -404,9 +399,7 @@ Russell’s paradox
 </div>
 <p>We can now identify a relation with a set of ordered pairs.</p>
 <div id="def-cp" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2.3 (Cartesian Product)</strong></span> The Cartesian Product <span class="math inline">\(A \times B\)</span> of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of ordered pairs whose first element belongs to <span class="math inline">\(A\)</span> and whose second element belongs to <span class="math inline">\(B\)</span>. That is, the Cartesian Product of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is:<span class="math display">\[
-A \times B = \{(x, y): x\in A \wedge y\in B\}.
-\]</span></p>
+<p><span class="theorem-title"><strong>Definition 2.3 (Cartesian Product)</strong></span> The Cartesian Product <span class="math inline">\(A \times B\)</span> of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of ordered pairs whose first element belongs to <span class="math inline">\(A\)</span> and whose second element belongs to <span class="math inline">\(B\)</span>. That is, the Cartesian Product of two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is: <span class="math display">\[A \times B = \{(x, y): x\in A \wedge y\in B\}.\]</span></p>
 </div>
 <div id="def-relation" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.4 (Relation)</strong></span> If <span class="math inline">\(A\)</span> is a set, <span class="math inline">\(R\)</span> is a binary <em>relation</em> on <span class="math inline">\(A\)</span> if, and only if, <span class="math inline">\(R\)</span> is a subset of <span class="math inline">\(A \times A\)</span>.</p>
@@ -418,7 +411,7 @@ A \times B = \{(x, y): x\in A \wedge y\in B\}.
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Notation
+<span class="screen-reader-only">Tip</span>Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -436,24 +429,18 @@ Notation
 <li><p><span class="math inline">\(R\)</span> is <em>non-reflexive</em> on <span class="math inline">\(A\)</span> iff for some element <span class="math inline">\(x \in  A\)</span>, <span class="math inline">\(\neg Rxx\)</span>.</p></li>
 </ul>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the set of English words <span class="math inline">\(W\)</span>. Then:</p>
+<div id="exm-rel" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.2</strong></span> Consider the set of English words <span class="math inline">\(W\)</span>. Then:</p>
 <ul>
 <li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> shares at least one letter with <span class="math inline">\(v\)</span> is a reflexive relation on <span class="math inline">\(W\)</span>}.</p></li>
 <li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is an antonym of <span class="math inline">\(v\)</span> is an irreflexive relation on <span class="math inline">\(W\)</span>}.</p></li>
 <li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is <span class="math inline">\(v\)</span> backwards is a non-reflexive relation on <span class="math inline">\(W\)</span>}.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p></li>
 </ul>
 </div>
-</div>
+</section>
+</section>
+<section id="section" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="section"><span class="header-section-number">2.3</span> </h2>
 <div id="def-sym" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.6 (Symmetry)</strong></span> If <span class="math inline">\(R\)</span> is a binary relation on a set <span class="math inline">\(A\)</span>,</p>
 <ul>
@@ -463,23 +450,13 @@ Example
 <li><p><span class="math inline">\(R\)</span> is <em>antisymmetric</em> on <span class="math inline">\(A\)</span> iff for all <span class="math inline">\(x, y \in A\)</span>, if <span class="math inline">\(Rxy\)</span>, then <span class="math inline">\(Ryx\)</span> only if <span class="math inline">\(x=y\)</span></p></li>
 </ul>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the set of English words <span class="math inline">\(W\)</span>. Then:</p>
+<div id="exm-sym" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.3</strong></span> Consider the set of English words <span class="math inline">\(W\)</span>. Then:</p>
 <ul>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> shares at least one letter with <span class="math inline">\(v\)</span> is a symmetric relation on <span class="math inline">\(W\)</span>.</p></li>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> has fewer letters than <span class="math inline">\(v\)</span> is an asymmetric relation on <span class="math inline">\(W\)</span>.</p></li>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is no later than <span class="math inline">\(v\)</span> in the lexicographical order is an anti-symmetric relation on <span class="math inline">\(W\)</span>.</p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> shares at least one letter with <span class="math inline">\(v\)</span> is a symmetric relation on $W$<span class="math inline">\(\}\)</span>.</p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> has fewer letters than <span class="math inline">\(v\)</span> is an asymmetric relation on <span class="math inline">\(W\)</span><span class="math inline">\(\}\)</span>.</p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is no later than <span class="math inline">\(v\)</span> in the lexicographical order is an anti-symmetric relation on <span class="math inline">\(W\)</span><span class="math inline">\(\}\)</span>.</p></li>
 </ul>
-</div>
 </div>
 <div id="def-trans" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.7 (Transitivity)</strong></span> If <span class="math inline">\(R\)</span> is a binary relation on a set <span class="math inline">\(A\)</span>,</p>
@@ -489,23 +466,13 @@ Example
 <li><p><span class="math inline">\(R\)</span> is <em>non-transitive</em> on <span class="math inline">\(A\)</span> iff for some elements <span class="math inline">\(x,y,z \in A\)</span>, if <span class="math inline">\(Rxy\)</span> and <span class="math inline">\(Ryz\)</span>, then <span class="math inline">\(\neg  Rxz\)</span>.</p></li>
 </ul>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the set of English words <span class="math inline">\(W\)</span>. Then:</p>
+<div id="exm-trans" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.4</strong></span> Consider the set of English words <span class="math inline">\(W\)</span>. Then:</p>
 <ul>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is no later than <span class="math inline">\(v\)</span> in the lexicographical order is a transitive relation on <span class="math inline">\(W\)</span>.</p></li>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> &nbsp;is an antonym of <span class="math inline">\(v\)</span> is an intransitive relation on <span class="math inline">\(W\)</span>.</p></li>
-<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is <span class="math inline">\(v\)</span> backwards is a non-transitive relation on <span class="math inline">\(W\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is no later than <span class="math inline">\(v\)</span> in the lexicographical order is a transitive relation on <span class="math inline">\(W\)</span><span class="math inline">\(\}\)</span>.</p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> &nbsp;is an antonym of <span class="math inline">\(v\)</span> is an intransitive relation on <span class="math inline">\(W\)</span><span class="math inline">\(\}\)</span>.</p></li>
+<li><p>{<span class="math inline">\((u,v)\in W \times W\)</span>: <span class="math inline">\(u\)</span> is <span class="math inline">\(v\)</span> backwards is a non-transitive relation on <span class="math inline">\(W\)</span><span class="math inline">\(\}\)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p></li>
 </ul>
-</div>
 </div>
 <div id="def-equiv" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2.8 (Equivalence Relation)</strong></span> A binary relation <span class="math inline">\(R\)</span> on a set <span class="math inline">\(A\)</span> is an <em>equivalence relation</em> on <span class="math inline">\(A\)</span> if, and only if,</p>
@@ -515,50 +482,28 @@ Example
 <li><span class="math inline">\(R\)</span> is transitive on <span class="math inline">\(A\)</span>.</li>
 </ul>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Synonymy is an equivalence relation on the set of English words <span class="math inline">\(W\)</span>.</p>
+<div id="exm-equiv" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.5</strong></span> Synonymy is an equivalence relation on the set of English words <span class="math inline">\(W\)</span>.</p>
 <ul>
 <li><p>Synonymy is <em>reflexive</em> on <span class="math inline">\(W\)</span>. Every word is a synonym of itself.</p></li>
 <li><p>Synonymy is <em>symmetric</em> on <span class="math inline">\(W\)</span>. If a word is a synonym of another word, then the latter word is a synonym of the former.</p></li>
 <li><p>Synonymy is <em>transitive</em> on <span class="math inline">\(W\)</span>. If a word is a synonym of a second word and the second word is a synonym of a third, then the first word is a synonym of the third word.</p></li>
 </ul>
 </div>
-</div>
 <p>Given an equivalence relation <span class="math inline">\(R\)</span> on a set <span class="math inline">\(A\)</span>, we will write that two elements <span class="math inline">\(x, y \in A\)</span> are <span class="math inline">\(R\)</span>-equivalent when <span class="math inline">\(Rxy\)</span>. Equivalence relations induce a partition of the relevant set <span class="math inline">\(A\)</span> into <em>equivalence classes</em>.</p>
 <div id="def-equivclass" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 2.9 (Equivalence Class)</strong></span> If a relation <span class="math inline">\(R\)</span> is an equivalence relation on a set <span class="math inline">\(A\)</span>, for each <span class="math inline">\(x\in A\)</span>, the <em>equivalence class</em> of <span class="math inline">\(x\)</span>, written <span class="math inline">\([x]_R\)</span> is the set of elements of <span class="math inline">\(A\)</span> that are <span class="math inline">\(R\)</span>-equivalent to it: <span class="math display">\[
-  [x]_R:=\{y\in A: Rxy\}.
-  \]</span> The <em>quotient</em> of <span class="math inline">\(A\)</span> under <span class="math inline">\(R\)</span> is the set of equivalence classes induced by <span class="math inline">\(A\)</span>: <span class="math display">\[
-  A/R:= \{[x]_R: x \in A\}.
+<p><span class="theorem-title"><strong>Definition 2.9 (Equivalence Class)</strong></span> If a relation <span class="math inline">\(R\)</span> is an equivalence relation on a set <span class="math inline">\(A\)</span>, for each <span class="math inline">\(x\in A\)</span>, the <em>equivalence class</em> of <span class="math inline">\(x\)</span>, written <span class="math inline">\([x]_R\)</span> is the set of elements of <span class="math inline">\(A\)</span> that are <span class="math inline">\(R\)</span>-equivalent to it: <span class="math display">\[  [x]_R:=\{y\in A: Rxy\}.
+  \]</span> The <em>quotient</em> of <span class="math inline">\(A\)</span> under <span class="math inline">\(R\)</span> is the set of equivalence classes induced by <span class="math inline">\(A\)</span>: <span class="math display">\[  A/R:= \{[x]_R: x \in A\}.
   \]</span></p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Given a set <span class="math inline">\(A\)</span> of undergraduate students enrolled at USC, consider the following binary relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span>:</p>
+<div id="exm-eqcl" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.6</strong></span> Given a set <span class="math inline">\(A\)</span> of undergraduate students enrolled at USC, consider the following binary relation <span class="math inline">\(R\)</span> on <span class="math inline">\(A\)</span>:</p>
 <ul>
 <li><span class="math inline">\(R = \{(x,y)\in A\times A: x\)</span> is in the same year as <span class="math inline">\(y\}\)</span>.</li>
 </ul>
 <p><span class="math inline">\(R\)</span> is an equivalence relation on <span class="math inline">\(A\)</span>.</p>
 <p>Given a student <span class="math inline">\(a\)</span>, the equivalence class <span class="math inline">\([a]_R\)</span> is the set of students in the same year as <span class="math inline">\(a\)</span>. If <span class="math inline">\(a\)</span> is a freshman, then <span class="math inline">\([a]_R\)</span> will be the set of freshman students, if <span class="math inline">\(a\)</span> is a sophomore, then <span class="math inline">\([a]_R\)</span> will be the set of sophomore students, etc.</p>
 <p>The quotient of <span class="math inline">\(A\)</span> under <span class="math inline">\(R\)</span>, <span class="math inline">\(A/R\)</span>, consists of four sets: freshman, sophomore, junior, and senior students.</p>
-</div>
 </div>
 <p>There is an alternative characterization of equivalence relations in terms of reflexivity and yet another structural feature of relations.</p>
 <div id="def-eucl" class="theorem definition">
@@ -577,7 +522,7 @@ Example
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Further Structural Features of Relations
+<span class="screen-reader-only">Note</span>Further Structural Features of Relations
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -590,9 +535,8 @@ Further Structural Features of Relations
 </div>
 </div>
 </section>
-</section>
-<section id="induction-and-definitions-by-recursion" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="induction-and-definitions-by-recursion"><span class="header-section-number">2.3</span> Induction and Definitions by Recursion</h2>
+<section id="induction-and-definitions-by-recursion" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="induction-and-definitions-by-recursion"><span class="header-section-number">2.4</span> Induction and Definitions by Recursion</h2>
 <p>Induction is a powerful method for proving universal generalizations over some items ordered by the natural numbers, e.g., formulas and proofs by induction of length. Because natural numbers are defined inductively from <span class="math inline">\(0\)</span> and the successor operation, they are similarly governed by a principle of induction:</p>
 <div id="prp-mi" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.5 (Induction on the Natural Numbers)</strong></span> Given a condition <span class="math inline">\(\Phi\)</span> on natural numbers, <strong>if</strong></p>
@@ -602,6 +546,25 @@ Further Structural Features of Relations
 </ul>
 <p><strong>then</strong> <em>for every</em> natural number <span class="math inline">\(n\)</span> <span class="math inline">\(\Phi(n)\)</span>.</p>
 </div>
+<div id="exm-indnn" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.7</strong></span> Consider the pattern: <span class="math display">\[\begin{array}{llll}
+0 &amp; &lt; &amp; 1 &amp; = &amp; 2^0  \\
+1 &amp; &lt; &amp; 2 &amp; = &amp; 2^1\\
+2 &amp; &lt; &amp; 4 &amp; = &amp; 2^2 \\
+\cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
+\end{array}\]</span></p>
+<p>If we generalize, we may conjecture that for each natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(n &lt; 2^n\)</span>.</p>
+<p>We can use an induction on the natural numbers to prove the generalization:</p>
+<p>For every positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[n &lt; 2^n\]</span></p>
+<p>Here the condition <span class="math inline">\(\Phi(n)\)</span> is: <span class="math inline">\(n &lt; 2^n\)</span>.</p>
+<p>By induction on the natural numbers, it suffices to show two claims:</p>
+<ul>
+<li><p><span class="math inline">\(\Phi(1)\)</span>, <span class="math display">\[0 &lt; 2^0\]</span></p></li>
+<li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
+<p>If <span class="math inline">\(n &lt; 2^n\)</span>, then <span class="math inline">\(2^n \geq 1\)</span> and <span class="math inline">\(n + 1 &lt; 2{n} + 2{n} = 2^{n+1}\)</span>.</p></li>
+</ul>
+<p>Induction now guarantees that for all natural numbers <span class="math inline">\(n\)</span>, <span class="math inline">\(n &lt; 2^n\)</span>.</p>
+</div>
 <div id="prp-mii" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.6 (Induction on the Positive Integers)</strong></span> Given a condition <span class="math inline">\(\Phi\)</span> on positive integers, <strong>if</strong></p>
 <ul>
@@ -610,25 +573,14 @@ Further Structural Features of Relations
 </ul>
 <p><strong>then</strong> <em>for every</em> positive integer <span class="math inline">\(n\)</span>, <span class="math inline">\(\Phi(n)\)</span>.</p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the pattern below:</p>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<div id="exm-ind" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.8</strong></span> Consider the pattern:</p>
+<p><span class="math display">\[\begin{array}{lllll}
 1 + 3&amp; = &amp; 4 &amp; = &amp; 2^2\\
 1 + 3 + 5 &amp; = &amp; 9 &amp; = &amp; 3^2\\
 1 + 3+ 5 +7 &amp; = &amp; 16 &amp; = &amp; 4^2\\
 \cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 <p>You may now conjecture that the sum of <span class="math inline">\(n\)</span> odd numbers beginning with <span class="math inline">\(1\)</span> is <span class="math inline">\(n^2\)</span>.</p>
 <p>One way to make the conjecture more vivid is through a geometrical argument, which involves reflection on the following succession of squares.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -637,123 +589,69 @@ Example
 </figure>
 </div>
 <p>We now turn these considerations into a mathematical induction argument. Here is what we want to establish:</p>
-<p>For each positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[
-\sum_{k = 1}^{n}{2k - 1} = n^2.
-\]</span></p>
+<p>For each positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[\sum_{k = 1}^{n}{2k - 1} = n^2.\]</span></p>
 <p>Here <span class="math inline">\(2k-1\)</span> is the <span class="math inline">\(k\)</span>th odd number. So, the claim is that the <strong>sum</strong> of the first <span class="math inline">\(n\)</span> odd numbers is <span class="math inline">\(n^2\)</span>.</p>
-<p>Here the condition <span class="math inline">\(\Phi(n)\)</span> is: <span class="math display">\[
-\sum_{k = 1}^{n} 2k - 1 = n^2
-\]</span></p>
+<p>Here the condition <span class="math inline">\(\Phi(n)\)</span> is: <span class="math display">\[\sum_{k = 1}^{n} 2k - 1 = n^2\]</span></p>
 <p>By induction on the positive integers, it suffices to show:</p>
 <ul>
-<li><p><span class="math inline">\(\Phi(1)\)</span> <span class="math display">\[
-\sum_{k = 1}^{1} 2k - 1 = 1^2
-\]</span></p></li>
+<li><p><span class="math inline">\(\Phi(1)\)</span> <span class="math display">\[\sum_{k = 1}^{1} 2k - 1 = 1^2\]</span></p></li>
 <li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
 <p>That is, suppose:</p></li>
 </ul>
-<p><span class="math display">\[
-\sum_{k=1}^{n} 2k-1 = n^2.
-\]</span></p>
-<p><span class="math display">\[
-\begin{array}{lll}
+<p><span class="math display">\[\sum_{k=1}^{n} 2k-1 = n^2.\]</span></p>
+<p><span class="math display">\[\begin{array}{lll}
 \sum_{k=1}^{n+1} 2k-1 &amp; = &amp; (\sum_{k=1}^{n} 2k-1) + 2 (n+1) - 1\\  
 &amp; =  &amp; n^2 + 2n +1\\
 &amp; = &amp; (n+1)^2 \\
-\end{array}
-\]</span></p>
-<p>So, by induction on the positive integers, we conclude that every positive integer <span class="math inline">\(n\)</span> satisfies the condition.</p>
+\end{array}\]</span></p>
+<p>By induction on the positive integers, all positive integers meet the condition.</p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What is the sum of the first 100 positive integers?</p>
-<p><span class="math display">\[
-1 + 2 + \dots + 99 + 100
-\]</span></p>
-<p>The answer is <span class="math inline">\(5050\)</span>. One way to arrive at it is by reflection on the following pattern: <span class="math display">\[
-\begin{array}{lllll}
+<div id="exm-sum" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.9</strong></span> What is the sum of the first 100 positive integers?</p>
+<p><span class="math display">\[1 + 2 + \dots + 99 + 100\]</span></p>
+<p>The answer is <span class="math inline">\(5050\)</span>. One way to arrive at it is by reflection on the following pattern: <span class="math display">\[\begin{array}{lllll}
 1 &amp; = &amp; 1 &amp; = &amp; \frac{1.(1+1)}{2}\\
 1+2 &amp; = &amp; 3 &amp; = &amp; \frac{2 . (2+1)}{2}\\
 1 + 2+ 3 &amp; = &amp; 6 &amp; = &amp; \frac{3 . (3+1)}{2}\\
 \cdots &amp; = &amp; \cdots &amp; = &amp; \cdots \\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 <p>If the pattern is completely general, then we may conjecture that the sum of the first <span class="math inline">\(100\)</span> positive integers to be <span class="math inline">\(5050\)</span>, which is <span class="math inline">\(\frac{100.(100 +1)}{2}\)</span>.</p>
 <p>We can use an induction on the positive integers to prove the generalization:</p>
-<p>For every positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[
-\sum_{k = 1}^{n} = \frac{n.(n+1)}{2}.
-\]</span></p>
-<p>Here the condition <span class="math inline">\(\Phi(n)\)</span> is: <span class="math display">\[
-\sum_{k = 1}^{n} = \frac{n.(n+1)}{2}
-\]</span></p>
+<p>For every positive integer <span class="math inline">\(n\)</span>, <span class="math display">\[\sum_{k = 1}^{n} = \frac{n.(n+1)}{2}.\]</span></p>
+<p>Here the condition <span class="math inline">\(\Phi(n)\)</span> is: <span class="math display">\[\sum_{k = 1}^{n} = \frac{n.(n+1)}{2}\]</span></p>
 <p>By induction on the positive integers, it suffices to show two claims:</p>
 <ul>
-<li><p><span class="math inline">\(\Phi(1)\)</span>, <span class="math display">\[
-\sum_{n = 1}^{1} = \frac{1.(1+1)}{2}
-\]</span></p></li>
+<li><p><span class="math inline">\(\Phi(1)\)</span>, <span class="math display">\[\sum_{n = 1}^{1} = \frac{1.(1+1)}{2}\]</span></p></li>
 <li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
 <p>That is, suppose:</p></li>
 </ul>
-<p><span class="math display">\[
-\sum_{k=1}^{n} = \frac{n.(n+1)}{2}.
-\]</span></p>
+<p><span class="math display">\[\sum_{k=1}^{n} = \frac{n.(n+1)}{2}.\]</span></p>
 <p>Then:</p>
-<p><span class="math display">\[
-\begin{array}{lll}
+<p><span class="math display">\[\begin{array}{lll}
 \sum_{k=1}^{n+1} &amp; = &amp; \sum_{k=1}^{n} + (n+1)\\  &amp; =  &amp; \frac{n.(n+1)}{2} + (n+1)\\
 &amp; = &amp; \frac{n^2 + 3n +2}{2} \\
 &amp; = &amp;\frac{(n+1).((n+1)+1)}{2}  \\
-\end{array}
-\]</span>So, we conclude that every positive integer <span class="math inline">\(n\)</span> satisfies the condition.</p>
-</div>
+\end{array}\]</span> So, all positive integers meet the condition.</p>
 </div>
 <p>A word of caution. The principle of induction becomes all too powerful when it is <em>misused.</em> Here is an example of how a misapplication of mathematical induction can lead us astray. Let me give you some examples.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How Not to Use Induction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\Phi(n)\)</span> be the condition on positive integers:</p>
+<div id="exm-not-to" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.10 (How Not to Use Induction)</strong></span> Let <span class="math inline">\(\Phi(n)\)</span> be the condition on positive integers:</p>
 <ul>
-<li>If <span class="math inline">\(A\)</span> is a set of <span class="math inline">\(n\)</span> students, then they all share a birthday.</li>
+<li>If <span class="math inline">\(A\)</span> is a set of <span class="math inline">\(n\)</span> students, then they all belong to the same cohort.</li>
 </ul>
 <p>By induction on the positive integers, it suffices to show two claims:</p>
 <ul>
 <li><p><span class="math inline">\(\Phi(1)\)</span>.</p>
-<p>But of course, if <span class="math inline">\(A\)</span> is a singleton, then there is just one birthday.</p></li>
+<p>But of course, if <span class="math inline">\(A\)</span> is a singleton, then there is just one cohort .</p></li>
 <li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
-<p>Consider the transition from <span class="math inline">\(2\)</span> to <span class="math inline">\(3\)</span>. Suppose <span class="math inline">\(A\)</span> contains three students <span class="math inline">\(a, b, c\)</span>. On the assumption that <span class="math inline">\(\Phi(2)\)</span>, we know both that the members of every two-element subset of <span class="math inline">\(A\)</span> share a birthday. In particular, <span class="math inline">\(a, b\)</span> share a birthday and that <span class="math inline">\(b, c\)</span> share a birthday. So, <span class="math inline">\(a, b, c\)</span> must all share a birthday.</p>
+<p>Consider the transition from <span class="math inline">\(2\)</span> to <span class="math inline">\(3\)</span>. Suppose <span class="math inline">\(A\)</span> contains three students <span class="math inline">\(a, b, c\)</span>. On the assumption that <span class="math inline">\(\Phi(2)\)</span>, we have that <em>any two of them</em> belong to the same cohort. So, <span class="math inline">\(a, b\)</span> belong to the same cohort and <span class="math inline">\(b, c\)</span> belong to the same cohort. So, <span class="math inline">\(a, b, c\)</span> must all belong to the same cohort.</p>
 <p>We may generalize the argument for other cases as well.</p></li>
 </ul>
-<p>It would seem to follow that no matter what <span class="math inline">\(n\)</span> may be, a set of <span class="math inline">\(n\)</span> students must share a birthday. <strong>Therefore, all students must share a birthday.</strong></p>
+<p>It would seem to follow that no matter what <span class="math inline">\(n\)</span> may be, a set of <span class="math inline">\(n\)</span> students must belong to the same cohort. <strong>Therefore, all students are in the same cohort.</strong></p>
 <p>The conclusion is false, but <em>where exactly is the flaw in the argument?</em></p>
 </div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-How Not to Use Induction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(\Phi(n)\)</span> be the following condition on natural numbers:</p>
+<div id="exm-not-2" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.11 (How Not to Use Induction)</strong></span> Let <span class="math inline">\(\Phi(n)\)</span> be the condition on natural numbers:</p>
 <ul>
 <li>if two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(n\)</span> elements, then <span class="math inline">\(|A|=|B|\)</span>.</li>
 </ul>
@@ -764,18 +662,18 @@ How Not to Use Induction
 <p>Suppose two sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have at most <span class="math inline">\(0\)</span> elements. Then. <span class="math inline">\(A =\emptyset =B\)</span>.</p></li>
 <li><p>If <span class="math inline">\(\Phi(n)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</p>
 <p>Suppose <span class="math inline">\(\Phi(n)\)</span> and let now <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two sets with at most <span class="math inline">\(n+1\)</span> elements. Now, consider the sets <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span>, which arise from <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by subtracting just one element <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from each set. By inductive hypothesis, since <span class="math inline">\(A^-\)</span> and <span class="math inline">\(B^-\)</span> have at most <span class="math inline">\(n\)</span> elements, they are are in one-one correspondence. But if they are, so will be <span class="math inline">\(A^- \cup \{a\}\)</span> and <span class="math inline">\(B^- \cup \{b\}\)</span>, which are none other than <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>.</p></li>
+<li></li>
 </ul>
 <p>It would seem to follow that no two sets with <span class="math inline">\(n\)</span> of fewer elements differ in cardinality, which would mean that no two finite sets differ in cardinality.</p>
 <p>That gives us the absurd conclusion that <strong><em>all finite sets are in one-one correspondence</em></strong>.</p>
 <p><em>Where exactly is the flaw in the argument?</em> The problem lies in the assumption that no matter what set we are given, we may, if we like, <em>take away</em> one element, which is not the case with the empty set.</p>
-</div>
 </div>
 <p>We will sometimes rely on alternative but equivalent forms of induction:</p>
 <div id="prp-compind" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.7 (Complete Induction)</strong></span> Given a condition <span class="math inline">\(\Phi(n)\)</span> on natural numbers, if</p>
 <ul>
 <li><span class="math inline">\(\Phi(0)\)</span>, and</li>
-<li>for all <span class="math inline">\(m \leq n\)</span>, if <span class="math inline">\(\Phi(m)\)</span>, then <span class="math inline">\(\Phi(n+1)\)</span>.</li>
+<li>if for all <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Phi(m)\)</span>, then <span class="math inline">\(\Phi(n)\)</span>.</li>
 </ul>
 <p>then <em>for every</em> natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Phi(n)\)</span>.</p>
 </div>
@@ -783,59 +681,28 @@ How Not to Use Induction
 <div id="prp-compindbas" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 2.8 (Complete Induction without a Base Case)</strong></span> Given a condition <span class="math inline">\(\Phi(n)\)</span> on natural numbers, if</p>
 <ul>
-<li>for all <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Phi(m)\)</span>, then <span class="math inline">\(\Phi(n)\)</span>,</li>
+<li>if for all <span class="math inline">\(m &lt; n\)</span>, <span class="math inline">\(\Phi(m)\)</span>, then <span class="math inline">\(\Phi(n)\)</span>,</li>
 </ul>
 <p>then <em>for every</em> natural number <span class="math inline">\(n\)</span>, <span class="math inline">\(\Phi(n)\)</span>.</p>
 </div>
 <p>Notice that <span class="math inline">\(\Phi(0)\)</span> will be true if the conditional above holds, for it will be vacuously true that <em>all natural numbers</em> less than <span class="math inline">\(0\)</span> satisfy the condition <span class="math inline">\(\Phi\)</span>.</p>
 <p>We will often define infinite sets by <em>recursion</em>, which is closely connected to induction.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We define a set of <em>factorial numbers</em> by recursion on the natural numbers:</p>
-<p><span class="math display">\[
-\text{F} := 1 | (n+1).F(n)
-\]</span></p>
+<div id="exm-rec" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.12</strong></span> We define a set of <em>factorial numbers</em> by recursion on the natural numbers:</p>
+<p><span class="math display">\[\text{F} := 1 | (n+1).F(n)\]</span></p>
 <p>Here is how to read that notation. We generate the factorial numbers by specifying</p>
-<p><span class="math display">\[
-F(0) = 1
-\]</span></p>
+<p><span class="math display">\[F(0) = 1\]</span></p>
 <p>and by explaining how to move from <span class="math inline">\(F(n)\)</span> to <span class="math inline">\(F(n+1)\)</span>:</p>
-<p><span class="math display">\[
-F(n+1) = (n+1). F(n)
-\]</span></p>
+<p><span class="math display">\[F(n+1) = (n+1). F(n)\]</span></p>
 <p>The factorial number <span class="math inline">\(F(n)\)</span> is commonly written as <span class="math inline">\(n!\)</span>. So, a number is a <em>factorial number</em> if it is <span class="math inline">\(F(0)\)</span>, namely, <span class="math inline">\(1\)</span>, or if it can be reached by repeated application of the rule that takes one from <span class="math inline">\(F(n)\)</span> to <span class="math inline">\(F(n+1)\)</span>. That means that the set of factorial numbers include:</p>
-<p><span class="math display">\[
-1 \ 2 \ 6 \ 24 \ \cdots
-\]</span></p>
+<p><span class="math display">\[1 \ 2 \ 6 \ 24 \ \cdots\]</span></p>
 <p>In other words, a number is factorial if and only if we may eventually reach that number by a finite number of application of the rules included in the definition.</p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You could define by recursion a set of formulas for a formal language. Suppose we start with a simple vocabulary, which consists of only three symbols:</p>
-<p><span class="math display">\[
-@, \#, \%
-\]</span></p>
+<div id="exm-form" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 2.13</strong></span> You could define by recursion a set of formulas for a formal language. Suppose we start with a simple vocabulary, which consists of only three symbols:</p>
+<p><span class="math display">\[@, \#, \%\]</span></p>
 <p>We could define a set of formulas for that language by means of the following recursion:</p>
-<p><span class="math display">\[
-\varphi ::= @ \ | \  \% \varphi \ | \ (\varphi \ \#  \ \psi)
-\]</span></p>
+<p><span class="math display">\[\varphi ::= @ \ | \  \% \varphi \ | \ (\varphi \ \#  \ \psi)\]</span></p>
 <p>Here is how to read that notation now.</p>
 <ul>
 <li><p><span class="math inline">\(@\)</span> is a formula of the language</p></li>
@@ -843,10 +710,7 @@ Example
 <li><p>if <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> are formulas of the language, then <span class="math inline">\((\varphi \ \# \ \psi)\)</span> is a formula.</p></li>
 </ul>
 <p>That means that the set of formulas of the language includes:</p>
-<p><span class="math display">\[
-@, \%@, \%\% @, \dots, (@ \ \# \ @), (@ \ \# \% @), \% (@ \ \# \ @), \dots
-\]</span></p>
-</div>
+<p><span class="math display">\[@, \%@, \%\% @, \dots, (@ \ \# \ @), (@ \ \# \% @), \% (@ \ \# \ @), \dots\]</span></p>
 </div>
 
 
@@ -861,236 +725,243 @@ Example
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1098,185 +969,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./intro.html" class="pagination-link" aria-label="Why Modal Logic?">
