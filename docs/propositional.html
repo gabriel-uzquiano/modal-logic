@@ -388,17 +388,8 @@ window.Quarto = {
 <p>then <em>every</em> formula satisfies <span class="math inline">\(\Phi(\alpha)\)</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Call a formula <span class="math inline">\(\varphi\)</span> <em>balanced</em> iff <span class="math inline">\(\varphi\)</span> contains the same number of left and right parentheses. We will use an induction to establish the proposition:</p>
+<div id="exm-balance" class="featured theorem example">
+<p><span class="theorem-title"><strong>Example 3.1</strong></span> Call a formula <span class="math inline">\(\varphi\)</span> <em>balanced</em> iff <span class="math inline">\(\varphi\)</span> contains the same number of left and right parentheses. We will use an induction to establish the proposition:</p>
 <ul>
 <li>Every formula is balanced.</li>
 </ul>
@@ -411,7 +402,6 @@ window.Quarto = {
 <p>Let <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\psi\)</span> be two balanced formulas and let <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> respectively be the number of left and right parentheses each formula has. <span class="math inline">\((\varphi \to \psi)\)</span> contains <span class="math inline">\(n+m +1\)</span> left parentheses, that is the number of left parentheses in <span class="math inline">\(\varphi\)</span> plus that of left parentheses in <span class="math inline">\(\psi\)</span> plus the initial left parenthesis of the formula. <span class="math inline">\((\varphi \to \psi)\)</span> similarly contains <span class="math inline">\(n+m +1\)</span> right parentheses, that is the number of right parentheses in <span class="math inline">\(\varphi\)</span> plus that of right parentheses in <span class="math inline">\(\psi\)</span> plus the final right parenthesis of the formula. So, <span class="math inline">\((\varphi \to \psi)\)</span> contains exactly the same number of left and right parentheses, which means that it will be a balanced formula.</p></li>
 </ul>
 <p>We conclude that every formula is balanced.</p>
-</div>
 </div>
 </section>
 <section id="semantics" class="level2" data-number="3.2">
