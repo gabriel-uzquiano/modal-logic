@@ -63,7 +63,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e268cf832660442648a38652dbf3363d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39719d405981929e5c1c843a3b6f3070.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -345,23 +345,13 @@ window.Quarto = {
 <p>The content of someone’s knowledge of the world is given by his class of <em>epistemically accessible</em> worlds. These are the worlds that might, for all he knows, be his world; world <span class="math inline">\(w\)</span> is one of them iff he knows nothing, either explicitly or implicitly, to rule out the hypothesis that <span class="math inline">\(w\)</span> is the world where he lives.</p>
 </blockquote>
 <p>In what follows we speak of <em>states</em> rather than worlds, and we take a state <span class="math inline">\(v\)</span> to be accessible from another state <span class="math inline">\(u\)</span> just in case whatever the agent knows to be the case in <span class="math inline">\(u\)</span> is the case in <span class="math inline">\(v\)</span>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>States of Information
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <em>relational</em> model <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{K_i}\)</span> is a structure <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, where:</p>
+<div id="def-states-of-information" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 12.1 (States of Information)</strong></span> A <em>relational</em> model <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{K_i}\)</span> is a structure <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, where:</p>
 <ol type="1">
 <li><span class="math inline">\(W\)</span> is a non-empty set of information states or states of the world,</li>
 <li>For each <span class="math inline">\(i\in I\)</span>, <span class="math inline">\(R_i\)</span> is a binary accessibility relation on <span class="math inline">\(W\)</span>, and</li>
 <li><span class="math inline">\(V\)</span> is a function, which assigns to each propositional variable <span class="math inline">\(p\)</span> a set of states <span class="math inline">\(V(p)\)</span>.</li>
 </ol>
-</div>
 </div>
 <p>We may use state models to model real-life examples. Suppose you have lost sight of your phone, which you think, you may have been stolen or misplaced. In one state, your phone has been stolen (<span class="math inline">\(p\)</span>), whereas in another state you simply misplaced it and has not been stolen (<span class="math inline">\(\neg p\)</span>). In all epistemically accessible states, however, your phone had been with you just yesterday night (<span class="math inline">\(q\)</span>). That would place you in a state in which you <em>know</em> your phone had been with you yesterday night, <span class="math inline">\(\textsf{K}_i q\)</span>, but you do not know whether your phone has been stolen: <span class="math inline">\(\neg \textsf{K}_i p \wedge \neg \textsf{K}_i \neg p\)</span>.</p>
 <p>One way to model the situation is through a model, which consists of two states <span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> corresponding to two epistemic alternatives: one in which your phone has been stolen, and one in which it has not been stolen.</p>
@@ -373,17 +363,8 @@ window.Quarto = {
 <p>Notice that <span class="math inline">\(\textsf{K}_i q\)</span> is true at either state because <span class="math inline">\(q\)</span> is true at all epistemically accessible states, yet neither <span class="math inline">\(\textsf{K}_i p\)</span> nor <span class="math inline">\(\textsf{K}_i \neg p\)</span> is true at either state.</p>
 <p>Knowledge rules out epistemic alternatives and helps one locate the actual world within the space of epistemic live options. Your lack of knowledge whether your phone has been stolen is represented by an inability to locate the actual world in the space of epistemic live options above. Nothing you knows enables you to distinguish <span class="math inline">\(s_1\)</span> from <span class="math inline">\(s_2\)</span>.</p>
 <p>We now explain what it is for a formula <span class="math inline">\(\varphi\)</span> <em>true at</em> a state <span class="math inline">\(s\)</span> in a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M, s \Vdash \varphi\)</span>, inductively.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Truth at a State
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">\(M\)</span> is a model of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, we define <span class="math inline">\(M, s \Vdash \varphi\)</span> as follows:</p>
+<div id="def-truth-at-a-state" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 12.2 (Truth at a State)</strong></span> If <span class="math inline">\(M\)</span> is a model of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, we define <span class="math inline">\(M, s \Vdash \varphi\)</span> as follows:</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 M, s \Vdash p &amp; \text{iff} &amp; s \in V(p)\\
@@ -397,20 +378,9 @@ M, s \Vdash \langle \textsf{K}_i \rangle \varphi &amp; \text{iff} &amp; \text{fo
 \end{array}
 \]</span></p>
 </div>
-</div>
 <p>We are now in a position to define truth in a model of epistemic logic.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Truth in a Model
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true in</em> a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M\Vdash \varphi\)</span>, if, and only if, for every <span class="math inline">\(s\in W\)</span>, <span class="math inline">\(M, s \Vdash \varphi\)</span>.</p>
-</div>
+<div id="def-truth-in-a-model" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 12.3 (Truth in a Model)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is <em>true in</em> a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M\Vdash \varphi\)</span>, if, and only if, for every <span class="math inline">\(s\in W\)</span>, <span class="math inline">\(M, s \Vdash \varphi\)</span>.</p>
 </div>
 <p>These decisions are not inconsequential. For it follows that agents know all logical truths and that they know what follows from what they know. That is the framework vindicates a rule of necessitation and all substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span>: <span class="math display">\[\tag{N}
 \varphi / \textsf{K}_i \varphi
@@ -481,17 +451,8 @@ p \to K_i p
 <section id="information-flow" class="level2" data-number="12.1">
 <h2 data-number="12.1" class="anchored" data-anchor-id="information-flow"><span class="header-section-number">12.1</span> Information Flow</h2>
 <p>The insight behind the possible worlds semantics for epistemic logic is that agents locate themselves in the space of epistemic live options by excluding states of the world as live options in light of new information. The Muddy Children puzzle illustrates the dynamic aspect of this update mechanism:</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Muddy Children
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Three children <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> have been playing outside when they are called back inside by their guardian. Two of them, say <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>, have mud on their forehead, but none of them can see what is on their forehead. Each child, however, can see which of the other children are muddy. Once inside, the guardian asserts:</p>
+<div id="exm-muddy-children" class="theorem example">
+<p><span class="theorem-title"><strong>Example 12.1 (Muddy Children)</strong></span> Three children <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> have been playing outside when they are called back inside by their guardian. Two of them, say <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>, have mud on their forehead, but none of them can see what is on their forehead. Each child, however, can see which of the other children are muddy. Once inside, the guardian asserts:</p>
 <ol type="A">
 <li>At least one of you is muddy.</li>
 </ol>
@@ -505,7 +466,6 @@ p \to K_i p
 <li>If you know you are muddy, please step forward.</li>
 </ol>
 <p>After the second request, the two muddy children, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>, <em>will</em> step forward while the other child, <span class="math inline">\(b\)</span>, stays behind. For <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> <em>now</em> know that they are muddy.</p>
-</div>
 </div>
 <p>The example raises some questions:</p>
 <ul>
@@ -682,8 +642,8 @@ M', 101 \Vdash \textsf{C} (p_1 \vee p_2 \vee p_3).
 \]</span></p>
 <p>For suppose the conditional <span class="math inline">\(\varphi \to \textsf{E}(\psi \wedge \varphi)\)</span> is valid. Then if <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(s\)</span>, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(s\)</span>, which means that if <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in one step, then <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t\)</span>. So, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(t\)</span>. If <span class="math inline">\(u\)</span> is now reachable from <span class="math inline">\(t\)</span> in one step, then <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> will be true at <span class="math inline">\(t\)</span>, etc.</p>
 <p>We are in a position to prove some theorems of the logic of common knowledge.</p>
-<div class="proposition">
-<p><span class="math inline">\(\vdash \textsf{C}p \to \textsf{E} \textsf{C}p\)</span></p>
+<div id="prp-prp" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 12.1</strong></span> <span class="math inline">\(\vdash \textsf{C}p \to \textsf{E} \textsf{C}p\)</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the Fixed Point axiom: <span class="math display">\[
@@ -694,8 +654,8 @@ M', 101 \Vdash \textsf{C} (p_1 \vee p_2 \vee p_3).
 \end{array}
 \]</span></p>
 </div>
-<div class="proposition">
-<p><span class="math inline">\(\vdash \textsf{C}p\to \textsf{C C}p\)</span></p>
+<div id="prp-prp-2" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 12.2</strong></span> <span class="math inline">\(\vdash \textsf{C}p\to \textsf{C C}p\)</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the rule of inference for common knowledge. <span class="math display">\[

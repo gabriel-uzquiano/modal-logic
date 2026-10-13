@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e268cf832660442648a38652dbf3363d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39719d405981929e5c1c843a3b6f3070.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -350,17 +350,8 @@ window.Quarto = {
 \mathsf{P} \varphi &amp; &amp; \text{It has been the case that} \ \varphi \ \text{at least once in the Past}\\
 \end{array}
 \]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>The Language of Tense Logic
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We begin with stock of propositional variables or <em>atoms</em>:</p>
+<div id="def-the-language-of-tense-logic" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.1 (The Language of Tense Logic)</strong></span> We begin with stock of propositional variables or <em>atoms</em>:</p>
 <p><span class="math display">\[
 AT := p, q, r, \cdots
 \]</span></p>
@@ -368,7 +359,6 @@ AT := p, q, r, \cdots
 <p><span class="math display">\[
 \varphi ::= AT \ | \ \neg \varphi \ | \ (\varphi \to \psi) \ | \ \textsf{F} \varphi \ | \ \textsf{P} \varphi
 \]</span></p>
-</div>
 </div>
 <p>We now define two additional tense operators:</p>
 <p><span class="math display">\[
@@ -378,7 +368,7 @@ AT := p, q, r, \cdots
 \end{array}
 \]</span></p>
 <div id="def-t" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 9.1 (Derived Tenses)</strong></span> <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 9.2 (Derived Tenses)</strong></span> <span class="math display">\[
 \begin{array}{lll}
 \textsf{G} \varphi &amp; := &amp; \neg \textsf{F} \neg \varphi \\
 \textsf{H} \varphi &amp; := &amp; \neg \textsf{P} \neg \varphi \\
@@ -398,36 +388,17 @@ AT := p, q, r, \cdots
 <section id="flow-of-time-models" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="flow-of-time-models"><span class="header-section-number">9.2</span> Flow of Time Models</h2>
 <p>We model the language with the help of what we may call <em>flow of time</em> models:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Flow of Time Models
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <em>flow of time model</em> <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> is a structure <span class="math inline">\((T, \prec, V)\)</span> where:</p>
+<div id="def-flow-of-time-models" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.3 (Flow of Time Models)</strong></span> A <em>flow of time model</em> <span class="math inline">\(M\)</span> for <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> is a structure <span class="math inline">\((T, \prec, V)\)</span> where:</p>
 <ol type="1">
 <li><p><span class="math inline">\(T\)</span> is a non-empty set of <em>times</em> or temporary <em>states</em> of the world.</p></li>
 <li><p><span class="math inline">\(\prec\)</span> is an <em>earlier than</em> relation on <span class="math inline">\(T\)</span>.</p></li>
 <li><p><span class="math inline">\(V\)</span> maps each propositional variable <span class="math inline">\(p\)</span> to a set of times <span class="math inline">\(V(t) \subseteq T\)</span>.</p></li>
 </ol>
 </div>
-</div>
 <p>We now explain what is for a formula to be true at a time in a flow of time model:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Truth at a Time
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A formula <span class="math inline">\(\varphi\)</span> is <em>true at a time</em> <span class="math inline">\(t\)</span> <em>in a flow of time model</em> <span class="math inline">\(M\)</span>, which we write: <span class="math inline">\(M, t \Vdash \varphi\)</span>: <span class="math display">\[
+<div id="def-truth-at-a-time" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.4 (Truth at a Time)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is <em>true at a time</em> <span class="math inline">\(t\)</span> <em>in a flow of time model</em> <span class="math inline">\(M\)</span>, which we write: <span class="math inline">\(M, t \Vdash \varphi\)</span>: <span class="math display">\[
 \begin{array}{lll}
 M, t \Vdash p &amp; \text{iff} &amp; t \in V(p)\\
 M, t \Vdash \neg \varphi &amp; \text{iff} &amp; M, t \nVdash \varphi\\
@@ -443,68 +414,28 @@ M, t \Vdash \textsf{H} \varphi &amp; \text{iff} &amp; \text{for all} \ u \in W \
 \end{array}
 \]</span></p>
 </div>
-</div>
 <p>We finally define what is for a formula to be true at a model.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Truth at a Model
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A formula <span class="math inline">\(\varphi\)</span> to be <em>true in a flow of time model</em> <span class="math inline">\(M\)</span>, which we write <span class="math inline">\(M \Vdash \varphi\)</span> if, and only if, for all <span class="math inline">\(t\in T\)</span>, <span class="math inline">\(M, t \Vdash \varphi\)</span>.</p>
-</div>
+<div id="def-truth-at-a-model" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.5 (Truth at a Model)</strong></span> A formula <span class="math inline">\(\varphi\)</span> to be <em>true in a flow of time model</em> <span class="math inline">\(M\)</span>, which we write <span class="math inline">\(M \Vdash \varphi\)</span> if, and only if, for all <span class="math inline">\(t\in T\)</span>, <span class="math inline">\(M, t \Vdash \varphi\)</span>.</p>
 </div>
 <p>Much like in modal propositional logic, flow of time models are based on flow of time frames:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Frame
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <em>frame</em> <span class="math inline">\(F\)</span> for <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> is an ordered pair <span class="math inline">\((T, \prec)\)</span> where:</p>
+<div id="def-frame" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.6 (Frame)</strong></span> A <em>frame</em> <span class="math inline">\(F\)</span> for <span class="math inline">\(\mathcal{L}^{\textsf{F}, \textsf{P}}\)</span> is an ordered pair <span class="math inline">\((T, \prec)\)</span> where:</p>
 <ol type="1">
 <li><p><span class="math inline">\(T\)</span> is a non-empty set of <em>times</em>, and</p></li>
 <li><p><span class="math inline">\(\prec\)</span> is a binary <em>earlier than relation</em> on <span class="math inline">\(T\)</span></p></li>
 </ol>
 <p>A model <span class="math inline">\(M\)</span> is <em>based on a frame</em> <span class="math inline">\(F = (T, \prec)\)</span> if, and only if, there is an assignment <span class="math inline">\(V\)</span> such that <span class="math inline">\(M = (F, V)\)</span>. That is, <span class="math inline">\(M = (V, \prec, V)\)</span>.</p>
 </div>
-</div>
 <p>For a formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^{\textsf{F},\textsf{P}}\)</span> to be valid in a frame is to be true in every model based on that frame, that is, to be true at every world of every model based on that frame.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Validity
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a frame <span class="math inline">\((T, \prec)\)</span>, written <span class="math inline">\((T, \prec) \models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is true in every model <span class="math inline">\((T, \prec, V)\)</span> based on the frame <span class="math inline">\((T, \prec)\)</span>.</p>
+<div id="def-validity" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.7 (Validity)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a frame <span class="math inline">\((T, \prec)\)</span>, written <span class="math inline">\((T, \prec) \models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is true in every model <span class="math inline">\((T, \prec, V)\)</span> based on the frame <span class="math inline">\((T, \prec)\)</span>.</p>
 <p>That is, the formula remains true across assignments no matter what sets of worlds we assign to what propositional variables.</p>
 <p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a class of frames <span class="math inline">\(\mathcal{C}\)</span>, written <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span> if, and only if, <span class="math inline">\(\varphi\)</span> is <em>valid</em> in every frame <span class="math inline">\((T, \prec)\)</span> in the class <span class="math inline">\(\mathcal{C}\)</span>.</p>
 </div>
-</div>
 <p>We may, however, want to rule out some frames on the grounds that they fail to satisfy plausible constraints on a physical time order. Some of these constraints are listed below along with formulas of tense logic we may use to characterize flow of time frames in which the relevant condition is satisfied.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Constraints on the Flow of Time
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[
+<div id="def-constraints-on-the-flow-of-t" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.8 (Constraints on the Flow of Time)</strong></span> <span class="math display">\[
 \begin{array}{lllll}
 \text{Transitivity} &amp; &amp; u \prec t \wedge t \prec v \to u \prec v &amp; &amp;\textsf{FF} p \to \textsf{F}p \\
 &amp; &amp; &amp; &amp; \textsf{G} p \to \textsf{GG}p \\
@@ -530,7 +461,6 @@ M, t \Vdash \textsf{H} \varphi &amp; \text{iff} &amp; \text{for all} \ u \in W \
 \end{array}
 \]</span></p>
 </div>
-</div>
 <p>Consider the case of <span class="math inline">\(R\)</span>-Totality, for example:</p>
 <div id="prp-t1" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 9.1</strong></span> The condition of <span class="math inline">\(R\)</span>-Totality is modally defined by the axiom</p>
@@ -538,8 +468,8 @@ M, t \Vdash \textsf{H} \varphi &amp; \text{iff} &amp; \text{for all} \ u \in W \
 (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q))
 \]</span></p>
 </div>
-<div>
-<p><strong>Proof</strong>. We argue that for every frame <span class="math inline">\((T, \prec)\)</span>,</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We argue that for every frame <span class="math inline">\((T, \prec)\)</span>,</p>
 <p><span class="math display">\[
 \begin{array}{lcl}
 &amp; (T, \prec) \models (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q)) &amp;  \\
@@ -580,17 +510,8 @@ t \prec v \vee  t = v \vee v \prec t.
 <section id="the-minimal-tense-logic" class="level3" data-number="9.3.1">
 <h3 data-number="9.3.1" class="anchored" data-anchor-id="the-minimal-tense-logic"><span class="header-section-number">9.3.1</span> The Minimal Tense Logic</h3>
 <p>The minimal tense logic is sound and complete with respect to the class of all frames.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Minimal Tense Logic
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The minimal tense logic <span class="math inline">\(\textsf{K}_t\)</span> consists of an infinite set of axioms and two rules of inference.</p>
+<div id="def-minimal-tense-logic" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.9 (Minimal Tense Logic)</strong></span> The minimal tense logic <span class="math inline">\(\textsf{K}_t\)</span> consists of an infinite set of axioms and two rules of inference.</p>
 <p>The axioms of <span class="math inline">\(\textsf{L}_0\)</span> include:</p>
 <ul>
 <li><p>substitution instances of tautologies of propositional logic</p></li>
@@ -623,7 +544,6 @@ p \to \textsf{HF} p
 \varphi/\textsf{H} \varphi
 \]</span></p>
 </div>
-</div>
 <p>The <em>mirror image</em> <span class="math inline">\(\varphi^M\)</span> of a formula <span class="math inline">\(\varphi\)</span> is the formula that results from <span class="math inline">\(\varphi\)</span> when we replace every occurrence of <span class="math inline">\(\textsf{F}\)</span> in <span class="math inline">\(\varphi\)</span> with an occurrence of <span class="math inline">\(\textsf{P}\)</span> in <span class="math inline">\(\varphi\)</span> and vice versa. That means that every occurrence of <span class="math inline">\(\textsf{G}\)</span> or <span class="math inline">\(\neg \textsf{F} \neg\)</span> is replaced by an occurrence of <span class="math inline">\(\textsf{H}\)</span> and vice versa.</p>
 <div id="prp-mi" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 9.2</strong></span> The minimal tense logic is closed under a derived rule of mirror images:</p>
@@ -631,8 +551,8 @@ p \to \textsf{HF} p
 \varphi/\varphi^M
 \]</span></p>
 </div>
-<div id="proof">
-<p><strong>Proof</strong>. The mirror image of every axiom is itself an axiom, and similarly for the rules of inference. When the mirror image transformation is applied to every line of a proof whose last line is <span class="math inline">\(\varphi\)</span>, the result is still a proof, though now a derivation of <span class="math inline">\(\varphi^M\)</span>,</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The mirror image of every axiom is itself an axiom, and similarly for the rules of inference. When the mirror image transformation is applied to every line of a proof whose last line is <span class="math inline">\(\varphi\)</span>, the result is still a proof, though now a derivation of <span class="math inline">\(\varphi^M\)</span>,</p>
 </div>
 <div id="prp-c" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 9.3</strong></span> The minimal tense logic <span class="math inline">\({\textsf{K}}_t\)</span> is complete with respect to the class of all flow of time frames.</p>
@@ -642,17 +562,8 @@ p \to \textsf{HF} p
 <section id="extensions-of-the-minimal-tense-logic" class="level3" data-number="9.3.2">
 <h3 data-number="9.3.2" class="anchored" data-anchor-id="extensions-of-the-minimal-tense-logic"><span class="header-section-number">9.3.2</span> Extensions of the Minimal Tense Logic</h3>
 <p>Different extensions of the minimal tense logic aim to capture different structural constraints on temporal order. One may, for example, attempt to capture the view that temporal order exemplifies the structure of the rational line. That, in turn, would require one to supplement <span class="math inline">\(\textsf{L}_0\)</span> with axioms designed to make sure the order is total and extendible in both directions as well as dense.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>The Tense Logic of the Rational Line
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The complete tense logic for the rational number line <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> is <span class="math inline">\(\textsf{K}_t\)</span> supplemented with the axioms:</p>
+<div id="def-the-tense-logic-of-the-ratio" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.10 (The Tense Logic of the Rational Line)</strong></span> The complete tense logic for the rational number line <span class="math inline">\((\mathbb{Q}, &lt;)\)</span> is <span class="math inline">\(\textsf{K}_t\)</span> supplemented with the axioms:</p>
 <p><span class="math display">\[
 \begin{array}{lll}
 &amp; (\textsf{F}p \wedge \textsf{F} q) \to ( \textsf{F}(p \wedge \textsf{F} q) \vee \textsf{F}(p \wedge q) \vee \textsf{F}(\textsf{F}p \wedge q)) &amp; R\text{-Totality}\\
@@ -663,23 +574,12 @@ p \to \textsf{HF} p
 \end{array}
 \]</span></p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>The Tense Logic of the Real Line
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The complete tense logic for the real line line <span class="math inline">\((\mathbb{R}, &lt;)\)</span> supplements the axioms above with a principle designed to make sure the frame is Dedekind-complete:</p>
+<div id="def-the-tense-logic-of-the-real-" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.11 (The Tense Logic of the Real Line)</strong></span> The complete tense logic for the real line line <span class="math inline">\((\mathbb{R}, &lt;)\)</span> supplements the axioms above with a principle designed to make sure the frame is Dedekind-complete:</p>
 <p><span class="math display">\[
 (\textsf{P}\textsf{F} p \wedge \textsf{F} \textsf{G} \neg p) \to \textsf{P}\textsf{F}(\textsf{G}\neg p \wedge \textsf{H}\textsf{F} p)
 \]</span></p>
 <p>A flow of time frame <span class="math inline">\((T, &lt;)\)</span> is Dedekind-complete if, and. only if, every set of time points that has an upper <span class="math inline">\(R\)</span>-bound has a least upper <span class="math inline">\(R\)</span>-bound.</p>
-</div>
 </div>
 
 

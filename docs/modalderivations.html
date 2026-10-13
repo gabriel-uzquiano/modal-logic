@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e268cf832660442648a38652dbf3363d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39719d405981929e5c1c843a3b6f3070.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -323,26 +323,16 @@ window.Quarto = {
 </header>
 
 
-<p>We now aim for an alternative characterization of the set of formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are valid in different classes of frames. We will begin with a system K, whose theorems are all and only formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are valid in every frame. We will later consider extensions of that system, whose theorems are all and only formulas valid in every frame in a certain class, e.g., reflexive, symmetric, transitive, etc.</p>
+<p>We now aim for an alternative characterization of sets of formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> valid in different classes of frames. We will begin with a system K, whose theorems are all and only formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are valid in every frame. We will later consider extensions of that system, whose theorems are all and only formulas valid in every frame in a certain class, e.g., reflexive, symmetric, transitive, etc.</p>
 <section id="the-minimal-normal-modal-logic" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="the-minimal-normal-modal-logic"><span class="header-section-number">7.1</span> The Minimal Normal Modal Logic</h2>
 <p>The minimal normal modal logic consists of an infinite set of axioms and two rules of inference.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>The System <span class="math inline">\(\textsf{K}\)</span>
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <strong>axioms</strong> of <span class="math inline">\(\textsf{K}\)</span> include:</p>
+<div id="def-the-system-k" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.1 (The System <span class="math inline">\(\textsf{K}\)</span>)</strong></span> The <strong>axioms</strong> of <span class="math inline">\(\textsf{K}\)</span> include:</p>
 <ul>
 <li><p>substitution instances of tautologies of propositional logic</p></li>
 <li><p>substitution instances of the axiom: <span class="math display">\[\tag{$\textsf{K}$}
-\Box(p \to  q) \to (\Box p \to \Box q)\\
-\]</span></p></li>
+\Box(p \to  q) \to (\Box p \to \Box q)\\\]</span></p></li>
 </ul>
 <p>The <strong>rules of inference</strong> of <span class="math inline">\(\textsf{K}\)</span> include:</p>
 <ul>
@@ -350,60 +340,33 @@ window.Quarto = {
 </ul>
 <p><span class="math display">\[\tag{$\textsf{MP}$}
 \varphi, (\varphi \to \psi)/\psi
-%\text{If} \  \vdash \varphi \ \text{and} \  \vdash (\varphi \to \psi), \ \text{then} \ \vdash \psi
-\]</span></p>
+%\text{If} \  \vdash \varphi \ \text{and} \  \vdash (\varphi \to \psi), \ \text{then} \ \vdash \psi\]</span></p>
 <ul>
 <li>Necessitation:</li>
 </ul>
-<p><span class="math display">\[\tag{$\textsf{N}$}
+<p><span class="math display">\[\tag{$\textsf{RN}$}
 \varphi/\Box \varphi
-%\text{If} \  \vdash \varphi \ \text{then} \ \vdash \Box \varphi
-\]</span></p>
+%\text{If} \  \vdash \varphi \ \text{then} \ \vdash \Box \varphi\]</span></p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Derivation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A derivation in <span class="math inline">\(\textsf{K}\)</span> is, as usual, a finite sequence of formulas <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, each of them</p>
+<div id="def-derivation" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.2 (Derivation)</strong></span> A derivation in <span class="math inline">\(\textsf{K}\)</span> is, as usual, a finite sequence of formulas <span class="math inline">\((\chi_1, \dots, \chi_n)\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, each of them</p>
 <ul>
 <li><p>a substitution instance of <span class="math inline">\(\textsf{K}\)</span></p></li>
 <li><p>an outcome of an application of <span class="math inline">\(\textsf{MP}\)</span> to two prior formulas</p></li>
-<li><p>an outcome of an application of <span class="math inline">\(\textsf{N}\)</span> to a prior formula</p></li>
+<li><p>an outcome of an application of <span class="math inline">\(\textsf{RN}\)</span> to a prior formula</p></li>
 </ul>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> is a theorem of <span class="math inline">\(\textsf{K}\)</span>, written <span class="math inline">\(\vdash_{\textsf{K}} \varphi\)</span>, if, and only if, some proof in K ends with the formula <span class="math inline">\(\varphi\)</span>.</p>
-</div>
+<div id="def-theorem" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.3 (Theorem)</strong></span> A formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> is a theorem of <span class="math inline">\(\textsf{K}\)</span>, written <span class="math inline">\(\vdash_{\textsf{K}} \varphi\)</span>, if, and only if, some proof in K ends with the formula <span class="math inline">\(\varphi\)</span>.</p>
 </div>
 <p>The axioms of the minimal modal logic <span class="math inline">\(\textsf{K}\)</span> are valid in all frames, and the rules of inference preserve validity in all frames. So, every theorem of <span class="math inline">\(\textsf{K}\)</span> is valid in every frame.</p>
 <div id="thm-k" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 7.1</strong></span> All substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span> is valid in all frames. <span class="math display">\[\tag{$\textsf{K}$}
-\Box(p \to  q) \to (\Box p \to \Box q)\\
-\]</span></p>
+\Box(p \to  q) \to (\Box p \to \Box q)\\\]</span></p>
 </div>
-<div id="proof">
-<p><strong>Proof</strong>. Consider a substitution instance of axiom <span class="math inline">\(\textsf{K}\)</span>: <span class="math display">\[
-\Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi).
-\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Consider a substitution instance of axiom <span class="math inline">\(\textsf{K}\)</span>: <span class="math display">\[\Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi).\]</span></p>
 <p>Let <span class="math inline">\((W, R)\)</span> be a frame and let <span class="math inline">\((W, R, V)\)</span> be a model based on that frame. We argue that <span class="math inline">\((W,R,V) \models \Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi)\)</span>. To that end, let <span class="math inline">\(w \in W\)</span> and suppose that <span class="math inline">\((W,R,V), w \Vdash \Box (\varphi \to \psi)\)</span> and <span class="math inline">\((W,R,V), w \Vdash \Box \varphi\)</span>. If <span class="math inline">\(u\in W\)</span> is such that <span class="math inline">\(Rwu\)</span>, then <span class="math inline">\((W,R,V), u \Vdash \varphi \to \psi\)</span> and <span class="math inline">\((W,R,V) \Vdash \varphi\)</span>. Therefore, <span class="math inline">\((W,R,V), u  \Vdash  \psi\)</span>. Generalizing, we find <span class="math inline">\((W,R,V), w \Vdash \Box \psi\)</span>.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>While it is a purely mechanical procedure to check whether a finite sequence of formulas is a proof in a given system, it may take some skill and experience to find one. There is no perfectly general recipe for this, but as a general piece of advice, it helps to spend some time considering the question of why the formula should be valid. Since proofs and theorems of <span class="math inline">\(\textsf{K}\)</span> track validity in all frames, the question of validity may on occasion guide us to a proof.</p>
 <section id="derived-rules-of-inference" class="level3" data-number="7.1.1">
@@ -412,267 +375,160 @@ window.Quarto = {
 <div id="thm-kp" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 7.2</strong></span> If <span class="math inline">\(\vdash_{\textsf{K}} \varphi_1, \dots, \vdash_{\textsf{K}} \varphi_n\)</span> and <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\vdash_{\textsf{K}} \psi\)</span>.</p>
 </div>
-<div>
-<p><strong>Proof</strong>. Given the Deduction Theorem for Propositional Logic, if <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\varphi_1 \to (\varphi_2 \to (\dots (\varphi_n \to \psi)\dots))\)</span> is a theorem of propositional logic and thus a theorem of <span class="math inline">\(K\)</span>. By repeated applications of Modus Ponens, we infer <span class="math inline">\(\vdash_\textsf{K} \psi\)</span>.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Given the Deduction Theorem for Propositional Logic, if <span class="math inline">\(\psi\)</span> is derivable from <span class="math inline">\(\{\varphi_1, \dots, \varphi\}\)</span> in propositional logic, then <span class="math inline">\(\varphi_1 \to (\varphi_2 \to (\dots (\varphi_n \to \psi)\dots))\)</span> is a theorem of propositional logic and thus a theorem of <span class="math inline">\(K\)</span>. By repeated applications of <span class="math inline">\(\textsf{MP}\)</span>, we infer <span class="math inline">\(\vdash_\textsf{K} \psi\)</span>.</p>
 </div>
 <p>We are similarly able to justify derived rules of inference, which will help us take a more direct route between two steps in a proof.</p>
 <div id="thm-d" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 7.3</strong></span> If <span class="math inline">\(\vdash_{\textsf{K}} \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_{\textsf{K}} \Box \varphi \to \Box \psi\)</span>.</p>
 </div>
-<div>
-<p><strong>Proof</strong>. We may transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\varphi \to \Box \psi\)</span>. <span class="math display">\[
-\begin{array}{lllll}
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We may transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\varphi \to \Box \psi\)</span>. <span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; \varphi \to \psi &amp; \\
 2 &amp; &amp; \Box (\varphi \to \psi) &amp; \textsf{RN} \ 1\\
 3  &amp; &amp; \Box (\varphi \to \psi) \to (\Box \varphi \to \Box \psi) &amp; \textsf{K}[\varphi/p, \psi/q]\\
 4 &amp; &amp; \Box \varphi \to \Box \psi &amp; \textsf{MP} \ 2, 3\\
-\end{array}
-\]</span></p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
+\end{array}\]</span></p>
 </div>
 <p>This justifies a derived rule of inference:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Two Derived Rules of Inference
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math display">\[\tag{$\textsf{RK}$}
-\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \varphi \to \Box \psi
-\]</span></p>
+<div id="prp-two-derived-rules-of-inferen" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 7.1 (Two Derived Rules of Inference)</strong></span> <span class="math display">\[\tag{$\textsf{RK}$}
+\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \varphi \to \Box \psi\]</span></p>
 <p><span class="math display">\[\tag{$\textsf{RK}\Diamond$}
-\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Diamond \varphi \to \Diamond \psi
-\]</span></p>
-</div>
+\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Diamond \varphi \to \Diamond \psi\]</span></p>
 </div>
 <div id="thm-dd" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 7.4</strong></span> If <span class="math inline">\(\vdash_\textsf{K} \varphi \to \psi\)</span>, then <span class="math inline">\(\vdash_\textsf{K} \Diamond \varphi \to \Diamond \psi\)</span>.</p>
 </div>
-<div id="Proof">
-<p><strong>Proof</strong>. We may transform a proof of <span class="math inline">\(\varphi \to \psi\)</span> into a proof of <span class="math inline">\(\Diamond \varphi \to \Diamond \psi\)</span> <span class="math display">\[
-\begin{array}{lllll}
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We may transform a proof of <span class="math inline">\(\varphi \to \psi\)</span> into a proof of <span class="math inline">\(\Diamond \varphi \to \Diamond \psi\)</span> <span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; \varphi \to \psi &amp; \\
 2 &amp; &amp; \neg \psi \to \neg \varphi &amp; \textsf{PL} \ 1 \\
 3 &amp; &amp; \Box \neg \psi \to \Box \neg \varphi &amp;  \textsf{RK} \ 2 \\
 4 &amp; &amp; \neg \Box \neg \varphi \to \neg \Box \neg \psi &amp; \textsf{PL} \ 3\\
 7 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \textsf{Def}  \ \Diamond \ 4\\
-\end{array}
-\]</span></p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
+\end{array}\]</span></p>
 </div>
 <p>More generally, if <span class="math inline">\(Q\)</span> is a string of modal operators, we are in a position to justify the derived rule of inference:</p>
 <p><span class="math display">\[\tag{$\textsf{RK}Q$}
-\text{If} \  \vdash_K \varphi \to \psi \ \text{then} \ \vdash Q \varphi \to Q \psi
-\]</span></p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the derived rule of inference:</p>
+\text{If} \  \vdash_K \varphi \to \psi \ \text{then} \ \vdash Q \varphi \to Q \psi\]</span></p>
+<div id="exm-example" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.1</strong></span> Consider the derived rule of inference:</p>
 <p><span class="math display">\[\tag{$\textsf{RK}\Box \Diamond$}
-\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \Diamond \varphi \to \Box \Diamond \psi
-\]</span> Here is how to transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\Box \Diamond \varphi \to \Box \Diamond \psi\)</span>:</p>
+\text{If} \  \vdash \varphi \to \psi \ \text{then} \ \vdash \Box \Diamond \varphi \to \Box \Diamond \psi\]</span> Here is how to transform a derivation of <span class="math inline">\(\varphi \to \psi\)</span> into a derivation of <span class="math inline">\(\Box \Diamond \varphi \to \Box \Diamond \psi\)</span>:</p>
 <p><span class="math display">\[ \begin{array}{lllll} 1 &amp; &amp; \varphi \to \psi &amp; \\ 2 &amp; &amp; \Diamond \varphi \to \Diamond \psi &amp; \textsf{RK}\Diamond \ 1\\ 3 &amp; &amp; \Box \Diamond \varphi \to \Box \Diamond \psi &amp; \textsf{RK} \ 2\\ \end{array} \]</span></p>
-</div>
 </div>
 </section>
 <section id="theorems-of-textsfk" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="theorems-of-textsfk"><span class="header-section-number">7.1.2</span> Theorems of <span class="math inline">\(\textsf{K}\)</span></h3>
 <p>We now exploit some of these derived rules of inference to prove some theorems of the minimal normal modal logic <span class="math inline">\(\textsf{K}\)</span>.</p>
 <div id="prp-7a" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.1</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 7.2</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi)\)</span></p>
 </div>
-<div>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; (\varphi \to \psi) \to (\neg \psi \to \neg \varphi) &amp; \textsf{PL} \\
 2 &amp; &amp; \Box (\varphi \to \psi) \to \Box(\neg \psi \to \neg \varphi) &amp; \textsf{RK} \ 1 \\
 3 &amp; &amp; \Box (\neg \psi \to \neg \varphi) \to (\Box \neg \psi \to \Box \neg \varphi) &amp; \textsf{K}[\neg \psi/p, \neg \varphi/q] \\
 4 &amp; &amp; (\Box \neg \psi \to \Box \neg \varphi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \textsf{PL}\\
 5 &amp; &amp; \Box (\varphi \to \psi) \to (\neg \Box \neg \varphi \to \neg \Box \neg \psi) &amp; \textsf{PL} \ 2, 3, 4\\
 6 &amp; &amp; \Box (\varphi \to \psi) \to (\Diamond \varphi \to \Diamond \psi) &amp; \textsf{Def} \ \Diamond \  6\\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 </div>
 <p>Given those observations, it is simple to justify:</p>
 <div id="prp-7b" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.2</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond p \wedge \Box (p \to q) \to \Diamond q\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 7.3</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond p \ \wedge \ \Box (p \to q) \to \Diamond q\)</span></p>
 </div>
-<p>For <span class="math inline">\(\Diamond p \wedge \Box (p \to q) \to \Diamond q\)</span> is propositionally equivalent to <span class="math inline">\(\Box (p \to q) \to (\Diamond p \to \Diamond q)\)</span>.</p>
+<p>For <span class="math inline">\(\Diamond p \wedge \Box (p \to q) \to \Diamond q\)</span> is equivalent to <span class="math inline">\(\Box (p \to q) \to (\Diamond p \to \Diamond q)\)</span>.</p>
 <p>Other well-known theorems of the minimal logic K are principles such as the distribution of <span class="math inline">\(\Box\)</span> over <span class="math inline">\(\wedge\)</span> and the distribution of <span class="math inline">\(\Diamond\)</span> over <span class="math inline">\(\vee\)</span>.</p>
 <div id="prp-7c" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.3</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box(\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 7.4</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Box(\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi)\)</span></p>
 </div>
-<div>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; (\varphi \wedge \psi) \to \varphi &amp; \textsf{PL} \\
 2 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \varphi &amp; \textsf{RK} \ 1 \\
 3 &amp; &amp; (\varphi \wedge \psi) \to \psi &amp; \textsf{PL} \\
 4 &amp; &amp; \Box (\varphi \wedge \psi) \to \Box \psi &amp; \textsf{RK} \ 3 \\
 5 &amp; &amp; \Box (\varphi \wedge \psi) \to (\Box \varphi \wedge \Box \psi) &amp; \textsf{PL} \ 2, 4\\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 </div>
 <div id="prp-7d" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.4</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 7.5</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi)\)</span></p>
 </div>
-<div>
-<p>This proof combines the use of a distribution rule with an instance of K. <span class="math display">\[
-\begin{array}{lllll}
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>This proof combines the use of a distribution rule with an instance of K. <span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; \varphi \to (\psi \to (\varphi \wedge \psi)) &amp; \textsf{PL} \\
 2 &amp; &amp; \Box \varphi \to \Box (\psi \to (\varphi \wedge \psi)) &amp; \textsf{RK} \ 1\\
 3 &amp; &amp; \Box (\psi \to (\varphi \wedge \psi)) \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \textsf{K}[\psi/p, (\varphi \wedge \psi)/q]\\
 4 &amp; &amp; \Box \varphi \to (\Box \psi \to \Box (\varphi \wedge \psi)) &amp; \textsf{PL} \ 2, 3\\
 5 &amp; &amp; (\Box \varphi \wedge \Box \psi) \to \Box (\varphi \wedge \psi) &amp; \textsf{PL} \ 4\\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 </div>
 <div id="prp-de" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.5</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 7.6</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi)\)</span></p>
 </div>
-<div>
-<p>The strategy behind the proof is to exploit the fact that <span class="math inline">\(\Diamond\)</span> is a dual of <span class="math inline">\(\Box\)</span>, that is, <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, and the fact that the negation of a disjunction is propositionally equivalent to a conjunction of negations. When we combine them with the fact that <span class="math inline">\(\Box\)</span> distributes over <span class="math inline">\(\wedge\)</span>, we have a proof ot the principle.</p>
-<p><span class="math display">\[
-\begin{array}{lllll}
-1 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \textsf{Def} \ \Diamond\\
-2 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \ 1\\
-3 &amp; &amp; \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) &amp; \textsf{PL}\\
-4 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{RK} \ 3\\
-5 &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{Prop} \ 7.5\\
-6 &amp; &amp; (\Box \neg \varphi \wedge \Box \neg \psi)  \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \textsf{PL} \\
-7 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi)  \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{Def} \ \Diamond\\
-8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 5, 6, 7\\
-9 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to \neg (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 2, 8\\
-10 &amp; &amp; (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) &amp; \textsf{PL} \ 9\\
-\end{array}
-\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The strategy behind the proof is to exploit the fact that <span class="math inline">\(\Diamond\)</span> is a dual of <span class="math inline">\(\Box\)</span>, that is, <span class="math inline">\(\Diamond\)</span> is <span class="math inline">\(\neg \Box \neg\)</span>, and the fact that the negation of a disjunction is propositionally equivalent to a conjunction of negations. When we combine them with the fact that <span class="math inline">\(\Box\)</span> distributes over <span class="math inline">\(\wedge\)</span>, we have a proof ot the principle.</p>
+<p><span class="math display">\[\begin{array}{lllll}
+1 &amp; &amp; (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) &amp; \textsf{PL} \\2 &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{RK} \ 1 \\3 &amp; &amp; (\Box \neg \varphi \wedge \Box \neg \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{Prop} \ 7.7 \\4 &amp; &amp; (\Box \neg \varphi \wedge \Box \neg \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \ 2, 3 \\5 &amp; &amp; (\neg \Diamond \varphi \wedge \neg \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) &amp; \textsf{Def} \ \Diamond, \textsf{PL} \ 4 \\6 &amp; &amp; \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 5\end{array}\]</span></p>
 </div>
 <div id="prp-7f" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.6</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 7.7</strong></span> <span class="math inline">\(\vdash_\textsf{K} \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi)\)</span></p>
 </div>
-<div>
-<p>This time we exploit the fact that a conjunction of necessitations entails the necessitation of a conjunction. <span class="math display">\[
-\begin{array}{lllll}
-1 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) &amp; \textsf{Def} \ \Diamond \\
-2 &amp; &amp; \neg (\neg \Box \neg \varphi \vee \neg \Box \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{PL} \\
-3 &amp; &amp; (\Box \neg \varphi \wedge \Box \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{Prop} \ 7.6\\
-4 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{PL} \ 1, 2, 3\\
-5 &amp; &amp; (\neg \varphi \wedge \neg \psi) \to \neg (\varphi \vee \psi) &amp; \textsf{PL} \\
-6  &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{RK} \ 5 \\
-7 &amp; &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \ 4, 6\\
-8 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \neg \neg \Box \neg (\varphi \vee \psi) &amp; \textsf{PL} \\
-9 &amp; &amp; \neg \neg \Box \neg (\varphi \vee \psi) \to \neg \Diamond (\varphi \vee \psi) &amp; \textsf{Def} \ \Diamond\\
-10 &amp;  &amp; \neg (\Diamond \varphi \vee \Diamond \psi) \to \neg \Diamond (\varphi \vee \psi) &amp;  \textsf{PL} \ 7, 8, 9\\
-11 &amp; &amp; \Diamond (\varphi \vee \psi) \to (\Diamond \varphi \vee \Diamond \psi) &amp; \textsf{PL} \ 10
-\end{array}
-\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>This time we exploit the fact that a conjunction of necessitations entails the necessitation of a conjunction. <span class="math display">\[\begin{array}{lllll}
+1 &amp; &amp; \neg (\varphi \vee \psi) \to (\neg \varphi \wedge \neg \psi) &amp; \textsf{PL} \\
+2 &amp; &amp; \Box \neg (\varphi \vee \psi) \to \Box (\neg \varphi \wedge \neg \psi) &amp; \textsf{RK} \ 1 \\
+3 &amp; &amp; \Box (\neg \varphi \wedge \neg \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{Prop} \ 7.6 \\
+4 &amp; &amp; \Box \neg (\varphi \vee \psi) \to (\Box \neg \varphi \wedge \Box \neg \psi) &amp; \textsf{PL} \ 2, 3 \\
+5 &amp; &amp; \neg \Diamond (\varphi \vee \psi) \to (\neg \Diamond \varphi \wedge \neg \Diamond \psi) &amp; \textsf{Def} \ \Diamond, \textsf{PL} \ 4 \\
+6 &amp; &amp; (\Diamond \varphi \vee \Diamond \psi) \to \Diamond (\varphi \vee \psi) &amp; \textsf{PL} \ 5
+\end{array}\]</span></p>
 </div>
 <p>We conclude with another helpful theorem of <span class="math inline">\(\textsf{K}\)</span>.</p>
 <div id="prp-7g" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.7</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi)\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 7.8</strong></span> <span class="math inline">\(\vdash_\textsf{K} (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi)\)</span></p>
 </div>
-<div>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; \neg (\varphi \wedge \psi) \to (\psi \to \neg \varphi) &amp; \textsf{PL} \\
 2 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to \Box (\psi \to \neg \varphi) &amp; \textsf{RK} \ 1 \\
-3 &amp; &amp; \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) &amp;  \textsf{K}[\psi/p, \neg \varphi/q] \\
-4 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi)  &amp; \textsf{PL} \ 2, 3\\
-5 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \neg \Box \neg (\varphi \wedge \psi) &amp; \textsf{PL} \ 4 \\
-6 &amp; &amp; \neg (\Box  \psi \to \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{Def} \ \Diamond \\
-7 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \neg (\Box \psi \to \Box \neg \varphi) &amp; \textsf{PL} \\
-8 &amp; &amp; (\Box \psi \wedge \neg \Box \neg \varphi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{PL} \ 6, 7\\
-9 &amp; &amp; (\Box \psi \wedge \Diamond \varphi) \to (\Box \psi \wedge \neg \Box \neg \varphi) &amp; \textsf{Def} \ \Diamond\\
-10 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to (\Box \psi \wedge \Diamond \varphi) &amp; \textsf{PL} \\
-11 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{PL} \ 8, 9, 10\\
-\end{array}
-\]</span></p>
+3 &amp; &amp; \Box (\psi \to \neg \varphi) \to (\Box \psi \to \Box \neg \varphi) &amp; \textsf{K}[\psi/p, \neg \varphi/q] \\
+4 &amp; &amp; \Box \neg (\varphi \wedge \psi) \to (\Box \psi \to \Box \neg \varphi) &amp; \textsf{PL} \ 2, 3 \\
+5 &amp; &amp; (\Diamond \varphi \wedge \Box \psi) \to \Diamond (\varphi \wedge \psi) &amp; \textsf{Def} \ \Diamond, \textsf{PL} \ 4
+\end{array}\]</span></p>
 </div>
 </section>
 </section>
 <section id="normal-modal-logics" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="normal-modal-logics"><span class="header-section-number">7.2</span> Normal Modal Logics</h2>
 <p>We will focus on extensions of the minimal modal logic that result from <span class="math inline">\(\textsf{K}\)</span> when we supplement its axioms with substitution instances of certain modal axioms.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div id="def-normal-modal-logic" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.4 (Normal Modal Logic)</strong></span> A normal modal <span class="math inline">\(\Sigma\)</span> logic is an axiom system, which results from <span class="math inline">\(\textsf{K}\)</span> when we add to its axioms all substitution instances of further modal axioms.</p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Normal Modal Logic
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A normal modal <span class="math inline">\(\Sigma\)</span> logic is an axiom system, which results from <span class="math inline">\(\textsf{K}\)</span> when we add to its axioms all substitution instances of further modal axioms.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>KT
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The normal modal logic <span class="math inline">\(\textsf{KT}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{K}\)</span> with all substitution instances of the axiom: <span class="math display">\[\tag{\textsf{T}}
-\Box p \to p
-\]</span> We write <span class="math inline">\(\vdash_{\textsf{KT}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span>.</p>
-</div>
+<div id="def-kt" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.5 (KT)</strong></span> The normal modal logic <span class="math inline">\(\textsf{KT}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{K}\)</span> with all substitution instances of the axiom: <span class="math display">\[\tag{\textsf{T}}
+\Box p \to p\]</span> We write <span class="math inline">\(\vdash_{\textsf{KT}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span>.</p>
 </div>
 <p>Two more notable normal modal systems are <span class="math inline">\(\textsf{S4}\)</span> and <span class="math inline">\(\textsf{S5}\)</span>, respectively.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>S4
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The normal modal logic <span class="math inline">\(\textsf{S4}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{KT}\)</span> with all substitution instances of the axiom:</p>
+<div id="def-s4" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.6 (S4)</strong></span> The normal modal logic <span class="math inline">\(\textsf{S4}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{KT}\)</span> with all substitution instances of the axiom:</p>
 <p><span class="math display">\[\tag{\textsf{4}}
-\Box p \to \Box \Box p
-\]</span> We write <span class="math inline">\(\vdash_{\textsf{S4}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{S4}\)</span>.</p>
+\Box p \to \Box \Box p\]</span> We write <span class="math inline">\(\vdash_{\textsf{S4}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{S4}\)</span>.</p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>S5
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The normal modal logic <span class="math inline">\(\textsf{S5}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{S4}\)</span> with all substitution instances of the axiom:</p>
+<div id="def-s5" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.7 (S5)</strong></span> The normal modal logic <span class="math inline">\(\textsf{S5}\)</span> extends the minimal normal modal logic <span class="math inline">\(\textsf{S4}\)</span> with all substitution instances of the axiom:</p>
 <p><span class="math display">\[\tag{\textsf{5}}
-\Diamond p \to \Box \Diamond p
-\]</span> We write <span class="math inline">\(\vdash_{\textsf{S5}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{S5}\)</span>.</p>
-</div>
+\Diamond p \to \Box \Diamond p\]</span> We write <span class="math inline">\(\vdash_{\textsf{S5}} \varphi\)</span> to indicate that <span class="math inline">\(\varphi\)</span> is a theorem of <span class="math inline">\(\textsf{S5}\)</span>.</p>
 </div>
 <p>The axioms below are interderivable from their modal duals:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 22%">
-<col style="width: 31%">
-<col style="width: 22%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -709,29 +565,17 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Consider the interderivability of <span class="math inline">\(\textsf{T}_\Diamond\)</span> from <span class="math inline">\(\textsf{T}\)</span>:</p>
+<div id="exm-example-2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.2</strong></span> Consider the interderivability of <span class="math inline">\(\textsf{T}_\Diamond\)</span> from <span class="math inline">\(\textsf{T}\)</span>:</p>
 <p><span class="math inline">\(\textsf{KT} \vdash \textsf{T}_\Diamond\)</span></p>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<p><span class="math display">\[\begin{array}{lllll}
 1 &amp;  &amp; \Box  \neg   p \to \neg p &amp; T[\neg p/p]\\
 2 &amp; &amp; \neg \neg  p \to \neg \Box \neg p &amp; \text{PL}  \ 1\\
 3 &amp; &amp; \neg \neg p \to \Diamond p &amp; \text{Def} \ \Diamond \ 2  \\
 4 &amp; &amp; p \to \Diamond p &amp; \text{PL} \ 3  \\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 <p><span class="math inline">\(\textsf{KT}_\Diamond \vdash \textsf{T}\)</span></p>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<p><span class="math display">\[\begin{array}{lllll}
 1 &amp;  &amp; \neg p \to \Diamond \neg p &amp; T_\Diamond[\neg p/p]\\
 2 &amp; &amp; \neg  p \to \neg \Box \neg \neg p &amp; \text{Def} \ \Diamond \ 1  \\
 3 &amp; &amp; \neg \neg \Box \neg \neg p \to \neg \neg p &amp; \text{PL} \ 2  \\
@@ -739,28 +583,14 @@ window.Quarto = {
 5 &amp; &amp; p \to \neg \neg p &amp; \text{PL} \\
 6 &amp; &amp; \Box p \to \Box \neg \neg p &amp; \text{RK} \ 5 \\
 7 &amp; &amp; \Box p \to  p &amp; \text{PL} \ 4, 6  \\
-\end{array}
-\]</span></p>
-</div>
+\end{array}\]</span></p>
 </div>
 <p>The equivalence proof is completely parallel in all other cases.</p>
 <section id="landscape-of-normal-modal-systems" class="level3" data-number="7.2.1">
 <h3 data-number="7.2.1" class="anchored" data-anchor-id="landscape-of-normal-modal-systems"><span class="header-section-number">7.2.1</span> Landscape of normal modal systems</h3>
 <p>We are in a position to compare the deductive strength of different normal modal systems. In what follows, we aim to develop an overview of the landscape of normal modal systems for propositional modal logic.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Extension
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A modal system <span class="math inline">\(\Sigma\)</span> <em>extends</em> another modal system <span class="math inline">\(\Delta\)</span>, written <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span>, if, and only if, every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>. Or, in other words, for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, <span class="math display">\[
-\text{If} \ \vdash_{\Delta} \varphi \ \text{then} \ \vdash_{\Sigma} \varphi
-\]</span> A modal system <span class="math inline">\(\Sigma\)</span> is a proper extension of <span class="math inline">\(\Delta\)</span>, written <span class="math inline">\(\Delta \sqsubset \Sigma\)</span> if, and only if, <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> but <span class="math inline">\(\Sigma \not \sqsubseteq \Delta\)</span>.</p>
-</div>
+<div id="def-extension" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.8 (Extension)</strong></span> A modal system <span class="math inline">\(\Sigma\)</span> <em>extends</em> another modal system <span class="math inline">\(\Delta\)</span>, written <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span>, if, and only if, every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>. Or, in other words, for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, <span class="math display">\[\text{If} \ \vdash_{\Delta} \varphi \ \text{then} \ \vdash_{\Sigma} \varphi\]</span> A modal system <span class="math inline">\(\Sigma\)</span> is a proper extension of <span class="math inline">\(\Delta\)</span>, written <span class="math inline">\(\Delta \sqsubset \Sigma\)</span> if, and only if, <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> but <span class="math inline">\(\Sigma \not \sqsubseteq \Delta\)</span>.</p>
 </div>
 <p>Here is a graphical representation of some of the relations in which eleven normal modal systems stand to. each other. Each edge connects a modal system with a proper extension located above in the diagram.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -770,152 +600,74 @@ window.Quarto = {
 </div>
 <p>There are two main techniques we use in order to justify the diagram. To argue that a modal system <span class="math inline">\(\Sigma\)</span> extends a system <span class="math inline">\(\Delta\)</span>, we argue that every axiom of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
 <div id="prp-ea" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.8</strong></span> <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> if <span class="math inline">\(\Sigma\)</span> proves every axiom of <span class="math inline">\(\Delta\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 7.9</strong></span> <span class="math inline">\(\Delta \sqsubseteq \Sigma\)</span> if <span class="math inline">\(\Sigma\)</span> proves every axiom of <span class="math inline">\(\Delta\)</span>.</p>
 </div>
-<div>
-<p><strong>Proof</strong>. Since <span class="math inline">\(\Delta\)</span> and <span class="math inline">\(\Sigma\)</span> share the same rules of inference, if every axiom of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>, then every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Since <span class="math inline">\(\Delta\)</span> and <span class="math inline">\(\Sigma\)</span> share the same rules of inference, if every axiom of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>, then every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\textsf{KD} \sqsubseteq \textsf{KT}\)</span></p>
-<p>This is because <span class="math inline">\(\vdash_{\textsf{KT}} \Box \varphi \to \Diamond \varphi\)</span>. <span class="math display">\[
-\begin{array}{lllll}
+<div id="exm-example-3" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.3</strong></span> <span class="math inline">\(\textsf{KD} \sqsubseteq \textsf{KT}\)</span></p>
+<p>This is because <span class="math inline">\(\vdash_{\textsf{KT}} \Box \varphi \to \Diamond \varphi\)</span>. <span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; \Box \varphi \to \varphi &amp; T[\varphi/p] \\
 2 &amp; &amp; \varphi \to \Diamond \varphi &amp; T_\Diamond[\varphi/p]\\
 3 &amp; &amp; \Box \varphi \to \Diamond \varphi &amp; PL \ 1, 2\\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There is a semantic counterpart to this observation. We will eventually observe that each normal modal system characterizes the set of validities in a certain class of frames. In fact, each node in the earlier diagram corresponds to a class of formulas valid in a specific class of frames:</p>
-</div>
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>There is a semantic counterpart to this observation. We will eventually observe that each normal modal system characterizes the set of validities in a certain class of frames. In fact, each node in the earlier diagram corresponds to a class of formulas valid in a specific class of frames:</p>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/landscape-rel.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Soundness
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A modal system <span class="math inline">\(\Sigma\)</span> is sound with respect to a class of frames <span class="math inline">\(\mathcal{C}\)</span> if, and only if, for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, <span class="math inline">\(\vdash_{\Sigma} \varphi\)</span> only if <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span>.</p>
-</div>
+<div id="def-soundness" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.9 (Soundness)</strong></span> A modal system <span class="math inline">\(\Sigma\)</span> is sound with respect to a class of frames <span class="math inline">\(\mathcal{C}\)</span> if, and only if, for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>, <span class="math inline">\(\vdash_{\Sigma} \varphi\)</span> only if <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span>.</p>
 </div>
 <p>We will see that the normal modal systems <span class="math inline">\(\textsf{KT}\)</span> and <span class="math inline">\(\textsf{KD}\)</span> are sound and complete with respect to the class of reflexive and serial frames, respectively. That means that the theorems of <span class="math inline">\(\textsf{KT}\)</span> are exactly those formulas that are valid in all reflexive frames. And the theorems of <span class="math inline">\(\textsf{KD}\)</span> are the formulas that are valid in all serial frames. Now:</p>
 <div id="prp-rs" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.9</strong></span> Every reflexive frame is serial.</p>
+<p><span class="theorem-title"><strong>Proposition 7.10</strong></span> Every reflexive frame is serial.</p>
 </div>
 <p>That means that if a formula is valid in all serial frames, then it will be valid in all reflexive frames. The soundness and completeness theorems for <span class="math inline">\(\textsf{KD}\)</span> and <span class="math inline">\(\textsf{KT}\)</span> will deliver a semantic route to the conclusion that every theorem of <span class="math inline">\(\textsf{KD}\)</span> is a theorem of <span class="math inline">\(\textsf{KT}\)</span> .</p>
 <p>On the other hand, the fact that <span class="math inline">\(\textsf{T}\)</span> defines the class of reflexive frames suggests a semantic argument for the conclusion that <span class="math inline">\(\textsf{KD}\)</span> does not extend <span class="math inline">\(\textsf{KT}\)</span> .</p>
 <div id="prp-s1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 7.10</strong></span> If every theorem of <span class="math inline">\(\Sigma\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\Delta\not \sqsubseteq \Sigma\)</span> if not every axiom of <span class="math inline">\(\Delta\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
+<p><span class="theorem-title"><strong>Proposition 7.11</strong></span> If every theorem of <span class="math inline">\(\Sigma\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\Delta\not \sqsubseteq \Sigma\)</span> if not every axiom of <span class="math inline">\(\Delta\)</span> is valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>.</p>
 </div>
-<div>
-<p><strong>Proof</strong>. If an axiom <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\Delta\)</span> is not valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\Sigma\)</span>. That means that not every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>If an axiom <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\Delta\)</span> is not valid in every frame in <span class="math inline">\(\mathcal{C}\)</span>, then <span class="math inline">\(\varphi\)</span> is not a theorem of <span class="math inline">\(\Sigma\)</span>. That means that not every theorem of <span class="math inline">\(\Delta\)</span> is a theorem of <span class="math inline">\(\Sigma\)</span>.</p>
 </div>
 <p>Since the theorems of <span class="math inline">\(\textsf{KD}\)</span> are valid in all serial frames, the observation that <span class="math inline">\(\Box p \to p\)</span>, which is an axiom of <span class="math inline">\(\textsf{KT}\)</span> , is not valid in some serial frames tells us that <span class="math inline">\(\textsf{KT}\)</span> is a proper extension of <span class="math inline">\(\textsf{KD}\)</span> .</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\textsf{KT} \not \sqsubseteq \textsf{KD}\)</span></p>
+<div id="exm-example-4" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.4</strong></span> <span class="math inline">\(\textsf{KT} \not \sqsubseteq \textsf{KD}\)</span></p>
 <p>This is because <span class="math inline">\(\Box p \to p\)</span> is not valid in every serial frame. To that purpose, consider the model based on a serial frame depicted below.</p>
 <p><span class="math inline">\((W, R, V), w_1 \nVdash \Box p \to p\)</span></p>
 </div>
-</div>
 <p>We may similarly use the fact that axiom 4 is not valid in every reflexive and symmetric frame to establish that some theorems of <span class="math inline">\(\textsf{KB5}\)</span> are not theorems of <span class="math inline">\(\textsf{KTB}\)</span>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\textsf{KB5} \not \sqsubseteq \textsf{KTB}\)</span></p>
+<div id="exm-example-5" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.5</strong></span> <span class="math inline">\(\textsf{KB5} \not \sqsubseteq \textsf{KTB}\)</span></p>
 <p>This is because <span class="math inline">\(\Diamond p \to \Box \Diamond p\)</span> is not valid in every reflexive and symmetric frame. To that purpose, consider the model based on a reflexive and symmetric frame depicted below.</p>
 <p><span class="math inline">\((W, R, V), w_1 \nVdash \Diamond p \to \Box \Diamond p\)</span></p>
 </div>
-</div>
 <p>Where should we locate <span class="math inline">\(\textsf{KB5}\)</span> in the diagram? We now argue that <span class="math inline">\(\textsf{KB4}\)</span> and <span class="math inline">\(\textsf{KB5}\)</span> are mutual extensions of each other, which is the reason we do not have a further node for <span class="math inline">\(\textsf{KB5}\)</span> in the diagram:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\textsf{KB4} \sqsubseteq \textsf{KB5}\)</span></p>
+<div id="exm-example-6" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.6</strong></span> <span class="math inline">\(\textsf{KB4} \sqsubseteq \textsf{KB5}\)</span></p>
 <p>This is because <span class="math inline">\(\vdash_{\textsf{KB5}} \Box \varphi \to \Box \Box \varphi\)</span>.</p>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<p><span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp;  \Box \varphi \to \Box \Diamond \Box \varphi &amp; \textsf{B}[\Box \varphi/p]\\
 2 &amp; &amp; \Diamond \Box \varphi \to \Box \varphi &amp; \textsf{5}_\Diamond [\varphi/p]\\
 3 &amp; &amp; \Box \Diamond \Box \varphi \to \Box \Box \varphi &amp; \textsf{RK} \ 2 \\
 4 &amp; &amp; \Box \varphi \to \Box \Box \varphi &amp; \textsf{PL} 1, 3\\
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><span class="math inline">\(\textsf{KB5} \sqsubseteq \textsf{KB4}\)</span></p>
+<div id="exm-example-7" class="theorem example">
+<p><span class="theorem-title"><strong>Example 7.7</strong></span> <span class="math inline">\(\textsf{KB5} \sqsubseteq \textsf{KB4}\)</span></p>
 <p>This is because <span class="math inline">\(\vdash_{\textsf{KB4}} \Diamond \varphi \to \Box \Diamond \varphi\)</span>.</p>
-<p><span class="math display">\[
-\begin{array}{lllll}
+<p><span class="math display">\[\begin{array}{lllll}
 1 &amp; &amp; \Diamond \varphi \to \Box \Diamond \Diamond \varphi &amp; \textsf{B}[\diamond \varphi/p]\\
 2 &amp; &amp; \Diamond \Diamond \varphi \to \Diamond \varphi &amp; \textsf{4}_\Diamond[\varphi/p] \\
 3 &amp; &amp; \Box \Diamond \Diamond \varphi \to \Box \Diamond \varphi &amp; \textsf{RK} \ 2\\
 4 &amp; &amp; \Diamond \varphi \to \Box \Diamond \varphi &amp; \textsf{PL} \ 1, 3\\
-\end{array}
-\]</span></p>
-</div>
+\end{array}\]</span></p>
 </div>
 <p><span class="math inline">\(\textsf{KB4} = \textsf{KB5}\)</span></p>
 <p>This is an immediate consequence of the last two examples.</p>

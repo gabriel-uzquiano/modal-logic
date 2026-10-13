@@ -63,7 +63,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-e268cf832660442648a38652dbf3363d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-39719d405981929e5c1c843a3b6f3070.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -370,17 +370,8 @@ window.Quarto = {
 \end{array}\]</span></p>
 </div>
 <p>The inductive definition of formula vindicates a principle of induction for formulas.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Induction on the Complexity of Formulas
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Given a condition <span class="math inline">\(\Phi(\alpha)\)</span> on formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span>, if</p>
+<div id="prp-induction-on-the-complexity-" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 6.1 (Induction on the Complexity of Formulas)</strong></span> Given a condition <span class="math inline">\(\Phi(\alpha)\)</span> on formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span>, if</p>
 <ul>
 <li>all atoms satisfy <span class="math inline">\(\Phi(\alpha)\)</span>,</li>
 <li>whenever a formula <span class="math inline">\(\varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>, <span class="math inline">\(\neg \varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>,</li>
@@ -388,7 +379,6 @@ window.Quarto = {
 <li>whenever a formula <span class="math inline">\(\varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>, <span class="math inline">\(\Box \varphi\)</span> satisfies <span class="math inline">\(\Phi(\alpha)\)</span>,</li>
 </ul>
 <p>then <em>every</em> formula satisfies <span class="math inline">\(\Phi(\alpha)\)</span></p>
-</div>
 </div>
 <p>We now generalize uniform substitution for the modal propositional language.</p>
 <div id="def-uni-sub" class="theorem definition">
@@ -412,13 +402,13 @@ window.Quarto = {
 <li><p><span class="math inline">\(V\)</span> maps each propositional variable <span class="math inline">\(p\)</span> to a set of worlds <span class="math inline">\(V(p) \subseteq W\)</span>.</p></li>
 </ol>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Notation
+<span class="screen-reader-only">Note</span>Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -428,17 +418,8 @@ window.Quarto = {
 </div>
 <p>One way to think of the assignment <span class="math inline">\(V\)</span> is as a specification of the set of worlds at which each propositional variable is true.</p>
 <p>We will use directed graphs to represent possible worlds models.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>How to Use a Graph to Represent a Possible Worlds Model
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Here is a depiction of a possible worlds model of the form <span class="math inline">\((W, R, V)\)</span> where:</p>
+<div id="exm-how-to-use-a-graph-to-repres" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.1 (How to Use a Graph to Represent a Possible Worlds Model)</strong></span> Here is a depiction of a possible worlds model of the form <span class="math inline">\((W, R, V)\)</span> where:</p>
 <ol type="1">
 <li><p><span class="math inline">\(W = \{w_1, w_2, w_3, w_4\}\)</span></p></li>
 <li><p><span class="math inline">\(R = \{(w_1, w_2), (w_2, w_3), (w_3, w_4), (w_1, w_4), (w_1, w_3), (w_2, w_2)\}\)</span></p></li>
@@ -455,7 +436,6 @@ window.Quarto = {
 <li><p>The graph records the propositional variables that are true at each world according to the assignment <span class="math inline">\(V\)</span>. If a propositional variable is not written at a node of the diagram, then the variable is not true at that world on the valuation depicted by the graph.</p></li>
 </ul>
 </div>
-</div>
 <p>We do not have the means yet to ask whether a complex formula <span class="math inline">\(\varphi\)</span> is true at a world in a model. To that purpose, we provide a recursive definition of a semantic relation between a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> and a formula <span class="math inline">\(\varphi\)</span>.</p>
 <div id="def-truth-at" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 6.5</strong></span> We define what is for a formula <span class="math inline">\(\varphi\)</span> to be <em>true at a world</em> <span class="math inline">\(w\)</span> <em>in a possible worlds model</em> <span class="math inline">\(M\)</span>, which we write: <span class="math inline">\(M, w \Vdash \varphi\)</span>: <span class="math display">\[\begin{array}{lll}
@@ -469,8 +449,8 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 \end{array}\]</span></p>
 </div>
 <p>We may return to the example above to explain how to compute the truth value of a formula at a world in a model.</p>
-<div id="exm-model1" class="featured theorem example">
-<p><span class="theorem-title"><strong>Example 6.1</strong></span> Evaluate each of the complex modal formulas given below at each possible world in the model:</p>
+<div id="exm-model1" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.2</strong></span> Evaluate each of the complex modal formulas given below at each possible world in the model:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/4d1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -522,8 +502,8 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <p><span class="theorem-title"><strong>Definition 6.6</strong></span> A formula <span class="math inline">\(\varphi\)</span> to be <em>true in a possible worlds model</em> <span class="math inline">\(M\)</span>, which we write <span class="math inline">\(M \Vdash \varphi\)</span> if, and only if, for all <span class="math inline">\(w\in W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
 </div>
 <p>We now return to the example above.</p>
-<div id="exm-model2" class="featured theorem example">
-<p><span class="theorem-title"><strong>Example 6.2</strong></span> Here is how to evaluate complex modal formulas in the model:</p>
+<div id="exm-model2" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.3</strong></span> Here is how to evaluate complex modal formulas in the model:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/4d1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -564,8 +544,8 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <p>That is, the formula remains true across assignments no matter what sets of worlds we assign to what propositional variables.</p>
 <p>A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em>, written <span class="math inline">\(\models \varphi\)</span>, if, and only if, <span class="math inline">\(\varphi\)</span> is valid in every frame <span class="math inline">\((W, R)\)</span>.</p>
 </div>
-<div id="exm-val" class="featured theorem example">
-<p><span class="theorem-title"><strong>Example 6.3</strong></span> Here are two formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are valid in every frame:</p>
+<div id="exm-val" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.4</strong></span> Here are two formulas of <span class="math inline">\(\mathcal{L}^\Box\)</span> that are valid in every frame:</p>
 <ol type="1">
 <li><p><span class="math inline">\(\Diamond (p \vee q) \leftrightarrow (\Diamond p \vee \Diamond q)\)</span></p></li>
 <li><p><span class="math inline">\(\Box (p \wedge q) \leftrightarrow (\Box p \wedge \Box q)\)</span></p></li>
@@ -601,18 +581,17 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 </ul>
 </div>
 <div id="prp-val0" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.1</strong></span> The formula <span class="math inline">\(\Box (p \to q) \to (\Box p \to \Box q)\)</span> is valid in every frame.</p>
+<p><span class="theorem-title"><strong>Proposition 6.2</strong></span> The formula <span class="math inline">\(\Box (p \to q) \to (\Box p \to \Box q)\)</span> is valid in every frame.</p>
 </div>
-<div id="proof">
-<p>Let <span class="math inline">\((W, R)\)</span> be a frame, and let <span class="math inline">\((W, R, V)\)</span> be a model based on that frame. Let <span class="math inline">\(w\in W\)</span> be a world such that <span class="math inline">\((W, R, V), w \Vdash \Box(p \to q)\)</span>. Suppose further that <span class="math inline">\((W, R, V), w \Vdash \Box p\)</span>. We set out to argue that <span class="math inline">\((W, V, R), w \Vdash \Box q\)</span>. For let <span class="math inline">\(u \in W\)</span> be such that <span class="math inline">\(Rwu\)</span>. By assumption, <span class="math inline">\((W, R, V), u \Vdash p \to q\)</span> and <span class="math inline">\((W, R, V), u \Vdash p\)</span>. It follows that <span class="math inline">\((W, R, V), u \Vdash q\)</span>. Generalizing, for every <span class="math inline">\(u \in W\)</span> such that <span class="math inline">\(Rwu\)</span>, <span class="math inline">\(W, R, V), u \Vdash q\)</span>, whence <span class="math inline">\((W, R, V), w \Vdash \Box q\)</span>.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\((W, R)\)</span> be a frame, and let <span class="math inline">\((W, R, V)\)</span> be a model based on that frame. Let <span class="math inline">\(w\in W\)</span> be a world such that <span class="math inline">\((W, R, V), w \Vdash \Box(p \to q)\)</span>. Suppose further that <span class="math inline">\((W, R, V), w \Vdash \Box p\)</span>. We set out to argue that <span class="math inline">\((W, V, R), w \Vdash \Box q\)</span>. For let <span class="math inline">\(u \in W\)</span> be such that <span class="math inline">\(Rwu\)</span>. By assumption, <span class="math inline">\((W, R, V), u \Vdash p \to q\)</span> and <span class="math inline">\((W, R, V), u \Vdash p\)</span>. It follows that <span class="math inline">\((W, R, V), u \Vdash q\)</span>. Generalizing, for every <span class="math inline">\(u \in W\)</span> such that <span class="math inline">\(Rwu\)</span>, <span class="math inline">\(W, R, V), u \Vdash q\)</span>, whence <span class="math inline">\((W, R, V), w \Vdash \Box q\)</span>.</p>
 </div>
 <p>We will often restrict attention to a class of frames and ask which formulas are valid in all and only those frames in the class.</p>
 <div id="def-valclass" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 6.9</strong></span> A formula <span class="math inline">\(\varphi\)</span> is <em>valid</em> in a class of frames <span class="math inline">\(\mathcal{C}\)</span>, written <span class="math inline">\(\models_{\mathcal{C}} \varphi\)</span> if, and only if, <span class="math inline">\(\varphi\)</span> is <em>valid</em> in every frame <span class="math inline">\((W, R)\)</span> in the class <span class="math inline">\(\mathcal{C}\)</span>.</p>
 </div>
 <div id="prp-val" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.2</strong></span> Each formula below is valid in a frame <em>if</em> the accessibility relation <span class="math inline">\(R\)</span> satisfies the relevant condition.</p>
+<p><span class="theorem-title"><strong>Proposition 6.3</strong></span> Each formula below is valid in a frame <em>if</em> the accessibility relation <span class="math inline">\(R\)</span> satisfies the relevant condition.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -676,14 +655,13 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <ul>
 <li>Let <span class="math inline">\((W, R, V)\)</span> be a model based on a euclidean frame <span class="math inline">\((W, R)\)</span>. Given <span class="math inline">\(w \in W\)</span>, suppose <span class="math inline">\((W, R, V), w \Vdash  \Diamond p\)</span>, which means that for some <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>, we have <span class="math inline">\(u \in V(p)\)</span>. Let <span class="math inline">\(t \in W\)</span> be such that <span class="math inline">\(Rwt\)</span>. Since <span class="math inline">\(R\)</span> is euclidean, <span class="math inline">\(Rtu\)</span>, which means that <span class="math inline">\((W, R, V), t \Vdash  \Diamond p\)</span>. Generalizing, we find that for every <span class="math inline">\(t\in W\)</span>, if <span class="math inline">\(Rut\)</span>, <span class="math inline">\((W, R, V), t \Vdash  \Diamond p\)</span>. So, <span class="math inline">\((W, R, V), w \Vdash  \Box \Diamond p\)</span>. So, <span class="math inline">\((W, R, V), w \Vdash  \Diamond p \to \Box \Diamond p\)</span>. Generalizing again, we infer <span class="math inline">\((W, R, V) \Vdash \Diamond p \to \Box \Diamond p\)</span>.</li>
 </ul>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 </section>
 <section id="frame-definability" class="level3" data-number="6.2.2">
 <h3 data-number="6.2.2" class="anchored" data-anchor-id="frame-definability"><span class="header-section-number">6.2.2</span> Frame Definability</h3>
 <p>The success of the possible worlds semantics is connected to the fact that it sheds new light on modal principles via systematic correspondences between the validity of those principles and certain structural features of the modal accessibility relation <span class="math inline">\(R\)</span> on a set of worlds <span class="math inline">\(W\)</span> in a frame <span class="math inline">\((W, R)\)</span>.</p>
 <div id="prp-val1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.3</strong></span> Each formula listed below is valid in a frame <em>only if</em> the accessibility relation satisfies the relevant condition.</p>
+<p><span class="theorem-title"><strong>Proposition 6.4</strong></span> Each formula listed below is valid in a frame <em>only if</em> the accessibility relation satisfies the relevant condition.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -759,11 +737,10 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <li><p>If <span class="math inline">\((W, R) \models  \Diamond p \to \Box \Diamond p\)</span>, then <span class="math inline">\(R\)</span> is euclidean on <span class="math inline">\(W\)</span>.</p>
 <p>Suppose <span class="math inline">\((W, R) \models \Diamond p \to \Box \Diamond p\)</span>. Fix <span class="math inline">\(w, u, t \in W\)</span> such that <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(Rwt\)</span> and consider the assignment <span class="math inline">\(V(p) = \{t\}\)</span>. It follows that <span class="math inline">\((W, R, V), w \Vdash \Diamond p\)</span>. Since <span class="math inline">\((W, R, V), w \Vdash \Box \Diamond p\)</span> and <span class="math inline">\(Rwu\)</span>, we infer that <span class="math inline">\((W, R, V), u \Vdash \Diamond p\)</span>, which means that <span class="math inline">\(Rut\)</span> as <span class="math inline">\(V(p)= \{t\}\)</span>. Generalizing, we conclude that <span class="math inline">\(R\)</span> is euclidean on <span class="math inline">\(W\)</span>.</p></li>
 </ul>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>Let us make precise the the observation that each of the formulas discussed characterizes a class of frames.</p>
-<div class="definition">
-<p>A formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> <em>modally defines</em> a class of frames <span class="math inline">\(\mathcal{C}\)</span> iff for all frames <span class="math inline">\((W, R)\)</span>,</p>
+<div id="def-def" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6.10</strong></span> A formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> <em>modally defines</em> a class of frames <span class="math inline">\(\mathcal{C}\)</span> iff for all frames <span class="math inline">\((W, R)\)</span>,</p>
 <p><span class="math display">\[\begin{array}{lll}
 (W, R) \models \varphi &amp; \text{iff} &amp;  (W, R) \in \mathcal{C}
 \end{array}\]</span></p>
@@ -861,11 +838,11 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 </tr>
 </tbody>
 </table>
-<div class="definition">
-<p>A binary relation <span class="math inline">\(R\)</span> on a set <span class="math inline">\(W\)</span> <em>converse well-founded</em> iff there are no infinite ascending <span class="math inline">\(R\)</span>-chains of the form <span class="math inline">\(x_1Rx_2 \cdots x_nRx_{n+1} \cdots\)</span>.</p>
+<div id="def-def-2" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 6.11</strong></span> A binary relation <span class="math inline">\(R\)</span> on a set <span class="math inline">\(W\)</span> <em>converse well-founded</em> iff there are no infinite ascending <span class="math inline">\(R\)</span>-chains of the form <span class="math inline">\(x_1Rx_2 \cdots x_nRx_{n+1} \cdots\)</span>.</p>
 </div>
 <div id="prp-cwf" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.4</strong></span> The class of transitive converse well-founded frames is <em>not</em> first-order definable.</p>
+<p><span class="theorem-title"><strong>Proposition 6.5</strong></span> The class of transitive converse well-founded frames is <em>not</em> first-order definable.</p>
 </div>
 <p>This is a consequence of the Compactness Theorem for first-order logic: if a set of first-order formulas <span class="math inline">\(\Gamma\)</span> is finitely satisfiable, then <span class="math inline">\(\Gamma\)</span> is satisfiable.</p>
 <div class="proof">
@@ -875,36 +852,34 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 \]</span> Suppose, for contradiction, that <span class="math inline">\(\psi\)</span> is true in <em>all and only</em> transitive converse well-founded frame no matter what we assign to the new constants <span class="math inline">\(c_i\)</span>. We now claim that <span class="math inline">\(\Sigma \cup \Gamma_0 \cup \{\psi\}\)</span> is finitely satisfiable. Let <span class="math inline">\(\Delta\)</span> be a finite subset of this set. <span class="math inline">\(\Delta\)</span> involves at most a finite number of new constants <span class="math inline">\(c_i\)</span>. So, there is one with largest index <span class="math inline">\(n\)</span>, if there is one at all. Consider a frame <span class="math inline">\((W, R)\)</span> with <span class="math inline">\(W = \{w_1, \dots, w_n\}\)</span> and let <span class="math inline">\(R\)</span> the transitive closure of the strict linear order <span class="math inline">\(w_1 R w_2 R \cdots R w_n\)</span>, and interpret each <span class="math inline">\(c_i\)</span> as <span class="math inline">\(w_i\)</span>. This frame is transitive and converse well-founded, which means that it satisfies <span class="math inline">\(\psi\)</span> by hypothesis. The frame satisfies every member of <span class="math inline">\(\Sigma\)</span> and every formula of the form <span class="math inline">\(Rc_ic_{i+1}\)</span> in <span class="math inline">\(\Delta\)</span>. So, <span class="math inline">\(\Delta\)</span> is satisfiable.</p>
 <p>By Compactness, <span class="math inline">\(\Sigma \cup \Gamma_0 \cup \{\psi\}\)</span> is satisfiable: there is a model <span class="math inline">\((W, R)\)</span> with <span class="math inline">\(R\)</span> transitive, <span class="math inline">\((W,R) \models \psi\)</span>, and elements <span class="math inline">\(c_1, c_2, c_3, \dots \in W\)</span> with <span class="math inline">\(c_1 R c_2 R c_3 R \cdots\)</span>. This is now a genuine infinite ascending <span class="math inline">\(R\)</span>-chain, which means that <span class="math inline">\((W,R)\)</span> is <em>not</em> converse well-founded. But <span class="math inline">\((W,R) \models \psi\)</span>, which contradicts the assumption that <span class="math inline">\(\psi\)</span> is only satisfiable in converse well-founded frames.</p>
 <p>Since no such <span class="math inline">\(\psi\)</span> exists, the class of transitive converse well-founded frames is not first-order definable.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="prp-tcwf1" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.5</strong></span> <span class="math inline">\(\Box (\Box p \to p) \to \Box p\)</span> modally defines the class of transitive converse well-founded frames.</p>
+<p><span class="theorem-title"><strong>Proposition 6.6</strong></span> <span class="math inline">\(\Box (\Box p \to p) \to \Box p\)</span> modally defines the class of transitive converse well-founded frames.</p>
 </div>
-<div class="{proof}">
-<p>We want to prove that for all frames <span class="math inline">\((W, R)\)</span>,</p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>We want to prove that for all frames <span class="math inline">\((W, R)\)</span>,</p>
 <p><span class="math display">\[\begin{array}{lll}
 (W, R) \models \Box (\Box p \to p) \to \Box p &amp; \text{iff} &amp; R \ \text{transitive} \  \text{and} \ \text{converse}\\
 &amp; &amp;  \text{well-founded on} \ W
 \end{array}\]</span> (<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\(R\)</span> is not transitive. Then there are worlds <span class="math inline">\(w, u, v\in W\)</span> such that <span class="math inline">\(wRu\)</span> and <span class="math inline">\(uRv\)</span> but not <span class="math inline">\(wRv\)</span>. In that case, let <span class="math inline">\(V(p) = W \setminus \{u, v\}\)</span> and note that <span class="math inline">\((W, R, V), w \nVdash \Box p\)</span> and <span class="math inline">\((W, R, V), u \nVdash \Box p\)</span>. Furthermore, <span class="math inline">\((W, R, V), u \nVdash \Box p \to p\)</span>. However, by definition of <span class="math inline">\(V\)</span>, if <span class="math inline">\(Rwt\)</span>, then either <span class="math inline">\(t =u\)</span> or <span class="math inline">\(t \in V(p)\)</span>. Either way, <span class="math inline">\((W, R, V), t \Vdash p\)</span> and <span class="math inline">\((W, R, V), t \Vdash \Box p \to p\)</span>. So, <span class="math inline">\((W, R, V), w \Vdash \Box (\Box p \to p)\)</span>. So, <span class="math inline">\((W, R, V), w \nVdash \Box (\Box p \to p) \to \Box p\)</span>.</p>
 <p>Now, suppose <span class="math inline">\(R\)</span> is not converse well-founded. Then there is an infinite <span class="math inline">\(R\)</span>-chain <span class="math inline">\(u_1 Ru_2 \dots u_nRu_{n+1} \dots\)</span>. In that case, define <span class="math inline">\(V(p)\)</span> to exclude every member of the <span class="math inline">\(R\)</span>-chain, that is, <span class="math inline">\(V(p) = W \setminus \{u_1, u_2, \dots\}\)</span>. Given some <span class="math inline">\(w \in X\)</span>, we argue that <span class="math inline">\((W, R, V), w \Vdash \Box (\Box p \to p)\)</span> even though <span class="math inline">\((W, R, V), w \nVdash \Box p\)</span>. For the former, note that <span class="math inline">\((W, R, V), u_n \nVdash \Box p\)</span> for each member <span class="math inline">\(u_n\)</span> of the infinite <span class="math inline">\(R\)</span>-chain. So, <span class="math inline">\((W, R, V), u_n \Vdash \Box p  \to p\)</span> and <span class="math inline">\((W, R, V), u_n \Vdash \Box (\Box p  \to p)\)</span> for every member <span class="math inline">\(u_n\)</span> of the infinite <span class="math inline">\(R\)</span>-chain. So, <span class="math inline">\((W, R, V), u_n \nVdash \Box (\Box p  \to p) \to \Box p\)</span> for every member <span class="math inline">\(u_n\)</span> of the infinite <span class="math inline">\(R\)</span>-chain.</p>
 <p>(<span class="math inline">\(\Leftarrow\)</span>) Suppose <span class="math inline">\(R\)</span> is transitive and converse well-founded. Furthermore, let <span class="math inline">\((W, R, V)\)</span> be a model based on <span class="math inline">\((W, R)\)</span> and let <span class="math inline">\(w \in W\)</span>. We now argue that <span class="math inline">\((W, R, V), w \Vdash \Box (\Box p \to p)\to \Box p\)</span>. For suppose <span class="math inline">\((W, R, V), w \nVdash \Box p\)</span> and consider the set <span class="math inline">\(X=\{u \in W: wRu \wedge u\notin V(p) \}\)</span>. We know that this set is non-empty since <span class="math inline">\((W, R, V), w \nVdash \Box p\)</span>. Since <span class="math inline">\(R\)</span> is converse well-founded, there is some <span class="math inline">\(v \in X\)</span> such that <span class="math inline">\(\neg vRt\)</span> for any <span class="math inline">\(t\in X\)</span>. Otherwise, we would have an infinite <span class="math inline">\(R\)</span>-chain. Since <span class="math inline">\(v\in X\)</span>, we have that <span class="math inline">\((W, R, V), v \nVdash p\)</span>, despite the fact that if <span class="math inline">\(vRt\)</span>, by transitivity, <span class="math inline">\(wRt\)</span> and since <span class="math inline">\(t\notin X\)</span>, <span class="math inline">\((W, R, V), t \Vdash p\)</span>. So, <span class="math inline">\((W, R, V), v \Vdash \Box p\)</span> and <span class="math inline">\((W, R, V), v \nVdash \Box p \to p\)</span>. It follows that <span class="math inline">\((W, R, V), w \nVdash \Box (\Box p \to p)\)</span>.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 </section>
 <section id="bisimulations" class="level3" data-number="6.2.3">
 <h3 data-number="6.2.3" class="anchored" data-anchor-id="bisimulations"><span class="header-section-number">6.2.3</span> Bisimulations</h3>
 <p>We know that first-order formulas cannot discriminate between isomorphic models. Two isomorphic models verify exactly the same first-order formulas. The role of isomorphism in first-order logic is played by <em>bisimulation</em> in modal propositional logic. Two bisimilar models will verify exactly the same modal formulas.</p>
 <div id="def-bisimulation" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 6.10</strong></span> A <em>bisimulation</em> between two models <span class="math inline">\((W, R, V)\)</span> and <span class="math inline">\((W', R', V')\)</span> is a binary relation <span class="math inline">\(E \subseteq W \times W'\)</span> such that for all <span class="math inline">\(w\in W\)</span> forall <span class="math inline">\(w' \in W'\)</span>,</p>
+<p><span class="theorem-title"><strong>Definition 6.12</strong></span> A <em>bisimulation</em> between two models <span class="math inline">\((W, R, V)\)</span> and <span class="math inline">\((W', R', V')\)</span> is a binary relation <span class="math inline">\(E \subseteq W \times W'\)</span> such that for all <span class="math inline">\(w\in W\)</span> forall <span class="math inline">\(w' \in W'\)</span>,</p>
 <ol type="1">
 <li><p>if <span class="math inline">\(wEw'\)</span>, then <span class="math inline">\(w\)</span> and <span class="math inline">\(w'\)</span> verify exactly the same propositional variables in each model, that is, for all propositional variable <span class="math inline">\(p\)</span>, <span class="math inline">\(w \in V(p)\)</span> iff <span class="math inline">\(w' \in V'(p)\)</span>.</p></li>
-<li><p>if <span class="math inline">\(wEw'\)</span> and <span class="math inline">\(Rwu\)</span> for some <span class="math inline">\(u\in W\)</span>, then there is some <span class="math inline">\(u'\in W'\)</span> such that <span class="math inline">\(Rw'u'\)</span> and <span class="math inline">\(uEu'\)</span> (the <em>forth condition</em>)</p></li>
-<li><p>if <span class="math inline">\(wEw'\)</span> and <span class="math inline">\(Rw'u'\)</span> for some <span class="math inline">\(u'\in W'\)</span>, then there is some <span class="math inline">\(u \in W\)</span> such that <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(uEu'\)</span> (the <em>back condition</em>)</p></li>
+<li><p>if <span class="math inline">\(wEw'\)</span> and <span class="math inline">\(Rwu\)</span> for some <span class="math inline">\(u\in W\)</span>, then there is some <span class="math inline">\(u'\in W'\)</span> such that <span class="math inline">\(R'w'u'\)</span> and <span class="math inline">\(uEu'\)</span> (the <em>forth condition</em>)</p></li>
+<li><p>if <span class="math inline">\(wEw'\)</span> and <span class="math inline">\(R'w'u'\)</span> for some <span class="math inline">\(u'\in W'\)</span>, then there is some <span class="math inline">\(u \in W\)</span> such that <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(uEu'\)</span> (the <em>back condition</em>)</p></li>
 </ol>
 </div>
 <p>If <span class="math inline">\(E\)</span> is a bisimulation between <span class="math inline">\((W, R, V)\)</span> and <span class="math inline">\((W', R', V')\)</span>, we call them <em>bisimilar</em>. Furthermore, if <span class="math inline">\(wEw'\)</span>, we will write that the two worlds <span class="math inline">\(w\)</span> and <span class="math inline">\(w'\)</span> are <em>bisimilar</em>.</p>
-<div id="exm-bisim" class="featured theorem example">
-<p><span class="theorem-title"><strong>Example 6.4</strong></span> There is a bisimulation <span class="math inline">\(E \subseteq W \times W'\)</span> between the models depicted below:</p>
+<div id="exm-bisim" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.5</strong></span> There is a bisimulation <span class="math inline">\(E \subseteq W \times W'\)</span> between the models depicted below:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 49%">
@@ -928,64 +903,62 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <p>One way to think of the situation is that <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span> have each unfolded into two duplicate worlds <span class="math inline">\(u_1\)</span> and <span class="math inline">\(v_1\)</span> and <span class="math inline">\(u_2\)</span> and <span class="math inline">\(v_2\)</span>, respectively. Notice, however, that the two models verify exactly the same formulas of propositional modal logic.</p>
 </div>
 <div id="prp-inv" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.6 (Invariance Lemma)</strong></span> If there is a bisimulation <span class="math inline">\(E\)</span> between two models <span class="math inline">\((W, R, V)\)</span> and <span class="math inline">\((W', R', V')\)</span>, then for all <span class="math inline">\(w\in W\)</span>, for all <span class="math inline">\(w'\in W'\)</span>, if <span class="math inline">\(wEw'\)</span>, the for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>: <span class="math display">\[\begin{array}{lll}
+<p><span class="theorem-title"><strong>Proposition 6.7 (Invariance Lemma)</strong></span> If there is a bisimulation <span class="math inline">\(E\)</span> between two models <span class="math inline">\((W, R, V)\)</span> and <span class="math inline">\((W', R', V')\)</span>, then for all <span class="math inline">\(w\in W\)</span>, for all <span class="math inline">\(w'\in W'\)</span>, if <span class="math inline">\(wEw'\)</span>, then for every formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span>: <span class="math display">\[\begin{array}{lll}
 (W, R), w \Vdash \varphi &amp; \text{iff} &amp;  (W', R'), w' \Vdash \varphi.
 \end{array}\]</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>The proof is by induction over the complexity of formulas.</p>
+<p><span class="proof-title"><em>Proof</em>. </span>The proof is by induction on the complexity of <span class="math inline">\(\varphi\)</span>. The claim proved for each <span class="math inline">\(\varphi\)</span> is: for all <span class="math inline">\(w \in W\)</span> and all <span class="math inline">\(w' \in W'\)</span>, if <span class="math inline">\(wEw'\)</span>, then <span class="math inline">\((W, R, V), w \Vdash \varphi\)</span> iff <span class="math inline">\((W', R', V'), w' \Vdash \varphi\)</span>. So the Inductive Hypothesis for a subformula applies to <em>every</em> <span class="math inline">\(E\)</span>-related pair, not just to <span class="math inline">\(w\)</span> and <span class="math inline">\(w'\)</span>. In each case, suppose <span class="math inline">\(wEw'\)</span>.</p>
 <ul>
-<li><strong>Base Case</strong>. If <span class="math inline">\(\varphi\)</span> is a propositional variable <span class="math inline">\(p\)</span>, then if <span class="math inline">\(wEw'\)</span>, by clause 1 in the definition of bisimulation, <span class="math inline">\(w \in V(p)\)</span> iff <span class="math inline">\(w' \in V'(p)\)</span>, which means</li>
+<li><strong>Base Case</strong>. If <span class="math inline">\(\varphi\)</span> is a propositional variable <span class="math inline">\(p\)</span>, then by clause 1 in the definition of bisimulation, <span class="math inline">\(w \in V(p)\)</span> iff <span class="math inline">\(w' \in V'(p)\)</span>. So</li>
 </ul>
 <p><span class="math display">\[\begin{array}{llll}
 (W, R, V), w \Vdash p &amp; \text{iff} &amp;  w \in V(p) &amp;\\
-                        &amp;   &amp;  w' \in V'(p) &amp; \text{Clause 1}\\
-                        &amp;   &amp;  (W', R', V'), w' \Vdash p &amp;
-\end{array}\]</span> The Boolean cases are immediate:</p>
+                      &amp; \text{iff} &amp;  w' \in V'(p) &amp; \textsf{Clause 1}\\
+                      &amp; \text{iff} &amp;  (W', R', V'), w' \Vdash p &amp;
+\end{array}\]</span></p>
+<p>The Boolean cases are immediate:</p>
 <ul>
 <li><strong>Inductive Step for</strong> <span class="math inline">\(\neg\)</span>:</li>
 </ul>
 <p><span class="math display">\[\begin{array}{llll}
 (W, R, V), w \Vdash \neg \varphi &amp; \text{iff} &amp;  (W, R, V), w \nVdash \varphi &amp; \\
-                        &amp;   &amp;  (W', R', V'), w' \nVdash \varphi &amp; \textsf{Inductive Hypothesis} \\
-                             &amp;   &amp;  (W', R', V'), w' \Vdash \neg \varphi &amp; \\
-\end{array}\]</span> On to the case of <span class="math inline">\(\to\)</span>:</p>
+                                 &amp; \text{iff} &amp;  (W', R', V'), w' \nVdash \varphi &amp; \textsf{Inductive Hypothesis} \\
+                                 &amp; \text{iff} &amp;  (W', R', V'), w' \Vdash \neg \varphi &amp;
+\end{array}\]</span></p>
 <ul>
 <li><strong>Inductive Step for</strong> <span class="math inline">\(\to\)</span>:</li>
 </ul>
 <p><span class="math display">\[\begin{array}{llll}
-(W, R, V), w \Vdash \varphi \to \psi &amp; \text{iff} &amp;  (W, R, V), w \nVdash \varphi  \  \text{or} \  (W, R, V), w \Vdash \psi &amp; \\
-                        &amp;   &amp;  (W', R', V'), w' \nVdash \varphi \  \text{or} \  (W', R', V'), w' \Vdash \psi  &amp; \textsf{Inductive Hypothesis} \\
-                             &amp;   &amp;  (W', R', V'), w' \Vdash \varphi \to \psi&amp; \\
-\end{array}\]</span> The case for <span class="math inline">\(\Box\)</span> requires more attention:</p>
+(W, R, V), w \Vdash \varphi \to \psi &amp; \text{iff} &amp;  (W, R, V), w \nVdash \varphi \ \text{or} \ (W, R, V), w \Vdash \psi &amp; \\
+                                     &amp; \text{iff} &amp;  (W', R', V'), w' \nVdash \varphi \ \text{or} \ (W', R', V'), w' \Vdash \psi &amp; \textsf{Inductive Hypothesis} \\
+                                     &amp; \text{iff} &amp;  (W', R', V'), w' \Vdash \varphi \to \psi &amp;
+\end{array}\]</span></p>
+<p>The case for <span class="math inline">\(\Box\)</span> requires more attention:</p>
 <ul>
 <li><strong>Inductive Step for</strong> <span class="math inline">\(\Box\)</span>:</li>
 </ul>
 <p><span class="math display">\[\begin{array}{llll}
-(W, R), w \Vdash \Box \varphi  &amp; \text{iff} &amp;  (W, R), u \Vdash \varphi  \ \  \text{whenever} \ \ wRu &amp; \\
-                        &amp;   &amp;   (W', R'), u' \Vdash \varphi  \ \ \text{whenever} \ \ w'R'u'  &amp; \textsf{Clauses 2, 3, and} \\
-&amp; &amp; &amp; \textsf{Inductive Hypothesis}\\
-                             &amp;   &amp;  (W', R'), w' \Vdash \Box \varphi&amp; \\
+(W, R, V), w \Vdash \Box \varphi &amp; \text{iff} &amp; (W, R, V), u \Vdash \varphi \ \ \text{whenever} \ \ wRu &amp; \\
+                                 &amp; \text{iff} &amp; (W', R', V'), u' \Vdash \varphi \ \ \text{whenever} \ \ w'R'u' &amp; \textsf{Clauses 2, 3, and} \\
+                                 &amp;            &amp;                                                             &amp; \textsf{Inductive Hypothesis}\\
+                                 &amp; \text{iff} &amp; (W', R', V'), w' \Vdash \Box \varphi &amp;
 \end{array}\]</span></p>
-<p>Here is a more detailed justification of the step from <span class="math inline">\((W, R), u \Vdash \varphi\)</span> whenever <span class="math inline">\(u \in W\)</span> and <span class="math inline">\(wRu\)</span> to <span class="math inline">\((W', R'), u' \Vdash \varphi\)</span> whenever <span class="math inline">\(u' \in W'\)</span>:</p>
-<ul>
-<li>Suppose <span class="math inline">\((W, R, V), u \Vdash \varphi\)</span> whenever <span class="math inline">\(u \in W\)</span> and <span class="math inline">\(wRu\)</span>. We now argue that if <span class="math inline">\(wEw'\)</span>, then <span class="math inline">\((W', R', V'), u' \Vdash \varphi\)</span> whenever <span class="math inline">\(u' \in W'\)</span> and <span class="math inline">\(w'Ru'\)</span>. For if <span class="math inline">\(w'R'u'\)</span>, then, by clause 2 or the back condition, there is some <span class="math inline">\(u \in W\)</span> such that <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(uEu'\)</span>. Since <span class="math inline">\((W, R, V), w \Vdash \Box \varphi\)</span>, <span class="math inline">\((W, R, V), u \Vdash \varphi\)</span>, and by the Inductive Hypothesis, <span class="math inline">\((W', R', V'), u' \Vdash \varphi\)</span> as required. So, we infer <span class="math inline">\((W', R', V'), w' \Vdash \Box \varphi\)</span>.</li>
-</ul>
-<p>The converse direction is completely parallel but it makes use of clause 2 or the forth condition instead.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
+<p>Here is a more detailed justification of the intermediate step:</p>
+<p>(<span class="math inline">\(\Rightarrow\)</span>) Suppose <span class="math inline">\((W, R, V), u \Vdash \varphi\)</span> whenever <span class="math inline">\(u \in W\)</span> and <span class="math inline">\(wRu\)</span>. We show that <span class="math inline">\((W', R', V'), u' \Vdash \varphi\)</span> whenever <span class="math inline">\(u' \in W'\)</span> and <span class="math inline">\(w'R'u'\)</span>. Let <span class="math inline">\(w'R'u'\)</span>. Since <span class="math inline">\(wEw'\)</span>, by clause 3 (the back condition) there is some <span class="math inline">\(u \in W\)</span> such that <span class="math inline">\(wRu\)</span> and <span class="math inline">\(uEu'\)</span>. By our supposition, <span class="math inline">\((W, R, V), u \Vdash \varphi\)</span>. Since <span class="math inline">\(uEu'\)</span>, the Inductive Hypothesis gives <span class="math inline">\((W', R', V'), u' \Vdash \varphi\)</span>, as required. So <span class="math inline">\((W', R', V'), w' \Vdash \Box \varphi\)</span>.</p>
+<p>(<span class="math inline">\(\Leftarrow\)</span>) This direction is parallel, but it uses clause 2 (the forth condition). Suppose <span class="math inline">\((W', R', V'), u' \Vdash \varphi\)</span> whenever <span class="math inline">\(w'R'u'\)</span>, and let <span class="math inline">\(wRu\)</span>. Since <span class="math inline">\(wEw'\)</span>, by clause 2 there is some <span class="math inline">\(u' \in W'\)</span> such that <span class="math inline">\(w'R'u'\)</span> and <span class="math inline">\(uEu'\)</span>. So <span class="math inline">\((W', R', V'), u' \Vdash \varphi\)</span>, and by the Inductive Hypothesis, <span class="math inline">\((W, R, V), u \Vdash \varphi\)</span>. So <span class="math inline">\((W, R, V), w \Vdash \Box \varphi\)</span>.</p>
 </div>
 <p>Bisimulations are used to rule out the definability of some classes of frames.</p>
-<div id="exm-irref" class="featured theorem example">
-<p><span class="theorem-title"><strong>Example 6.5</strong></span> Every model <span class="math inline">\((W, R, V)\)</span> is bisimilar to some <em>irreflexive</em> model <span class="math inline">\((W', R', V')\)</span>.</p>
+<div id="exm-irref" class="theorem example">
+<p><span class="theorem-title"><strong>Example 6.6</strong></span> Every model <span class="math inline">\((W, R, V)\)</span> is bisimilar to some <em>irreflexive</em> model <span class="math inline">\((W', R', V')\)</span>.</p>
 <p>Given a model <span class="math inline">\((W, R, V)\)</span>, we build a model <span class="math inline">\((W', R', V')\)</span>, which replaces each <em>reflexive</em> world <span class="math inline">\(w\in W\)</span>, that is, each <span class="math inline">\(w \in W\)</span> such that <span class="math inline">\(Rww\)</span>, with a pair of duplicate worlds <span class="math inline">\(w^+\)</span> and <span class="math inline">\(w^-\)</span> in <span class="math inline">\(W'\)</span>, which are accessible from each other by <span class="math inline">\(R'\)</span> but such that none of them is accessible from itself by <span class="math inline">\(R'\)</span>. We make sure that for each propositional variable <span class="math inline">\(p\)</span>, each duplicate <span class="math inline">\(w^+\)</span> and <span class="math inline">\(w^-\)</span> is a member of <span class="math inline">\(V'(p)\)</span> if <span class="math inline">\(w \in V(p)\)</span> in the original model. Otherwise, <span class="math inline">\(R'\)</span> and <span class="math inline">\(V'\)</span> behave exactly like <span class="math inline">\(R\)</span> and <span class="math inline">\(V\)</span> in the original model.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <p>It is simple to verify that <span class="math inline">\((W, R, V)\)</span> is bisimilar to <span class="math inline">\((W', R', V')\)</span>, which means that they verify exactly the same formulas. This is because the relation <span class="math inline">\(E\)</span>, which relates each <em>reflexive</em> world <span class="math inline">\(w \in W\)</span> with its duplicates <span class="math inline">\(w^+\)</span> and <span class="math inline">\(w^-\)</span> in <span class="math inline">\(W'\)</span> and relates every other world <span class="math inline">\(u\in W\)</span> with itself is a bisimulation between the two models.</p>
 </div>
 <div id="prp-irref" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 6.7 (Modal Undefinability for Irreflexive Frames)</strong></span> No formula of <span class="math inline">\(\mathcal{L}^\Box\)</span> modally defines the class of <em>irreflexive</em> frames.</p>
+<p><span class="theorem-title"><strong>Proposition 6.8 (Modal Undefinability for Irreflexive Frames)</strong></span> No formula of <span class="math inline">\(\mathcal{L}^\Box\)</span> modally defines the class of <em>irreflexive</em> frames.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>No formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> is valid in all and only irreflexive frames. For suppose <span class="math inline">\(\varphi\)</span> is valid <em>only in</em> irreflexive frames. That means that if <span class="math inline">\(R\)</span> is not irreflexive on <span class="math inline">\(W\)</span>, then there is some model <span class="math inline">\((W, R, V)\)</span> based on <span class="math inline">\((W, R)\)</span> such that <span class="math inline">\((W, R, V) \nVdash \varphi\)</span>. Unfortunately, there is a bisimilar <em>irreflexive</em> model <span class="math inline">\((W', R', V')\)</span> where <span class="math inline">\((W', R', V') \nVdash \varphi\)</span>. But notice that since <span class="math inline">\((W', R', V')\)</span> is based on an irreflexive frame <span class="math inline">\((W', R')\)</span>, we conclude that <span class="math inline">\(\varphi\)</span> is not valid in <em>all</em> irreflexive frames.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>We will now argue that no formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> defines the class of <em>universal</em> frames <span class="math inline">\((W, R)\)</span>, that is, frames in which <span class="math inline">\(R\)</span> is <em>universal</em> on <span class="math inline">\(W\)</span>, that is, for all <span class="math inline">\(w,u\in W\)</span>, <span class="math inline">\(Rwu\)</span>.</p>
 <p>First, a lemma:</p>
@@ -1011,14 +984,12 @@ M, w \Vdash \Diamond \varphi &amp; \text{iff} &amp; \text{for some} \ u \in W \ 
 <p><span class="math display">\[\begin{array}{lll}
 (W, R, V), w \Vdash \varphi &amp; \text{iff} &amp; (W', R', V'), w' \Vdash \varphi
 \end{array}\]</span></p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="cor-un" class="theorem corollary">
 <p><span class="theorem-title"><strong>Corollary 6.1</strong></span> No formula <span class="math inline">\(\varphi\)</span> of <span class="math inline">\(\mathcal{L}^\Box\)</span> modally defines the class of <em>universal</em> frames.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Suppose <span class="math inline">\(\varphi\)</span> is valid in <em>all</em> universal frames. Then by the former proposition, <span class="math inline">\(\varphi\)</span> is valid in all equivalence frames <span class="math inline">\((W, R)\)</span> where <span class="math inline">\(R\)</span> is an equivalence relation on <span class="math inline">\(W\)</span>. Since some of those frames are <em>not</em> universal frames, <span class="math inline">\(\varphi\)</span> is not valid <em>only</em> in universal frames.</p>
-<p><span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <p>Much of the interest of validity in the class of universal frames is that they seem particularly suited for the evaluation of modal formulas when the modal operator is interpreted in terms of metaphysical necessity. Since the logic of universal frames coincides with that of frames in which the accessibility relation is a relation of equivalence, we appear to have reason to accept the validity of substitution instances of each of the formulas we considered above:</p>
 <table class="caption-top table">
@@ -1162,7 +1133,7 @@ Salmon, Nathan. 1989. <span>“The Logic of What Might Have Been.”</span> <em>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>Example 6.1 is a special instance of this. We start with a reflexive model <span class="math inline">\((W, R, V)\)</span> and find an <em>irreflexive</em> model that is bisimilar to it.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Example 6.2 is a special instance of this. We start with a reflexive model <span class="math inline">\((W, R, V)\)</span> and find an <em>irreflexive</em> model that is bisimilar to it.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
