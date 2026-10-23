@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; Quantified Modal Logic – Modal Logic</title>
+<title>11&nbsp; Quantified Modal Logic – Modal Logic</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -114,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./quantmodal.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./epistemic.html">Applications</a></li><li class="breadcrumb-item"><a href="./quantmodal.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -237,38 +237,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tense.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Tense Logic</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./choice.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tense and Choice</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./deontic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Deontic Logic</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./epistemic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Epistemic Logic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./conditionals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditionals</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conditionals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./quantmodal.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -289,9 +271,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">14.1</span> Motivation</a></li>
-  <li><a href="#basic-language" id="toc-basic-language" class="nav-link" data-scroll-target="#basic-language"><span class="header-section-number">14.2</span> Basic Language</a></li>
-  <li><a href="#the-simplest-modal-quantificational-logic" id="toc-the-simplest-modal-quantificational-logic" class="nav-link" data-scroll-target="#the-simplest-modal-quantificational-logic"><span class="header-section-number">14.3</span> The Simplest Modal Quantificational Logic</a>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">11.1</span> Motivation</a></li>
+  <li><a href="#basic-language" id="toc-basic-language" class="nav-link" data-scroll-target="#basic-language"><span class="header-section-number">11.2</span> Basic Language</a></li>
+  <li><a href="#the-simplest-modal-quantificational-logic" id="toc-the-simplest-modal-quantificational-logic" class="nav-link" data-scroll-target="#the-simplest-modal-quantificational-logic"><span class="header-section-number">11.3</span> The Simplest Modal Quantificational Logic</a>
   <ul class="collapse">
   <li><a href="#the-converse-barcan-formula" id="toc-the-converse-barcan-formula" class="nav-link" data-scroll-target="#the-converse-barcan-formula">The Converse Barcan Formula</a></li>
   <li><a href="#the-necessity-of-existence" id="toc-the-necessity-of-existence" class="nav-link" data-scroll-target="#the-necessity-of-existence">The Necessity of Existence</a></li>
@@ -299,12 +281,12 @@ window.Quarto = {
   <li><a href="#the-necessity-of-identity" id="toc-the-necessity-of-identity" class="nav-link" data-scroll-target="#the-necessity-of-identity">The Necessity of Identity</a></li>
   <li><a href="#the-necessity-of-distinctness" id="toc-the-necessity-of-distinctness" class="nav-link" data-scroll-target="#the-necessity-of-distinctness">The Necessity of Distinctness</a></li>
   </ul></li>
-  <li><a href="#free-quantified-modal-logic" id="toc-free-quantified-modal-logic" class="nav-link" data-scroll-target="#free-quantified-modal-logic"><span class="header-section-number">14.4</span> Free Quantified Modal Logic</a>
+  <li><a href="#free-quantified-modal-logic" id="toc-free-quantified-modal-logic" class="nav-link" data-scroll-target="#free-quantified-modal-logic"><span class="header-section-number">11.4</span> Free Quantified Modal Logic</a>
   <ul class="collapse">
   <li><a href="#free-quantificational-logic" id="toc-free-quantificational-logic" class="nav-link" data-scroll-target="#free-quantificational-logic">Free Quantificational Logic</a></li>
   <li><a href="#kripke-on-universal-instantiation" id="toc-kripke-on-universal-instantiation" class="nav-link" data-scroll-target="#kripke-on-universal-instantiation">Kripke on Universal Instantiation</a></li>
   </ul></li>
-  <li><a href="#semantics" id="toc-semantics" class="nav-link" data-scroll-target="#semantics"><span class="header-section-number">14.5</span> Semantics</a>
+  <li><a href="#semantics" id="toc-semantics" class="nav-link" data-scroll-target="#semantics"><span class="header-section-number">11.5</span> Semantics</a>
   <ul class="collapse">
   <li><a href="#constant-domain-models" id="toc-constant-domain-models" class="nav-link" data-scroll-target="#constant-domain-models">Constant Domain Models</a></li>
   <li><a href="#variable-domain-models" id="toc-variable-domain-models" class="nav-link" data-scroll-target="#variable-domain-models">Variable Domain Models</a></li>
@@ -315,9 +297,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tense.html">Applications</a></li><li class="breadcrumb-item"><a href="./quantmodal.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./epistemic.html">Applications</a></li><li class="breadcrumb-item"><a href="./quantmodal.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Quantified Modal Logic</span></h1>
 </div>
 
 
@@ -335,11 +317,11 @@ window.Quarto = {
 
 
 <p>Quantified modal logic supplements the vocabulary of quantificational logic with a modal operator <span class="math inline">\(\Box\)</span>. The simplest quantified modal logic extends the axioms of quantificational logic with substitution instances of <span class="math inline">\(\textsf{K}\)</span> and the rule of necessitation. We will explain how to construct possible worlds models for the language of quantificational modal logic.</p>
-<section id="motivation" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">14.1</span> Motivation</h2>
+<section id="motivation" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">11.1</span> Motivation</h2>
 <p>By way of motivation, we briefly look at the expressive resources we gain when we combine quantification and modality.</p>
 <div id="exm-de-re-v-de-dicto" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14.1 (De Re v De Dicto)</strong></span> There are at least two interpretations of the English sentence:</p>
+<p><span class="theorem-title"><strong>Example 11.1 (De Re v De Dicto)</strong></span> There are at least two interpretations of the English sentence:</p>
 <ol type="1">
 <li>Someone rich could have been poor.</li>
 </ol>
@@ -357,7 +339,7 @@ window.Quarto = {
 </div>
 <p>This distinctions help dispel what might otherwise be thought to be puzzles on the interaction between predication and modality. Furthemore, the framework allows one to make a common distinction between <em>essential</em> and <em>accidental</em> attributes.</p>
 <div id="exm-essence-and-accident" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14.2 (Essence and Accident)</strong></span> One common distinction between a statue made of clay and the portion of clay of which it is made is that while they exemplify a certain shape, the shape is an <em>essential</em> attribute of the statue and an <em>accidental</em> attribute of the clay of which it is made. One way to articulate the distinction makes use of de re modality:</p>
+<p><span class="theorem-title"><strong>Example 11.2 (Essence and Accident)</strong></span> One common distinction between a statue made of clay and the portion of clay of which it is made is that while they exemplify a certain shape, the shape is an <em>essential</em> attribute of the statue and an <em>accidental</em> attribute of the clay of which it is made. One way to articulate the distinction makes use of de re modality:</p>
 <ul>
 <li><p><span class="math inline">\(F\)</span> is an <em>essential</em> attribute of <span class="math inline">\(x\)</span> if, and only if, <span class="math inline">\(\Box Fx\)</span>.</p></li>
 <li><p><span class="math inline">\(F\)</span> is an <em>accidental</em> attribute of <span class="math inline">\(x\)</span> if, and only if, <span class="math inline">\(Fx \wedge \neg \Box Fx\)</span>.</p></li>
@@ -373,10 +355,10 @@ window.Quarto = {
 <p>This sentence is true if, and only if, the <em>open formula</em> <span class="math inline">\(\Box Fx\)</span> is true relative to an assignment of an object to the individual variable <span class="math inline">\(x\)</span>. If <span class="math inline">\(\Box Fx\)</span> is true relative to an assignment if, and only if, <span class="math inline">\(Fx\)</span> is analytic relative to that assignment. But what could that mean? Closed sentences may be true or not in virtue of the meaning of the terms involved, but it is difficult to make sense of the truth of an open formula in virtue of the meaning of the terms involved, much less the truth of an open formula relative to an assignment.</p></li>
 </ul>
 </section>
-<section id="basic-language" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="basic-language"><span class="header-section-number">14.2</span> Basic Language</h2>
+<section id="basic-language" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="basic-language"><span class="header-section-number">11.2</span> Basic Language</h2>
 <div id="def-the-language-of-quantificati" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.1 (The Language of Quantificational Modal Logic)</strong></span> Given an initial list of <span class="math inline">\(n\)</span>-place predicates <span class="math inline">\(R^n\)</span> and an infinite stock of variables <span class="math inline">\(v_1, \dots, v_n, \dots\)</span>, we define <em>atomic formula</em> as follows:</p>
+<p><span class="theorem-title"><strong>Definition 11.1 (The Language of Quantificational Modal Logic)</strong></span> Given an initial list of <span class="math inline">\(n\)</span>-place predicates <span class="math inline">\(R^n\)</span> and an infinite stock of variables <span class="math inline">\(v_1, \dots, v_n, \dots\)</span>, we define <em>atomic formula</em> as follows:</p>
 <p><span class="math display">\[
 \varphi ::= R^n v_1, \cdots, v_n \ | \ v_i = v_j \
 \]</span></p>
@@ -399,8 +381,8 @@ window.Quarto = {
 </div>
 <p>The simplest quantified modal logic combines the axioms of quantificational logic with identity with the axioms of the minimal normal modal logic K. That will motivate a simple possible worlds model theory for the language, one that has, however, been controversial. In order to be in a position to discuss the framework, we should review the axioms of quantificational logic with identity.</p>
 </section>
-<section id="the-simplest-modal-quantificational-logic" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="the-simplest-modal-quantificational-logic"><span class="header-section-number">14.3</span> The Simplest Modal Quantificational Logic</h2>
+<section id="the-simplest-modal-quantificational-logic" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="the-simplest-modal-quantificational-logic"><span class="header-section-number">11.3</span> The Simplest Modal Quantificational Logic</h2>
 <p>The axioms for quantificational logic with identity include:</p>
 <ul>
 <li><p>Substitution instances of axioms of propositional logic for the expanded language.</p></li>
@@ -546,8 +528,8 @@ x \neq y \to \Box \ x \neq y  \tag{$\textsf{ND}$} \\
 <p>The role of axiom B appears to be crucial for the proof. Otherwise, we can provide a model of contingent distinctness by construing identity as indiscernibility and providing a model in which to discernible objects <em>can</em> become indiscernible at a world to which no other world in which the objects exemplify distinct properties is accessible.</p>
 </section>
 </section>
-<section id="free-quantified-modal-logic" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="free-quantified-modal-logic"><span class="header-section-number">14.4</span> Free Quantified Modal Logic</h2>
+<section id="free-quantified-modal-logic" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="free-quantified-modal-logic"><span class="header-section-number">11.4</span> Free Quantified Modal Logic</h2>
 <p>It is not uncommon to regard the provability of the Necessity of Existence in the simplest quantified modal logic as a powerful reason to weaken the axioms of the quanficational fragment of the system. This impression is sometimes reinforced by appeal to independent considerations.</p>
 <section id="free-quantificational-logic" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="free-quantificational-logic">Free Quantificational Logic</h3>
@@ -621,14 +603,14 @@ x \neq y \to \Box \ x \neq y  \tag{$\textsf{ND}$} \\
 \]</span>but either theorem is harmless when it comes to being able to derive the necessity of existence.</p>
 </section>
 </section>
-<section id="semantics" class="level2" data-number="14.5">
-<h2 data-number="14.5" class="anchored" data-anchor-id="semantics"><span class="header-section-number">14.5</span> Semantics</h2>
+<section id="semantics" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="semantics"><span class="header-section-number">11.5</span> Semantics</h2>
 <p>We have distinguished at least two axiomatizations of quantified modal logic. We now proceed to explain how to interpret the language in order to validate the relevant axioms.</p>
 <section id="constant-domain-models" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="constant-domain-models">Constant Domain Models</h3>
 <p>We use constant domain models to interpret the simplest quantified modal logic.</p>
 <div id="def-constant-domain-model" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.2 (Constant Domain Model)</strong></span> A <em>constant domain model</em> <span class="math inline">\(M\)</span> is a structure <span class="math inline">\((W, R, D, I)\)</span> where:</p>
+<p><span class="theorem-title"><strong>Definition 11.2 (Constant Domain Model)</strong></span> A <em>constant domain model</em> <span class="math inline">\(M\)</span> is a structure <span class="math inline">\((W, R, D, I)\)</span> where:</p>
 <ol type="1">
 <li><p><span class="math inline">\(W\)</span> is a non-empty set of <em>worlds</em></p></li>
 <li><p><span class="math inline">\(R\)</span> is a binary <em>accessibility relation</em> on <span class="math inline">\(W\)</span></p></li>
@@ -637,11 +619,11 @@ x \neq y \to \Box \ x \neq y  \tag{$\textsf{ND}$} \\
 </ol>
 </div>
 <div id="def-variable-assignment" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.3 (Variable Assignment)</strong></span> A variable assignment <span class="math inline">\(\alpha\)</span> for a model <span class="math inline">\(M\)</span> is a function from individual variables into members of <span class="math inline">\(D\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 11.3 (Variable Assignment)</strong></span> A variable assignment <span class="math inline">\(\alpha\)</span> for a model <span class="math inline">\(M\)</span> is a function from individual variables into members of <span class="math inline">\(D\)</span>.</p>
 </div>
 <p>We now define what is for a formula <span class="math inline">\(\varphi\)</span> to be true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span>. In what follows, <span class="math inline">\(\alpha[x/d]\)</span> is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for assigning <span class="math inline">\(d\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
 <div id="def-truth-at-a-world-under-an-as" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.4 (Truth at a World under an Assignment)</strong></span> We use a recursive definition: <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 11.4 (Truth at a World under an Assignment)</strong></span> We use a recursive definition: <span class="math display">\[
 \begin{array}{lll}
 M, w, \alpha \Vdash P^n v_1 \dots v_n &amp; &amp; \text{iff} &amp; &amp; \langle \alpha(v_1), \dots, \alpha(v_n)\rangle \in I_w (P^n)\\
 M, w,  \alpha  \Vdash v_1 = v_2   &amp; &amp; \text{iff} &amp; &amp;  \alpha(v_1) = \alpha(v_2)\\
@@ -654,14 +636,14 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 </div>
 <p>We now define truth at a world and truth in a model as usual:</p>
 <div id="def-truth-at-a-world" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.5 (Truth at a World)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span>, in symbols <span class="math inline">\(M, w \Vdash \varphi\)</span>, if, and only if, for all assignments <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, <span class="math inline">\(M, w, \alpha \Vdash \varphi\)</span></p>
+<p><span class="theorem-title"><strong>Definition 11.5 (Truth at a World)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span>, in symbols <span class="math inline">\(M, w \Vdash \varphi\)</span>, if, and only if, for all assignments <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, <span class="math inline">\(M, w, \alpha \Vdash \varphi\)</span></p>
 </div>
 <div id="def-truth-in-a-model" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.6 (Truth in a Model)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true in a model <span class="math inline">\(M\)</span>, in symbols, <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only. if, for all <span class="math inline">\(w \in  W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 11.6 (Truth in a Model)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true in a model <span class="math inline">\(M\)</span>, in symbols, <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only. if, for all <span class="math inline">\(w \in  W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
 </div>
 <p>By way of example, consider the fact that <span class="math inline">\(\exists x \neg \Box Fx \to \Diamond \forall x \neg Fx\)</span> is not true in every reflexive and euclidean constant domain model.</p>
 <div id="exm-example" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14.3</strong></span> <span class="math inline">\(\not \models_{\text{refl and eucl}} \exists x \neg \Box Fx \to \Diamond \forall x \neg Fx\)</span></p>
+<p><span class="theorem-title"><strong>Example 11.3</strong></span> <span class="math inline">\(\not \models_{\text{refl and eucl}} \exists x \neg \Box Fx \to \Diamond \forall x \neg Fx\)</span></p>
 <p>Consider a constant domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, I)\)</span>, where:</p>
 <ul>
 <li><p><span class="math inline">\(W = \{w_1, w_2\}\)</span></p></li>
@@ -680,13 +662,13 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 </div>
 <p>On the other hand, we may verify that constant domain models validate both the Barcan Formula and the Converse Barcan Formula:</p>
 <div id="prp-prp" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 14.1</strong></span> <span class="math inline">\(\models  \Diamond \ \exists x \ Fx \to \exists x \ \Diamond \ Fx\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 11.1</strong></span> <span class="math inline">\(\models  \Diamond \ \exists x \ Fx \to \exists x \ \Diamond \ Fx\)</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Given a constant domain model <span class="math inline">\(M\)</span> and a world <span class="math inline">\(w\in W\)</span> such that <span class="math inline">\(M, w \Vdash \Diamond \ \exists x \ Fx\)</span>, let <span class="math inline">\(u \in W\)</span> be such that <span class="math inline">\(Rwu\)</span> and <span class="math inline">\(M, u \Vdash \exists x \ Fx\)</span>. That means that there is a member <span class="math inline">\(d \in D\)</span> such that for each assignment <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(M, u, \alpha[d/x] \Vdash Fx\)</span>. But then <span class="math inline">\(M, w, \alpha[d/x]\Vdash \Diamond \ Fx\)</span> and, moreover, <span class="math inline">\(M, w, \alpha \Vdash \exists x \ \Diamond \ Fx\)</span>. Since <span class="math inline">\(\alpha\)</span> is arbitrary, <span class="math inline">\(M, w \Vdash \Diamond \ \exists x \ Fx\)</span> as required.</p>
 </div>
 <div id="prp-prp-2" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 14.2</strong></span> <span class="math inline">\(\models  \Box \ \forall x \ Fx \to \forall x \ \Box \ Fx\)</span></p>
+<p><span class="theorem-title"><strong>Proposition 11.2</strong></span> <span class="math inline">\(\models  \Box \ \forall x \ Fx \to \forall x \ \Box \ Fx\)</span></p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Given a constant domain model <span class="math inline">\(M\)</span> and a world <span class="math inline">\(w\in W\)</span> such that <span class="math inline">\(M, w \Vdash \Box \ \forall x \ Fx\)</span>, we argue that <span class="math inline">\(M, w \Vdash \forall x \ \Box \ Fx\)</span>. For given an assignment <span class="math inline">\(\alpha\)</span> and a member <span class="math inline">\(d \in D\)</span>, <span class="math inline">\(M, w,  \alpha[d/x] \Vdash \Box Fx\)</span>. This is because given a world <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>, we have <span class="math inline">\(M, u \Vdash \forall x Fx\)</span> and <span class="math inline">\(M, u, \alpha[d/x]\Vdash Fx\)</span>. Since <span class="math inline">\(u\)</span> and <span class="math inline">\(d\)</span> Are arbitrary, <span class="math inline">\(M, w \Vdash \forall x \ \Box \ Fx\)</span> as required.</p>
@@ -696,7 +678,7 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 <h3 class="unnumbered anchored" data-anchor-id="variable-domain-models">Variable Domain Models</h3>
 <p>We now turn attention to variable domain models, which we use to validate weaker fragments of quantified modal logic.</p>
 <div id="def-variable-domain-model" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.7 (Variable Domain Model)</strong></span> A <em>variable domain model</em> <span class="math inline">\(M\)</span> is a structure <span class="math inline">\((W, R, D, Q, I)\)</span> where:</p>
+<p><span class="theorem-title"><strong>Definition 11.7 (Variable Domain Model)</strong></span> A <em>variable domain model</em> <span class="math inline">\(M\)</span> is a structure <span class="math inline">\((W, R, D, Q, I)\)</span> where:</p>
 <ol type="1">
 <li><p><span class="math inline">\(W\)</span> is a non-empty set of <em>worlds</em></p></li>
 <li><p><span class="math inline">\(R\)</span> is a binary <em>accessibility relation</em> on <span class="math inline">\(W\)</span></p></li>
@@ -706,7 +688,7 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 </ol>
 </div>
 <div id="def-variable-assignment-2" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.8 (Variable Assignment)</strong></span> A variable assignment <span class="math inline">\(\alpha\)</span> for a model <span class="math inline">\(M\)</span> is a function from individual variables into members of <span class="math inline">\(D\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 11.8 (Variable Assignment)</strong></span> A variable assignment <span class="math inline">\(\alpha\)</span> for a model <span class="math inline">\(M\)</span> is a function from individual variables into members of <span class="math inline">\(D\)</span>.</p>
 </div>
 <p>The evaluation of an open formula such as <span class="math inline">\(Fx\)</span> at a world <span class="math inline">\(w\)</span> in <span class="math inline">\(W\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span> raises an important question. What should we make of a case in which <span class="math inline">\(\alpha(x)\)</span> is <em>not</em> in the inner domain of <span class="math inline">\(w\)</span>. Three broad strategies come to mind:</p>
 <ol type="1">
@@ -720,7 +702,7 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 <p>In what follows, we will adopt the third approach and let the interpretation function settle the truth value of the open formula at a world relative to that assignment. That means that a formula <span class="math inline">\(Fx\)</span> can in principle be true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span> on which <span class="math inline">\(\alpha(x)\)</span> is not even a member of <span class="math inline">\(Q(w)\)</span>.</p>
 <p>We now define what is for a formula <span class="math inline">\(\varphi\)</span> to be true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span> relative to an assignment <span class="math inline">\(\alpha\)</span>. In what follows, <span class="math inline">\(\alpha[x/d]\)</span> is an assignment just like <span class="math inline">\(\alpha\)</span> except perhaps for assigning <span class="math inline">\(d\)</span> to the variable <span class="math inline">\(x\)</span>.</p>
 <div id="def-truth-at-a-word-under-an-ass" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.9 (Truth at a Word under an Assignment)</strong></span> We use a recursive definition: <span class="math display">\[
+<p><span class="theorem-title"><strong>Definition 11.9 (Truth at a Word under an Assignment)</strong></span> We use a recursive definition: <span class="math display">\[
 \begin{array}{lll}
 M, w, \alpha \Vdash P^n v_1 \dots v_n &amp; &amp; \text{iff} &amp; &amp; \langle \alpha(v_1), \dots, \alpha(v_n)\rangle \in I_w (P^n)\\
 M, w,  \alpha  \Vdash v_1 = v_2   &amp; &amp; \text{iff} &amp; &amp;  \alpha(v_1) = \alpha(v_2)\\
@@ -733,10 +715,10 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 </div>
 <p>We now define truth at a world and truth in a model as usual:</p>
 <div id="def-truth-at-a-world-2" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.10 (Truth at a World)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span>, in symbols <span class="math inline">\(M, w \Vdash \varphi\)</span>, if, and only if, for all assignments <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, <span class="math inline">\(M, w, \alpha \Vdash \varphi\)</span></p>
+<p><span class="theorem-title"><strong>Definition 11.10 (Truth at a World)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true at a world <span class="math inline">\(w\)</span> in a model <span class="math inline">\(M\)</span>, in symbols <span class="math inline">\(M, w \Vdash \varphi\)</span>, if, and only if, for all assignments <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>, <span class="math inline">\(M, w, \alpha \Vdash \varphi\)</span></p>
 </div>
 <div id="def-truth-in-a-model-2" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.11 (Truth in a Model)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true in a model <span class="math inline">\(M\)</span>, in symbols, <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only. if, for all <span class="math inline">\(w \in  W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 11.11 (Truth in a Model)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is true in a model <span class="math inline">\(M\)</span>, in symbols, <span class="math inline">\(M \Vdash \varphi\)</span>, if, and only. if, for all <span class="math inline">\(w \in  W\)</span>, <span class="math inline">\(M, w \Vdash \varphi\)</span>.</p>
 </div>
 <p>One important consequence of the choices we made above is that universal instantiation fails in variable domain models. Consider, for example, the evaluation of an instance of Universal Instantiation at a world <span class="math inline">\(w\)</span> of a variable domain model:</p>
 <p><span class="math display">\[
@@ -744,7 +726,7 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 \]</span></p>
 <p>relative to an assignment <span class="math inline">\(\alpha\)</span>, which maps <span class="math inline">\(y\)</span> to an individual that is neither in the inner domain of <span class="math inline">\(w\)</span> nor in the extension of <span class="math inline">\(F\)</span> in <span class="math inline">\(w\)</span>.</p>
 <div id="exm-example-2" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14.4</strong></span> <span class="math inline">\(\not \models \Box \forall x Fx \to \forall x \Box Fx\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 11.4</strong></span> <span class="math inline">\(\not \models \Box \forall x Fx \to \forall x \Box Fx\)</span>.</p>
 <p>Consider a variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span>, where:</p>
 <ul>
 <li><span class="math inline">\(W = \{w_1, w_2\}\)</span></li>
@@ -764,7 +746,7 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 </ul>
 </div>
 <div id="exm-example-3" class="theorem example">
-<p><span class="theorem-title"><strong>Example 14.5</strong></span> <span class="math inline">\(\not \models \forall x \Box Fx \to \Box \forall x Fx\)</span>.</p>
+<p><span class="theorem-title"><strong>Example 11.5</strong></span> <span class="math inline">\(\not \models \forall x \Box Fx \to \Box \forall x Fx\)</span>.</p>
 <p>Consider a variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span>, where:</p>
 <ul>
 <li><span class="math inline">\(W = \{w_1, w_2\}\)</span></li>
@@ -787,20 +769,20 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 <h4 class="unnumbered anchored" data-anchor-id="the-inclusion-and-converse-inclusion-requirement">The Inclusion and Converse Inclusion Requirement</h4>
 <p>Two broad constraints on variable domain models allow us to isolate the class of such models in which the Converse Barcan and the Barcan Formula are valid, respectively, in variable domain models.</p>
 <div id="def-the-inclusion-requirement" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.12 (The Inclusion Requirement)</strong></span> A variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span> satisfies the <em>inclusion requirement</em> if, and only if, for every <span class="math inline">\(w, u \in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then. <span class="math inline">\(Q(w) \subseteq Q(u)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 11.12 (The Inclusion Requirement)</strong></span> A variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span> satisfies the <em>inclusion requirement</em> if, and only if, for every <span class="math inline">\(w, u \in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then. <span class="math inline">\(Q(w) \subseteq Q(u)\)</span>.</p>
 </div>
 <div id="def-the-converse-inclusion-requi" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 14.13 (The Converse Inclusion Requirement)</strong></span> A variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span> satisfies the <em>converse inclusion requirement</em> if, and only if, for every <span class="math inline">\(w, u \in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then. <span class="math inline">\(Q(u) \subseteq Q(w)\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 11.13 (The Converse Inclusion Requirement)</strong></span> A variable domain model <span class="math inline">\(M\)</span> of the form <span class="math inline">\(( W, R, D, Q, I)\)</span> satisfies the <em>converse inclusion requirement</em> if, and only if, for every <span class="math inline">\(w, u \in W\)</span>, if <span class="math inline">\(Rwu\)</span>, then. <span class="math inline">\(Q(u) \subseteq Q(w)\)</span>.</p>
 </div>
 <p>That is, a variable domain model satisfies the inclusion requirement if the inner domains never decrease alongside the accessibility relation; and it satisfies the converse inclusion requirement if the inner domains never increase alongside the accessibility relation.</p>
 <div id="prp-cbf" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 14.3</strong></span> The Converse Barcan Formula is valid in variable domain model satisfying the inclusion requirement.</p>
+<p><span class="theorem-title"><strong>Proposition 11.3</strong></span> The Converse Barcan Formula is valid in variable domain model satisfying the inclusion requirement.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(M\)</span> be a variable domain model of the form <span class="math inline">\(( W, R, D, I)\)</span> satisfying the inclusion requirement. Choose a world <span class="math inline">\(w \in W\)</span> and an assignment <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>. We argue that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x) \to \forall x \Box \varphi(x)\)</span>. Since the formula is a conditional, assume that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x)\)</span>. That means that <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span> for all <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>. We now argue that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x)\)</span>. That is that for every <span class="math inline">\(d\in Q(w)\)</span>, <span class="math inline">\(M, w, \alpha[d/x]\Vdash \Box \varphi(x)\)</span>. Pick a member <span class="math inline">\(d\in Q(w)\)</span> and let <span class="math inline">\(u\in W\)</span> be such that <span class="math inline">\(Rwu\)</span>. <em>Because</em> <span class="math inline">\(M\)</span> satisfies the inclusion requirement, <span class="math inline">\(d\in Q(u)\)</span>. Since <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span> and <span class="math inline">\(d\in Q(u)\)</span>, <span class="math inline">\(M, u, \alpha[d/x]\Vdash \varphi(x)\)</span>. We conclude that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x) \to \forall x \Box \varphi(x)\)</span> And, more generally, <span class="math inline">\(M, w \Vdash \Box \forall x \varphi(x) \to \forall x \Box \varphi(x)\)</span></p>
 </div>
 <div id="prp-bf" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 14.4</strong></span> The Barcan Formula is valid in variable domain models satisfying the converse inclusion requirement.</p>
+<p><span class="theorem-title"><strong>Proposition 11.4</strong></span> The Barcan Formula is valid in variable domain models satisfying the converse inclusion requirement.</p>
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>Let <span class="math inline">\(M\)</span> be a variable domain model of the form <span class="math inline">\(( W, R, D, I)\)</span> satisfying the converse inclusion requirement. Choose a world <span class="math inline">\(w \in W\)</span> and an assignment <span class="math inline">\(\alpha\)</span> for <span class="math inline">\(M\)</span>. We argue that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x) \to \Box \forall x \varphi(x)\)</span>. Since the formula is a conditional, assume that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x)\)</span>. That means that <span class="math inline">\(M, u, \alpha[d/x] \Vdash \Box \varphi(x)\)</span> for all <span class="math inline">\(d\in Q(w)\)</span>. We now argue that <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x)\)</span>. That is that for every <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span>, <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span>. Pick a word <span class="math inline">\(u\in W\)</span> such that <span class="math inline">\(Rwu\)</span> and let <span class="math inline">\(d \in Q(u)\)</span>. <em>Because</em> <span class="math inline">\(M\)</span> satisfies the converse inclusion requirement, <span class="math inline">\(d\in Q(w)\)</span>. Since <span class="math inline">\(M, w, \alpha[d/x] \Vdash \Box \varphi(x)\)</span> and <span class="math inline">\(M, u, \alpha[d/x] \Vdash \varphi(x)\)</span>. So, generalizing, <span class="math inline">\(M, u, \alpha \Vdash \forall x \varphi(x)\)</span> and <span class="math inline">\(M, w, \alpha \Vdash \Box \forall x \varphi(x)\)</span>. We conclude that <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x) \to \Box \forall x \varphi(x)\)</span> And <span class="math inline">\(M, w, \alpha \Vdash \forall x \Box \varphi(x) \to \Box \forall x \varphi(x)\)</span>.</p>
@@ -1215,7 +1197,7 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./conditionals.html" class="pagination-link" aria-label="Conditionals">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Conditionals</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Conditionals</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1225,6 +1207,19 @@ M, w,  \alpha  \Vdash  \Box  \ \varphi &amp; &amp; \text{iff} &amp; &amp; M, u, 
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2026 Gabriel Uzquiano. Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
