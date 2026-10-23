@@ -290,7 +290,11 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#knowledge" id="toc-knowledge" class="nav-link active" data-scroll-target="#knowledge"><span class="header-section-number">9.1</span> Knowledge</a></li>
+  <li><a href="#knowledge" id="toc-knowledge" class="nav-link active" data-scroll-target="#knowledge"><span class="header-section-number">9.1</span> Knowledge</a>
+  <ul class="collapse">
+  <li><a href="#axioms-for-epistemic-logic" id="toc-axioms-for-epistemic-logic" class="nav-link" data-scroll-target="#axioms-for-epistemic-logic"><span class="header-section-number">9.1.1</span> Axioms for Epistemic Logic</a></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">9.1.2</span> Applications</a></li>
+  </ul></li>
   <li><a href="#information-flow" id="toc-information-flow" class="nav-link" data-scroll-target="#information-flow"><span class="header-section-number">9.2</span> Information Flow</a></li>
   <li><a href="#common-knowledge" id="toc-common-knowledge" class="nav-link" data-scroll-target="#common-knowledge"><span class="header-section-number">9.3</span> Common Knowledge</a></li>
   </ul>
@@ -321,7 +325,7 @@ window.Quarto = {
 <p>Modal logic has been used to model knowledge and belief. Epistemic logic provides a formal framework for the study of different aspects of knowledge and its interaction with belief.</p>
 <section id="knowledge" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="knowledge"><span class="header-section-number">9.1</span> Knowledge</h2>
-<p>Basic epistemic logic begins with <span class="citation" data-cites="hintikka1962knowledge">(<a href="references.html#ref-hintikka1962knowledge" role="doc-biblioref">Hintikka 1962</a>)</span>. The first step is to supplement the language of propositional logic with a family of propositional operators <span class="math inline">\(\textsf{K}_i\)</span> for a family of epistemic agents <span class="math inline">\(i\in I\)</span>. A formula of the form <span class="math inline">\(\textsf{K}_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that <span class="math inline">\(\varphi\)</span>,” and <span class="math inline">\(\textsf{K}_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> does not know that <span class="math inline">\(\varphi\)</span>.” On the other hand, <span class="math inline">\(\textsf{K}_i \neg \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that not-<span class="math inline">\(\varphi\)</span>,” which amounts to the claim that agent <span class="math inline">\(i\)</span> has <em>ruled out</em> that <span class="math inline">\(\varphi\)</span>. The dual of <span class="math inline">\(\textsf{K}_i\)</span>, <span class="math inline">\(\neg \textsf{K}_i \neg\)</span>, is symbolized: <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span>, is read: “agent <span class="math inline">\(i\)</span> has not ruled out <span class="math inline">\(\varphi\)</span>” or “for all agent <span class="math inline">\(i\)</span> knows, might be the case.” If to know that not-<span class="math inline">\(\varphi\)</span> is to rule <span class="math inline">\(\varphi\)</span> out, then to not know that not-<span class="math inline">\(\varphi\)</span> is to not rule <span class="math inline">\(\varphi\)</span> out, which is to say that <span class="math inline">\(\varphi\)</span> might, for all the agent knows, the case.</p>
+<p>Basic epistemic logic begins with <span class="citation" data-cites="hintikka1962knowledge">(<a href="references.html#ref-hintikka1962knowledge" role="doc-biblioref">Hintikka 1962</a>)</span>. The first step is to supplement the language of propositional logic with a family of propositional operators <span class="math inline">\(\textsf{K}_i\)</span> for a family of epistemic agents <span class="math inline">\(i\in I\)</span>. A formula of the form <span class="math inline">\(\textsf{K}_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that <span class="math inline">\(\varphi\)</span>,” and <span class="math inline">\(\neg \textsf{K}_i \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> does not know that <span class="math inline">\(\varphi\)</span>.” On the other hand, <span class="math inline">\(\textsf{K}_i \neg \varphi\)</span> is read: “agent <span class="math inline">\(i\)</span> knows that not-<span class="math inline">\(\varphi\)</span>,” which amounts to the claim that agent <span class="math inline">\(i\)</span> has <em>ruled out</em> that <span class="math inline">\(\varphi\)</span>. The dual of <span class="math inline">\(\textsf{K}_i\)</span>, <span class="math inline">\(\neg \textsf{K}_i \neg\)</span>, is symbolized: <span class="math inline">\(\langle \textsf{K}_i \rangle\)</span>, is read: “agent <span class="math inline">\(i\)</span> has not ruled out <span class="math inline">\(\varphi\)</span>” or “for all agent <span class="math inline">\(i\)</span> knows, might be the case.” If to know that not-<span class="math inline">\(\varphi\)</span> is to rule <span class="math inline">\(\varphi\)</span> out, then to not know that not-<span class="math inline">\(\varphi\)</span> is to not rule <span class="math inline">\(\varphi\)</span> out, which is to say that <span class="math inline">\(\varphi\)</span> might, for all the agent knows, the case.</p>
 <p>Here is the broad picture as described by <span class="citation" data-cites="lewisPluralityWorlds1986">Lewis (<a href="references.html#ref-lewisPluralityWorlds1986" role="doc-biblioref">1986</a>)</span> in terms of epistemic alternatives:</p>
 <blockquote class="blockquote">
 <p>The content of someone’s knowledge of the world is given by his class of <em>epistemically accessible</em> worlds. These are the worlds that might, for all he knows, be his world; world <span class="math inline">\(w\)</span> is one of them iff he knows nothing, either explicitly or implicitly, to rule out the hypothesis that <span class="math inline">\(w\)</span> is the world where he lives.</p>
@@ -361,6 +365,8 @@ M, s \Vdash \langle \textsf{K}_i \rangle \varphi &amp; \text{iff} &amp; \text{fo
 <div id="def-truth-in-a-model" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 9.3 (Truth in a Model)</strong></span> A formula <span class="math inline">\(\varphi\)</span> is <em>true in</em> a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>, written <span class="math inline">\(M\Vdash \varphi\)</span>, if, and only if, for every <span class="math inline">\(s\in W\)</span>, <span class="math inline">\(M, s \Vdash \varphi\)</span>.</p>
 </div>
+<section id="axioms-for-epistemic-logic" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="axioms-for-epistemic-logic"><span class="header-section-number">9.1.1</span> Axioms for Epistemic Logic</h3>
 <p>These decisions are not inconsequential. For it follows that agents know all logical truths and that they know what follows from what they know. That is the framework vindicates a rule of necessitation and all substitution instances of axiom <span class="math inline">\(\textsf{K}\)</span>: <span class="math display">\[\tag{\textsf{RN}}
 \varphi / \textsf{K}_i \varphi\]</span></p>
 <p><span class="math display">\[\tag{\textsf{K}}
@@ -383,7 +389,7 @@ M, s \Vdash \langle \textsf{K}_i \rangle \varphi &amp; \text{iff} &amp; \text{fo
 <p><span class="math display">\[\tag{$\textsf{B}$}
 p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p\]</span></p>
 <p><span class="math display">\[\tag{$\textsf{B}_\Diamond$}
-\langle \textsf{K}_i \rangle K_i p  \to p\]</span></p>
+\langle \textsf{K}_i \rangle \textsf{K}_i p  \to p\]</span></p>
 <p>Here is a gloss of the dual: if for all <span class="math inline">\(i\)</span> knows, <span class="math inline">\(i\)</span> knows that <span class="math inline">\(p\)</span>, then <span class="math inline">\(p\)</span> is the case. In other words, if it is compatible with what I know that I know <span class="math inline">\(p\)</span>, then <span class="math inline">\(p\)</span> is in fact the case. Or, for a more compact formulation: whatever might be known is the case.</p>
 <p><span class="math inline">\((\textsf{B})\)</span> corresponds to the symmetry of the <span class="math inline">\(i\)</span>-accessibility relations: for all <span class="math inline">\(s, t \in W\)</span>, if <span class="math inline">\(R_i st\)</span>, then <span class="math inline">\(R_i ts\)</span>. <span class="citation" data-cites="Williamson2000-WILKAI">(<a href="references.html#ref-Williamson2000-WILKAI" role="doc-biblioref">Williamson 2000</a>)</span> observes that symmetry plays a role in arguments for radical skepticism. For suppose that in a given state <span class="math inline">\(s\)</span>, the agent <span class="math inline">\(i\)</span> truly believes that they have a hand. The skeptic describes an epistemic alternative <span class="math inline">\(t\)</span> at which the agent <span class="math inline">\(i\)</span> believes that they have a hand while being in fact a brain in a vat. It is uncontroversial that the non-skeptic state is an epistemic alternative to <span class="math inline">\(s\)</span> in the skeptic scenario: <span class="math inline">\(Rts\)</span>. That is, all <span class="math inline">\(i\)</span> knows at <span class="math inline">\(t\)</span> is in fact the case at <span class="math inline">\(s\)</span>. The agent does not know, for example, that they are a brain in a vat. Given symmetry then, <span class="math inline">\(Rst\)</span>, which is to say that all <span class="math inline">\(i\)</span> knows at <span class="math inline">\(s\)</span> is in fact the case at <span class="math inline">\(t\)</span>. But since <span class="math inline">\(i\)</span> does not have a hand at <span class="math inline">\(t\)</span>, it follows that, at <span class="math inline">\(s\)</span>, agent <span class="math inline">\(i\)</span> does <em>not</em> know that they have a hand.</p>
 <p>One way to undermine confidence in <span class="math inline">\((\textsf{B})\)</span> is to note that it delivers substitution instances of the principle:</p>
@@ -426,7 +432,7 @@ p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p\]</span></p>
 <p><span class="math display">\[\begin{array}{lll}
 1 &amp; \textsf{K}_i \varphi \to \textsf{K}_i \textsf{K}_i \varphi &amp; \textsf{4}\\
 2 &amp; \textsf{K}_i \textsf{K}_i \varphi \to \textsf{B}_i \textsf{K}_i  \varphi &amp;  \textsf{Knowledge entails belief}\\
-3 &amp; \textsf{K}_i \varphi \to \textsf{K}_i \textsf{B}_i \varphi &amp; \textsf{PL} \ 1, 2, 3
+3 &amp; \textsf{K}_i \varphi \to \textsf{B}_i \textsf{K}_i \varphi &amp; \textsf{PL} \ 1, 2
 \end{array}\]</span></p>
 </div>
 <p>In other words, I know something only if I believe that I know it.</p>
@@ -446,27 +452,59 @@ p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p\]</span></p>
 \end{array}\]</span></p>
 </div>
 <p>So if you know that the true count is not <span class="math inline">\(n\)</span>, you also know it is not <span class="math inline">\(n+1\)</span>. That is unacceptable. You surely know the count is <em>not</em> <span class="math inline">\(0\)</span>. A simple induction would now reveal that for every number <span class="math inline">\(n\)</span>, including the true count, you know that it is <em>not</em> the count of people in attendance. Something must give, and Williamson’s suggestion is to blame substitution instances of axiom <span class="math inline">\(\textsf{4}\)</span>.</p>
-<p>Of special interest is the interaction of epistemic and metaphysical modalities.</p>
-<p><strong><em>What is the case can be known</em></strong></p>
-<p><span class="math display">\[p \to  \Diamond \ \textsf{K}_i p \tag{Knowability}\]</span></p>
-<p>Fitch’s paradox is the observation that we cannot have <em>all</em> instances of that schema unless we are prepared to accept all instances of the schema:</p>
-<p><span class="math display">\[p \to K_i p\]</span></p>
+</section>
+<section id="applications" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">9.1.2</span> Applications</h3>
+<section id="the-unexpected-examination" class="level4" data-number="9.1.2.1">
+<h4 data-number="9.1.2.1" class="anchored" data-anchor-id="the-unexpected-examination"><span class="header-section-number">9.1.2.1</span> The Unexpected Examination</h4>
+<p>The paradox of the unexpected examination arises when a teacher makes the announcement that there will be an exam next term, which will come as a surprise: students will not know on the morning of the exam, that it is that day. Students reason backwards. The exam cannot be on the last day of classes, since otherwise, they would know that the exam is that day. Given that, it cannot be on the penultimate day either: they ruled out the last day, which means that if the exam has not taken place by the penultimate day, then that would be the only available option. Similar reasons rule out other days until no day is left. Yet, the teacher gives the exam and the students are surprised.</p>
+<p><span class="citation" data-cites="Williamson2000-WILKAI">Williamson (<a href="references.html#ref-Williamson2000-WILKAI" role="doc-biblioref">2000, chap. 6</a>)</span> suggests the same issue arises in a much simpler case, which he dubs <em>Glimpse</em>. Students know that the teacher circles all and only examination dates on her office calendar. From a distant glimpse, they note that exactly one date is circled, and that it is not very near the end of term, but they cannot narrow it down much further. Let <span class="math inline">\(e_n\)</span> be the claim that the exam will take place <span class="math inline">\(n\)</span> days before the end of term. That is, <span class="math inline">\(e_0\)</span> is the claim that the exam will take place on the last day, and <span class="math inline">\(e_1\)</span> is the claim that the exam will take place on the penultimate day. Because the glimpse is imprecise, the students’ knowledge is subject to a margin of error principle:</p>
+<p><span class="math display">\[\tag{\textsf{MEP}} \forall n \,(\textsf{K}\neg e_n \to \neg e_{n+1}).\]</span></p>
+<p>The glimpse is too coarse to rule out that the exam will take place <span class="math inline">\(n\)</span> days before the end of term if the exam does in fact take place <span class="math inline">\(n+1\)</span> days before the end of term. Because the students understand their situation, they are aware of this principle. Furthermore, they know from the glimpse that the exam will not take place on the very last day of term: <span class="math inline">\(\textsf{K} \neg e_0\)</span>. Given axiom <span class="math inline">\(\textsf{4}\)</span>, they are able to argue:</p>
+<p><span class="math display">\[\textsf{K} \neg e_0 \to \textsf{K} \neg e_1\]</span></p>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>The argument uses a known instance of <span class="math inline">\(\textsf{MEP}\)</span>:</p>
 <p><span class="math display">\[\begin{array}{lll}
-1 &amp; (p \wedge \neg K_i p) \to \Diamond K_i (p \wedge \neg K_ip) &amp; \text{Knowability} \\
-2 &amp; K_i (p \wedge \neg K_ip) \to (K_i p \wedge K_i \neg K_ip) &amp; \textsf{K}\\
-3 &amp; (K_i p \wedge K_i \neg K_ip) \to (K_i p \wedge \neg K_ip) &amp; \textsf{T}, \textsf{PL} 1\\
-4 &amp; \Diamond (K_i p \wedge K_i \neg K_ip) \to \Diamond (K_i p \wedge \neg K_ip) &amp; \textsf{RN}_\Diamond \ 3 \\
-5 &amp; (p \wedge \neg K_i p) \to \Diamond (K_i p \wedge \neg K_ip) &amp; \textsf{PL} \ 1, 4 \\
-6 &amp; \neg (K_i p \wedge \neg K_ip) &amp; \textsf{PL} \\
-7 &amp; \Box \neg (K_i p \wedge \neg K_ip) &amp; \textsf{RN} \ 6 \\
-8 &amp; \neg \Diamond (K_i p \wedge \neg K_ip) &amp; \textsf{Def} \ \Diamond 7 \\
-9 &amp; \neg (p \wedge \neg K_i p) &amp; \textsf{PL} \ 5, 8
+1 &amp; \textsf{K}\neg e_0 \to \textsf{K}\textsf{K}\neg e_0 &amp; \textsf{4}\\
+2 &amp; \textsf{K}(\textsf{K}\neg e_0 \to \neg e_{1}) &amp; \text{known instance of \textsf{MEP}}\\
+3 &amp; \textsf{K}\textsf{K}\neg e_0 \to \textsf{K}\neg e_{1} &amp; \textsf{K}, 2\\
+4 &amp; \textsf{K}\neg e_0 \to\textsf{K}\neg e_{1} &amp; \textsf{K},\ \textsf{PL},\ 1, 3
 \end{array}\]</span></p>
-<p>When taken at face value, the argument appears to suggest that what is the case can be known only if what is the case is already in fact known.</p>
+</div>
+<p>But once they can rule out <span class="math inline">\(e_1\)</span>, by <span class="math inline">\(\textsf{4}\)</span>, they know that they know, and a similar argument enables them to rule out <span class="math inline">\(e_2\)</span>. More generally, we have:</p>
+<p><span class="math display">\[\textsf{K} \neg e_n \to \textsf{K} \neg e_{n+1}\]</span></p>
+<p>Students are thus in a position to rule out <span class="math inline">\(e_{n+1}\)</span> once they rule out <span class="math inline">\(e_n\)</span>. That means that they are, on the face of it, able to rule out <em>every</em> day of term, and yet the exam takes place and they are surprised. Something must give again, and Williamson suggests that the students’ error is to rely on <span class="math inline">\(\textsf{4}\)</span>.</p>
+</section>
+<section id="fitchs-paradox-of-knowability" class="level4" data-number="9.1.2.2">
+<h4 data-number="9.1.2.2" class="anchored" data-anchor-id="fitchs-paradox-of-knowability"><span class="header-section-number">9.1.2.2</span> Fitch’s paradox of knowability</h4>
+<p>Some philosophers claim that what is true never outstrips what can be known: whatever is the case can, in principle, be known. When we read <span class="math inline">\(\Diamond \varphi\)</span> as: “<span class="math inline">\(\varphi\)</span> is <em>metaphysically</em> possible”, we may regiment the principle: <span class="math display">\[p \to \Diamond \textsf{K}_i p \tag{\textsf{Knowability}}\]</span> Fitch’s paradox is the observation that <span class="math inline">\(\textsf{Knowability}\)</span> entails what looks like an implausible principle: <span class="math display">\[\tag{\textsf{Knowledge}}
+p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
+<p>Recall the observation that Moorean propositions cannot be known. If, unbeknownst to you, your iphone has been stolen, then we have this: <span class="math display">\[p \wedge \neg \textsf{K}_i p\]</span>This would be a perfectly ordinary truth that you could never come to know. To know the conjunction, you must come to know each conjunct, but as soon as you come to know the first conjunct, <span class="math inline">\(p\)</span>, the second conjunct, <span class="math inline">\(\textsf{K}_i p\)</span>, becomes false and thus cannot be known. The formal argument requires only instances of <span class="math inline">\(\textsf{M}\)</span> and <span class="math inline">\(\textsf{T}\)</span>: <span class="math display">\[\begin{array}{lll}
+1 &amp; \textsf{K}_i(p \wedge \neg \textsf{K}_i p) \to (\textsf{K}_i p \wedge  \textsf{K}_i \neg \textsf{K}_i p) &amp; \textsf{M}\\
+2 &amp; \textsf{K}_i \neg \textsf{K}_i p \to \neg \textsf{K}_i p &amp; \textsf{T}\\
+3 &amp; \neg \textsf{K}_i(p \wedge \neg \textsf{K}_i p) &amp; \textsf{PL} \ 1, 2
+\end{array}\]</span></p>
+<p>Since the conclusion of the argument is a theorem, it depends only on logical and epistemic principles that should be available across possibilities. Given the rule of necessitation <span class="math inline">\(\textsf{RN}\)</span> for <span class="math inline">\(\Box\)</span>, we obtain: <span class="math display">\[\begin{array}{lll}
+4 &amp; \Box \neg \textsf{K}_i(p \wedge \neg \textsf{K}_i p) &amp; \textsf{RN} \ 3\\
+5 &amp; \neg \Diamond \textsf{K}_i(p \wedge \neg \textsf{K}_i p) &amp; \textsf{Def} \ \Diamond \ 4
+\end{array}\]</span></p>
+<p>We are now in a position to appreciate how <span class="math inline">\(\textsf{Knowability}\)</span> collapses into <span class="math inline">\(\textsf{Knowledge}\)</span>: <span class="math display">\[\begin{array}{lll}
+6 &amp; (p \wedge \neg \textsf{K}_i p) \to \Diamond \textsf{K}_i(p \wedge \neg \textsf{K}_i p) &amp; \textsf{Knowability}\\
+7 &amp; p \to \textsf{K}_i p &amp; \textsf{PL} \ 5, 6
+\end{array}\]</span></p>
+<p>That is, if <span class="math inline">\(p\)</span> is an unknown truth, then the Moorean proposition <span class="math inline">\(p \wedge \neg \textsf{K}_i p\)</span> becomes unknowable. It follows that if <em>all</em> truths are indeed knowable, then all truths are indeed known.</p>
+<p>Consider the issue from a semantic point of view. A model for the hybrid language requires two accessibility relations: <span class="math inline">\(R_i\)</span> for <span class="math inline">\(i\)</span>’s knowledge and <span class="math inline">\(R_\Diamond\)</span> for metaphysical possibility. <span class="math inline">\(\textsf{K}_i\varphi\)</span> is true at <span class="math inline">\(w\)</span> iff <span class="math inline">\(\varphi\)</span> is true at every <span class="math inline">\(R_i\)</span>-successor of <span class="math inline">\(w\)</span>, and <span class="math inline">\(\Diamond\varphi\)</span> is true at <span class="math inline">\(w\)</span> iff <span class="math inline">\(\varphi\)</span> is true at some <span class="math inline">\(R_\Diamond\)</span>-successor of <span class="math inline">\(w\)</span>.</p>
+<p>Two points stand out. First, the application of <span class="math inline">\(\textsf{RN}\)</span> in line 4 presupposes that line 3 obtains not just at the world of evaluation but at all <span class="math inline">\(R_\Diamond\)</span>-accessible worlds. Since line 3 depends on <span class="math inline">\(\textsf{T}\)</span>, this requires <span class="math inline">\(R_i\)</span> to be reflexive at every world.</p>
+<p>Second, and more important, <span class="math inline">\(\Diamond\)</span> shifts the world of evaluation for the embedded formula, which includes the inner <span class="math inline">\(\neg \textsf{K}_i p\)</span>, to another <span class="math inline">\(R_\Diamond\)</span>-accessible world. Consider a world <span class="math inline">\(w\)</span> at which <span class="math inline">\(p \wedge \neg \textsf{K}_i p\)</span> is true, and a world <span class="math inline">\(v\)</span> <span class="math inline">\(R_\Diamond\)</span>-accessible from <span class="math inline">\(w\)</span>, where <span class="math inline">\(i\)</span> has learned that <span class="math inline">\(p\)</span>.</p>
+<p><span class="math display">\[\underset{p,\ \neg \textsf{K}_i p}{w} \quad \xrightarrow{\;R_\Diamond\;} \quad \underset{p,\ \textsf{K}_i p}{v}\]</span></p>
+<p>For <span class="math inline">\(\textsf{Knowability}\)</span> to be true at <span class="math inline">\(w\)</span>, <span class="math inline">\(\textsf{K}_i (p \wedge \neg \textsf{K}_i p)\)</span> must be true at some <span class="math inline">\(R_\Diamond\)</span>-accessible world <span class="math inline">\(u\)</span>. Since knowledge of the conjunction requires knowledge of the conjuncts, this has to be a world like <span class="math inline">\(v\)</span>, where <span class="math inline">\(i\)</span> knows <span class="math inline">\(p\)</span>. But at <span class="math inline">\(v\)</span>, the second conjunct states that <span class="math inline">\(i\)</span> does not know <span class="math inline">\(p\)</span> <em>at</em> <span class="math inline">\(v\)</span>, not at <span class="math inline">\(w\)</span>. Since knowledge is factive, <span class="math inline">\(i\)</span> cannot know the conjunction at <span class="math inline">\(v\)</span> or at any other world at which she knows <span class="math inline">\(p\)</span>. On the face of it, what we want is a world like <span class="math inline">\(v\)</span>, where <span class="math inline">\(i\)</span> knows that <span class="math inline">\(p\)</span> and knows that she did not know <span class="math inline">\(p\)</span> at <span class="math inline">\(w\)</span>. But the formula <span class="math inline">\(\textsf{K}_i (p \wedge \neg \textsf{K}_i p)\)</span> cannot express this, because the inner <span class="math inline">\(\textsf{K}_i\)</span> concerns the epistemic state of <span class="math inline">\(i\)</span> at the world of evaluation. The paradox, on this view, arises because there are truths concerned with the agent’s epistemic situation, and coming to know them makes them false.</p>
+</section>
+</section>
 </section>
 <section id="information-flow" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="information-flow"><span class="header-section-number">9.2</span> Information Flow</h2>
-<p>The insight behind the possible worlds semantics for epistemic logic is that agents locate themselves in the space of epistemic live options by excluding states of the world as live options in light of new information. The Muddy Children puzzle illustrates the dynamic aspect of this update mechanism:</p>
+<p>In epistemic logic, agents locate themselves in the space of epistemic alternatives by ruling out certain states as genuine epistemic alternatives in light of new information.</p>
+<p>The Muddy Children puzzle illustrates the dynamic aspect of this update mechanism:</p>
 <div id="exm-muddy-children" class="theorem example">
 <p><span class="theorem-title"><strong>Example 9.1 (Muddy Children)</strong></span> Three children <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> have been playing outside when they are called back inside by their guardian. Two of them, say <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>, have mud on their forehead, but none of them can see what is on their forehead. Each child, however, can see which of the other children are muddy. Once inside, the guardian asserts:</p>
 <ol type="A">
@@ -530,7 +568,7 @@ p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p\]</span></p>
 </tr>
 </tbody>
 </table>
-<p>After the second request, <span class="math inline">\(C\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is not is muddy.</p>
+<p>After the second request, <span class="math inline">\(C\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is muddy.</p>
 <p>That allows the children to eliminate every epistemic alternative to <span class="math inline">\(101\)</span>. So, the epistemic situation after the second request is that the children know exactly who is muddy and who is not muddy.</p>
 <table class="caption-top table">
 <tbody>
@@ -543,6 +581,27 @@ p  \to \textsf{K}_i \langle \textsf{K}_i \rangle p\]</span></p>
 </tbody>
 </table>
 <p>Nothing changes when we complicate the situation. If, for example, seven out of ten children happened to be muddy, then no one would step forward until after the guardian makes the seventh request at which point exactly those seven children would simultaneously step forward.</p>
+<p>The diagrams suggest a simple update mechanism. Once a truth <span class="math inline">\(\varphi\)</span> is announced, agents are in a position to eliminate states at which <span class="math inline">\(\varphi\)</span> fails.</p>
+<div id="def-update" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 9.4 (Update)</strong></span> If <span class="math inline">\(M = (W, \{R_i: i\in I\}, V)\)</span> and <span class="math inline">\(\varphi\)</span> is a formula, the <em>update</em> of <span class="math inline">\(M\)</span> by <span class="math inline">\(\varphi\)</span> is the model <span class="math inline">\(M|\varphi = (W', \{R'_i: i \in I\}, V')\)</span>, where:</p>
+<ol type="1">
+<li><p><span class="math inline">\(W' = \{s \in W : M, s \Vdash \varphi\}\)</span>,</p></li>
+<li><p><span class="math inline">\(R'_i = R_i \cap (W' \times W')\)</span>, and</p></li>
+<li><p><span class="math inline">\(V'(p) = V(p) \cap W'\)</span></p></li>
+</ol>
+</div>
+<p>We now add an operator <span class="math inline">\([!\varphi]\)</span>, where: <span class="math inline">\([!\varphi]\psi\)</span> is read: “after the announcement of <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(\psi\)</span>. Its truth clause is:</p>
+<div class="{#def-!}">
+<p><span class="math display">\[\begin{array}{lll}
+M, s \Vdash [!\varphi] \psi &amp; \text{iff} &amp; M, s \Vdash \varphi \ \text{only if} \ M|\varphi, s \Vdash \psi\\
+\end{array}\]</span></p>
+</div>
+<p>The antecedent reflects the assumption that announcements are true.</p>
+<p>To return to the Muddy Children case, let <span class="math inline">\(p_i\)</span> be the proposition that child <span class="math inline">\(i\)</span> is muddy with <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are children <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, and <span class="math inline">\(3\)</span>, respectively. Then, <span class="math inline">\(A\)</span> is the announcement:</p>
+<p><span class="math display">\[p_1 \vee p_2 \vee p_3\]</span></p>
+<p>The effect of the announcement is to remove the state <span class="math inline">\(000\)</span>, which is exactly the transition from the first to the second diagram. Now, the failure to step forward after <span class="math inline">\(B\)</span> is itself informative as it amounts to the public announcement that no child knows that they are muddy:</p>
+<p><span class="math display">\[\neg \textsf{K}_a p_1 \wedge \neg \textsf{K}_a p_2 \wedge \neg \textsf{K}_a p_3\]</span></p>
+<p>This formula is true at <span class="math inline">\(101\)</span>, since <span class="math inline">\(a\)</span> cannot rule out <span class="math inline">\(001\)</span> and <span class="math inline">\(c\)</span> cannot rule out <span class="math inline">\(100\)</span>. It is false at every state with exactly one muddy child, since such a child sees no mud on any other child and, after <span class="math inline">\(A\)</span>, must know that they are muddy. The update removes those states, which is exactly the transition from the second to the third diagram.</p>
 </section>
 <section id="common-knowledge" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="common-knowledge"><span class="header-section-number">9.3</span> Common Knowledge</h2>
@@ -616,7 +675,7 @@ M, s \Vdash \textsf{C} \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W
 </tbody>
 </table>
 <p>At this point, the fact that two children are muddy now becomes common knowledge, since only states where two children are muddy are reachable from the state of evaluation in a finite number of steps.</p>
-<p>The actual distribution of mud becomes common knowledge after the two children step forward after the thrid request. That is because they are all left with a single epistemic live option:</p>
+<p>The actual distribution of mud becomes common knowledge after the two children step forward after the second request. That is because they are all left with a single epistemic live option:</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 100%">
