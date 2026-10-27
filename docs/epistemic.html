@@ -295,7 +295,13 @@ window.Quarto = {
   <li><a href="#axioms-for-epistemic-logic" id="toc-axioms-for-epistemic-logic" class="nav-link" data-scroll-target="#axioms-for-epistemic-logic"><span class="header-section-number">9.1.1</span> Axioms for Epistemic Logic</a></li>
   <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="header-section-number">9.1.2</span> Applications</a></li>
   </ul></li>
-  <li><a href="#information-flow" id="toc-information-flow" class="nav-link" data-scroll-target="#information-flow"><span class="header-section-number">9.2</span> Information Flow</a></li>
+  <li><a href="#information-flow" id="toc-information-flow" class="nav-link" data-scroll-target="#information-flow"><span class="header-section-number">9.2</span> Information Flow</a>
+  <ul class="collapse">
+  <li><a href="#public-announcements" id="toc-public-announcements" class="nav-link" data-scroll-target="#public-announcements"><span class="header-section-number">9.2.1</span> Public Announcements</a></li>
+  <li><a href="#unsuccessful-updates" id="toc-unsuccessful-updates" class="nav-link" data-scroll-target="#unsuccessful-updates"><span class="header-section-number">9.2.2</span> Unsuccessful Updates</a></li>
+  <li><a href="#the-unexpected-examination-revisited" id="toc-the-unexpected-examination-revisited" class="nav-link" data-scroll-target="#the-unexpected-examination-revisited"><span class="header-section-number">9.2.3</span> The Unexpected Examination Revisited</a></li>
+  <li><a href="#fitchs-paradox-revisited" id="toc-fitchs-paradox-revisited" class="nav-link" data-scroll-target="#fitchs-paradox-revisited"><span class="header-section-number">9.2.4</span> Fitch’s Paradox Revisited</a></li>
+  </ul></li>
   <li><a href="#common-knowledge" id="toc-common-knowledge" class="nav-link" data-scroll-target="#common-knowledge"><span class="header-section-number">9.3</span> Common Knowledge</a></li>
   </ul>
 </nav>
@@ -503,8 +509,7 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 </section>
 <section id="information-flow" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="information-flow"><span class="header-section-number">9.2</span> Information Flow</h2>
-<p>In epistemic logic, agents locate themselves in the space of epistemic alternatives by ruling out certain states as genuine epistemic alternatives in light of new information.</p>
-<p>The Muddy Children puzzle illustrates the dynamic aspect of this update mechanism:</p>
+<p>The main heuristic of epistemic logic is that agents locate themselves in the space of epistemic alternatives by ruling out states as epistemic alternatives in light of new information. The Muddy Children puzzle illustrates the dynamic aspect of this update mechanism:</p>
 <div id="exm-muddy-children" class="theorem example">
 <p><span class="theorem-title"><strong>Example 9.1 (Muddy Children)</strong></span> Three children <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> have been playing outside when they are called back inside by their guardian. Two of them, say <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span>, have mud on their forehead, but none of them can see what is on their forehead. Each child, however, can see which of the other children are muddy. Once inside, the guardian asserts:</p>
 <ol type="A">
@@ -514,8 +519,8 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 <ol start="2" type="A">
 <li>If you know you are muddy, please step forward.</li>
 </ol>
-<p>None of the children step forward after the first request. Each child will see other children with mud in their foreheads, but they do not yet know whether they themselves are muddy.</p>
-<p>Matters change when she repeats the same request for a second time:</p>
+<p>None of the children step forward after the first request. Each child will see other children with mud in their forehead, but they do not yet know whether they themselves are muddy.</p>
+<p>Matters change when she repeats the same request:</p>
 <ol start="3" type="A">
 <li>If you know you are muddy, please step forward.</li>
 </ol>
@@ -523,7 +528,7 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 </div>
 <p>The example raises some questions:</p>
 <ul>
-<li><p>Did the children learn anything new after the announcement that one of them was muddy? They each knew after all that some children were muddy.</p></li>
+<li><p>Did the children learn anything new after the announcement that one of them was muddy? They each knew after all that some children were muddy. (We return to this question in <span class="quarto-unresolved-ref">?sec-common-knowledge</span>.)</p></li>
 <li><p>What changed between the initial request when no one stepped forward and the later one when two muddy children did?</p></li>
 <li><p>How did the muddy children <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> come to know that they had mud in their foreheads?</p></li>
 </ul>
@@ -538,13 +543,13 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 </tr>
 </tbody>
 </table>
-<p>We represent the relevant states of information with respect to the question at hand by ordered triples of digits, which encode the state of each children in that order. Thus for example:</p>
+<p>We represent the relevant states of information with respect to the question at hand by ordered triples of digits, which encode the state of each child in that order. Thus for example:</p>
 <ul>
 <li><span class="math inline">\(101\)</span> encodes the <em>actual</em> state of the world on which <span class="math inline">\(a\)</span> is muddy, <span class="math inline">\(b\)</span> is not muddy, and <span class="math inline">\(c\)</span> is muddy.</li>
 <li><span class="math inline">\(111\)</span> encodes an <em>epistemic live option</em> for <span class="math inline">\(b\)</span> (though not for <span class="math inline">\(a\)</span> or <span class="math inline">\(c\)</span>) on which all three children are muddy.</li>
 <li><span class="math inline">\(001\)</span> encodes an <em>epistemic live option</em> for <span class="math inline">\(a\)</span> (though not for <span class="math inline">\(b\)</span> or <span class="math inline">\(c\)</span>) on which only <span class="math inline">\(c\)</span> is muddy.</li>
 </ul>
-<p>The eight nodes correspond to eight states, which consist of different distributions of mud across the children. The nodes are connected by different accessibility relations, which correspond to each child as an epistemic agent. We assume that each relation is <em>reflexive</em> and <em>symmetric</em>: when an edge labeled <span class="math inline">\(a\)</span>, for example, connects two nodes, the two states are indistinguishable as far as <span class="math inline">\(a\)</span> is concerned.</p>
+<p>The eight nodes correspond to eight states, which consist of different distributions of mud across the children. The nodes are connected by different accessibility relations, one for each child. When an edge labeled $a$ connects two nodes, the two states are indistinguishable as far as $a$ is concerned. Each relation is an equivalence relation, which means that the model is an $\textsf{S5}$ model. This is one case in which the idealization is harmless. Unlike the crowd at the stadium or the glimpse of the calendar, the children’s perception of one another is not subject to a margin of error: each child sees exactly who else is muddy, and the only thing she cannot see is her own forehead.</p>
 <p>The effect of the announcement <span class="math inline">\(A\)</span> is to let the children exclude <span class="math inline">\(000\)</span> as a live epistemic option.</p>
 <table class="caption-top table">
 <tbody>
@@ -556,8 +561,8 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 </tr>
 </tbody>
 </table>
-<p>While announcement <span class="math inline">\(A\)</span> excludes <span class="math inline">\(000\)</span> as actuality, none of the children regarded <span class="math inline">\(000\)</span> as an epistemic live option. That is because each children is able to see mud in the forehead of at least one child.</p>
-<p>The children learn valuable information from the fact that no one steps forward after the first request, <span class="math inline">\(B\)</span>, is made. This is because the children now learn that none of the other two children know that they are muddy. This suffices to rule out states at which there is exactly one muddy child.</p>
+<p>While announcement <span class="math inline">\(A\)</span> excludes <span class="math inline">\(000\)</span> as actuality, none of the children regarded <span class="math inline">\(000\)</span> as an epistemic live option. That is because each child is able to see mud in the forehead of at least one other child.</p>
+<p>The children learn valuable information from the fact that no one steps forward after the first request, <span class="math inline">\(B\)</span>, is made. This is because the children now learn that none of the other two children know that they are muddy. This suffices to rule out states at which exactly one child is muddy.</p>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
@@ -568,8 +573,7 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 </tr>
 </tbody>
 </table>
-<p>After the second request, <span class="math inline">\(C\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is muddy.</p>
-<p>That allows the children to eliminate every epistemic alternative to <span class="math inline">\(101\)</span>. So, the epistemic situation after the second request is that the children know exactly who is muddy and who is not muddy.</p>
+<p>After the second request, <span class="math inline">\(C\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is muddy. When <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> step forward, the children are able to eliminate every alternative to <span class="math inline">\(101\)</span>. So, the epistemic situation after the second request is that the children know exactly who is muddy and who is not.</p>
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
@@ -581,6 +585,8 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 </tbody>
 </table>
 <p>Nothing changes when we complicate the situation. If, for example, seven out of ten children happened to be muddy, then no one would step forward until after the guardian makes the seventh request at which point exactly those seven children would simultaneously step forward.</p>
+<section id="public-announcements" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="public-announcements"><span class="header-section-number">9.2.1</span> Public Announcements</h3>
 <p>The diagrams suggest a simple update mechanism. Once a truth <span class="math inline">\(\varphi\)</span> is announced, agents are in a position to eliminate states at which <span class="math inline">\(\varphi\)</span> fails.</p>
 <div id="def-update" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 9.4 (Update)</strong></span> If <span class="math inline">\(M = (W, \{R_i: i\in I\}, V)\)</span> and <span class="math inline">\(\varphi\)</span> is a formula, the <em>update</em> of <span class="math inline">\(M\)</span> by <span class="math inline">\(\varphi\)</span> is the model <span class="math inline">\(M|\varphi = (W', \{R'_i: i \in I\}, V')\)</span>, where:</p>
@@ -596,12 +602,49 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 M, s \Vdash [!\varphi] \psi &amp; \text{iff} &amp; M, s \Vdash \varphi \ \text{only if} \ M|\varphi, s \Vdash \psi\\
 \end{array}\]</span></p>
 </div>
-<p>The antecedent reflects the assumption that announcements are true.</p>
+<p>The antecedent reflects the assumption that announcements are true. Notice that an update never undermines the structure of an <span class="math inline">\(\textsf{S5}\)</span> model. <span class="math inline">\(R_i\)</span> is reflexive, symmetric, or transitive only if its restriction <span class="math inline">\(R'_i\)</span> is. So our discussion of the logic of knowledge in the static setting remains in place after the updates.</p>
 <p>To return to the Muddy Children case, let <span class="math inline">\(p_i\)</span> be the proposition that child <span class="math inline">\(i\)</span> is muddy with <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span> are children <span class="math inline">\(1\)</span>, <span class="math inline">\(2\)</span>, and <span class="math inline">\(3\)</span>, respectively. Then, <span class="math inline">\(A\)</span> is the announcement:</p>
 <p><span class="math display">\[p_1 \vee p_2 \vee p_3\]</span></p>
 <p>The effect of the announcement is to remove the state <span class="math inline">\(000\)</span>, which is exactly the transition from the first to the second diagram. Now, the failure to step forward after <span class="math inline">\(B\)</span> is itself informative as it amounts to the public announcement that no child knows that they are muddy:</p>
-<p><span class="math display">\[\neg \textsf{K}_a p_1 \wedge \neg \textsf{K}_a p_2 \wedge \neg \textsf{K}_a p_3\]</span></p>
+<p><span class="math display">\[\neg \textsf{K}_a p_1 \wedge \neg \textsf{K}_b p_2 \wedge \neg \textsf{K}_c p_3\]</span></p>
 <p>This formula is true at <span class="math inline">\(101\)</span>, since <span class="math inline">\(a\)</span> cannot rule out <span class="math inline">\(001\)</span> and <span class="math inline">\(c\)</span> cannot rule out <span class="math inline">\(100\)</span>. It is false at every state with exactly one muddy child, since such a child sees no mud on any other child and, after <span class="math inline">\(A\)</span>, must know that they are muddy. The update removes those states, which is exactly the transition from the second to the third diagram.</p>
+<p>Finally, when <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> step forward and <span class="math inline">\(b\)</span> does not, they publicly announce:</p>
+<p><span class="math display">\[\textsf{K}_a p_1 \wedge \neg \textsf{K}_b p_2 \wedge \textsf{K}_c p_3\]</span></p>
+<p>Of the four states that remain, this formula is true only at <span class="math inline">\(101\)</span>. At <span class="math inline">\(011\)</span> and <span class="math inline">\(111\)</span>, <span class="math inline">\(a\)</span> cannot rule out a state at which she is clean, and at <span class="math inline">\(110\)</span>, <span class="math inline">\(c\)</span> cannot. The update leaves a single state, which is the final diagram.</p>
+</section>
+<section id="unsuccessful-updates" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="unsuccessful-updates"><span class="header-section-number">9.2.2</span> Unsuccessful Updates</h3>
+<p>Something remarkable happened above. The announcement of ignorance after request <span class="math inline">\(B\)</span> was true at <span class="math inline">\(101\)</span> when it was made. But after the update, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> <em>know</em> that they are muddy, which means that the announced formula has become false. The children step forward precisely because the announcement of their ignorance refutes itself.</p>
+<p>This is the dynamic counterpart of the Moorean observation from the previous section. For a propositional variable <span class="math inline">\(p\)</span>, announcing <span class="math inline">\(p\)</span> invariably produces knowledge of <span class="math inline">\(p\)</span>:</p>
+<p><span class="math display">\[[!p]\textsf{K}_i p\]</span></p>
+<p>Once all states that remain satisfy <span class="math inline">\(p\)</span>, <span class="math inline">\(\textsf{K}_i p\)</span> is true throughout the updated model. But once we announce a Moorean formula, it becomes false:</p>
+<p><span class="math display">\[[!(p \wedge \neg \textsf{K}_i p)]\neg(p \wedge \neg \textsf{K}_i p)\]</span></p>
+<p>After the update, all states that remain satisfy <span class="math inline">\(p\)</span>, so <span class="math inline">\(\textsf{K}_i p\)</span> is likewise true throughout and the second conjunct fails. As observed above, if I tell you “your phone has been stolen, but you do not know it,” what I say may be perfectly true, but my announcement makes it false. Formulas that remain true after being announced are called <em>successful</em>, and those that do not are called <em>unsuccessful</em>.</p>
+<p>Unsuccessful formulas leave a trace in the logic. The formula <span class="math inline">\([!p]\textsf{K}_i p\)</span> is valid, but if we substitute <span class="math inline">\(p \wedge \neg \textsf{K}_i p\)</span> for <span class="math inline">\(p\)</span>, we obtain <span class="math inline">\([!(p \wedge \neg \textsf{K}_i p)]\textsf{K}_i(p \wedge \neg \textsf{K}_i p)\)</span>, which is false at all states at which the announcement can be made. So, unlike the logics we have studied thus far, the logic of public announcements is not closed under uniform substitution.</p>
+<p>Which formulas are safe? Call a formula <em>persistent</em> if, whenever it is true at a state, it remains true at that state after any update. Propositional formulas are persistent, since updates do not change the valuation at surviving states. So are formulas built from literals by <span class="math inline">\(\wedge\)</span>, <span class="math inline">\(\vee\)</span>, and <span class="math inline">\(\textsf{K}_i\)</span>: if <span class="math inline">\(\varphi\)</span> is true at every <span class="math inline">\(R_i\)</span>-successor of a state, it remains true at every successor that survives the update. What is not persistent is <em>ignorance</em>. A formula of the form <span class="math inline">\(\neg \textsf{K}_i \varphi\)</span> says that some alternative is still open, and an update may close it. All persistent formula are successful, and Moorean formulas, which combine a fact with ignorance of it, are the paradigm of unsuccessful ones.</p>
+</section>
+<section id="the-unexpected-examination-revisited" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="the-unexpected-examination-revisited"><span class="header-section-number">9.2.3</span> The Unexpected Examination Revisited</h3>
+<p>The update framework provides a new view of the unexpected examination paradox. <span class="citation" data-cites="gerbrandy2007surprise">Gerbrandy (<a href="references.html#ref-gerbrandy2007surprise" role="doc-biblioref">2007</a>)</span> asks us to consider the simplest case, in which the exam is either on Monday (<span class="math inline">\(m\)</span>) or on Tuesday (<span class="math inline">\(t\)</span>), but not both. On Sunday, the student cannot tell the two states apart:</p>
+<p><span class="math display">\[\underset{m}{w_m} \quad \overset{i}{\longleftrightarrow} \quad \underset{t}{w_t}\]</span></p>
+<p>What does it mean for the exam to be a surprise? If the exam is on Monday, the student must not know <em>on Sunday</em> that it is on Monday. If it is on Tuesday, the student must not know it is on Tuesday <em>even after learning, on Monday, that there was no exam that day</em>. The teacher’s announcement is therefore:</p>
+<p><span class="math display">\[S = (m \wedge \neg \textsf{K}_i m) \vee (t \wedge [!\neg m]\neg \textsf{K}_i t)\]</span></p>
+<p>Evaluate <span class="math inline">\(S\)</span> at each state:</p>
+<ul>
+<li>At <span class="math inline">\(w_m\)</span>, <span class="math inline">\(m\)</span> is true and <span class="math inline">\(w_t\)</span> is still open, so <span class="math inline">\(\neg \textsf{K}_i m\)</span> holds, and <span class="math inline">\(S\)</span> is true.</li>
+<li>At <span class="math inline">\(w_t\)</span>, the update by <span class="math inline">\(\neg m\)</span> leaves only <span class="math inline">\(w_t\)</span>, so the student would know <span class="math inline">\(t\)</span>, and <span class="math inline">\(S\)</span> is false.</li>
+</ul>
+<p>So the student’s first step is sound: if the announcement is true, the exam is not on the last day. But now suppose the teacher announces <span class="math inline">\(S\)</span> and the student takes her at her word. The update by <span class="math inline">\(S\)</span> removes <span class="math inline">\(w_t\)</span> and leaves only <span class="math inline">\(w_m\)</span>. At <span class="math inline">\(w_m\)</span>, the student now knows <span class="math inline">\(m\)</span>, so <span class="math inline">\(S\)</span> is false:</p>
+<p><span class="math display">\[M, w_m \Vdash S \wedge [!S]\neg S\]</span></p>
+<p>The teacher’s announcement is unsuccessful. It can be true when made, but it cannot survive being accepted. The same analysis extends to longer terms. With three days, the first elimination remains sound. But after the update by <span class="math inline">\(S\)</span>, <span class="math inline">\(S\)</span> itself fails at one of the remaining states, so the student no longer knows <span class="math inline">\(S\)</span>. The backward induction proceeds as if the student could keep eliminating days on the strength of an announcement she continues to know. That assumption is exactly what fails.</p>
+<p>The model thus makes precise a diagnosis due to <span class="citation" data-cites="kripke2011two">Kripke (<a href="references.html#ref-kripke2011two" role="doc-biblioref">2011</a>)</span>. Kripke agrees that the students may know the announcement when it is made. What they cannot do is <em>retain</em> that knowledge as they acquire more information. As the exam-free days go by, they forget nothing, but what they learn undermines their knowledge of the announcement. This diagnosis competes with Williamson’s. On Williamson’s view, the students’ error is to rely on <span class="math inline">\(\textsf{4}\)</span>. On Kripke’s view, it is to assume that knowledge of the announcement survives the passage of time. In the update model, <span class="math inline">\(\textsf{4}\)</span> holds throughout and the problem arises nonetheless, which suggests that <span class="math inline">\(\textsf{4}\)</span> is not the only culprit.</p>
+</section>
+<section id="fitchs-paradox-revisited" class="level3" data-number="9.2.4">
+<h3 data-number="9.2.4" class="anchored" data-anchor-id="fitchs-paradox-revisited"><span class="header-section-number">9.2.4</span> Fitch’s Paradox Revisited</h3>
+<p>The dynamic framework suggests a different interpretation of the knowability thesis. Rather than read <span class="math inline">\(\Diamond \textsf{K}_i \varphi\)</span> as metaphysical possibility, we may read it, following <span class="citation" data-cites="vanbenthem2004learnability">Benthem (<a href="references.html#ref-vanbenthem2004learnability" role="doc-biblioref">2004</a>)</span>, as <em>learnability</em>: <span class="math inline">\(\varphi\)</span> can be known at <span class="math inline">\(s\)</span> just in case some truth could be announced after which <span class="math inline">\(i\)</span> knows <span class="math inline">\(\varphi\)</span>. In symbols, there is some formula <span class="math inline">\(\psi\)</span> such that:</p>
+<p><span class="math display">\[M, s \Vdash \psi \quad \text{and} \quad M|\psi, s \Vdash \textsf{K}_i \varphi\]</span></p>
+<p>The question is now whether all truths are learnable in this sense. Moorean propositions are not, since <span class="math inline">\(\textsf{K}_i(p \wedge \neg \textsf{K}_i p)\)</span> is false at all states of a reflexive model, updated or not. So, the dynamic interpretation cannot rescue an unrestricted knowability thesis. But it does yield a positive result. <em>Persistent</em> truths are learnable: just announce it. After the update, it remains true at all states that remain, and so <span class="math inline">\(i\)</span> knows it. Unlearnable truths are those that concern the agent’s own ignorance, which is just what the earlier discussion of Fitch’s paradox led us to expect.</p>
+</section>
 </section>
 <section id="common-knowledge" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="common-knowledge"><span class="header-section-number">9.3</span> Common Knowledge</h2>
@@ -721,8 +764,17 @@ M, s \Vdash \textsf{C} \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-vanbenthem2004learnability" class="csl-entry" role="listitem">
+Benthem, Johan van. 2004. <span>“What One May Come to Know.”</span> <em>Analysis</em> 64 (2): 95–105.
+</div>
+<div id="ref-gerbrandy2007surprise" class="csl-entry" role="listitem">
+Gerbrandy, Jelle. 2007. <span>“The Surprise Examination in Dynamic Epistemic Logic.”</span> <em>Synthese</em> 155 (1): 21–33. <a href="https://doi.org/10.1007/s11229-005-2211-7">https://doi.org/10.1007/s11229-005-2211-7</a>.
+</div>
 <div id="ref-hintikka1962knowledge" class="csl-entry" role="listitem">
 Hintikka, Kaarlo Jaakko Juhani. 1962. <em>Knowledge and Belief: An Introduction to the Logic of the Two Notions</em>.
+</div>
+<div id="ref-kripke2011two" class="csl-entry" role="listitem">
+Kripke, Saul A. 2011. <span>“On Two Paradoxes of Knowledge.”</span> In <em>Philosophical Troubles: Collected Papers, Volume 1</em>. Oxford University Press.
 </div>
 <div id="ref-lewisPluralityWorlds1986" class="csl-entry" role="listitem">
 Lewis, David. 1986. <em>On the <span>Plurality</span> of <span>Worlds</span></em>. Wiley Blackwell.
