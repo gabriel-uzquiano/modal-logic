@@ -63,7 +63,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1d5fceb2b87bd6967690c3803af32ac3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-f78e8384b566140cdec842c5ef7a1364.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -302,7 +302,14 @@ window.Quarto = {
   <li><a href="#the-unexpected-examination-revisited" id="toc-the-unexpected-examination-revisited" class="nav-link" data-scroll-target="#the-unexpected-examination-revisited"><span class="header-section-number">9.2.3</span> The Unexpected Examination Revisited</a></li>
   <li><a href="#fitchs-paradox-revisited" id="toc-fitchs-paradox-revisited" class="nav-link" data-scroll-target="#fitchs-paradox-revisited"><span class="header-section-number">9.2.4</span> Fitch’s Paradox Revisited</a></li>
   </ul></li>
-  <li><a href="#common-knowledge" id="toc-common-knowledge" class="nav-link" data-scroll-target="#common-knowledge"><span class="header-section-number">9.3</span> Common Knowledge</a></li>
+  <li><a href="#group-knowledge" id="toc-group-knowledge" class="nav-link" data-scroll-target="#group-knowledge"><span class="header-section-number">9.3</span> Group Knowledge</a>
+  <ul class="collapse">
+  <li><a href="#someone-knows-and-everyone-knows" id="toc-someone-knows-and-everyone-knows" class="nav-link" data-scroll-target="#someone-knows-and-everyone-knows"><span class="header-section-number">9.3.1</span> Someone Knows and Everyone Knows</a></li>
+  <li><a href="#iterated-general-knowledge" id="toc-iterated-general-knowledge" class="nav-link" data-scroll-target="#iterated-general-knowledge"><span class="header-section-number">9.3.2</span> Iterated General Knowledge</a></li>
+  <li><a href="#common-knowledge" id="toc-common-knowledge" class="nav-link" data-scroll-target="#common-knowledge"><span class="header-section-number">9.3.3</span> Common Knowledge</a></li>
+  <li><a href="#distributed-knowledge" id="toc-distributed-knowledge" class="nav-link" data-scroll-target="#distributed-knowledge">Distributed Knowledge</a></li>
+  <li><a href="#how-the-concepts-are-related" id="toc-how-the-concepts-are-related" class="nav-link" data-scroll-target="#how-the-concepts-are-related">How the Concepts Are Related</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -533,16 +540,12 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 <li><p>How did the muddy children <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> come to know that they had mud in their foreheads?</p></li>
 </ul>
 <p>Here is a diagrammatic representation of the situation before the initial announcement.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren1.png" class="img-fluid"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Before Announcement A</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren1.png" class="img-fluid figure-img" width="360"></p>
+<figcaption>Before Announcement A</figcaption>
+</figure>
+</div>
 <p>We represent the relevant states of information with respect to the question at hand by ordered triples of digits, which encode the state of each child in that order. Thus for example:</p>
 <ul>
 <li><span class="math inline">\(101\)</span> encodes the <em>actual</em> state of the world on which <span class="math inline">\(a\)</span> is muddy, <span class="math inline">\(b\)</span> is not muddy, and <span class="math inline">\(c\)</span> is muddy.</li>
@@ -551,39 +554,27 @@ p \to \textsf{K}_i p,\]</span> according to which whatever is true is known.</p>
 </ul>
 <p>The eight nodes correspond to eight states, which consist of different distributions of mud across the children. The nodes are connected by different accessibility relations, one for each child. When an edge labeled $a$ connects two nodes, the two states are indistinguishable as far as $a$ is concerned. Each relation is an equivalence relation, which means that the model is an $\textsf{S5}$ model. This is one case in which the idealization is harmless. Unlike the crowd at the stadium or the glimpse of the calendar, the children’s perception of one another is not subject to a margin of error: each child sees exactly who else is muddy, and the only thing she cannot see is her own forehead.</p>
 <p>The effect of the announcement <span class="math inline">\(A\)</span> is to let the children exclude <span class="math inline">\(000\)</span> as a live epistemic option.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren2.png" class="img-fluid"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">After Announcement A</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren2.png" class="img-fluid figure-img" width="360"></p>
+<figcaption>After Announcement A</figcaption>
+</figure>
+</div>
 <p>While announcement <span class="math inline">\(A\)</span> excludes <span class="math inline">\(000\)</span> as actuality, none of the children regarded <span class="math inline">\(000\)</span> as an epistemic live option. That is because each child is able to see mud in the forehead of at least one other child.</p>
 <p>The children learn valuable information from the fact that no one steps forward after the first request, <span class="math inline">\(B\)</span>, is made. This is because the children now learn that none of the other two children know that they are muddy. This suffices to rule out states at which exactly one child is muddy.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren3a.png" class="img-fluid"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">After Request B</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren3a.png" class="img-fluid figure-img" width="291"></p>
+<figcaption>After Request B</figcaption>
+</figure>
+</div>
 <p>After the second request, <span class="math inline">\(C\)</span>, <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> will simultaneously step forward since they find no epistemically open alternative at which they are not muddy. On the other hand, <span class="math inline">\(b\)</span> will stay back because she cannot tell which of <span class="math inline">\(101\)</span> or <span class="math inline">\(111\)</span> are actual. That is, <span class="math inline">\(b\)</span> stays back because <span class="math inline">\(b\)</span> cannot rule out that she is muddy. When <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> step forward, the children are able to eliminate every alternative to <span class="math inline">\(101\)</span>. So, the epistemic situation after the second request is that the children know exactly who is muddy and who is not.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren4.png" class="img-fluid"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">After Request C</td>
-</tr>
-</tbody>
-</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren4.png" class="img-fluid figure-img" width="84"></p>
+<figcaption>After Request C</figcaption>
+</figure>
+</div>
 <p>Nothing changes when we complicate the situation. If, for example, seven out of ten children happened to be muddy, then no one would step forward until after the guardian makes the seventh request at which point exactly those seven children would simultaneously step forward.</p>
 <section id="public-announcements" class="level3" data-number="9.2.1">
 <h3 data-number="9.2.1" class="anchored" data-anchor-id="public-announcements"><span class="header-section-number">9.2.1</span> Public Announcements</h3>
@@ -646,121 +637,219 @@ M, s \Vdash [!\varphi] \psi &amp; \text{iff} &amp; M, s \Vdash \varphi \ \text{o
 <p>The question is now whether all truths are learnable in this sense. Moorean propositions are not, since <span class="math inline">\(\textsf{K}_i(p \wedge \neg \textsf{K}_i p)\)</span> is false at all states of a reflexive model, updated or not. So, the dynamic interpretation cannot rescue an unrestricted knowability thesis. But it does yield a positive result. <em>Persistent</em> truths are learnable: just announce it. After the update, it remains true at all states that remain, and so <span class="math inline">\(i\)</span> knows it. Unlearnable truths are those that concern the agent’s own ignorance, which is just what the earlier discussion of Fitch’s paradox led us to expect.</p>
 </section>
 </section>
-<section id="common-knowledge" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="common-knowledge"><span class="header-section-number">9.3</span> Common Knowledge</h2>
-<p>What do the children learn after the first announcement? Notice that they <em>all</em> know that at least one child is muddy even prior to the announcement. We may use <span class="math inline">\(E\varphi\)</span> as an abbreviation for the conjunction: <span class="math display">\[\bigwedge_{i\in I} \textsf{K}_i \varphi,\]</span></p>
-<p>which is read: “it is generally known that <span class="math inline">\(\varphi\)</span>’’. General knowledge is not sufficient for common knowledge. A group has common knowledge that <span class="math inline">\(\varphi\)</span> if they <em>all</em> know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that <span class="math inline">\(\varphi\)</span>, they all know that they all know that they all know that <span class="math inline">\(\varphi\)</span>, etc.</p>
-<p>Let us revisit the initial model for the Muddy Children Puzzle and let <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span>, and <span class="math inline">\(p_3\)</span> be true at exactly states at which each of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>, respectively, are muddy, then we may express the fact that at least one child is muddy by means of the disjunction <span class="math inline">\(p_1 \vee  p_2 \vee p_3\)</span>. Notice that that formula is true when evaluated at state <span class="math inline">\(101\)</span>: <span class="math display">\[M, 101 \Vdash \textsf{E} (p_1 \vee p_2 \vee p_3).\]</span></p>
-<p>That is because: <span class="math display">\[M, 101 \Vdash \textsf{K}_a (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_b (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_c (p_1 \vee p_2 \vee p_3).\]</span></p>
-<p>But although it is generally known that at least one child is muddy, it is <em>not</em> common knowledge that at least one child is muddy.</p>
-<p>Common knowledge plays a crucial role in social interaction. When we drive, for example, we rely on the fact that it is common knowledge that a red light requires drivers to stop. It is not sufficient for a pedestrian to know that, but it is important to know that drivers <em>know</em> that and for them to know that everyone knows that, etc.</p>
-<p>How should we incorporate common knowledge in the language of epistemic logic? There is no hope for an explicit definition of common knowledge in terms of knowledge, for that would presumably require an <em>infinite</em> conjunction, which is not available in the language. We will instead expand the language of epistemic logic with a common knowledge operator, <span class="math inline">\(\textsf{C}\varphi\)</span>, read: “it is common knowledge that <span class="math inline">\(\varphi\)</span>.</p>
-<p>Once we do this, we must explain how to evaluate a formula of the form <span class="math inline">\(\textsf{C}\varphi\)</span> at a state <span class="math inline">\(s\)</span> of a model <span class="math inline">\(M\)</span> of the form <span class="math inline">\((W, \{R_i: i\in I\}, V)\)</span>. To that purpose, we will expand the definition of truth at a state with a clause for the newly added common knowledge operator.</p>
+<section id="group-knowledge" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="group-knowledge"><span class="header-section-number">9.3</span> Group Knowledge</h2>
+<p>One question remains open from our discussion of the Muddy Children. What do the children learn after the first announcement? Even prior to the announcement, they <em>all</em> knew that some of the other children are muddy because they all could see at least one muddy child. And yet, the announcement makes a difference.</p>
+<p>To make progress on that question, we distinguish some ways in which a group <span class="math inline">\(G\)</span> may be said to know a proposition. Consider the contrast between four claims:</p>
 <ul>
-<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in one step</em>, in symbols, <span class="math inline">\(sR^1t\)</span>, iff <span class="math inline">\(sR_it\)</span> for <em>some</em> <span class="math inline">\(i\in I\)</span>. In the case at hand, one state is reachable from another in one step if it is <span class="math inline">\(a\)</span>-accessible from the other or it is <span class="math inline">\(b\)</span>-accessible from the other or, finally, it is <span class="math inline">\(c\)</span>-accessible from the other.</p></li>
-<li><p>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in</em> <span class="math inline">\(n+1\)</span> steps, in symbols, <span class="math inline">\(sR^{n+1}t\)</span>, iff for some step <span class="math inline">\(u\)</span>, <span class="math inline">\(sR^{n}u\)</span> and <span class="math inline">\(uR_it\)</span> for some <span class="math inline">\(i\in I\)</span>.</p></li>
+<li><em>Someone</em> in <span class="math inline">\(G\)</span> knows that <span class="math inline">\(\varphi\)</span>.</li>
+<li><em>Everyone</em> in <span class="math inline">\(G\)</span> knows that <span class="math inline">\(\varphi\)</span>.</li>
+<li>It is <em>common knowledge</em> in <span class="math inline">\(G\)</span> that <span class="math inline">\(\varphi\)</span>.</li>
+<li>It is <em>distributed knowledge</em> in <span class="math inline">\(G\)</span> that <span class="math inline">\(\varphi\)</span>.</li>
 </ul>
-<p>For purposes of illustration, notice that in the initial model for the Muddy Children Puzzle <span class="math inline">\(000\)</span> is <em>reachable from</em> <span class="math inline">\(101\)</span> <em>in two steps</em>: <span class="math display">\[101 R_c 100 \ \ \text{and} \ \ 100 R_a 000\]</span></p>
-<p><span class="math display">\[101 R_a 001 \ \ \text{and} \ \ 001 R_c 000\]</span></p>
-<p>That is, there are two-step paths one may take from <span class="math inline">\(101\)</span> to <span class="math inline">\(000\)</span>.</p>
-<p>Finally,</p>
+<p>The first two are familiar. The third requires not just that everyone know, but that everyone know that everyone knows, that everyone know that everyone know that everyone knows, etc. The fourth concerns what the group would know if its members pooled their information, even if no individual member knows it. This section introduces each type of group knowledge, explains how to evaluate it in a model, and how they are related to each other.</p>
+<p>In what follows, <span class="math inline">\(G\)</span> is a nonempty set of agents, <span class="math inline">\(G \subseteq I\)</span>. When <span class="math inline">\(G = I\)</span>, we drop the subscript.</p>
+<section id="someone-knows-and-everyone-knows" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="someone-knows-and-everyone-knows"><span class="header-section-number">9.3.1</span> Someone Knows and Everyone Knows</h3>
+<p>The first two types of group knowledge are definable in the language of epistemic logic. If <span class="math inline">\(G\)</span> is finite, let:</p>
+<p><span class="math display">\[\textsf{S}_G \varphi \ := \ \bigvee_{i \in G} \textsf{K}_i \varphi \qquad\qquad \textsf{E}_G \varphi \ := \ \bigwedge_{i \in G} \textsf{K}_i \varphi\]</span></p>
+<p><span class="math inline">\(\textsf{S}_G \varphi\)</span> is read “someone in <span class="math inline">\(G\)</span> knows that <span class="math inline">\(\varphi\)</span>,” and <span class="math inline">\(\textsf{E}_G \varphi\)</span> is read “everyone in <span class="math inline">\(G\)</span> knows that <span class="math inline">\(\varphi\)</span>” or “it is <em>general knowledge</em> in <span class="math inline">\(G\)</span> that <span class="math inline">\(\varphi\)</span>.”</p>
+<p>Let us return to the model of the Muddy Children before the guardian’s announcement, where <span class="math inline">\(p_1\)</span>, <span class="math inline">\(p_2\)</span>, and <span class="math inline">\(p_3\)</span> say that <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, and <span class="math inline">\(c\)</span>, respectively, are muddy:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren1.png" class="img-fluid figure-img" width="360"></p>
+<figcaption>Before Announcement A</figcaption>
+</figure>
+</div>
+<p>At the actual state <span class="math inline">\(101\)</span>, someone knows that <span class="math inline">\(c\)</span> is muddy, since <span class="math inline">\(a\)</span> can see her. But not everyone knows it, since <span class="math inline">\(c\)</span> cannot see her own forehead:</p>
+<p><span class="math display">\[M, 101 \Vdash \textsf{S}\, p_3 \wedge \neg \textsf{E}\, p_3\]</span></p>
+<p>On the other hand, everyone knows that at least one child is muddy:</p>
+<p><span class="math display">\[M, 101 \Vdash \textsf{K}_a (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_b (p_1 \vee p_2 \vee p_3) \wedge \textsf{K}_c (p_1 \vee p_2 \vee p_3)\]</span></p>
+<p>That is, <span class="math inline">\(M, 101 \Vdash \textsf{E}(p_1 \vee p_2 \vee p_3)\)</span>.</p>
+</section>
+<section id="iterated-general-knowledge" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="iterated-general-knowledge"><span class="header-section-number">9.3.2</span> Iterated General Knowledge</h3>
+<p>Thus everyone knows that someone is muddy even prior to the first announcement. Does everyone know that everyone knows it? We may now iterate the general knowledge operator:</p>
+<p><span class="math display">\[\textsf{E}^1_G \varphi \ := \ \textsf{E}_G \varphi \qquad\qquad \textsf{E}^{n+1}_G \varphi \ := \ \textsf{E}_G \textsf{E}^n_G \varphi\]</span></p>
+<p><span class="math inline">\(\textsf{E}^2_G \varphi\)</span> says that everyone knows that everyone knows that <span class="math inline">\(\varphi\)</span>, <span class="math inline">\(\textsf{E}^3_G \varphi\)</span> adds a further layer, and there is no end to successive iterations. One way to picture these iterations is as follows. Call a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> in one step, in symbols <span class="math inline">\(sR^1_G t\)</span>, iff <span class="math inline">\(sR_i t\)</span> for <em>some</em> <span class="math inline">\(i \in G\)</span>. And say that <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> in <span class="math inline">\(n+1\)</span> steps, in symbols <span class="math inline">\(sR^{n+1}_G t\)</span>, iff for some state <span class="math inline">\(u\)</span>, <span class="math inline">\(sR^n_G u\)</span> and <span class="math inline">\(uR_i t\)</span> for some <span class="math inline">\(i \in G\)</span>. Then:</p>
+<div id="prp-en-reachability" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9.1</strong></span> <span class="math inline">\(M, s \Vdash \textsf{E}^n_G \varphi\)</span> iff <span class="math inline">\(M, t \Vdash \varphi\)</span> for every state <span class="math inline">\(t\)</span> such that <span class="math inline">\(sR^n_G t\)</span>.</p>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>By induction on <span class="math inline">\(n\)</span>. For <span class="math inline">\(n = 1\)</span>, <span class="math inline">\(\textsf{E}_G \varphi\)</span> is true at <span class="math inline">\(s\)</span> iff each <span class="math inline">\(i \in G\)</span> knows <span class="math inline">\(\varphi\)</span> at <span class="math inline">\(s\)</span>, that is, iff <span class="math inline">\(\varphi\)</span> is true at every state that is <span class="math inline">\(R_i\)</span>-accessible from <span class="math inline">\(s\)</span> for some <span class="math inline">\(i \in G\)</span>. Suppose the claim is true for <span class="math inline">\(n\)</span>. Then <span class="math inline">\(\textsf{E}^{n+1}_G \varphi = \textsf{E}_G \textsf{E}^n_G \varphi\)</span> is true at <span class="math inline">\(s\)</span> iff <span class="math inline">\(\textsf{E}^n_G\varphi\)</span> is true at every <span class="math inline">\(u\)</span> with <span class="math inline">\(sR^1_G u\)</span>, which by the induction hypothesis is true iff <span class="math inline">\(\varphi\)</span> is true at every <span class="math inline">\(t\)</span> reachable in <span class="math inline">\(n\)</span> steps from some such <span class="math inline">\(u\)</span>, that is, at every <span class="math inline">\(t\)</span> with <span class="math inline">\(sR^{n+1}_G t\)</span>.</p>
+</div>
+<p>In words, <span class="math inline">\(\textsf{E}^n \varphi\)</span> fails at <span class="math inline">\(s\)</span> just in case there is a path of length <span class="math inline">\(n\)</span>, each step of which may be taken by a different agent, from <span class="math inline">\(s\)</span> to a state where <span class="math inline">\(\varphi\)</span> is false.</p>
+<p>Now we can see what the children lack before the announcement. In the initial model, there is a two-step path from <span class="math inline">\(101\)</span> to <span class="math inline">\(000\)</span>:</p>
+<p><span class="math display">\[101 \ R_a \ 001 \quad \text{and} \quad 001 \ R_c \ 000\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\[M, 101 \Vdash \textsf{E}(p_1 \vee p_2 \vee p_3) \wedge \neg \textsf{E}^2(p_1 \vee p_2 \vee p_3)\]</span></p>
+<p>In particular, <span class="math inline">\(a\)</span> does not know that <span class="math inline">\(c\)</span> knows that someone is muddy. The reason is simple. For all <span class="math inline">\(a\)</span> knows, she herself is clean, in which case <span class="math inline">\(c\)</span> sees only one clean child and no mud at all. So, for all <span class="math inline">\(a\)</span> knows, <span class="math inline">\(c\)</span> might believe that no child is muddy.</p>
+<p>This example illustrates an important feature of the logic of <span class="math inline">\(\textsf{E}\)</span>. Recall that we described the model as a <span class="math inline">\(\textsf{S5}\)</span>-model, which means that individual knowledge satisfies <span class="math inline">\(\textsf{4}\)</span>. And yet:</p>
+<p><span class="math display">\[M, 101 \nVdash \textsf{E}\varphi \to \textsf{E}\textsf{E}\varphi\]</span></p>
+<p>The <span class="math inline">\(\textsf{K}\textsf{K}\)</span>-principle does not guarantee what we may call the <span class="math inline">\(\textsf{E}\textsf{E}\)</span>-principle. Every individual may know <span class="math inline">\(\varphi\)</span> in which case every individual knows that they know <span class="math inline">\(\varphi\)</span>, and yet everyone may know <span class="math inline">\(\varphi\)</span> without knowing that everyone knows <span class="math inline">\(\varphi\)</span>.</p>
+<p>The pattern generalizes. If exactly <span class="math inline">\(k\)</span> children are muddy, then before the announcement, the fact that at least one child is muddy is <span class="math inline">\(\textsf{E}^{k-1}\)</span> known but not <span class="math inline">\(\textsf{E}^k\)</span> known. With two muddy children, it is general knowledge that someone is muddy but it is not general knowledge that it is general knowledge that someone is muddy. With three, it is <span class="math inline">\(\textsf{E}^2\)</span> known but not <span class="math inline">\(\textsf{E}^3\)</span> known.</p>
+</section>
+<section id="common-knowledge" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="common-knowledge"><span class="header-section-number">9.3.3</span> Common Knowledge</h3>
+<p>A group has <em>common knowledge</em> that <span class="math inline">\(\varphi\)</span> when <em>all</em> the iterations are true at once: everyone knows that <span class="math inline">\(\varphi\)</span>, everyone knows that everyone knows that <span class="math inline">\(\varphi\)</span>, etc. As a first approximation:</p>
+<p><span class="math display">\[\textsf{C}_G \varphi \ \text{ iff } \ \textsf{E}_G \varphi \wedge \textsf{E}^2_G \varphi \wedge \textsf{E}^3_G \varphi \wedge \dots\]</span></p>
+<p>Common knowledge plays a crucial role in social interaction. When we drive, for example, we rely on the fact that it is common knowledge that a red light requires drivers to stop. It is not enough for a pedestrian to know this rule. She needs to know that drivers know it, and drivers need to know that pedestrians know that they know it, and so on. Philosophers since <span class="citation" data-cites="Lewis2008-LEWCAP-4">Lewis (<a href="references.html#ref-Lewis2008-LEWCAP-4" role="doc-biblioref">2008</a>)</span> have argued that conventions, such as driving on the right, depend on common knowledge of this sort.</p>
+<p>Unlike <span class="math inline">\(\textsf{S}_G\)</span> and <span class="math inline">\(\textsf{E}_G\)</span>, common knowledge cannot be defined in the language of epistemic logic, since that would require an <em>infinite</em> conjunction. We instead expand the language with a new operator <span class="math inline">\(\textsf{C}_G \varphi\)</span>, read: “it is common knowledge in <span class="math inline">\(G\)</span> that <span class="math inline">\(\varphi\)</span>.” To evaluate common knowledge attributions, we consider whether a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> in a <em>finite number of steps</em>*:</p>
 <ul>
 <li>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in a finite number of steps</em>, in symbols <span class="math inline">\(R^\star\)</span>, iff there is some <span class="math inline">\(n\)</span> such that <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in <span class="math inline">\(n\)</span> steps.</li>
 </ul>
-<p>Here is the clause for <span class="math inline">\(\textsf{C}\varphi\)</span> in the definition of truth at a state: <span class="math display">\[\begin{array}{lll}
-M, s \Vdash \textsf{C} \varphi &amp; \text{iff} &amp; \text{for every} \ u \in W \ \text{s.t.} \ R^\star su, \ M, u \Vdash \varphi\\
+<p>In symbols <span class="math inline">\(sR^\star_G t\)</span>, iff <span class="math inline">\(sR^n_G t\)</span> for some <span class="math inline">\(n \geq 1\)</span>. Equivalently, <span class="math inline">\(R^\star_G\)</span> is the transitive closure of the union of the relations <span class="math inline">\(R_i\)</span> for <span class="math inline">\(i \in G\)</span>. The truth clause for <span class="math inline">\(\textsf{C}_G \varphi\)</span> is:</p>
+<p><span class="math display">\[\begin{array}{lll}
+M, s \Vdash \textsf{C}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \text{for every} \ t \in W \ \text{such that} \ sR^\star_G t
 \end{array}\]</span></p>
-<p>In other words, <span class="math inline">\(\textsf{C}\varphi\)</span> is true at a state <span class="math inline">\(s\)</span> iff <span class="math inline">\(\varphi\)</span> is true at every state <span class="math inline">\(t\)</span> <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in a finite number of steps</em>.</p>
-<p>Let us revisit the model for the Muddy Children Puzzle <em>prior to the first announcement</em>:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren1.png" style="display:block; margin: 0 auto;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Before Announcement A</td>
-</tr>
-</tbody>
-</table>
-<p>When we apply the definition of truth at a state to the case at hand, we find: <span class="math display">\[M, 101 \nVdash \textsf{C} (p_1 \vee p_2 \vee p_3).\]</span></p>
-<p>The reason is that the state <span class="math inline">\(000\)</span>, which falsifies the disjunction, is reachable from <span class="math inline">\(101\)</span> in two steps.</p>
-<p>The situation changes once the children eliminate that option after the announcement. One of the effects of the announcement in the Muddy Children Puzzle is to make it common knowledge that at least one child is muddy: it is not just that all children know that at least one child is muddy, all children now know that all children know, and all children know that all children know that they know that, etc.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren2.png" style="display:block; margin: 0 auto;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">After Announcement A</td>
-</tr>
-</tbody>
-</table>
-<p>If we use <span class="math inline">\(M'\)</span> to refer to the model that results, we find <span class="math display">\[M', 101 \Vdash \textsf{C} (p_1 \vee p_2 \vee p_3).\]</span></p>
-<p>This is because the disjunction is true at <em>every</em> state reachable from <span class="math inline">\(101\)</span> in the new model.</p>
-<p>After the first request is made without any children stepping forward, the children are able to rule out as epistemic alternatives states in which only one child is muddy.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren3a.png" style="display:block; margin: 0 auto;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">After Request B</td>
-</tr>
-</tbody>
-</table>
-<p>At this point, the fact that two children are muddy now becomes common knowledge, since only states where two children are muddy are reachable from the state of evaluation in a finite number of steps.</p>
-<p>The actual distribution of mud becomes common knowledge after the two children step forward after the second request. That is because they are all left with a single epistemic live option:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 100%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><img src="images/muddychildren4.png" style="display:block; margin: 0 auto;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">After Request C</td>
-</tr>
-</tbody>
-</table>
-<p>The accessibility relation for common knowledge, <span class="math inline">\(R^\star\)</span>, will of course be <em>reflexive</em> and <em>transitive</em>. It will be transitive by definition, but it will inherit reflexivity from the reflexivity of each of the <span class="math inline">\(i\)</span>-accessibility relations. Whether the relation will in addition be symmetric or euclidean will crucially depend on the structure of the individual <span class="math inline">\(i\)</span>-accessibility relations.</p>
-<p>One axiomatization of the logic of common knowledge employs an an axiom and a rule of inference: <span class="math display">\[\tag{Fixed Point}
-\textsf{C}p \to \textsf{E}(p \wedge \textsf{C}p)\]</span> <span class="math display">\[\tag{Induction}
-\varphi \to \textsf{E}(\psi \wedge \varphi) / \varphi \to \textsf{C} \psi\]</span></p>
-<p>The <em>fixed point</em> axiom regards common knowledge as a <em>fixed point</em> of the function that maps a formula <span class="math inline">\(\varphi\)</span> to <span class="math inline">\(\textsf{K}_i(\varphi \wedge \textsf{C}\varphi)\)</span>. The rule of inference is called an induction rule because the antecedent provides the crucial ingredient for an inductive argument for all instances of the schema: <span class="math display">\[\varphi \to \textsf{E}^n(\psi \wedge \varphi),\]</span> which guarantees the conditional <span class="math display">\[\varphi \to \textsf{C}\psi.\]</span></p>
-<p>For suppose the conditional <span class="math inline">\(\varphi \to \textsf{E}(\psi \wedge \varphi)\)</span> is valid. Then if <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(s\)</span>, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(s\)</span>, which means that if <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in one step, then <span class="math inline">\(\varphi\)</span> is true at <span class="math inline">\(t\)</span>. So, <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> is true at <span class="math inline">\(t\)</span>. If <span class="math inline">\(u\)</span> is now reachable from <span class="math inline">\(t\)</span> in one step, then <span class="math inline">\(\textsf{E}(\psi \wedge \varphi)\)</span> will be true at <span class="math inline">\(t\)</span>, etc.</p>
-<p>We are in a position to prove some theorems of the logic of common knowledge.</p>
-<div id="prp-prp" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 9.1</strong></span> <span class="math inline">\(\vdash \textsf{C}p \to \textsf{E} \textsf{C}p\)</span></p>
+<p>By <a href="#prp-en-reachability" class="quarto-xref">Proposition&nbsp;<span>9.1</span></a>, <span class="math inline">\(\textsf{C}_G \varphi\)</span> is true at <span class="math inline">\(s\)</span> iff <span class="math inline">\(\textsf{E}^n_G \varphi\)</span> is true at <span class="math inline">\(s\)</span> for every <span class="math inline">\(n \geq 1\)</span>, which matches the informal characterization.</p>
+<p>We are now in a position to answer the question with which we began. Let us revisit the model for the Muddy Children Puzzle <em>prior to the first announcement</em>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren1.png" class="img-fluid figure-img" width="360"></p>
+<figcaption>Before Announcement A</figcaption>
+</figure>
+</div>
+<p>Before the announcement, <span class="math inline">\(000\)</span> is reachable from <span class="math inline">\(101\)</span> in two steps, which means:</p>
+<p><span class="math display">\[M, 101 \nVdash \textsf{C}(p_1 \vee p_2 \vee p_3)\]</span></p>
+<p>The announcement removes <span class="math inline">\(000\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren2.png" class="img-fluid figure-img" width="360"></p>
+<figcaption>After Announcement A</figcaption>
+</figure>
+</div>
+<p>If we use <span class="math inline">\(M'\)</span> for the updated model <span class="math inline">\(M|(p_1 \vee p_2 \vee p_3)\)</span>, the disjunction is now true at every state reachable from <span class="math inline">\(101\)</span>, which means:</p>
+<p><span class="math display">\[M', 101 \Vdash \textsf{C}(p_1 \vee p_2 \vee p_3)\]</span></p>
+<p>Thus the children <em>do</em> learn something from the announcement: <span class="math inline">\(a\)</span> knows that <span class="math inline">\(c\)</span> knows, <span class="math inline">\(b\)</span> knows that <span class="math inline">\(a\)</span> knows that <span class="math inline">\(c\)</span> knows, etc at every level. The announcement turns general knowledge into common knowledge.</p>
+<p>It matters that the announcement is <em>public</em>. Suppose instead that the guardian had whispered “at least one of you is muddy” to each child in private. Each child would hear something she already knew, no state would be eliminated, and no child would ever step forward. Every public announcement of a propositional fact <span class="math inline">\(p\)</span> makes <span class="math inline">\(p\)</span> common knowledge, since every state that survives the update satisfies <span class="math inline">\(p\)</span>:</p>
+<p><span class="math display">\[[!p]\textsf{C}_G\, p\]</span></p>
+<p>Private messages, by contrast, do not by themselves produce common knowledge, as we will see in a moment. Consider the later stages of the puzzle as well. After request B, the states with exactly one muddy child are eliminated:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren3a.png" class="img-fluid figure-img" width="291"></p>
+<figcaption>After Request B</figcaption>
+</figure>
+</div>
+<p>It is now common knowledge that <em>at least two</em> children are muddy, since every state reachable from <span class="math inline">\(101\)</span> has at least two muddy children. But it is not yet common knowledge that <em>exactly</em> two children are muddy, since <span class="math inline">\(111\)</span> is still reachable from <span class="math inline">\(101\)</span> (via <span class="math inline">\(b\)</span>). Only after <span class="math inline">\(a\)</span> and <span class="math inline">\(c\)</span> step forward does the actual distribution of mud become common knowledge, since <span class="math inline">\(101\)</span> is then the only state left:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/muddychildren4.png" class="img-fluid figure-img" width="84"></p>
+<figcaption>After Request C</figcaption>
+</figure>
+</div>
+<section id="the-logic-of-common-knowledge" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="the-logic-of-common-knowledge">The Logic of Common Knowledge</h4>
+<p><span class="math inline">\(R^\star_G\)</span> is a transitive relation, and it is reflexive whenever each <span class="math inline">\(R_i\)</span> is. The relation is symmetric whenever each <span class="math inline">\(R_i\)</span> is, since one can traverse a path from <span class="math inline">\(s\)</span> to <span class="math inline">\(t\)</span> in reverse. Therefore <span class="math inline">\(R^\star_G\)</span> is an equivalence relation when each individual knowledge relation is. That would make common knowledge by governed by the principles of <span class="math inline">\(\textsf{S5}\)</span>. Contrast this with <span class="math inline">\(\textsf{E}_G\)</span>, which, as we saw, does not even satisfy <span class="math inline">\(\textsf{4}\)</span>.</p>
+<p>One axiomatization of the logic of common knowledge adds an axiom and a rule of inference:</p>
+<p><span class="math display">\[\tag{Fixed Point}
+\textsf{C}_G \varphi \to \textsf{E}_G(\varphi \wedge \textsf{C}_G \varphi)\]</span></p>
+<p><span class="math display">\[\tag{Induction}
+\frac{\chi \to \textsf{E}_G(\varphi \wedge \chi)}{\chi \to \textsf{C}_G \varphi}\]</span></p>
+<p>The Fixed Point axiom says that common knowledge that <span class="math inline">\(\varphi\)</span> is general knowledge of two items: that <span class="math inline">\(\varphi\)</span>, and that it is common knowledge that <span class="math inline">\(\varphi\)</span>. In other words, <span class="math inline">\(\textsf{C}_G \varphi\)</span> is a <em>fixed point</em> of the map that sends a formula <span class="math inline">\(X\)</span> to <span class="math inline">\(\textsf{E}_G(\varphi \wedge X)\)</span>. The Induction rule says that it is the <em>greatest</em> such fixed point: anything that guarantees general knowledge of <span class="math inline">\(\varphi\)</span> together with itself guarantees common knowledge of <span class="math inline">\(\varphi\)</span>.</p>
+<p>To appreciate the fact that Induction preserves validity, suppose that <span class="math inline">\(\chi \to \textsf{E}_G(\varphi \wedge \chi)\)</span> is valid and that <span class="math inline">\(\chi\)</span> is true at <span class="math inline">\(s\)</span>. Then <span class="math inline">\(\varphi \wedge \chi\)</span> is true at every state reachable from <span class="math inline">\(s\)</span> in one step. Since <span class="math inline">\(\chi\)</span> is true at each such state, the same reasoning shows that <span class="math inline">\(\varphi \wedge \chi\)</span> is true at every state reachable from <span class="math inline">\(s\)</span> in two steps, and so on. By induction on <span class="math inline">\(n\)</span>, <span class="math inline">\(\varphi\)</span> is true at every state reachable from <span class="math inline">\(s\)</span> in <span class="math inline">\(n\)</span> steps, for every <span class="math inline">\(n\)</span>. So <span class="math inline">\(\textsf{C}_G \varphi\)</span> is true at <span class="math inline">\(s\)</span>.</p>
+<p>We are now in a position to prove some theorems of the logic of common knowledge. We drop the subscript <span class="math inline">\(G\)</span>.</p>
+<div id="prp-c-ec" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9.2</strong></span> <span class="math inline">\(\vdash \textsf{C}p \to \textsf{E}\textsf{C}p\)</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the Fixed Point axiom: <span class="math display">\[\begin{array}{lllll}
-1 &amp; &amp; \textsf{C}p \to \textsf{E}(p \wedge \textsf{C}p) &amp; \text{Fixed Point}\\
-2 &amp; &amp; \textsf{E}(p \wedge \textsf{C}p) \to (\textsf{E} p \wedge \textsf{E} \textsf{C}p) &amp; \textsf{K} \ 1\\
-3 &amp; &amp; \textsf{C}p \to \textsf{E} \textsf{C}p &amp; \textsf{PL} \ 1, 2\\
+<p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the Fixed Point axiom: <span class="math display">\[\begin{array}{lll}
+1 &amp; \textsf{C}p \to \textsf{E}(p \wedge \textsf{C}p) &amp; \text{Fixed Point}\\
+2 &amp; \textsf{E}(p \wedge \textsf{C}p) \to (\textsf{E}p \wedge \textsf{E}\textsf{C}p) &amp; \textsf{M} \ \text{for each} \ \textsf{K}_i\\
+3 &amp; \textsf{C}p \to \textsf{E}\textsf{C}p &amp; \textsf{PL} \ 1, 2
 \end{array}\]</span></p>
 </div>
-<div id="prp-prp-2" class="theorem proposition">
-<p><span class="theorem-title"><strong>Proposition 9.2</strong></span> <span class="math inline">\(\vdash \textsf{C}p\to \textsf{C C}p\)</span></p>
+<div id="prp-c-cc" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 9.3</strong></span> <span class="math inline">\(\vdash \textsf{C}p \to \textsf{C}\textsf{C}p\)</span></p>
 </div>
 <div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the rule of inference for common knowledge. <span class="math display">\[\begin{array}{lllll}
-1 &amp; &amp; \textsf{C}p \to \textsf{E} \textsf{C}p &amp; \\
-2 &amp; &amp; \textsf{C} p \to (\textsf{C}p \wedge \textsf{C} p) &amp; \textsf{PL} \\
-3  &amp; &amp; \textsf{EC} p \to \textsf{E} (\textsf{C}p\wedge \textsf{C} p) &amp; \textsf{PL}\\
-4 &amp; &amp; \textsf{C} p \to \textsf{E} (\textsf{C}p \wedge \textsf{C} p) &amp; \textsf{PL} \ 1, 3\\
-5 &amp; &amp; \textsf{C} p \to \textsf{CC}p &amp; \textsf{RC}[\textsf{C}p/\varphi, \textsf{C}p/\psi] \ 4
+<p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the Induction rule: <span class="math display">\[\begin{array}{lll}
+1 &amp; \textsf{C}p \to \textsf{E}\textsf{C}p &amp; \text{@prp-c-ec}\\
+2 &amp; \textsf{C}p \to \textsf{E}(\textsf{C}p \wedge \textsf{C}p) &amp; \textsf{RE} \ 1\\
+3 &amp; \textsf{C}p \to \textsf{C}\textsf{C}p &amp; \text{Induction} \ [\textsf{C}p/\chi, \textsf{C}p/\varphi] \ 2
 \end{array}\]</span></p>
 </div>
+<p>In line 2, <span class="math inline">\(\textsf{RE}\)</span> is the rule of replacement of provable equivalents, here applied to <span class="math inline">\(\textsf{C}p \leftrightarrow (\textsf{C}p \wedge \textsf{C}p)\)</span>.</p>
+</section>
+<section id="is-common-knowledge-attainable" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="is-common-knowledge-attainable">Is Common Knowledge Attainable?</h4>
+<p>Common knowledge is not difficult to obtain in the Muddy Children, where announcements are public and perception is perfect. Real communication is not often like that. Suppose two generals on opposite hills must attack at the same time to succeed, and can communicate only by messengers who may be captured on the way. General <span class="math inline">\(a\)</span> sends the message “attack at dawn.” If it arrives, <span class="math inline">\(b\)</span> knows the plan, but <span class="math inline">\(a\)</span> does not know that <span class="math inline">\(b\)</span> knows, so <span class="math inline">\(b\)</span> sends an acknowledgment. If that arrives, <span class="math inline">\(a\)</span> knows that <span class="math inline">\(b\)</span> knows, but <span class="math inline">\(b\)</span> does not know that <span class="math inline">\(a\)</span> knows that <span class="math inline">\(b\)</span> knows, and so on. Each successful message adds one level of iteration. No finite number of messages ever produces common knowledge.</p>
+<p>Williamson’s margin of error principles raise a similar concern. If each iteration of knowledge based on inexact perception requires a further margin for error, then common knowledge of facts known by perception would require infinitely many margins <span class="citation" data-cites="Williamson2000-WILKAI">(<a href="references.html#ref-Williamson2000-WILKAI" role="doc-biblioref">Williamson 2000, chap. 5</a>)</span>. This suggests that common knowledge is best seen either as an idealization or as something attained only through public events whose occurrence is itself perfectly evident to all, like the guardian’s announcement.</p>
+</section>
+</section>
+<section id="distributed-knowledge" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="distributed-knowledge">Distributed Knowledge</h3>
+<p>Distributed knowledge takes us in the opposite direction. Common knowledge is very demanding for every member of the group. <em>Distributed knowledge</em> asks for what the group would know if its members combined what they know.</p>
+<p>Here is a simple example. Ann knows that if the meeting is on Tuesday, it is in Room 101. Bob knows that the meeting is on Tuesday. Neither knows where the meeting is. But the information needed to work it out is present in the group, distributed between Ann and Bob. We write that it is distributed knowledge in <span class="math inline">\(\{\text{Ann}, \text{Bob}\}\)</span> that the meeting is in Room 101.</p>
+<p>How should we evaluate this? Each agent’s knowledge rules out some states. Combining information amounts to ruling out every state that <em>some</em> member of the group is able to rules out. The states that remain are those that <em>every</em> member of the group regards as epistemically open. So we take the intersection of the individual relations:</p>
+<p><span class="math display">\[\begin{array}{lll}
+M, s \Vdash \textsf{D}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \text{for every} \ t \in W \ \text{such that} \ sR_i t \ \text{for all} \ i \in G
+\end{array}\]</span></p>
+<p>(Do not confuse the operator <span class="math inline">\(\textsf{D}_G\)</span> with axiom <span class="math inline">\(\textsf{D}\)</span> from modal propositional logic. The subscript will keep them apart.) Like <span class="math inline">\(\textsf{C}_G\)</span>, the operator <span class="math inline">\(\textsf{D}_G\)</span> is added to the language as a new primitive. Since the intersection of equivalence relations is an equivalence relation, distributed knowledge obeys the principles of <span class="math inline">\(\textsf{S5}\)</span> whenever individual knowledge does. One axiom, which we may call Inclusion, amounts to the claim that what is individually known is distributively known by the group:</p>
+<p><span class="math display">\[\tag{Inclusion}
+\textsf{K}_i \varphi \to \textsf{D}_G \varphi \quad \text{for} \ i \in G\]</span></p>
+<p>Distributed knowledge sheds new light on the Muddy Children. Before the announcement, the children’s information at <span class="math inline">\(101\)</span> is as follows:</p>
+<ul>
+<li><span class="math inline">\(a\)</span> cannot distinguish <span class="math inline">\(101\)</span> from <span class="math inline">\(001\)</span>.</li>
+<li><span class="math inline">\(b\)</span> cannot distinguish <span class="math inline">\(101\)</span> from <span class="math inline">\(111\)</span>.</li>
+<li><span class="math inline">\(c\)</span> cannot distinguish <span class="math inline">\(101\)</span> from <span class="math inline">\(100\)</span>.</li>
+</ul>
+<p>The only state that all three regard as possible is <span class="math inline">\(101\)</span> itself. So:</p>
+<p><span class="math display">\[M, 101 \Vdash \textsf{D}(p_1 \wedge \neg p_2 \wedge p_3)\]</span></p>
+<p>Before the guardian says a word, the exact distribution of mud is distributed knowledge among the children, even though no child knows it. Each child’s forehead is visible to the other two, which means that they collectively have access to the full configuration. The puzzle may thus be redescribed as a process that turns distributed knowledge into individual knowledge and, eventually, common knowledge, by means of public announcements, some of which are announcements of the children’s ignorance.</p>
+<p>There is a subtlety here. Distributed knowledge describes what is implicit in the group’s information <em>as it currently stands</em>. It need not be what the group would know after actually communicating, since communication can change the very facts that the combined information describes. Suppose <span class="math inline">\(b\)</span> knows that <span class="math inline">\(p\)</span> and that <span class="math inline">\(a\)</span> does not know that <span class="math inline">\(p\)</span>. Then it is distributed knowledge in <span class="math inline">\(\{a, b\}\)</span> that <span class="math inline">\(p \wedge \neg \textsf{K}_a p\)</span>. But if <span class="math inline">\(b\)</span> shares what she knows with <span class="math inline">\(a\)</span>, the second conjunct becomes false. This is the Moorean phenomenon we discussed in the last section once again.</p>
+</section>
+<section id="how-the-concepts-are-related" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="how-the-concepts-are-related">How the Concepts Are Related</h3>
+<p>We now have four types of group knowledge. In models in which every <span class="math inline">\(R_i\)</span> is reflexive, they are related as follows, for every <span class="math inline">\(n \geq 1\)</span>:</p>
+<p><span class="math display">\[\textsf{C}_G \varphi \ \to \ \textsf{E}^{n+1}_G \varphi \ \to \ \textsf{E}^n_G \varphi \ \to \ \textsf{E}_G \varphi \ \to \ \textsf{S}_G \varphi \ \to \ \textsf{D}_G \varphi \ \to \ \varphi\]</span></p>
+<p>Each implication is simple. Common knowledge entails each level of iterated general knowledge. Each level entails the one below it, given <span class="math inline">\(\textsf{T}\)</span>. If everyone knows, then someone knows, since <span class="math inline">\(G\)</span> is nonempty. If someone knows, then the group knows distributively, since the intersection of the relations is contained in each of them. And distributed knowledge implies truth, since the intersection of reflexive relations is reflexive.</p>
+<p>None of the converses holds, and the Muddy Children supply a counterexample to each:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Implication fails</th>
+<th style="text-align: left;">Formula</th>
+<th style="text-align: left;">Model and state</th>
+<th style="text-align: left;">Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\textsf{D} \not\to \textsf{S}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p_1 \wedge \neg p_2 \wedge p_3\)</span></td>
+<td style="text-align: left;">before <span class="math inline">\(A\)</span>, <span class="math inline">\(101\)</span></td>
+<td style="text-align: left;">Only the intersection of the relations is <span class="math inline">\(\{101\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\textsf{S} \not\to \textsf{E}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p_3\)</span></td>
+<td style="text-align: left;">before <span class="math inline">\(A\)</span>, <span class="math inline">\(101\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(a\)</span> sees that <span class="math inline">\(c\)</span> is muddy, <span class="math inline">\(c\)</span> does not</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\textsf{E} \not\to \textsf{E}^2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p_1 \vee p_2 \vee p_3\)</span></td>
+<td style="text-align: left;">before <span class="math inline">\(A\)</span>, <span class="math inline">\(101\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(101 \, R_a \, 001 \, R_c \, 000\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\textsf{E}^n \not\to \textsf{C}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(p_1 \vee p_2 \vee p_3\)</span></td>
+<td style="text-align: left;">before <span class="math inline">\(A\)</span>, with <span class="math inline">\(n+1\)</span> muddy children</td>
+<td style="text-align: left;"><span class="math inline">\(\textsf{E}^n\)</span> holds, <span class="math inline">\(\textsf{E}^{n+1}\)</span> fails</td>
+</tr>
+</tbody>
+</table>
+<p>The concepts behave differently as the group changes. If <span class="math inline">\(H \subseteq G\)</span>, then:</p>
+<p><span class="math display">\[\textsf{E}_G \varphi \to \textsf{E}_H \varphi \qquad \textsf{C}_G \varphi \to \textsf{C}_H \varphi \qquad \textsf{D}_H \varphi \to \textsf{D}_G \varphi\]</span></p>
+<p>General and common knowledge become more difficult to attain as the group grows, since more agents must know. Distributed knowledge becomes simpler to attain, since more agents contribute information. In the limiting case of a single agent, the notions coincide: <span class="math inline">\(\textsf{E}_{\{i\}}\varphi\)</span>, <span class="math inline">\(\textsf{S}_{\{i\}}\varphi\)</span>, and <span class="math inline">\(\textsf{D}_{\{i\}}\varphi\)</span> are all equivalent to individual knowledge <span class="math inline">\(\textsf{K}_i\varphi\)</span>, and thus, if <span class="math inline">\(\textsf{K}_i\)</span> satisfies <span class="math inline">\(\textsf{4}\)</span>, it is <span class="math inline">\(\textsf{C}_{\{i\}}\varphi\)</span>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
@@ -779,10 +868,14 @@ Kripke, Saul A. 2011. <span>“On Two Paradoxes of Knowledge.”</span> In <em>P
 <div id="ref-lewisPluralityWorlds1986" class="csl-entry" role="listitem">
 Lewis, David. 1986. <em>On the <span>Plurality</span> of <span>Worlds</span></em>. Wiley Blackwell.
 </div>
+<div id="ref-Lewis2008-LEWCAP-4" class="csl-entry" role="listitem">
+Lewis, David. 2008. <em>Convention: A Philosophical Study</em>. Wiley-Blackwell.
+</div>
 <div id="ref-Williamson2000-WILKAI" class="csl-entry" role="listitem">
 Williamson, Timothy. 2000. <em>Knowledge and Its Limits</em>. Oxford University Press.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
