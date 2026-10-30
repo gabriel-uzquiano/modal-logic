@@ -698,7 +698,7 @@ M, s \Vdash [!\varphi] \psi &amp; \text{iff} &amp; M, s \Vdash \varphi \ \text{o
 <ul>
 <li>a state <span class="math inline">\(t\)</span> is <em>reachable from</em> <span class="math inline">\(s\)</span> <em>in a finite number of steps</em>, in symbols <span class="math inline">\(R^\star\)</span>, iff there is some <span class="math inline">\(n\)</span> such that <span class="math inline">\(t\)</span> is reachable from <span class="math inline">\(s\)</span> in <span class="math inline">\(n\)</span> steps.</li>
 </ul>
-<p>In symbols <span class="math inline">\(sR^\star_G t\)</span>, iff <span class="math inline">\(sR^n_G t\)</span> for some <span class="math inline">\(n \geq 1\)</span>. Equivalently, <span class="math inline">\(R^\star_G\)</span> is the transitive closure of the union of the relations <span class="math inline">\(R_i\)</span> for <span class="math inline">\(i \in G\)</span>. The truth clause for <span class="math inline">\(\textsf{C}_G \varphi\)</span> is:</p>
+<p>That is, <span class="math inline">\(sR^\star_G t\)</span>, iff <span class="math inline">\(sR^n_G t\)</span> for some <span class="math inline">\(n \geq 1\)</span>. Equivalently, <span class="math inline">\(R^\star_G\)</span> is the transitive closure of the union of the relations <span class="math inline">\(R_i\)</span> for <span class="math inline">\(i \in G\)</span>. The truth clause for <span class="math inline">\(\textsf{C}_G \varphi\)</span> is:</p>
 <p><span class="math display">\[\begin{array}{lll}
 M, s \Vdash \textsf{C}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \text{for every} \ t \in W \ \text{such that} \ sR^\star_G t
 \end{array}\]</span></p>
@@ -740,7 +740,7 @@ M, s \Vdash \textsf{C}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \t
 </div>
 <section id="the-logic-of-common-knowledge" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="the-logic-of-common-knowledge">The Logic of Common Knowledge</h4>
-<p><span class="math inline">\(R^\star_G\)</span> is a transitive relation, and it is reflexive whenever each <span class="math inline">\(R_i\)</span> is. The relation is symmetric whenever each <span class="math inline">\(R_i\)</span> is, since one can traverse a path from <span class="math inline">\(s\)</span> to <span class="math inline">\(t\)</span> in reverse. Therefore <span class="math inline">\(R^\star_G\)</span> is an equivalence relation when each individual knowledge relation is. That would make common knowledge by governed by the principles of <span class="math inline">\(\textsf{S5}\)</span>. Contrast this with <span class="math inline">\(\textsf{E}_G\)</span>, which, as we saw, does not even satisfy <span class="math inline">\(\textsf{4}\)</span>.</p>
+<p><span class="math inline">\(R^\star_G\)</span> is a transitive relation, and it is reflexive whenever each <span class="math inline">\(R_i\)</span> is. The relation is symmetric whenever each <span class="math inline">\(R_i\)</span> is, since one can traverse a path from <span class="math inline">\(s\)</span> to <span class="math inline">\(t\)</span> in reverse. Therefore <span class="math inline">\(R^\star_G\)</span> is an equivalence relation when each individual knowledge relation is. That would make common knowledge be governed by the principles of <span class="math inline">\(\textsf{S5}\)</span>. Contrast this with <span class="math inline">\(\textsf{E}_G\)</span>, which, as we saw, does not even satisfy <span class="math inline">\(\textsf{4}\)</span>.</p>
 <p>One axiomatization of the logic of common knowledge adds an axiom and a rule of inference:</p>
 <p><span class="math display">\[\tag{Fixed Point}
 \textsf{C}_G \varphi \to \textsf{E}_G(\varphi \wedge \textsf{C}_G \varphi)\]</span></p>
@@ -764,7 +764,7 @@ M, s \Vdash \textsf{C}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \t
 </div>
 <div class="proof">
 <p><span class="proof-title"><em>Proof</em>. </span>This is a simple consequence of the Induction rule: <span class="math display">\[\begin{array}{lll}
-1 &amp; \textsf{C}p \to \textsf{E}\textsf{C}p &amp; \text{@prp-c-ec}\\
+1 &amp; \textsf{C}p \to \textsf{E}\textsf{C}p &amp; \textsf{Proposition 9.2}\\
 2 &amp; \textsf{C}p \to \textsf{E}(\textsf{C}p \wedge \textsf{C}p) &amp; \textsf{RE} \ 1\\
 3 &amp; \textsf{C}p \to \textsf{C}\textsf{C}p &amp; \text{Induction} \ [\textsf{C}p/\chi, \textsf{C}p/\varphi] \ 2
 \end{array}\]</span></p>
@@ -781,7 +781,7 @@ M, s \Vdash \textsf{C}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \t
 <h3 class="unnumbered anchored" data-anchor-id="distributed-knowledge">Distributed Knowledge</h3>
 <p>Distributed knowledge takes us in the opposite direction. Common knowledge is very demanding for every member of the group. <em>Distributed knowledge</em> asks for what the group would know if its members combined what they know.</p>
 <p>Here is a simple example. Ann knows that if the meeting is on Tuesday, it is in Room 101. Bob knows that the meeting is on Tuesday. Neither knows where the meeting is. But the information needed to work it out is present in the group, distributed between Ann and Bob. We write that it is distributed knowledge in <span class="math inline">\(\{\text{Ann}, \text{Bob}\}\)</span> that the meeting is in Room 101.</p>
-<p>How should we evaluate this? Each agent’s knowledge rules out some states. Combining information amounts to ruling out every state that <em>some</em> member of the group is able to rules out. The states that remain are those that <em>every</em> member of the group regards as epistemically open. So we take the intersection of the individual relations:</p>
+<p>How should we evaluate this? Each agent’s knowledge rules out some states. Combining information amounts to ruling out every state that <em>some</em> member of the group is able to rule out. The states that remain are those that <em>every</em> member of the group regards as epistemically open. So we take the intersection of the individual relations:</p>
 <p><span class="math display">\[\begin{array}{lll}
 M, s \Vdash \textsf{D}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \text{for every} \ t \in W \ \text{such that} \ sR_i t \ \text{for all} \ i \in G
 \end{array}\]</span></p>
@@ -849,7 +849,7 @@ M, s \Vdash \textsf{D}_G \varphi &amp; \text{iff} &amp; M, t \Vdash \varphi \ \t
 </table>
 <p>The concepts behave differently as the group changes. If <span class="math inline">\(H \subseteq G\)</span>, then:</p>
 <p><span class="math display">\[\textsf{E}_G \varphi \to \textsf{E}_H \varphi \qquad \textsf{C}_G \varphi \to \textsf{C}_H \varphi \qquad \textsf{D}_H \varphi \to \textsf{D}_G \varphi\]</span></p>
-<p>General and common knowledge become more difficult to attain as the group grows, since more agents must know. Distributed knowledge becomes simpler to attain, since more agents contribute information. In the limiting case of a single agent, the notions coincide: <span class="math inline">\(\textsf{E}_{\{i\}}\varphi\)</span>, <span class="math inline">\(\textsf{S}_{\{i\}}\varphi\)</span>, and <span class="math inline">\(\textsf{D}_{\{i\}}\varphi\)</span> are all equivalent to individual knowledge <span class="math inline">\(\textsf{K}_i\varphi\)</span>, and thus, if <span class="math inline">\(\textsf{K}_i\)</span> satisfies <span class="math inline">\(\textsf{4}\)</span>, it is <span class="math inline">\(\textsf{C}_{\{i\}}\varphi\)</span>.</p>
+<p>General and common knowledge become more difficult to attain as the group grows, since more agents must know. Distributed knowledge becomes simpler to attain, since more agents contribute information. In the limiting case of a single agent, the notions coincide: <span class="math inline">\(\textsf{E}_{\{i\}}\varphi\)</span>, <span class="math inline">\(\textsf{S}_{\{i\}}\varphi\)</span>, and <span class="math inline">\(\textsf{D}_{\{i\}}\varphi\)</span> are all equivalent to individual knowledge <span class="math inline">\(\textsf{K}_i\varphi\)</span>, and thus, if <span class="math inline">\(\textsf{K}_i\)</span> satisfies <span class="math inline">\(\textsf{4}\)</span>, <span class="math inline">\(\textsf{C}_{\{i\}}\varphi\)</span> is equivalent to it.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
